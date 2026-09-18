@@ -1,0 +1,36 @@
+
+### `main.py`
+
+#!/usr/bin/env python3
+
+
+import json
+import sys
+import time
+
+from da_ahe.demo import run_demo
+
+
+def main() -> int:
+    """Execute the end-to-end DA-AHE demonstration."""
+
+    start = time.perf_counter()
+
+    try:
+        result = run_demo()
+    except Exception as error:
+        print(f"DA-AHE execution failed: {error}", file=sys.stderr)
+        return 1
+
+    result["host_execution_time_s"] = time.perf_counter() - start
+    print(json.dumps(result, indent=2, sort_keys=True))
+
+    if not result.get("aggregate_verified", False):
+        print("Aggregate verification failed.", file=sys.stderr)
+        return 2
+
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
