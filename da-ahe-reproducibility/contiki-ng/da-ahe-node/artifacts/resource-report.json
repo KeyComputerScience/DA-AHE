@@ -1,0 +1,29 @@
+{
+  "bss_bytes": 26892,
+  "data_bytes": 1084,
+  "elf": "da-ahe-node.elf",
+  "flash_bytes": 91188,
+  "linked_heap_reservation_bytes": 512,
+  "linked_stack_reservation_bytes": 8192,
+  "method": "GNU size convention: flash=text+data; static SRAM=data+bss; runtime peak requires the board stack-watermark log",
+  "sections": {
+    ".ARM.attributes": 48,
+    ".ARM.exidx": 8,
+    ".bss": 26892,
+    ".comment": 57,
+    ".data": 1084,
+    ".debug_abbrev": 80046,
+    ".debug_aranges": 9800,
+    ".debug_frame": 26196,
+    ".debug_info": 351827,
+    ".debug_line": 226039,
+    ".debug_line_str": 215,
+    ".debug_loclists": 125433,
+    ".debug_rnglists": 17297,
+    ".debug_str": 68752,
+    ".heap": 512,
+    ".stack_dummy": 8192,
+    ".text": 90096
+  },
+  "static_sram_bytes": 27976
+}

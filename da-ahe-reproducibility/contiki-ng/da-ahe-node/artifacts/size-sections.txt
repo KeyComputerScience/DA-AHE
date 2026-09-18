@@ -1,0 +1,22 @@
+artifacts/da-ahe-node.elf  :
+section              size        addr
+.text               90096           0
+.ARM.exidx              8       90096
+.data                1084   536870912
+.bss                26892   536872000
+.heap                 512   536898896
+.stack_dummy         8192   536898896
+.ARM.attributes        48           0
+.comment               57           0
+.debug_info        351827           0
+.debug_abbrev       80046           0
+.debug_aranges       9800           0
+.debug_line        226039           0
+.debug_str          68752           0
+.debug_loclists    125433           0
+.debug_rnglists     17297           0
+.debug_frame        26196           0
+.debug_line_str       215           0
+Total             1032494
+
+

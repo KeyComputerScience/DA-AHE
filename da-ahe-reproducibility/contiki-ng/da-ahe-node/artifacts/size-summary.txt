@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+  90104	   1084	  26892	 118080	  1cd40	artifacts/da-ahe-node.elf
