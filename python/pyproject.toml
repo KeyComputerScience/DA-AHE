@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "da-ahe-reference"
+version = "0.1.0"
+description = "Runnable research reference for stream-verifiable DA-AHE"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.0",
+  "pqcrypto==0.4.0",
+]
+
+[project.scripts]
+da-ahe-demo = "da_ahe.demo:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["da_ahe*"]
