@@ -1,0 +1,345 @@
+# SPDX-License-Identifier: MIT
+"""Offline trace calibration; no generated fit is promoted to a certificate.
+
+CSV schema (one causal state/action/outcome transition per row)::
+
+    seed,time_s,action_id,regime,next_regime,
+    z_delay,z_loss,z_noise,next_z_delay,next_z_loss,next_z_noise,
+    queue,loss,delay,ber,anomaly,tamper,noise_utilization,
+    energy_j,latency_s,distortion
+
+``regime`` and ``next_regime`` are offline labels in 0..4. They never enter
+the online replay interface. Outcome costs refer to the action in this row.
+All quantities use SI units; loss/BER are fractions. The authenticated tamper
+indicator is binary. Training, holdout calibration and evaluation seeds must be
+mutually disjoint; observations of the same seed cannot straddle these sets.
+
+This implements diagonal emission fitting, admissible Dirichlet-smoothed
+transition counts with nominal backoff, ridge=.001 state/action predictions,
+ridge=.001 cost models, and empirical heldout state/transition radii. Finite
+sample maxima are explicitly empirical: they do not prove Eq. (15) uniformly,
+domain invariance, a 2^-128 decoding bound, or physical resource guarantees.
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+import csv
+import math
+from pathlib import Path
+from typing import Any, Iterable, Mapping, Sequence
+
+from .control import (ControlModel, ControllerParams, EmissionModel, MetricModel,
+                      fallback_bound)
+from .safety import Action, canonical_digest
+
+CSV_COLUMNS = (
+    "seed", "time_s", "action_id", "regime", "next_regime", "z_delay", "z_loss", "z_noise",
+    "next_z_delay", "next_z_loss", "next_z_noise", "queue", "loss", "delay", "ber", "anomaly",
+    "tamper", "noise_utilization", "energy_j", "latency_s", "distortion",
+)
+
+
+@dataclass(frozen=True)
+class TraceRow:
+    seed: str
+    time_s: float
+    action_id: str
+    regime: int
+    next_regime: int
+    state: tuple[float, float, float]
+    next_state: tuple[float, float, float]
+    telemetry: tuple[float, ...]
+    metrics: tuple[float, float, float, float]
+
+
+def read_trace(path: str | Path) -> list[TraceRow]:
+    rows = []
+    previous: dict[str, float] = {}
+    with Path(path).open(newline="", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle)
+        missing = set(CSV_COLUMNS) - set(reader.fieldnames or ())
+        if missing:
+            raise ValueError("calibration CSV missing columns: " + ", ".join(sorted(missing)))
+        for line, record in enumerate(reader, 2):
+            try:
+                seed, action = record["seed"], record["action_id"]
+                time = float(record["time_s"])
+                regime, next_regime = int(record["regime"]), int(record["next_regime"])
+                state = tuple(float(record[k]) for k in ("z_delay", "z_loss", "z_noise"))
+                next_state = tuple(float(record[k]) for k in
+                                   ("next_z_delay", "next_z_loss", "next_z_noise"))
+                telemetry = tuple(float(record[k]) for k in
+                                  ("queue", "loss", "delay", "ber", "anomaly", "tamper", "noise_utilization"))
+                metrics = tuple(float(record[k]) for k in
+                                ("energy_j", "latency_s", "distortion", "noise_utilization"))
+                numeric = (time,) + state + next_state + telemetry + metrics
+                if not seed or not action or any(not math.isfinite(v) or v < 0 for v in numeric):
+                    raise ValueError("empty identity or nonfinite/negative numeric field")
+                if not 0 <= regime < 5 or not 0 <= next_regime < 5:
+                    raise ValueError("offline regime labels must be integers in 0..4")
+                if telemetry[5] not in (0.0, 1.0):
+                    raise ValueError("tamper must be binary")
+                if any(telemetry[k] > 1 for k in (0, 1, 3)):
+                    raise ValueError("queue utilization, loss, and BER must be fractions")
+                if seed in previous and time <= previous[seed]:
+                    raise ValueError("time must strictly increase within each seed")
+                previous[seed] = time
+                rows.append(TraceRow(seed, time, action, regime, next_regime, state,
+                                     next_state, telemetry, metrics))
+            except (ValueError, TypeError, KeyError) as exc:
+                raise ValueError(f"{path}:{line}: {exc}") from exc
+    if not rows:
+        raise ValueError("calibration CSV has no data rows")
+    return rows
+
+
+def validate_seed_split(training: Iterable[str], holdout: Iterable[str],
+                        evaluation: Iterable[str]) -> dict[str, list[str]]:
+    sets = [set(str(seed) for seed in group) for group in (training, holdout, evaluation)]
+    if any(not values for values in sets):
+        raise ValueError("training, holdout, and evaluation seed manifests must be nonempty")
+    if any(sets[i] & sets[j] for i in range(3) for j in range(i + 1, 3)):
+        raise ValueError("training, holdout, and evaluation seeds overlap")
+    return dict(zip(("training", "holdout", "evaluation"), (sorted(v) for v in sets)))
+
+
+def ridge_fit(features: Sequence[Sequence[float]], targets: Sequence[float],
+              regularization: float = 0.001) -> tuple[float, ...]:
+    """Solve (X'X + lambda I)w=X'y with deterministic partial pivoting.
+
+    Small offline models use only the standard library. The intercept is also
+    regularized; this convention is recorded in calibration metadata.
+    """
+    if not features or len(features) != len(targets) or regularization <= 0:
+        raise ValueError("ridge fit needs paired nonempty rows and positive regularization")
+    width = len(features[0])
+    if not width or any(len(row) != width for row in features):
+        raise ValueError("ridge features must form a nonempty rectangular matrix")
+    if any(not math.isfinite(float(v)) for row in features for v in row) or any(
+            not math.isfinite(float(v)) for v in targets):
+        raise ValueError("ridge data must be finite")
+    matrix = [[sum(float(row[i]) * float(row[j]) for row in features) +
+               (regularization if i == j else 0.0) for j in range(width)] +
+              [sum(float(row[i]) * float(y) for row, y in zip(features, targets))]
+              for i in range(width)]
+    for column in range(width):
+        pivot = max(range(column, width), key=lambda row: abs(matrix[row][column]))
+        matrix[column], matrix[pivot] = matrix[pivot], matrix[column]
+        divisor = matrix[column][column]
+        if divisor == 0 or not math.isfinite(divisor):
+            raise ValueError("singular/nonfinite ridge normal equations")
+        matrix[column] = [v / divisor for v in matrix[column]]
+        for row in range(width):
+            if row == column:
+                continue
+            multiplier = matrix[row][column]
+            matrix[row] = [value - multiplier * pivot_value
+                           for value, pivot_value in zip(matrix[row], matrix[column])]
+    return tuple(matrix[i][-1] for i in range(width))
+
+
+def _metric_fit(rows: Sequence[TraceRow], regularization: float) -> MetricModel:
+    x = [(1.0,) + row.state for row in rows]
+    weights = [ridge_fit(x, [row.metrics[h] for row in rows], regularization) for h in range(4)]
+    return MetricModel(*weights)
+
+
+def _transitions(rows: Sequence[TraceRow], action_ids: Sequence[str],
+                 nominal: Mapping[str, Sequence[Sequence[float]]], *,
+                 dirichlet_strength: float, sparse_threshold: int
+                 ) -> tuple[dict[str, tuple[tuple[float, ...], ...]], dict[str, list[int]]]:
+    result, sample_counts = {}, {}
+    for action in action_ids:
+        ControlModel._check_matrix(nominal[action])
+        count = [[0] * 5 for _ in range(5)]
+        for row in rows:
+            if row.action_id == action:
+                if nominal[action][row.regime][row.next_regime] == 0:
+                    raise ValueError("trace includes a transition declared inadmissible by the nominal mask")
+                count[row.regime][row.next_regime] += 1
+        fitted = []
+        for i in range(5):
+            total = sum(count[i])
+            reference = nominal[action][i]
+            if total < sparse_threshold:
+                fitted.append(tuple(reference))
+            else:
+                fitted.append(tuple((count[i][j] + dirichlet_strength * reference[j]) /
+                                    (total + dirichlet_strength) if reference[j] > 0 else 0.0
+                                    for j in range(5)))
+        result[action] = tuple(fitted)
+        sample_counts[action] = [sum(row) for row in count]
+    return result, sample_counts
+
+
+def calibrate(training: Sequence[TraceRow], holdout: Sequence[TraceRow],
+              actions: Sequence[Action], *, evaluation_seeds: Sequence[str],
+              nominal_transitions: Mapping[str, Sequence[Sequence[float]]],
+              kappa_z: float = 0.8, regularization: float = 0.001,
+              dirichlet_strength: float = 5.0, sparse_threshold: int = 5,
+              variance_floor: float = 1e-8,
+              zcert_max: Sequence[float] = (1.0, 1.0, 1.0)) -> ControlModel:
+    """Return a frozen ``bound_kind='empirical'`` model with complete provenance.
+
+    Calibration needs >=1 heldout outcome for every (action,next-regime) pair;
+    otherwise it refuses to invent an error radius. Missing heldout transition
+    source rows receive radius=2, the exact diameter of the probability simplex.
+    Sparse state-specific cost fits back off to the pooled action regression.
+    """
+    if not training or not holdout:
+        raise ValueError("separate training and holdout traces are required")
+    seed_manifest = validate_seed_split({r.seed for r in training},
+                                        {r.seed for r in holdout}, evaluation_seeds)
+    action_ids = sorted(a.id for a in actions)
+    if len(set(action_ids)) != len(actions) or set(nominal_transitions) != set(action_ids):
+        raise ValueError("unique actions and nominal transition tables must match")
+    for matrix in nominal_transitions.values():
+        ControlModel._check_matrix(matrix)
+    if any(row.action_id not in action_ids for row in (*training, *holdout)):
+        raise ValueError("trace references an action outside the immutable library")
+    for row in holdout:
+        if nominal_transitions[row.action_id][row.regime][row.next_regime] == 0:
+            raise ValueError("holdout includes a transition declared inadmissible by the nominal mask")
+    if not math.isfinite(kappa_z) or kappa_z < 0 or regularization <= 0 or dirichlet_strength <= 0:
+        raise ValueError("invalid calibration hyperparameter")
+    if type(sparse_threshold) is not int or sparse_threshold <= 0 or variance_floor <= 0:
+        raise ValueError("sparse threshold and variance floor must be positive")
+    cube = tuple(float(v) for v in zcert_max)
+    if len(cube) != 3 or any(not math.isfinite(v) or v < 0 for v in cube):
+        raise ValueError("zcert_max must contain three finite nonnegative values")
+    if any(any(v > limit for v, limit in zip(row.state, cube)) for row in (*training, *holdout)):
+        raise ValueError("calibration state exceeds its declared model region")
+
+    means, variances, tamper_probabilities = [], [], []
+    continuous_indices = (0, 1, 2, 3, 4, 6)
+    for regime in range(5):
+        subset = [row for row in training if row.regime == regime]
+        if not subset:
+            raise ValueError(f"training has no emission observations for regime {regime}")
+        mean = tuple(sum(row.telemetry[h] for row in subset) / len(subset)
+                     for h in continuous_indices)
+        variance = tuple(max(variance_floor,
+                             sum((row.telemetry[h] - mean[k]) ** 2 for row in subset) / len(subset))
+                         for k, h in enumerate(continuous_indices))
+        means.append(mean)
+        variances.append(variance)
+        tamper_probabilities.append((sum(row.telemetry[5] for row in subset) + 0.5) /
+                                    (len(subset) + 1.0))
+
+    transitions, row_counts = _transitions(training, action_ids, nominal_transitions,
+                                           dirichlet_strength=dirichlet_strength,
+                                           sparse_threshold=sparse_threshold)
+    # Joint regime/action ridge fit resolves the additive u_j-r(a) gauge with
+    # explicit L2 regularization. The ReLU is applied when computing residuals.
+    features = []
+    for row in training:
+        features.append(tuple(float(j == row.next_regime) for j in range(5)) +
+                        tuple(float(action == row.action_id) for action in action_ids))
+    dimension_fits = [ridge_fit(features,
+                                [row.next_state[h] - kappa_z * row.state[h] for row in training],
+                                regularization) for h in range(3)]
+    offsets = tuple(tuple(dimension_fits[h][j] for h in range(3)) for j in range(5))
+    relief = {action: tuple(-dimension_fits[h][5 + index] for h in range(3))
+              for index, action in enumerate(action_ids)}
+
+    radii, transition_radii, radius_counts, pooled, state_metrics = {}, {}, {}, {}, {}
+    for action in action_ids:
+        errors, counts = [], []
+        for regime in range(5):
+            subset = [row for row in holdout if row.action_id == action and row.next_regime == regime]
+            if not subset:
+                raise ValueError(f"holdout missing action={action}, next_regime={regime}; no radius can be inferred")
+            residuals = []
+            for row in subset:
+                prediction = tuple(max(kappa_z * row.state[h] + offsets[regime][h] - relief[action][h], 0.0)
+                                   for h in range(3))
+                residuals.append(math.sqrt(sum((x - y) ** 2 for x, y in zip(row.next_state, prediction))))
+            errors.append(max(residuals))
+            counts.append(len(subset))
+        radii[action], radius_counts[action] = tuple(errors), counts
+        source_radii = []
+        for regime in range(5):
+            subset = [row for row in holdout if row.action_id == action and row.regime == regime]
+            if not subset:
+                source_radii.append(2.0)
+            else:
+                frequencies = [sum(row.next_regime == j for row in subset) / len(subset) for j in range(5)]
+                source_radii.append(sum(abs(x - y) for x, y in zip(frequencies, transitions[action][regime])))
+        transition_radii[action] = min(2.0, max(source_radii))
+        subset = [row for row in training if row.action_id == action]
+        if not subset:
+            raise ValueError(f"training has no rows for action {action}")
+        pooled[action] = _metric_fit(subset, regularization)
+        state_metrics[action] = tuple(_metric_fit(specific, regularization) if len(specific) >= 4 else pooled[action]
+                                      for specific in ([r for r in subset if r.next_regime == j] for j in range(5)))
+
+    metadata: dict[str, Any] = {
+        "seed_manifest": seed_manifest,
+        "action_digests": {a.id: a.digest() for a in actions},
+        "training_rows": len(training), "holdout_rows": len(holdout),
+        "training_digest": canonical_digest([row.__dict__ for row in training]),
+        "holdout_digest": canonical_digest([row.__dict__ for row in holdout]),
+        "ridge_regularization": regularization,
+        "ridge_intercept_regularized": True,
+        "state_fit": "joint regime/action ridge followed by ReLU",
+        "state_cost_conditioning": "next_regime, weighted by causal predicted next-regime probabilities",
+        "radius_method": "heldout empirical maximum; not a population or uniform bound",
+        "transition_radius_method": "max heldout source-row L1 deviation; absent row -> 2",
+        "transition_row_training_counts": row_counts,
+        "state_radius_holdout_counts": radius_counts,
+        "dirichlet_strength": dirichlet_strength,
+        "sparse_threshold": sparse_threshold,
+        "variance_floor": variance_floor,
+        "labels_available_online": False,
+        "runtime_adaptation_default": False,
+        "runtime_adaptation_requires_revalidated_radii": True,
+    }
+    return ControlModel(transitions, offsets, relief, radii, transition_radii, pooled,
+                        state_metrics, EmissionModel(tuple(means), tuple(variances),
+                                                     tuple(tamper_probabilities)),
+                        kappa_z, cube, bound_kind="empirical", metadata=metadata)
+
+
+def fallback_report(model: ControlModel, action_id: str,
+                    params: ControllerParams | None = None) -> dict[str, Any]:
+    """Export a reviewable analytic inequality without overstating calibration."""
+    parameters = params or ControllerParams()
+    bound = fallback_bound(model, action_id, parameters)
+    return {
+        "model_digest": model.digest(),
+        "fallback_action_id": action_id,
+        "zcert_max": model.zcert_max,
+        "gamma": parameters.gamma, "beta": parameters.beta,
+        "p_diagonal": parameters.p_diagonal,
+        "analytic_upper_bound": bound,
+        "inequality_passes_for_supplied_model": bound <= parameters.beta,
+        "uniform_uncertainty_bounds_proven": False,
+        "model_bound_kind": model.bound_kind,
+        "external_bound_artifacts_supplied": sorted(model.bound_evidence),
+        "certified": False,
+        "method": "piecewise quadratic coordinate supremum plus interval norm bound",
+        "limitation": "This report alone is not a uniform calibration, invariant-domain, resource, or cryptographic certificate.",
+    }
+
+
+def pareto_prune(objectives: Mapping[str, Sequence[float]]) -> tuple[str, ...]:
+    """Retain nondominated complete tuples for one common operating regime.
+
+    Every objective is minimized. Equal tuples are both retained. Call this on
+    like-for-like regime/traffic evaluations; never compare unlike scenarios.
+    """
+    if not objectives:
+        return ()
+    width = len(next(iter(objectives.values())))
+    if not width or any(len(v) != width or any(not math.isfinite(float(x)) for x in v)
+                        for v in objectives.values()):
+        raise ValueError("Pareto objectives must have matching finite nonempty vectors")
+    retained = []
+    for candidate, values in sorted(objectives.items()):
+        dominated = any(all(x <= y for x, y in zip(other, values)) and
+                        any(x < y for x, y in zip(other, values))
+                        for action, other in objectives.items() if action != candidate)
+        if not dominated:
+            retained.append(candidate)
+    return tuple(retained)
