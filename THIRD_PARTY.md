@@ -24,6 +24,5 @@ The precise native loader/version must be verified in the execution environment.
 OMNeT++ licensing and any third-party data rights are not transferred by this
 artifact. Do not redistribute the supplied manuscript, original datasets or
 upstream firmware under this package's MIT license without the corresponding
-rights. This is provenance documentation, not an ownership attestation for absent
-author materials.
+rights. 
 
