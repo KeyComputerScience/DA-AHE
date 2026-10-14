@@ -1,0 +1,632 @@
+{
+  "actions": [
+    {
+      "batch_size": 16,
+      "block_bytes": 64,
+      "delta_q": 8,
+      "id": "nominal",
+      "profile_id": "synthetic-nominal",
+      "repair": 0.0,
+      "rho": 1.0
+    },
+    {
+      "batch_size": 14,
+      "block_bytes": 32,
+      "delta_q": 12,
+      "id": "repair",
+      "profile_id": "synthetic-repair",
+      "repair": 1.0,
+      "rho": 0.75
+    },
+    {
+      "batch_size": 1,
+      "block_bytes": 64,
+      "delta_q": 16,
+      "id": "fallback",
+      "profile_id": "synthetic-fallback",
+      "repair": 0.0,
+      "rho": 0.5
+    }
+  ],
+  "certificates": {
+    "fallback": {
+      "action_digest": "8e950347a8caa1110523f97da240e4eb298ed710e8efa9119e327a437e59d650",
+      "airtime_s": 0.5,
+      "context_digest": "83fddb211dd49848d6cedc019618bf918341b0453490201ca7627db001e3b31f",
+      "evidence": {},
+      "kind": "synthetic",
+      "lambda_est_bits": 128.1,
+      "log2_epsilon_dec": -128.0,
+      "max_batch_size": 1,
+      "noise_bound": 50,
+      "plaintext_modulus": 65537,
+      "profile_digest": "106a8a88b048cbbbfd192811293cc8ca95f5424ae84d043ab2d2c699c23f1916",
+      "single_node_plain_bound": 1000,
+      "tau_dec": 1000.0,
+      "workspace_bytes": 9000,
+      "zeta": 10.0
+    },
+    "nominal": {
+      "action_digest": "6b4b1bf0b43de8c47f097e7157f6f80c60789df3617c54b17e2cd1bddbc71c31",
+      "airtime_s": 0.5,
+      "context_digest": "83fddb211dd49848d6cedc019618bf918341b0453490201ca7627db001e3b31f",
+      "evidence": {},
+      "kind": "synthetic",
+      "lambda_est_bits": 128.1,
+      "log2_epsilon_dec": -128.0,
+      "max_batch_size": 16,
+      "noise_bound": 500,
+      "plaintext_modulus": 65537,
+      "profile_digest": "960089f9c32d371d08d46290b206a54e6a37a957afaedd2c240049ae1ae6ac73",
+      "single_node_plain_bound": 1000,
+      "tau_dec": 1000.0,
+      "workspace_bytes": 9000,
+      "zeta": 10.0
+    },
+    "repair": {
+      "action_digest": "84f6c03b31d2bee0a03e06b19fe24b1dab18b61898a7a2fcadf8bc6f5fcac598",
+      "airtime_s": 0.5,
+      "context_digest": "83fddb211dd49848d6cedc019618bf918341b0453490201ca7627db001e3b31f",
+      "evidence": {},
+      "kind": "synthetic",
+      "lambda_est_bits": 128.1,
+      "log2_epsilon_dec": -128.0,
+      "max_batch_size": 14,
+      "noise_bound": 400,
+      "plaintext_modulus": 65537,
+      "profile_digest": "8de69d20274d23730531da7d4f2f237aaa3cd1a02ffcf93de8193f2943c53057",
+      "single_node_plain_bound": 1000,
+      "tau_dec": 1000.0,
+      "workspace_bytes": 9000,
+      "zeta": 10.0
+    }
+  },
+  "context": {
+    "airtime_budget_s": 1.0,
+    "description": "Artificial controller API fixture. No physical, cryptographic, network, security-estimator, or manuscript-results evidence.",
+    "status": "synthetic_unvalidated",
+    "workspace_budget_bytes": 10240
+  },
+  "dpp_violation_models": {
+    "fallback": [
+      [
+        -0.2,
+        0.2,
+        0.1,
+        0
+      ],
+      [
+        -0.2,
+        0.1,
+        0.2,
+        0
+      ],
+      [
+        -0.5,
+        0,
+        0,
+        0.2
+      ]
+    ],
+    "nominal": [
+      [
+        -0.2,
+        0.2,
+        0.1,
+        0
+      ],
+      [
+        -0.2,
+        0.1,
+        0.2,
+        0
+      ],
+      [
+        -0.5,
+        0,
+        0,
+        0.2
+      ]
+    ],
+    "repair": [
+      [
+        -0.2,
+        0.2,
+        0.1,
+        0
+      ],
+      [
+        -0.2,
+        0.1,
+        0.2,
+        0
+      ],
+      [
+        -0.5,
+        0,
+        0,
+        0.2
+      ]
+    ]
+  },
+  "fallback_id": "fallback",
+  "hysteresis": {
+    "hold_intervals": 3,
+    "mode_actions": {
+      "M": "repair",
+      "N": "nominal",
+      "S": "fallback"
+    },
+    "theta_high": 0.6,
+    "theta_low": 0.35,
+    "theta_severe": 0.85
+  },
+  "loss_threshold": 0.002,
+  "model": {
+    "bound_evidence": {},
+    "bound_kind": "synthetic",
+    "emissions": {
+      "means": [
+        [
+          0.1,
+          0.0005,
+          0.2,
+          0.0001,
+          0.05,
+          0.05
+        ],
+        [
+          0.5,
+          0.0015,
+          0.5,
+          0.001,
+          0.15,
+          0.2
+        ],
+        [
+          0.35,
+          0.001,
+          0.4,
+          0.001,
+          0.1,
+          0.15
+        ],
+        [
+          0.6,
+          0.002,
+          0.6,
+          0.002,
+          0.2,
+          0.3
+        ],
+        [
+          0.8,
+          0.003,
+          0.8,
+          0.01,
+          0.4,
+          0.5
+        ]
+      ],
+      "tamper_probabilities": [
+        0.01,
+        0.02,
+        0.03,
+        0.04,
+        0.1
+      ],
+      "variances": [
+        [
+          0.02,
+          1e-06,
+          0.02,
+          1e-06,
+          0.02,
+          0.02
+        ],
+        [
+          0.02,
+          1e-06,
+          0.02,
+          1e-06,
+          0.02,
+          0.02
+        ],
+        [
+          0.02,
+          1e-06,
+          0.02,
+          1e-06,
+          0.02,
+          0.02
+        ],
+        [
+          0.02,
+          1e-06,
+          0.02,
+          1e-06,
+          0.02,
+          0.02
+        ],
+        [
+          0.02,
+          1e-06,
+          0.02,
+          1e-06,
+          0.02,
+          0.02
+        ]
+      ]
+    },
+    "error_radii": {
+      "fallback": [
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005
+      ],
+      "nominal": [
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005
+      ],
+      "repair": [
+        0.005,
+        0.005,
+        0.005,
+        0.005,
+        0.005
+      ]
+    },
+    "kappa_z": 0.3,
+    "metadata": {
+      "action_digests": {
+        "fallback": "8e950347a8caa1110523f97da240e4eb298ed710e8efa9119e327a437e59d650",
+        "nominal": "6b4b1bf0b43de8c47f097e7157f6f80c60789df3617c54b17e2cd1bddbc71c31",
+        "repair": "84f6c03b31d2bee0a03e06b19fe24b1dab18b61898a7a2fcadf8bc6f5fcac598"
+      },
+      "description": "Arbitrary fixture numbers, not fitted, measured, certified, or extracted from unpublished source artifacts.",
+      "status": "synthetic_unvalidated"
+    },
+    "offsets": [
+      [
+        0.005,
+        0.005,
+        0.005
+      ],
+      [
+        0.01,
+        0.01,
+        0.01
+      ],
+      [
+        0.015,
+        0.015,
+        0.015
+      ],
+      [
+        0.02,
+        0.02,
+        0.02
+      ],
+      [
+        0.025,
+        0.025,
+        0.025
+      ]
+    ],
+    "pooled_metrics": {
+      "fallback": {
+        "delay": [
+          0.35,
+          0.05,
+          0.05,
+          0.05
+        ],
+        "distortion": [
+          0.12,
+          0,
+          0,
+          0
+        ],
+        "energy": [
+          0.0008,
+          0.0001,
+          0.0001,
+          0.0001
+        ],
+        "noise_utilization": [
+          0.05,
+          0,
+          0,
+          0
+        ]
+      },
+      "nominal": {
+        "delay": [
+          0.45,
+          0.05,
+          0.05,
+          0.05
+        ],
+        "distortion": [
+          0.02,
+          0,
+          0,
+          0
+        ],
+        "energy": [
+          0.0014,
+          0.0001,
+          0.0001,
+          0.0001
+        ],
+        "noise_utilization": [
+          0.5,
+          0,
+          0,
+          0
+        ]
+      },
+      "repair": {
+        "delay": [
+          0.4,
+          0.05,
+          0.05,
+          0.05
+        ],
+        "distortion": [
+          0.05,
+          0,
+          0,
+          0
+        ],
+        "energy": [
+          0.0011,
+          0.0001,
+          0.0001,
+          0.0001
+        ],
+        "noise_utilization": [
+          0.4,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "relief": {
+      "fallback": [
+        0.03,
+        0.03,
+        0.03
+      ],
+      "nominal": [
+        0,
+        0,
+        0
+      ],
+      "repair": [
+        0.04,
+        0.04,
+        0.04
+      ]
+    },
+    "state_metrics": {},
+    "transition_radii": {
+      "fallback": 0.1,
+      "nominal": 0.1,
+      "repair": 0.1
+    },
+    "transitions": {
+      "fallback": [
+        [
+          0.7,
+          0.2,
+          0.05,
+          0.03,
+          0.02
+        ],
+        [
+          0.25,
+          0.4,
+          0.2,
+          0.1,
+          0.05
+        ],
+        [
+          0.45,
+          0.15,
+          0.3,
+          0.05,
+          0.05
+        ],
+        [
+          0.3,
+          0.15,
+          0.2,
+          0.3,
+          0.05
+        ],
+        [
+          0.15,
+          0.2,
+          0.2,
+          0.15,
+          0.3
+        ]
+      ],
+      "nominal": [
+        [
+          0.7,
+          0.2,
+          0.05,
+          0.03,
+          0.02
+        ],
+        [
+          0.25,
+          0.4,
+          0.2,
+          0.1,
+          0.05
+        ],
+        [
+          0.45,
+          0.15,
+          0.3,
+          0.05,
+          0.05
+        ],
+        [
+          0.3,
+          0.15,
+          0.2,
+          0.3,
+          0.05
+        ],
+        [
+          0.15,
+          0.2,
+          0.2,
+          0.15,
+          0.3
+        ]
+      ],
+      "repair": [
+        [
+          0.7,
+          0.2,
+          0.05,
+          0.03,
+          0.02
+        ],
+        [
+          0.25,
+          0.4,
+          0.2,
+          0.1,
+          0.05
+        ],
+        [
+          0.45,
+          0.15,
+          0.3,
+          0.05,
+          0.05
+        ],
+        [
+          0.3,
+          0.15,
+          0.2,
+          0.3,
+          0.05
+        ],
+        [
+          0.15,
+          0.2,
+          0.2,
+          0.15,
+          0.3
+        ]
+      ]
+    },
+    "transitions_by_bin": {},
+    "zcert_max": [
+      1,
+      1,
+      1
+    ]
+  },
+  "online_adaptation": false,
+  "parameters": {
+    "beta": 0.02,
+    "delay_threshold": 0.5,
+    "distortion_maximum": 1.0,
+    "energy_reference": 0.0014,
+    "gamma": 0.1,
+    "p_diagonal": [
+      1,
+      1,
+      1
+    ],
+    "switching_diagonal": [
+      1,
+      0.00390625,
+      0.00390625,
+      0.000244140625,
+      1,
+      1
+    ],
+    "weights": [
+      0.22,
+      0.28,
+      0.15,
+      0.25,
+      0.1
+    ]
+  },
+  "profiles": {
+    "synthetic-fallback": {
+      "L": 120,
+      "delta_q": 16,
+      "sigma_enc": 3.2,
+      "status": "synthetic_unvalidated"
+    },
+    "synthetic-nominal": {
+      "L": 240,
+      "delta_q": 8,
+      "sigma_enc": 3.2,
+      "status": "synthetic_unvalidated"
+    },
+    "synthetic-repair": {
+      "L": 180,
+      "delta_q": 12,
+      "sigma_enc": 3.4,
+      "status": "synthetic_unvalidated"
+    }
+  },
+  "runtime": {
+    "context_digest": "83fddb211dd49848d6cedc019618bf918341b0453490201ca7627db001e3b31f",
+    "evidence_root": null,
+    "max_airtime_s": 1.0,
+    "max_workspace_bytes": 10240,
+    "maximum_log2_epsilon_dec": -128.0,
+    "minimum_security_bits": 128.1,
+    "participant_count": 1,
+    "profile_digests": {
+      "synthetic-fallback": "106a8a88b048cbbbfd192811293cc8ca95f5424ae84d043ab2d2c699c23f1916",
+      "synthetic-nominal": "960089f9c32d371d08d46290b206a54e6a37a957afaedd2c240049ae1ae6ac73",
+      "synthetic-repair": "8de69d20274d23730531da7d4f2f237aaa3cd1a02ffcf93de8193f2943c53057"
+    },
+    "strict": true,
+    "zcert_max": [
+      1,
+      1,
+      1
+    ]
+  },
+  "schema_version": 1,
+  "status": "synthetic_unvalidated",
+  "stress_boundaries": [
+    0.2,
+    0.4,
+    0.6,
+    0.8
+  ],
+  "stress_smoothing": 0.8,
+  "stress_thresholds": [
+    1,
+    0.002,
+    0.5,
+    0.01,
+    1,
+    1,
+    1
+  ],
+  "v_dpp": 1.0,
+  "warning": "All certificate numbers and controller fits below are artificial API fixtures. They DO NOT validate security/correctness/resource bounds or reproduce manuscript results. Strict mode must refuse this file."
+}

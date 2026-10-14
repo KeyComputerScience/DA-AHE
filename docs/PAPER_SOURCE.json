@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "source_title": "DA-AHE: Safety-Constrained Markov Control for Quantum-Resilient Secure Aggregation in Cyber-Physical Systems",
+  "source_filename": "TSMC_DA.pdf",
+  "source_sha256": "bb2bd87cb138cfb302a03e6805dd3d286f6aef45b2c0c7dad93e5891ac38d552",
+  "page_count": 14,
+  "source_type": "user-supplied manuscript",
+  "author_metadata_available": false,
+  "doi_metadata_available": false,
+  "manuscript_redistributed": false,
+  "reconstruction_date_client_timezone": "2026-10-14 Asia/Shanghai",
+  "relationship": "independent reconstruction, not original author artifact",
+  "project_execution_performed": false,
+  "source_inspection": "PDF text extraction and visual inspection of appendix, manual source/interface review, source-text syntax parsing only",
+  "completion_choices": [
+    "wire encoding and key expansion domains",
+    "finite Gaussian CDT sampler",
+    "integer lifting/boundary/support rule",
+    "synthetic control model and example seeds"
+  ],
+  "missing_original_evidence": [
+    "original simulator and firmware",
+    "raw topology/traffic/signal/packet traces",
+    "certified action/profile and error/noise/resource bounds",
+    "original per-seed results and security estimation logs"
+  ]
+}
