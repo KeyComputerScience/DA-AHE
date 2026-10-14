@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Cite the manuscript separately; this package is an independent reconstruction."
+title: "DA-AHE independent research reference artifact"
+type: software
+authors:
+  - name: "DA-AHE artifact contributors"
+version: 0.1.0
+date-released: 2026-10-14
+license: MIT
+abstract: >-
+  Auditable implementation of DA-AHE mathematical data-plane operations and
+  control, with explicit evidence gates and no asserted reproduction of unpublished
+  firmware or simulation results. Manuscript author and DOI metadata were not
+  available and have not been invented.
+

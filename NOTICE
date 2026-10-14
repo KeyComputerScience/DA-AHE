@@ -1,0 +1,14 @@
+This is an independently reconstructed research reference based on the supplied
+manuscript "DA-AHE: Safety-Constrained Markov Control for Quantum-Resilient Secure
+Aggregation in Cyber-Physical Systems" (TSMC_DA.pdf). It is not the authors'
+original software, firmware, trace archive, or calibrated profile library.
+
+The MIT license applies only to original code and documentation in this package.
+It does not relicense the manuscript, datasets, OMNeT++, INET, Contiki-NG,
+liboqs/liboqs-python, SageMath, lattice-estimator, or their dependencies.
+No third-party source code, original manuscript, private datasets, or generated
+experimental results are bundled. Upstream projects retain their own licenses.
+
+No training, simulation, build, tests, security estimation, board profiling, or
+project execution was performed when preparing this delivery (user request).
+

@@ -1,0 +1,3 @@
+# Install a matching local liboqs native library before importing oqs.
+liboqs-python==0.16.0.1
+

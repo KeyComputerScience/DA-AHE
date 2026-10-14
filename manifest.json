@@ -1,0 +1,333 @@
+{
+  "algorithm": "SHA256",
+  "executed": false,
+  "files": [
+    {
+      "path": ".dockerignore",
+      "sha256": "f202abb093e3067ce324523fd750c9082048061dfc011739e52da1b478541d3f",
+      "size": 128
+    },
+    {
+      "path": ".github/workflows/reviewer.yml",
+      "sha256": "a52eab4c922f7e3349384fec4186417c196761236840111e66052377bafa2b52",
+      "size": 693
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "e70458068bd1422d56c940910404a974843fc089232c8b04358ae13e69f7e6a6",
+      "size": 134
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "5617dc90bd998fb8ef84937c51d0fb12cb4a9449c82c9a23db5de821c9122e13",
+      "size": 568
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "3231b76b1115770d3dacb1c5de8f29800411983225a2dbd51c2f714babc86f80",
+      "size": 576
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "07a1fa30becfc462baa82d68c4346a592f0fb62ddf4baabf9d2126a5cdcf9b7b",
+      "size": 1200
+    },
+    {
+      "path": "DELIVERY_STATUS.json",
+      "sha256": "86cdfb87a6f67423573c5e93e96fd5377d5ef0fb5f36f0d662196c3c61428d05",
+      "size": 2077
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "700d2da35b3972eb12e6321b80bf1ff4bb188980fe7ac78048d62988f0a71597",
+      "size": 899
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "22d1ec5600708816673d977299fb6e7f4b8f681ac8a19dcf2bf930c947bfa61e",
+      "size": 1086
+    },
+    {
+      "path": "Makefile",
+      "sha256": "93b83107de0173e53c358717226389f5b63f4b721d08116468ff096b4bc8ec77",
+      "size": 399
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "88dde2ef2294f71e740662e51c7be50aed6aa2293a616d7508303e930b694507",
+      "size": 864
+    },
+    {
+      "path": "README.md",
+      "sha256": "10e51105a83bd7de156895e706268573fe12bd065a956cf224501423b7c30069",
+      "size": 5314
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "55e45e2c066894530bd87d58604a1495d4c5b1ca37158240e200657f740a2e67",
+      "size": 1997
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "sha256": "d4544f2c3180caa98c6ed11224c0174c5ad6da53308801158aa03caf8123ce42",
+      "size": 2196
+    },
+    {
+      "path": "configs/control_synthetic.json",
+      "sha256": "ed1dcae6d9a5054faee5e1cfd449ec0e0f7030c438e466083dddd8f2baa0ce8b",
+      "size": 11617
+    },
+    {
+      "path": "docs/ADVANTAGES.md",
+      "sha256": "d66c0aea7d403d21f00382db3fc4902b77ca26009ba01b0db91be7ff44bba2e8",
+      "size": 2158
+    },
+    {
+      "path": "docs/CERTIFICATION.md",
+      "sha256": "051077afc2bee5915253d045898600feb5ea808ddf3d5d4f614bf3fb6d35f014",
+      "size": 3277
+    },
+    {
+      "path": "docs/CLAIM_TRACEABILITY.md",
+      "sha256": "768d85c959ee4ee4a6fe804d439534a02afb4ebbdbb268b4c9b5cde9c15dd222",
+      "size": 8951
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "sha256": "25402997bfd512d045ce6369dfee38887714b5c86f0007bf2b164f93517512a0",
+      "size": 4475
+    },
+    {
+      "path": "docs/IMPLEMENTATION_STATUS.md",
+      "sha256": "d1fb0b0a02fe558b066be6bb0e3910694694cf286453c2a62a3cabc28151eedd",
+      "size": 2565
+    },
+    {
+      "path": "docs/PAPER_SOURCE.json",
+      "sha256": "50b43bc4d665c8d3c902e29ab00accd510dded72941cc2d89d558cc478bfa7e6",
+      "size": 1243
+    },
+    {
+      "path": "docs/PARAMETERS_AND_GAPS.md",
+      "sha256": "6e091c649b24c2e4b6f20ce94ed148bf2f6b1ad6be9ee5c893d0472931a410c5",
+      "size": 4431
+    },
+    {
+      "path": "docs/REPRODUCIBILITY.md",
+      "sha256": "cbe16720692f1f92ca1da462552ab9072832451bbc7886c04a3bfa2b7a10d8ff",
+      "size": 6562
+    },
+    {
+      "path": "docs/REVIEWER_CHECKLIST.md",
+      "sha256": "5daea9b300b761d4d50b577881646d402bd0a05c675087e812dbcdd7ea8e3f34",
+      "size": 8565
+    },
+    {
+      "path": "embedded/CMakeLists.txt",
+      "sha256": "2656fdc453cbbfa934ce75388e9159dca1112f2307703e12861ec35455e6bdc9",
+      "size": 388
+    },
+    {
+      "path": "embedded/README.md",
+      "sha256": "fa321d13214cd8677d81df6752539fa323f6277bab4d8a5237f1838d1f18b5bb",
+      "size": 1410
+    },
+    {
+      "path": "embedded/daahe_core.c",
+      "sha256": "ff2ca6610e0f457838f823691e420f89f0ce5925cf641374a10e10e2984a82ee",
+      "size": 4602
+    },
+    {
+      "path": "embedded/daahe_core.h",
+      "sha256": "ae3c5c4eaca990c7dbd98434d2f0d0991d5602e78a8ac320e451eebe3e02c24f",
+      "size": 2276
+    },
+    {
+      "path": "examples/telemetry_synthetic.csv",
+      "sha256": "ff00ce54e33c9ea122918500ef2ebe389c9f3dba45f20f0783914c10bcd9166f",
+      "size": 289
+    },
+    {
+      "path": "experiments/METRICS_SCHEMA.md",
+      "sha256": "bbef81406869be66044b68fa87197f09be3078e1a1b60d736a56247cf340e8f8",
+      "size": 6328
+    },
+    {
+      "path": "experiments/configurations.csv",
+      "sha256": "fade4e62edbe686611e78dce7ee9ac9a21cd75dcba8d76761acc6690e2654e41",
+      "size": 1437
+    },
+    {
+      "path": "experiments/matrix.json",
+      "sha256": "3741900da4cf8b8bb2e78cd263b08ffc6d2ff573975f7ed963433119b68a604f",
+      "size": 3328
+    },
+    {
+      "path": "experiments/paper_targets.json",
+      "sha256": "a5bf33cccaedc488ec97dbbac0d52353bae75dd38bfaa9dd958cb244b5d7d2ed",
+      "size": 1756
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "1aa17ebd2af37fca32bc8758a6126df58d8075564fec876d16e5985bbe392294",
+      "size": 771
+    },
+    {
+      "path": "requirements-dev.txt",
+      "sha256": "1cc4d6bb1942d1b5d51abb070de599374ff1db20008cca7fc4e57759a19e61cd",
+      "size": 189
+    },
+    {
+      "path": "requirements-pq.txt",
+      "sha256": "0eb35c795138b558f34ffaadc768148cf3a938d921ec84269ede49c1f231381b",
+      "size": 96
+    },
+    {
+      "path": "src/daahe/__init__.py",
+      "sha256": "328c9cae5d7cd998b46341ae87e54fe1838e8ba610bd58b53cbbef8b723b8144",
+      "size": 149
+    },
+    {
+      "path": "src/daahe/__main__.py",
+      "sha256": "094e30c7ecfc0a0b56833322b9709d64d2ddcff228adb02d094443b262974c25",
+      "size": 111
+    },
+    {
+      "path": "src/daahe/ablations.py",
+      "sha256": "6c2ab1540d45a0fa9685f282726bbd2b402a1d108376f34272fc018c05021a0d",
+      "size": 2145
+    },
+    {
+      "path": "src/daahe/calibration.py",
+      "sha256": "6f0444f29b9d293278943e675891d42bc24935d43ff6c9a81edad857f8e6d79e",
+      "size": 18752
+    },
+    {
+      "path": "src/daahe/cli.py",
+      "sha256": "ab296ca4d6bbf6a286a0bb3558755a3b1630647f673e8a12b154126074c112bf",
+      "size": 10477
+    },
+    {
+      "path": "src/daahe/control.py",
+      "sha256": "2b4a24adb4c41d9a1132ccb03dfd9becae5eae6733cf38d698b20f2b29024f18",
+      "size": 37682
+    },
+    {
+      "path": "src/daahe/derivation.py",
+      "sha256": "fde965b72748cced31acfefb136e779d6ed5f948c6e7d809b60dfe936df9969c",
+      "size": 5473
+    },
+    {
+      "path": "src/daahe/evidence.py",
+      "sha256": "2cd4d0e73e4380a8ce33502d4125c8b2f3f39b0f91b83af8c0019fcd60320e19",
+      "size": 7722
+    },
+    {
+      "path": "src/daahe/integration.py",
+      "sha256": "60112c543a2a181f2ea4f27f3d4c9f83474076dff395690db630d0a69d304459",
+      "size": 3025
+    },
+    {
+      "path": "src/daahe/lightweight.py",
+      "sha256": "6a537f743593decb3725cb79d127f180c5d00d623d45ea71e092a59c359453e6",
+      "size": 2487
+    },
+    {
+      "path": "src/daahe/mlwe.py",
+      "sha256": "51c54349439ff6f79cbaa156dbb3dcf7d51f9dfe89d6662621804eddb646371d",
+      "size": 12773
+    },
+    {
+      "path": "src/daahe/profiles.py",
+      "sha256": "fce0657235136951f1812541e9258be3bb4ed82fc61d5624e663968661b8980a",
+      "size": 3978
+    },
+    {
+      "path": "src/daahe/protocol.py",
+      "sha256": "804e27038a3dac04cf4936124c18acc44c3d4c1ab079513bee151e6f125594e5",
+      "size": 14808
+    },
+    {
+      "path": "src/daahe/replay.py",
+      "sha256": "84c0228226b79251de53c6d4734d6c76eff63d2b45460fd4035455e572aeb5e3",
+      "size": 8954
+    },
+    {
+      "path": "src/daahe/ring.py",
+      "sha256": "507106338b99c8fbba36c5d60801225c367fcbc9896813afdee583a96a7b11db",
+      "size": 3009
+    },
+    {
+      "path": "src/daahe/safety.py",
+      "sha256": "ee7e5dde866c4fc733d2d5d5b906909fc2d8e07b493c45c2537e2b0b53450979",
+      "size": 13670
+    },
+    {
+      "path": "src/daahe/signal.py",
+      "sha256": "8b3f0402725e10dd6f5a5214128e9495b2968d2d37dafe41929ea3cf2d7160c4",
+      "size": 7150
+    },
+    {
+      "path": "src/daahe/signatures.py",
+      "sha256": "10c940f2d0c723e611956a78e853e18ebaa00d638f334aa238e4b3acf6411699",
+      "size": 9021
+    },
+    {
+      "path": "src/daahe/statistics.py",
+      "sha256": "3f042be1501dd2bb2b0e5a3a29545c0ebaf2a862ff29144898cf505294d4f3e4",
+      "size": 13564
+    },
+    {
+      "path": "tests/README.md",
+      "sha256": "9ec6c47fc2e09835fcd07fadfaf32c2bdd3565d60b8bcdd7bc797bb1342958be",
+      "size": 1880
+    },
+    {
+      "path": "tests/test_control.py",
+      "sha256": "e63579f84e71e255e67640ccbd1c75bd721c83d2604048b7f4790ad158f9ebb1",
+      "size": 4645
+    },
+    {
+      "path": "tests/test_crypto_protocol.py",
+      "sha256": "decf6c1355e7ab31b2dddad25f10b3c4cd5752e80911cf2d665ea4285fac5991",
+      "size": 9550
+    },
+    {
+      "path": "tests/test_evidence.py",
+      "sha256": "d74ac1a0173806f3f608cf92e3f6dfb080efb1226f2b8127e378d81e62ab867a",
+      "size": 2498
+    },
+    {
+      "path": "tests/test_signatures.py",
+      "sha256": "cf6d59b48f08efc6835a414ccb7a457adeb7cb919f4000768c83ebfb82490612",
+      "size": 4160
+    },
+    {
+      "path": "tests/test_statistics.py",
+      "sha256": "ecec8684cf2929de44c40c7730bb45e39d897b2cb7f0e0d0e4395c2e9c6b807b",
+      "size": 3968
+    },
+    {
+      "path": "tools/capture_environment.py",
+      "sha256": "fa86b046041bed1d05088b6577c40f5beb031441f571c0273897ca371fe0097a",
+      "size": 1487
+    },
+    {
+      "path": "tools/estimate_security.sage",
+      "sha256": "a37e4d0d36deda364f3345d9b311e4d8ece25952da79eb4ff83cdaf1caf76aff",
+      "size": 7971
+    },
+    {
+      "path": "tools/import_omnet.py",
+      "sha256": "ab32a2e8dd11d400ccc74d0c880798f88ade8cdd29d737f51ffb41c7c615d032",
+      "size": 7763
+    },
+    {
+      "path": "tools/plot_results.py",
+      "sha256": "83e8b95e5751b73dddc2e56df13a1d91f52fec129132a6fe3d1d526b73bc30fb",
+      "size": 2480
+    }
+  ],
+  "schema_version": 1,
+  "scope": "source bytes; excludes manifest and transient/private/generated files"
+}

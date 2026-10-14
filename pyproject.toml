@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools==75.8.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "daahe-repro"
+version = "0.1.0"
+description = "Auditable DA-AHE research reference and evidence workflow"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = {file = "LICENSE"}
+authors = [{name = "DA-AHE artifact contributors"}]
+dependencies = ["numpy==2.2.4"]
+
+[project.optional-dependencies]
+pq = ["liboqs-python==0.16.0.1"]
+dev = ["pytest==8.3.5", "ruff==0.11.0"]
+
+[project.scripts]
+daahe = "daahe.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["pq: requires explicitly installed liboqs and ML-DSA-44"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+

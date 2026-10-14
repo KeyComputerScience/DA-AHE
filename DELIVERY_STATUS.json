@@ -1,0 +1,65 @@
+{
+  "delivery_date": "2026-10-14",
+  "execution": {
+    "hardware_profiling": false,
+    "native_build": false,
+    "paper_numerical_reproduction": false,
+    "project_modules_imported": false,
+    "security_estimator": false,
+    "simulation": false,
+    "training_or_calibration": false,
+    "unit_tests": false
+  },
+  "limitations": [
+    "Static parsing and interface inspection do not establish runtime correctness.",
+    "Original author simulation, firmware, traces and certificates remain unavailable."
+  ],
+  "manual_review": [
+    "cryptographic and protocol interfaces",
+    "original-versus-reference parameter distinctions",
+    "immutable action/profile bindings",
+    "fail-closed certification and replay interfaces",
+    "paired statistics and evidence contracts"
+  ],
+  "schema_version": 1,
+  "source_files_parsed": [
+    "src/daahe/__init__.py",
+    "src/daahe/__main__.py",
+    "src/daahe/ablations.py",
+    "src/daahe/calibration.py",
+    "src/daahe/cli.py",
+    "src/daahe/control.py",
+    "src/daahe/derivation.py",
+    "src/daahe/evidence.py",
+    "src/daahe/integration.py",
+    "src/daahe/lightweight.py",
+    "src/daahe/mlwe.py",
+    "src/daahe/profiles.py",
+    "src/daahe/protocol.py",
+    "src/daahe/replay.py",
+    "src/daahe/ring.py",
+    "src/daahe/safety.py",
+    "src/daahe/signal.py",
+    "src/daahe/signatures.py",
+    "src/daahe/statistics.py",
+    "tests/test_control.py",
+    "tests/test_crypto_protocol.py",
+    "tests/test_evidence.py",
+    "tests/test_signatures.py",
+    "tests/test_statistics.py",
+    "tools/capture_environment.py",
+    "tools/estimate_security.sage",
+    "tools/import_omnet.py",
+    "tools/plot_results.py"
+  ],
+  "static_text_inspection": {
+    "json_files_parsed_before_status_creation": 4,
+    "missing_local_module_import_targets": [],
+    "python_for_text_inspection": "3.12.14",
+    "python_sage_sources_parsed": 28,
+    "syntax_errors": 0,
+    "test_function_definitions_authored": 39,
+    "tool": "stdlib ast/json/tomllib; no evaluation of project code"
+  },
+  "status": "source_prepared_not_executed"
+}
