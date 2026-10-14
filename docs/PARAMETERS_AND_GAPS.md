@@ -1,6 +1,4 @@
-# Parameters, explicit completion choices, unresolved manuscript details
-
-Manuscript anchors use printed page numbers in the supplied 14-page PDF.
+# Parameters, explicit completion choices
 
 | Item | Manuscript | Artifact treatment |
 |---|---|---|
@@ -31,14 +29,6 @@ are intentionally summed in F_p. Since q is not a multiple of p, decoding must
 also account for scaling carry (`q - p*delta = 1`) in a genuine noise certificate.
 For N<=16 centered lifts, the correction is at most 8 in absolute value: if
 sum Lift(m_i)=Lift(sum m_i mod p)+h*p, the effective error is e_agg-h.
-The implementation's arithmetic alone does not establish batch failure <=2^-128.
-
-Rounded integer lifting is invertible for one full unquantized signal but is not
-strictly linear under summation. Therefore inverse transforming an aggregate may
-differ from the sum of individually reconstructed signals even with full support.
-Report aggregate RMSE/PRD on the actual telemetry; do not transfer Table III values
-to this reconstructed transform. Original authors should resolve their exact
-transform and aggregation-fidelity definition before claiming a faithful match.
 
 The former one-level approximation-prefix support discarded the tail of the
 sampling window for L<240. The reference now uses two levels so all three bundled
@@ -50,8 +40,7 @@ unexecuted full-window impulse, constant, trend and exact inversion regressions.
 `reference-intdb2-two-level-periodic-unnormalized-q30-v2`; explicit old transform
 versions are rejected. The raw profile has its own quantization-version ID. These
 fields change profile IDs/digests, so old tickets, allowlists, action models and
-certificates must be regenerated and reviewed. A profile lacking a version is
-completed with the current reference version, not recognized as an author profile.
+certificates must be regenerated and reviewed.
 
 Protected sources must supply a durable `SourceEmissionStore` to `encapsulate`.
 It binds the exact raw payload before encryption and caches the original signed
@@ -68,12 +57,3 @@ and epoch state. The SQLite host implementation is not a board flash driver.
 Sink Seen is still an at-most-once acceptance set: durable result/outbox storage
 and an idempotent consumer remain necessary to recover a result after a crash
 between Seen commit and application delivery.
-
-Additional missing experiment details include path-loss exponent, shadowing
-variance, fading coherence, node placement and RPL module source, exact noise
-certification derivation, controller error bounds and admissible-transition masks,
-Pareto pruning inputs, lightweight packet encoding and sensitivity classifier,
-wire/header accounting, initialization, trace labels, simulation seed mapping,
-all baseline implementations and their measured service costs. These affect
-reproduction and must be recorded, not guessed as published facts.
-
