@@ -26,11 +26,11 @@ class MetricRow:
     method: str
     nodes: int
     seed: int
-    latency_ms: float
+    latency_ms: float | None
     residual_plr: float
     recovery_s: float | None
     recovery_censored: bool
-    hve_coverage: float
+    hve_coverage: float | None
     warmup_s: float
     duration_s: float
     disturbance_s: float
@@ -59,9 +59,9 @@ def load_metrics_csv(path: str | Path) -> list[MetricRow]:
                     raise ValueError("recovery_censored must be true or false")
                 rows.append(MetricRow(
                     run_id=raw["run_id"], method=raw["method"], nodes=int(raw["nodes"]), seed=int(raw["seed"]),
-                    latency_ms=float(raw["latency_ms"]), residual_plr=float(raw["residual_plr"]),
+                    latency_ms=None if raw["latency_ms"] == "" else float(raw["latency_ms"]), residual_plr=float(raw["residual_plr"]),
                     recovery_s=None if raw["recovery_s"] == "" else float(raw["recovery_s"]),
-                    recovery_censored=raw["recovery_censored"] == "true", hve_coverage=float(raw["hve_coverage"]),
+                    recovery_censored=raw["recovery_censored"] == "true", hve_coverage=None if raw["hve_coverage"] == "" else float(raw["hve_coverage"]),
                     warmup_s=float(raw["warmup_s"]), duration_s=float(raw["duration_s"]),
                     disturbance_s=float(raw["disturbance_s"]),
                     measured_window_start_s=float(raw["measured_window_start_s"]),
@@ -92,12 +92,20 @@ def validate_rows(rows: Sequence[MetricRow], *, require_paper_protocol: bool = T
         run_ids.add(row.run_id)
         if row.method not in METHODS or row.nodes <= 0 or isinstance(row.seed, bool) or row.seed < 0:
             raise ValueError(f"invalid method/nodes/seed: {key}")
-        numeric = (row.latency_ms, row.residual_plr, row.hve_coverage, row.warmup_s, row.duration_s,
+        numeric = (row.residual_plr, row.warmup_s, row.duration_s,
                    row.disturbance_s, row.measured_window_start_s, row.measured_window_end_s)
+        numeric += tuple(v for v in (row.latency_ms, row.hve_coverage) if v is not None)
         if any(not isinstance(value, (int, float)) or not math.isfinite(value) for value in numeric):
             raise ValueError(f"nonfinite metric in {key}")
-        if row.latency_ms < 0 or not 0 <= row.residual_plr <= 1 or not 0 <= row.hve_coverage <= 1:
+        if ((row.latency_ms is not None and row.latency_ms < 0)
+                or not 0 <= row.residual_plr <= 1
+                or (row.hve_coverage is not None and not 0 <= row.hve_coverage <= 1)):
             raise ValueError(f"invalid metric range in {key}; PLR/coverage are fractions")
+        if (row.latency_ms is None or row.hve_coverage is None) and not (
+                row.latency_ms is None and row.hve_coverage is None and row.residual_plr == 1):
+            raise ValueError("empty latency and coverage are required together, only for a wholly undelivered run")
+        if row.residual_plr == 1 and (row.latency_ms is not None or row.hve_coverage is not None):
+            raise ValueError("wholly undelivered runs have undefined latency and coverage")
         if not 0 <= row.warmup_s <= row.measured_window_start_s < row.measured_window_end_s <= row.duration_s:
             raise ValueError(f"measurement window includes warm-up or exceeds duration in {key}")
         if not row.warmup_s <= row.disturbance_s < row.duration_s:
@@ -119,6 +127,47 @@ def validate_rows(rows: Sequence[MetricRow], *, require_paper_protocol: bool = T
         if require_paper_protocol and (row.warmup_s, row.duration_s, row.disturbance_s,
                                       row.measured_window_start_s, row.measured_window_end_s) != (30, 300, 100, 30, 300):
             raise ValueError("paper protocol requires 30-s warm-up, 300-s duration, disturbance at 100 s, window [30,300]")
+
+
+def validate_experiment_matrix(rows: Iterable[MetricRow], matrix: dict) -> dict:
+    """Require the exact method/size/seed Cartesian product, without running it.
+
+    This checks completeness and seed-disjointness only; it neither authenticates
+    traces nor promotes the bundled prospective seed template to original data.
+    Pairing/provenance must additionally pass ``summarize``.
+    """
+    rows = list(rows)
+    validate_rows(rows)
+    if matrix.get("schema_version") != 1:
+        raise ValueError("unsupported experiment matrix schema")
+    methods, nodes, seeds = (matrix.get(name) for name in ("methods", "node_counts", "evaluation_seeds"))
+    for name, values in (("methods", methods), ("node_counts", nodes), ("evaluation_seeds", seeds)):
+        if (not isinstance(values, list) or not values
+                or any(type(value) not in (str, int) for value in values)
+                or len(set(values)) != len(values)):
+            raise ValueError(f"matrix {name} must be a nonempty list without duplicates")
+    if any(method not in METHODS for method in methods):
+        raise ValueError("matrix contains an unknown method")
+    if any(type(value) is not int or value <= 0 for value in nodes):
+        raise ValueError("matrix node counts must be positive integers")
+    if any(type(value) is not int or value < 0 for value in seeds):
+        raise ValueError("matrix evaluation seeds must be nonnegative integers")
+    calibration = matrix.get("calibration_seeds", [])
+    if not isinstance(calibration, list) or any(type(s) is not int or s < 0 for s in calibration):
+        raise ValueError("matrix calibration seeds must be nonnegative integers")
+    if set(calibration) & set(seeds):
+        raise ValueError("evaluation and calibration seeds overlap")
+    expected = {(node, method, seed) for node in nodes for method in methods for seed in seeds}
+    if type(matrix.get("expected_runs")) is not int or matrix["expected_runs"] != len(expected):
+        raise ValueError("matrix expected_runs differs from its Cartesian product")
+    observed = {(row.nodes, row.method, row.seed) for row in rows}
+    missing, extra = sorted(expected-observed), sorted(observed-expected)
+    if missing or extra:
+        raise ValueError(f"experiment matrix incomplete: missing={missing}; unexpected={extra}")
+    return {"status": "matrix_complete_requires_provenance_and_review", "expected_runs": len(expected),
+            "observed_runs": len(rows), "methods": methods, "node_counts": nodes,
+            "evaluation_seeds": seeds, "paper_exact_seeds_available": matrix.get("paper_exact_seeds_available") is True,
+            "paper_reproduced": False}
 
 
 def paired_bootstrap(numerator: Sequence[float], denominator: Sequence[float], *,
@@ -205,6 +254,12 @@ def summarize(rows: Iterable[MetricRow], *, reference: str = "da-ahe", expected_
                     report["raw"][name] = {"status": "blocked_censored", "observed": [r.recovery_s for r in ordered],
                                              "censored": [r.recovery_censored for r in ordered]}
                     report[normalized_key][name] = {"status": "blocked_censored"}
+                    continue
+                if any(getattr(row, name) is None for row in subset):
+                    report["raw"][name] = {"status": "blocked_undefined_paired_metric",
+                        "reason": "a paired run had no delivered units; no complete-case deletion",
+                        "observed": [getattr(row, name) for row in ordered]}
+                    report[normalized_key][name] = {"status": "blocked_undefined_paired_metric"}
                     continue
                 values = [getattr(r, name) for r in ordered]
                 denominator = [getattr(r, name) for r in base]

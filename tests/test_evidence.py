@@ -53,3 +53,15 @@ def test_source_manifest_omits_private_keys_replay_and_generated_runs(tmp_path):
         (tmp_path/name).write_text("test fixture")
     manifest = build_manifest(tmp_path)
     assert [record["path"] for record in manifest["files"]] == ["source.py"]
+
+
+def test_manifest_cannot_overwrite_the_published_verification_baseline(tmp_path):
+    (tmp_path/"source.py").write_text("original\n")
+    target = tmp_path/"manifest.json"
+    build_manifest(tmp_path, target)
+    published = target.read_bytes()
+    (tmp_path/"source.py").write_text("changed\n")
+    with pytest.raises(ValueError, match="already exists"):
+        build_manifest(tmp_path, target)
+    assert target.read_bytes() == published
+    assert verify_manifest(tmp_path, target)["status"] == "failed"

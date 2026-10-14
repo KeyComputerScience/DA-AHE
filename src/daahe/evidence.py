@@ -7,7 +7,7 @@ import json
 from pathlib import Path, PurePosixPath
 
 IGNORED_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", ".ruff_cache", "node_modules",
-                 "private", ".secrets", ".keys", "runs", "results"}
+                 "private", ".secrets", ".keys", "runs", "results", ".DS_Store"}
 PRIVATE_SUFFIXES = (".key", ".pem", ".p12", ".pfx", ".sqlite", ".sqlite3", ".sqlite-wal", ".sqlite-shm",
                     ".sqlite3-wal", ".sqlite3-shm")
 REQUIRED_AUTHOR_ARTIFACTS = {
@@ -56,7 +56,11 @@ def build_manifest(root: str | Path, output: str | Path | None = None) -> dict:
     proof of reproduction, or proof of absence of implementation defects.
     """
     base = Path(root).resolve()
+    if output is not None and (Path(output).exists() or Path(output).is_symlink()):
+        raise ValueError("manifest output already exists; verify the published manifest first and use a new output path")
     target = Path(output).resolve() if output else None
+    if target is not None and not target.is_relative_to(base):
+        raise ValueError("manifest output must be inside root")
     records = []
     for path in sorted(base.rglob("*")):
         relative = path.relative_to(base).as_posix()
@@ -73,7 +77,8 @@ def build_manifest(root: str | Path, output: str | Path | None = None) -> dict:
         if not target.is_relative_to(base):
             raise ValueError("manifest output must be inside root")
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        with target.open("x", encoding="utf-8") as stream:
+            stream.write(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
     return manifest
 
 

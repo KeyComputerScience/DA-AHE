@@ -8,6 +8,7 @@ separately before deploying any profile; this module allows reference experiment
 from dataclasses import dataclass
 import hashlib
 import hmac
+import json
 from pathlib import Path
 import sqlite3
 import struct
@@ -148,6 +149,114 @@ class SourceEnvelope:
     blocks: tuple[Block, ...]
 
 
+class SourceEmissionStore:
+    """Durable, immutable source report binding and exact retransmission cache.
+
+    A source may emit only one ciphertext for a given signed ticket/roster entry.
+    Two different reports with the same affine-tag offset permit a compromised
+    gateway to construct 2*c1-c2, whose tag authenticates 2*x1-x2. Sink-side Seen
+    cannot prevent that forgery before the first acceptance. This store therefore
+    commits the raw-payload binding before encryption and commits the winning
+    ciphertext before returning it. Concurrent same-payload callers return the
+    same cached envelope; different payloads are rejected, including after restart.
+
+    A crash after binding but before caching permits only the same payload to
+    resume. No uncached ciphertext is released. Protect this database against
+    rollback/deletion together with source key and epoch state. Rotate the ticket
+    for a new sample or key configuration. This host SQLite cache is not a board
+    flash driver or a hardware anti-rollback implementation.
+
+    The cache includes the original ticket signature. Retransmit that exact
+    SignedTicket together with the cached blocks. Re-signing the same ticket body
+    can produce a different ML-DSA signature but does not create a new ledger
+    identity; this store still returns the original envelope. A newly authorized
+    batch must change the signed batch nonce rather than merely re-sign its body.
+    """
+
+    def __init__(self, path):
+        self.path = str(path)
+        if self.path == ":memory:":
+            raise ValueError("durable source emission storage required")
+        Path(path).parent.mkdir(parents=True, exist_ok=True)
+        with sqlite3.connect(self.path) as db:
+            db.execute("PRAGMA journal_mode=WAL")
+            db.execute("PRAGMA synchronous=FULL")
+            db.execute("CREATE TABLE IF NOT EXISTS emissions ("
+                       "ticket_digest BLOB NOT NULL, source_id TEXT NOT NULL, "
+                       "nonce BLOB NOT NULL, payload_digest BLOB NOT NULL, envelope BLOB, "
+                       "PRIMARY KEY(ticket_digest, source_id, nonce))")
+
+    @staticmethod
+    def _identity(ticket, source):
+        return ticket.digest, source.source_id, source.nonce
+
+    def _bind(self, ticket, source, payload_digest):
+        identity = self._identity(ticket, source)
+        with sqlite3.connect(self.path, timeout=30) as db:
+            db.execute("PRAGMA synchronous=FULL")
+            db.execute("BEGIN IMMEDIATE")
+            row = db.execute("SELECT payload_digest, envelope FROM emissions "
+                             "WHERE ticket_digest=? AND source_id=? AND nonce=?",
+                             identity).fetchone()
+            if row is None:
+                db.execute("INSERT INTO emissions "
+                           "(ticket_digest, source_id, nonce, payload_digest) VALUES (?,?,?,?)",
+                           (*identity, payload_digest))
+                cached = None
+            else:
+                if not hmac.compare_digest(row[0], payload_digest):
+                    raise ValueError("source ticket already bound to a different raw payload")
+                cached = row[1]
+        return cached
+
+    def _cache_first(self, ticket, source, payload_digest, encoded):
+        identity = self._identity(ticket, source)
+        with sqlite3.connect(self.path, timeout=30) as db:
+            db.execute("PRAGMA synchronous=FULL")
+            db.execute("BEGIN IMMEDIATE")
+            row = db.execute("SELECT payload_digest, envelope FROM emissions "
+                             "WHERE ticket_digest=? AND source_id=? AND nonce=?",
+                             identity).fetchone()
+            if row is None or not hmac.compare_digest(row[0], payload_digest):
+                raise ValueError("source emission binding disappeared or changed")
+            if row[1] is None:
+                db.execute("UPDATE emissions SET envelope=? "
+                           "WHERE ticket_digest=? AND source_id=? AND nonce=?",
+                           (encoded, *identity))
+                cached = encoded
+            else:
+                cached = row[1]
+        return cached
+
+    @staticmethod
+    def _encode(envelope):
+        return canonical_json({"signature": envelope.signed_ticket.signature.hex(),
+                               "blocks": [[b.index, b.total, b.payload.hex(), b.mac.hex()]
+                                          for b in envelope.blocks]})
+
+    @staticmethod
+    def _decode(encoded, signed_ticket, source, count):
+        record = json.loads(encoded)
+        if not isinstance(record, dict) or set(record) != {"signature", "blocks"}:
+            raise ValueError("invalid source emission cache")
+        signature = bytes.fromhex(record["signature"])
+        rows = record["blocks"]
+        if not signature or not isinstance(rows, list) or len(rows) != count:
+            raise ValueError("incomplete source emission cache")
+        blocks = []
+        for index, row in enumerate(rows):
+            if (not isinstance(row, list) or len(row) != 4
+                    or type(row[0]) is not int or type(row[1]) is not int
+                    or row[0] != index or row[1] != count):
+                raise ValueError("invalid source emission cache block")
+            payload, mac = bytes.fromhex(row[2]), bytes.fromhex(row[3])
+            if len(payload) != signed_ticket.ticket.block_bytes or len(mac) != 16:
+                raise ValueError("invalid source emission cache bytes")
+            blocks.append(Block(index, count, payload, mac))
+        original_signed = SignedTicket(signed_ticket.ticket, signature)
+        return SourceEnvelope(original_signed, source, tuple(blocks))
+
+
 def _quantize_raw(channels, profile):
     if len(channels) != 2 or any(len(c) != 240 for c in channels):
         raise ValueError("exactly two 240-sample integer channels required")
@@ -166,13 +275,31 @@ def _quantize_raw(channels, profile):
 
 def encapsulate(channels, signed_ticket: SignedTicket, source: Contributor,
                 pk, epoch_secret: bytes, block_key: bytes, verifier,
-                library: ProfileLibrary) -> SourceEnvelope:
+                library: ProfileLibrary, *, source_store: SourceEmissionStore) -> SourceEnvelope:
+    """Emit once per ticket/source; retries return the original cached envelope.
+
+    The durable source store is mandatory. A new raw sample requires a new signed
+    ticket even if quantization happens to produce the same coefficient vector.
+    Retrying an already cached entry returns its original SignedTicket/signature;
+    pass that original signed ticket to aggregate. Re-signing an unchanged ticket
+    body is not a new batch and cannot authorize a second source ciphertext.
+    """
+    if not isinstance(source_store, SourceEmissionStore):
+        raise ValueError("a durable SourceEmissionStore is required")
     profile = verify_ticket(signed_ticket, verifier, library)
     ticket = signed_ticket.ticket
     if source not in ticket.roster:
         raise ValueError("unauthorized source")
-    x = (_quantize_raw(channels, profile) if profile.representation == "raw" else
-         encode_channels(channels, profile.support, profile.delta_q, profile.coefficient_bound))
+    snapshot = tuple(tuple(channel) for channel in channels)
+    x = (_quantize_raw(snapshot, profile) if profile.representation == "raw" else
+         encode_channels(snapshot, profile.support, profile.delta_q, profile.coefficient_bound))
+    payload_digest = hashlib.sha3_256(canonical_json(snapshot)).digest()
+    J = 4096 * profile.polynomial_count // ticket.block_bytes
+    cached = source_store._bind(ticket, source, payload_digest)
+    if cached is not None:
+        original = source_store._decode(cached, signed_ticket, source, J)
+        verify_ticket(original.signed_ticket, verifier, library)
+        return original
     xf = tuple(v % P for v in x)
     if profile.verify_integrity:
         matrix = derive_matrix(epoch_secret, ticket.digest, profile.L)
@@ -181,7 +308,8 @@ def encapsulate(channels, signed_ticket: SignedTicket, source: Contributor,
     else:
         tag = ()
     plaintexts = pack_values(xf, tag)
-    J = 4096*len(plaintexts)//ticket.block_bytes
+    if len(plaintexts) != profile.polynomial_count:
+        raise ValueError("profile and packed polynomial counts disagree")
     blocks = []
     for plaintext in plaintexts:
         ct = encrypt(pk, plaintext, sigma=profile.sigma_enc)
@@ -189,7 +317,12 @@ def encapsulate(channels, signed_ticket: SignedTicket, source: Contributor,
             j = len(blocks)
             blocks.append(Block(j, J, payload,
                                 block_mac(block_key, ticket, source, j, J, payload)))
-    return SourceEnvelope(signed_ticket, source, tuple(blocks))
+    original = SourceEnvelope(signed_ticket, source, tuple(blocks))
+    cached = source_store._cache_first(ticket, source, payload_digest,
+                                     source_store._encode(original))
+    original = source_store._decode(cached, signed_ticket, source, J)
+    verify_ticket(original.signed_ticket, verifier, library)
+    return original
 
 
 @dataclass(frozen=True)
@@ -256,6 +389,9 @@ class ReplayStore:
 
     Back up this database with key state; rollback to an old backup invalidates the
     replay guarantee. Cryptographic rejection never reserves an unused batch.
+    Seen alone is an at-most-once acceptance mechanism: a crash after commit and
+    before application delivery can lose a result. Production delivery needs a
+    transactional result/outbox record and an idempotent trusted consumer.
     """
     def __init__(self, path):
         self.path = str(path)

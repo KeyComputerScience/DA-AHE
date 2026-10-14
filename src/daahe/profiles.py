@@ -24,8 +24,16 @@ class Profile:
     representation: str = "intdb2"
     verify_integrity: bool = True
     status: str = "reconstructed_uncertified"
+    transform_id: str | None = None
 
     def __post_init__(self):
+        from .signal import TRANSFORM_ID
+        expected_transform = (TRANSFORM_ID if self.representation == "intdb2" else
+                              "reference-raw-two-channel-integer-quantization-v1")
+        if self.transform_id is None:
+            object.__setattr__(self, "transform_id", expected_transform)
+        elif self.transform_id != expected_transform:
+            raise ValueError("profile transform version differs from this implementation")
         object.__setattr__(self, "support", tuple(self.support))
         if any(type(v) is not int for v in (self.L,self.delta_q,self.nmax,self.coefficient_bound)):
             raise ValueError("profile dimensions, quantization and bounds must be integers")

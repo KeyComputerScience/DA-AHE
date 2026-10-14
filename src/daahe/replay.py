@@ -30,6 +30,16 @@ def load_control_config(path: str | Path, *, allow_synthetic: bool = False) -> d
     if data.get("schema_version") != 1:
         raise ValueError("unsupported control configuration schema")
     actions = tuple(Action.from_dict(value) for value in data["actions"])
+    initial_actions = data.get("initial_action")
+    action_ids = {action.id for action in actions}
+    if (not isinstance(initial_actions, dict) or set(initial_actions) != {"da-ahe", "dpp", "hys"}
+            or any(not isinstance(value, str) or value not in action_ids
+                   for value in initial_actions.values())):
+        raise ValueError("initial_action must explicitly map da-ahe, dpp and hys to library action IDs")
+    if initial_actions["dpp"] != data["fallback_id"]:
+        raise ValueError("Algorithm 4 requires the fallback as DPP's initial action")
+    if initial_actions["hys"] != data["hysteresis"]["mode_actions"]["N"]:
+        raise ValueError("Algorithm 5 requires the N-mode action as HYS's initial action")
     certificates = {key: Certificate.from_dict(value) for key, value in data["certificates"].items()}
     model = ControlModel.from_dict(data["model"])
     params = ControllerParams(**data.get("parameters", {}))
@@ -77,7 +87,8 @@ def replay_csv(config_path: str | Path, telemetry_path: str | Path, *,
     tracker = StressTracker(data["stress_thresholds"],
                             smoothing=float(data.get("stress_smoothing", 0.80)),
                             boundaries=data.get("stress_boundaries", (0.2, 0.4, 0.6, 0.8)))
-    previous_action = None
+    action_lookup = {action.id: action for action in actions}
+    previous_action = action_lookup[data["initial_action"][method]]
     previous_time = None
     # P(a,b_{t-1}) generated the prior for y_t; do not replace it with b_t.
     previous_bin = 0
@@ -87,7 +98,8 @@ def replay_csv(config_path: str | Path, telemetry_path: str | Path, *,
         missing = set(TELEMETRY_COLUMNS) - set(reader.fieldnames or ())
         if missing:
             raise ValueError("telemetry CSV missing columns: " + ", ".join(sorted(missing)))
-        forbidden = {"regime", "next_regime", "next_z_delay", "next_z_loss", "next_z_noise"}
+        forbidden = {"regime", "next_regime", "next_z_delay", "next_z_loss", "next_z_noise",
+                     "next_delay", "next_loss", "next_noise_utilization"}
         if forbidden & set(reader.fieldnames or ()):
             raise ValueError("online telemetry must exclude offline labels and future-state columns")
         for line, row in enumerate(reader, 2):
@@ -106,12 +118,14 @@ def replay_csv(config_path: str | Path, telemetry_path: str | Path, *,
                                         loss_threshold=loss_threshold, decoding_margin=1.0)
                 stress, stress_bin = tracker.update(telemetry)
                 if hmm is not None:
-                    belief = hmm.update(telemetry, previous_action.id if previous_action else None,
-                                        stress_bin=previous_bin)
+                    # Algorithm 6 fixes mu_0 and filters only from t>0. The
+                    # configured a_-1 still determines the t=0 switching cost.
+                    belief = (hmm.belief if previous_time is None else
+                              hmm.update(telemetry, previous_action.id, stress_bin=previous_bin))
                     decision = controller.select(state, belief, previous_action, runtime, stress_bin=stress_bin)
                 elif method == "dpp":
                     belief = None
-                    if previous_action is not None:
+                    if previous_time is not None:
                         controller.observe((telemetry[2] / params.delay_threshold - 1,
                                             telemetry[1] / loss_threshold - 1, telemetry[6] - 1))
                     features = (1.0,) + state
@@ -143,6 +157,7 @@ def replay_csv(config_path: str | Path, telemetry_path: str | Path, *,
         "method": method, "strict": runtime.strict,
         "synthetic_allowed": allow_synthetic,
         "model_digest": model.digest(),
+        "initial_action_id": data["initial_action"][method],
         "config_sha256": hashlib.sha256(Path(config_path).read_bytes()).hexdigest(),
         "telemetry_sha256": hashlib.sha256(Path(telemetry_path).read_bytes()).hexdigest(),
         "decisions": decisions,

@@ -23,6 +23,7 @@ from pathlib import Path
 
 from sage.all import RR, log, oo
 from sage.env import SAGE_VERSION
+from estimator_result_adapter import sample_accounting
 
 PINNED_COMMIT = "53da5982597709ba0fdf94ea37a84d822310fd84"
 
@@ -85,19 +86,22 @@ def main():
             try:
                 cost = attack(parameters)
                 print(repr(cost))
+                record["full_cost"] = {str(k): json_value(v) for k, v in cost.items()}
                 rop = cost.get("rop")
                 if rop is None or rop == oo or not rop > 0:
                     raise ValueError("required attack did not produce a finite positive operation count")
                 bits = float(log(RR(rop), 2))
                 if not math.isfinite(bits):
                     raise ValueError("nonfinite log2 operation count")
-                used_samples = cost.get("m", 768)
-                if used_samples == oo or used_samples > 768:
-                    raise ValueError("attack requests more samples than fixed public-key instance supplies")
+                accounting = sample_accounting(name, cost, original_m=int(parameters.m),
+                    original_n=int(parameters.n), original_q=int(parameters.q),
+                    original_error_stddev=float(parameters.Xe.stddev))
+                used_samples = cost.get("m")
                 record.update(status="success", rop=str(rop), log2_rop=bits,
                               beta=json_value(cost.get("beta", cost.get("β"))),
                               lattice_dimension=json_value(cost.get("d")), sample_count=json_value(used_samples),
                               memory=json_value(cost.get("mem")),
+                              sample_accounting=accounting,
                               full_cost={str(k): json_value(v) for k, v in cost.items()})
             except Exception as exc:
                 record["error"] = f"{type(exc).__name__}: {exc}"
@@ -133,6 +137,8 @@ def main():
         "threshold_bits":args.minimum_bits, "threshold_passed":certified,
         "scope":"heuristic generic flattened-LWE attack estimate; not a module-specific, implementation, side-channel, or worst-case proof",
         "dynamic_sigma_enc":"not used in fixed public-key security estimate; operational decoding capacity needs separate certificates",
+        "sample_accounting":"Original independent budget is 768. Coded-BKW may derive samples using the pinned signed-sum noise amplification rule; raw/effective distributions and counts are recorded separately. Missing upstream counts are unknown, never replaced with 768.",
+        "adapter_sha256":hashlib.sha256(Path(__file__).with_name("estimator_result_adapter.py").read_bytes()).hexdigest(),
     }
     (args.output/"security.json").write_text(json.dumps(report, indent=2, sort_keys=True)+"\n", encoding="utf-8")
     (args.output/"stdout.log").write_text(capture.getvalue(), encoding="utf-8")

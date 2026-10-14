@@ -564,9 +564,33 @@ class RobustController(_ControllerBase):
             raise ValueError("HMM and controller must use the same frozen model")
         self.hmm = hmm
 
+    def evidence_subject(self, runtime: RuntimeContext) -> dict[str, Any]:
+        """Exact, noncircular identity required in every external model report.
+
+        The model digest excludes evidence references. Context assumptions must
+        be reviewed externally; their deployment identity is pinned here.
+        """
+        adaptation: dict[str, Any] = {"enabled": bool(self.hmm is not None and self.hmm.adapt)}
+        if adaptation["enabled"]:
+            adaptation.update(discount=self.hmm.discount,  # type: ignore[union-attr]
+                              prior_strength=self.hmm.prior_strength,  # type: ignore[union-attr]
+                              reference_mix=self.hmm.reference_mix)  # type: ignore[union-attr]
+        return {
+            "model_digest": self.model.digest(),
+            "action_digests": {key: action.digest() for key, action in self.actions.items()},
+            "fallback_action_id": self.fallback_id,
+            "context_digest": runtime.context_digest,
+            "model_zcert_max": list(self.model.zcert_max),
+            "runtime_zcert_max": list(runtime.zcert_max),
+            "controller_parameters": _plain(self.params),
+            "adaptation": adaptation,
+        }
+
     def _model_evidence_failure(self, runtime: RuntimeContext) -> str | None:
         if not runtime.strict:
             return None
+        if self.hmm is not None and self.hmm.model.digest() != self.model.digest():
+            return "HMM and controller no longer use the same frozen model"
         if self.model.bound_kind != "external":
             return "empirical calibration is not a uniform uncertainty certificate"
         if self.model.metadata.get("action_digests") != {
@@ -575,11 +599,12 @@ class RobustController(_ControllerBase):
         names = ["state_error", "transition", "domain"]
         if self.hmm is not None and self.hmm.adapt:
             names.append("adaptation")
+        subject = self.evidence_subject(runtime)
         for name in names:
             evidence = self.model.bound_evidence.get(name)
             if evidence is None:
                 return f"missing external model {name} evidence"
-            valid, reason = evidence.check(runtime.evidence_root)
+            valid, reason = evidence.check_model_binding(runtime.evidence_root, subject, name)
             if not valid:
                 return f"model {name} evidence: {reason}"
         if fallback_bound(self.model, self.fallback_id, self.params) > self.params.beta:

@@ -1,15 +1,68 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Render summary JSON from daahe stats as a standalone SVG; no external plotting deps.
+"""Render daahe stats JSON directly, or a legacy {label,mean,low,high} array.
 
-Input is a simple array of {label,mean,low,high} numeric records, one unit per plot.
-Never reads paper target values; requires computed empirical summary data.
+Never reads paper target values. Blocked or undefined paired metrics stop the
+plot, rather than silently omitting methods. The unit is supplied explicitly.
 """
 import argparse
 import html
 import json
 import math
 from pathlib import Path
+
+METRICS = ("latency_ms", "residual_plr", "recovery_s", "hve_coverage")
+
+
+def extract_plot_rows(payload, *, nodes=None, metric="latency_ms", normalized=False):
+    """Adapt an actual statistics result without selecting favorable methods."""
+    if isinstance(payload, list):
+        if nodes is not None or normalized:
+            raise ValueError("node selection and normalization require daahe stats JSON")
+        rows = payload
+    elif isinstance(payload, dict):
+        if payload.get("status") != "computed_from_external_metrics":
+            raise ValueError("expected computed daahe stats output")
+        groups = payload.get("groups")
+        if not isinstance(groups, list) or not groups or metric not in METRICS:
+            raise ValueError("statistics groups and a supported metric are required")
+        available = {group["nodes"] for group in groups}
+        if nodes is None:
+            if len(available) != 1:
+                raise ValueError("multiple node counts: select --nodes explicitly")
+            nodes = next(iter(available))
+        if nodes not in available:
+            raise ValueError("requested node count is absent")
+        reference = payload.get("reference_method")
+        if not isinstance(reference, str) or not reference:
+            raise ValueError("statistics reference_method is missing")
+        source = "normalized_to_" + reference.replace("-", "_") if normalized else "raw"
+        rows = []
+        for group in groups:
+            if group["nodes"] != nodes:
+                continue
+            value = group.get(source, {}).get(metric, {})
+            center = "estimate" if normalized else "mean"
+            if "status" in value or not all(key in value for key in (center, "ci_low", "ci_high")):
+                raise ValueError(f"cannot plot {group['method']} {metric}: blocked or undefined paired metric")
+            rows.append({"label":group["method"], "mean":value[center],
+                         "low":value["ci_low"], "high":value["ci_high"]})
+    else:
+        raise ValueError("plot input must be stats JSON or a legacy array")
+    if not rows:
+        raise ValueError("no empirical rows")
+    labels = set()
+    for row in rows:
+        if not isinstance(row, dict) or not all(key in row for key in ("label", "mean", "low", "high")):
+            raise ValueError("each plot row requires label, mean, low and high")
+        if str(row["label"]) in labels:
+            raise ValueError("duplicate plot label")
+        labels.add(str(row["label"]))
+        if any(type(row[key]) not in (int, float) or not math.isfinite(row[key]) for key in ("mean", "low", "high")):
+            raise ValueError("nonfinite or nonnumeric result")
+        if row["mean"] < 0 or not 0 <= row["low"] <= row["high"]:
+            raise ValueError("invalid nonnegative metric or interval")
+    return rows
 
 
 def main():
@@ -18,17 +71,14 @@ def main():
     p.add_argument("--output", required=True, type=Path)
     p.add_argument("--title", required=True)
     p.add_argument("--unit", required=True)
+    p.add_argument("--nodes", type=int, help="required when stats includes multiple network sizes")
+    p.add_argument("--metric", choices=METRICS, default="latency_ms")
+    p.add_argument("--normalized", action="store_true", help="plot method/reference mean ratios and paired CIs")
     a = p.parse_args()
-    rows = json.loads(a.input.read_text())
-    if not rows:
-        raise ValueError("no empirical rows")
-    for r in rows:
-        if not all(math.isfinite(float(r[k])) for k in ("mean", "low", "high")):
-            raise ValueError("nonfinite result")
-        if not 0 <= r["low"] <= r["mean"] <= r["high"]:
-            raise ValueError("invalid interval")
+    rows = extract_plot_rows(json.loads(a.input.read_text()), nodes=a.nodes,
+                             metric=a.metric, normalized=a.normalized)
     width, height, left, top, bottom = max(600, len(rows)*120+100), 440, 70, 60, 350
-    ymax = max(r["high"] for r in rows)*1.12 or 1
+    ymax = max(max(r["high"], r["mean"]) for r in rows)*1.12 or 1
     xscale = (width-left-30)/len(rows)
     y = lambda v: bottom-(bottom-top)*v/ymax
     esc = html.escape

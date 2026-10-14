@@ -20,7 +20,7 @@ def demo(args):
     """A functional scenario, never a network benchmark or security certificate."""
     from .mlwe import keygen
     from .profiles import example_profiles
-    from .protocol import (Contributor, Ticket, Sink, ReplayStore, issue_ticket,
+    from .protocol import (Contributor, Ticket, Sink, ReplayStore, SourceEmissionStore, issue_ticket,
                            encapsulate, aggregate, aggregate_message)
     from .signatures import MLDSA44Signer, MLDSA44Verifier
     library = example_profiles()
@@ -43,8 +43,11 @@ def demo(args):
     with MLDSA44Signer.keygen() as signer:
         verifier = MLDSA44Verifier(signer.public_key)
         signed = issue_ticket(ticket, signer)
+        stores = {s.source_id: SourceEmissionStore(args.output/"private"/(s.source_id+".sqlite"))
+                  for s in roster}
         envelopes = [encapsulate(signals[s.source_id], signed, s, keypair.public,
-                                epoch_secret, keys[s.source_id], verifier, library) for s in roster]
+                                epoch_secret, keys[s.source_id], verifier, library,
+                                source_store=stores[s.source_id]) for s in roster]
         result = aggregate(envelopes, signed, keys, gateway_key, verifier, library)
         sink = Sink(keypair.secret, epoch_secret, gateway_key, verifier, library,
                     ReplayStore(args.output/"seen.sqlite"), allow_unverified=not profile.verify_integrity)
@@ -107,6 +110,7 @@ def main(argv=None):
     p.add_argument("--output", required=True, type=Path)
     p.add_argument("--resamples", type=int, default=100000)
     p.add_argument("--bootstrap-seed", type=int, default=20261014)
+    p.add_argument("--matrix",type=Path,help="require every method/node/seed declared by matrix JSON")
     p = commands.add_parser("manifest", help="record file SHA256 checksums")
     p.add_argument("--root", type=Path, default=Path("."))
     p.add_argument("--output", type=Path, required=True)
@@ -142,9 +146,15 @@ def main(argv=None):
                 print(json.dumps(data,indent=2))
             return 0
         if args.command == "stats":
-            from .statistics import load_metrics_csv, summarize
-            data = summarize(load_metrics_csv(args.csv), resamples=args.resamples,
+            from .statistics import load_metrics_csv, summarize, validate_experiment_matrix
+            rows = load_metrics_csv(args.csv)
+            matrix_report = None
+            if args.matrix:
+                matrix_report = validate_experiment_matrix(rows,json.loads(args.matrix.read_text()))
+            data = summarize(rows, resamples=args.resamples,
                              bootstrap_seed=args.bootstrap_seed)
+            if matrix_report is not None:
+                data["matrix_validation"] = matrix_report
             write_json(args.output,data)
             return 0
         if args.command == "replay-control":
@@ -154,17 +164,19 @@ def main(argv=None):
             write_json(args.output,data)
             return 0 if data.get("completed_without_fail_closed",False) else 2
         if args.command == "calibrate":
-            from .calibration import read_trace,calibrate
+            from .calibration import read_trace,calibrate_bundle
             from .safety import Action
             config = json.loads(args.config.read_text())
             actions = [Action.from_dict(a) for a in config["actions"]]
             nominal = config["model"]["transitions"]
-            model = calibrate(read_trace(args.training), read_trace(args.holdout), actions,
+            bundle = calibrate_bundle(read_trace(args.training), read_trace(args.holdout), actions,
+                              delay_threshold=config.get("parameters",{}).get("delay_threshold",1.0),
+                              loss_threshold=config["loss_threshold"],
                               evaluation_seeds=args.evaluation_seeds,
                               nominal_transitions=nominal,
                               kappa_z=config["model"].get("kappa_z",0.8),
                               zcert_max=config["model"].get("zcert_max",(1.0,1.0,1.0)))
-            write_json(args.output,model.to_dict())
+            write_json(args.output,bundle)
             return 0
         from .evidence import audit_readiness, build_manifest, verify_manifest
         if args.command == "manifest":

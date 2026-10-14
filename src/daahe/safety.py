@@ -101,26 +101,67 @@ class EvidenceArtifact:
     sha256: str
     method: str
 
-    def check(self, root: str | Path | None) -> tuple[bool, str]:
+    def _verified_bytes(self, root: str | Path | None) -> tuple[bytes | None, str]:
+        """Read and hash one snapshot; consumers parse exactly the checked bytes."""
         if root is None:
-            return False, "evidence root is not configured"
+            return None, "evidence root is not configured"
         relative = Path(self.path)
         if relative.is_absolute() or ".." in relative.parts or not relative.parts:
-            return False, "artifact path must be relative and traversal-free"
+            return None, "artifact path must be relative and traversal-free"
         if len(self.sha256) != 64 or any(c not in "0123456789abcdef" for c in self.sha256):
-            return False, "artifact SHA-256 must contain 64 lowercase hex digits"
+            return None, "artifact SHA-256 must contain 64 lowercase hex digits"
         if not self.method.strip():
-            return False, "artifact claim method is missing"
+            return None, "artifact claim method is missing"
         base = Path(root).resolve()
         path = (base / relative).resolve()
         if base not in path.parents:
-            return False, "artifact resolves outside evidence root"
+            return None, "artifact resolves outside evidence root"
         try:
-            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            payload = path.read_bytes()
         except OSError as exc:
-            return False, f"artifact unavailable: {exc}"
-        return (digest == self.sha256,
-                "ok" if digest == self.sha256 else "artifact digest mismatch")
+            return None, f"artifact unavailable: {exc}"
+        if hashlib.sha256(payload).hexdigest() != self.sha256:
+            return None, "artifact digest mismatch"
+        return payload, "ok"
+
+    def check(self, root: str | Path | None) -> tuple[bool, str]:
+        payload, reason = self._verified_bytes(root)
+        return payload is not None, reason
+
+    def check_model_binding(self, root: str | Path | None,
+                            subject: Mapping[str, Any], claim: str) -> tuple[bool, str]:
+        """Verify a model report's identity, not the truth of its proof claims.
+
+        Model reports use schema 1, artifact_type ``daahe-model-bound``, one
+        claim name, and the exact subject emitted by the controller. Extra
+        top-level fields can carry proof derivations, assumptions and reviews.
+        """
+        return self._check_binding(root, subject, claim, "daahe-model-bound", "model-bound")
+
+    def check_action_binding(self, root: str | Path | None,
+                             subject: Mapping[str, Any], claim: str) -> tuple[bool, str]:
+        """Check the exact action-certificate identity, not proof validity."""
+        return self._check_binding(root, subject, claim, "daahe-action-bound", "action-bound")
+
+    def _check_binding(self, root: str | Path | None, subject: Mapping[str, Any],
+                       claim: str, artifact_type: str, label: str) -> tuple[bool, str]:
+        payload, reason = self._verified_bytes(root)
+        if payload is None:
+            return False, reason
+        try:
+            report = json.loads(payload)
+            if (not isinstance(report, dict) or type(report.get("schema_version")) is not int
+                    or report["schema_version"] != 1
+                    or report.get("artifact_type") != artifact_type
+                    or report.get("claim") != claim):
+                return False, f"invalid {label} report schema or claim"
+            if not isinstance(report.get("subject"), dict):
+                return False, f"{label} report subject is missing"
+            if canonical_digest(report["subject"]) != canonical_digest(_plain(subject)):
+                return False, f"{label} report subject does not match current certificate/model/controller/context"
+        except (ValueError, TypeError, UnicodeError) as exc:
+            return False, f"invalid {label} JSON report: {exc}"
+        return True, "identity and integrity verified; substantive proof review remains external"
 
     @classmethod
     def from_dict(cls, value: Mapping[str, Any]) -> "EvidenceArtifact":
@@ -171,6 +212,17 @@ class Certificate:
 
     def to_dict(self) -> dict[str, Any]:
         return _plain(self)
+
+    def evidence_subject(self) -> dict[str, Any]:
+        """Noncircular action/profile/context identity and every supplied bound.
+
+        Actual action/profile/context identities are also checked independently
+        against the runtime. Instantaneous runtime budgets are excluded: their
+        numeric admission gates may tighten without changing the proven bound.
+        """
+        subject = self.to_dict()
+        subject.pop("evidence")
+        return subject
 
 
 @dataclass(frozen=True)
@@ -286,7 +338,8 @@ class SafetyFilter:
                     failures.append(f"missing {name} evidence artifact")
                     verified = False
                     continue
-                ok, detail = artifact.check(runtime.evidence_root)
+                ok, detail = artifact.check_action_binding(runtime.evidence_root,
+                                                          cert.evidence_subject(), name)
                 if not ok:
                     failures.append(f"{name}: {detail}")
                     verified = False
