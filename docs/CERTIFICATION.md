@@ -54,6 +54,4 @@ specific claim `state_error`, `transition`, `domain` or `adaptation`, and the
 complete object returned by `controller.evidence_subject(runtime)`. That object
 binds current model digest, action digests, fallback identity, deployment context,
 model/runtime regions, all ControllerParams and enabled HMM adaptation settings.
-Do not hand-copy a shortened subject. Changing the model, transform/profile,
-controller settings or bound assumptions requires new reviewed evidence; keeping
-an old report hash no longer admits the altered subject.
+Do not hand-copy a shortened subject.
