@@ -1,0 +1,4 @@
+251d394b0e6d7aa56ad9d6780aa2ec85d0b27aadcdac298e087fd3d55a3afe6b  DA-AHE-v0.2.0-reviewed.zip
+d4aa4cc08a2561b142fbfc9f550202e66deb021889d98fa3bdd1767c3bcc156f  DA-AHE-f0a3647.patch
+4315a9aea2582b3e105fbd3080b1f38bcfab53b20da33cb567e55df71b243f39  DA-AHE_审查与补充.md
+2fa2a58efbd8b53745599715c02155b6f530aa992a9f4bb251c81681eb9c309a  DA-AHE-patch-inventory.json
