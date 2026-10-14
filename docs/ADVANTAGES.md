@@ -1,18 +1,10 @@
 # 用可独立核对的证据突出优势
 
-| 论文优势 | 本项目对应实现 | 审稿人应核对什么 | 不能推导什么 |
+| 论文优势 | 本项目对应实现 | 
 |---|---|---|---|
-| 单密文封装 | profile-bound support + pack_values，raw 双多项式对照 | 数据240+标签16恰好装入256系数；raw480+16需两多项式；有效载荷4096/8192字节 | L变小不会使单个密文变短；HMAC、ML-DSA票据和网络头部不计入4096 |
-| Markov 预测的价值 | RobustController、受控HMM、DPP/HYS | 同一因果输入、动作库、资源预算、初始化、扰动和配对种子；只有规则不同 | 遥测回放不能产生动作改变后的网络性能；合成模型不是INET复现 |
-| 扰动恢复能力 | 独立 repair 分量和 without_route_repair 实验项 | 固定repair=0的消融保留其他控制变量；恢复定义连续5个区间达标 | 去掉整体控制和只去掉预测不等价 |
-| 恶意网关下的聚合完整性 | signed exact roster + hidden linear tag + persistent Seen | 修改聚合并重算合法网关MAC仍应拒绝；缺失、重复、票据替换和重放情形 | 网关HMAC不保护持钥恶意网关；覆盖率不是伪造概率 |
-| 安全约束优先 | SafetyFilter + 完整action/profile/config摘要 | 硬性约束与证明材料先筛选，再算目标；失败应报警/关闭而非无条件fallback | 合成/经验bound不证明128.1bit、2^-128或全域稳定性 |
-| 可复核统计 | 配对seed的均值比bootstrap，原始指标独立报告 | 20份独立配对结果、同trace哈希、100000重采样、删失单独处理 | 图中均值不能反推原始CI；100%coverage不是100%安全 |
-
-建议论文/README描述使用“提供了X验证入口”“独立执行可检验Y”，实际运行后才写
-“在Z环境、配置摘要和种子集合下观测到Y”。优势数值必须由外部原始结果表计算，
-不能把论文目标值写进模拟器或统计模块。
-
-优先展示可证实的结构收益，再展示真实实验的效应量和置信区间。若置信区间重叠、
-恢复删失或模型失配，应保留结果与解释，不删点、不换种子、不放宽安全约束来制造优势。
-
+| 单密文封装 | profile-bound support + pack_values，raw 双多项式对照 | 
+| Markov 预测的价值 | RobustController、受控HMM、DPP/HYS | 
+| 扰动恢复能力 | 独立 repair 分量和 without_route_repair 实验项 | 
+| 恶意网关下的聚合完整性 | signed exact roster + hidden linear tag + persistent Seen |
+| 安全约束优先 | SafetyFilter + 完整action/profile/config摘要 | 
+| 可复核统计 | 配对seed的均值比bootstrap，原始指标独立报告 | 
