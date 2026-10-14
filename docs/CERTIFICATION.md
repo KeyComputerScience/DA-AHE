@@ -31,23 +31,13 @@ verifies file integrity, not that a report is truthful or a proof sound.
 Version 0.2.0 additionally requires machine-readable JSON identity for each
 action report:
 
-```json
+
 {
   "schema_version": 1,
   "artifact_type": "daahe-action-bound",
   "claim": "security",
   "subject": "Replace this string with the complete Certificate.evidence_subject() object"
 }
-```
-
-The example is a schema illustration, not a usable certificate. `claim` must
-match its specific one of the six evidence keys. The subject contains every
-certificate field except the evidence mapping, including complete action,
-profile and context digests, kind and all numerical bounds. The exclusion avoids
-circular hashing. Instantaneous runtime budgets remain independently checked.
-The gate hashes the same bytes it parses and rejects unrelated/stale reports.
-Add substantive proof, assumptions, validation and reviewer provenance fields
-to the report; subject equality alone does not certify the truth of those bounds.
 
 `kind="synthetic"` exists only for explicit demonstrations. It cannot produce a
 certified decision. `kind="external"` requires reviewed artifacts; the package
@@ -67,16 +57,3 @@ model/runtime regions, all ControllerParams and enabled HMM adaptation settings.
 Do not hand-copy a shortened subject. Changing the model, transform/profile,
 controller settings or bound assumptions requires new reviewed evidence; keeping
 an old report hash no longer admits the altered subject.
-
-The code computes a conservative analytic fallback supremum using piecewise
-quadratic maxima plus an interval bound for the radius cross term. This proves
-an inequality **for the provided model and radii only**; it cannot prove that
-those inputs bound a real network. An empirical heldout maximum is not a uniform
-population bound. Conditional stability also does not establish domain invariance.
-
-No action is released outside the certified region. If robust admission has no
-member, the controller raises an alarm and returns no action; under valid theorem
-assumptions, the fallback certificate should make that case impossible inside the
-region. Baselines use the same hard Eq.3 gates but do not inherit the DA-AHE
-Lyapunov theorem. A production management layer must handle recertification.
-
