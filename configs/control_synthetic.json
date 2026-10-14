@@ -150,6 +150,11 @@
     ]
   },
   "fallback_id": "fallback",
+  "initial_action": {
+    "da-ahe": "nominal",
+    "dpp": "fallback",
+    "hys": "nominal"
+  },
   "hysteresis": {
     "hold_intervals": 3,
     "mode_actions": {
