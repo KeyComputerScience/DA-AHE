@@ -8,6 +8,14 @@ Source compromise, source/gateway collusion, epoch-root leakage, availability,
 and Python side-channel resistance are outside this reference implementation's
 claims. Provisioning an epoch root to a gateway destroys the hidden-tag boundary.
 
+Sources must persist SourceEmissionStore and emit exactly one immutable raw
+sampling window under each ticket/source/nonce. Retries return the original cached
+envelope. Without that constraint, two honest-but-recomputed reports reuse an
+affine tag offset and a malicious gateway can combine them as 2*c1-c2. Sink Seen
+alone cannot prevent such a first-submission forgery. The store needs device-level
+durability, access control and anti-rollback; the host SQLite implementation is a
+reference, not a board storage attestation.
+
 ML-DSA-44 is provided by an explicitly installed local OQS dependency. There is
 no alternative signature used when it is unavailable. The M-LWE encryption code
 is a research additive CPA-style primitive, not standardized ML-KEM, an AEAD

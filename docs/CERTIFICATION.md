@@ -28,6 +28,27 @@ relative traversal-free `path`, `sha256`, and a substantive `method` description
 The evidence must itself identify the same tuple/profile/context. Hash checking
 verifies file integrity, not that a report is truthful or a proof sound.
 
+Version 0.2.0 additionally requires machine-readable JSON identity for each
+action report:
+
+```json
+{
+  "schema_version": 1,
+  "artifact_type": "daahe-action-bound",
+  "claim": "security",
+  "subject": "Replace this string with the complete Certificate.evidence_subject() object"
+}
+```
+
+The example is a schema illustration, not a usable certificate. `claim` must
+match its specific one of the six evidence keys. The subject contains every
+certificate field except the evidence mapping, including complete action,
+profile and context digests, kind and all numerical bounds. The exclusion avoids
+circular hashing. Instantaneous runtime budgets remain independently checked.
+The gate hashes the same bytes it parses and rejects unrelated/stale reports.
+Add substantive proof, assumptions, validation and reviewer provenance fields
+to the report; subject equality alone does not certify the truth of those bounds.
+
 `kind="synthetic"` exists only for explicit demonstrations. It cannot produce a
 certified decision. `kind="external"` requires reviewed artifacts; the package
 does not create external attestations from example numbers.
@@ -37,6 +58,15 @@ model-bound uniform state-error and transition radii, certified-domain evidence,
 and complete action digests in model metadata. Online transition adaptation also
 requires an `adaptation` artifact showing that radii cover that update rule.
 Its analytic `fallback_bound` must be <=beta over the declared cube.
+
+Each model report similarly uses `artifact_type="daahe-model-bound"`, the
+specific claim `state_error`, `transition`, `domain` or `adaptation`, and the
+complete object returned by `controller.evidence_subject(runtime)`. That object
+binds current model digest, action digests, fallback identity, deployment context,
+model/runtime regions, all ControllerParams and enabled HMM adaptation settings.
+Do not hand-copy a shortened subject. Changing the model, transform/profile,
+controller settings or bound assumptions requires new reviewed evidence; keeping
+an old report hash no longer admits the altered subject.
 
 The code computes a conservative analytic fallback supremum using piecewise
 quadratic maxima plus an interval bound for the radius cross term. This proves

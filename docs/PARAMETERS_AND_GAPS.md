@@ -12,8 +12,8 @@ Manuscript anchors use printed page numbers in the supplied 14-page PDF.
 | Table III | (L,step)=(240,8),(180,12),(120,16) (p.13) | pi0/pi1/pi2 examples follow Table III |
 | Static ablation | [1.0,16,16,64,0,0] (Eq.22, p.11) | separate `static_eq22` profile; not silently equated with Table III pi0 step8 |
 | Fallback | [0.50,16,1,64,0,0] (pp.3,9) | separate reference profile; joint support/certificate unspecified |
-| Supports | deterministic S subset of 0..479, L<=240 | original positions absent; example supports are a documented completion, signed full digest binds them |
-| IntDb2 | integer Db2, no exact lifting definition | one-level rational integer lifting with periodic edges; see signal.py; not author-byte-compatible |
+| Supports | deterministic S subset of 0..479, L<=240 | original positions absent; reference L=120/180/240 retain both channels' full-window coarsest coefficients before level-2 details; signed full digest binds them |
+| IntDb2 | integer Db2, no exact lifting definition | two-level rational integer lifting with periodic edges, [a2(60),d2(60),d1(120)] per channel; see signal.py; not author-byte-compatible |
 | Quantization bound Bx | inequality N*Bx<=32768 | example Bx2048 is a reconstruction choice, not author calibration; out-of-range input is rejected |
 | Ticket | Eq.9 vs earlier notation uses ctx/CID and batch nonce | explicit versioned canonical JSON binds epoch,batch,context,full profile digest,roster,nonce,block length |
 | Key identity | CID/epoch pk context | integrator must bind context to provisioned public key fingerprint and calibration/action digest |
@@ -39,6 +39,35 @@ differ from the sum of individually reconstructed signals even with full support
 Report aggregate RMSE/PRD on the actual telemetry; do not transfer Table III values
 to this reconstructed transform. Original authors should resolve their exact
 transform and aggregation-fidelity definition before claiming a faithful match.
+
+The former one-level approximation-prefix support discarded the tail of the
+sampling window for L<240. The reference now uses two levels so all three bundled
+profiles retain all 120 coarsest positions across both channels. This fixes that
+coverage defect; it does not establish the original paper's distortion values or
+a universally optimal support. `tests/test_signal_quality.py` supplies authored,
+unexecuted full-window impulse, constant, trend and exact inversion regressions.
+`Profile.transform_id` is included in the full profile digest. The current ID is
+`reference-intdb2-two-level-periodic-unnormalized-q30-v2`; explicit old transform
+versions are rejected. The raw profile has its own quantization-version ID. These
+fields change profile IDs/digests, so old tickets, allowlists, action models and
+certificates must be regenerated and reviewed. A profile lacking a version is
+completed with the current reference version, not recognized as an author profile.
+
+Protected sources must supply a durable `SourceEmissionStore` to `encapsulate`.
+It binds the exact raw payload before encryption and caches the original signed
+envelope before releasing bytes. Retries return that same envelope; resampling
+requires a new ticket. Reusing a ticket/source offset for two different encrypted
+reports would let a compromised gateway form the affine forgery `2*c1-c2`.
+Retransmission must reuse the original `SignedTicket`, including its signature.
+Re-signing an unchanged ticket body may change the ML-DSA signature, but leaves
+the ticket digest/ledger identity unchanged: the source returns the original
+cached envelope, and aggregation against the newly generated signature rejects
+the mismatch. A fresh authorization must include a fresh signed batch nonce.
+Source databases therefore require the same rollback/deletion protection as keys
+and epoch state. The SQLite host implementation is not a board flash driver.
+Sink Seen is still an at-most-once acceptance set: durable result/outbox storage
+and an idempotent consumer remain necessary to recover a result after a crash
+between Seen commit and application delivery.
 
 Additional missing experiment details include path-loss exponent, shadowing
 variance, fading coherence, node placement and RPL module source, exact noise

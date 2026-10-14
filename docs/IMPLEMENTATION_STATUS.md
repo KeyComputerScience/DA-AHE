@@ -2,6 +2,13 @@
 
 Artifact date: 2026-10-14. Delivery status: **SOURCE PREPARED, NOT EXECUTED**.
 
+Version 0.2.0 supplements the reviewed GitHub baseline with hidden files/CI,
+source emission persistence, multilevel signal support, transform identity,
+machine-readable model/action evidence binding, calibration timing separation,
+estimator sample accounting, complete-matrix statistics and portable C tests.
+All new behavior is source-prepared and statically inspected; no runtime pass
+count, build success, workflow result or experiment result has been established.
+
 | Component | Source status | Validation status | Limit |
 |---|---|---|---|
 | Fixed-tuple M-LWE and packing | implemented | not run | research sampler and Python arithmetic, no constant-time or estimator certificate |

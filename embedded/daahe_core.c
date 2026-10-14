@@ -55,6 +55,42 @@ void daahe_linear_tag(uint32_t out[DAAHE_TAG_DIM], const uint32_t *matrix,
     }
 }
 
+int daahe_linear_tag_stream(uint32_t out[DAAHE_TAG_DIM], const uint32_t *data,
+                            size_t length, const uint32_t offset[DAAHE_TAG_DIM],
+                            daahe_matrix_element_fn next_element, void *context) {
+    size_t row, col;
+    uint32_t element, partial[DAAHE_TAG_DIM];
+    uint64_t sum;
+    if (!out) return 0;
+    if (!data || !offset || !next_element || length == 0 || length > 480) {
+        daahe_wipe(out, DAAHE_TAG_DIM * sizeof(*out));
+        return 0;
+    }
+    for (col = 0; col < length; ++col) {
+        if (data[col] >= DAAHE_P) {
+            daahe_wipe(out, DAAHE_TAG_DIM * sizeof(*out));
+            return 0;
+        }
+    }
+    for (row = 0; row < DAAHE_TAG_DIM; ++row) {
+        if (offset[row] >= DAAHE_P) goto reject;
+        sum = offset[row];
+        for (col = 0; col < length; ++col) {
+            if (next_element(context, row, col, &element) != 1 || element >= DAAHE_P)
+                goto reject;
+            sum = (sum + (uint64_t)element * data[col]) % DAAHE_P;
+        }
+        partial[row] = (uint32_t)sum;
+    }
+    memcpy(out, partial, sizeof(partial));
+    daahe_wipe(partial, sizeof(partial));
+    return 1;
+reject:
+    daahe_wipe(partial, sizeof(partial));
+    daahe_wipe(out, DAAHE_TAG_DIM * sizeof(*out));
+    return 0;
+}
+
 uint32_t daahe_decode_word(uint32_t word) {
     /* q/p floor = 65535. Ties round away from zero, matching the host. */
     int64_t centered = word <= UINT32_C(2147483647) ? (int64_t)word : (int64_t)word - INT64_C(4294967296);

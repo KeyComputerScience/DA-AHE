@@ -18,6 +18,20 @@ int daahe_pack(uint32_t out[DAAHE_D], const int32_t *data, size_t length,
 void daahe_linear_tag(uint32_t out[DAAHE_TAG_DIM], const uint32_t *matrix,
                       const uint32_t *data, size_t length,
                       const uint32_t offset[DAAHE_TAG_DIM]);
+/* The compatibility function above reads 16*length uint32_t matrix words:
+ * L=240 requires 15,360 bytes if materialized in SRAM. Prefer the streaming
+ * callback below when the complete K matrix cannot fit the workspace budget.
+ * A provider derives consecutive canonical F_p elements from the exact host
+ * KDF/rejection stream; it must return 1 and set *value on success. The callback
+ * is invoked in row-major order. KDF state and scratch remain caller owned. */
+typedef int (*daahe_matrix_element_fn)(void *context, size_t row, size_t column,
+                                       uint32_t *value);
+/* Writes out only after all matrix elements validate; on failure wipes out.
+ * This computes the tag with 16 words of internal scratch, not a full matrix.
+ * It does not supply SHAKE, source offsets, provisioning, or a memory certificate. */
+int daahe_linear_tag_stream(uint32_t out[DAAHE_TAG_DIM], const uint32_t *data,
+                            size_t length, const uint32_t offset[DAAHE_TAG_DIM],
+                            daahe_matrix_element_fn next_element, void *context);
 uint32_t daahe_decode_word(uint32_t v_minus_su);
 
 /* Callback must authenticate ticket digest, source, nonce, j, J and bytes using
