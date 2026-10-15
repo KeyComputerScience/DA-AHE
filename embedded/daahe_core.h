@@ -5,9 +5,15 @@
 #include <stdint.h>
 
 #define DAAHE_D 256u
+#ifndef DAAHE_K
+/* Legacy default only. A selected build must pass the calibrated module rank. */
 #define DAAHE_K 3u
+#endif
+#if DAAHE_K < 3 || DAAHE_K > 16
+#error "DAAHE_K must be between 3 and 16"
+#endif
 #define DAAHE_P 65537u
-#define DAAHE_CIPHER_BYTES 4096u
+#define DAAHE_CIPHER_BYTES ((DAAHE_K + 1u) * DAAHE_D * 4u)
 #define DAAHE_TAG_DIM 16u
 
 /* No heap; all input/output storage is caller owned and must not overlap. */
@@ -54,6 +60,8 @@ typedef struct {
 
 int daahe_stream_init(daahe_stream *stream, uint8_t *accumulator, size_t capacity,
                      size_t ciphertext_bytes, size_t roster_size, size_t block_bytes);
+/* ciphertext_bytes must be DAAHE_CIPHER_BYTES or twice that size for a raw
+ * two-ciphertext report, always using this build's compiled module rank. */
 int daahe_stream_push(daahe_stream *stream, size_t source_index, size_t block_index,
                      size_t block_count, const uint8_t *payload, size_t length,
                      const uint8_t mac[16], daahe_verify_block_fn verify, void *context);

@@ -1,7 +1,6 @@
-include README.md LICENSE NOTICE SECURITY.md THIRD_PARTY.md CITATION.cff
-include CHANGELOG.md CONTRIBUTING.md DELIVERY_STATUS.json manifest.json
+include README.md LICENSE SECURITY.md THIRD_PARTY.md CITATION.cff manifest.json
 include Dockerfile Makefile pyproject.toml requirements-*.txt
-include .gitignore .dockerignore
+include .gitignore .dockerignore .gitattributes
 recursive-include .github *.yml *.yaml
 recursive-include configs *.json
 recursive-include examples *.csv
@@ -10,5 +9,11 @@ recursive-include docs *.md *.json
 recursive-include tools *.py *.sage
 recursive-include tests *.py *.md
 recursive-include embedded *.c *.h *.md CMakeLists.txt
+recursive-include simulation *.py *.json *.md
+recursive-include firmware *.py *.c *.h *.S *.ld *.md
+recursive-include security *.md *.py *.sh Dockerfile
+recursive-include evidence/independent *.json *.csv *.log *.txt *.xml *.md *.elf *.bin *.hex *.map *.su *.o native_core_test
+prune evidence/independent/simulation
+exclude evidence/independent/manifest.json
 global-exclude *.py[cod] *.key *.pem *.sqlite* .DS_Store
 

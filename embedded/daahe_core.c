@@ -109,7 +109,7 @@ static void write_le32(uint8_t *p, uint32_t v) {
 int daahe_stream_init(daahe_stream *s, uint8_t *acc, size_t capacity,
                      size_t ciphertext_bytes, size_t roster_size, size_t block_bytes) {
     if (!s || !acc || capacity < ciphertext_bytes || roster_size == 0 || roster_size > 16 ||
-        (ciphertext_bytes != 4096 && ciphertext_bytes != 8192) ||
+        (ciphertext_bytes != DAAHE_CIPHER_BYTES && ciphertext_bytes != 2u * DAAHE_CIPHER_BYTES) ||
         (block_bytes != 32 && block_bytes != 64)) return 0;
     memset(acc, 0, ciphertext_bytes);
     s->accumulator = acc; s->ciphertext_bytes = ciphertext_bytes;

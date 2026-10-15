@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: MIT */
-/* Independent known-answer cases. Authored, never compiled or run at delivery. */
+/* Independent known-answer cases for the compiled rank and derived byte size. */
 #include "daahe_core.h"
 #include <stdio.h>
 #include <string.h>
@@ -36,9 +36,9 @@ int main(void) {
     uint32_t tag[DAAHE_TAG_DIM] = {0};
     uint32_t tag_input[2] = {2,3}, streamed_tag[DAAHE_TAG_DIM];
     int32_t data[2] = {1, -2};
-    uint8_t accumulator[DAAHE_CIPHER_BYTES], payload[64], mac[16] = {0};
+    uint8_t accumulator[2u * DAAHE_CIPHER_BYTES], payload[64], mac[16] = {0};
     daahe_stream stream;
-    size_t i, source, block;
+    size_t i, source, block, multiplier, bytes, blocks;
     a[255] = 1; b[1] = 1;
     daahe_ring_mul(out,a,b);
     CHECK(out[0] == UINT32_MAX);
@@ -59,21 +59,30 @@ int main(void) {
     for (i=0;i<DAAHE_TAG_DIM;++i) CHECK(streamed_tag[i] == 0);
     memset(payload,0,sizeof payload);
     for (i=0;i<sizeof payload;i+=4) payload[i]=1;
-    CHECK(daahe_stream_init(&stream,accumulator,sizeof accumulator,4096,2,64) == 1);
-    for (source=0;source<2;++source) {
-        for (block=0;block<64;++block) {
-            CHECK(daahe_stream_push(&stream,source,block,64,payload,64,mac,test_only_accept,NULL) == 1);
+    for (multiplier=1;multiplier<=2;++multiplier) {
+        bytes = multiplier * DAAHE_CIPHER_BYTES;
+        blocks = bytes / sizeof payload;
+        CHECK(daahe_stream_init(&stream,accumulator,sizeof accumulator,bytes,2,64) == 1);
+        for (source=0;source<2;++source) {
+            for (block=0;block<blocks;++block) {
+                CHECK(daahe_stream_push(&stream,source,block,blocks,payload,64,mac,test_only_accept,NULL) == 1);
+            }
+        }
+        CHECK(daahe_stream_finish(&stream) == 1);
+        for (i=0;i<bytes;i+=4) {
+            CHECK(accumulator[i]==2 && accumulator[i+1]==0 && accumulator[i+2]==0 && accumulator[i+3]==0);
         }
     }
-    CHECK(daahe_stream_finish(&stream) == 1);
-    for (i=0;i<sizeof accumulator;i+=4) {
-        CHECK(accumulator[i]==2 && accumulator[i+1]==0 && accumulator[i+2]==0 && accumulator[i+3]==0);
-    }
-    CHECK(daahe_stream_init(&stream,accumulator,sizeof accumulator,4096,1,64) == 1);
-    CHECK(daahe_stream_push(&stream,0,0,64,payload,64,mac,test_only_reject,NULL) == 0);
+    CHECK(daahe_stream_init(&stream,accumulator,sizeof accumulator,DAAHE_CIPHER_BYTES-4u,1,64) == 0);
+#if DAAHE_K != 3
+    CHECK(daahe_stream_init(&stream,accumulator,sizeof accumulator,4096,1,64) == 0);
+#endif
+    CHECK(daahe_stream_init(&stream,accumulator,sizeof accumulator,DAAHE_CIPHER_BYTES,1,64) == 1);
+    CHECK(daahe_stream_push(&stream,0,0,DAAHE_CIPHER_BYTES/64u,payload,64,mac,test_only_reject,NULL) == 0);
     CHECK(daahe_stream_finish(&stream) == 0);
-    for (i=0;i<sizeof accumulator;++i) CHECK(accumulator[i]==0);
-    puts("portable core known-answer cases passed in this execution");
+    for (i=0;i<DAAHE_CIPHER_BYTES;++i) CHECK(accumulator[i]==0);
+    printf("portable core known-answer cases passed in this execution: rank=%u ciphertext_bytes=%u\n",
+           (unsigned)DAAHE_K, (unsigned)DAAHE_CIPHER_BYTES);
     return 0;
 }
 
