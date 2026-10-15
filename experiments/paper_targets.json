@@ -15,5 +15,4 @@
   "analytical_lower_bounds_ms":{"protected_phy_payload_only":131.072,"protected_cpu_plus_one_hop_payload":189.197,"workload_weighted":77.199},
   "reconstruction_targets":[{"profile":"Pi0","L":240,"delta_q":8,"rmse":0.42,"prd_percent":0.85},{"profile":"Pi1","L":180,"delta_q":12,"rmse":0.78,"prd_percent":1.42},{"profile":"Pi2","L":120,"delta_q":16,"rmse":1.15,"prd_percent":2.18}],
   "security_floor_bits":128.1,
-  "note":"Targets are rounded publication values, not measured files, executable calibration, tolerances, or pass/fail proof. Confidence intervals cannot be recovered from aggregate means."
 }
