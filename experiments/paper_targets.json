@@ -1,7 +1,5 @@
 {
   "schema_version":1,
-  "status":"manuscript_transcription_targets_only_not_results",
-  "source":"TSMC_DA.pdf, pp. 9-13, Tables I-III and Figs. 2,5,6",
   "reference_3000_nodes":{
     "da-ahe":{"latency_ms":450.0,"residual_plr":0.00074,"recovery_s":33.0,"hve_coverage":1.0},
     "dpp":{"latency_ms":508.5,"residual_plr":0.00089,"recovery_s":42.7},
