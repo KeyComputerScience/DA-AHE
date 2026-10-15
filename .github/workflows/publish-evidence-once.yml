@@ -1,0 +1,56 @@
+name: Publish validated independent evidence and CI
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - name: Apply exact validated bundle with concurrent-change protection
+        run: |
+          python3 - <<'PYCODE'
+          import hashlib, json, os, subprocess
+          from pathlib import Path
+          from zipfile import ZipFile
+          bundle = Path('DA-AHE-full-evidence-ci-update.zip')
+          assert hashlib.sha256(bundle.read_bytes()).hexdigest() == '2fa4ebb1bba4b555c9eb1485f7f544fd46ad50eddd4e1b1685e6e19cd17a0c3c'
+          with ZipFile(bundle) as archive:
+              manifest = json.loads(archive.read('BUNDLE-MANIFEST.json'))
+              assert manifest['base_commit'] == 'cf06c13c9d44da1b1582d77633e561a9b7f98def'
+              assert len(manifest['files']) == 33
+              names = {row['path'] for row in manifest['files']}
+              assert len(names) == 33 and set(archive.namelist()) == names | {'BUNDLE-MANIFEST.json'}
+              for row in manifest['files']:
+                  path = Path(row['path'])
+                  assert not path.is_absolute() and '..' not in path.parts and not path.is_symlink()
+                  original = subprocess.run(['git', 'show', manifest['base_commit'] + ':' + row['path']], capture_output=True)
+                  if original.returncode == 0:
+                      assert path.read_bytes() == original.stdout, 'Concurrent change: ' + row['path']
+                  else:
+                      assert not path.exists(), 'Concurrent new file: ' + row['path']
+                  data = archive.read(row['path'])
+                  assert len(data) == row['size'] and hashlib.sha256(data).hexdigest() == row['sha256']
+              for row in manifest['files']:
+                  path = Path(row['path']); path.parent.mkdir(parents=True, exist_ok=True)
+                  path.write_bytes(archive.read(row['path'])); os.chmod(path, row['mode'])
+          source = json.loads(Path('manifest.json').read_text())['files']
+          assert len(source) == 133
+          for row in source:
+              data = Path(row['path']).read_bytes()
+              assert len(data) == row['size'] and hashlib.sha256(data).hexdigest() == row['sha256'], row['path']
+          for index in ['claim-coverage.json', 'publication.json']:
+              assert json.loads(Path('evidence/independent', index).read_text())['paper_reproduced'] is False
+          subprocess.run(['git', 'config', 'user.name', 'github-actions[bot]'], check=True)
+          subprocess.run(['git', 'config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com'], check=True)
+          subprocess.run(['git', 'add', '--', *sorted(names)], check=True)
+          subprocess.run(['git', 'rm', '--', str(bundle)], check=True)
+          subprocess.run(['git', 'diff', '--cached', '--check'], check=True)
+          subprocess.run(['git', 'commit', '-m', 'Publish complete independent evidence verification and mandatory CI'], check=True)
+          subprocess.run(['git', 'push', 'origin', 'HEAD:main'], check=True)
+          print(json.dumps({'applied_files': len(names), 'source_manifest_verified': len(source), 'paper_reproduced': False}))
+          PYCODE
