@@ -5,7 +5,7 @@ The JSON/framing choices complete unspecified manuscript details. This Python
 implementation makes no 10-KiB or constant-time claim. Run safety certification
 separately before deploying any profile; this module allows reference experiments.
 """
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 import hashlib
 import hmac
 import json
@@ -15,7 +15,7 @@ import struct
 from typing import Iterable
 
 from .derivation import derive_matrix, derive_offset, linear_tag
-from .mlwe import Ciphertext, decrypt, encrypt, iter_ciphertext_blocks
+from .mlwe import DEFAULT_PARAMETERS, MLWEParameters, Ciphertext, decrypt, encrypt, iter_ciphertext_blocks
 from .profiles import P, ProfileLibrary, canonical_json
 from .signal import encode_channels, reconstruct_channels
 
@@ -48,6 +48,7 @@ class Ticket:
     roster: tuple[Contributor, ...]
     batch_nonce: bytes
     block_bytes: int = 64
+    encryption_parameters: MLWEParameters = DEFAULT_PARAMETERS
 
     def __post_init__(self):
         if type(self.epoch) is not int or type(self.batch_id) is not int:
@@ -68,13 +69,16 @@ class Ticket:
             raise ValueError("batch nonce must be 256 bits")
         if self.block_bytes not in (32, 64):
             raise ValueError("block length not allowlisted")
+        if not isinstance(self.encryption_parameters, MLWEParameters):
+            raise ValueError("ticket requires explicit validated encryption parameters")
 
     def object(self):
-        return {"wire_version": 1, "epoch": self.epoch, "batch_id": self.batch_id,
+        return {"wire_version": 2, "epoch": self.epoch, "batch_id": self.batch_id,
                 "context": self.context, "profile_id": self.profile_id,
                 "profile_digest": self.profile_digest,
                 "roster": [s.object() for s in self.roster],
-                "batch_nonce": self.batch_nonce.hex(), "block_bytes": self.block_bytes}
+                "batch_nonce": self.batch_nonce.hex(), "block_bytes": self.block_bytes,
+                "encryption_parameters": asdict(self.encryption_parameters)}
 
     def encode(self):
         return canonical_json(self.object())
@@ -290,11 +294,13 @@ def encapsulate(channels, signed_ticket: SignedTicket, source: Contributor,
     ticket = signed_ticket.ticket
     if source not in ticket.roster:
         raise ValueError("unauthorized source")
+    if pk.params != ticket.encryption_parameters:
+        raise ValueError("ticket and encryption key parameters differ")
     snapshot = tuple(tuple(channel) for channel in channels)
     x = (_quantize_raw(snapshot, profile) if profile.representation == "raw" else
          encode_channels(snapshot, profile.support, profile.delta_q, profile.coefficient_bound))
     payload_digest = hashlib.sha3_256(canonical_json(snapshot)).digest()
-    J = 4096 * profile.polynomial_count // ticket.block_bytes
+    J = pk.params.ciphertext_bytes * profile.polynomial_count // ticket.block_bytes
     cached = source_store._bind(ticket, source, payload_digest)
     if cached is not None:
         original = source_store._decode(cached, signed_ticket, source, J)
@@ -350,7 +356,7 @@ def aggregate(envelopes: Iterable[SourceEnvelope], signed_ticket: SignedTicket,
     ticket = signed_ticket.ticket
     if len(gateway_key) < 32:
         raise ValueError("gateway key needs 256 bits")
-    total_bytes = 4096 * profile.polynomial_count
+    total_bytes = ticket.encryption_parameters.ciphertext_bytes * profile.polynomial_count
     J = total_bytes//ticket.block_bytes
     accumulator = bytearray(total_bytes)
     received = []
@@ -439,19 +445,23 @@ class Sink:
             ticket = signed.ticket
             if ticket.epoch != self.epoch or ticket.context != self.context:
                 return None
+            if ticket.encryption_parameters != self.sk.params:
+                return None
             profile = verify_ticket(signed, self.verifier, self.library)
             if not profile.verify_integrity and not self.allow_unverified:
                 return None
             if envelope.contributors != ticket.roster:
                 return None
-            if len(envelope.ciphertext) != 4096*profile.polynomial_count:
+            ciphertext_bytes = self.sk.params.ciphertext_bytes
+            if len(envelope.ciphertext) != ciphertext_bytes*profile.polynomial_count:
                 return None
             expected = hmac.digest(self.gateway_key,
                 aggregate_message(signed, envelope.contributors, envelope.ciphertext), "sha3_256")
             if not hmac.compare_digest(expected, envelope.transport_mac):
                 return None
-            polys = [decrypt(self.sk, Ciphertext.from_bytes(envelope.ciphertext[i:i+4096]))
-                     for i in range(0, len(envelope.ciphertext), 4096)]
+            polys = [decrypt(self.sk, Ciphertext.from_bytes(
+                         envelope.ciphertext[i:i+ciphertext_bytes], self.sk.params))
+                     for i in range(0, len(envelope.ciphertext), ciphertext_bytes)]
             x, tag = unpack_values(polys, profile.L, profile.tag_count)
             if profile.verify_integrity:
                 matrix = derive_matrix(self.epoch_secret, ticket.digest, profile.L)

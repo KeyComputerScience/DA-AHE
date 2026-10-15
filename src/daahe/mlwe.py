@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Auditable M-LWE additive-encryption reference for the paper's fixed tuple.
+"""Auditable M-LWE additive-encryption reference with explicit module rank.
 
 API: ``keygen(rng=None) -> KeyPair``, ``encrypt(pk, message, sigma=3.2,
 rng=None) -> Ciphertext``, ``decrypt(sk, ciphertext) -> tuple[int, ...]`` and
@@ -38,15 +38,15 @@ class MLWEParameters:
     q: int = 2**32
     p: int = 65537
     d: int = 256
-    k: int = 3
+    k: int = 6
     lambda_tag: int = 16
     sigma_key: float = 3.2
 
     def __post_init__(self) -> None:
-        if (self.q, self.p, self.d, self.k, self.lambda_tag) != (
-            2**32, 65537, 256, 3, 16
-        ) or self.sigma_key != 3.2:
-            raise ValueError("this reference implements only the paper's fixed key tuple")
+        if (self.q, self.p, self.d, self.lambda_tag) != (
+            2**32, 65537, 256, 16
+        ) or self.sigma_key != 3.2 or type(self.k) is not int or not 3 <= self.k <= 16:
+            raise ValueError("supported tuples require d=256, q=2^32, p=65537, sigma_key=3.2 and integer module rank 3..16; security must be estimated separately")
 
     @property
     def delta(self) -> int:
@@ -62,6 +62,7 @@ class MLWEParameters:
 
 
 DEFAULT_PARAMETERS = MLWEParameters()
+LEGACY_PARAMETERS = MLWEParameters(k=3)
 CIPHERTEXT_BYTES = DEFAULT_PARAMETERS.ciphertext_bytes
 
 
@@ -204,7 +205,7 @@ class KeyPair:
 
 @dataclass(frozen=True)
 class Ciphertext:
-    """Immutable (u[0], u[1], u[2], v), each holding 256 canonical uint32 words."""
+    """Immutable (u[0],...,u[k-1],v), each holding 256 canonical uint32 words."""
 
     u: tuple[Poly, ...]
     v: Poly
@@ -232,7 +233,7 @@ class Ciphertext:
         )
 
     def to_bytes(self) -> bytes:
-        """Materialize 4096 bytes; transmission should use the streaming iterator."""
+        """Materialize parameter-derived bytes; streaming avoids a second buffer."""
         return b"".join(iter_ciphertext_blocks(self, 64))
 
     @classmethod
@@ -240,7 +241,7 @@ class Ciphertext:
         cls, encoded: bytes, params: MLWEParameters = DEFAULT_PARAMETERS
     ) -> Ciphertext:
         if not isinstance(encoded, bytes) or len(encoded) != params.ciphertext_bytes:
-            raise ValueError("ciphertext must contain exactly 4096 bytes")
+            raise ValueError(f"ciphertext must contain exactly {params.ciphertext_bytes} bytes for module rank {params.k}")
         words = tuple(
             int.from_bytes(encoded[index : index + 4], "little")
             for index in range(0, len(encoded), 4)
@@ -323,8 +324,8 @@ def iter_ciphertext_blocks(ciphertext: Ciphertext, block_size: int = 64) -> Iter
         yield bytes(block)
 
 
-def deserialize_ciphertext(encoded: bytes) -> Ciphertext:
-    return Ciphertext.from_bytes(encoded)
+def deserialize_ciphertext(encoded: bytes, params: MLWEParameters = DEFAULT_PARAMETERS) -> Ciphertext:
+    return Ciphertext.from_bytes(encoded, params)
 
 
 def add_ciphertexts(ciphertexts: Sequence[Ciphertext]) -> Ciphertext:

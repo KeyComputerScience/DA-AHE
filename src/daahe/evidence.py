@@ -7,7 +7,7 @@ import json
 from pathlib import Path, PurePosixPath
 
 IGNORED_PARTS = {".git", ".venv", "__pycache__", ".pytest_cache", ".ruff_cache", "node_modules",
-                 "private", ".secrets", ".keys", "runs", "results", ".DS_Store"}
+                 "private", ".secrets", ".keys", "runs", "results", "evidence", "build", "dist", ".DS_Store"}
 PRIVATE_SUFFIXES = (".key", ".pem", ".p12", ".pfx", ".sqlite", ".sqlite3", ".sqlite-wal", ".sqlite-shm",
                     ".sqlite3-wal", ".sqlite3-shm")
 REQUIRED_AUTHOR_ARTIFACTS = {

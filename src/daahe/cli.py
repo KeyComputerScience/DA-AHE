@@ -18,7 +18,7 @@ def write_json(path, value):
 
 def demo(args):
     """A functional scenario, never a network benchmark or security certificate."""
-    from .mlwe import keygen
+    from .mlwe import DEFAULT_PARAMETERS, MLWEParameters, keygen
     from .profiles import example_profiles
     from .protocol import (Contributor, Ticket, Sink, ReplayStore, SourceEmissionStore, issue_ticket,
                            encapsulate, aggregate, aggregate_message)
@@ -31,7 +31,8 @@ def demo(args):
     args.output.mkdir(parents=True, exist_ok=True)
     epoch_secret = secrets.token_bytes(32)
     gateway_key = secrets.token_bytes(32)
-    keypair = keygen()
+    params = MLWEParameters(k=getattr(args, "module_rank", None) or DEFAULT_PARAMETERS.k)
+    keypair = keygen(params=params)
     roster = tuple(Contributor(f"node-{i:04}", secrets.token_bytes(16))
                    for i in range(args.participants))
     keys = {s.source_id: secrets.token_bytes(32) for s in roster}
@@ -39,7 +40,7 @@ def demo(args):
                              for t in range(240)) for c in (0,1))
                for i,s in enumerate(roster)}
     ticket = Ticket(0, 0, "demo-v1", profile.profile_id, profile.digest, roster,
-                    secrets.token_bytes(32), args.block_bytes)
+                    secrets.token_bytes(32), args.block_bytes, params)
     with MLDSA44Signer.keygen() as signer:
         verifier = MLDSA44Verifier(signer.public_key)
         signed = issue_ticket(ticket, signer)
@@ -53,7 +54,7 @@ def demo(args):
                     ReplayStore(args.output/"seen.sqlite"), allow_unverified=not profile.verify_integrity)
         # Compromised-gateway attack: retain a VALID transport MAC after modifying v.
         mutated = bytearray(result.ciphertext)
-        index = 3*256*4  # first v word, not a u word
+        index = params.k*params.d*4  # first v word, not a u word
         value = (int.from_bytes(mutated[index:index+4], "little") + 65535) & 0xffffffff
         mutated[index:index+4] = value.to_bytes(4,"little")
         transport = hmac.digest(gateway_key,
@@ -72,7 +73,8 @@ def demo(args):
         report = {"status":"reference_demo_only_uncertified", "profile":asdict(profile),
                   "ticket":ticket.object(), "ticket_signature_bytes":len(signed.signature),
                   "participants":args.participants,
-                  "payload_bytes_per_report":4096*profile.polynomial_count,
+                  "encryption_parameters":asdict(params),
+                  "payload_bytes_per_report":params.ciphertext_bytes*profile.polynomial_count,
                   "blocks_per_report":len(envelopes[0].blocks),
                   "block_mac_bytes_per_report":16*len(envelopes[0].blocks),
                   "honest_aggregate_accepted":True,
@@ -103,6 +105,7 @@ def main(argv=None):
     p.add_argument("--participants", type=int, default=3, choices=range(1,17))
     p.add_argument("--block-bytes", type=int, choices=(32,64), default=64)
     p.add_argument("--profile", choices=("pi0","pi1","pi2","fallback","without_intdb2","without_hve"), default="pi0")
+    p.add_argument("--module-rank", type=int, choices=range(3,17), help="explicit module rank; cryptanalytic security must be checked with the parameter estimator")
     p = commands.add_parser("profiles", help="show immutable reconstructed profiles")
     p.add_argument("--output", type=Path)
     p = commands.add_parser("stats", help="analyze external paired packet-level runs")
