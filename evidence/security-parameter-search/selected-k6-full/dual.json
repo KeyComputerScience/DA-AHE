@@ -1,0 +1,50 @@
+{
+  "algorithm": "dual",
+  "beta": "525",
+  "elapsed_seconds": 5.695874458993785,
+  "finished_at": "2026-10-15T01:36:06.082066+00:00",
+  "full_cost": {
+    "beta": "525",
+    "d": "3072",
+    "m": "1536",
+    "mem": "326456723718358842129903987357091896",
+    "repetitions": "1",
+    "rop": "7.59972971508542e41",
+    "tag": "dual"
+  },
+  "inputs": {
+    "canonical_word_bytes": 4,
+    "ciphertext_bytes": 7168,
+    "error_distribution": "centered DiscreteGaussian(stddev=3.2)",
+    "m": 1536,
+    "module_rank": 6,
+    "n": 1536,
+    "plaintext_modulus": 65537,
+    "q": 4294967296,
+    "ring_degree": 256,
+    "secret_distribution": "centered DiscreteGaussian(stddev=3.2)",
+    "sigma_key": 3.2,
+    "sigma_secret": 3.2
+  },
+  "lattice_dimension": "3072",
+  "log2_rop": 139.12500000030124,
+  "memory": "326456723718358842129903987357091896",
+  "process_returncode": 0,
+  "raw_log_sha256": "b076292cfa8a5a2bf5ff4ceae9c93a4cb4cbb45f95deae9de4500396c32da220",
+  "rop": "7.59972971508542e41",
+  "sage_version": "10.9",
+  "sample_accounting": {
+    "amplification_terms": null,
+    "effective_error_stddev": "3.2",
+    "effective_problem_samples": "1536",
+    "original_error_stddev": "3.2",
+    "original_independent_samples": 1536,
+    "reported_attack_samples": "1536",
+    "sample_amplification": false,
+    "status": "within_original_sample_budget",
+    "upstream_problem": null
+  },
+  "sample_count": "1536",
+  "started_at": "2026-10-15T01:36:00.386209+00:00",
+  "status": "success"
+}

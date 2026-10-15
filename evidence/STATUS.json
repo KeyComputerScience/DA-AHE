@@ -1,0 +1,134 @@
+{
+  "decoding": {
+    "finite_adaptive_choices": 42,
+    "log2_failure_upper_approx": -130.5101731584115,
+    "report": "decoding/k6-cdt-03/decoding-bound.json",
+    "report_sha256": "2be1b88b34bdee74c852fd12c9020c4fed1870a117f4a63ab00d057944991335",
+    "scope": "one preauthorized fresh honest batch, joint random-key/history/noise probability; exact finite CDT; not every fixed key, conditional arbitrary history or lifetime",
+    "status": "interval_bound_passed"
+  },
+  "failed_attempts_retained": true,
+  "firmware": {
+    "build_id": "106d2434c4506359e2eef5b418c4502ae2466ede4306fcd862c2aff1e37ebc28",
+    "build_metadata": "selected-k6/build-metadata.json",
+    "build_metadata_sha256": "f4bd63d83b40c7dcf7af6e27355cd9d06066a0d22d67c66a4c7e4863a0e8a2ed",
+    "compiled_memory_bytes": {
+      "benchmark_psp_included_in_bss": 8192,
+      "flash_load_sections": 5624,
+      "main_msp_reserved_separately": 4096,
+      "scope": "compiled independent harness only; not measured stack or paper firmware",
+      "static_ram_data_bss": 20608
+    },
+    "elf_sha256": "96de9a4f98f10544c2b9868a3502a80397b668a6aaf240cf975b26dc093f1b73",
+    "host_validation": {
+      "cmake_configure_build_ctest_rank6": "passed_actual_execution",
+      "cmake_log_sha256": "5cf96884acf7fbfce42a43ccbc9ed146c0434345a74f45716416acf229ae6536",
+      "junit_sha256": "19138dee21d46cbabe0451bf8d0d1cb726b7d6d046e5430e2cf234b883d8938c",
+      "log_sha256": "3cc413712cbc647a771af3337c099e0a4a20436a2a3c7c38e7730cb6399a2fe5",
+      "native_core_known_answers": "passed_actual_rank6_execution",
+      "pytest_passed": 37,
+      "ruff": "passed"
+    },
+    "legacy_baseline": "arm-gcc-14.3.1/build-metadata.json",
+    "limitations": [
+      "Core microbenchmarks only; not full M-LWE encryption, ML-DSA/HMAC/KDF/IntDb2, radio or Contiki-NG.",
+      "No board execution or full-protocol 10-KiB workspace claim.",
+      "Security estimation is separate evidence, not measured by this firmware."
+    ],
+    "map_sha256": "bc68e583dc25b183826357ec6591179b8d5930828f7d171b07c7b7b03f4a3fbd",
+    "origin": "independent_reimplementation",
+    "paper_reproduced": false,
+    "parameters": {
+      "ciphertext_bytes": 7168,
+      "ciphertext_modulus": 4294967296,
+      "ciphertexts_per_stream": 1,
+      "module_rank": 6,
+      "plaintext_modulus": 65537,
+      "ring_degree": 256,
+      "stream_block_bytes": 64,
+      "stream_roster_size": 16
+    },
+    "physical_board": {
+      "cycles_measured": false,
+      "energy_measured": false,
+      "samples": 0,
+      "stack_hwm_measured": false,
+      "status": "pending"
+    },
+    "schema_version": 2,
+    "status": "selected_rank6_cross_compiled_and_host_validated_board_pending"
+  },
+  "full_system_certified": false,
+  "host_tests": {
+    "execution": "tests/final-host-02/execution.json",
+    "junit": "tests/final-host-02-junit.xml",
+    "passed": 466,
+    "real_ml_dsa_additional_passed": 1,
+    "sage_interval_tests_passed": 19,
+    "sage_log": "decoding/k6-cdt-03/sage-tests.log",
+    "skipped": 1
+  },
+  "integrity": {
+    "full_evidence_manifest": "manifest.json",
+    "scope": "byte integrity only; does not authenticate measurements or establish proof validity"
+  },
+  "origin": "independent_reimplementation",
+  "original_author_artifacts_restored": false,
+  "paper_reproduced": false,
+  "physical_board": {
+    "cycles_measured": false,
+    "energy_measured": false,
+    "samples": 0,
+    "stack_hwm_measured": false,
+    "status": "pending"
+  },
+  "protocol": {
+    "fresh_key_trials": 20,
+    "gateway_modification_rejected": true,
+    "honest_accepted": true,
+    "replay_rejected": true,
+    "status": "passed",
+    "summary": "protocol/selected-k6-trials/summary.json"
+  },
+  "publication": {
+    "full_raw_public_archive_uploaded": false,
+    "git_patch": "DA-AHE-independent-reproduction.patch",
+    "reason": "GitHub integration create-branch returned 403 and local Git has no push credentials",
+    "repository_uploaded": false,
+    "source_zip": "DA-AHE-independent-source.zip"
+  },
+  "schema_version": 1,
+  "security": {
+    "ciphertext_bytes": 7168,
+    "m": 1536,
+    "minimum_estimated_bits": 136.475,
+    "module_rank": 6,
+    "n": 1536,
+    "report": "security-parameter-search/selected-k6-full/security.json",
+    "report_sha256": "3794650eb763f528bab90aab42ff4ed54e7616d5d85358239db261e27f668168",
+    "requested_minimum_bits": 128.1,
+    "scope": "generic flattened-LWE/Gaussian-like estimator; ADPS16 quantum; heuristic, not actual-CDT/module/side-channel proof",
+    "status": "passed_declared_heuristic_model",
+    "successful_attacks": 7,
+    "verification": "security-parameter-search/selected-k6-full/verification.json"
+  },
+  "simulation": {
+    "all_decisions_certified": false,
+    "drain_s": 35,
+    "execution": "simulation-execution/execution.json",
+    "full_raw_bundle": "DA-AHE-independent-evidence.tar",
+    "full_raw_directory": "simulation",
+    "gateways": 60,
+    "generation_duration_s": 90,
+    "method_count": 7,
+    "nodes": 3000,
+    "run_count": 140,
+    "scope": "independent synthetic Python model; fixed preauthorized rosters; not OMNeT++/INET, original figures or physical calibration",
+    "seed_count": 20,
+    "small_index_extract": "campaign-report",
+    "source_digest": "ba9749ce35d4b401afabae8e333aaedc1521dfcedd7d7b35f44affc4cc8f579a",
+    "status": "completed_and_independently_recomputed",
+    "verification": "simulation-verification/stdout.log"
+  },
+  "updated_utc": "2026-10-15T02:06:19.242197+00:00"
+}

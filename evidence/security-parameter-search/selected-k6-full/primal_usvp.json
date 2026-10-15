@@ -1,0 +1,50 @@
+{
+  "algorithm": "primal_usvp",
+  "beta": "515",
+  "elapsed_seconds": 5.053429082996445,
+  "finished_at": "2026-10-15T01:34:36.354860+00:00",
+  "full_cost": {
+    "beta": "515",
+    "d": "3072",
+    "delta": "1.00333301026726",
+    "problem": "LWEParameters(n=1536, q=4294967296, Xs=D(\u03c3=3.20), Xe=D(\u03c3=3.20), m=1536, tag='DA-AHE independent parameter candidate')",
+    "red": "1.21078953388668e41",
+    "rop": "1.21078953388668e41",
+    "tag": "usvp"
+  },
+  "inputs": {
+    "canonical_word_bytes": 4,
+    "ciphertext_bytes": 7168,
+    "error_distribution": "centered DiscreteGaussian(stddev=3.2)",
+    "m": 1536,
+    "module_rank": 6,
+    "n": 1536,
+    "plaintext_modulus": 65537,
+    "q": 4294967296,
+    "ring_degree": 256,
+    "secret_distribution": "centered DiscreteGaussian(stddev=3.2)",
+    "sigma_key": 3.2,
+    "sigma_secret": 3.2
+  },
+  "lattice_dimension": "3072",
+  "log2_rop": 136.475,
+  "memory": null,
+  "process_returncode": 0,
+  "raw_log_sha256": "f64ce1b0f09c0ef980dd26d35a07cab4334e5883b58b6983545605ed06d161dc",
+  "rop": "1.21078953388668e41",
+  "sage_version": "10.9",
+  "sample_accounting": {
+    "amplification_terms": null,
+    "effective_error_stddev": null,
+    "effective_problem_samples": null,
+    "original_error_stddev": "3.2",
+    "original_independent_samples": 1536,
+    "reported_attack_samples": null,
+    "sample_amplification": false,
+    "status": "sample_count_not_reported_by_upstream",
+    "upstream_problem": "LWEParameters(n=1536, q=4294967296, Xs=D(\u03c3=3.20), Xe=D(\u03c3=3.20), m=1536, tag='DA-AHE independent parameter candidate')"
+  },
+  "sample_count": null,
+  "started_at": "2026-10-15T01:34:31.301449+00:00",
+  "status": "success"
+}
