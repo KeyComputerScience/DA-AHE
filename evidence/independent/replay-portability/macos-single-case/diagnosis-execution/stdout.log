@@ -1,0 +1,50 @@
+{
+  "diagnostic_only": true,
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "seed": 1004,
+  "method": "da-ahe",
+  "source_digest": "ba9749ce35d4b401afabae8e333aaedc1521dfcedd7d7b35f44affc4cc8f579a",
+  "frozen_source_files_verified": 28,
+  "environment": {
+    "python": "3.12.10 (v3.12.10:0cc81280367, Apr  8 2025, 08:46:59) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "zlib_compile": "1.2.11",
+    "zlib_runtime": "1.2.12"
+  },
+  "raw_compressed_sha256": {
+    "epochs.jsonl.gz": {
+      "expected": "4b52666caa38ae5f70c1f98be90f3ccf358fa0968631e1d81b172d29a59ad848",
+      "actual": "4b52666caa38ae5f70c1f98be90f3ccf358fa0968631e1d81b172d29a59ad848",
+      "equal": true
+    },
+    "events.jsonl.gz": {
+      "expected": "590412a9316010e8418fd57026975083767dbe3d8d66ec1415ea7dca23b19745",
+      "actual": "590412a9316010e8418fd57026975083767dbe3d8d66ec1415ea7dca23b19745",
+      "equal": true
+    },
+    "packets.jsonl.gz": {
+      "expected": "56bcb429b41ae6c345c508f6cbf5f94a41a4d4be0d218a9c0658245e35633dc1",
+      "actual": "56bcb429b41ae6c345c508f6cbf5f94a41a4d4be0d218a9c0658245e35633dc1",
+      "equal": true
+    },
+    "reports.jsonl.gz": {
+      "expected": "5a46bc7ad821ec7faab70ca34ac2451292341fd5ab743661557529a6a8bf9414",
+      "actual": "5a46bc7ad821ec7faab70ca34ac2451292341fd5ab743661557529a6a8bf9414",
+      "equal": true
+    }
+  },
+  "epochs_uncompressed_sha256": {
+    "expected": "832461237ed2c1fd193f715afd2134077671a83fb87b0071a076b032a834ab59",
+    "actual": "832461237ed2c1fd193f715afd2134077671a83fb87b0071a076b032a834ab59",
+    "equal": true
+  },
+  "epochs_parsed_records_exact": true,
+  "epochs_record_counts": {
+    "expected": 26,
+    "actual": 26
+  },
+  "epochs_first_differences": [],
+  "epochs_difference_count": 0,
+  "tolerance_used": false
+}

@@ -14,8 +14,8 @@
     },
     {
       "path": ".github/workflows/reproduce.yml",
-      "sha256": "7fd8ae9db92f951d994597040e4c3e203d5abf99eff3957367617ca9e908fc9f",
-      "size": 14077
+      "sha256": "e3a90739292e34cd04dfb736fe6553d764ccc4d351f4852f8cfe727d3a876207",
+      "size": 15766
     },
     {
       "path": ".gitignore",
@@ -59,8 +59,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "bf61a01886338263fef14e14fdc4f75046c9082bce6a2854a297926a3fb9c806",
-      "size": 7102
+      "sha256": "6c5195dfd988ef9a5550d3f0760f8fbca1070b9fa4b6f3134e0cd6bc62dade36",
+      "size": 7293
     },
     {
       "path": "SECURITY.md",
@@ -109,8 +109,8 @@
     },
     {
       "path": "docs/CI_AND_PATCH.md",
-      "sha256": "d87a70d6af2765e97cd970d73c06145d69dcc958bdd14f5ee01c3fc32840b3b6",
-      "size": 1878
+      "sha256": "556b92978f6f4b82c5cba0449f6a771f0bb4289c00aa02ec6458edad36aa2051",
+      "size": 2088
     },
     {
       "path": "docs/CLAIM_TRACEABILITY.md",
@@ -144,8 +144,13 @@
     },
     {
       "path": "docs/PUBLIC_EVIDENCE.md",
-      "sha256": "232fe01d9c7212ad2e0f548087b8ef9ca3a534fba16554574710e994d63a83f4",
-      "size": 4523
+      "sha256": "017af0016a02f67f4f5e497f2790cc8f148368c8e401bbf7bbb75de6a80000c7",
+      "size": 5069
+    },
+    {
+      "path": "docs/REPLAY_PORTABILITY.md",
+      "sha256": "1817c82d6e34ae9fc47b151a6aa5766a138a61fb4e04884d8dc445dd7aad2ce4",
+      "size": 3674
     },
     {
       "path": "docs/REPOSITORY_REVIEW.md",
@@ -159,8 +164,13 @@
     },
     {
       "path": "docs/REPRODUCTION_COVERAGE.md",
-      "sha256": "2e087a98d64323472b4757dbd7be4f2ab29ae2a9691874159533089cc1149f35",
-      "size": 10030
+      "sha256": "fdc027e478b1d13793714c0d60ad0c28f43d0c02f27a17ec17f1a3d658c6871e",
+      "size": 10322
+    },
+    {
+      "path": "docs/archive/manifest-63bcbdf-source.json",
+      "sha256": "9b33fbc84f41a4564e273bf58acf750a98ecb8e19467dfbff4f02fc4175a7beb",
+      "size": 21415
     },
     {
       "path": "docs/archive/manifest-cf06c13-source.json",
@@ -216,6 +226,11 @@
       "path": "evidence/independent/publication.json",
       "sha256": "f887fd84d4eda468d5da3a3bf80eae8160d53be48685e4a4b066cbb46c9081f9",
       "size": 3833
+    },
+    {
+      "path": "evidence/independent/replay-portability/manifest.json",
+      "sha256": "e0f0b87a80a736539c88ff41ffd60812f08d3d56f9e527cc7fbaf399e29bbfe3",
+      "size": 6568
     },
     {
       "path": "examples/telemetry_synthetic.csv",
@@ -469,8 +484,8 @@
     },
     {
       "path": "tests/test_ci_coverage.py",
-      "sha256": "31c9c325f87df6a0e098e88a498c02469ecd7dbf1f607cd4c66a349f78c9d017",
-      "size": 2815
+      "sha256": "0f6a39557925a942b8c095c2e11132bca958e2b72e7b6200c750ee1ad9933de4",
+      "size": 3338
     },
     {
       "path": "tests/test_control.py",
@@ -529,8 +544,8 @@
     },
     {
       "path": "tests/test_published_evidence.py",
-      "sha256": "23fc6066693e7d8cc3bf51d781a094e68c194b42f96e32cc5e4bd475233bd197",
-      "size": 12418
+      "sha256": "8d384d0977fc8dd98fb052ac60c7e3c4022904a6da64a4e1654f03af2fd191e3",
+      "size": 14012
     },
     {
       "path": "tests/test_security_execution.py",
@@ -549,8 +564,8 @@
     },
     {
       "path": "tests/test_simulation_campaign.py",
-      "sha256": "ab1900f1eeced20df2108e25479fabf8f10d058f871f5601a07019250fef791a",
-      "size": 2809
+      "sha256": "2991cbdfebbaa9215c7f2ad29d9052651cf5fc1a8e8a27775288df5f56af177a",
+      "size": 4400
     },
     {
       "path": "tests/test_simulation_network.py",
@@ -584,8 +599,8 @@
     },
     {
       "path": "tools/check_ci_coverage.py",
-      "sha256": "b59f70cba2d75b9e2b5daefd2d74519252ad9f055e3686d891c18fb17a74a835",
-      "size": 4351
+      "sha256": "41cf3b7dc104ebbef400050a8cedff319745598f97461b5e38e6e865e628bb12",
+      "size": 4385
     },
     {
       "path": "tools/check_reference_bounds.py",
@@ -659,13 +674,13 @@
     },
     {
       "path": "tools/verify_published_evidence.py",
-      "sha256": "136fda6fd9e4988c73a7230877ca1ccbc244ef88a7692b53dcf77d00442602ff",
-      "size": 14149
+      "sha256": "c1ba87a042ceb4f3476a4da0fa095585c6fea1448f043832ae3ac2cb91b239f5",
+      "size": 14762
     },
     {
       "path": "tools/verify_simulation_campaign.py",
-      "sha256": "895ff7c37276080bb67772365ea3756b546b3a0a69b8f3b8f743d9c3e9b1ca93",
-      "size": 6726
+      "sha256": "326cc2312ad330908def02696d8a1572e6304c0ebc14504ab1ef107b79fb2139",
+      "size": 7669
     }
   ],
   "schema_version": 1,

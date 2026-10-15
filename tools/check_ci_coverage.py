@@ -15,7 +15,8 @@ import os
 from pathlib import Path
 
 
-REQUIRED_JOBS = ("source", "functional", "firmware", "replay", "history", "campaign", "security")
+REQUIRED_JOBS = ("source", "functional", "firmware", "replay", "history", "history_linux",
+                 "campaign", "security")
 ROOT = Path(__file__).resolve().parents[1]
 
 

@@ -1,0 +1,27 @@
+{
+  "command": [
+    "../repro-venv/bin/python",
+    "tools/verify_simulation_campaign.py",
+    "../parallel-replay-campaign-03",
+    "--jobs",
+    "4",
+    "--replay"
+  ],
+  "cwd": "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/full-evidence-ci",
+  "finished_utc": "2026-10-15T11:35:25.779662+00:00",
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "process_group_id": 96466,
+  "process_id": 96466,
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "returncode": 0,
+  "schema_version": 1,
+  "source_digest": "278c742125b02caeb7268698e25561442019f3f2bda74ff749ee602509bbc4c6",
+  "started_utc": "2026-10-15T11:35:24.574533+00:00",
+  "status": "passed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "9475b170d3147d1d7f8f972772e75486f4c1d3d681b6d62e2d5d586ad1b296e2",
+  "timeout_s": 3600,
+  "wall_time_s": 1.1991686660039704
+}

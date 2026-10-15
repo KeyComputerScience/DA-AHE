@@ -116,12 +116,14 @@ the new `publication.json` records the current publication state.
 
 Every push to main, pull request and manual run executes source integrity,
 real-provider protocol/native tests, ARM microbenchmark compilation, small-case
-replay, historical 140-case download/recomputation/frozen-source replay, a fresh
+replay, historical 140-case raw recomputation on Linux and strict frozen-source
+replay on macOS ARM64/Python 3.12.10, a fresh
 20-seed/140-case campaign with replay, seven fresh pinned attack estimates and
 exact-CDT Sage decoding checks. The aggregate check fails if any required job is
 missing, skipped, cancelled or unsuccessful. Full runs can take substantially
 longer than functional tests; workflow configuration alone is not a successful
-execution receipt.
+execution receipt. [Replay environment and diagnosis](docs/REPLAY_PORTABILITY.md)
+preserves the observed Linux one-ULP historical difference and both hosted probes.
 
 The [claim coverage matrix](docs/REPRODUCTION_COVERAGE.md) distinguishes the
 independent implementation from unverified manuscript claims. Complete software

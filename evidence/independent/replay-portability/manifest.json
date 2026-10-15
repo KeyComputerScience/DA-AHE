@@ -1,0 +1,186 @@
+{
+  "algorithm": "SHA256",
+  "artifact_type": "independent-evidence-bundle",
+  "created_utc": "2026-10-15T11:48:46.674224+00:00",
+  "files": [
+    {
+      "path": "classification.json",
+      "sha256": "388c369681494f637443a5072c7d8587b999e1d540d37158856932043f46a4d3",
+      "size": 1253
+    },
+    {
+      "path": "linux-full-history-failure/execution.json",
+      "sha256": "d1d32c69e87c85717e2b9abde4a5f6f2251f3bbb9b41e97b03e1d8d277563acc",
+      "size": 1019
+    },
+    {
+      "path": "linux-full-history-failure/failure-index.json",
+      "sha256": "066ff2867893746a95adf90577b81ed0aaca1c5c1c8160efe39bf65e172fad57",
+      "size": 501
+    },
+    {
+      "path": "linux-full-history-failure/source-snapshot.json",
+      "sha256": "e6e9f2945b525cc44f66c63a5895083d41c608c9541c8121363ac2af63f717e3",
+      "size": 16952
+    },
+    {
+      "path": "linux-full-history-failure/stderr.log",
+      "sha256": "7f338fd230085de51b6ecb3e2f543bd005df180cf0fa790854dfe7e7bf3d7647",
+      "size": 1875
+    },
+    {
+      "path": "linux-full-history-failure/stdout.log",
+      "sha256": "c58363a275f6e5d4a4e67a97a9b8a92e11b88890a6c61ad1e9b48375e046bc00",
+      "size": 204
+    },
+    {
+      "path": "linux-single-case/diagnosis-execution/execution.json",
+      "sha256": "665954a906e0cb6894373305754fe9ae362033b098d70a9029a544dfa9779e7a",
+      "size": 845
+    },
+    {
+      "path": "linux-single-case/diagnosis-execution/source-snapshot.json",
+      "sha256": "29afb212750ffe373a026718bc7d3b334a76ff44cd073d1295c277a40ef77fc1",
+      "size": 16952
+    },
+    {
+      "path": "linux-single-case/diagnosis-execution/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "linux-single-case/diagnosis-execution/stdout.log",
+      "sha256": "4cfc814ce0c7149389411a344b3ecb7472df1de098226a4606b24582d0a2077d",
+      "size": 2219
+    },
+    {
+      "path": "linux-single-case/probe/diagnostic.json",
+      "sha256": "4cfc814ce0c7149389411a344b3ecb7472df1de098226a4606b24582d0a2077d",
+      "size": 2219
+    },
+    {
+      "path": "linux-single-case/probe/identity.json",
+      "sha256": "8bb2fc7cfc4ef03472da39f75dd15842bd200cd4d79e0071caee1c7066eb060c",
+      "size": 3356
+    },
+    {
+      "path": "linux-single-case/probe/probe.py",
+      "sha256": "a8d2d2a06fab73e61df70d2c0f97e05b84c7834b2c61346f394699f0c9696c4e",
+      "size": 4159
+    },
+    {
+      "path": "linux-single-case/probe/reference-epochs.jsonl.gz",
+      "sha256": "4b52666caa38ae5f70c1f98be90f3ccf358fa0968631e1d81b172d29a59ad848",
+      "size": 5758
+    },
+    {
+      "path": "linux-single-case/probe/replayed/epochs.jsonl.gz",
+      "sha256": "5ef5cfb5ea56b9680cf0bea51427a6465107d6c84044e207ca6fb79b36a4cb1e",
+      "size": 5757
+    },
+    {
+      "path": "macos-single-case/diagnosis-execution/execution.json",
+      "sha256": "79df343a3db299bc29c48dab3a566e5b714ae88566f484f7c0b3be03c5efa80a",
+      "size": 874
+    },
+    {
+      "path": "macos-single-case/diagnosis-execution/source-snapshot.json",
+      "sha256": "907ba0ac48f55b8350420329cc1159211dba74b14e92a31a32fa57706830463c",
+      "size": 16952
+    },
+    {
+      "path": "macos-single-case/diagnosis-execution/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "macos-single-case/diagnosis-execution/stdout.log",
+      "sha256": "f694f72aaa6c2fc96a7f4892032436f7821571028226290235a07f420679dd1a",
+      "size": 1852
+    },
+    {
+      "path": "macos-single-case/probe/diagnostic.json",
+      "sha256": "f694f72aaa6c2fc96a7f4892032436f7821571028226290235a07f420679dd1a",
+      "size": 1852
+    },
+    {
+      "path": "macos-single-case/probe/identity.json",
+      "sha256": "8bb2fc7cfc4ef03472da39f75dd15842bd200cd4d79e0071caee1c7066eb060c",
+      "size": 3356
+    },
+    {
+      "path": "macos-single-case/probe/probe.py",
+      "sha256": "a8d2d2a06fab73e61df70d2c0f97e05b84c7834b2c61346f394699f0c9696c4e",
+      "size": 4159
+    },
+    {
+      "path": "macos-single-case/probe/reference-epochs.jsonl.gz",
+      "sha256": "4b52666caa38ae5f70c1f98be90f3ccf358fa0968631e1d81b172d29a59ad848",
+      "size": 5758
+    },
+    {
+      "path": "macos-single-case/probe/replayed/epochs.jsonl.gz",
+      "sha256": "4b52666caa38ae5f70c1f98be90f3ccf358fa0968631e1d81b172d29a59ad848",
+      "size": 5758
+    },
+    {
+      "path": "parallel-replay-integration-03/execution.json",
+      "sha256": "8d2946185244471ca1c8ca39617b33fd9dedd760fcd8e725fd6afd5afc90194d",
+      "size": 1117
+    },
+    {
+      "path": "parallel-replay-integration-03/source-snapshot.json",
+      "sha256": "2b9b4214b9cb6dd42b10e0faee6336929e6ad61c53120312ae5fb8efedab18ec",
+      "size": 16952
+    },
+    {
+      "path": "parallel-replay-integration-03/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "parallel-replay-integration-03/stdout.log",
+      "sha256": "8f7e6c64d836d9cea6b8f76456cac736c94f8d019f5afa0a02b37bee95b6a8fc",
+      "size": 1118
+    },
+    {
+      "path": "parallel-replay-verification-03/execution.json",
+      "sha256": "ad5aac1c131e7e3772c250b64398f0364db106ddbfd50703d40c99bfba6f9a71",
+      "size": 1021
+    },
+    {
+      "path": "parallel-replay-verification-03/source-snapshot.json",
+      "sha256": "2b9b4214b9cb6dd42b10e0faee6336929e6ad61c53120312ae5fb8efedab18ec",
+      "size": 16952
+    },
+    {
+      "path": "parallel-replay-verification-03/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "parallel-replay-verification-03/stdout.log",
+      "sha256": "9475b170d3147d1d7f8f972772e75486f4c1d3d681b6d62e2d5d586ad1b296e2",
+      "size": 238
+    },
+    {
+      "path": "parallel-source-drift-rejection-03/expected-refusal.json",
+      "sha256": "a914b6624532e01b873db245406e0c7fbbb6760a879d8307af8dc3175cf1e0d3",
+      "size": 405
+    },
+    {
+      "path": "parallel-source-drift-rejection-03/stderr.log",
+      "sha256": "f1330f9a4c1776f35199b3e6d463ae1d4ffd39986a2e872fffed9e9e0bc03e9e",
+      "size": 3288
+    },
+    {
+      "path": "parallel-source-drift-rejection-03/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    }
+  ],
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "schema_version": 1,
+  "scope": "listed public evidence bytes; no claim of historical provenance or proof validity"
+}

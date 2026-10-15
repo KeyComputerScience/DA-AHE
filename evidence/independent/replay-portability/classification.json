@@ -1,0 +1,28 @@
+{
+  "all_original_archive_sha256": "079aa14358b83d5cf6e132b2c4b653ac2937feeae217c6c6965e1369cff511c0",
+  "classification": "cross_platform_one_ulp_float_record_difference",
+  "diagnostic_artifacts": [
+    {
+      "artifact": 11964415650,
+      "run": 38718421735,
+      "zip_sha256": "812f8a4a885a5c834aa5908a723a896bacac079ff3d66b2dc315f5cff283c6b2"
+    },
+    {
+      "artifact": 11968952288,
+      "run": 38728771700,
+      "zip_sha256": "bc42a6c4d3b01ebfb339be32be8428e9d8c65c69de14ef1b5979e66bfeda1309"
+    }
+  ],
+  "diagnostic_run": 38718421735,
+  "failure_run": 38706910917,
+  "historical_archive_unchanged": true,
+  "macos_diagnostic_run": 38728771700,
+  "macos_full_140_replay": "requires_actual_updated_ci_result",
+  "macos_single_case_all_four_gzip_exact": true,
+  "method": "da-ahe",
+  "no_tolerance_used": true,
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "scope": "Only seed 1004/da-ahe was probed in both hosted environments. One recorded float differed by one ULP on Linux; all four gzip files matched exactly on macOS ARM64/Python 3.12.10. OS, architecture, Python and zlib differed; the responsible component is not isolated. Full historical replay remains a separate mandatory check.",
+  "seed": 1004
+}

@@ -1,0 +1,43 @@
+{
+  "seed": 1004,
+  "method": "da-ahe",
+  "source_digest": "ba9749ce35d4b401afabae8e333aaedc1521dfcedd7d7b35f44affc4cc8f579a",
+  "source_hashes": {
+    "simulation/__init__.py": "162cae4d203669b39d5b42138c6291bc910bd207c4767dc6a01b85b4ca8a9b96",
+    "simulation/audit.py": "b1cc236d7a4f7cae2b1eef51e9741be5e8f0af52a258c3423a65bc156981f83b",
+    "simulation/engine.py": "f5357c4eecde514979ad18d5680c76517e7df643c0045acf868cdc11fe3aefea",
+    "simulation/exogenous.py": "943a4ca35468ee2efdfa05844f5575d78046a2c9083eb2834454e3ae29237c16",
+    "simulation/io.py": "f7636d3cf8d6abb512c5b62a67cb90a1aefbdf37a5ba5438c796aa48e32fb1ef",
+    "simulation/policy.py": "181635f0158ef36afb44fd04d92f1f36f4c334e3ade0b3da34e355fc98a59e92",
+    "src/daahe/__init__.py": "7ba733777b21420081c64351fa8f69d59cc1420aa84051300c90add9c60a3e59",
+    "src/daahe/__main__.py": "094e30c7ecfc0a0b56833322b9709d64d2ddcff228adb02d094443b262974c25",
+    "src/daahe/ablations.py": "6c2ab1540d45a0fa9685f282726bbd2b402a1d108376f34272fc018c05021a0d",
+    "src/daahe/calibration.py": "64c7fdd11d6faf3747ca6124dc7d55ba234488c97e810a7aa2b2303817135c95",
+    "src/daahe/cli.py": "50c8d08d4ea3eacbb875456b0a0fc7f112700f6e1b4ccf6d619d80cff5eb0fca",
+    "src/daahe/control.py": "017ad342377a41a5a3146b38992087f08cae6d0f145297df570bc674ef785432",
+    "src/daahe/derivation.py": "fde965b72748cced31acfefb136e779d6ed5f948c6e7d809b60dfe936df9969c",
+    "src/daahe/evidence.py": "452d6ddd914c0d7309f6d24af7a568cfa40af9d48521edd467e5b80ed6b02f1e",
+    "src/daahe/independent_evidence.py": "f189f9285b0cdea8a584ff8b6501d9300065752c9ade69c846507f6b30254000",
+    "src/daahe/integration.py": "60112c543a2a181f2ea4f27f3d4c9f83474076dff395690db630d0a69d304459",
+    "src/daahe/lightweight.py": "6a537f743593decb3725cb79d127f180c5d00d623d45ea71e092a59c359453e6",
+    "src/daahe/mlwe.py": "1e7e867b315312139dfce4260aedf38aab19685077a3ce90c6f3bf174c459fc7",
+    "src/daahe/profiles.py": "dc6add53fb7223afaab61074549ea33b48a973ff28303fd209012c356b7a2cb8",
+    "src/daahe/protocol.py": "a24644caf1d37a683f67e86ea595ad2ed34ef6bf29286db211db63bfd67cbc65",
+    "src/daahe/replay.py": "28fe8a2340755cd71336e7edd727ef21c5437bed1c50740815446ced1cefa87d",
+    "src/daahe/ring.py": "507106338b99c8fbba36c5d60801225c367fcbc9896813afdee583a96a7b11db",
+    "src/daahe/safety.py": "90bb49123e520aa7c0ebf76f49de765fb7a17fb484742886fe5a0e5f3dab7b60",
+    "src/daahe/signal.py": "21c1f738718bf21e71bdce0bc550e157c9a8637a1772fe2099182a05fadb7cb2",
+    "src/daahe/signatures.py": "10c940f2d0c723e611956a78e853e18ebaa00d638f334aa238e4b3acf6411699",
+    "src/daahe/statistics.py": "d33d6b3b4acf7c57c728661e91428d50e512127b7d881db58501a1d02b725e26",
+    "tools/run_simulation_campaign.py": "58ff57d9c6357220fdad3e414f8aaaebf59fa87dad93023d572ada151a395362",
+    "tools/verify_simulation_campaign.py": "8ffefefd879be32349b46479581d9426e4f2ae80ce65e673490cfe52f7eed21b"
+  },
+  "raw_files": {
+    "epochs.jsonl.gz": "4b52666caa38ae5f70c1f98be90f3ccf358fa0968631e1d81b172d29a59ad848",
+    "events.jsonl.gz": "590412a9316010e8418fd57026975083767dbe3d8d66ec1415ea7dca23b19745",
+    "packets.jsonl.gz": "56bcb429b41ae6c345c508f6cbf5f94a41a4d4be0d218a9c0658245e35633dc1",
+    "reports.jsonl.gz": "5a46bc7ad821ec7faab70ca34ac2451292341fd5ab743661557529a6a8bf9414"
+  },
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false
+}

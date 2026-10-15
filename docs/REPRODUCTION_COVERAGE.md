@@ -70,7 +70,11 @@ PYTHONPATH="$CAMPAIGN/source/src" python \
 The full raw recomputation receipt and a completed deterministic replay receipt
 are distinct evidence. A replay command or CI job definition alone is not an
 execution result. Raw bitwise identity is scoped to the recorded software
-environment; do not presume cross-platform identity without testing it.
+environment. The mandatory historical byte replay uses macOS ARM64/Python
+3.12.10; Linux independently recomputes all historical raw metrics. The observed
+one-ULP cross-environment epoch difference and the two single-case probes are
+preserved in [REPLAY_PORTABILITY.md](REPLAY_PORTABILITY.md). These diagnostics do
+not substitute for the full 140-case CI receipt.
 
 ## What is still required for a full-paper claim
 

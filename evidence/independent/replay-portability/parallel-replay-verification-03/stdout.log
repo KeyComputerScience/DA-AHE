@@ -1,0 +1,7 @@
+{
+  "deterministic_replay": true,
+  "independent_raw_recomputation": true,
+  "source_digest": "2d424b9bf91f48eeee8ae8233cb9da33536aa09a7476464450fc588e85312608",
+  "status": "independent_experimental_uncertified",
+  "verified_runs": 14
+}

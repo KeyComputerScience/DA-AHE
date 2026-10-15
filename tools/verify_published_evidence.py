@@ -9,16 +9,19 @@ from __future__ import annotations
 import argparse
 from concurrent.futures import ThreadPoolExecutor
 import hashlib
+from importlib.metadata import version
 import io
 import json
 import os
 from pathlib import Path, PurePosixPath
+import platform
 import shutil
 import subprocess
 import sys
 import tarfile
 import tempfile
 import urllib.request
+import zlib
 
 ROOT = Path(__file__).resolve().parents[1]
 CHUNK = 1024 * 1024
@@ -223,6 +226,9 @@ from simulation.io import file_hash
 campaign = pathlib.Path(sys.argv[1]); run = json.loads(sys.argv[2])
 config = json.loads((campaign / "config.json").read_text())
 expected = json.loads((campaign / run["directory"] / "manifest.json").read_text())["raw_files"]
+required = {"events.jsonl.gz", "packets.jsonl.gz", "reports.jsonl.gz", "epochs.jsonl.gz"}
+if not isinstance(expected, dict) or set(expected) != required:
+    raise ValueError("run manifest must list exactly all four raw gzip files")
 with tempfile.TemporaryDirectory(prefix="daahe-frozen-replay-") as out:
     run_one(config, run["seed"], run["method"],
             campaign / "exogenous" / ("seed-" + str(run["seed"])), out,
@@ -287,7 +293,11 @@ def main():
               "frozen_source_files_verified": index["campaign"]["source_files"],
               "source_digest": index["campaign"]["source_digest"],
               "origin": "independent_reimplementation", "paper_reproduced": False,
-              "physical_board_samples": 0}
+              "physical_board_samples": 0,
+              "environment": {"python": sys.version, "platform": platform.platform(),
+                              "machine": platform.machine(), "numpy": version("numpy"),
+                              "zlib_compile": zlib.ZLIB_VERSION,
+                              "zlib_runtime": zlib.ZLIB_RUNTIME_VERSION}}
     if args.recompute:
         command = [sys.executable, str(ROOT / "tools/verify_simulation_campaign.py"), str(campaign),
                    "--jobs", str(args.jobs)]

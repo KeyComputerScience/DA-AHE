@@ -1,0 +1,62 @@
+{
+  "diagnostic_only": true,
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "seed": 1004,
+  "method": "da-ahe",
+  "source_digest": "ba9749ce35d4b401afabae8e333aaedc1521dfcedd7d7b35f44affc4cc8f579a",
+  "frozen_source_files_verified": 28,
+  "environment": {
+    "python": "3.12.15 (main, Oct  1 2026, 02:35:59) [GCC 13.3.0]",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "zlib_compile": "1.3",
+    "zlib_runtime": "1.3"
+  },
+  "raw_compressed_sha256": {
+    "epochs.jsonl.gz": {
+      "expected": "4b52666caa38ae5f70c1f98be90f3ccf358fa0968631e1d81b172d29a59ad848",
+      "actual": "5ef5cfb5ea56b9680cf0bea51427a6465107d6c84044e207ca6fb79b36a4cb1e",
+      "equal": false
+    },
+    "events.jsonl.gz": {
+      "expected": "590412a9316010e8418fd57026975083767dbe3d8d66ec1415ea7dca23b19745",
+      "actual": "590412a9316010e8418fd57026975083767dbe3d8d66ec1415ea7dca23b19745",
+      "equal": true
+    },
+    "packets.jsonl.gz": {
+      "expected": "56bcb429b41ae6c345c508f6cbf5f94a41a4d4be0d218a9c0658245e35633dc1",
+      "actual": "56bcb429b41ae6c345c508f6cbf5f94a41a4d4be0d218a9c0658245e35633dc1",
+      "equal": true
+    },
+    "reports.jsonl.gz": {
+      "expected": "5a46bc7ad821ec7faab70ca34ac2451292341fd5ab743661557529a6a8bf9414",
+      "actual": "5a46bc7ad821ec7faab70ca34ac2451292341fd5ab743661557529a6a8bf9414",
+      "equal": true
+    }
+  },
+  "epochs_uncompressed_sha256": {
+    "expected": "832461237ed2c1fd193f715afd2134077671a83fb87b0071a076b032a834ab59",
+    "actual": "178344776a904823c77a334b4c2a78514662ba9e91739e63faf2c1e336b7ab49",
+    "equal": false
+  },
+  "epochs_parsed_records_exact": false,
+  "epochs_record_counts": {
+    "expected": 26,
+    "actual": 26
+  },
+  "epochs_first_differences": [
+    {
+      "path": "$[5].belief[1]",
+      "reason": "value",
+      "expected": "1.5280280276262672e-168",
+      "actual": "1.5280280276262675e-168",
+      "absolute_difference": 2.3534373682645353e-184,
+      "expected_ulp": 2.3534373682645353e-184,
+      "difference_in_expected_ulps": 1.0,
+      "expected_ieee754": "1d17111f246346d9",
+      "actual_ieee754": "1d17111f246346da"
+    }
+  ],
+  "epochs_difference_count": 1,
+  "tolerance_used": false
+}

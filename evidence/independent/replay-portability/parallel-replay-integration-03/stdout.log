@@ -1,0 +1,15 @@
+[1/14] seed=61 method=dpp admitted=15 valid=12 elapsed_s=0.3
+[2/14] seed=61 method=da-ahe admitted=15 valid=12 elapsed_s=0.3
+[3/14] seed=61 method=hys admitted=20 valid=17 elapsed_s=0.3
+[4/14] seed=61 method=without_markov admitted=30 valid=24 elapsed_s=0.4
+[5/14] seed=61 method=without_intdb2 admitted=15 valid=8 elapsed_s=0.4
+[6/14] seed=61 method=without_route_repair admitted=15 valid=12 elapsed_s=0.5
+[7/14] seed=61 method=without_hve admitted=15 valid=12 elapsed_s=0.5
+[8/14] seed=62 method=dpp admitted=14 valid=13 elapsed_s=0.5
+[9/14] seed=62 method=da-ahe admitted=15 valid=14 elapsed_s=0.5
+[10/14] seed=62 method=hys admitted=16 valid=13 elapsed_s=0.6
+[11/14] seed=62 method=without_intdb2 admitted=15 valid=10 elapsed_s=0.6
+[12/14] seed=62 method=without_route_repair admitted=15 valid=14 elapsed_s=0.7
+[13/14] seed=62 method=without_hve admitted=15 valid=14 elapsed_s=0.7
+[14/14] seed=62 method=without_markov admitted=30 valid=24 elapsed_s=0.8
+Completed 14 independent experimental runs: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/parallel-replay-campaign-03

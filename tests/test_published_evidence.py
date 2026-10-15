@@ -256,7 +256,9 @@ def test_failed_frozen_replay_reports_case_and_bounded_child_diagnostics(verifie
     run = {"seed": 11, "method": "da-ahe", "directory": "runs/11/da-ahe"}
     run_dir = campaign / run["directory"]
     run_dir.mkdir(parents=True)
-    (run_dir / "manifest.json").write_text(json.dumps({"raw_files": {}}))
+    raw_files = {name: "synthetic-fixture" for name in
+                 ("events.jsonl.gz", "packets.jsonl.gz", "reports.jsonl.gz", "epochs.jsonl.gz")}
+    (run_dir / "manifest.json").write_text(json.dumps({"raw_files": raw_files}))
     (campaign / "manifest.json").write_text(json.dumps({"runs": [run]}))
     (campaign / "config.json").write_text("{}")
     with pytest.raises(RuntimeError) as failure:
@@ -267,3 +269,29 @@ def test_failed_frozen_replay_reports_case_and_bounded_child_diagnostics(verifie
     assert "retained-tail" in message
     assert "omitted-prefix" not in message
     assert message.count("X") <= 4000
+
+
+@pytest.mark.parametrize("jobs", [1, 4])
+@pytest.mark.parametrize("missing", ["events.jsonl.gz", "packets.jsonl.gz",
+                                    "reports.jsonl.gz", "epochs.jsonl.gz"])
+def test_frozen_replay_rejects_missing_raw_hash_before_simulating(verifier, tmp_path, missing, jobs):
+    campaign = tmp_path / "campaign"
+    source = campaign / "source/simulation"
+    source.mkdir(parents=True)
+    (source / "__init__.py").write_text("")
+    (source / "io.py").write_text("def file_hash(path):\n    return 'synthetic-fixture'\n")
+    (source / "engine.py").write_text(
+        "def run_one(*args):\n    raise RuntimeError('unexpectedly simulated incomplete manifest')\n"
+    )
+    run = {"seed": 11, "method": "da-ahe", "directory": "runs/11/da-ahe"}
+    run_dir = campaign / run["directory"]
+    run_dir.mkdir(parents=True)
+    raw_files = {name: "synthetic-fixture" for name in
+                 ("events.jsonl.gz", "packets.jsonl.gz", "reports.jsonl.gz", "epochs.jsonl.gz")}
+    del raw_files[missing]
+    (run_dir / "manifest.json").write_text(json.dumps({"raw_files": raw_files}))
+    (campaign / "manifest.json").write_text(json.dumps({"runs": [run]}))
+    (campaign / "config.json").write_text("{}")
+    with pytest.raises(RuntimeError, match="must list exactly all four raw gzip files") as failure:
+        verifier.replay_frozen(campaign, jobs=jobs)
+    assert "unexpectedly simulated" not in str(failure.value)

@@ -59,6 +59,9 @@ all 140 saved metrics and the paired campaign summary from the raw records.
 
 ## Replay every historical case with the frozen source
 
+Use **macOS ARM64 with Python 3.12.10** for the hosted historical byte-replay
+check. The published single-case probe matched the original macOS records in
+this environment; the full 140-case CI remains the actual full-run test.
 Add `--replay` to rerun all 140 historical seed/method cases and compare the four
 raw gzip SHA-256 values for each run:
 
@@ -77,13 +80,17 @@ source** and runs up to `--jobs` cases in parallel. Historical source digest:
 ba9749ce35d4b401afabae8e333aaedc1521dfcedd7d7b35f44affc4cc8f579a
 ```
 
-Current verifier improvements changed two source files after the original
+Current verifier improvements changed source files after the original
 independent campaign. Running the current verifier directly with `--replay`
 against that old campaign correctly refuses the drift; use the publication
 helper above to select the preserved source. Exact gzip replay is an explicit
 check in the tested environment, rather than a promise of byte equality under
 every Python/zlib/platform combination. A mismatch fails verification and must
-be investigated.
+be investigated. The preserved Linux probe found a one-ULP belief-record
+difference; events, packets and reports matched. See
+[REPLAY_PORTABILITY.md](REPLAY_PORTABILITY.md) for both actual probe results and
+the separate mandatory Linux raw recomputation check. Neither the historical
+archive nor its strict replay comparison was modified.
 
 ## What the evidence can establish
 

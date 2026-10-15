@@ -1,0 +1,15 @@
+{
+  "status": "passed_expected_source_drift_rejection",
+  "command": [
+    "../repro-venv/bin/python",
+    "tools/verify_simulation_campaign.py",
+    "../repro-audit-runs-cf06c13/simulation",
+    "--jobs",
+    "4",
+    "--replay"
+  ],
+  "returncode": 1,
+  "parallel_workers": 4,
+  "no_historical_data_changed": true,
+  "stderr_sha256": "f1330f9a4c1776f35199b3e6d463ae1d4ffd39986a2e872fffed9e9e0bc03e9e"
+}

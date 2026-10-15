@@ -1,0 +1,31 @@
+{
+  "command": [
+    "python",
+    "tools/verify_published_evidence.py",
+    "--extract-dir",
+    "runs/history",
+    "--recompute",
+    "--replay",
+    "--jobs",
+    "2",
+    "--report",
+    "runs/history-verification.json"
+  ],
+  "cwd": "/home/runner/work/DA-AHE/DA-AHE",
+  "finished_utc": "2026-10-15T08:49:03.408594+00:00",
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "process_group_id": 2121,
+  "process_id": 2121,
+  "python": "3.12.15 (main, Oct  1 2026, 02:35:59) [GCC 13.3.0]",
+  "returncode": 1,
+  "schema_version": 1,
+  "source_digest": "98df35475c0890bdf0b5ded8552bdc91c583800f676d3ff45ca7bd18bfbb3541",
+  "started_utc": "2026-10-15T08:36:57.709421+00:00",
+  "status": "failed",
+  "stderr_sha256": "7f338fd230085de51b6ecb3e2f543bd005df180cf0fa790854dfe7e7bf3d7647",
+  "stdout_sha256": "c58363a275f6e5d4a4e67a97a9b8a92e11b88890a6c61ad1e9b48375e046bc00",
+  "timeout_s": 10000.0,
+  "wall_time_s": 725.6979641559999
+}

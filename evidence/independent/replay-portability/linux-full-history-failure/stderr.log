@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "/home/runner/work/DA-AHE/DA-AHE/tools/verify_published_evidence.py", line 306, in <module>
+    main()
+  File "/home/runner/work/DA-AHE/DA-AHE/tools/verify_published_evidence.py", line 297, in main
+    report["frozen_source_replay"] = replay_frozen(campaign, args.jobs)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DA-AHE/DA-AHE/tools/verify_published_evidence.py", line 257, in replay_frozen
+    verified = list(pool.map(replay, runs))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/DA-AHE/DA-AHE/tools/verify_published_evidence.py", line 248, in replay
+    raise RuntimeError(
+RuntimeError: Frozen replay failed for seed=1004 method=da-ahe exit=1
+stdout (last 4000 characters):
+
+stderr (last 4000 characters):
+Traceback (most recent call last):
+  File "<string>", line 14, in <module>
+ValueError: deterministic replay mismatch: epochs.jsonl.gz
+

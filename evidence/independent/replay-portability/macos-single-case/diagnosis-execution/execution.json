@@ -1,0 +1,23 @@
+{
+  "command": [
+    "python",
+    "runs/probe/probe.py"
+  ],
+  "cwd": "/Users/runner/work/DA-AHE/DA-AHE",
+  "finished_utc": "2026-10-15T11:39:14.366736+00:00",
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "process_group_id": 1233,
+  "process_id": 1233,
+  "python": "3.12.10 (v3.12.10:0cc81280367, Apr  8 2025, 08:46:59) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "returncode": 0,
+  "schema_version": 1,
+  "source_digest": "03e781522ef63e172a5f0e09f3f96536f5bb20c5c0df8a233857f831135e34e1",
+  "started_utc": "2026-10-15T11:38:48.791621+00:00",
+  "status": "passed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "f694f72aaa6c2fc96a7f4892032436f7821571028226290235a07f420679dd1a",
+  "timeout_s": 1200.0,
+  "wall_time_s": 25.536062916999995
+}

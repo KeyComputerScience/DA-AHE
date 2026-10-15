@@ -34,12 +34,22 @@ def test_security_job_cannot_be_skipped_or_fail_under_a_green_aggregate(outcome)
     assert result["errors"] == [{"job": "security", "result": outcome}]
 
 
-def test_absent_historical_archive_job_is_not_accepted():
+@pytest.mark.parametrize("historical_job", ["history", "history_linux"])
+def test_both_historical_replay_and_portable_raw_recomputation_are_required(historical_job):
     tool = coverage_tool()
-    results = {name: {"result": "success"} for name in tool.REQUIRED_JOBS if name != "history"}
+    results = {name: {"result": "success"} for name in tool.REQUIRED_JOBS if name != historical_job}
     result = tool.assess(results)
     assert result["status"] == "failed_incomplete_ci_coverage"
-    assert result["errors"] == [{"job": "history", "result": "missing"}]
+    assert result["errors"] == [{"job": historical_job, "result": "missing"}]
+
+
+def test_successful_macos_replay_cannot_mask_a_skipped_linux_raw_audit():
+    tool = coverage_tool()
+    results = {name: {"result": "success"} for name in tool.REQUIRED_JOBS}
+    results["history_linux"]["result"] = "skipped"
+    result = tool.assess(results)
+    assert result["errors"] == [{"job": "history_linux", "result": "skipped"}]
+    assert result["status"] == "failed_incomplete_ci_coverage"
 
 
 def test_an_unlisted_new_job_requires_coverage_contract_update():

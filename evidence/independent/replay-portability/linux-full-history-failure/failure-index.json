@@ -1,0 +1,15 @@
+{
+  "run_id": 38706910917,
+  "job_id": 116328472680,
+  "artifact_id": 11959995493,
+  "job_conclusion": "failure",
+  "bundle_downloads_logged": 4,
+  "first_ordered_replay_failure": {
+    "seed": 1004,
+    "method": "da-ahe",
+    "raw_file": "epochs.jsonl.gz"
+  },
+  "failure_cause": "compressed hash mismatch; compression-only vs semantic difference pending diagnostic",
+  "archive_zip_sha256": "83b35f83dd6528f1940da06e3b14c2b6b64a29be7829cb124c66974ba549836d",
+  "original_paper_reproduced": false
+}

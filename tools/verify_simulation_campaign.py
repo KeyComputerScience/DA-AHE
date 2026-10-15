@@ -18,6 +18,13 @@ from simulation.engine import run_one  # noqa: E402
 from simulation.exogenous import read_exogenous, validate_bound_artifacts, validate_config  # noqa: E402
 from simulation.io import digest, file_hash  # noqa: E402
 
+RAW_FILES = frozenset({"events.jsonl.gz", "packets.jsonl.gz", "reports.jsonl.gz", "epochs.jsonl.gz"})
+
+
+def _require_all_raw_files(raw_files):
+    if not isinstance(raw_files, dict) or set(raw_files) != RAW_FILES:
+        raise ValueError("run manifest must list exactly all four raw gzip files")
+
 
 def _recompute_runs(run_dirs, config, jobs):
     """Preserve input ordering while parallelizing independent raw-log audits."""
@@ -27,6 +34,35 @@ def _recompute_runs(run_dirs, config, jobs):
     else:
         with ProcessPoolExecutor(max_workers=jobs) as executor:
             yield from executor.map(recompute_run, run_dirs, repeat(config))
+
+
+def _replay_run(payload):
+    """Rerun one case in isolation; exact bytes and source identity remain mandatory."""
+    config, campaign, run, run_manifest, source_hashes = payload
+    _require_all_raw_files(run_manifest.get("raw_files"))
+    for relative, expected in source_hashes.items():
+        if file_hash(ROOT / relative) != expected:
+            raise ValueError("local source differs from recorded source; use the preserved source snapshot")
+    with tempfile.TemporaryDirectory(prefix="daahe-network-replay-") as temporary:
+        run_one(config, run["seed"], run["method"],
+                campaign / "exogenous" / f"seed-{run['seed']}", temporary,
+                campaign / "controller.json")
+        for name, expected in run_manifest["raw_files"].items():
+            if file_hash(Path(temporary) / name) != expected:
+                raise ValueError(f"deterministic replay mismatch: seed={run['seed']} method={run['method']} file={name}")
+    return True
+
+
+def _replay_runs(validated_runs, config, campaign, source_hashes, jobs):
+    payloads = [(config, campaign, run, run_manifest, source_hashes)
+                for run, _, run_manifest in validated_runs]
+    if jobs == 1:
+        for payload in payloads:
+            _replay_run(payload)
+    else:
+        with ProcessPoolExecutor(max_workers=jobs) as executor:
+            for _ in executor.map(_replay_run, payloads):
+                pass
 
 
 def verify(campaign, *, replay=False, jobs=1):
@@ -73,6 +109,7 @@ def verify(campaign, *, replay=False, jobs=1):
         if file_hash(run_dir / "summary.json") != run["summary_sha256"]:
             raise ValueError("run summary checksum mismatch")
         run_manifest = json.loads((run_dir / "manifest.json").read_text())
+        _require_all_raw_files(run_manifest.get("raw_files"))
         if run_manifest["exogenous_digest"] != exogenous[run["seed"]]:
             raise ValueError("unpaired exogenous trace")
         if run_manifest["source_digest"] != manifest["source_digest"] or run_manifest["controller_sha256"] != manifest["controller_sha256"]:
@@ -83,24 +120,13 @@ def verify(campaign, *, replay=False, jobs=1):
         if recomputed != json.loads((run_dir / "summary.json").read_text()):
             raise ValueError("summary does not match independently recomputed raw outcomes")
         summaries.append(recomputed)
-        if replay:
-            # Rerunning is a stronger but more expensive optional check. Source
-            # snapshot is hashed above; refuse a rerun using drifted local code.
-            for relative, expected in manifest["source_hashes"].items():
-                if file_hash(ROOT / relative) != expected:
-                    raise ValueError("local source differs from recorded source; use the preserved source snapshot")
-            with tempfile.TemporaryDirectory(prefix="daahe-network-replay-") as temporary:
-                run_one(config, run["seed"], run["method"],
-                        campaign / "exogenous" / f"seed-{run['seed']}", temporary,
-                        campaign / "controller.json")
-                for name, expected in run_manifest["raw_files"].items():
-                    if file_hash(Path(temporary) / name) != expected:
-                        raise ValueError("deterministic replay mismatch: " + name)
     recomputed = paired_campaign_summary(summaries, config["methods"])
     if recomputed != json.loads((campaign / "summary.json").read_text()):
         raise ValueError("paired campaign summary mismatch")
     if file_hash(campaign / "summary.json") != manifest["summary_sha256"]:
         raise ValueError("paired campaign summary checksum mismatch")
+    if replay:
+        _replay_runs(validated_runs, config, campaign, manifest["source_hashes"], jobs)
     return {"verified_runs": len(pairs), "independent_raw_recomputation": True,
             "deterministic_replay": replay, "source_digest": manifest["source_digest"],
             "status": manifest["status"]}
@@ -111,7 +137,7 @@ def main():
     parser.add_argument("campaign", type=Path)
     parser.add_argument("--replay", action="store_true", help="Rerun all seed/method pairs and compare raw gzip hashes")
     parser.add_argument("--jobs", type=int, default=1,
-                        help="Parallelize raw-log audits only; network replay remains serial")
+                        help="Parallelize independent raw-log audits and exact deterministic replays")
     args = parser.parse_args()
     print(json.dumps(verify(args.campaign, replay=args.replay, jobs=args.jobs), indent=2, sort_keys=True))
 
