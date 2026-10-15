@@ -1,0 +1,330 @@
+{
+  "algorithm": "SHA256",
+  "digest": "265425a0724128e29ff976d2baefbbb5ce892ad144dc2e800618d564028fe8bf",
+  "files": [
+    {
+      "path": ".github/workflows/reproduce.yml",
+      "sha256": "d4e554704d39e336827b3acc7124a022b06776add9f4339d50f29a1ee350adef"
+    },
+    {
+      "path": "Dockerfile",
+      "sha256": "1b074adc42e49a30a68db6fbe4be698888bda4a347395c3d56790151afd35bc3"
+    },
+    {
+      "path": "Makefile",
+      "sha256": "9fde24ae65abd48062b2cb30e456b00eacedc70b022204643d237509bc3c3379"
+    },
+    {
+      "path": "configs/control_synthetic.json",
+      "sha256": "dc40262c82988d569eaf76c2f9dd62206a101ce7b76cc92b2cd3aebafa0f19f6"
+    },
+    {
+      "path": "daahe/__init__.py",
+      "sha256": "2a01e6848fe80d51176c9d630795904df91e57ff6ad5b85b088c845439e33639"
+    },
+    {
+      "path": "embedded/CMakeLists.txt",
+      "sha256": "8f50c2a4f1533845e034586ed378e403ea2d6c0129eb8bd6ca58597f0391fc90"
+    },
+    {
+      "path": "embedded/daahe_core.c",
+      "sha256": "75f82cfc05d36e13c4b2d4e2c71f89811cc16b23b01f468da07a428ee796eeeb"
+    },
+    {
+      "path": "embedded/daahe_core.h",
+      "sha256": "5e3a7fdb93c78edac5e0aa6f2d5e54994a8cd821b6292e18a09312e0418156a6"
+    },
+    {
+      "path": "embedded/test_core.c",
+      "sha256": "f1a180834e544babece7f98101d7cefef545bae1ec7fa53d6cb1e4de194b5fd5"
+    },
+    {
+      "path": "experiments/matrix.json",
+      "sha256": "3741900da4cf8b8bb2e78cd263b08ffc6d2ff573975f7ed963433119b68a604f"
+    },
+    {
+      "path": "experiments/paper_targets.json",
+      "sha256": "964b433b15d54e0796b7c316007a005d167836847e1fb11511a5bf2effd26fd9"
+    },
+    {
+      "path": "firmware/build.py",
+      "sha256": "70841b1215bc46fe70903eb3de6d5bdb5f7b24484f2fe8582ca2f285a1b9cf44"
+    },
+    {
+      "path": "firmware/nrf52840/benchmark.c",
+      "sha256": "a9ab57cc9939427a126fb4e8964e966e2fbd3469df03ad05f9aec99d8b1ea444"
+    },
+    {
+      "path": "firmware/nrf52840/linker.ld",
+      "sha256": "1f280aa376230e1016c5d0438b9f2555d81a163b1b903445140db87e707f68ea"
+    },
+    {
+      "path": "firmware/nrf52840/runtime.c",
+      "sha256": "6303b31dbf3aa392da8863c67843b8f431307571727c186ec7729abdae4fd3bf"
+    },
+    {
+      "path": "firmware/nrf52840/startup.S",
+      "sha256": "60e080914bface14eb8c8b52a67992be328df422dad99ac3780d19c47397662d"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "3fe4dd7ee9882acb62bdbcd2d00adff19c4b5556077cab0fd6823ef31c4f426e"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "sha256": "1cc4d6bb1942d1b5d51abb070de599374ff1db20008cca7fc4e57759a19e61cd"
+    },
+    {
+      "path": "requirements-pq.txt",
+      "sha256": "0eb35c795138b558f34ffaadc768148cf3a938d921ec84269ede49c1f231381b"
+    },
+    {
+      "path": "simulation/__init__.py",
+      "sha256": "162cae4d203669b39d5b42138c6291bc910bd207c4767dc6a01b85b4ca8a9b96"
+    },
+    {
+      "path": "simulation/audit.py",
+      "sha256": "b173bf2a96de84131d9bbb1643710daad1ecb6230a9551fd78e8a35fbf99bb79"
+    },
+    {
+      "path": "simulation/config.json",
+      "sha256": "c7a6fc602d5d34ac32b666c12d4b78f9d72a303c0a5b5423f66bf0121b2ae12d"
+    },
+    {
+      "path": "simulation/controller_fixture.json",
+      "sha256": "2f4cf5af0891c3ed911b51267733df47dfc04f2778b5fd9f7ac358d3b33581ec"
+    },
+    {
+      "path": "simulation/engine.py",
+      "sha256": "759000fa8243beda6351e75e3ae8602e07ad826714bc04510abcd563638e6aed"
+    },
+    {
+      "path": "simulation/exogenous.py",
+      "sha256": "47f7cb6c13c453b8b4d405db084bc63e333ab4d5caa6f6ba515fed12440da01c"
+    },
+    {
+      "path": "simulation/io.py",
+      "sha256": "f7636d3cf8d6abb512c5b62a67cb90a1aefbdf37a5ba5438c796aa48e32fb1ef"
+    },
+    {
+      "path": "simulation/paper_like_config.json",
+      "sha256": "7a7b94e4f747173a7c99c3c7bb011706b63cf5ec5a3361b6f70c1a1da66fbdc8"
+    },
+    {
+      "path": "simulation/policy.py",
+      "sha256": "181635f0158ef36afb44fd04d92f1f36f4c334e3ade0b3da34e355fc98a59e92"
+    },
+    {
+      "path": "src/daahe/__init__.py",
+      "sha256": "a5a785cfe408bcc0c6e239894fe3d47d4822388c10e293727f6dfaa8ae7972ea"
+    },
+    {
+      "path": "src/daahe/__main__.py",
+      "sha256": "094e30c7ecfc0a0b56833322b9709d64d2ddcff228adb02d094443b262974c25"
+    },
+    {
+      "path": "src/daahe/ablations.py",
+      "sha256": "6c2ab1540d45a0fa9685f282726bbd2b402a1d108376f34272fc018c05021a0d"
+    },
+    {
+      "path": "src/daahe/calibration.py",
+      "sha256": "64c7fdd11d6faf3747ca6124dc7d55ba234488c97e810a7aa2b2303817135c95"
+    },
+    {
+      "path": "src/daahe/cli.py",
+      "sha256": "7691e3eca1df1b236915e141cf8d12daf72c633734ef9f5c7eb6398c60f6d8e7"
+    },
+    {
+      "path": "src/daahe/control.py",
+      "sha256": "017ad342377a41a5a3146b38992087f08cae6d0f145297df570bc674ef785432"
+    },
+    {
+      "path": "src/daahe/derivation.py",
+      "sha256": "fde965b72748cced31acfefb136e779d6ed5f948c6e7d809b60dfe936df9969c"
+    },
+    {
+      "path": "src/daahe/evidence.py",
+      "sha256": "452d6ddd914c0d7309f6d24af7a568cfa40af9d48521edd467e5b80ed6b02f1e"
+    },
+    {
+      "path": "src/daahe/independent_evidence.py",
+      "sha256": "f189f9285b0cdea8a584ff8b6501d9300065752c9ade69c846507f6b30254000"
+    },
+    {
+      "path": "src/daahe/integration.py",
+      "sha256": "60112c543a2a181f2ea4f27f3d4c9f83474076dff395690db630d0a69d304459"
+    },
+    {
+      "path": "src/daahe/lightweight.py",
+      "sha256": "6a537f743593decb3725cb79d127f180c5d00d623d45ea71e092a59c359453e6"
+    },
+    {
+      "path": "src/daahe/mlwe.py",
+      "sha256": "51c54349439ff6f79cbaa156dbb3dcf7d51f9dfe89d6662621804eddb646371d"
+    },
+    {
+      "path": "src/daahe/profiles.py",
+      "sha256": "dc6add53fb7223afaab61074549ea33b48a973ff28303fd209012c356b7a2cb8"
+    },
+    {
+      "path": "src/daahe/protocol.py",
+      "sha256": "02f1384df473d05c1209ef355db542c2f05809906c0c6821f624a3c3777f9565"
+    },
+    {
+      "path": "src/daahe/replay.py",
+      "sha256": "28fe8a2340755cd71336e7edd727ef21c5437bed1c50740815446ced1cefa87d"
+    },
+    {
+      "path": "src/daahe/ring.py",
+      "sha256": "507106338b99c8fbba36c5d60801225c367fcbc9896813afdee583a96a7b11db"
+    },
+    {
+      "path": "src/daahe/safety.py",
+      "sha256": "90bb49123e520aa7c0ebf76f49de765fb7a17fb484742886fe5a0e5f3dab7b60"
+    },
+    {
+      "path": "src/daahe/signal.py",
+      "sha256": "21c1f738718bf21e71bdce0bc550e157c9a8637a1772fe2099182a05fadb7cb2"
+    },
+    {
+      "path": "src/daahe/signatures.py",
+      "sha256": "10c940f2d0c723e611956a78e853e18ebaa00d638f334aa238e4b3acf6411699"
+    },
+    {
+      "path": "src/daahe/statistics.py",
+      "sha256": "d33d6b3b4acf7c57c728661e91428d50e512127b7d881db58501a1d02b725e26"
+    },
+    {
+      "path": "tests/test_board_measurements.py",
+      "sha256": "b154aed24c83030ebb46b168df213095ff709fcaaadda458e7b7a823e7cf0a34"
+    },
+    {
+      "path": "tests/test_control.py",
+      "sha256": "e63579f84e71e255e67640ccbd1c75bd721c83d2604048b7f4790ad158f9ebb1"
+    },
+    {
+      "path": "tests/test_control_binding.py",
+      "sha256": "b4799129ca657208495306a849628fb7c2394bc48ec07c1b78a77390c1f0213c"
+    },
+    {
+      "path": "tests/test_crypto_protocol.py",
+      "sha256": "decf6c1355e7ab31b2dddad25f10b3c4cd5752e80911cf2d665ea4285fac5991"
+    },
+    {
+      "path": "tests/test_estimator_adapter.py",
+      "sha256": "4d50d272129184064b62c5629b4194c255a4872ccd879618d766619af662c98f"
+    },
+    {
+      "path": "tests/test_evidence.py",
+      "sha256": "17d8bd622e3ede0ddc79ef08044f8079d9991a0f19a9dfb1d5d9792b16a46689"
+    },
+    {
+      "path": "tests/test_import_plot.py",
+      "sha256": "ac45d8af6431c20b529ab61c643ac2eccfcd32d5601e9cbc3e314ce0825c5681"
+    },
+    {
+      "path": "tests/test_independent_evidence.py",
+      "sha256": "c764bbd0687d5512e736ec8d0b522b968eb28dfb19c4542324b99efdc755393f"
+    },
+    {
+      "path": "tests/test_security_execution.py",
+      "sha256": "56885694917167b53f6abbc2b5b96bff179e9272c7e8f62fda16f2fbcb447f69"
+    },
+    {
+      "path": "tests/test_signal_quality.py",
+      "sha256": "53e76615322b0a79caf1d140de6f8d2d1ccfcfa160fb10a26e9b490710a3519d"
+    },
+    {
+      "path": "tests/test_signatures.py",
+      "sha256": "cf6d59b48f08efc6835a414ccb7a457adeb7cb919f4000768c83ebfb82490612"
+    },
+    {
+      "path": "tests/test_simulation_campaign.py",
+      "sha256": "431ede75e5cfe84ae816a44f64c8c91085bfa8d098ac0bd8ccea1afac820a947"
+    },
+    {
+      "path": "tests/test_simulation_network.py",
+      "sha256": "fb83e91e5d644232245da223bd82117eeea1bbd1510b710a2a089fcf2de9042c"
+    },
+    {
+      "path": "tests/test_source_ledger.py",
+      "sha256": "d49e9c3e5ebfba701f0cc015aafdb551db8d7d68089187e043d8f52930fb5caf"
+    },
+    {
+      "path": "tests/test_statistics.py",
+      "sha256": "ecec8684cf2929de44c40c7730bb45e39d897b2cb7f0e0d0e4395c2e9c6b807b"
+    },
+    {
+      "path": "tools/capture_environment.py",
+      "sha256": "fa86b046041bed1d05088b6577c40f5beb031441f571c0273897ca371fe0097a"
+    },
+    {
+      "path": "tools/check_reference_bounds.py",
+      "sha256": "6e800bfcc1d73333abe1bd4524bb85c8cea40d249a33faa82f76bd0de0d40f87"
+    },
+    {
+      "path": "tools/collect_board_measurements.py",
+      "sha256": "158b4db0db1cd6224e6946b382ff3405a7571235cd1d876eb9ddff3508c99360"
+    },
+    {
+      "path": "tools/estimate_security.sage",
+      "sha256": "f45a5067b31299a08d26527068561352cf50c10cd3df3b69dc3627e91a69c765"
+    },
+    {
+      "path": "tools/estimator_result_adapter.py",
+      "sha256": "9d8c81893ff9c2f3be964badb61b4190f825ef53d8f2b3e1d5e2d166a63ec36d"
+    },
+    {
+      "path": "tools/import_omnet.py",
+      "sha256": "e2b1ecdf04f5b8041b1934d2458c90fcbaad96e109894699fa13c077ab759d87"
+    },
+    {
+      "path": "tools/independent_manifest.py",
+      "sha256": "5c5a49fd8c7ddc18bd95f3c117b85d38a517783f9b0cf2320d243f879f4325f0"
+    },
+    {
+      "path": "tools/plot_results.py",
+      "sha256": "2c3c088c96b7d99552aa93c48006d6eeb8f46df9f5f9b07fb2559949a490e797"
+    },
+    {
+      "path": "tools/run_logged.py",
+      "sha256": "5fd19cbd3801972fd4d1a262f95cbc8f7c806a81ddb0abdd26a54b45596cc996"
+    },
+    {
+      "path": "tools/run_protocol_trials.py",
+      "sha256": "334bf2a27be0cc66ca702d9c73ebd37349d64e7f31cf98b6d7658942c531924e"
+    },
+    {
+      "path": "tools/run_simulation_campaign.py",
+      "sha256": "014638a54eb9151d4db07d8e1d642f87594fbc974a47784d23f2db3920be13bf"
+    },
+    {
+      "path": "tools/verify_board_measurements.py",
+      "sha256": "7ff06cb65159c94b50c4203d6d73f65eb1b110aa42b1f3d7ae6f709a0e2cfea4"
+    },
+    {
+      "path": "tools/verify_simulation_campaign.py",
+      "sha256": "6178158f3d23bfa9889411a21f8cfc674f5a6b03fba87b2ae6dae03ea42145a6"
+    }
+  ],
+  "root_files": [
+    "pyproject.toml",
+    "requirements-dev.txt",
+    "requirements-pq.txt",
+    "Makefile",
+    "Dockerfile"
+  ],
+  "scope": [
+    "src",
+    "daahe",
+    "simulation",
+    "firmware",
+    "security",
+    "tools",
+    "embedded",
+    "tests",
+    ".github",
+    "configs",
+    "experiments"
+  ]
+}

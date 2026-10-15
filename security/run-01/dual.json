@@ -1,0 +1,36 @@
+{
+  "algorithm": "dual",
+  "beta": "201",
+  "elapsed_seconds": 4.895557500014547,
+  "finished_at": "2026-10-15T01:30:53.609361+00:00",
+  "full_cost": {
+    "beta": "201",
+    "d": "1536",
+    "m": "768",
+    "mem": "725326287816871",
+    "repetitions": "1",
+    "rop": "1.08269220203267e16",
+    "tag": "dual"
+  },
+  "lattice_dimension": "1536",
+  "log2_rop": 53.265472676457364,
+  "memory": "725326287816871",
+  "process_returncode": 0,
+  "raw_log_sha256": "1de43319b3dce569c93324f881a518da99af5a224cb7faf7166829042db549cd",
+  "rop": "1.08269220203267e16",
+  "sage_version": "10.9",
+  "sample_accounting": {
+    "amplification_terms": null,
+    "effective_error_stddev": "3.2",
+    "effective_problem_samples": "768",
+    "original_error_stddev": "3.2",
+    "original_independent_samples": 768,
+    "reported_attack_samples": "768",
+    "sample_amplification": false,
+    "status": "within_original_sample_budget",
+    "upstream_problem": null
+  },
+  "sample_count": "768",
+  "started_at": "2026-10-15T01:30:48.713819+00:00",
+  "status": "success"
+}
