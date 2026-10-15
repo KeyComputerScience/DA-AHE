@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Independent causal/binding regressions; authored, not executed at delivery."""
+"""Independent causal/binding regressions; execution receipts are recorded separately."""
 from dataclasses import replace
 import hashlib
 import json

@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 """Full-window regressions for the two-level reference transform; not paper data.
 
-These tests have been authored but not executed. Synthetic coverage checks do
+Execution receipts are recorded separately. Synthetic coverage checks do
 not establish Table III PRD or fidelity for any deployed sensor population.
 """
 import math

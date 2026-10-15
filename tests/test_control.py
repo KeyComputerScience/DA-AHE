@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Analytic and independently enumerated optimizer checks, authored/unexecuted."""
+"""Analytic and independently enumerated optimizer checks, execution receipts are recorded separately."""
 from dataclasses import replace
 
 import pytest

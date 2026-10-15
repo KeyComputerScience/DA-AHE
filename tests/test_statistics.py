@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Authored but not executed; fixtures are analytic unit-test values, not paper data."""
+"""Execution receipts are recorded separately; fixtures are analytic unit-test values, not paper data."""
 from dataclasses import replace
 
 import pytest

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Analytic interface fixtures only; not measured results. Authored, unexecuted."""
+"""Analytic interface fixtures only; not measured results. Execution receipts are recorded separately."""
 import csv
 from dataclasses import replace
 import importlib.util

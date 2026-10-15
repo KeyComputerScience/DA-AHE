@@ -13,6 +13,63 @@ https://github.com/malb/lattice-estimator/blob/53da5982597709ba0fdf94ea37a84d822
 from __future__ import annotations
 
 import math
+import hashlib
+import json
+from pathlib import Path
+
+
+REQUIRED_ATTACKS = (
+    "primal_usvp", "primal_bdd", "primal_hybrid", "primal_mitm_hybrid",
+    "dual", "dual_hybrid", "coded_bkw",
+)
+
+
+def source_manifest(repo, names):
+    """Hash exact tracked file bytes independently of checkout location."""
+    root = Path(repo).resolve()
+    records = []
+    for name in sorted(names):
+        path = root / name
+        if not path.resolve().is_relative_to(root) or path.is_symlink():
+            raise ValueError("upstream source must contain only regular in-tree files")
+        data = path.read_bytes()
+        records.append({"path": name, "bytes": len(data),
+                        "sha256": hashlib.sha256(data).hexdigest()})
+    digest = hashlib.sha256(json.dumps(records, sort_keys=True,
+                                      separators=(",", ":")).encode()).hexdigest()
+    return {"files": records, "manifest_sha256": digest}
+
+
+def summarize_attacks(records, minimum_bits=None):
+    """An incomplete attack set never establishes the full estimated minimum."""
+    names = [record["algorithm"] for record in records]
+    if len(names) != len(set(names)) or any(name not in REQUIRED_ATTACKS for name in names):
+        raise ValueError("duplicate or unrecognized attack identifier")
+    if minimum_bits is not None and (not math.isfinite(minimum_bits) or minimum_bits <= 0):
+        raise ValueError("threshold must be finite and positive")
+    successes = []
+    for record in records:
+        if record["status"] == "success":
+            bits = record.get("log2_rop")
+            if bits is None or not math.isfinite(bits):
+                raise ValueError("successful attack must have finite log2 operation count")
+            successes.append(record)
+    complete = len(successes) == len(REQUIRED_ATTACKS)
+    minimum = min((record["log2_rop"] for record in successes), default=None)
+    passed = complete and minimum >= minimum_bits if minimum_bits is not None else None
+    status = "failed_incomplete_attacks" if not complete else (
+        "estimate_complete" if minimum_bits is None else
+        "passed_estimator_threshold" if passed else "failed_below_threshold")
+    return {"status": status, "complete_attack_set": complete,
+            "required_attacks": list(REQUIRED_ATTACKS),
+            "failed_attacks": [name for name in REQUIRED_ATTACKS
+                               if not any(r["algorithm"] == name and r["status"] == "success"
+                                          for r in records)],
+            "minimum_successful_attack_bits": minimum,
+            "minimum_successful_attack": min(successes, key=lambda r: r["log2_rop"])["algorithm"]
+                if successes else None,
+            "lambda_est_bits": minimum if complete else None,
+            "threshold_bits": minimum_bits, "threshold_passed": passed}
 
 
 def sample_accounting(algorithm, cost, *, original_m=768, original_n=768,

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Source-byte and missing-author-evidence checks; authored, unexecuted."""
+"""Source-byte and missing-author-evidence checks; execution receipts are recorded separately."""
 import pytest
 
 from daahe.evidence import build_manifest, verify_manifest, audit_readiness

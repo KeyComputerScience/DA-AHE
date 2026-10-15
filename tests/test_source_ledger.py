@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Durable one-report source invariants; authored and not executed.
+"""Durable one-report source invariants; execution receipts are recorded separately.
 
 Encryption is replaced with deliberately changing canonical ciphertext bytes to
 isolate persistence/race behavior. This is not an encryption or ML-DSA test.
@@ -8,6 +8,7 @@ The HMAC signer below is a test double only and is never a production provider.
 from concurrent.futures import ThreadPoolExecutor
 import hmac
 from threading import Barrier, Lock
+from types import SimpleNamespace
 
 import pytest
 
@@ -45,7 +46,7 @@ def report_context(tmp_path, monkeypatch):
         with lock:
             calls.append(tuple(message))
             ordinal = len(calls)
-        return Ciphertext(((0,) * 256,) * 3, (ordinal,) + (0,) * 255)
+        return Ciphertext(((0,) * 256,) * pk.params.k, (ordinal,) + (0,) * 255, pk.params)
 
     monkeypatch.setattr(protocol, "encrypt", changing_ciphertext)
     return {"signer": signer, "library": library, "source": source, "signed": signed,
@@ -54,7 +55,8 @@ def report_context(tmp_path, monkeypatch):
 
 
 def emit(context, channels, store):
-    return encapsulate(channels, context["signed"], context["source"], object(),
+    return encapsulate(channels, context["signed"], context["source"],
+                       SimpleNamespace(params=context["signed"].ticket.encryption_parameters),
                        b"e" * 32, b"k" * 32, context["signer"], context["library"],
                        source_store=store)
 
@@ -127,7 +129,8 @@ def test_crash_after_cache_commit_recovers_original_bytes(report_context, monkey
     with pytest.raises(RuntimeError, match="after cache commit"):
         emit(context, channels, store)
     recovered = emit(context, channels, SourceEmissionStore(context["path"]))
-    assert recovered.blocks[48].payload[:4] == (1).to_bytes(4, "little")
+    first_v_block = context["signed"].ticket.encryption_parameters.k * 256 * 4 // 64
+    assert recovered.blocks[first_v_block].payload[:4] == (1).to_bytes(4, "little")
     assert len(context["calls"]) == 1
     assert emit(context, channels, SourceEmissionStore(context["path"])) == recovered
 

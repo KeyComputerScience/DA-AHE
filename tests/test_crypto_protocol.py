@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Meaningful reference invariants and adversarial rejection cases; NOT EXECUTED.
+"""Meaningful reference invariants and adversarial rejection cases; execution receipts are recorded separately.
 
 The deterministic HMAC signer below is a test double for protocol framing only.
 It is never exported as a production ticket provider or a PQ signature claim.
@@ -14,7 +14,7 @@ import struct
 import pytest
 
 from daahe.derivation import derive_matrix, derive_offset, linear_tag
-from daahe.mlwe import Ciphertext, decrypt, encrypt, iter_ciphertext_blocks, keygen
+from daahe.mlwe import DEFAULT_PARAMETERS, Ciphertext, decrypt, encrypt, iter_ciphertext_blocks, keygen
 from daahe.profiles import Profile, ProfileLibrary
 from daahe.protocol import (Block, Contributor, ReplayStore, Sink, SourceEnvelope, Ticket,
                             aggregate, aggregate_message, block_mac, issue_ticket, pack_values,
@@ -86,17 +86,17 @@ def keys():
     return keygen(random.Random(991))
 
 
-def test_additive_encryption_and_exact_4096_byte_transport(keys):
+def test_additive_encryption_and_parameter_derived_transport(keys):
     x = (5,65530,11)+(0,)*253
     y = (7,9,65534)+(0,)*253
     a = encrypt(keys.pk,x,rng=random.Random(101))
     b = encrypt(keys.pk,y,rng=random.Random(102))
     assert decrypt(keys.sk,a+b) == tuple((left+right)%65537 for left,right in zip(x,y))
     wire = a.to_bytes()
-    assert len(wire) == 4096
+    assert len(wire) == keys.pk.params.ciphertext_bytes
     assert Ciphertext.from_bytes(wire) == a
     assert b"".join(iter_ciphertext_blocks(a,64)) == wire
-    assert len(tuple(iter_ciphertext_blocks(a,32))) == 128
+    assert len(tuple(iter_ciphertext_blocks(a,32))) == keys.pk.params.ciphertext_bytes // 32
     with pytest.raises(ValueError):
         Ciphertext.from_bytes(wire[:-1])
 
@@ -177,7 +177,7 @@ def test_compromised_gateway_recomputed_transport_mac_does_not_bypass_linear_tag
     # and recompute the gateway-held HMAC. Rejection must come from end-to-end checks.
     result,gateway_key = batch[-1],batch[7]
     wire = bytearray(result.ciphertext)
-    position = 3*256*4+plaintext_index*4  # v component of fixed 3x256 u layout
+    position = DEFAULT_PARAMETERS.k*256*4+plaintext_index*4  # v component, after all u polynomials
     old = struct.unpack_from("<I",wire,position)[0]
     struct.pack_into("<I",wire,position,(old+(2**32//65537)) & 0xffffffff)
     forged = forge_gateway_transport(result,gateway_key,ciphertext=bytes(wire))

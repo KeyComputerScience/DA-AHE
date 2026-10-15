@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Optional real-provider tests, all authored and unexecuted at delivery."""
+"""Optional real-provider tests, execution receipts are recorded separately."""
 import pytest
 from types import SimpleNamespace
 

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Pinned upstream sample-accounting contract; analytic mocks, unexecuted."""
+"""Pinned upstream sample-accounting contract; analytic fixtures; execution receipts are recorded separately."""
 import importlib.util
 import math
 from pathlib import Path
