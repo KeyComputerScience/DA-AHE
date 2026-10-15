@@ -1,0 +1,11 @@
+{
+  "execution_log_capture": "actual process stdout/stderr redirected externally and copied after exit code 0",
+  "files": {
+    "decoding-bound.json": "2be1b88b34bdee74c852fd12c9020c4fed1870a117f4a63ab00d057944991335",
+    "record-verification.json": "032032f3488957c0cabb3fdb09aa452a824607e205ee9c9d76d44e062a3cbfd6",
+    "sage-tests.log": "417fd3ad71370d4f77bcfa4625b6e6e3535cd27cd0de47d3995728b1b8053e68",
+    "sampler-cdts.json": "c61e8ff2ed2aa012dd9a9632d14b756a6a4f9bd587b339db5bdd26c8b0cf8433",
+    "stdout.log": "d42a649938c742e31ca6c04ad17864ad564b50efd6404a6ab45f3901031631f5"
+  },
+  "provenance": "independent_reproduction"
+}

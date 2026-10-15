@@ -1,0 +1,7 @@
+firmware/nrf52840/benchmark.c:68:13:puts_uart	0	static
+firmware/nrf52840/benchmark.c:69:13:uint_uart	32	static
+firmware/nrf52840/benchmark.c:76:13:parameters_uart	8	static
+firmware/nrf52840/benchmark.c:89:12:fixture_matrix	0	static
+firmware/nrf52840/benchmark.c:94:12:fixture_accept	0	static
+firmware/nrf52840/benchmark.c:107:13:timed_wrapper	72	static
+firmware/nrf52840/benchmark.c:159:5:main	56	static

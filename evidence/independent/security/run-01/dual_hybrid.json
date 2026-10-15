@@ -1,0 +1,40 @@
+{
+  "algorithm": "dual_hybrid",
+  "beta": "201",
+  "elapsed_seconds": 5.50753704199451,
+  "finished_at": "2026-10-15T01:30:59.403571+00:00",
+  "full_cost": {
+    "N": "9.75265460198698e10",
+    "beta": "201",
+    "beta_": "201",
+    "guess": "1.30976240400675e15",
+    "m": "768",
+    "p": "3",
+    "problem": "LWEParameters(n=768, q=4294967296, Xs=D(\u03c3=3.20), Xe=D(\u03c3=3.20), m=768, tag='DA-AHE independent fixed-key estimate')",
+    "red": "1.08233753297682e16",
+    "rop": "1.21331377337749e16",
+    "t": "0",
+    "zeta": "0"
+  },
+  "lattice_dimension": null,
+  "log2_rop": 53.42980221025329,
+  "memory": null,
+  "process_returncode": 0,
+  "raw_log_sha256": "8030b0acf04ad963cfae716da471a13257fd70395a97f8104cecdee88e1891c0",
+  "rop": "1.21331377337749e16",
+  "sage_version": "10.9",
+  "sample_accounting": {
+    "amplification_terms": null,
+    "effective_error_stddev": "3.2",
+    "effective_problem_samples": "768",
+    "original_error_stddev": "3.2",
+    "original_independent_samples": 768,
+    "reported_attack_samples": "768",
+    "sample_amplification": false,
+    "status": "within_original_sample_budget",
+    "upstream_problem": "LWEParameters(n=768, q=4294967296, Xs=D(\u03c3=3.20), Xe=D(\u03c3=3.20), m=768, tag='DA-AHE independent fixed-key estimate')"
+  },
+  "sample_count": "768",
+  "started_at": "2026-10-15T01:30:53.896052+00:00",
+  "status": "success"
+}

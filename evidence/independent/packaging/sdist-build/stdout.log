@@ -1,0 +1,436 @@
+running sdist
+running egg_info
+creating src/daahe_repro.egg-info
+writing src/daahe_repro.egg-info/PKG-INFO
+writing dependency_links to src/daahe_repro.egg-info/dependency_links.txt
+writing entry points to src/daahe_repro.egg-info/entry_points.txt
+writing requirements to src/daahe_repro.egg-info/requires.txt
+writing top-level names to src/daahe_repro.egg-info/top_level.txt
+writing manifest file 'src/daahe_repro.egg-info/SOURCES.txt'
+reading manifest file 'src/daahe_repro.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'src/daahe_repro.egg-info/SOURCES.txt'
+running check
+creating daahe_repro-0.3.0
+creating daahe_repro-0.3.0/.github/workflows
+creating daahe_repro-0.3.0/configs
+creating daahe_repro-0.3.0/docs
+creating daahe_repro-0.3.0/docs/archive
+creating daahe_repro-0.3.0/embedded
+creating daahe_repro-0.3.0/evidence/independent
+creating daahe_repro-0.3.0/evidence/independent/campaign-report
+creating daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-01
+creating daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-02
+creating daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-03
+creating daahe_repro-0.3.0/evidence/independent/firmware
+creating daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+creating daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+creating daahe_repro-0.3.0/evidence/independent/packaging/sdist-build
+creating daahe_repro-0.3.0/evidence/independent/protocol/provider-build
+creating daahe_repro-0.3.0/evidence/independent/protocol/provider-configure
+creating daahe_repro-0.3.0/evidence/independent/protocol/provider-install
+creating daahe_repro-0.3.0/evidence/independent/protocol/real-provider-tests
+creating daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-execution
+creating daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+creating daahe_repro-0.3.0/evidence/independent/protocol/trial-execution
+creating daahe_repro-0.3.0/evidence/independent/protocol/trials
+creating daahe_repro-0.3.0/evidence/independent/security-execution
+creating daahe_repro-0.3.0/evidence/independent/security-execution-02
+creating daahe_repro-0.3.0/evidence/independent/security-parameter-search
+creating daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10
+creating daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k10
+creating daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k4
+creating daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k5
+creating daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k6
+creating daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k7
+creating daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k8
+creating daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k9
+creating daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+creating daahe_repro-0.3.0/evidence/independent/security/run-01
+creating daahe_repro-0.3.0/evidence/independent/simulation-execution
+creating daahe_repro-0.3.0/evidence/independent/simulation-verification
+creating daahe_repro-0.3.0/evidence/independent/tests
+creating daahe_repro-0.3.0/evidence/independent/tests/final-host
+creating daahe_repro-0.3.0/evidence/independent/tests/final-host-02
+creating daahe_repro-0.3.0/evidence/independent/tests/final-real-pq
+creating daahe_repro-0.3.0/evidence/independent/validation
+creating daahe_repro-0.3.0/evidence/independent/validation/native-build
+creating daahe_repro-0.3.0/evidence/independent/validation/native-configure
+creating daahe_repro-0.3.0/evidence/independent/validation/native-test
+creating daahe_repro-0.3.0/evidence/independent/validation/tests-interim
+creating daahe_repro-0.3.0/examples
+creating daahe_repro-0.3.0/experiments
+creating daahe_repro-0.3.0/firmware
+creating daahe_repro-0.3.0/firmware/nrf52840
+creating daahe_repro-0.3.0/security
+creating daahe_repro-0.3.0/simulation
+creating daahe_repro-0.3.0/src/daahe
+creating daahe_repro-0.3.0/src/daahe_repro.egg-info
+creating daahe_repro-0.3.0/tests
+creating daahe_repro-0.3.0/tools
+copying files to daahe_repro-0.3.0...
+copying .dockerignore -> daahe_repro-0.3.0
+copying .gitignore -> daahe_repro-0.3.0
+copying CITATION.cff -> daahe_repro-0.3.0
+copying Dockerfile -> daahe_repro-0.3.0
+copying LICENSE -> daahe_repro-0.3.0
+copying MANIFEST.in -> daahe_repro-0.3.0
+copying Makefile -> daahe_repro-0.3.0
+copying README.md -> daahe_repro-0.3.0
+copying SECURITY.md -> daahe_repro-0.3.0
+copying THIRD_PARTY.md -> daahe_repro-0.3.0
+copying manifest.json -> daahe_repro-0.3.0
+copying pyproject.toml -> daahe_repro-0.3.0
+copying requirements-dev.txt -> daahe_repro-0.3.0
+copying requirements-pq.txt -> daahe_repro-0.3.0
+copying .github/workflows/reproduce.yml -> daahe_repro-0.3.0/.github/workflows
+copying configs/control_synthetic.json -> daahe_repro-0.3.0/configs
+copying configs/security_profile.json -> daahe_repro-0.3.0/configs
+copying docs/ADVANTAGES.md -> daahe_repro-0.3.0/docs
+copying docs/CERTIFICATION.md -> daahe_repro-0.3.0/docs
+copying docs/CI_AND_PATCH.md -> daahe_repro-0.3.0/docs
+copying docs/CLAIM_TRACEABILITY.md -> daahe_repro-0.3.0/docs
+copying docs/DEPLOYMENT.md -> daahe_repro-0.3.0/docs
+copying docs/IMPLEMENTATION_STATUS.md -> daahe_repro-0.3.0/docs
+copying docs/INDEPENDENT_REPRODUCTION.md -> daahe_repro-0.3.0/docs
+copying docs/INDEPENDENT_RESULTS_ZH.md -> daahe_repro-0.3.0/docs
+copying docs/PARAMETERS_AND_GAPS.md -> daahe_repro-0.3.0/docs
+copying docs/REPOSITORY_REVIEW.md -> daahe_repro-0.3.0/docs
+copying docs/REPRODUCIBILITY.md -> daahe_repro-0.3.0/docs
+copying docs/archive/manifest-v0.2.0-original.json -> daahe_repro-0.3.0/docs/archive
+copying embedded/CMakeLists.txt -> daahe_repro-0.3.0/embedded
+copying embedded/README.md -> daahe_repro-0.3.0/embedded
+copying embedded/daahe_core.c -> daahe_repro-0.3.0/embedded
+copying embedded/daahe_core.h -> daahe_repro-0.3.0/embedded
+copying embedded/test_core.c -> daahe_repro-0.3.0/embedded
+copying evidence/independent/STATUS.json -> daahe_repro-0.3.0/evidence/independent
+copying evidence/independent/original-artifact-audit.json -> daahe_repro-0.3.0/evidence/independent
+copying evidence/independent/reference-bounds-k6.json -> daahe_repro-0.3.0/evidence/independent
+copying evidence/independent/reference-bounds.json -> daahe_repro-0.3.0/evidence/independent
+copying evidence/independent/campaign-report/README.md -> daahe_repro-0.3.0/evidence/independent/campaign-report
+copying evidence/independent/campaign-report/config.json -> daahe_repro-0.3.0/evidence/independent/campaign-report
+copying evidence/independent/campaign-report/controller.json -> daahe_repro-0.3.0/evidence/independent/campaign-report
+copying evidence/independent/campaign-report/manifest.json -> daahe_repro-0.3.0/evidence/independent/campaign-report
+copying evidence/independent/campaign-report/per-seed.csv -> daahe_repro-0.3.0/evidence/independent/campaign-report
+copying evidence/independent/campaign-report/summary.json -> daahe_repro-0.3.0/evidence/independent/campaign-report
+copying evidence/independent/decoding/k6-cdt-01/attempt.json -> daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-01
+copying evidence/independent/decoding/k6-cdt-01/sampler-cdts.json -> daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-01
+copying evidence/independent/decoding/k6-cdt-02/decoding-bound.json -> daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-02
+copying evidence/independent/decoding/k6-cdt-02/manifest.json -> daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-02
+copying evidence/independent/decoding/k6-cdt-02/sampler-cdts.json -> daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-02
+copying evidence/independent/decoding/k6-cdt-03/decoding-bound.json -> daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-03
+copying evidence/independent/decoding/k6-cdt-03/manifest.json -> daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-03
+copying evidence/independent/decoding/k6-cdt-03/record-verification.json -> daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-03
+copying evidence/independent/decoding/k6-cdt-03/sage-tests.log -> daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-03
+copying evidence/independent/decoding/k6-cdt-03/sampler-cdts.json -> daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-03
+copying evidence/independent/decoding/k6-cdt-03/stdout.log -> daahe_repro-0.3.0/evidence/independent/decoding/k6-cdt-03
+copying evidence/independent/firmware/host-tests.junit.xml -> daahe_repro-0.3.0/evidence/independent/firmware
+copying evidence/independent/firmware/host-validation.log -> daahe_repro-0.3.0/evidence/independent/firmware
+copying evidence/independent/firmware/selected-status.json -> daahe_repro-0.3.0/evidence/independent/firmware
+copying evidence/independent/firmware/status.json -> daahe_repro-0.3.0/evidence/independent/firmware
+copying evidence/independent/firmware/arm-gcc-14.3.1/benchmark.bin -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/benchmark.elf -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/benchmark.hex -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/benchmark.map -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/benchmark.su -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/board-pending.json -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/build-metadata.json -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/build.log -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.su -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/native_core_test -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/readelf.txt -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/runtime.o -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/runtime.su -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/size.txt -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/arm-gcc-14.3.1/startup.o -> daahe_repro-0.3.0/evidence/independent/firmware/arm-gcc-14.3.1
+copying evidence/independent/firmware/selected-k6/benchmark.bin -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/benchmark.elf -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/benchmark.hex -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/benchmark.map -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/benchmark.o -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/benchmark.su -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/board-pending.json -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/build-metadata.json -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/build.log -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/cmake-native-validation.log -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/daahe_core.o -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/daahe_core.su -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/host-tests.junit.xml -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/native_core_test -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/rank-validation.log -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/readelf.txt -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/runtime.o -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/runtime.su -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/size.txt -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/firmware/selected-k6/startup.o -> daahe_repro-0.3.0/evidence/independent/firmware/selected-k6
+copying evidence/independent/packaging/sdist-build/execution.json -> daahe_repro-0.3.0/evidence/independent/packaging/sdist-build
+copying evidence/independent/packaging/sdist-build/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/packaging/sdist-build
+copying evidence/independent/packaging/sdist-build/stderr.log -> daahe_repro-0.3.0/evidence/independent/packaging/sdist-build
+copying evidence/independent/packaging/sdist-build/stdout.log -> daahe_repro-0.3.0/evidence/independent/packaging/sdist-build
+copying evidence/independent/protocol/provider-build/execution.json -> daahe_repro-0.3.0/evidence/independent/protocol/provider-build
+copying evidence/independent/protocol/provider-build/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/protocol/provider-build
+copying evidence/independent/protocol/provider-build/stderr.log -> daahe_repro-0.3.0/evidence/independent/protocol/provider-build
+copying evidence/independent/protocol/provider-build/stdout.log -> daahe_repro-0.3.0/evidence/independent/protocol/provider-build
+copying evidence/independent/protocol/provider-configure/execution.json -> daahe_repro-0.3.0/evidence/independent/protocol/provider-configure
+copying evidence/independent/protocol/provider-configure/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/protocol/provider-configure
+copying evidence/independent/protocol/provider-configure/stderr.log -> daahe_repro-0.3.0/evidence/independent/protocol/provider-configure
+copying evidence/independent/protocol/provider-configure/stdout.log -> daahe_repro-0.3.0/evidence/independent/protocol/provider-configure
+copying evidence/independent/protocol/provider-install/execution.json -> daahe_repro-0.3.0/evidence/independent/protocol/provider-install
+copying evidence/independent/protocol/provider-install/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/protocol/provider-install
+copying evidence/independent/protocol/provider-install/stderr.log -> daahe_repro-0.3.0/evidence/independent/protocol/provider-install
+copying evidence/independent/protocol/provider-install/stdout.log -> daahe_repro-0.3.0/evidence/independent/protocol/provider-install
+copying evidence/independent/protocol/real-provider-tests/execution.json -> daahe_repro-0.3.0/evidence/independent/protocol/real-provider-tests
+copying evidence/independent/protocol/real-provider-tests/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/protocol/real-provider-tests
+copying evidence/independent/protocol/real-provider-tests/stderr.log -> daahe_repro-0.3.0/evidence/independent/protocol/real-provider-tests
+copying evidence/independent/protocol/real-provider-tests/stdout.log -> daahe_repro-0.3.0/evidence/independent/protocol/real-provider-tests
+copying evidence/independent/protocol/selected-k6-execution/execution.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-execution
+copying evidence/independent/protocol/selected-k6-execution/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-execution
+copying evidence/independent/protocol/selected-k6-execution/stderr.log -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-execution
+copying evidence/independent/protocol/selected-k6-execution/stdout.log -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-execution
+copying evidence/independent/protocol/selected-k6-trials/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/summary.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-000.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-001.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-002.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-003.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-004.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-005.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-006.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-007.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-008.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-009.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-010.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-011.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-012.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-013.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-014.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-015.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-016.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-017.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-018.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/selected-k6-trials/trial-019.json -> daahe_repro-0.3.0/evidence/independent/protocol/selected-k6-trials
+copying evidence/independent/protocol/trial-execution/execution.json -> daahe_repro-0.3.0/evidence/independent/protocol/trial-execution
+copying evidence/independent/protocol/trial-execution/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/protocol/trial-execution
+copying evidence/independent/protocol/trial-execution/stderr.log -> daahe_repro-0.3.0/evidence/independent/protocol/trial-execution
+copying evidence/independent/protocol/trial-execution/stdout.log -> daahe_repro-0.3.0/evidence/independent/protocol/trial-execution
+copying evidence/independent/protocol/trials/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/summary.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-000.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-001.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-002.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-003.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-004.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-005.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-006.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-007.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-008.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-009.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-010.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-011.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-012.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-013.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-014.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-015.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-016.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-017.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-018.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/protocol/trials/trial-019.json -> daahe_repro-0.3.0/evidence/independent/protocol/trials
+copying evidence/independent/security-execution/execution.json -> daahe_repro-0.3.0/evidence/independent/security-execution
+copying evidence/independent/security-execution/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/security-execution
+copying evidence/independent/security-execution/stderr.log -> daahe_repro-0.3.0/evidence/independent/security-execution
+copying evidence/independent/security-execution/stdout.log -> daahe_repro-0.3.0/evidence/independent/security-execution
+copying evidence/independent/security-execution-02/execution.json -> daahe_repro-0.3.0/evidence/independent/security-execution-02
+copying evidence/independent/security-execution-02/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/security-execution-02
+copying evidence/independent/security-execution-02/stderr.log -> daahe_repro-0.3.0/evidence/independent/security-execution-02
+copying evidence/independent/security-execution-02/stdout.log -> daahe_repro-0.3.0/evidence/independent/security-execution-02
+copying evidence/independent/security-parameter-search/PARAMETER_SELECTION.md -> daahe_repro-0.3.0/evidence/independent/security-parameter-search
+copying evidence/independent/security-parameter-search/ranks-04-10/environment.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10
+copying evidence/independent/security-parameter-search/ranks-04-10/screening.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10
+copying evidence/independent/security-parameter-search/ranks-04-10/upstream-source.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10
+copying evidence/independent/security-parameter-search/ranks-04-10/k10/primal_usvp.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k10
+copying evidence/independent/security-parameter-search/ranks-04-10/k10/primal_usvp.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k10
+copying evidence/independent/security-parameter-search/ranks-04-10/k4/primal_usvp.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k4
+copying evidence/independent/security-parameter-search/ranks-04-10/k4/primal_usvp.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k4
+copying evidence/independent/security-parameter-search/ranks-04-10/k5/primal_usvp.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k5
+copying evidence/independent/security-parameter-search/ranks-04-10/k5/primal_usvp.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k5
+copying evidence/independent/security-parameter-search/ranks-04-10/k6/primal_usvp.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k6
+copying evidence/independent/security-parameter-search/ranks-04-10/k6/primal_usvp.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k6
+copying evidence/independent/security-parameter-search/ranks-04-10/k7/primal_usvp.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k7
+copying evidence/independent/security-parameter-search/ranks-04-10/k7/primal_usvp.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k7
+copying evidence/independent/security-parameter-search/ranks-04-10/k8/primal_usvp.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k8
+copying evidence/independent/security-parameter-search/ranks-04-10/k8/primal_usvp.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k8
+copying evidence/independent/security-parameter-search/ranks-04-10/k9/primal_usvp.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k9
+copying evidence/independent/security-parameter-search/ranks-04-10/k9/primal_usvp.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/ranks-04-10/k9
+copying evidence/independent/security-parameter-search/selected-k6-full/coded_bkw.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/coded_bkw.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/dual.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/dual.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/dual_hybrid.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/dual_hybrid.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/environment.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/primal_bdd.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/primal_bdd.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/primal_hybrid.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/primal_hybrid.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/primal_mitm_hybrid.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/primal_mitm_hybrid.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/primal_usvp.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/primal_usvp.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/security.csv -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/security.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/stdout.log -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/upstream-source.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security-parameter-search/selected-k6-full/verification.json -> daahe_repro-0.3.0/evidence/independent/security-parameter-search/selected-k6-full
+copying evidence/independent/security/run-01/coded_bkw.json -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/coded_bkw.log -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/dual.json -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/dual.log -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/dual_hybrid.json -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/dual_hybrid.log -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/environment.json -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/primal_bdd.json -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/primal_bdd.log -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/primal_hybrid.json -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/primal_hybrid.log -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/primal_mitm_hybrid.json -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/primal_mitm_hybrid.log -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/primal_usvp.json -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/primal_usvp.log -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/security.csv -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/security.json -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/stdout.log -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/security/run-01/upstream-source.json -> daahe_repro-0.3.0/evidence/independent/security/run-01
+copying evidence/independent/simulation-execution/execution.json -> daahe_repro-0.3.0/evidence/independent/simulation-execution
+copying evidence/independent/simulation-execution/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/simulation-execution
+copying evidence/independent/simulation-execution/stderr.log -> daahe_repro-0.3.0/evidence/independent/simulation-execution
+copying evidence/independent/simulation-execution/stdout.log -> daahe_repro-0.3.0/evidence/independent/simulation-execution
+copying evidence/independent/simulation-verification/execution.json -> daahe_repro-0.3.0/evidence/independent/simulation-verification
+copying evidence/independent/simulation-verification/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/simulation-verification
+copying evidence/independent/simulation-verification/stderr.log -> daahe_repro-0.3.0/evidence/independent/simulation-verification
+copying evidence/independent/simulation-verification/stdout.log -> daahe_repro-0.3.0/evidence/independent/simulation-verification
+copying evidence/independent/tests/final-host-02-junit.xml -> daahe_repro-0.3.0/evidence/independent/tests
+copying evidence/independent/tests/final-host-junit.xml -> daahe_repro-0.3.0/evidence/independent/tests
+copying evidence/independent/tests/final-host/execution.json -> daahe_repro-0.3.0/evidence/independent/tests/final-host
+copying evidence/independent/tests/final-host/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/tests/final-host
+copying evidence/independent/tests/final-host/stderr.log -> daahe_repro-0.3.0/evidence/independent/tests/final-host
+copying evidence/independent/tests/final-host/stdout.log -> daahe_repro-0.3.0/evidence/independent/tests/final-host
+copying evidence/independent/tests/final-host-02/execution.json -> daahe_repro-0.3.0/evidence/independent/tests/final-host-02
+copying evidence/independent/tests/final-host-02/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/tests/final-host-02
+copying evidence/independent/tests/final-host-02/stderr.log -> daahe_repro-0.3.0/evidence/independent/tests/final-host-02
+copying evidence/independent/tests/final-host-02/stdout.log -> daahe_repro-0.3.0/evidence/independent/tests/final-host-02
+copying evidence/independent/tests/final-real-pq/execution.json -> daahe_repro-0.3.0/evidence/independent/tests/final-real-pq
+copying evidence/independent/tests/final-real-pq/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/tests/final-real-pq
+copying evidence/independent/tests/final-real-pq/stderr.log -> daahe_repro-0.3.0/evidence/independent/tests/final-real-pq
+copying evidence/independent/tests/final-real-pq/stdout.log -> daahe_repro-0.3.0/evidence/independent/tests/final-real-pq
+copying evidence/independent/validation/environment.json -> daahe_repro-0.3.0/evidence/independent/validation
+copying evidence/independent/validation/native-build/execution.json -> daahe_repro-0.3.0/evidence/independent/validation/native-build
+copying evidence/independent/validation/native-build/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/validation/native-build
+copying evidence/independent/validation/native-build/stderr.log -> daahe_repro-0.3.0/evidence/independent/validation/native-build
+copying evidence/independent/validation/native-build/stdout.log -> daahe_repro-0.3.0/evidence/independent/validation/native-build
+copying evidence/independent/validation/native-configure/execution.json -> daahe_repro-0.3.0/evidence/independent/validation/native-configure
+copying evidence/independent/validation/native-configure/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/validation/native-configure
+copying evidence/independent/validation/native-configure/stderr.log -> daahe_repro-0.3.0/evidence/independent/validation/native-configure
+copying evidence/independent/validation/native-configure/stdout.log -> daahe_repro-0.3.0/evidence/independent/validation/native-configure
+copying evidence/independent/validation/native-test/execution.json -> daahe_repro-0.3.0/evidence/independent/validation/native-test
+copying evidence/independent/validation/native-test/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/validation/native-test
+copying evidence/independent/validation/native-test/stderr.log -> daahe_repro-0.3.0/evidence/independent/validation/native-test
+copying evidence/independent/validation/native-test/stdout.log -> daahe_repro-0.3.0/evidence/independent/validation/native-test
+copying evidence/independent/validation/tests-interim/execution.json -> daahe_repro-0.3.0/evidence/independent/validation/tests-interim
+copying evidence/independent/validation/tests-interim/source-snapshot.json -> daahe_repro-0.3.0/evidence/independent/validation/tests-interim
+copying evidence/independent/validation/tests-interim/stderr.log -> daahe_repro-0.3.0/evidence/independent/validation/tests-interim
+copying evidence/independent/validation/tests-interim/stdout.log -> daahe_repro-0.3.0/evidence/independent/validation/tests-interim
+copying examples/telemetry_synthetic.csv -> daahe_repro-0.3.0/examples
+copying experiments/METRICS_SCHEMA.md -> daahe_repro-0.3.0/experiments
+copying experiments/configurations.csv -> daahe_repro-0.3.0/experiments
+copying experiments/matrix.json -> daahe_repro-0.3.0/experiments
+copying experiments/paper_targets.json -> daahe_repro-0.3.0/experiments
+copying firmware/README.md -> daahe_repro-0.3.0/firmware
+copying firmware/build.py -> daahe_repro-0.3.0/firmware
+copying firmware/nrf52840/benchmark.c -> daahe_repro-0.3.0/firmware/nrf52840
+copying firmware/nrf52840/linker.ld -> daahe_repro-0.3.0/firmware/nrf52840
+copying firmware/nrf52840/runtime.c -> daahe_repro-0.3.0/firmware/nrf52840
+copying firmware/nrf52840/startup.S -> daahe_repro-0.3.0/firmware/nrf52840
+copying security/DECODING_BOUND.md -> daahe_repro-0.3.0/security
+copying security/Dockerfile -> daahe_repro-0.3.0/security
+copying security/README.md -> daahe_repro-0.3.0/security
+copying security/container-entrypoint.sh -> daahe_repro-0.3.0/security
+copying security/verify_run.py -> daahe_repro-0.3.0/security
+copying simulation/README.md -> daahe_repro-0.3.0/simulation
+copying simulation/__init__.py -> daahe_repro-0.3.0/simulation
+copying simulation/audit.py -> daahe_repro-0.3.0/simulation
+copying simulation/config.json -> daahe_repro-0.3.0/simulation
+copying simulation/controller_fixture.json -> daahe_repro-0.3.0/simulation
+copying simulation/engine.py -> daahe_repro-0.3.0/simulation
+copying simulation/exogenous.py -> daahe_repro-0.3.0/simulation
+copying simulation/io.py -> daahe_repro-0.3.0/simulation
+copying simulation/paper_like_config.json -> daahe_repro-0.3.0/simulation
+copying simulation/policy.py -> daahe_repro-0.3.0/simulation
+copying src/daahe/__init__.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/__main__.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/ablations.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/calibration.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/cli.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/control.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/derivation.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/evidence.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/independent_evidence.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/integration.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/lightweight.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/mlwe.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/profiles.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/protocol.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/replay.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/ring.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/safety.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/signal.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/signatures.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe/statistics.py -> daahe_repro-0.3.0/src/daahe
+copying src/daahe_repro.egg-info/PKG-INFO -> daahe_repro-0.3.0/src/daahe_repro.egg-info
+copying src/daahe_repro.egg-info/SOURCES.txt -> daahe_repro-0.3.0/src/daahe_repro.egg-info
+copying src/daahe_repro.egg-info/dependency_links.txt -> daahe_repro-0.3.0/src/daahe_repro.egg-info
+copying src/daahe_repro.egg-info/entry_points.txt -> daahe_repro-0.3.0/src/daahe_repro.egg-info
+copying src/daahe_repro.egg-info/requires.txt -> daahe_repro-0.3.0/src/daahe_repro.egg-info
+copying src/daahe_repro.egg-info/top_level.txt -> daahe_repro-0.3.0/src/daahe_repro.egg-info
+copying tests/test_board_measurements.py -> daahe_repro-0.3.0/tests
+copying tests/test_control.py -> daahe_repro-0.3.0/tests
+copying tests/test_control_binding.py -> daahe_repro-0.3.0/tests
+copying tests/test_crypto_protocol.py -> daahe_repro-0.3.0/tests
+copying tests/test_decoding_bound_interval.py -> daahe_repro-0.3.0/tests
+copying tests/test_decoding_bound_reference.py -> daahe_repro-0.3.0/tests
+copying tests/test_estimator_adapter.py -> daahe_repro-0.3.0/tests
+copying tests/test_evidence.py -> daahe_repro-0.3.0/tests
+copying tests/test_import_plot.py -> daahe_repro-0.3.0/tests
+copying tests/test_independent_evidence.py -> daahe_repro-0.3.0/tests
+copying tests/test_parameterized_encryption.py -> daahe_repro-0.3.0/tests
+copying tests/test_security_execution.py -> daahe_repro-0.3.0/tests
+copying tests/test_signal_quality.py -> daahe_repro-0.3.0/tests
+copying tests/test_signatures.py -> daahe_repro-0.3.0/tests
+copying tests/test_simulation_campaign.py -> daahe_repro-0.3.0/tests
+copying tests/test_simulation_network.py -> daahe_repro-0.3.0/tests
+copying tests/test_simulation_rosters.py -> daahe_repro-0.3.0/tests
+copying tests/test_source_ledger.py -> daahe_repro-0.3.0/tests
+copying tests/test_statistics.py -> daahe_repro-0.3.0/tests
+copying tools/capture_environment.py -> daahe_repro-0.3.0/tools
+copying tools/certify_decoding_bound.py -> daahe_repro-0.3.0/tools
+copying tools/check_reference_bounds.py -> daahe_repro-0.3.0/tools
+copying tools/collect_board_measurements.py -> daahe_repro-0.3.0/tools
+copying tools/estimate_security.sage -> daahe_repro-0.3.0/tools
+copying tools/estimate_security_parameters.py -> daahe_repro-0.3.0/tools
+copying tools/estimator_result_adapter.py -> daahe_repro-0.3.0/tools
+copying tools/import_omnet.py -> daahe_repro-0.3.0/tools
+copying tools/independent_manifest.py -> daahe_repro-0.3.0/tools
+copying tools/plot_results.py -> daahe_repro-0.3.0/tools
+copying tools/run_logged.py -> daahe_repro-0.3.0/tools
+copying tools/run_protocol_trials.py -> daahe_repro-0.3.0/tools
+copying tools/run_simulation_campaign.py -> daahe_repro-0.3.0/tools
+copying tools/search_security_parameters.py -> daahe_repro-0.3.0/tools
+copying tools/verify_board_measurements.py -> daahe_repro-0.3.0/tools
+copying tools/verify_simulation_campaign.py -> daahe_repro-0.3.0/tools
+copying src/daahe_repro.egg-info/SOURCES.txt -> daahe_repro-0.3.0/src/daahe_repro.egg-info
+Writing daahe_repro-0.3.0/setup.cfg
+Creating tar archive
+removing 'daahe_repro-0.3.0' (and everything under it)
+daahe_repro-0.3.0.tar.gz

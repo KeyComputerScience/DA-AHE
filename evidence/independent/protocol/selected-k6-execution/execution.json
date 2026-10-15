@@ -1,0 +1,29 @@
+{
+  "command": [
+    "../repro-venv/bin/python",
+    "tools/run_protocol_trials.py",
+    "--trials",
+    "20",
+    "--module-rank",
+    "6",
+    "--output",
+    "evidence/independent/protocol/selected-k6-trials"
+  ],
+  "cwd": "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE",
+  "finished_utc": "2026-10-15T01:40:37.603879+00:00",
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "process_group_id": 78005,
+  "process_id": 78005,
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "returncode": 0,
+  "schema_version": 1,
+  "source_digest": "18bd32f86f104baa63e13217121ed7652c191742ed690564cd6f3ebb93190e5c",
+  "started_utc": "2026-10-15T01:40:23.078514+00:00",
+  "status": "passed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "30272060f51badb1ea16f8e15f545d427dcdd0f8d7b7f5c38903f2a0c9700131",
+  "timeout_s": 3600,
+  "wall_time_s": 14.517353750008624
+}

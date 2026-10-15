@@ -1,0 +1,42 @@
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/../repro-venv/bin/python', '-m', 'pytest', '-q', 'tests/test_board_measurements.py', '--junitxml=/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/host-tests.junit.xml']
+......................                                                   [100%]
+- generated xml file: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/host-tests.junit.xml -
+22 passed in 1.04s
+
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/../repro-venv/bin/python', '-m', 'ruff', 'check', 'firmware/build.py', 'tools/collect_board_measurements.py', 'tools/verify_board_measurements.py', 'tests/test_board_measurements.py']
+All checks passed!
+
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/../repro-venv/bin/python', 'tools/collect_board_measurements.py', '--help']
+usage: collect_board_measurements.py [-h] --port PORT --board-id BOARD_ID
+                                     --build-dir BUILD_DIR --output OUTPUT
+                                     [--timeout TIMEOUT]
+
+Capture actual POSIX serial bytes after opening a nRF52840 DK virtual COM.
+Open the collector BEFORE manually resetting the target. No file replay/import
+mode exists. A serial stream is not cryptographic hardware attestation.
+
+options:
+  -h, --help            show this help message and exit
+  --port PORT
+  --board-id BOARD_ID   Physical board serial/asset ID, operator asserted
+  --build-dir BUILD_DIR
+  --output OUTPUT       New capture directory
+  --timeout TIMEOUT
+
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/../repro-venv/bin/python', 'tools/verify_board_measurements.py', '--help']
+usage: verify_board_measurements.py [-h] --build-dir BUILD_DIR
+                                    [--output OUTPUT]
+                                    capture_dir
+
+Validate captured core-benchmark logs and their build/artifact binding. This
+checks structure and known answers, not hardware authenticity or full
+protocol/energy claims. Physical-board identity remains an operator assertion.
+
+positional arguments:
+  capture_dir
+
+options:
+  -h, --help            show this help message and exit
+  --build-dir BUILD_DIR
+  --output OUTPUT       New file; never overwrite a prior report
+

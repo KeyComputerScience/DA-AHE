@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "status": "independent_cross_compile_and_host_validation_complete_board_pending",
+  "build_metadata": "arm-gcc-14.3.1/build-metadata.json",
+  "build_metadata_sha256": "fa8d595d9e69a83591434eb534a3fe1863aee27bfd260f74eb5732d1c2ed2d7a",
+  "build_id": "a46a328e11abe9af1a917954177847453346782c0718c81926aea3640f7b1a92",
+  "elf_sha256": "b69ed31fec03f3a37d7bfe91ab3459ff03269b282e3d8373b93632612d3f7519",
+  "map_sha256": "9c3ae8cb94952a030a5629d3f6c5d06e6a24fe1be2d19f8f096e30601619700f",
+  "compiled_memory_bytes": {
+    "flash_load_sections": 5296,
+    "static_ram_data_bss": 17536,
+    "benchmark_psp_included_in_bss": 8192,
+    "main_msp_reserved_separately": 4096,
+    "scope": "compiled independent harness only; not measured stack or paper firmware"
+  },
+  "host_validation": {
+    "pytest_passed": 22,
+    "ruff": "passed",
+    "native_core_known_answers": "passed_actual_execution",
+    "log_sha256": "a524fa1c53b1e396c07717887749918ed41afe60cf6e6f99d1f39f8dd655f1fb",
+    "junit_sha256": "2b10072a20614fa03421adf036bc87d1115d5736d83f827d35c5a0e5b9bcd0d9"
+  },
+  "physical_board": {
+    "status": "pending",
+    "samples": 0,
+    "cycle_measurement": false,
+    "stack_hwm_measurement": false,
+    "energy_measurement": false
+  },
+  "limitations": [
+    "Independent standalone core microbenchmarks, not author firmware or Contiki-NG.",
+    "No complete M-LWE/ML-DSA/HMAC/KDF/IntDb2/radio protocol implementation or full CPU/energy/workspace claim.",
+    "No physical target was flashed or measured."
+  ]
+}

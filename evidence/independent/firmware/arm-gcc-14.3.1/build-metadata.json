@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "status": "cross_compiled_native_core_test_passed_not_board_measured",
+  "build_id": "a46a328e11abe9af1a917954177847453346782c0718c81926aea3640f7b1a92",
+  "created_at_utc": "2026-10-15T01:21:12.573043+00:00",
+  "target": "nrf52840",
+  "clock_hz": 64000000,
+  "repeats": 20,
+  "identity": {
+    "sources": [
+      {
+        "path": "embedded/daahe_core.c",
+        "sha256": "75f82cfc05d36e13c4b2d4e2c71f89811cc16b23b01f468da07a428ee796eeeb"
+      },
+      {
+        "path": "embedded/daahe_core.h",
+        "sha256": "5e3a7fdb93c78edac5e0aa6f2d5e54994a8cd821b6292e18a09312e0418156a6"
+      },
+      {
+        "path": "embedded/test_core.c",
+        "sha256": "f1a180834e544babece7f98101d7cefef545bae1ec7fa53d6cb1e4de194b5fd5"
+      },
+      {
+        "path": "firmware/nrf52840/benchmark.c",
+        "sha256": "a9ab57cc9939427a126fb4e8964e966e2fbd3469df03ad05f9aec99d8b1ea444"
+      },
+      {
+        "path": "firmware/nrf52840/startup.S",
+        "sha256": "60e080914bface14eb8c8b52a67992be328df422dad99ac3780d19c47397662d"
+      },
+      {
+        "path": "firmware/nrf52840/runtime.c",
+        "sha256": "6303b31dbf3aa392da8863c67843b8f431307571727c186ec7729abdae4fd3bf"
+      },
+      {
+        "path": "firmware/nrf52840/linker.ld",
+        "sha256": "1f280aa376230e1016c5d0438b9f2555d81a163b1b903445140db87e707f68ea"
+      },
+      {
+        "path": "firmware/build.py",
+        "sha256": "70841b1215bc46fe70903eb3de6d5bdb5f7b24484f2fe8582ca2f285a1b9cf44"
+      }
+    ],
+    "compiler_version": "arm-none-eabi-gcc (Arm GNU Toolchain 14.3.Rel1 (Build arm-14.174)) 14.3.1 20250623\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "repeats": 20,
+    "libgcc_sha256": "9a1f86b9b3e6f3972b893d01ab02fee42c4ccad8ab4fd5333644eb7a5b89d472",
+    "target": "arm-none-eabi/cortex-m4/thumb/soft-float",
+    "optimization": "-O2",
+    "scope": "embedded_core_microbenchmarks"
+  },
+  "compiler_sha256": "df9ef0675933741317cf88ea067c7a2bf84d2e6953ae5971d02c2523d166db51",
+  "libgcc_sha256": "9a1f86b9b3e6f3972b893d01ab02fee42c4ccad8ab4fd5333644eb7a5b89d472",
+  "native_test_stdout": "portable core known-answer cases passed in this execution\n",
+  "commands": [
+    [
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "--version"
+    ],
+    [
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-mcpu=cortex-m4",
+      "-mthumb",
+      "-mfloat-abi=soft",
+      "-print-libgcc-file-name"
+    ],
+    [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pedantic",
+      "-Iembedded",
+      "embedded/daahe_core.c",
+      "embedded/test_core.c",
+      "-o",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/native_core_test"
+    ],
+    [
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/native_core_test"
+    ],
+    [
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-mcpu=cortex-m4",
+      "-mthumb",
+      "-mfloat-abi=soft",
+      "-O2",
+      "-g3",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fstack-usage",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Iembedded",
+      "-DFIRMWARE_BUILD_ID=\"a46a328e11abe9af1a917954177847453346782c0718c81926aea3640f7b1a92\"",
+      "-DBENCH_REPEATS=20",
+      "-c",
+      "firmware/nrf52840/startup.S",
+      "-o",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o"
+    ],
+    [
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-mcpu=cortex-m4",
+      "-mthumb",
+      "-mfloat-abi=soft",
+      "-O2",
+      "-g3",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fstack-usage",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Iembedded",
+      "-DFIRMWARE_BUILD_ID=\"a46a328e11abe9af1a917954177847453346782c0718c81926aea3640f7b1a92\"",
+      "-DBENCH_REPEATS=20",
+      "-std=c11",
+      "-pedantic",
+      "-c",
+      "firmware/nrf52840/runtime.c",
+      "-o",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o"
+    ],
+    [
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-mcpu=cortex-m4",
+      "-mthumb",
+      "-mfloat-abi=soft",
+      "-O2",
+      "-g3",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fstack-usage",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Iembedded",
+      "-DFIRMWARE_BUILD_ID=\"a46a328e11abe9af1a917954177847453346782c0718c81926aea3640f7b1a92\"",
+      "-DBENCH_REPEATS=20",
+      "-std=c11",
+      "-pedantic",
+      "-c",
+      "firmware/nrf52840/benchmark.c",
+      "-o",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o"
+    ],
+    [
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-mcpu=cortex-m4",
+      "-mthumb",
+      "-mfloat-abi=soft",
+      "-O2",
+      "-g3",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-fstack-usage",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-Iembedded",
+      "-DFIRMWARE_BUILD_ID=\"a46a328e11abe9af1a917954177847453346782c0718c81926aea3640f7b1a92\"",
+      "-DBENCH_REPEATS=20",
+      "-std=c11",
+      "-pedantic",
+      "-c",
+      "embedded/daahe_core.c",
+      "-o",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o"
+    ],
+    [
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc",
+      "-mcpu=cortex-m4",
+      "-mthumb",
+      "-mfloat-abi=soft",
+      "-nostdlib",
+      "-Wl,--gc-sections",
+      "-Wl,--build-id=none",
+      "-Wl,-Map=/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.map",
+      "-Tfirmware/nrf52840/linker.ld",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o",
+      "-lgcc",
+      "-o",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.elf"
+    ],
+    [
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-size",
+      "-A",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.elf"
+    ],
+    [
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-objcopy",
+      "-O",
+      "ihex",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.elf",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.hex"
+    ],
+    [
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-objcopy",
+      "-O",
+      "binary",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.elf",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.bin"
+    ],
+    [
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-readelf",
+      "-h",
+      "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.elf"
+    ]
+  ],
+  "scope": "independent_standalone_embedded_core_microbenchmarks",
+  "paper_original_firmware": false,
+  "contiki_ng": false,
+  "hardware_execution": false,
+  "energy_measurement": false,
+  "elf_sha256": "b69ed31fec03f3a37d7bfe91ab3459ff03269b282e3d8373b93632612d3f7519",
+  "map_sha256": "9c3ae8cb94952a030a5629d3f6c5d06e6a24fe1be2d19f8f096e30601619700f",
+  "artifacts": [
+    {
+      "path": "benchmark.bin",
+      "sha256": "8ec11877f3f4ef01a6950b23ccf9321ab75db17a3b892e3b055982ac8c5ed9c2",
+      "size": 5296
+    },
+    {
+      "path": "benchmark.elf",
+      "sha256": "b69ed31fec03f3a37d7bfe91ab3459ff03269b282e3d8373b93632612d3f7519",
+      "size": 72048
+    },
+    {
+      "path": "benchmark.hex",
+      "sha256": "49f341f6d01651f14c9a464d13220ff9593cd07db362740336a1b00f4b95a29a",
+      "size": 14942
+    },
+    {
+      "path": "benchmark.map",
+      "sha256": "9c3ae8cb94952a030a5629d3f6c5d06e6a24fe1be2d19f8f096e30601619700f",
+      "size": 46903
+    },
+    {
+      "path": "benchmark.o",
+      "sha256": "49facf05fa8e4b08b2831a3aca2d69d2dbf7f83828a3128849a5bab93d78da8f",
+      "size": 72780
+    },
+    {
+      "path": "benchmark.su",
+      "sha256": "24600a28154d52cb3a12dd440f9aa78b63692e4d029a80c5f104545c2a827346",
+      "size": 342
+    },
+    {
+      "path": "daahe_core.o",
+      "sha256": "8eac7c368326804b261818a11891a61900f279d5526e6e558ae3f0af6ff0bf68",
+      "size": 63688
+    },
+    {
+      "path": "daahe_core.su",
+      "sha256": "d8e3c489f793a7b887c54f8f34e2064486a08b004be16c37c36041a940c6e18f",
+      "size": 486
+    },
+    {
+      "path": "native_core_test",
+      "sha256": "857f7626c6bc22a0388c6eb22e84106a7e9759febf510f2ba03fd68037820ff9",
+      "size": 34320
+    },
+    {
+      "path": "readelf.txt",
+      "sha256": "60d0c6b0a254794676c82400b5a8a06c2b6257defaa104ed11f43dd871af3c6a",
+      "size": 968
+    },
+    {
+      "path": "runtime.o",
+      "sha256": "1b8f7bd9e116c25de65ad6e170938ff60dba54e2c4f6b800fee27f9315ff2fb1",
+      "size": 24304
+    },
+    {
+      "path": "runtime.su",
+      "sha256": "6a404e39ce80e08d5e4c61de3aab873b1b6b0741fb02fdd3d9333a0c641b0683",
+      "size": 96
+    },
+    {
+      "path": "size.txt",
+      "sha256": "1b2fa8f3cfbbec86c21554783060edbbfe737656c3130b9a2443d29a11304b31",
+      "size": 795
+    },
+    {
+      "path": "startup.o",
+      "sha256": "5cbb45da494b8e3d4ec63265b7f836c548276ce548cc7f2dd6c27ba5a4eef444",
+      "size": 3472
+    }
+  ],
+  "compiled_memory_bytes": {
+    "flash_load_sections": 5296,
+    "static_ram_data_bss": 17536,
+    "benchmark_psp_included_in_bss": 8192,
+    "main_msp_reserved_separately": 4096,
+    "scope": "compiled independent harness only; not measured stack or paper firmware"
+  },
+  "unsupported": [
+    "ML-DSA-44",
+    "HMAC-SHA3",
+    "SHAKE/KDF",
+    "M-LWE encryption",
+    "IntDb2",
+    "radio/network",
+    "energy",
+    "full DA-AHE protocol"
+  ],
+  "build_log_sha256": "a6731a16184fe854c915cfb7882182ed426dd52d7670ee4464fc8ad5ea5a460b"
+}

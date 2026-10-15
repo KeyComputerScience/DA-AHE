@@ -1,0 +1,9 @@
+embedded/daahe_core.c:5:6:daahe_wipe	0	static
+embedded/daahe_core.c:10:6:daahe_ring_mul	24	static
+embedded/daahe_core.c:25:5:daahe_pack	40	static
+embedded/daahe_core.c:43:6:daahe_linear_tag	56	static
+embedded/daahe_core.c:58:5:daahe_linear_tag_stream	128	static
+embedded/daahe_core.c:94:10:daahe_decode_word	8	static
+embedded/daahe_core.c:109:5:daahe_stream_init	16	static
+embedded/daahe_core.c:121:5:daahe_stream_push	40	static
+embedded/daahe_core.c:146:5:daahe_stream_finish	0	static

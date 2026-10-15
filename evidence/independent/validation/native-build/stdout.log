@@ -1,0 +1,6 @@
+[ 25%] Building C object CMakeFiles/daahe_core.dir/daahe_core.c.o
+[ 50%] Linking C static library libdaahe_core.a
+[ 50%] Built target daahe_core
+[ 75%] Building C object CMakeFiles/daahe_core_test.dir/test_core.c.o
+[100%] Linking C executable daahe_core_test
+[100%] Built target daahe_core_test

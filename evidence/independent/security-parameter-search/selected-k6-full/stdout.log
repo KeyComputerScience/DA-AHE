@@ -1,0 +1,28 @@
+=== primal_usvp ===
+attack=primal_usvp; upstream=53da5982597709ba0fdf94ea37a84d822310fd84; sage=10.9
+LWEParameters(n=1536, q=4294967296, Xs=D(σ=3.20), Xe=D(σ=3.20), m=1536, tag='DA-AHE independent parameter candidate')
+rop: ≈2^136.5, red: ≈2^136.5, δ: 1.003333, β: 515, d: 3072, tag: usvp
+=== primal_bdd ===
+attack=primal_bdd; upstream=53da5982597709ba0fdf94ea37a84d822310fd84; sage=10.9
+LWEParameters(n=1536, q=4294967296, Xs=D(σ=3.20), Xe=D(σ=3.20), m=1536, tag='DA-AHE independent parameter candidate')
+rop: ≈2^137.5, red: ≈2^136.5, svp: ≈2^136.5, β: 515, η: 514, d: 3071, tag: bdd
+=== primal_hybrid ===
+attack=primal_hybrid; upstream=53da5982597709ba0fdf94ea37a84d822310fd84; sage=10.9
+LWEParameters(n=1536, q=4294967296, Xs=D(σ=3.20), Xe=D(σ=3.20), m=1536, tag='DA-AHE independent parameter candidate')
+rop: ≈2^137.5, red: ≈2^136.5, svp: ≈2^136.5, β: 515, η: 514, ζ: 0, |S|: 1, d: 3072, prob: 1.0, ↻: 1, tag: hybrid
+=== primal_mitm_hybrid ===
+attack=primal_mitm_hybrid; upstream=53da5982597709ba0fdf94ea37a84d822310fd84; sage=10.9
+LWEParameters(n=1536, q=4294967296, Xs=D(σ=3.20), Xe=D(σ=3.20), m=1536, tag='DA-AHE independent parameter candidate')
+rop: ≈2^337.4, red: ≈2^337.4, svp: ≈2^224.1, β: 515, η: 2, ζ: 0, |S|: 1, d: 3072, prob: ≈2^-198.7, ↻: ≈2^200.9, tag: hybrid
+=== dual ===
+attack=dual; upstream=53da5982597709ba0fdf94ea37a84d822310fd84; sage=10.9
+LWEParameters(n=1536, q=4294967296, Xs=D(σ=3.20), Xe=D(σ=3.20), m=1536, tag='DA-AHE independent parameter candidate')
+rop: ≈2^139.1, mem: ≈2^118.0, m: 1536, β: 525, d: 3072, ↻: 1, tag: dual
+=== dual_hybrid ===
+attack=dual_hybrid; upstream=53da5982597709ba0fdf94ea37a84d822310fd84; sage=10.9
+LWEParameters(n=1536, q=4294967296, Xs=D(σ=3.20), Xe=D(σ=3.20), m=1536, tag='DA-AHE independent parameter candidate')
+rop: ≈2^138.6, red: ≈2^138.6, guess: ≈2^120.4, β: 523, p: 3, ζ: 0, t: 0, β': 523, N: ≈2^106.7, m: 1536
+=== coded_bkw ===
+attack=coded_bkw; upstream=53da5982597709ba0fdf94ea37a84d822310fd84; sage=10.9
+LWEParameters(n=1536, q=4294967296, Xs=D(σ=3.20), Xe=D(σ=3.20), m=1536, tag='DA-AHE independent parameter candidate')
+rop: ≈2^435.3, m: ≈2^420.5, mem: ≈2^421.5, b: 13, t1: 0, t2: 44, ℓ: 12, #cod: 1457, #top: 0, #test: 91, tag: coded-bkw

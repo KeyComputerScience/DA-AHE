@@ -1,0 +1,6212 @@
+{
+  "inference_note": "Means/SD describe this synthetic seed population; no paper performance or statistical significance claim.",
+  "methods": {
+    "da-ahe": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6764816164875941,
+          "sd_over_seeds": 0.028993325732310015,
+          "seeds_with_defined_metric": 20
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 0.8224778099999875,
+          "sd_over_seeds": 0.013850096042489874,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 65.0512398399895,
+          "sd_over_seeds": 1.4284744079322365,
+          "seeds_with_defined_metric": 20
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.3235183835124059,
+          "sd_over_seeds": 0.028993325732310015,
+          "seeds_with_defined_metric": 20
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 0.5260333333333334,
+          "sd_over_seeds": 0.009077251303564876,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 6.858764064932382,
+          "sd_over_seeds": 0.3935914202307957,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 14.402585027387778,
+          "sd_over_seeds": 1.0348172424164568,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6764816164875941,
+          "sd_over_seeds": 0.028993325732310015,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.3557166666666667,
+          "sd_over_seeds": 0.012982342934546733,
+          "seeds_with_defined_metric": 20
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 13552.341633333333,
+          "sd_over_seeds": 297.5988349860063,
+          "seeds_with_defined_metric": 20
+        }
+      },
+      "recovery_no_excursion_seeds": 0,
+      "recovery_right_censored_seeds": 20
+    },
+    "dpp": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6912829766490379,
+          "sd_over_seeds": 0.02884104642811622,
+          "seeds_with_defined_metric": 20
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 0.7863983399999883,
+          "sd_over_seeds": 0.01597260196518727,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 62.2779957599908,
+          "sd_over_seeds": 1.561932558805173,
+          "seeds_with_defined_metric": 20
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.3087170233509621,
+          "sd_over_seeds": 0.02884104642811622,
+          "seeds_with_defined_metric": 20
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 0.4961333333333333,
+          "sd_over_seeds": 0.010579357590021423,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 6.606345605069913,
+          "sd_over_seeds": 0.36097515156617543,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 14.061027853261342,
+          "sd_over_seeds": 1.0089909325582331,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6912829766490379,
+          "sd_over_seeds": 0.02884104642811622,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.3428,
+          "sd_over_seeds": 0.011697653085952683,
+          "seeds_with_defined_metric": 20
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 12974.58245,
+          "sd_over_seeds": 325.40261641788555,
+          "seeds_with_defined_metric": 20
+        }
+      },
+      "recovery_no_excursion_seeds": 0,
+      "recovery_right_censored_seeds": 20
+    },
+    "hys": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6676000367600411,
+          "sd_over_seeds": 0.025848134603892358,
+          "seeds_with_defined_metric": 20
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 0.8985330749999877,
+          "sd_over_seeds": 0.01496567230521954,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 68.64971720001435,
+          "sd_over_seeds": 1.556123723660844,
+          "seeds_with_defined_metric": 20
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.33239996323995896,
+          "sd_over_seeds": 0.025848134603892358,
+          "seeds_with_defined_metric": 20
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 0.58155,
+          "sd_over_seeds": 0.008093947634133392,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 6.286537068981319,
+          "sd_over_seeds": 0.2507821275082573,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 13.986064506160904,
+          "sd_over_seeds": 1.0377734930234197,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6676000367600411,
+          "sd_over_seeds": 0.025848134603892358,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.3882333333333333,
+          "sd_over_seeds": 0.01571906132340252,
+          "seeds_with_defined_metric": 20
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 14302.024416666667,
+          "sd_over_seeds": 324.19244242936065,
+          "seeds_with_defined_metric": 20
+        }
+      },
+      "recovery_no_excursion_seeds": 0,
+      "recovery_right_censored_seeds": 20
+    },
+    "without_hve": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6973512268764386,
+          "sd_over_seeds": 0.029860697885501938,
+          "seeds_with_defined_metric": 20
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.020869610388844426,
+          "sd_over_seeds": 0.006795455179487178,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 0.8208275849999817,
+          "sd_over_seeds": 0.013843724870791076,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 65.0512398399895,
+          "sd_over_seeds": 1.4284744079322365,
+          "seeds_with_defined_metric": 20
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.30264877312356153,
+          "sd_over_seeds": 0.029860697885501938,
+          "seeds_with_defined_metric": 20
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 0.5260333333333334,
+          "sd_over_seeds": 0.009077251303564876,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 6.858630590376984,
+          "sd_over_seeds": 0.39359387019075304,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 14.402446152387778,
+          "sd_over_seeds": 1.0348139380132602,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6764816164875941,
+          "sd_over_seeds": 0.028993325732310015,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.3557166666666667,
+          "sd_over_seeds": 0.012982342934546733,
+          "seeds_with_defined_metric": 20
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 13552.341633333333,
+          "sd_over_seeds": 297.5988349860063,
+          "seeds_with_defined_metric": 20
+        }
+      },
+      "recovery_no_excursion_seeds": 0,
+      "recovery_right_censored_seeds": 20
+    },
+    "without_intdb2": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6349231374027351,
+          "sd_over_seeds": 0.018520335919892956,
+          "seeds_with_defined_metric": 20
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 0.8335378199999847,
+          "sd_over_seeds": 0.017049902173096678,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 53.38924583999344,
+          "sd_over_seeds": 1.2615931772493392,
+          "seeds_with_defined_metric": 20
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.3650768625972649,
+          "sd_over_seeds": 0.018520335919892956,
+          "seeds_with_defined_metric": 20
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 0.5260333333333334,
+          "sd_over_seeds": 0.009077251303564876,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 3.625465225424071,
+          "sd_over_seeds": 0.30526855102011136,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 8.146674300713203,
+          "sd_over_seeds": 1.9915712841459887,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6349231374027351,
+          "sd_over_seeds": 0.018520335919892956,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.33395,
+          "sd_over_seeds": 0.010043924001938941,
+          "seeds_with_defined_metric": 20
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 11122.759549999999,
+          "sd_over_seeds": 262.8319119270329,
+          "seeds_with_defined_metric": 20
+        }
+      },
+      "recovery_no_excursion_seeds": 0,
+      "recovery_right_censored_seeds": 20
+    },
+    "without_markov": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.4401,
+          "sd_over_seeds": 0.02008115115173797,
+          "seeds_with_defined_metric": 20
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 1.366797854999976,
+          "sd_over_seeds": 0.008367892974903719,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 105.06065039997142,
+          "sd_over_seeds": 1.7308604482832397,
+          "seeds_with_defined_metric": 20
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.5599000000000001,
+          "sd_over_seeds": 0.02008115115173797,
+          "seeds_with_defined_metric": 20
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 1.0,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 10.840102761626738,
+          "sd_over_seeds": 0.6215184365854182,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 21.12293337159576,
+          "sd_over_seeds": 1.3050133635390087,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.4401,
+          "sd_over_seeds": 0.02008115115173797,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.4401,
+          "sd_over_seeds": 0.02008115115173797,
+          "seeds_with_defined_metric": 20
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 21887.6355,
+          "sd_over_seeds": 360.59592672597205,
+          "seeds_with_defined_metric": 20
+        }
+      },
+      "recovery_no_excursion_seeds": 0,
+      "recovery_right_censored_seeds": 20
+    },
+    "without_route_repair": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6764816164875941,
+          "sd_over_seeds": 0.028993325732310015,
+          "seeds_with_defined_metric": 20
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 0.8224778099999875,
+          "sd_over_seeds": 0.013850096042489874,
+          "seeds_with_defined_metric": 20
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 65.0512398399895,
+          "sd_over_seeds": 1.4284744079322365,
+          "seeds_with_defined_metric": 20
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.3235183835124059,
+          "sd_over_seeds": 0.028993325732310015,
+          "seeds_with_defined_metric": 20
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 0.5260333333333334,
+          "sd_over_seeds": 0.009077251303564876,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 6.858764064932382,
+          "sd_over_seeds": 0.3935914202307957,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 14.402585027387778,
+          "sd_over_seeds": 1.0348172424164568,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6764816164875941,
+          "sd_over_seeds": 0.028993325732310015,
+          "seeds_with_defined_metric": 20
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.3557166666666667,
+          "sd_over_seeds": 0.012982342934546733,
+          "seeds_with_defined_metric": 20
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 13552.341633333333,
+          "sd_over_seeds": 297.5988349860063,
+          "seeds_with_defined_metric": 20
+        }
+      },
+      "recovery_no_excursion_seeds": 0,
+      "recovery_right_censored_seeds": 20
+    }
+  },
+  "paired_differences": {
+    "dpp": {
+      "accepted_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.014801360161443771,
+        "per_seed": [
+          {
+            "difference": 0.03399732146980494,
+            "seed": 1000
+          },
+          {
+            "difference": 0.004911483247465487,
+            "seed": 1001
+          },
+          {
+            "difference": 0.012247274654504814,
+            "seed": 1002
+          },
+          {
+            "difference": 0.016508367254636003,
+            "seed": 1003
+          },
+          {
+            "difference": 0.01203670578292737,
+            "seed": 1004
+          },
+          {
+            "difference": 0.018862063224812098,
+            "seed": 1005
+          },
+          {
+            "difference": 0.02221500723288916,
+            "seed": 1006
+          },
+          {
+            "difference": 0.030705497720037833,
+            "seed": 1007
+          },
+          {
+            "difference": 0.013106877950101126,
+            "seed": 1008
+          },
+          {
+            "difference": 0.01768454523479379,
+            "seed": 1009
+          },
+          {
+            "difference": 0.017335797447161405,
+            "seed": 1010
+          },
+          {
+            "difference": -0.001321266559470402,
+            "seed": 1011
+          },
+          {
+            "difference": 0.01066779714305599,
+            "seed": 1012
+          },
+          {
+            "difference": 0.011869940554907643,
+            "seed": 1013
+          },
+          {
+            "difference": 0.023366305034780988,
+            "seed": 1014
+          },
+          {
+            "difference": 0.003876075048611316,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0025433234254949033,
+            "seed": 1016
+          },
+          {
+            "difference": 0.011645569620253204,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0074525508456491085,
+            "seed": 1018
+          },
+          {
+            "difference": 0.026315966896458654,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.009320390874935405
+      },
+      "invalid_acceptance_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "modeled_cpu_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.03607946999999924,
+        "per_seed": [
+          {
+            "difference": -0.037013399999997976,
+            "seed": 1000
+          },
+          {
+            "difference": -0.0258564,
+            "seed": 1001
+          },
+          {
+            "difference": -0.03933779999999931,
+            "seed": 1002
+          },
+          {
+            "difference": -0.03754739999999923,
+            "seed": 1003
+          },
+          {
+            "difference": -0.033069299999999635,
+            "seed": 1004
+          },
+          {
+            "difference": -0.04230629999999869,
+            "seed": 1005
+          },
+          {
+            "difference": -0.03384539999999858,
+            "seed": 1006
+          },
+          {
+            "difference": -0.03720809999999786,
+            "seed": 1007
+          },
+          {
+            "difference": -0.034260599999999086,
+            "seed": 1008
+          },
+          {
+            "difference": -0.03367619999999927,
+            "seed": 1009
+          },
+          {
+            "difference": -0.04401720000000109,
+            "seed": 1010
+          },
+          {
+            "difference": -0.03656999999999999,
+            "seed": 1011
+          },
+          {
+            "difference": -0.03838499999999967,
+            "seed": 1012
+          },
+          {
+            "difference": -0.044762699999999045,
+            "seed": 1013
+          },
+          {
+            "difference": -0.041864399999999025,
+            "seed": 1014
+          },
+          {
+            "difference": -0.03696599999999872,
+            "seed": 1015
+          },
+          {
+            "difference": -0.0348497999999996,
+            "seed": 1016
+          },
+          {
+            "difference": -0.029005199999998954,
+            "seed": 1017
+          },
+          {
+            "difference": -0.03315899999999927,
+            "seed": 1018
+          },
+          {
+            "difference": -0.027889199999999836,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.005061302383160786
+      },
+      "modeled_radio_tx_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -2.773244079998713,
+        "per_seed": [
+          {
+            "difference": -2.9251263999987103,
+            "seed": 1000
+          },
+          {
+            "difference": -1.5048319999991975,
+            "seed": 1001
+          },
+          {
+            "difference": -3.215491199998489,
+            "seed": 1002
+          },
+          {
+            "difference": -3.1022511999985625,
+            "seed": 1003
+          },
+          {
+            "difference": -2.50240639999879,
+            "seed": 1004
+          },
+          {
+            "difference": -3.5262463999983353,
+            "seed": 1005
+          },
+          {
+            "difference": -2.6691039999987964,
+            "seed": 1006
+          },
+          {
+            "difference": -3.2200047999984847,
+            "seed": 1007
+          },
+          {
+            "difference": -2.7383871999987974,
+            "seed": 1008
+          },
+          {
+            "difference": -2.4963967999987915,
+            "seed": 1009
+          },
+          {
+            "difference": -3.4091951999984644,
+            "seed": 1010
+          },
+          {
+            "difference": -2.431444799998957,
+            "seed": 1011
+          },
+          {
+            "difference": -3.091961599998541,
+            "seed": 1012
+          },
+          {
+            "difference": -3.3943503999983733,
+            "seed": 1013
+          },
+          {
+            "difference": -2.754279999998907,
+            "seed": 1014
+          },
+          {
+            "difference": -2.481569599998842,
+            "seed": 1015
+          },
+          {
+            "difference": -2.807703999998637,
+            "seed": 1016
+          },
+          {
+            "difference": -2.2040463999987594,
+            "seed": 1017
+          },
+          {
+            "difference": -2.613300799998946,
+            "seed": 1018
+          },
+          {
+            "difference": -2.3767823999988806,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.4848448604727789
+      },
+      "observed_residual_loss_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.014801360161443771,
+        "per_seed": [
+          {
+            "difference": -0.03399732146980494,
+            "seed": 1000
+          },
+          {
+            "difference": -0.004911483247465487,
+            "seed": 1001
+          },
+          {
+            "difference": -0.012247274654504814,
+            "seed": 1002
+          },
+          {
+            "difference": -0.016508367254636003,
+            "seed": 1003
+          },
+          {
+            "difference": -0.01203670578292737,
+            "seed": 1004
+          },
+          {
+            "difference": -0.018862063224812098,
+            "seed": 1005
+          },
+          {
+            "difference": -0.02221500723288916,
+            "seed": 1006
+          },
+          {
+            "difference": -0.030705497720037833,
+            "seed": 1007
+          },
+          {
+            "difference": -0.013106877950101126,
+            "seed": 1008
+          },
+          {
+            "difference": -0.01768454523479379,
+            "seed": 1009
+          },
+          {
+            "difference": -0.017335797447161405,
+            "seed": 1010
+          },
+          {
+            "difference": 0.001321266559470402,
+            "seed": 1011
+          },
+          {
+            "difference": -0.01066779714305599,
+            "seed": 1012
+          },
+          {
+            "difference": -0.011869940554907643,
+            "seed": 1013
+          },
+          {
+            "difference": -0.023366305034780988,
+            "seed": 1014
+          },
+          {
+            "difference": -0.003876075048611316,
+            "seed": 1015
+          },
+          {
+            "difference": -0.0025433234254949033,
+            "seed": 1016
+          },
+          {
+            "difference": -0.011645569620253204,
+            "seed": 1017
+          },
+          {
+            "difference": -0.0074525508456491085,
+            "seed": 1018
+          },
+          {
+            "difference": -0.026315966896458654,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.009320390874935405
+      },
+      "source_admission_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.029899999999999993,
+        "per_seed": [
+          {
+            "difference": -0.03200000000000003,
+            "seed": 1000
+          },
+          {
+            "difference": -0.02300000000000002,
+            "seed": 1001
+          },
+          {
+            "difference": -0.032333333333333325,
+            "seed": 1002
+          },
+          {
+            "difference": -0.03266666666666668,
+            "seed": 1003
+          },
+          {
+            "difference": -0.026333333333333375,
+            "seed": 1004
+          },
+          {
+            "difference": -0.03433333333333333,
+            "seed": 1005
+          },
+          {
+            "difference": -0.02833333333333332,
+            "seed": 1006
+          },
+          {
+            "difference": -0.03366666666666668,
+            "seed": 1007
+          },
+          {
+            "difference": -0.028333333333333266,
+            "seed": 1008
+          },
+          {
+            "difference": -0.02866666666666673,
+            "seed": 1009
+          },
+          {
+            "difference": -0.03533333333333333,
+            "seed": 1010
+          },
+          {
+            "difference": -0.029333333333333322,
+            "seed": 1011
+          },
+          {
+            "difference": -0.02966666666666662,
+            "seed": 1012
+          },
+          {
+            "difference": -0.03366666666666668,
+            "seed": 1013
+          },
+          {
+            "difference": -0.033999999999999975,
+            "seed": 1014
+          },
+          {
+            "difference": -0.029333333333333267,
+            "seed": 1015
+          },
+          {
+            "difference": -0.027000000000000024,
+            "seed": 1016
+          },
+          {
+            "difference": -0.026666666666666616,
+            "seed": 1017
+          },
+          {
+            "difference": -0.02733333333333332,
+            "seed": 1018
+          },
+          {
+            "difference": -0.025999999999999912,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.003406392339694571
+      },
+      "valid_delay_mean_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.2524184598624688,
+        "per_seed": [
+          {
+            "difference": -0.20275113950518353,
+            "seed": 1000
+          },
+          {
+            "difference": -0.06912360765382797,
+            "seed": 1001
+          },
+          {
+            "difference": -0.3620390358357053,
+            "seed": 1002
+          },
+          {
+            "difference": -0.6355832573233524,
+            "seed": 1003
+          },
+          {
+            "difference": -0.17222484148008466,
+            "seed": 1004
+          },
+          {
+            "difference": -0.393344244185692,
+            "seed": 1005
+          },
+          {
+            "difference": -0.25989080235567563,
+            "seed": 1006
+          },
+          {
+            "difference": -0.2723708843350092,
+            "seed": 1007
+          },
+          {
+            "difference": -0.29482957679305777,
+            "seed": 1008
+          },
+          {
+            "difference": -0.15544287312802751,
+            "seed": 1009
+          },
+          {
+            "difference": -0.2899060809489429,
+            "seed": 1010
+          },
+          {
+            "difference": -0.08809707818023149,
+            "seed": 1011
+          },
+          {
+            "difference": -0.18239168326624888,
+            "seed": 1012
+          },
+          {
+            "difference": -0.22489595454430855,
+            "seed": 1013
+          },
+          {
+            "difference": 0.037899276648460045,
+            "seed": 1014
+          },
+          {
+            "difference": -0.297718273337944,
+            "seed": 1015
+          },
+          {
+            "difference": -0.30457889843161823,
+            "seed": 1016
+          },
+          {
+            "difference": -0.17631814014431146,
+            "seed": 1017
+          },
+          {
+            "difference": -0.4051101963493293,
+            "seed": 1018
+          },
+          {
+            "difference": -0.29965190609928527,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.14277439800793154
+      },
+      "valid_delay_p95_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.34155717412643744,
+        "per_seed": [
+          {
+            "difference": -0.8058264896785445,
+            "seed": 1000
+          },
+          {
+            "difference": 0.024818279700706825,
+            "seed": 1001
+          },
+          {
+            "difference": -0.29826782094366955,
+            "seed": 1002
+          },
+          {
+            "difference": -0.7250009025544593,
+            "seed": 1003
+          },
+          {
+            "difference": -0.026029823458157964,
+            "seed": 1004
+          },
+          {
+            "difference": -0.3583363724872175,
+            "seed": 1005
+          },
+          {
+            "difference": -0.4099131968466043,
+            "seed": 1006
+          },
+          {
+            "difference": -0.14658076997847402,
+            "seed": 1007
+          },
+          {
+            "difference": -0.8843453172987346,
+            "seed": 1008
+          },
+          {
+            "difference": -0.46749807432413704,
+            "seed": 1009
+          },
+          {
+            "difference": -0.6019483347565977,
+            "seed": 1010
+          },
+          {
+            "difference": -0.5148333344570624,
+            "seed": 1011
+          },
+          {
+            "difference": -0.0698768899643234,
+            "seed": 1012
+          },
+          {
+            "difference": -0.38731747936701133,
+            "seed": 1013
+          },
+          {
+            "difference": 0.6951908337554453,
+            "seed": 1014
+          },
+          {
+            "difference": -0.8413271060512475,
+            "seed": 1015
+          },
+          {
+            "difference": -0.14760862200617808,
+            "seed": 1016
+          },
+          {
+            "difference": -0.11487986237382941,
+            "seed": 1017
+          },
+          {
+            "difference": -0.6221775978834412,
+            "seed": 1018
+          },
+          {
+            "difference": -0.12938460155521092,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.3743626130802767
+      },
+      "valid_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.014801360161443771,
+        "per_seed": [
+          {
+            "difference": 0.03399732146980494,
+            "seed": 1000
+          },
+          {
+            "difference": 0.004911483247465487,
+            "seed": 1001
+          },
+          {
+            "difference": 0.012247274654504814,
+            "seed": 1002
+          },
+          {
+            "difference": 0.016508367254636003,
+            "seed": 1003
+          },
+          {
+            "difference": 0.01203670578292737,
+            "seed": 1004
+          },
+          {
+            "difference": 0.018862063224812098,
+            "seed": 1005
+          },
+          {
+            "difference": 0.02221500723288916,
+            "seed": 1006
+          },
+          {
+            "difference": 0.030705497720037833,
+            "seed": 1007
+          },
+          {
+            "difference": 0.013106877950101126,
+            "seed": 1008
+          },
+          {
+            "difference": 0.01768454523479379,
+            "seed": 1009
+          },
+          {
+            "difference": 0.017335797447161405,
+            "seed": 1010
+          },
+          {
+            "difference": -0.001321266559470402,
+            "seed": 1011
+          },
+          {
+            "difference": 0.01066779714305599,
+            "seed": 1012
+          },
+          {
+            "difference": 0.011869940554907643,
+            "seed": 1013
+          },
+          {
+            "difference": 0.023366305034780988,
+            "seed": 1014
+          },
+          {
+            "difference": 0.003876075048611316,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0025433234254949033,
+            "seed": 1016
+          },
+          {
+            "difference": 0.011645569620253204,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0074525508456491085,
+            "seed": 1018
+          },
+          {
+            "difference": 0.026315966896458654,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.009320390874935405
+      },
+      "valid_delivery_fraction_per_opportunity": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.01291666666666667,
+        "per_seed": [
+          {
+            "difference": -0.0036666666666666514,
+            "seed": 1000
+          },
+          {
+            "difference": -0.013000000000000012,
+            "seed": 1001
+          },
+          {
+            "difference": -0.01699999999999996,
+            "seed": 1002
+          },
+          {
+            "difference": -0.01366666666666666,
+            "seed": 1003
+          },
+          {
+            "difference": -0.012333333333333307,
+            "seed": 1004
+          },
+          {
+            "difference": -0.013333333333333364,
+            "seed": 1005
+          },
+          {
+            "difference": -0.008333333333333304,
+            "seed": 1006
+          },
+          {
+            "difference": -0.007333333333333303,
+            "seed": 1007
+          },
+          {
+            "difference": -0.013000000000000012,
+            "seed": 1008
+          },
+          {
+            "difference": -0.010333333333333306,
+            "seed": 1009
+          },
+          {
+            "difference": -0.01766666666666672,
+            "seed": 1010
+          },
+          {
+            "difference": -0.02033333333333337,
+            "seed": 1011
+          },
+          {
+            "difference": -0.016333333333333366,
+            "seed": 1012
+          },
+          {
+            "difference": -0.018333333333333368,
+            "seed": 1013
+          },
+          {
+            "difference": -0.009666666666666712,
+            "seed": 1014
+          },
+          {
+            "difference": -0.017666666666666664,
+            "seed": 1015
+          },
+          {
+            "difference": -0.016666666666666663,
+            "seed": 1016
+          },
+          {
+            "difference": -0.011999999999999955,
+            "seed": 1017
+          },
+          {
+            "difference": -0.013333333333333364,
+            "seed": 1018
+          },
+          {
+            "difference": -0.004333333333333356,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.004603424862842485
+      },
+      "wire_bytes_per_source_opportunity_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -577.7591833333331,
+        "per_seed": [
+          {
+            "difference": -609.4013333333332,
+            "seed": 1000
+          },
+          {
+            "difference": -313.5066666666662,
+            "seed": 1001
+          },
+          {
+            "difference": -669.8940000000002,
+            "seed": 1002
+          },
+          {
+            "difference": -646.3023333333349,
+            "seed": 1003
+          },
+          {
+            "difference": -521.3346666666657,
+            "seed": 1004
+          },
+          {
+            "difference": -734.6346666666668,
+            "seed": 1005
+          },
+          {
+            "difference": -556.0633333333335,
+            "seed": 1006
+          },
+          {
+            "difference": -670.8343333333341,
+            "seed": 1007
+          },
+          {
+            "difference": -570.4973333333328,
+            "seed": 1008
+          },
+          {
+            "difference": -520.0826666666653,
+            "seed": 1009
+          },
+          {
+            "difference": -710.2489999999998,
+            "seed": 1010
+          },
+          {
+            "difference": -506.5509999999995,
+            "seed": 1011
+          },
+          {
+            "difference": -644.1586666666662,
+            "seed": 1012
+          },
+          {
+            "difference": -707.1563333333324,
+            "seed": 1013
+          },
+          {
+            "difference": -573.8083333333325,
+            "seed": 1014
+          },
+          {
+            "difference": -516.9936666666654,
+            "seed": 1015
+          },
+          {
+            "difference": -584.9383333333335,
+            "seed": 1016
+          },
+          {
+            "difference": -459.1763333333329,
+            "seed": 1017
+          },
+          {
+            "difference": -544.4376666666667,
+            "seed": 1018
+          },
+          {
+            "difference": -495.16300000000047,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 101.00934593187182
+      }
+    },
+    "hys": {
+      "accepted_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.008881579727553051,
+        "per_seed": [
+          {
+            "difference": -0.018847547149246413,
+            "seed": 1000
+          },
+          {
+            "difference": -0.01914971859457204,
+            "seed": 1001
+          },
+          {
+            "difference": -0.004438178933954151,
+            "seed": 1002
+          },
+          {
+            "difference": -0.010740314537782902,
+            "seed": 1003
+          },
+          {
+            "difference": -0.032374904101210356,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0015715659032196072,
+            "seed": 1005
+          },
+          {
+            "difference": 0.011610301764381825,
+            "seed": 1006
+          },
+          {
+            "difference": 0.009908877903902824,
+            "seed": 1007
+          },
+          {
+            "difference": -0.008928571428571397,
+            "seed": 1008
+          },
+          {
+            "difference": -0.013806397669707815,
+            "seed": 1009
+          },
+          {
+            "difference": -0.04370194843359787,
+            "seed": 1010
+          },
+          {
+            "difference": 0.008468255012943682,
+            "seed": 1011
+          },
+          {
+            "difference": -0.022620681274201804,
+            "seed": 1012
+          },
+          {
+            "difference": -0.024041999793104396,
+            "seed": 1013
+          },
+          {
+            "difference": -0.022913484982450494,
+            "seed": 1014
+          },
+          {
+            "difference": -0.013945967030606243,
+            "seed": 1015
+          },
+          {
+            "difference": -0.007523603512597732,
+            "seed": 1016
+          },
+          {
+            "difference": 0.004623194405106834,
+            "seed": 1017
+          },
+          {
+            "difference": 0.02935307471776305,
+            "seed": 1018
+          },
+          {
+            "difference": -0.00013354681677524294,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.017112124595259435
+      },
+      "invalid_acceptance_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "modeled_cpu_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.07605526500000001,
+        "per_seed": [
+          {
+            "difference": 0.0638322,
+            "seed": 1000
+          },
+          {
+            "difference": 0.07186170000000114,
+            "seed": 1001
+          },
+          {
+            "difference": 0.08135910000000013,
+            "seed": 1002
+          },
+          {
+            "difference": 0.07789020000000102,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0752072999999992,
+            "seed": 1004
+          },
+          {
+            "difference": 0.08447969999999805,
+            "seed": 1005
+          },
+          {
+            "difference": 0.07903680000000024,
+            "seed": 1006
+          },
+          {
+            "difference": 0.09090150000000008,
+            "seed": 1007
+          },
+          {
+            "difference": 0.07518179999999874,
+            "seed": 1008
+          },
+          {
+            "difference": 0.06701609999999991,
+            "seed": 1009
+          },
+          {
+            "difference": 0.07945079999999904,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0763944000000003,
+            "seed": 1011
+          },
+          {
+            "difference": 0.07172009999999929,
+            "seed": 1012
+          },
+          {
+            "difference": 0.06653820000000243,
+            "seed": 1013
+          },
+          {
+            "difference": 0.07395570000000029,
+            "seed": 1014
+          },
+          {
+            "difference": 0.07010430000000167,
+            "seed": 1015
+          },
+          {
+            "difference": 0.07975919999999914,
+            "seed": 1016
+          },
+          {
+            "difference": 0.07521060000000057,
+            "seed": 1017
+          },
+          {
+            "difference": 0.07573799999999942,
+            "seed": 1018
+          },
+          {
+            "difference": 0.08546759999999975,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.006672437838583249
+      },
+      "modeled_radio_tx_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 3.5984773600248388,
+        "per_seed": [
+          {
+            "difference": 2.8030496000249485,
+            "seed": 1000
+          },
+          {
+            "difference": 3.156560000024342,
+            "seed": 1001
+          },
+          {
+            "difference": 4.448996800024474,
+            "seed": 1002
+          },
+          {
+            "difference": 3.922484800026254,
+            "seed": 1003
+          },
+          {
+            "difference": 3.133912000025518,
+            "seed": 1004
+          },
+          {
+            "difference": 4.440347200026736,
+            "seed": 1005
+          },
+          {
+            "difference": 3.602644800025246,
+            "seed": 1006
+          },
+          {
+            "difference": 4.425232000027805,
+            "seed": 1007
+          },
+          {
+            "difference": 3.490140800022786,
+            "seed": 1008
+          },
+          {
+            "difference": 3.5412128000247236,
+            "seed": 1009
+          },
+          {
+            "difference": 3.7252480000241732,
+            "seed": 1010
+          },
+          {
+            "difference": 3.2827168000228824,
+            "seed": 1011
+          },
+          {
+            "difference": 3.5642560000235193,
+            "seed": 1012
+          },
+          {
+            "difference": 3.467835200024382,
+            "seed": 1013
+          },
+          {
+            "difference": 2.997244800022969,
+            "seed": 1014
+          },
+          {
+            "difference": 3.2027536000251686,
+            "seed": 1015
+          },
+          {
+            "difference": 3.9270096000238794,
+            "seed": 1016
+          },
+          {
+            "difference": 3.261297600027305,
+            "seed": 1017
+          },
+          {
+            "difference": 3.1187520000250117,
+            "seed": 1018
+          },
+          {
+            "difference": 4.457852800024654,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.5192028776743616
+      },
+      "observed_residual_loss_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.008881579727553051,
+        "per_seed": [
+          {
+            "difference": 0.018847547149246413,
+            "seed": 1000
+          },
+          {
+            "difference": 0.01914971859457204,
+            "seed": 1001
+          },
+          {
+            "difference": 0.004438178933954151,
+            "seed": 1002
+          },
+          {
+            "difference": 0.010740314537782902,
+            "seed": 1003
+          },
+          {
+            "difference": 0.032374904101210356,
+            "seed": 1004
+          },
+          {
+            "difference": -0.0015715659032196072,
+            "seed": 1005
+          },
+          {
+            "difference": -0.011610301764381825,
+            "seed": 1006
+          },
+          {
+            "difference": -0.009908877903902824,
+            "seed": 1007
+          },
+          {
+            "difference": 0.008928571428571397,
+            "seed": 1008
+          },
+          {
+            "difference": 0.013806397669707815,
+            "seed": 1009
+          },
+          {
+            "difference": 0.04370194843359787,
+            "seed": 1010
+          },
+          {
+            "difference": -0.008468255012943682,
+            "seed": 1011
+          },
+          {
+            "difference": 0.022620681274201804,
+            "seed": 1012
+          },
+          {
+            "difference": 0.024041999793104396,
+            "seed": 1013
+          },
+          {
+            "difference": 0.022913484982450494,
+            "seed": 1014
+          },
+          {
+            "difference": 0.013945967030606243,
+            "seed": 1015
+          },
+          {
+            "difference": 0.007523603512597732,
+            "seed": 1016
+          },
+          {
+            "difference": -0.004623194405106834,
+            "seed": 1017
+          },
+          {
+            "difference": -0.02935307471776305,
+            "seed": 1018
+          },
+          {
+            "difference": 0.00013354681677524294,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.017112124595259435
+      },
+      "source_admission_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.05551666666666668,
+        "per_seed": [
+          {
+            "difference": 0.047666666666666635,
+            "seed": 1000
+          },
+          {
+            "difference": 0.05566666666666664,
+            "seed": 1001
+          },
+          {
+            "difference": 0.05800000000000005,
+            "seed": 1002
+          },
+          {
+            "difference": 0.055333333333333345,
+            "seed": 1003
+          },
+          {
+            "difference": 0.06066666666666665,
+            "seed": 1004
+          },
+          {
+            "difference": 0.05933333333333335,
+            "seed": 1005
+          },
+          {
+            "difference": 0.055333333333333345,
+            "seed": 1006
+          },
+          {
+            "difference": 0.06033333333333335,
+            "seed": 1007
+          },
+          {
+            "difference": 0.05600000000000005,
+            "seed": 1008
+          },
+          {
+            "difference": 0.04999999999999993,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0606666666666667,
+            "seed": 1010
+          },
+          {
+            "difference": 0.05666666666666664,
+            "seed": 1011
+          },
+          {
+            "difference": 0.05600000000000005,
+            "seed": 1012
+          },
+          {
+            "difference": 0.05133333333333334,
+            "seed": 1013
+          },
+          {
+            "difference": 0.053333333333333344,
+            "seed": 1014
+          },
+          {
+            "difference": 0.05300000000000005,
+            "seed": 1015
+          },
+          {
+            "difference": 0.05733333333333335,
+            "seed": 1016
+          },
+          {
+            "difference": 0.054333333333333345,
+            "seed": 1017
+          },
+          {
+            "difference": 0.04833333333333334,
+            "seed": 1018
+          },
+          {
+            "difference": 0.061000000000000054,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0040123712199916966
+      },
+      "valid_delay_mean_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.5722269959510629,
+        "per_seed": [
+          {
+            "difference": -0.5052189117028405,
+            "seed": 1000
+          },
+          {
+            "difference": -0.4151978601412081,
+            "seed": 1001
+          },
+          {
+            "difference": -0.31316573554548466,
+            "seed": 1002
+          },
+          {
+            "difference": -1.144106756422424,
+            "seed": 1003
+          },
+          {
+            "difference": -0.18481871604556765,
+            "seed": 1004
+          },
+          {
+            "difference": -0.8478029696402123,
+            "seed": 1005
+          },
+          {
+            "difference": -0.620051495543545,
+            "seed": 1006
+          },
+          {
+            "difference": -0.8786298298006363,
+            "seed": 1007
+          },
+          {
+            "difference": -0.5256375310373027,
+            "seed": 1008
+          },
+          {
+            "difference": -0.2652594393197756,
+            "seed": 1009
+          },
+          {
+            "difference": 0.061590060667521485,
+            "seed": 1010
+          },
+          {
+            "difference": -0.765457115781512,
+            "seed": 1011
+          },
+          {
+            "difference": -0.31738911328222486,
+            "seed": 1012
+          },
+          {
+            "difference": -0.42729558447708804,
+            "seed": 1013
+          },
+          {
+            "difference": -0.5382459113522655,
+            "seed": 1014
+          },
+          {
+            "difference": -0.7041900733737751,
+            "seed": 1015
+          },
+          {
+            "difference": -0.7953535804950285,
+            "seed": 1016
+          },
+          {
+            "difference": -0.6359085513489005,
+            "seed": 1017
+          },
+          {
+            "difference": -1.0234131443739622,
+            "seed": 1018
+          },
+          {
+            "difference": -0.5989876600050259,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.29411853291838175
+      },
+      "valid_delay_p95_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.4165205212268751,
+        "per_seed": [
+          {
+            "difference": -0.2627295008345456,
+            "seed": 1000
+          },
+          {
+            "difference": 0.026472679916592412,
+            "seed": 1001
+          },
+          {
+            "difference": 0.08566311940458782,
+            "seed": 1002
+          },
+          {
+            "difference": -2.103290458963869,
+            "seed": 1003
+          },
+          {
+            "difference": 1.5863112947205664,
+            "seed": 1004
+          },
+          {
+            "difference": -1.7864059948477014,
+            "seed": 1005
+          },
+          {
+            "difference": -1.3741501493365895,
+            "seed": 1006
+          },
+          {
+            "difference": -1.0792043554850803,
+            "seed": 1007
+          },
+          {
+            "difference": -0.276144640259929,
+            "seed": 1008
+          },
+          {
+            "difference": 0.34561612405097364,
+            "seed": 1009
+          },
+          {
+            "difference": 0.9115921719323765,
+            "seed": 1010
+          },
+          {
+            "difference": -0.305238014820608,
+            "seed": 1011
+          },
+          {
+            "difference": -0.041360737464398056,
+            "seed": 1012
+          },
+          {
+            "difference": 0.08971507857309824,
+            "seed": 1013
+          },
+          {
+            "difference": -0.9082107434036661,
+            "seed": 1014
+          },
+          {
+            "difference": -0.7431506405863999,
+            "seed": 1015
+          },
+          {
+            "difference": -1.1514727329672585,
+            "seed": 1016
+          },
+          {
+            "difference": -0.22342305206327495,
+            "seed": 1017
+          },
+          {
+            "difference": -0.9091941806121913,
+            "seed": 1018
+          },
+          {
+            "difference": -0.21180569149018602,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.8749667440967146
+      },
+      "valid_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.008881579727553051,
+        "per_seed": [
+          {
+            "difference": -0.018847547149246413,
+            "seed": 1000
+          },
+          {
+            "difference": -0.01914971859457204,
+            "seed": 1001
+          },
+          {
+            "difference": -0.004438178933954151,
+            "seed": 1002
+          },
+          {
+            "difference": -0.010740314537782902,
+            "seed": 1003
+          },
+          {
+            "difference": -0.032374904101210356,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0015715659032196072,
+            "seed": 1005
+          },
+          {
+            "difference": 0.011610301764381825,
+            "seed": 1006
+          },
+          {
+            "difference": 0.009908877903902824,
+            "seed": 1007
+          },
+          {
+            "difference": -0.008928571428571397,
+            "seed": 1008
+          },
+          {
+            "difference": -0.013806397669707815,
+            "seed": 1009
+          },
+          {
+            "difference": -0.04370194843359787,
+            "seed": 1010
+          },
+          {
+            "difference": 0.008468255012943682,
+            "seed": 1011
+          },
+          {
+            "difference": -0.022620681274201804,
+            "seed": 1012
+          },
+          {
+            "difference": -0.024041999793104396,
+            "seed": 1013
+          },
+          {
+            "difference": -0.022913484982450494,
+            "seed": 1014
+          },
+          {
+            "difference": -0.013945967030606243,
+            "seed": 1015
+          },
+          {
+            "difference": -0.007523603512597732,
+            "seed": 1016
+          },
+          {
+            "difference": 0.004623194405106834,
+            "seed": 1017
+          },
+          {
+            "difference": 0.02935307471776305,
+            "seed": 1018
+          },
+          {
+            "difference": -0.00013354681677524294,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.017112124595259435
+      },
+      "valid_delivery_fraction_per_opportunity": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.03251666666666666,
+        "per_seed": [
+          {
+            "difference": 0.019666666666666666,
+            "seed": 1000
+          },
+          {
+            "difference": 0.02633333333333332,
+            "seed": 1001
+          },
+          {
+            "difference": 0.03866666666666668,
+            "seed": 1002
+          },
+          {
+            "difference": 0.030666666666666675,
+            "seed": 1003
+          },
+          {
+            "difference": 0.023333333333333373,
+            "seed": 1004
+          },
+          {
+            "difference": 0.03999999999999998,
+            "seed": 1005
+          },
+          {
+            "difference": 0.04500000000000004,
+            "seed": 1006
+          },
+          {
+            "difference": 0.04600000000000004,
+            "seed": 1007
+          },
+          {
+            "difference": 0.033333333333333326,
+            "seed": 1008
+          },
+          {
+            "difference": 0.02566666666666667,
+            "seed": 1009
+          },
+          {
+            "difference": 0.019666666666666666,
+            "seed": 1010
+          },
+          {
+            "difference": 0.04299999999999998,
+            "seed": 1011
+          },
+          {
+            "difference": 0.027666666666666617,
+            "seed": 1012
+          },
+          {
+            "difference": 0.022999999999999965,
+            "seed": 1013
+          },
+          {
+            "difference": 0.019999999999999962,
+            "seed": 1014
+          },
+          {
+            "difference": 0.02733333333333332,
+            "seed": 1015
+          },
+          {
+            "difference": 0.03366666666666662,
+            "seed": 1016
+          },
+          {
+            "difference": 0.039000000000000035,
+            "seed": 1017
+          },
+          {
+            "difference": 0.04733333333333334,
+            "seed": 1018
+          },
+          {
+            "difference": 0.04099999999999998,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.009396699059583341
+      },
+      "wire_bytes_per_source_opportunity_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 749.6827833333335,
+        "per_seed": [
+          {
+            "difference": 583.9686666666676,
+            "seed": 1000
+          },
+          {
+            "difference": 657.6166666666668,
+            "seed": 1001
+          },
+          {
+            "difference": 926.8743333333332,
+            "seed": 1002
+          },
+          {
+            "difference": 817.1843333333327,
+            "seed": 1003
+          },
+          {
+            "difference": 652.8983333333344,
+            "seed": 1004
+          },
+          {
+            "difference": 925.0723333333335,
+            "seed": 1005
+          },
+          {
+            "difference": 750.5510000000013,
+            "seed": 1006
+          },
+          {
+            "difference": 921.9233333333323,
+            "seed": 1007
+          },
+          {
+            "difference": 727.1126666666678,
+            "seed": 1008
+          },
+          {
+            "difference": 737.7526666666672,
+            "seed": 1009
+          },
+          {
+            "difference": 776.0933333333342,
+            "seed": 1010
+          },
+          {
+            "difference": 683.8993333333347,
+            "seed": 1011
+          },
+          {
+            "difference": 742.5533333333333,
+            "seed": 1012
+          },
+          {
+            "difference": 722.465666666667,
+            "seed": 1013
+          },
+          {
+            "difference": 624.4259999999995,
+            "seed": 1014
+          },
+          {
+            "difference": 667.2403333333332,
+            "seed": 1015
+          },
+          {
+            "difference": 818.1270000000004,
+            "seed": 1016
+          },
+          {
+            "difference": 679.4369999999999,
+            "seed": 1017
+          },
+          {
+            "difference": 649.7399999999998,
+            "seed": 1018
+          },
+          {
+            "difference": 928.7193333333325,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 108.1672661820636
+      }
+    },
+    "without_hve": {
+      "accepted_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.02086961038884442,
+        "per_seed": [
+          {
+            "difference": 0.020278833967046883,
+            "seed": 1000
+          },
+          {
+            "difference": 0.01851851851851849,
+            "seed": 1001
+          },
+          {
+            "difference": 0.02493606138107418,
+            "seed": 1002
+          },
+          {
+            "difference": 0.010178117048346147,
+            "seed": 1003
+          },
+          {
+            "difference": 0.029201817001946795,
+            "seed": 1004
+          },
+          {
+            "difference": 0.012032932235592098,
+            "seed": 1005
+          },
+          {
+            "difference": 0.01813633520950597,
+            "seed": 1006
+          },
+          {
+            "difference": 0.02030456852791873,
+            "seed": 1007
+          },
+          {
+            "difference": 0.027423469387755084,
+            "seed": 1008
+          },
+          {
+            "difference": 0.026494146642020988,
+            "seed": 1009
+          },
+          {
+            "difference": 0.010673782521681052,
+            "seed": 1010
+          },
+          {
+            "difference": 0.031775700934579376,
+            "seed": 1011
+          },
+          {
+            "difference": 0.019732654360280044,
+            "seed": 1012
+          },
+          {
+            "difference": 0.01847133757961783,
+            "seed": 1013
+          },
+          {
+            "difference": 0.011285266457680243,
+            "seed": 1014
+          },
+          {
+            "difference": 0.020330368487928796,
+            "seed": 1015
+          },
+          {
+            "difference": 0.03084515731030224,
+            "seed": 1016
+          },
+          {
+            "difference": 0.027848101265822822,
+            "seed": 1017
+          },
+          {
+            "difference": 0.023735165521549084,
+            "seed": 1018
+          },
+          {
+            "difference": 0.015189873417721489,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.006795455179487178
+      },
+      "invalid_acceptance_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.020869610388844426,
+        "per_seed": [
+          {
+            "difference": 0.020278833967046894,
+            "seed": 1000
+          },
+          {
+            "difference": 0.018518518518518517,
+            "seed": 1001
+          },
+          {
+            "difference": 0.024936061381074168,
+            "seed": 1002
+          },
+          {
+            "difference": 0.010178117048346057,
+            "seed": 1003
+          },
+          {
+            "difference": 0.029201817001946788,
+            "seed": 1004
+          },
+          {
+            "difference": 0.012032932235592146,
+            "seed": 1005
+          },
+          {
+            "difference": 0.01813633520950594,
+            "seed": 1006
+          },
+          {
+            "difference": 0.02030456852791878,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0274234693877551,
+            "seed": 1008
+          },
+          {
+            "difference": 0.02649414664202095,
+            "seed": 1009
+          },
+          {
+            "difference": 0.01067378252168112,
+            "seed": 1010
+          },
+          {
+            "difference": 0.03177570093457944,
+            "seed": 1011
+          },
+          {
+            "difference": 0.019732654360280075,
+            "seed": 1012
+          },
+          {
+            "difference": 0.018471337579617834,
+            "seed": 1013
+          },
+          {
+            "difference": 0.01128526645768025,
+            "seed": 1014
+          },
+          {
+            "difference": 0.020330368487928845,
+            "seed": 1015
+          },
+          {
+            "difference": 0.030845157310302282,
+            "seed": 1016
+          },
+          {
+            "difference": 0.027848101265822784,
+            "seed": 1017
+          },
+          {
+            "difference": 0.023735165521549032,
+            "seed": 1018
+          },
+          {
+            "difference": 0.015189873417721518,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.006795455179487178
+      },
+      "modeled_cpu_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.0016502250000058395,
+        "per_seed": [
+          {
+            "difference": -0.0015615000000043233,
+            "seed": 1000
+          },
+          {
+            "difference": -0.0016215000000056046,
+            "seed": 1001
+          },
+          {
+            "difference": -0.0017265000000057373,
+            "seed": 1002
+          },
+          {
+            "difference": -0.0015960000000045937,
+            "seed": 1003
+          },
+          {
+            "difference": -0.0016650000000056897,
+            "seed": 1004
+          },
+          {
+            "difference": -0.0015885000000055438,
+            "seed": 1005
+          },
+          {
+            "difference": -0.0016980000000066386,
+            "seed": 1006
+          },
+          {
+            "difference": -0.0016230000000067024,
+            "seed": 1007
+          },
+          {
+            "difference": -0.0016815000000064417,
+            "seed": 1008
+          },
+          {
+            "difference": -0.0017115000000069713,
+            "seed": 1009
+          },
+          {
+            "difference": -0.0016605000000048387,
+            "seed": 1010
+          },
+          {
+            "difference": -0.0016905000000059234,
+            "seed": 1011
+          },
+          {
+            "difference": -0.0017625000000076607,
+            "seed": 1012
+          },
+          {
+            "difference": -0.00173250000000702,
+            "seed": 1013
+          },
+          {
+            "difference": -0.0015255000000051755,
+            "seed": 1014
+          },
+          {
+            "difference": -0.0016245000000049137,
+            "seed": 1015
+          },
+          {
+            "difference": -0.0016935000000058986,
+            "seed": 1016
+          },
+          {
+            "difference": -0.0016500000000050363,
+            "seed": 1017
+          },
+          {
+            "difference": -0.0015600000000064451,
+            "seed": 1018
+          },
+          {
+            "difference": -0.001632000000005629,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 6.362151138252832e-05
+      },
+      "modeled_radio_tx_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "observed_residual_loss_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.02086961038884442,
+        "per_seed": [
+          {
+            "difference": -0.020278833967046883,
+            "seed": 1000
+          },
+          {
+            "difference": -0.01851851851851849,
+            "seed": 1001
+          },
+          {
+            "difference": -0.02493606138107418,
+            "seed": 1002
+          },
+          {
+            "difference": -0.010178117048346147,
+            "seed": 1003
+          },
+          {
+            "difference": -0.029201817001946795,
+            "seed": 1004
+          },
+          {
+            "difference": -0.012032932235592098,
+            "seed": 1005
+          },
+          {
+            "difference": -0.01813633520950597,
+            "seed": 1006
+          },
+          {
+            "difference": -0.02030456852791873,
+            "seed": 1007
+          },
+          {
+            "difference": -0.027423469387755084,
+            "seed": 1008
+          },
+          {
+            "difference": -0.026494146642020988,
+            "seed": 1009
+          },
+          {
+            "difference": -0.010673782521681052,
+            "seed": 1010
+          },
+          {
+            "difference": -0.031775700934579376,
+            "seed": 1011
+          },
+          {
+            "difference": -0.019732654360280044,
+            "seed": 1012
+          },
+          {
+            "difference": -0.01847133757961783,
+            "seed": 1013
+          },
+          {
+            "difference": -0.011285266457680243,
+            "seed": 1014
+          },
+          {
+            "difference": -0.020330368487928796,
+            "seed": 1015
+          },
+          {
+            "difference": -0.03084515731030224,
+            "seed": 1016
+          },
+          {
+            "difference": -0.027848101265822822,
+            "seed": 1017
+          },
+          {
+            "difference": -0.023735165521549084,
+            "seed": 1018
+          },
+          {
+            "difference": -0.015189873417721489,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.006795455179487178
+      },
+      "source_admission_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "valid_delay_mean_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.00013347455539816088,
+        "per_seed": [
+          {
+            "difference": -0.00012806088808670069,
+            "seed": 1000
+          },
+          {
+            "difference": -0.00012573404710103375,
+            "seed": 1001
+          },
+          {
+            "difference": -0.00013394784172504615,
+            "seed": 1002
+          },
+          {
+            "difference": -0.00012294847328053748,
+            "seed": 1003
+          },
+          {
+            "difference": -0.0001516872612308262,
+            "seed": 1004
+          },
+          {
+            "difference": -0.00012456730769105917,
+            "seed": 1005
+          },
+          {
+            "difference": -0.00013689936536565028,
+            "seed": 1006
+          },
+          {
+            "difference": -0.00012871428571248344,
+            "seed": 1007
+          },
+          {
+            "difference": -0.00014123376623054185,
+            "seed": 1008
+          },
+          {
+            "difference": -0.0001314235617915216,
+            "seed": 1009
+          },
+          {
+            "difference": -0.000139571035744801,
+            "seed": 1010
+          },
+          {
+            "difference": -0.000140029739775116,
+            "seed": 1011
+          },
+          {
+            "difference": -0.00013391608391355447,
+            "seed": 1012
+          },
+          {
+            "difference": -0.00014034943397334132,
+            "seed": 1013
+          },
+          {
+            "difference": -0.00012422422422275758,
+            "seed": 1014
+          },
+          {
+            "difference": -0.00014276879162533618,
+            "seed": 1015
+          },
+          {
+            "difference": -0.00012414272474270405,
+            "seed": 1016
+          },
+          {
+            "difference": -0.00013892045454433344,
+            "seed": 1017
+          },
+          {
+            "difference": -0.0001270958083816609,
+            "seed": 1018
+          },
+          {
+            "difference": -0.00013325601282421218,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 7.837540322269001e-06
+      },
+      "valid_delay_p95_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.00013887499999878372,
+        "per_seed": [
+          {
+            "difference": -0.00015999999999039005,
+            "seed": 1000
+          },
+          {
+            "difference": -0.00015499999999057934,
+            "seed": 1001
+          },
+          {
+            "difference": -0.00021249999999284341,
+            "seed": 1002
+          },
+          {
+            "difference": -0.0001525000000022203,
+            "seed": 1003
+          },
+          {
+            "difference": -9.000000000369823e-05,
+            "seed": 1004
+          },
+          {
+            "difference": -6.000000000128125e-05,
+            "seed": 1005
+          },
+          {
+            "difference": -0.00018499999999299632,
+            "seed": 1006
+          },
+          {
+            "difference": -0.00013250000000297746,
+            "seed": 1007
+          },
+          {
+            "difference": -0.0002424999999988131,
+            "seed": 1008
+          },
+          {
+            "difference": -0.00010750000000214754,
+            "seed": 1009
+          },
+          {
+            "difference": -9.999999999621423e-05,
+            "seed": 1010
+          },
+          {
+            "difference": -0.00013749999999390639,
+            "seed": 1011
+          },
+          {
+            "difference": -5.000000000165983e-05,
+            "seed": 1012
+          },
+          {
+            "difference": -0.00018750000000622435,
+            "seed": 1013
+          },
+          {
+            "difference": -0.0001849999999983254,
+            "seed": 1014
+          },
+          {
+            "difference": -0.00020000000000131024,
+            "seed": 1015
+          },
+          {
+            "difference": -9.500000000350894e-05,
+            "seed": 1016
+          },
+          {
+            "difference": -0.00012500000000414957,
+            "seed": 1017
+          },
+          {
+            "difference": -5.750000000226407e-05,
+            "seed": 1018
+          },
+          {
+            "difference": -0.00014249999999016438,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 5.39033918942675e-05
+      },
+      "valid_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "valid_delivery_fraction_per_opportunity": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "wire_bytes_per_source_opportunity_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      }
+    },
+    "without_intdb2": {
+      "accepted_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.04155847908485899,
+        "per_seed": [
+          {
+            "difference": -0.04372623574144496,
+            "seed": 1000
+          },
+          {
+            "difference": -0.037675606641123904,
+            "seed": 1001
+          },
+          {
+            "difference": -0.06969309462915607,
+            "seed": 1002
+          },
+          {
+            "difference": -0.0330788804071247,
+            "seed": 1003
+          },
+          {
+            "difference": -0.04347826086956519,
+            "seed": 1004
+          },
+          {
+            "difference": -0.030398986700443387,
+            "seed": 1005
+          },
+          {
+            "difference": -0.034396497811131965,
+            "seed": 1006
+          },
+          {
+            "difference": -0.045685279187817285,
+            "seed": 1007
+          },
+          {
+            "difference": -0.04336734693877553,
+            "seed": 1008
+          },
+          {
+            "difference": -0.03203943314849045,
+            "seed": 1009
+          },
+          {
+            "difference": -0.07204803202134757,
+            "seed": 1010
+          },
+          {
+            "difference": -0.03239875389408098,
+            "seed": 1011
+          },
+          {
+            "difference": -0.06429026098026736,
+            "seed": 1012
+          },
+          {
+            "difference": -0.0859872611464968,
+            "seed": 1013
+          },
+          {
+            "difference": -0.04012539184952979,
+            "seed": 1014
+          },
+          {
+            "difference": -0.026048284625158846,
+            "seed": 1015
+          },
+          {
+            "difference": -0.028377544725478154,
+            "seed": 1016
+          },
+          {
+            "difference": -0.03924050632911391,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": -0.029113924050632956,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.019168961478845933
+      },
+      "invalid_acceptance_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "modeled_cpu_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0110600099999971,
+        "per_seed": [
+          {
+            "difference": 0.012218399999995522,
+            "seed": 1000
+          },
+          {
+            "difference": 0.009439199999999315,
+            "seed": 1001
+          },
+          {
+            "difference": 0.004418399999995604,
+            "seed": 1002
+          },
+          {
+            "difference": 0.020429399999996378,
+            "seed": 1003
+          },
+          {
+            "difference": 0.008484899999998241,
+            "seed": 1004
+          },
+          {
+            "difference": 0.017237099999995675,
+            "seed": 1005
+          },
+          {
+            "difference": 0.008478299999996386,
+            "seed": 1006
+          },
+          {
+            "difference": 0.012158999999996367,
+            "seed": 1007
+          },
+          {
+            "difference": 0.007664399999998239,
+            "seed": 1008
+          },
+          {
+            "difference": 0.01230749999999703,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0011801999999988544,
+            "seed": 1010
+          },
+          {
+            "difference": 0.015496799999995425,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0026042999999970062,
+            "seed": 1012
+          },
+          {
+            "difference": 0.003006599999997639,
+            "seed": 1013
+          },
+          {
+            "difference": 0.014504999999996881,
+            "seed": 1014
+          },
+          {
+            "difference": 0.015865199999997248,
+            "seed": 1015
+          },
+          {
+            "difference": 0.012194999999995737,
+            "seed": 1016
+          },
+          {
+            "difference": 0.00825750000000014,
+            "seed": 1017
+          },
+          {
+            "difference": 0.025541699999997003,
+            "seed": 1018
+          },
+          {
+            "difference": 0.009711299999997314,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.006116857691046957
+      },
+      "modeled_radio_tx_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -11.661993999996069,
+        "per_seed": [
+          {
+            "difference": -11.92218239999626,
+            "seed": 1000
+          },
+          {
+            "difference": -12.768537599996037,
+            "seed": 1001
+          },
+          {
+            "difference": -11.72067679999548,
+            "seed": 1002
+          },
+          {
+            "difference": -11.829683199996467,
+            "seed": 1003
+          },
+          {
+            "difference": -11.428844799996064,
+            "seed": 1004
+          },
+          {
+            "difference": -12.199420799995366,
+            "seed": 1005
+          },
+          {
+            "difference": -11.405775999996436,
+            "seed": 1006
+          },
+          {
+            "difference": -12.168587199994711,
+            "seed": 1007
+          },
+          {
+            "difference": -11.980212799997389,
+            "seed": 1008
+          },
+          {
+            "difference": -11.809161599996784,
+            "seed": 1009
+          },
+          {
+            "difference": -11.705939199995889,
+            "seed": 1010
+          },
+          {
+            "difference": -11.227583999996526,
+            "seed": 1011
+          },
+          {
+            "difference": -11.852110399995802,
+            "seed": 1012
+          },
+          {
+            "difference": -11.029415999996964,
+            "seed": 1013
+          },
+          {
+            "difference": -11.132289599997051,
+            "seed": 1014
+          },
+          {
+            "difference": -10.777591999996027,
+            "seed": 1015
+          },
+          {
+            "difference": -12.462942399996024,
+            "seed": 1016
+          },
+          {
+            "difference": -11.2251903999952,
+            "seed": 1017
+          },
+          {
+            "difference": -11.385465599995456,
+            "seed": 1018
+          },
+          {
+            "difference": -11.208267199995461,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.5086845664941659
+      },
+      "observed_residual_loss_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.04155847908485899,
+        "per_seed": [
+          {
+            "difference": 0.04372623574144496,
+            "seed": 1000
+          },
+          {
+            "difference": 0.037675606641123904,
+            "seed": 1001
+          },
+          {
+            "difference": 0.06969309462915607,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0330788804071247,
+            "seed": 1003
+          },
+          {
+            "difference": 0.04347826086956519,
+            "seed": 1004
+          },
+          {
+            "difference": 0.030398986700443387,
+            "seed": 1005
+          },
+          {
+            "difference": 0.034396497811131965,
+            "seed": 1006
+          },
+          {
+            "difference": 0.045685279187817285,
+            "seed": 1007
+          },
+          {
+            "difference": 0.04336734693877553,
+            "seed": 1008
+          },
+          {
+            "difference": 0.03203943314849045,
+            "seed": 1009
+          },
+          {
+            "difference": 0.07204803202134757,
+            "seed": 1010
+          },
+          {
+            "difference": 0.03239875389408098,
+            "seed": 1011
+          },
+          {
+            "difference": 0.06429026098026736,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0859872611464968,
+            "seed": 1013
+          },
+          {
+            "difference": 0.04012539184952979,
+            "seed": 1014
+          },
+          {
+            "difference": 0.026048284625158846,
+            "seed": 1015
+          },
+          {
+            "difference": 0.028377544725478154,
+            "seed": 1016
+          },
+          {
+            "difference": 0.03924050632911391,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.029113924050632956,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.019168961478845933
+      },
+      "source_admission_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "valid_delay_mean_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -3.2332988395083104,
+        "per_seed": [
+          {
+            "difference": -2.6301493698964684,
+            "seed": 1000
+          },
+          {
+            "difference": -3.2691154485594587,
+            "seed": 1001
+          },
+          {
+            "difference": -2.9593986318463306,
+            "seed": 1002
+          },
+          {
+            "difference": -4.107646139250836,
+            "seed": 1003
+          },
+          {
+            "difference": -2.823135029114783,
+            "seed": 1004
+          },
+          {
+            "difference": -3.804655620672034,
+            "seed": 1005
+          },
+          {
+            "difference": -3.0871208486432344,
+            "seed": 1006
+          },
+          {
+            "difference": -3.832409280346361,
+            "seed": 1007
+          },
+          {
+            "difference": -3.4844486557112373,
+            "seed": 1008
+          },
+          {
+            "difference": -3.1316014207515557,
+            "seed": 1009
+          },
+          {
+            "difference": -2.5376690862967237,
+            "seed": 1010
+          },
+          {
+            "difference": -3.4318661885396393,
+            "seed": 1011
+          },
+          {
+            "difference": -2.819138052231213,
+            "seed": 1012
+          },
+          {
+            "difference": -2.714278959379594,
+            "seed": 1013
+          },
+          {
+            "difference": -2.6823074637094444,
+            "seed": 1014
+          },
+          {
+            "difference": -3.0002085872264335,
+            "seed": 1015
+          },
+          {
+            "difference": -4.058489158998659,
+            "seed": 1016
+          },
+          {
+            "difference": -3.259940510082001,
+            "seed": 1017
+          },
+          {
+            "difference": -3.887090761688502,
+            "seed": 1018
+          },
+          {
+            "difference": -3.1453075772217054,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.49161269322870177
+      },
+      "valid_delay_p95_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -6.255910726674577,
+        "per_seed": [
+          {
+            "difference": -1.7067792088411142,
+            "seed": 1000
+          },
+          {
+            "difference": -6.9864162979650075,
+            "seed": 1001
+          },
+          {
+            "difference": -6.78768928367849,
+            "seed": 1002
+          },
+          {
+            "difference": -9.290972860885931,
+            "seed": 1003
+          },
+          {
+            "difference": -3.6951924954766024,
+            "seed": 1004
+          },
+          {
+            "difference": -7.742786703455604,
+            "seed": 1005
+          },
+          {
+            "difference": -6.660086996591493,
+            "seed": 1006
+          },
+          {
+            "difference": -9.1410812374555,
+            "seed": 1007
+          },
+          {
+            "difference": -6.338784882291664,
+            "seed": 1008
+          },
+          {
+            "difference": -5.538647258163705,
+            "seed": 1009
+          },
+          {
+            "difference": -4.46980373678875,
+            "seed": 1010
+          },
+          {
+            "difference": -7.262529422395852,
+            "seed": 1011
+          },
+          {
+            "difference": -6.320198121368241,
+            "seed": 1012
+          },
+          {
+            "difference": -5.458670417018289,
+            "seed": 1013
+          },
+          {
+            "difference": -6.05800597121946,
+            "seed": 1014
+          },
+          {
+            "difference": -3.870904579501749,
+            "seed": 1015
+          },
+          {
+            "difference": -8.295441030382364,
+            "seed": 1016
+          },
+          {
+            "difference": -6.195899105471043,
+            "seed": 1017
+          },
+          {
+            "difference": -7.606782889068212,
+            "seed": 1018
+          },
+          {
+            "difference": -5.69154203547245,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 1.854962969789756
+      },
+      "valid_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.04155847908485899,
+        "per_seed": [
+          {
+            "difference": -0.04372623574144496,
+            "seed": 1000
+          },
+          {
+            "difference": -0.037675606641123904,
+            "seed": 1001
+          },
+          {
+            "difference": -0.06969309462915607,
+            "seed": 1002
+          },
+          {
+            "difference": -0.0330788804071247,
+            "seed": 1003
+          },
+          {
+            "difference": -0.04347826086956519,
+            "seed": 1004
+          },
+          {
+            "difference": -0.030398986700443387,
+            "seed": 1005
+          },
+          {
+            "difference": -0.034396497811131965,
+            "seed": 1006
+          },
+          {
+            "difference": -0.045685279187817285,
+            "seed": 1007
+          },
+          {
+            "difference": -0.04336734693877553,
+            "seed": 1008
+          },
+          {
+            "difference": -0.03203943314849045,
+            "seed": 1009
+          },
+          {
+            "difference": -0.07204803202134757,
+            "seed": 1010
+          },
+          {
+            "difference": -0.03239875389408098,
+            "seed": 1011
+          },
+          {
+            "difference": -0.06429026098026736,
+            "seed": 1012
+          },
+          {
+            "difference": -0.0859872611464968,
+            "seed": 1013
+          },
+          {
+            "difference": -0.04012539184952979,
+            "seed": 1014
+          },
+          {
+            "difference": -0.026048284625158846,
+            "seed": 1015
+          },
+          {
+            "difference": -0.028377544725478154,
+            "seed": 1016
+          },
+          {
+            "difference": -0.03924050632911391,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": -0.029113924050632956,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.019168961478845933
+      },
+      "valid_delivery_fraction_per_opportunity": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.02176666666666667,
+        "per_seed": [
+          {
+            "difference": -0.022999999999999965,
+            "seed": 1000
+          },
+          {
+            "difference": -0.019666666666666666,
+            "seed": 1001
+          },
+          {
+            "difference": -0.03633333333333333,
+            "seed": 1002
+          },
+          {
+            "difference": -0.01733333333333331,
+            "seed": 1003
+          },
+          {
+            "difference": -0.022333333333333316,
+            "seed": 1004
+          },
+          {
+            "difference": -0.016000000000000014,
+            "seed": 1005
+          },
+          {
+            "difference": -0.018333333333333313,
+            "seed": 1006
+          },
+          {
+            "difference": -0.023999999999999966,
+            "seed": 1007
+          },
+          {
+            "difference": -0.02266666666666667,
+            "seed": 1008
+          },
+          {
+            "difference": -0.01733333333333331,
+            "seed": 1009
+          },
+          {
+            "difference": -0.03600000000000003,
+            "seed": 1010
+          },
+          {
+            "difference": -0.017333333333333367,
+            "seed": 1011
+          },
+          {
+            "difference": -0.03366666666666668,
+            "seed": 1012
+          },
+          {
+            "difference": -0.04500000000000004,
+            "seed": 1013
+          },
+          {
+            "difference": -0.02133333333333337,
+            "seed": 1014
+          },
+          {
+            "difference": -0.01366666666666666,
+            "seed": 1015
+          },
+          {
+            "difference": -0.015333333333333365,
+            "seed": 1016
+          },
+          {
+            "difference": -0.020666666666666667,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": -0.015333333333333365,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.009829600837855983
+      },
+      "wire_bytes_per_source_opportunity_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -2429.5820833333332,
+        "per_seed": [
+          {
+            "difference": -2483.7879999999986,
+            "seed": 1000
+          },
+          {
+            "difference": -2660.111999999999,
+            "seed": 1001
+          },
+          {
+            "difference": -2441.8076666666675,
+            "seed": 1002
+          },
+          {
+            "difference": -2464.517333333333,
+            "seed": 1003
+          },
+          {
+            "difference": -2381.0093333333316,
+            "seed": 1004
+          },
+          {
+            "difference": -2541.5460000000003,
+            "seed": 1005
+          },
+          {
+            "difference": -2376.203333333333,
+            "seed": 1006
+          },
+          {
+            "difference": -2535.1223333333346,
+            "seed": 1007
+          },
+          {
+            "difference": -2495.8776666666654,
+            "seed": 1008
+          },
+          {
+            "difference": -2460.2419999999984,
+            "seed": 1009
+          },
+          {
+            "difference": -2438.7373333333326,
+            "seed": 1010
+          },
+          {
+            "difference": -2339.08,
+            "seed": 1011
+          },
+          {
+            "difference": -2469.1896666666653,
+            "seed": 1012
+          },
+          {
+            "difference": -2297.7949999999983,
+            "seed": 1013
+          },
+          {
+            "difference": -2319.2270000000008,
+            "seed": 1014
+          },
+          {
+            "difference": -2245.331666666667,
+            "seed": 1015
+          },
+          {
+            "difference": -2596.4463333333333,
+            "seed": 1016
+          },
+          {
+            "difference": -2338.5813333333335,
+            "seed": 1017
+          },
+          {
+            "difference": -2371.9719999999998,
+            "seed": 1018
+          },
+          {
+            "difference": -2335.055666666667,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 105.97595135297496
+      }
+    },
+    "without_markov": {
+      "accepted_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.2363816164875941,
+        "per_seed": [
+          {
+            "difference": -0.21875031685678076,
+            "seed": 1000
+          },
+          {
+            "difference": -0.24744189016602813,
+            "seed": 1001
+          },
+          {
+            "difference": -0.2523307757885763,
+            "seed": 1002
+          },
+          {
+            "difference": -0.22199999999999998,
+            "seed": 1003
+          },
+          {
+            "difference": -0.27877633571274063,
+            "seed": 1004
+          },
+          {
+            "difference": -0.19731137850960528,
+            "seed": 1005
+          },
+          {
+            "difference": -0.22347279549718574,
+            "seed": 1006
+          },
+          {
+            "difference": -0.2575769881556684,
+            "seed": 1007
+          },
+          {
+            "difference": -0.26516666666666666,
+            "seed": 1008
+          },
+          {
+            "difference": -0.23552495378927912,
+            "seed": 1009
+          },
+          {
+            "difference": -0.28881854569713145,
+            "seed": 1010
+          },
+          {
+            "difference": -0.24173831775700938,
+            "seed": 1011
+          },
+          {
+            "difference": -0.2648652662847443,
+            "seed": 1012
+          },
+          {
+            "difference": -0.251864118895966,
+            "seed": 1013
+          },
+          {
+            "difference": -0.18399895506792052,
+            "seed": 1014
+          },
+          {
+            "difference": -0.2230588733587463,
+            "seed": 1015
+          },
+          {
+            "difference": -0.24263849475632332,
+            "seed": 1016
+          },
+          {
+            "difference": -0.21735443037974683,
+            "seed": 1017
+          },
+          {
+            "difference": -0.21285883822610868,
+            "seed": 1018
+          },
+          {
+            "difference": -0.20208438818565405,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.027668130135718415
+      },
+      "invalid_acceptance_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "modeled_cpu_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.5443200449999883,
+        "per_seed": [
+          {
+            "difference": 0.5519372999999915,
+            "seed": 1000
+          },
+          {
+            "difference": 0.5431799999999919,
+            "seed": 1001
+          },
+          {
+            "difference": 0.5515379999999882,
+            "seed": 1002
+          },
+          {
+            "difference": 0.5488211999999902,
+            "seed": 1003
+          },
+          {
+            "difference": 0.5543867999999949,
+            "seed": 1004
+          },
+          {
+            "difference": 0.5538995999999871,
+            "seed": 1005
+          },
+          {
+            "difference": 0.5340452999999817,
+            "seed": 1006
+          },
+          {
+            "difference": 0.5447582999999923,
+            "seed": 1007
+          },
+          {
+            "difference": 0.5308907999999856,
+            "seed": 1008
+          },
+          {
+            "difference": 0.5247446999999876,
+            "seed": 1009
+          },
+          {
+            "difference": 0.5789570999999879,
+            "seed": 1010
+          },
+          {
+            "difference": 0.5200388999999818,
+            "seed": 1011
+          },
+          {
+            "difference": 0.5484944999999886,
+            "seed": 1012
+          },
+          {
+            "difference": 0.5501021999999935,
+            "seed": 1013
+          },
+          {
+            "difference": 0.5510702999999958,
+            "seed": 1014
+          },
+          {
+            "difference": 0.5521931999999901,
+            "seed": 1015
+          },
+          {
+            "difference": 0.5153099999999864,
+            "seed": 1016
+          },
+          {
+            "difference": 0.5493116999999845,
+            "seed": 1017
+          },
+          {
+            "difference": 0.5339804999999826,
+            "seed": 1018
+          },
+          {
+            "difference": 0.5487404999999859,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.014390690724855779
+      },
+      "modeled_radio_tx_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 40.00941055998192,
+        "per_seed": [
+          {
+            "difference": 38.84583039998424,
+            "seed": 1000
+          },
+          {
+            "difference": 40.81643999998114,
+            "seed": 1001
+          },
+          {
+            "difference": 42.25084639998097,
+            "seed": 1002
+          },
+          {
+            "difference": 40.805844799981614,
+            "seed": 1003
+          },
+          {
+            "difference": 38.349319999986264,
+            "seed": 1004
+          },
+          {
+            "difference": 40.298766399980536,
+            "seed": 1005
+          },
+          {
+            "difference": 39.47030079998184,
+            "seed": 1006
+          },
+          {
+            "difference": 41.134942399981185,
+            "seed": 1007
+          },
+          {
+            "difference": 38.706347199981735,
+            "seed": 1008
+          },
+          {
+            "difference": 38.193950399983436,
+            "seed": 1009
+          },
+          {
+            "difference": 41.36135199998109,
+            "seed": 1010
+          },
+          {
+            "difference": 38.07762559998274,
+            "seed": 1011
+          },
+          {
+            "difference": 41.77894559998093,
+            "seed": 1012
+          },
+          {
+            "difference": 42.43075359998011,
+            "seed": 1013
+          },
+          {
+            "difference": 37.65952159998271,
+            "seed": 1014
+          },
+          {
+            "difference": 40.34176479998245,
+            "seed": 1015
+          },
+          {
+            "difference": 39.045025599980676,
+            "seed": 1016
+          },
+          {
+            "difference": 40.680619199981905,
+            "seed": 1017
+          },
+          {
+            "difference": 39.22878559998203,
+            "seed": 1018
+          },
+          {
+            "difference": 40.71122879998087,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 1.4459222527052051
+      },
+      "observed_residual_loss_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.2363816164875941,
+        "per_seed": [
+          {
+            "difference": 0.2187503168567807,
+            "seed": 1000
+          },
+          {
+            "difference": 0.24744189016602813,
+            "seed": 1001
+          },
+          {
+            "difference": 0.2523307757885763,
+            "seed": 1002
+          },
+          {
+            "difference": 0.22199999999999998,
+            "seed": 1003
+          },
+          {
+            "difference": 0.27877633571274063,
+            "seed": 1004
+          },
+          {
+            "difference": 0.19731137850960523,
+            "seed": 1005
+          },
+          {
+            "difference": 0.2234727954971858,
+            "seed": 1006
+          },
+          {
+            "difference": 0.2575769881556683,
+            "seed": 1007
+          },
+          {
+            "difference": 0.26516666666666666,
+            "seed": 1008
+          },
+          {
+            "difference": 0.23552495378927907,
+            "seed": 1009
+          },
+          {
+            "difference": 0.2888185456971314,
+            "seed": 1010
+          },
+          {
+            "difference": 0.24173831775700938,
+            "seed": 1011
+          },
+          {
+            "difference": 0.26486526628474427,
+            "seed": 1012
+          },
+          {
+            "difference": 0.25186411889596594,
+            "seed": 1013
+          },
+          {
+            "difference": 0.18399895506792052,
+            "seed": 1014
+          },
+          {
+            "difference": 0.2230588733587463,
+            "seed": 1015
+          },
+          {
+            "difference": 0.24263849475632326,
+            "seed": 1016
+          },
+          {
+            "difference": 0.21735443037974678,
+            "seed": 1017
+          },
+          {
+            "difference": 0.21285883822610863,
+            "seed": 1018
+          },
+          {
+            "difference": 0.202084388185654,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.027668130135718415
+      },
+      "source_admission_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.47396666666666665,
+        "per_seed": [
+          {
+            "difference": 0.474,
+            "seed": 1000
+          },
+          {
+            "difference": 0.478,
+            "seed": 1001
+          },
+          {
+            "difference": 0.4786666666666667,
+            "seed": 1002
+          },
+          {
+            "difference": 0.476,
+            "seed": 1003
+          },
+          {
+            "difference": 0.4863333333333333,
+            "seed": 1004
+          },
+          {
+            "difference": 0.4736666666666667,
+            "seed": 1005
+          },
+          {
+            "difference": 0.46699999999999997,
+            "seed": 1006
+          },
+          {
+            "difference": 0.4746666666666667,
+            "seed": 1007
+          },
+          {
+            "difference": 0.4773333333333334,
+            "seed": 1008
+          },
+          {
+            "difference": 0.45899999999999996,
+            "seed": 1009
+          },
+          {
+            "difference": 0.5003333333333333,
+            "seed": 1010
+          },
+          {
+            "difference": 0.46499999999999997,
+            "seed": 1011
+          },
+          {
+            "difference": 0.4763333333333334,
+            "seed": 1012
+          },
+          {
+            "difference": 0.4766666666666667,
+            "seed": 1013
+          },
+          {
+            "difference": 0.4683333333333334,
+            "seed": 1014
+          },
+          {
+            "difference": 0.4753333333333334,
+            "seed": 1015
+          },
+          {
+            "difference": 0.45966666666666667,
+            "seed": 1016
+          },
+          {
+            "difference": 0.4733333333333334,
+            "seed": 1017
+          },
+          {
+            "difference": 0.4663333333333334,
+            "seed": 1018
+          },
+          {
+            "difference": 0.4733333333333334,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.009077251303564867
+      },
+      "valid_delay_mean_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 3.9813386966943574,
+        "per_seed": [
+          {
+            "difference": 3.04892335607144,
+            "seed": 1000
+          },
+          {
+            "difference": 4.254482122174743,
+            "seed": 1001
+          },
+          {
+            "difference": 4.746480268479891,
+            "seed": 1002
+          },
+          {
+            "difference": 3.615516421699481,
+            "seed": 1003
+          },
+          {
+            "difference": 3.251790862429134,
+            "seed": 1004
+          },
+          {
+            "difference": 3.718527325920535,
+            "seed": 1005
+          },
+          {
+            "difference": 4.848125706154731,
+            "seed": 1006
+          },
+          {
+            "difference": 4.79577285409649,
+            "seed": 1007
+          },
+          {
+            "difference": 4.102808373839651,
+            "seed": 1008
+          },
+          {
+            "difference": 3.6008452099829213,
+            "seed": 1009
+          },
+          {
+            "difference": 4.3302079507936595,
+            "seed": 1010
+          },
+          {
+            "difference": 3.081842329958153,
+            "seed": 1011
+          },
+          {
+            "difference": 4.626654969813579,
+            "seed": 1012
+          },
+          {
+            "difference": 3.9146783700610968,
+            "seed": 1013
+          },
+          {
+            "difference": 3.1961151715786915,
+            "seed": 1014
+          },
+          {
+            "difference": 3.441307024441543,
+            "seed": 1015
+          },
+          {
+            "difference": 4.7971144264107215,
+            "seed": 1016
+          },
+          {
+            "difference": 4.241774743184651,
+            "seed": 1017
+          },
+          {
+            "difference": 3.834443767997808,
+            "seed": 1018
+          },
+          {
+            "difference": 4.179362678798228,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.6023084957847408
+      },
+      "valid_delay_p95_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 6.720348344207982,
+        "per_seed": [
+          {
+            "difference": 2.5821995115525276,
+            "seed": 1000
+          },
+          {
+            "difference": 7.171758909980744,
+            "seed": 1001
+          },
+          {
+            "difference": 7.460704118857636,
+            "seed": 1002
+          },
+          {
+            "difference": 5.854527858024852,
+            "seed": 1003
+          },
+          {
+            "difference": 6.651124732995385,
+            "seed": 1004
+          },
+          {
+            "difference": 5.699788939203968,
+            "seed": 1005
+          },
+          {
+            "difference": 8.624881757445944,
+            "seed": 1006
+          },
+          {
+            "difference": 7.722741993563492,
+            "seed": 1007
+          },
+          {
+            "difference": 7.048130932263417,
+            "seed": 1008
+          },
+          {
+            "difference": 6.626536111577758,
+            "seed": 1009
+          },
+          {
+            "difference": 6.8564191065204945,
+            "seed": 1010
+          },
+          {
+            "difference": 4.56664961337083,
+            "seed": 1011
+          },
+          {
+            "difference": 7.182239299568481,
+            "seed": 1012
+          },
+          {
+            "difference": 6.983836607655233,
+            "seed": 1013
+          },
+          {
+            "difference": 4.225901958902275,
+            "seed": 1014
+          },
+          {
+            "difference": 7.324616689996807,
+            "seed": 1015
+          },
+          {
+            "difference": 6.231336529939199,
+            "seed": 1016
+          },
+          {
+            "difference": 9.027519464604948,
+            "seed": 1017
+          },
+          {
+            "difference": 7.6911025896248955,
+            "seed": 1018
+          },
+          {
+            "difference": 8.874950158510744,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 1.5743734740478528
+      },
+      "valid_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.2363816164875941,
+        "per_seed": [
+          {
+            "difference": -0.21875031685678076,
+            "seed": 1000
+          },
+          {
+            "difference": -0.24744189016602813,
+            "seed": 1001
+          },
+          {
+            "difference": -0.2523307757885763,
+            "seed": 1002
+          },
+          {
+            "difference": -0.22199999999999998,
+            "seed": 1003
+          },
+          {
+            "difference": -0.27877633571274063,
+            "seed": 1004
+          },
+          {
+            "difference": -0.19731137850960528,
+            "seed": 1005
+          },
+          {
+            "difference": -0.22347279549718574,
+            "seed": 1006
+          },
+          {
+            "difference": -0.2575769881556684,
+            "seed": 1007
+          },
+          {
+            "difference": -0.26516666666666666,
+            "seed": 1008
+          },
+          {
+            "difference": -0.23552495378927912,
+            "seed": 1009
+          },
+          {
+            "difference": -0.28881854569713145,
+            "seed": 1010
+          },
+          {
+            "difference": -0.24173831775700938,
+            "seed": 1011
+          },
+          {
+            "difference": -0.2648652662847443,
+            "seed": 1012
+          },
+          {
+            "difference": -0.251864118895966,
+            "seed": 1013
+          },
+          {
+            "difference": -0.18399895506792052,
+            "seed": 1014
+          },
+          {
+            "difference": -0.2230588733587463,
+            "seed": 1015
+          },
+          {
+            "difference": -0.24263849475632332,
+            "seed": 1016
+          },
+          {
+            "difference": -0.21735443037974683,
+            "seed": 1017
+          },
+          {
+            "difference": -0.21285883822610868,
+            "seed": 1018
+          },
+          {
+            "difference": -0.20208438818565405,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.027668130135718415
+      },
+      "valid_delivery_fraction_per_opportunity": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.08438333333333332,
+        "per_seed": [
+          {
+            "difference": 0.08433333333333337,
+            "seed": 1000
+          },
+          {
+            "difference": 0.07366666666666666,
+            "seed": 1001
+          },
+          {
+            "difference": 0.08800000000000002,
+            "seed": 1002
+          },
+          {
+            "difference": 0.09533333333333333,
+            "seed": 1003
+          },
+          {
+            "difference": 0.05733333333333335,
+            "seed": 1004
+          },
+          {
+            "difference": 0.11466666666666664,
+            "seed": 1005
+          },
+          {
+            "difference": 0.09866666666666668,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0586666666666667,
+            "seed": 1007
+          },
+          {
+            "difference": 0.063,
+            "seed": 1008
+          },
+          {
+            "difference": 0.07500000000000001,
+            "seed": 1009
+          },
+          {
+            "difference": 0.07533333333333331,
+            "seed": 1010
+          },
+          {
+            "difference": 0.06999999999999995,
+            "seed": 1011
+          },
+          {
+            "difference": 0.08199999999999996,
+            "seed": 1012
+          },
+          {
+            "difference": 0.08999999999999997,
+            "seed": 1013
+          },
+          {
+            "difference": 0.10933333333333334,
+            "seed": 1014
+          },
+          {
+            "difference": 0.09433333333333332,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0633333333333333,
+            "seed": 1016
+          },
+          {
+            "difference": 0.09900000000000003,
+            "seed": 1017
+          },
+          {
+            "difference": 0.07899999999999996,
+            "seed": 1018
+          },
+          {
+            "difference": 0.11666666666666664,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.017892556196683077
+      },
+      "wire_bytes_per_source_opportunity_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 8335.293866666667,
+        "per_seed": [
+          {
+            "difference": 8092.881333333333,
+            "seed": 1000
+          },
+          {
+            "difference": 8503.425,
+            "seed": 1001
+          },
+          {
+            "difference": 8802.259666666667,
+            "seed": 1002
+          },
+          {
+            "difference": 8501.217666666666,
+            "seed": 1003
+          },
+          {
+            "difference": 7989.4416666666675,
+            "seed": 1004
+          },
+          {
+            "difference": 8395.576333333334,
+            "seed": 1005
+          },
+          {
+            "difference": 8222.979333333335,
+            "seed": 1006
+          },
+          {
+            "difference": 8569.779666666667,
+            "seed": 1007
+          },
+          {
+            "difference": 8063.822333333335,
+            "seed": 1008
+          },
+          {
+            "difference": 7957.073000000002,
+            "seed": 1009
+          },
+          {
+            "difference": 8616.948333333332,
+            "seed": 1010
+          },
+          {
+            "difference": 7932.838666666668,
+            "seed": 1011
+          },
+          {
+            "difference": 8703.947,
+            "seed": 1012
+          },
+          {
+            "difference": 8839.740333333335,
+            "seed": 1013
+          },
+          {
+            "difference": 7845.733666666665,
+            "seed": 1014
+          },
+          {
+            "difference": 8404.534333333333,
+            "seed": 1015
+          },
+          {
+            "difference": 8134.380333333333,
+            "seed": 1016
+          },
+          {
+            "difference": 8475.128999999999,
+            "seed": 1017
+          },
+          {
+            "difference": 8172.663666666665,
+            "seed": 1018
+          },
+          {
+            "difference": 8481.506000000001,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 301.2338026471205
+      }
+    },
+    "without_route_repair": {
+      "accepted_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "invalid_acceptance_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "modeled_cpu_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "modeled_radio_tx_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "observed_residual_loss_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "source_admission_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "valid_delay_mean_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "valid_delay_p95_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "valid_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "valid_delivery_fraction_per_opportunity": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "wire_bytes_per_source_opportunity_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 1000
+          },
+          {
+            "difference": 0.0,
+            "seed": 1001
+          },
+          {
+            "difference": 0.0,
+            "seed": 1002
+          },
+          {
+            "difference": 0.0,
+            "seed": 1003
+          },
+          {
+            "difference": 0.0,
+            "seed": 1004
+          },
+          {
+            "difference": 0.0,
+            "seed": 1005
+          },
+          {
+            "difference": 0.0,
+            "seed": 1006
+          },
+          {
+            "difference": 0.0,
+            "seed": 1007
+          },
+          {
+            "difference": 0.0,
+            "seed": 1008
+          },
+          {
+            "difference": 0.0,
+            "seed": 1009
+          },
+          {
+            "difference": 0.0,
+            "seed": 1010
+          },
+          {
+            "difference": 0.0,
+            "seed": 1011
+          },
+          {
+            "difference": 0.0,
+            "seed": 1012
+          },
+          {
+            "difference": 0.0,
+            "seed": 1013
+          },
+          {
+            "difference": 0.0,
+            "seed": 1014
+          },
+          {
+            "difference": 0.0,
+            "seed": 1015
+          },
+          {
+            "difference": 0.0,
+            "seed": 1016
+          },
+          {
+            "difference": 0.0,
+            "seed": 1017
+          },
+          {
+            "difference": 0.0,
+            "seed": 1018
+          },
+          {
+            "difference": 0.0,
+            "seed": 1019
+          }
+        ],
+        "sd_difference": 0.0
+      }
+    }
+  },
+  "paired_evaluation_seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    1006,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1013,
+    1014,
+    1015,
+    1016,
+    1017,
+    1018,
+    1019
+  ],
+  "recovery_note": "Right-censored recovery times are not treated as observed durations or averaged. See per-seed records.",
+  "status": "independent_experimental_uncertified"
+}

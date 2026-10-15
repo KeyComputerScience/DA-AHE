@@ -1,0 +1,2 @@
+# Execution evidence is byte-preserved, including original CSV CRLF and log spaces.
+evidence/** -text -whitespace

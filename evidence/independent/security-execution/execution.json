@@ -1,0 +1,30 @@
+{
+  "command": [
+    "../sage-env/bin/sage",
+    "-python",
+    "tools/estimate_security.sage",
+    "--estimator",
+    "../lattice-estimator",
+    "--output",
+    "evidence/independent/security/run-01",
+    "--attack-timeout",
+    "300",
+    "--minimum-bits",
+    "128.1"
+  ],
+  "cwd": "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE",
+  "finished_utc": "2026-10-15T01:28:41.169956+00:00",
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "returncode": 2,
+  "schema_version": 1,
+  "source_digest": "42bbe4afcb10c1b49ce9af99ac05811458fdf71fa4a36979717d6e222671809d",
+  "started_utc": "2026-10-15T01:27:06.302767+00:00",
+  "status": "failed",
+  "stderr_sha256": "b3086a9e69cc0768a568642500438109440bb32e0403e48983b9a38c29df07b0",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timeout_s": 3000.0,
+  "wall_time_s": 94.8549872500007
+}

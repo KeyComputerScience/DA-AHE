@@ -1,0 +1,9 @@
+warning: no files found matching '*.yaml' under directory '.github'
+warning: no files found matching '*.md' under directory 'tests'
+warning: no files found matching '*.h' under directory 'firmware'
+warning: no previously-included files found matching 'evidence/independent/manifest.json'
+warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+warning: no previously-included files matching '*.key' found anywhere in distribution
+warning: no previously-included files matching '*.pem' found anywhere in distribution
+warning: no previously-included files matching '*.sqlite*' found anywhere in distribution
+warning: no previously-included files matching '.DS_Store' found anywhere in distribution

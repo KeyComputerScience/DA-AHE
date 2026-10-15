@@ -1,0 +1,61 @@
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc', '--version']
+arm-none-eabi-gcc (Arm GNU Toolchain 14.3.Rel1 (Build arm-14.174)) 14.3.1 20250623
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc', '-mcpu=cortex-m4', '-mthumb', '-mfloat-abi=soft', '-print-libgcc-file-name']
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a
+$ ['/usr/bin/clang', '-std=c11', '-O2', '-Wall', '-Wextra', '-Werror', '-pedantic', '-Iembedded', '-DDAAHE_K=6', 'embedded/daahe_core.c', 'embedded/test_core.c', '-o', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/native_core_test']
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/native_core_test']
+portable core known-answer cases passed in this execution: rank=6 ciphertext_bytes=7168
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc', '-mcpu=cortex-m4', '-mthumb', '-mfloat-abi=soft', '-O2', '-g3', '-ffreestanding', '-fno-builtin', '-ffunction-sections', '-fdata-sections', '-fstack-usage', '-Wall', '-Wextra', '-Werror', '-Iembedded', '-DFIRMWARE_BUILD_ID="106d2434c4506359e2eef5b418c4502ae2466ede4306fcd862c2aff1e37ebc28"', '-DBENCH_REPEATS=20', '-DDAAHE_K=6', '-DBENCH_CIPHER_BYTES=7168', '-c', 'firmware/nrf52840/startup.S', '-o', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o']
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc', '-mcpu=cortex-m4', '-mthumb', '-mfloat-abi=soft', '-O2', '-g3', '-ffreestanding', '-fno-builtin', '-ffunction-sections', '-fdata-sections', '-fstack-usage', '-Wall', '-Wextra', '-Werror', '-Iembedded', '-DFIRMWARE_BUILD_ID="106d2434c4506359e2eef5b418c4502ae2466ede4306fcd862c2aff1e37ebc28"', '-DBENCH_REPEATS=20', '-DDAAHE_K=6', '-DBENCH_CIPHER_BYTES=7168', '-std=c11', '-pedantic', '-c', 'firmware/nrf52840/runtime.c', '-o', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o']
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc', '-mcpu=cortex-m4', '-mthumb', '-mfloat-abi=soft', '-O2', '-g3', '-ffreestanding', '-fno-builtin', '-ffunction-sections', '-fdata-sections', '-fstack-usage', '-Wall', '-Wextra', '-Werror', '-Iembedded', '-DFIRMWARE_BUILD_ID="106d2434c4506359e2eef5b418c4502ae2466ede4306fcd862c2aff1e37ebc28"', '-DBENCH_REPEATS=20', '-DDAAHE_K=6', '-DBENCH_CIPHER_BYTES=7168', '-std=c11', '-pedantic', '-c', 'firmware/nrf52840/benchmark.c', '-o', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o']
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc', '-mcpu=cortex-m4', '-mthumb', '-mfloat-abi=soft', '-O2', '-g3', '-ffreestanding', '-fno-builtin', '-ffunction-sections', '-fdata-sections', '-fstack-usage', '-Wall', '-Wextra', '-Werror', '-Iembedded', '-DFIRMWARE_BUILD_ID="106d2434c4506359e2eef5b418c4502ae2466ede4306fcd862c2aff1e37ebc28"', '-DBENCH_REPEATS=20', '-DDAAHE_K=6', '-DBENCH_CIPHER_BYTES=7168', '-std=c11', '-pedantic', '-c', 'embedded/daahe_core.c', '-o', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o']
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-gcc', '-mcpu=cortex-m4', '-mthumb', '-mfloat-abi=soft', '-nostdlib', '-Wl,--gc-sections', '-Wl,--build-id=none', '-Wl,-Map=/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.map', '-Tfirmware/nrf52840/linker.ld', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o', '-lgcc', '-o', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.elf']
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-size', '-A', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.elf']
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.elf  :
+section            size        addr
+.vectors            256           0
+.text              5360         256
+.ARM.exidx            8        5616
+.data                 0   536870912
+.bss              20608   536870912
+.ARM.attributes      47           0
+.debug_line        8894           0
+.debug_line_str     342           0
+.debug_info        7573           0
+.debug_abbrev      1802           0
+.debug_aranges      256           0
+.debug_str        28330           0
+.debug_rnglists     438           0
+.debug_loclists    4321           0
+.debug_macro       6823           0
+.debug_frame        716           0
+Total             85774
+
+
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-objcopy', '-O', 'ihex', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.elf', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.hex']
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-objcopy', '-O', 'binary', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.elf', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.bin']
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/arm-none-eabi-readelf', '-h', '/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.elf']
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           ARM
+  Version:                           0x1
+  Entry point address:               0x101
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          72228 (bytes into file)
+  Flags:                             0x5000200, Version5 EABI, soft-float ABI
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         3
+  Size of section headers:           40 (bytes)
+  Number of section headers:         20
+  Section header string table index: 19

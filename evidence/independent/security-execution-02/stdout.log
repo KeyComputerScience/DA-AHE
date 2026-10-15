@@ -1,0 +1,15 @@
+Running primal_usvp; log=/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/security/run-01/primal_usvp.log
+primal_usvp: success; log2_rop=51.940000000000005
+Running primal_bdd; log=/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/security/run-01/primal_bdd.log
+primal_bdd: success; log2_rop=52.55711743250404
+Running primal_hybrid; log=/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/security/run-01/primal_hybrid.log
+primal_hybrid: success; log2_rop=52.5571174325058
+Running primal_mitm_hybrid; log=/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/security/run-01/primal_mitm_hybrid.log
+primal_mitm_hybrid: success; log2_rop=100.68693411853062
+Running dual; log=/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/security/run-01/dual.log
+dual: success; log2_rop=53.265472676457364
+Running dual_hybrid; log=/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/security/run-01/dual_hybrid.log
+dual_hybrid: success; log2_rop=53.42980221025329
+Running coded_bkw; log=/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/security/run-01/coded_bkw.log
+coded_bkw: failed; log2_rop=None
+{"status": "failed_incomplete_attacks", "failed_attacks": ["coded_bkw"], "lambda_est_bits": null}

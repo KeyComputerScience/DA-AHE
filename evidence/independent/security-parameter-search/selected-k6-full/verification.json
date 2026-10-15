@@ -1,0 +1,25 @@
+{
+  "commit": "53da5982597709ba0fdf94ea37a84d822310fd84",
+  "computed_minimum_bits": 136.475,
+  "inputs": {
+    "canonical_word_bytes": 4,
+    "ciphertext_bytes": 7168,
+    "error_distribution": "centered DiscreteGaussian(stddev=3.2)",
+    "m": 1536,
+    "module_rank": 6,
+    "n": 1536,
+    "plaintext_modulus": 65537,
+    "q": 4294967296,
+    "ring_degree": 256,
+    "secret_distribution": "centered DiscreteGaussian(stddev=3.2)",
+    "sigma_key": 3.2,
+    "sigma_secret": 3.2
+  },
+  "provenance": "independent_reproduction",
+  "requested_threshold_bits": 128.1,
+  "sage_version": "10.9",
+  "scope": "record arithmetic, completeness and hashes; not an independent cryptographic proof",
+  "source_manifest_sha256": "b79fc7711d1ef0fe092e78c7d3fb2e0157c486426ab28bd524e1529c7e10491b",
+  "verification": "passed",
+  "verified_attack_count": 7
+}

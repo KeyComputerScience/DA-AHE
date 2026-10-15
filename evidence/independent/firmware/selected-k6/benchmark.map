@@ -1,0 +1,384 @@
+Archive member included to satisfy reference by file (symbol)
+
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+                              /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o (__aeabi_ldivmod)
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+                              /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o) (__udivmoddi4)
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_dvmd_tls.o)
+                              /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o) (__aeabi_ldiv0)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .text          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .comment       0x00000000       0x47 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .text          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x00000000      0xad8 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x00000000      0x190 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .comment       0x00000000       0x47 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .text          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .text.daahe_wipe
+                0x00000000       0x14 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .text.daahe_linear_tag
+                0x00000000       0xa0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000      0xad8 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000      0x190 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000      0x34e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x1c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x22 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x75 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x24 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x5c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x3c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x34 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x57 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000      0x364 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x16 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x4a /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x34 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x10 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x58 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000      0x1e5 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x10 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_macro   0x00000000       0x3c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .comment       0x00000000       0x47 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+ .text          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+ .ARM.extab.text.__udivmoddi4
+                0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_dvmd_tls.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x00000000         0x00100000         xr
+RAM              0x20000000         0x00040000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+LOAD /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+LOAD /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+LOAD /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+LOAD /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a
+                0x20040000                        __StackTop = (ORIGIN (RAM) + LENGTH (RAM))
+                0x2003f000                        __StackLimit = (__StackTop - 0x1000)
+
+.vectors        0x00000000      0x100
+ *(.vectors)
+ .vectors       0x00000000      0x100 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+                0x00000000                vector_table
+
+.text           0x00000100     0x14f0
+ *(.text*)
+ .text.Reset_Handler
+                0x00000100       0x44 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+                0x00000100                Reset_Handler
+ .text.bench_on_stack
+                0x00000144       0x32 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+                0x00000144                bench_on_stack
+ *fill*         0x00000176        0x2 
+ .text.memset   0x00000178       0x14 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+                0x00000178                memset
+ .text.memcpy   0x0000018c       0x14 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+                0x0000018c                memcpy
+ .text.puts_uart
+                0x000001a0       0x28 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .text.uint_uart
+                0x000001c8       0x58 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .text.parameters_uart
+                0x00000220       0x58 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .text.fixture_matrix
+                0x00000278        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .text.fixture_accept
+                0x00000284        0x4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .text.timed_wrapper
+                0x00000288      0x2d8 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .text.startup.main
+                0x00000560      0x4b0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+                0x00000560                main
+ .text.daahe_ring_mul
+                0x00000a10       0x74 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+                0x00000a10                daahe_ring_mul
+ .text.daahe_pack
+                0x00000a84       0xc0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+                0x00000a84                daahe_pack
+ .text.daahe_linear_tag_stream
+                0x00000b44      0x124 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+                0x00000b44                daahe_linear_tag_stream
+ .text.daahe_decode_word
+                0x00000c68       0x5c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+                0x00000c68                daahe_decode_word
+ .text.daahe_stream_init
+                0x00000cc4       0x54 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+                0x00000cc4                daahe_stream_init
+ .text.daahe_stream_push
+                0x00000d18       0xc4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+                0x00000d18                daahe_stream_push
+ .text.daahe_stream_finish
+                0x00000ddc       0x20 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+                0x00000ddc                daahe_stream_finish
+ .text          0x00000dfc       0xa0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+                0x00000dfc                __aeabi_ldivmod
+ .text.__udivmoddi4
+                0x00000e9c      0x2f8 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+                0x00000e9c                __udivmoddi4
+ .text          0x00001194        0x4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x00001194                __aeabi_ldiv0
+                0x00001194                __aeabi_idiv0
+ *(.rodata*)
+ .rodata.parameters_uart.str1.4
+                0x00001198      0x440 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+                                 0xbd (size before relaxing)
+ .rodata.main.str1.4
+                0x000015d8      0x301 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .rodata.str1.4
+                0x000015d8       0x80 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .rodata.operations
+                0x000015d8       0x18 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+                0x000018dc                        . = ALIGN (0x4)
+
+.glue_7         0x000015f0        0x0
+ .glue_7        0x000015f0        0x0 linker stubs
+
+.glue_7t        0x000015f0        0x0
+ .glue_7t       0x000015f0        0x0 linker stubs
+
+.vfp11_veneer   0x000015f0        0x0
+ .vfp11_veneer  0x000015f0        0x0 linker stubs
+
+.v4_bx          0x000015f0        0x0
+ .v4_bx         0x000015f0        0x0 linker stubs
+
+.iplt           0x000015f0        0x0
+ .iplt          0x000015f0        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+
+.ARM.exidx      0x000015f0        0x8
+ *(.ARM.exidx*)
+ .ARM.exidx.text.__udivmoddi4
+                0x000015f0        0x8 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+
+.rel.dyn        0x000015f8        0x0
+ .rel.iplt      0x000015f8        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+
+.data           0x20000000        0x0 load address 0x000015f8
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        __data_start__ = .
+ *(.data*)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        __data_end__ = .
+                0x000015f8                        __data_load__ = LOADADDR (.data)
+
+.igot.plt       0x20000000        0x0 load address 0x000015f8
+ .igot.plt      0x20000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+
+.bss            0x20000000     0x5080 load address 0x000015f8
+                0x20000000                        . = ALIGN (0x8)
+                0x20000000                        __bss_start__ = .
+ *(.bss*)
+ .bss.selected_operation
+                0x20000000        0x4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.measured_ok
+                0x20000004        0x4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.elapsed_us
+                0x20000008        0x4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.elapsed_cycles
+                0x2000000c        0x4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.stream    0x20000010       0x1c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.mac_placeholder
+                0x2000002c       0x10 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ *fill*         0x2000003c        0x4 
+ .bss.block_payload
+                0x20000040       0x40 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.accumulator
+                0x20000080     0x1c00 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.signed_data
+                0x20001c80      0x3c0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.offset    0x20002040       0x40 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.tag       0x20002080       0x40 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.data      0x200020c0      0x3c0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.packed    0x20002480      0x400 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.ring_b    0x20002880      0x400 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.ring_a    0x20002c80      0x400 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .bss.bench_stack
+                0x20003080     0x2000 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ *(COMMON)
+                0x20005080                        . = ALIGN (0x8)
+                0x20005080                        __bss_end__ = .
+                0x00005080                        __static_ram_bytes__ = (SIZEOF (.data) + SIZEOF (.bss))
+                0x00000001                        ASSERT ((__bss_end__ <= __StackLimit), RAM collides with reserved main stack)
+
+/DISCARD/
+ *(.comment)
+ *(.note*)
+OUTPUT(/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.elf elf32-littlearm)
+LOAD linker stubs
+
+.ARM.attributes
+                0x00000000       0x2f
+ .ARM.attributes
+                0x00000000       0x21 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+ .ARM.attributes
+                0x00000021       0x2e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .ARM.attributes
+                0x0000004f       0x2e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .ARM.attributes
+                0x0000007d       0x2e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .ARM.attributes
+                0x000000ab       0x1e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+ .ARM.attributes
+                0x000000c9       0x2e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+ .ARM.attributes
+                0x000000f7       0x1e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_dvmd_tls.o)
+
+.debug_line     0x00000000     0x22be
+ .debug_line    0x00000000       0x7f /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+ .debug_line    0x0000007f      0x1ad /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .debug_line    0x0000022c     0x1488 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_line    0x000016b4      0xc0a /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+
+.debug_line_str
+                0x00000000      0x156
+ .debug_line_str
+                0x00000000      0x156 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+                                 0x7b (size before relaxing)
+ .debug_line_str
+                0x00000156       0xcf /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+ .debug_line_str
+                0x00000156       0xd3 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_dvmd_tls.o)
+
+.debug_info     0x00000000     0x1d95
+ .debug_info    0x00000000       0x23 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+ .debug_info    0x00000023      0x13b /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .debug_info    0x0000015e     0x11c9 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_info    0x00001327      0xa6e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+
+.debug_abbrev   0x00000000      0x70a
+ .debug_abbrev  0x00000000       0x12 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+ .debug_abbrev  0x00000012       0xcd /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .debug_abbrev  0x000000df      0x365 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_abbrev  0x00000444      0x2c6 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+
+.debug_aranges  0x00000000      0x100
+ .debug_aranges
+                0x00000000       0x28 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+ .debug_aranges
+                0x00000028       0x28 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .debug_aranges
+                0x00000050       0x50 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_aranges
+                0x000000a0       0x60 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+
+.debug_str      0x00000000     0x6eaa
+ .debug_str     0x00000000     0x6eaa /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+                                 0x89 (size before relaxing)
+ .debug_str     0x00006eaa     0x3288 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .debug_str     0x00006eaa     0x6fa3 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_str     0x00006eaa     0x6db1 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+
+.debug_rnglists
+                0x00000000      0x1b6
+ .debug_rnglists
+                0x00000000       0x19 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/startup.o
+ .debug_rnglists
+                0x00000019       0x19 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .debug_rnglists
+                0x00000032       0xfe /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_rnglists
+                0x00000130       0x86 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+
+.debug_loclists
+                0x00000000     0x10e1
+ .debug_loclists
+                0x00000000       0xe2 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .debug_loclists
+                0x000000e2      0x759 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_loclists
+                0x0000083b      0x8a6 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+
+.debug_macro    0x00000000     0x1aa7
+ .debug_macro   0x00000000       0x1a /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .debug_macro   0x0000001a      0xad8 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .debug_macro   0x00000af2      0x190 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .debug_macro   0x00000c82      0x149 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x00000dcb      0x34e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x00001119       0x1c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x00001135       0x22 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x00001157       0x75 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x000011cc       0x24 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x000011f0       0x5c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x0000124c       0x3c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x00001288       0x34 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x000012bc       0x57 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x00001313      0x364 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x00001677       0x16 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x0000168d       0x4a /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x000016d7       0x34 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x0000170b       0x10 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x0000171b       0x58 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x00001773      0x1e5 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x00001958       0x10 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x00001968       0x3c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_macro   0x000019a4      0x103 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+
+.debug_frame    0x00000000      0x2cc
+ .debug_frame   0x00000000       0x30 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/runtime.o
+ .debug_frame   0x00000030       0xe8 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.o
+ .debug_frame   0x00000118      0x13c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/daahe_core.o
+ .debug_frame   0x00000254       0x44 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+ .debug_frame   0x00000298       0x34 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)

@@ -1,0 +1,76 @@
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:200:62: warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  200 |                         ((unsigned char *)state)[lanePosition * 8 + offset + i] = ~data[i];
+      |                                                                                 ~ ^~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:384:3: warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  384 |                 COMPL(1);
+      |                 ^~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:382:70: note: expanded from macro 'COMPL'
+  382 | #define COMPL(lane) for(unsigned int i=0; i<8; i++) data[8*lane+i] = ~data[8*lane+i]
+      |                                                                    ~ ^~~~~~~~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:386:4: warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  386 |                         COMPL(2);
+      |                         ^~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:382:70: note: expanded from macro 'COMPL'
+  382 | #define COMPL(lane) for(unsigned int i=0; i<8; i++) data[8*lane+i] = ~data[8*lane+i]
+      |                                                                    ~ ^~~~~~~~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:388:5: warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  388 |                                 COMPL(8);
+      |                                 ^~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:382:70: note: expanded from macro 'COMPL'
+  382 | #define COMPL(lane) for(unsigned int i=0; i<8; i++) data[8*lane+i] = ~data[8*lane+i]
+      |                                                                    ~ ^~~~~~~~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:390:6: warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  390 |                                         COMPL(12);
+      |                                         ^~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:382:70: note: expanded from macro 'COMPL'
+  382 | #define COMPL(lane) for(unsigned int i=0; i<8; i++) data[8*lane+i] = ~data[8*lane+i]
+      |                                                                    ~ ^~~~~~~~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:392:7: warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  392 |                                                 COMPL(17);
+      |                                                 ^~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:382:70: note: expanded from macro 'COMPL'
+  382 | #define COMPL(lane) for(unsigned int i=0; i<8; i++) data[8*lane+i] = ~data[8*lane+i]
+      |                                                                    ~ ^~~~~~~~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:394:8: warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  394 |                                                         COMPL(20);
+      |                                                         ^~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:382:70: note: expanded from macro 'COMPL'
+  382 | #define COMPL(lane) for(unsigned int i=0; i<8; i++) data[8*lane+i] = ~data[8*lane+i]
+      |                                                                    ~ ^~~~~~~~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:459:3: warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  459 |                 COMPL(1);
+      |                 ^~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:457:59: note: expanded from macro 'COMPL'
+  457 | #define COMPL(lane) for(i=0; i<8; i++) output[8*lane+i] = ~output[8*lane+i]
+      |                                                         ~ ^~~~~~~~~~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:461:4: warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  461 |                         COMPL(2);
+      |                         ^~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:457:59: note: expanded from macro 'COMPL'
+  457 | #define COMPL(lane) for(i=0; i<8; i++) output[8*lane+i] = ~output[8*lane+i]
+      |                                                         ~ ^~~~~~~~~~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:463:5: warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  463 |                                 COMPL(8);
+      |                                 ^~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:457:59: note: expanded from macro 'COMPL'
+  457 | #define COMPL(lane) for(i=0; i<8; i++) output[8*lane+i] = ~output[8*lane+i]
+      |                                                         ~ ^~~~~~~~~~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:465:6: warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  465 |                                         COMPL(12);
+      |                                         ^~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:457:59: note: expanded from macro 'COMPL'
+  457 | #define COMPL(lane) for(i=0; i<8; i++) output[8*lane+i] = ~output[8*lane+i]
+      |                                                         ~ ^~~~~~~~~~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:467:7: warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  467 |                                                 COMPL(17);
+      |                                                 ^~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:457:59: note: expanded from macro 'COMPL'
+  457 | #define COMPL(lane) for(i=0; i<8; i++) output[8*lane+i] = ~output[8*lane+i]
+      |                                                         ~ ^~~~~~~~~~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:469:8: warning: implicit conversion loses integer precision: 'int' to 'unsigned char' [-Wimplicit-int-conversion]
+  469 |                                                         COMPL(20);
+      |                                                         ^~~~~~~~~
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/liboqs/src/common/sha3/xkcp_low/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c:457:59: note: expanded from macro 'COMPL'
+  457 | #define COMPL(lane) for(i=0; i<8; i++) output[8*lane+i] = ~output[8*lane+i]
+      |                                                         ~ ^~~~~~~~~~~~~~~~~
+13 warnings generated.
