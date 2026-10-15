@@ -4,7 +4,6 @@
 API: ``forward_channel(samples240)`` / ``inverse_channel(coefficients240)``;
 ``support_for_length(L)``; ``encode_channels(channels, support, step,
 coefficient_bound)``; ``reconstruct_channels(centered_quantized, support, step)``.
-The paper supplies no lifting constants, normalization, levels or boundary rule.
 Here two unnormalized Db2 lifting levels use periodic boundaries, fixed dyadic
 approximations to sqrt(3), sqrt(3)/4 and (sqrt(3)-2)/4, and nearest rounding with
 ties away from zero. Three reversible integer shears per level give exact inversion before
