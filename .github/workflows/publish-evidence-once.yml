@@ -29,7 +29,9 @@ jobs:
                   path = Path(row['path'])
                   assert not path.is_absolute() and '..' not in path.parts and not path.is_symlink()
                   original = subprocess.run(['git', 'show', manifest['base_commit'] + ':' + row['path']], capture_output=True)
-                  if original.returncode == 0:
+                  if path.is_file() and path.read_bytes() == archive.read(row['path']):
+                      pass  # The logged-in web user may have applied the exact workflow first.
+                  elif original.returncode == 0:
                       assert path.read_bytes() == original.stdout, 'Concurrent change: ' + row['path']
                   else:
                       assert not path.exists(), 'Concurrent new file: ' + row['path']
