@@ -14,5 +14,5 @@
   "board_targets":{"clock_hz":64000000,"encryption_cycles":3600000,"transform_cycles":120000,"protected_cpu_ms":58.125,"protected_cpu_mj":1.395,"static_sram_bytes":27976,"max_stack_hwm_bytes":1352,"peak_runtime_sram_bytes":29328,"flash_bytes":91188},
   "analytical_lower_bounds_ms":{"protected_phy_payload_only":131.072,"protected_cpu_plus_one_hop_payload":189.197,"workload_weighted":77.199},
   "reconstruction_targets":[{"profile":"Pi0","L":240,"delta_q":8,"rmse":0.42,"prd_percent":0.85},{"profile":"Pi1","L":180,"delta_q":12,"rmse":0.78,"prd_percent":1.42},{"profile":"Pi2","L":120,"delta_q":16,"rmse":1.15,"prd_percent":2.18}],
-  "security_floor_bits":128.1,
+  "security_floor_bits":128.1
 }
