@@ -1,11 +1,20 @@
 # Parameters, explicit completion choices
 
+The table distinguishes the manuscript's historical parameters from the current
+independent implementation. The default is now **k=6, n=m=1536**, with 7,168-byte
+ciphertexts. The pinned seven-attack run reports a minimum of **136.475 bits**
+under its stated generic flattened-LWE heuristic model. The legacy k=3 tuple
+remains available explicitly and does not meet the requested 128.1-bit floor.
+See `configs/security_profile.json`, `security/README.md` and
+`security/DECODING_BOUND.md`. Old wire, timing, energy and workspace figures
+cannot be inherited by the new parameters.
+
 | Item | Manuscript | Artifact treatment |
 |---|---|---|
-| Ring | d=256, k=3, n=768, q=2^32, p=65537, lambda_tag=16 (p.3) | fixed; delta=floor(q/p)=65535; uint32 little-endian u0,u1,u2,v |
+| Ring | d=256, k=3, n=768, q=2^32, p=65537, lambda_tag=16 (p.3) | current k=6/n=1536, same d/q/p/tag; delta=65535; uint32 little-endian u0..u5,v; legacy k=3 is explicit |
 | Secret / public-key error | discrete Gaussian sigma_key=3.2 (pp.3,12) | finite reference CDT; statistical and implementation differences explicitly documented |
 | Online noise | sigma_enc=3.2/3.4/3.6 (pp.3-4) | profile-bound; never represented as ordered security levels |
-| Capacities | 16/14/12 (p.4) | reference limits only; no original certificate provided |
+| Capacities | 16/14/12 (p.4) | independently bounded for the current finite CDT and k=6; original certificates remain unavailable; see DECODING_BOUND.md for probability scope |
 | Signal windows | two channels of 240 readings (p.8) | input integer physical units, common scale required |
 | Table III | (L,step)=(240,8),(180,12),(120,16) (p.13) | pi0/pi1/pi2 examples follow Table III |
 | Static ablation | [1.0,16,16,64,0,0] (Eq.22, p.11) | separate `static_eq22` profile; not silently equated with Table III pi0 step8 |
@@ -34,8 +43,8 @@ The former one-level approximation-prefix support discarded the tail of the
 sampling window for L<240. The reference now uses two levels so all three bundled
 profiles retain all 120 coarsest positions across both channels. This fixes that
 coverage defect; it does not establish the original paper's distortion values or
-a universally optimal support. `tests/test_signal_quality.py` supplies authored,
-unexecuted full-window impulse, constant, trend and exact inversion regressions.
+a universally optimal support. `tests/test_signal_quality.py` supplies synthetic
+full-window impulse, constant, trend and exact inversion regressions.
 `Profile.transform_id` is included in the full profile digest. The current ID is
 `reference-intdb2-two-level-periodic-unnormalized-q30-v2`; explicit old transform
 versions are rejected. The raw profile has its own quantization-version ID. These

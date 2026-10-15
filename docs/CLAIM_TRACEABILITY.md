@@ -1,7 +1,12 @@
 <!-- SPDX-License-Identifier: MIT -->
 # Claim-to-code-to-evidence traceability
 
-**Delivery status: source only, all execution deferred.** “Implemented” below means code has been written and statically inspected; it does not mean tests have passed. “Target” means transcribed from the manuscript, not independently measured.
+**Historical manuscript mapping.** Actual new execution status is recorded in `evidence/independent/STATUS.json`. “Implemented” describes source availability; execution receipts are separate. “Target” means transcribed from the manuscript, not independently measured.
+
+The current independent default uses k=6/n=1536: its seven-attack heuristic
+minimum is 136.475 bits and its ciphertext is 7,168 bytes. The separate finite-CDT
+decoding proof is in `security/DECODING_BOUND.md`. These results do not validate
+the historical k=3 experiment or its timing, energy and memory figures.
 
 | Paper item / source | Source implementation | 
 |---|---|
@@ -18,7 +23,7 @@
 | Robust fallback and conditional stability theorem, p. 8 | `control.fallback_bound`, `RobustController.select` | 
 | Security estimate `lambda_est=128.1`, Eq. (24), p. 12 | `tools/estimate_security.sage` | 
 | 10-KiB streaming workspace, pp. 4,8 | `embedded/` source hooks and safety certificate field | 
-| nRF52840 time/energy and Table II memory, pp. 8,13 | External measurement interface; `experiments/paper_targets.json` | C
+| nRF52840 time/energy and Table II memory, pp. 8,13 | External measurement interface; `experiments/paper_targets.json` |
 | 20 independent paired seeds, 300-s run, 30-s warm-up, p. 9 | `experiments/matrix.json`, `configurations.csv`, `statistics.py` | 
 | Recovery criterion, p. 9 | `tools/import_omnet.py`, `statistics.py` | 
 | Fig. 5 paired normalized means/CIs, p. 11 | `statistics.paired_bootstrap`, `statistics.summarize` | 
@@ -28,9 +33,12 @@
 
 ## Supported advantages and the evidence needed to demonstrate them
 
-1. **Payload structure:** one protected packed plaintext versus two raw plaintexts gives an inspectable 8,192→4,096-byte encrypted payload reduction at the specified tuple. 
+1. **Payload structure:** one protected packed plaintext versus two raw plaintexts gives an inspectable 14,336→7,168-byte reduction at the current k=6 tuple (8,192→4,096 for the historical k=3 tuple).
 2. **Trust separation:** block HMACs filter external pollution while the signed roster and hidden aggregate tag address the compromised-gateway setting under the paper's trusted-source/sink assumptions. 
 3. **Safety before optimization:** runtime decisions cannot trade security, no-wrap or resource constraints for a lower objective. 
 4. **Reviewer-verifiable analysis:** the package keeps source hashes, paired-seed provenance, raw values, ratio estimands, censoring and missing evidence explicit.
    
-Numerical superiority, 128.1-bit security calibration, 2^-128 batch correctness, reconstruction PRD, embedded memory bounds and exact OMNeT++ reproduction remain evidence-dependent. 
+The current attack estimates and finite-CDT single-batch decoding bound have
+executed evidence under their stated assumptions. Numerical superiority,
+original-paper security calibration, reconstruction PRD, complete embedded
+workspace bounds and exact OMNeT++ reproduction remain unestablished.

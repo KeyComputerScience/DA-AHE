@@ -1,22 +1,22 @@
 # Implementation and validation status
 
-Artifact date: 2026-10-14. Delivery status: **SOURCE PREPARED, NOT EXECUTED**.
+This checkout adds an independent experiment and measurement workflow to the
+host reference. Actual execution status, commands, outputs and limitations are
+recorded in `evidence/independent/STATUS.json` and the corresponding execution
+receipts. Source availability alone is never listed as a passed experiment.
 
-Version 0.2.0 supplements the reviewed GitHub baseline with hidden files/CI,
-source emission persistence, multilevel signal support, transform identity,
-machine-readable model/action evidence binding, calibration timing separation,
-estimator sample accounting, complete-matrix statistics and portable C tests.
-
-| Component | Source status | 
+| Component | Implementation and evidence boundary |
 |---|---|
-| Fixed-tuple M-LWE and packing | implemented | not run | 
-| Tickets, exact roster, HMAC, hidden linear tags, durable Seen | implemented | 
-| Fixed-support integer signal path | implemented | 
-| Robust control, DPP, HYS | implemented | 
-| Calibration and causal replay | implemented | 
-| Paired statistical pipeline and attack tests | implemented | 
-| Portable embedded arithmetic/stream core | implemented | 
-| Original INET experiment | specification/import path provided | 
-| 128.1-bit estimate and failure <=2^-128 | estimator entry/gates provided | 
-| 10-KiB workspace / 28.64-KiB peak | resource-accounting guidance |
-| Figures 2-6 and Table III numerical results | targets transcribed separately | 
+| Fixed-tuple M-LWE, packing, tickets, HMAC, aggregate tags and replay | Host reference; functional tests and real ML-DSA fresh-key trials |
+| Signal transform and profiles | Explicit independent completion; synthetic reconstruction only |
+| Robust control, DPP/HYS and statistics | Existing equations; analytic/functional tests; new synthetic closed-loop experiment |
+| Independent network simulator | Python packet/fragment event model; new paired seeds and raw logs; not INET/RPL or original data |
+| Core nRF52840 measurement firmware | New standalone build; ELF/map and host known answers; physical capture pending |
+| Security estimator | Pinned upstream actual per-attack logs; inspect computed costs rather than the paper target |
+| No-wrap | Exact reference-profile integer arithmetic logged; other proof/resource gates remain separate |
+| Whole-protocol embedded cost, energy and worst-case memory | Not established by a core microbenchmark |
+| Original manuscript figures and Table III | Historical targets; no claim of exact numerical reproduction |
+
+The current source manifest and the independent evidence bundle have separate
+scopes. The old v0.2.0 source manifest is preserved as an archive under
+`docs/archive/`; it must not be used to validate the changed checkout.
