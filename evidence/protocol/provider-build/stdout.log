@@ -1,0 +1,85 @@
+[  2%] Building C object src/common/sha3/xkcp_low/CMakeFiles/xkcp_low_keccakp_1600times4_serial.dir/KeccakP-1600times4/serial/KeccakP-1600-times4-on1.c.o
+[  2%] Building C object src/common/sha3/xkcp_low/CMakeFiles/xkcp_low_keccakp_1600_plain64.dir/KeccakP-1600/plain-64bits/KeccakP-1600-opt64.c.o
+[  3%] Building C object src/common/CMakeFiles/common.dir/aes/aes_impl.c.o
+[  5%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/ct.c.o
+[  6%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/debug.c.o
+[  7%] Building C object src/common/CMakeFiles/common.dir/aes/aes_c.c.o
+[  7%] Built target xkcp_low_keccakp_1600times4_serial
+[  9%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/aarch64_zetas.c.o
+[ 10%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/intt_aarch64_asm.S.o
+[ 11%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_ref.dir/sig_ml_dsa_44.c.o
+[ 12%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/mld_polyvecl_pointwise_acc_montgomery_l4_aarch64_asm.S.o
+[ 14%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/mld_polyvecl_pointwise_acc_montgomery_l5_aarch64_asm.S.o
+[ 15%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_ref.dir/mldsa-native_ml-dsa-44_ref/mldsa/src/ct.c.o
+[ 16%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/mld_polyvecl_pointwise_acc_montgomery_l7_aarch64_asm.S.o
+[ 18%] Building C object src/common/CMakeFiles/common.dir/aes/aes128_armv8.c.o
+[ 19%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_ref.dir/mldsa-native_ml-dsa-44_ref/mldsa/src/debug.c.o
+[ 20%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/ntt_aarch64_asm.S.o
+[ 22%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_ref.dir/mldsa-native_ml-dsa-44_ref/mldsa/src/packing.c.o
+[ 23%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/pointwise_montgomery_aarch64_asm.S.o
+[ 24%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/poly_caddq_aarch64_asm.S.o
+[ 25%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_ref.dir/mldsa-native_ml-dsa-44_ref/mldsa/src/poly.c.o
+[ 27%] Building C object src/common/CMakeFiles/common.dir/aes/aes256_armv8.c.o
+[ 28%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/poly_chknorm_aarch64_asm.S.o
+[ 29%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/poly_decompose_32_aarch64_asm.S.o
+[ 31%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/poly_decompose_88_aarch64_asm.S.o
+[ 32%] Building C object src/common/CMakeFiles/common.dir/aes/aes.c.o
+[ 33%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/poly_use_hint_32_aarch64_asm.S.o
+[ 35%] Building C object src/common/CMakeFiles/common.dir/sha2/sha2_impl.c.o
+[ 36%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/poly_use_hint_88_aarch64_asm.S.o
+[ 37%] Building C object src/common/CMakeFiles/common.dir/sha2/sha2_c.c.o
+[ 38%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/polyz_unpack_17_aarch64_asm.S.o
+[ 40%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_ref.dir/mldsa-native_ml-dsa-44_ref/mldsa/src/poly_kl.c.o
+[ 41%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/polyz_unpack_19_aarch64_asm.S.o
+[ 42%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/polyz_unpack_table.c.o
+[ 44%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/rej_uniform_aarch64_asm.S.o
+[ 45%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_ref.dir/mldsa-native_ml-dsa-44_ref/mldsa/src/polyvec.c.o
+[ 46%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/rej_uniform_eta2_aarch64_asm.S.o
+[ 48%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_ref.dir/mldsa-native_ml-dsa-44_ref/mldsa/src/polyvec_lazy.c.o
+[ 49%] Building ASM object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/rej_uniform_eta4_aarch64_asm.S.o
+[ 50%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/rej_uniform_eta_table.c.o
+[ 51%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_ref.dir/mldsa-native_ml-dsa-44_ref/mldsa/src/sign.c.o
+[ 53%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/native/aarch64/src/rej_uniform_table.c.o
+[ 54%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/packing.c.o
+[ 54%] Built target ml_dsa_44_ref
+[ 55%] Building C object src/common/CMakeFiles/internal.dir/aes/aes_impl.c.o
+[ 57%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/poly.c.o
+[ 58%] Building C object src/common/CMakeFiles/internal.dir/aes/aes_c.c.o
+[ 59%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/poly_kl.c.o
+[ 61%] Building C object src/common/CMakeFiles/internal.dir/aes/aes128_armv8.c.o
+[ 62%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/polyvec.c.o
+[ 63%] Building C object src/common/CMakeFiles/common.dir/sha2/sha2_armv8.c.o
+[ 66%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/polyvec_lazy.c.o
+[ 66%] Building C object src/common/CMakeFiles/internal.dir/aes/aes256_armv8.c.o
+[ 67%] Building C object src/sig/ml_dsa/CMakeFiles/ml_dsa_44_aarch64.dir/mldsa-native_ml-dsa-44_aarch64/mldsa/src/sign.c.o
+[ 68%] Building C object src/common/CMakeFiles/internal.dir/aes/aes.c.o
+[ 70%] Building C object src/common/CMakeFiles/common.dir/sha2/sha2.c.o
+[ 71%] Building C object src/common/CMakeFiles/internal.dir/sha2/sha2_impl.c.o
+[ 71%] Built target ml_dsa_44_aarch64
+[ 72%] Building C object src/common/CMakeFiles/common.dir/sha3/xkcp_sha3.c.o
+[ 74%] Building C object src/common/CMakeFiles/common.dir/sha3/xkcp_sha3x4.c.o
+[ 75%] Building C object src/common/CMakeFiles/internal.dir/sha2/sha2_c.c.o
+[ 76%] Building C object src/common/CMakeFiles/common.dir/sha3/sha3.c.o
+[ 77%] Building C object src/common/CMakeFiles/common.dir/sha3/sha3x4.c.o
+[ 79%] Building C object src/common/CMakeFiles/common.dir/common.c.o
+[ 80%] Building C object src/common/CMakeFiles/internal.dir/sha2/sha2_armv8.c.o
+[ 81%] Building C object src/common/CMakeFiles/common.dir/pqclean_shims/fips202.c.o
+[ 83%] Building C object src/common/CMakeFiles/common.dir/pqclean_shims/fips202x4.c.o
+[ 84%] Building C object src/common/CMakeFiles/internal.dir/sha2/sha2.c.o
+[ 85%] Building C object src/common/CMakeFiles/common.dir/rand/rand.c.o
+[ 87%] Building C object src/common/CMakeFiles/internal.dir/sha3/xkcp_sha3.c.o
+[ 87%] Built target common
+[ 88%] Building C object src/common/CMakeFiles/internal.dir/sha3/xkcp_sha3x4.c.o
+[ 89%] Building C object src/common/CMakeFiles/internal.dir/sha3/sha3.c.o
+[ 90%] Building C object src/common/CMakeFiles/internal.dir/sha3/sha3x4.c.o
+[ 92%] Building C object src/common/CMakeFiles/internal.dir/common.c.o
+[ 93%] Building C object src/common/CMakeFiles/internal.dir/rand/rand_nist.c.o
+[ 93%] Built target internal
+[ 93%] Built target xkcp_low_keccakp_1600_plain64
+[ 98%] Building C object src/CMakeFiles/oqs.dir/kem/kem.c.o
+[ 98%] Building C object src/CMakeFiles/oqs.dir/sig_stfl/sig_stfl.c.o
+[ 98%] Building C object src/CMakeFiles/oqs.dir/sig/sig.c.o
+[ 98%] Linking C static library ../lib/liboqs-internal.a
+[100%] Linking C shared library ../lib/liboqs.dylib
+[100%] Built target oqs
+[100%] Built target oqs-internal

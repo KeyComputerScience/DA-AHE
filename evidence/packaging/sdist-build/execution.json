@@ -1,0 +1,24 @@
+{
+  "command": [
+    "../repro-venv/bin/python",
+    "-c",
+    "from setuptools.build_meta import build_sdist; print(build_sdist(\"dist\"))"
+  ],
+  "cwd": "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE",
+  "finished_utc": "2026-10-15T02:06:20.044387+00:00",
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "process_group_id": 82121,
+  "process_id": 82121,
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "returncode": 0,
+  "schema_version": 1,
+  "source_digest": "4a3f986dd4d80bf1c1c4e271d145b8de9b9f021b80d06a051873cf182eac337c",
+  "started_utc": "2026-10-15T02:06:19.322491+00:00",
+  "status": "passed",
+  "stderr_sha256": "68be8fe9cea04802949b5ca0a235a1dfc70a1f20eb9caa221b88a71d3851bad3",
+  "stdout_sha256": "6a702ae4502c9c3d7fda8a91d12796ae0f69cd348b9efe3081f27a846acac069",
+  "timeout_s": 3600,
+  "wall_time_s": 0.7150442499842029
+}

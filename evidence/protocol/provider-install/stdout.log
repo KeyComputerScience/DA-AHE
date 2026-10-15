@@ -1,0 +1,21 @@
+-- Install configuration: "Release"
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/lib/cmake/liboqs/liboqsConfig.cmake
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/lib/cmake/liboqs/liboqsConfigVersion.cmake
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/lib/pkgconfig/liboqs.pc
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/lib/liboqs.0.16.0.dylib
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/lib/liboqs.9.dylib
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/lib/liboqs.dylib
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/lib/cmake/liboqs/liboqsTargets.cmake
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/lib/cmake/liboqs/liboqsTargets-release.cmake
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/include/oqs/oqs.h
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/include/oqs/aes_ops.h
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/include/oqs/common.h
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/include/oqs/rand.h
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/include/oqs/sha2_ops.h
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/include/oqs/sha3_ops.h
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/include/oqs/sha3x4_ops.h
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/include/oqs/kem.h
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/include/oqs/sig.h
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/include/oqs/sig_stfl.h
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/include/oqs/sig_ml_dsa.h
+-- Installing: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/oqs-install/include/oqs/oqsconfig.h

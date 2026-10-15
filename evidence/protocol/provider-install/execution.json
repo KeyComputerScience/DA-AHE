@@ -1,0 +1,22 @@
+{
+  "command": [
+    "../repro-venv/bin/cmake",
+    "--install",
+    "../liboqs-build"
+  ],
+  "cwd": "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE",
+  "finished_utc": "2026-10-15T01:18:17.167996+00:00",
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "returncode": 0,
+  "schema_version": 1,
+  "source_digest": "2301de34442ae70c6a11ef348bcd3a80693c797b419184fd5ff660f7e1d46ecb",
+  "started_utc": "2026-10-15T01:18:17.036928+00:00",
+  "status": "passed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "15c95285ed021aa17de44eed1772329e05d1fd54e65ea993aebc1d21399df63a",
+  "timeout_s": 3600,
+  "wall_time_s": 0.12308708298951387
+}

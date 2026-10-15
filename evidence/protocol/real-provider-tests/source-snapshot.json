@@ -1,0 +1,186 @@
+{
+  "algorithm": "SHA256",
+  "digest": "79e0ee172568a9b078721bb9cd490675a4600c860bd61c30b45680b7fe590ba2",
+  "files": [
+    {
+      "path": "src/daahe/__init__.py",
+      "sha256": "a5a785cfe408bcc0c6e239894fe3d47d4822388c10e293727f6dfaa8ae7972ea"
+    },
+    {
+      "path": "src/daahe/__main__.py",
+      "sha256": "094e30c7ecfc0a0b56833322b9709d64d2ddcff228adb02d094443b262974c25"
+    },
+    {
+      "path": "src/daahe/ablations.py",
+      "sha256": "6c2ab1540d45a0fa9685f282726bbd2b402a1d108376f34272fc018c05021a0d"
+    },
+    {
+      "path": "src/daahe/calibration.py",
+      "sha256": "64c7fdd11d6faf3747ca6124dc7d55ba234488c97e810a7aa2b2303817135c95"
+    },
+    {
+      "path": "src/daahe/cli.py",
+      "sha256": "7691e3eca1df1b236915e141cf8d12daf72c633734ef9f5c7eb6398c60f6d8e7"
+    },
+    {
+      "path": "src/daahe/control.py",
+      "sha256": "017ad342377a41a5a3146b38992087f08cae6d0f145297df570bc674ef785432"
+    },
+    {
+      "path": "src/daahe/derivation.py",
+      "sha256": "fde965b72748cced31acfefb136e779d6ed5f948c6e7d809b60dfe936df9969c"
+    },
+    {
+      "path": "src/daahe/evidence.py",
+      "sha256": "2357d71b8c7565740530444290e40329c17abad272d0af6fb869960c25f08762"
+    },
+    {
+      "path": "src/daahe/independent_evidence.py",
+      "sha256": "9cea099b31302116fa10c285376e91f1146bee755fbaf2f4bdfd2f312816b67e"
+    },
+    {
+      "path": "src/daahe/integration.py",
+      "sha256": "60112c543a2a181f2ea4f27f3d4c9f83474076dff395690db630d0a69d304459"
+    },
+    {
+      "path": "src/daahe/lightweight.py",
+      "sha256": "6a537f743593decb3725cb79d127f180c5d00d623d45ea71e092a59c359453e6"
+    },
+    {
+      "path": "src/daahe/mlwe.py",
+      "sha256": "51c54349439ff6f79cbaa156dbb3dcf7d51f9dfe89d6662621804eddb646371d"
+    },
+    {
+      "path": "src/daahe/profiles.py",
+      "sha256": "dc6add53fb7223afaab61074549ea33b48a973ff28303fd209012c356b7a2cb8"
+    },
+    {
+      "path": "src/daahe/protocol.py",
+      "sha256": "02f1384df473d05c1209ef355db542c2f05809906c0c6821f624a3c3777f9565"
+    },
+    {
+      "path": "src/daahe/replay.py",
+      "sha256": "28fe8a2340755cd71336e7edd727ef21c5437bed1c50740815446ced1cefa87d"
+    },
+    {
+      "path": "src/daahe/ring.py",
+      "sha256": "507106338b99c8fbba36c5d60801225c367fcbc9896813afdee583a96a7b11db"
+    },
+    {
+      "path": "src/daahe/safety.py",
+      "sha256": "90bb49123e520aa7c0ebf76f49de765fb7a17fb484742886fe5a0e5f3dab7b60"
+    },
+    {
+      "path": "src/daahe/signal.py",
+      "sha256": "21c1f738718bf21e71bdce0bc550e157c9a8637a1772fe2099182a05fadb7cb2"
+    },
+    {
+      "path": "src/daahe/signatures.py",
+      "sha256": "10c940f2d0c723e611956a78e853e18ebaa00d638f334aa238e4b3acf6411699"
+    },
+    {
+      "path": "src/daahe/statistics.py",
+      "sha256": "d33d6b3b4acf7c57c728661e91428d50e512127b7d881db58501a1d02b725e26"
+    },
+    {
+      "path": "simulation/__init__.py",
+      "sha256": "162cae4d203669b39d5b42138c6291bc910bd207c4767dc6a01b85b4ca8a9b96"
+    },
+    {
+      "path": "simulation/config.json",
+      "sha256": "78858407e1cb3afd62c3d3133249250246404fffdf7a12d377dcfddf1f305932"
+    },
+    {
+      "path": "simulation/controller_fixture.json",
+      "sha256": "a9903d4460e77d3a5687cf2f5346c6596bac4295d2664f5d18880c49281f3895"
+    },
+    {
+      "path": "simulation/exogenous.py",
+      "sha256": "47f7cb6c13c453b8b4d405db084bc63e333ab4d5caa6f6ba515fed12440da01c"
+    },
+    {
+      "path": "simulation/io.py",
+      "sha256": "f7636d3cf8d6abb512c5b62a67cb90a1aefbdf37a5ba5438c796aa48e32fb1ef"
+    },
+    {
+      "path": "simulation/policy.py",
+      "sha256": "181635f0158ef36afb44fd04d92f1f36f4c334e3ade0b3da34e355fc98a59e92"
+    },
+    {
+      "path": "firmware/build.py",
+      "sha256": "511ee7e84e6bc05ec66817b57c376604ced920c6737afabebaf39f880c8ac836"
+    },
+    {
+      "path": "firmware/nrf52840/benchmark.c",
+      "sha256": "3d5c29b9362880c7bad5f7dfe14f9de849acc48fee524ad29b4a22c5f297e61f"
+    },
+    {
+      "path": "firmware/nrf52840/linker.ld",
+      "sha256": "1f280aa376230e1016c5d0438b9f2555d81a163b1b903445140db87e707f68ea"
+    },
+    {
+      "path": "firmware/nrf52840/runtime.c",
+      "sha256": "6303b31dbf3aa392da8863c67843b8f431307571727c186ec7729abdae4fd3bf"
+    },
+    {
+      "path": "tools/capture_environment.py",
+      "sha256": "fa86b046041bed1d05088b6577c40f5beb031441f571c0273897ca371fe0097a"
+    },
+    {
+      "path": "tools/collect_board_measurements.py",
+      "sha256": "4770ff1f7eaf5f3f5741885c5ef3e006fd3d689937f8b27badf5df3a6f348562"
+    },
+    {
+      "path": "tools/estimate_security.sage",
+      "sha256": "78bb10c2ba1f605500486043b65f979bd01879d83e76b7bd1d028f7e45cf30b9"
+    },
+    {
+      "path": "tools/estimator_result_adapter.py",
+      "sha256": "a4b4ebc33a48adbd12bfedd00e1baf0d45884079140f342a148d43f3a68fd982"
+    },
+    {
+      "path": "tools/import_omnet.py",
+      "sha256": "e2b1ecdf04f5b8041b1934d2458c90fcbaad96e109894699fa13c077ab759d87"
+    },
+    {
+      "path": "tools/independent_manifest.py",
+      "sha256": "5c5a49fd8c7ddc18bd95f3c117b85d38a517783f9b0cf2320d243f879f4325f0"
+    },
+    {
+      "path": "tools/plot_results.py",
+      "sha256": "2c3c088c96b7d99552aa93c48006d6eeb8f46df9f5f9b07fb2559949a490e797"
+    },
+    {
+      "path": "tools/run_logged.py",
+      "sha256": "5fd19cbd3801972fd4d1a262f95cbc8f7c806a81ddb0abdd26a54b45596cc996"
+    },
+    {
+      "path": "tools/verify_board_measurements.py",
+      "sha256": "a497f3b40a6dd869fecd416fb08867854790663793c04e8dfb17b182a902e8cc"
+    },
+    {
+      "path": "embedded/CMakeLists.txt",
+      "sha256": "8f50c2a4f1533845e034586ed378e403ea2d6c0129eb8bd6ca58597f0391fc90"
+    },
+    {
+      "path": "embedded/daahe_core.c",
+      "sha256": "75f82cfc05d36e13c4b2d4e2c71f89811cc16b23b01f468da07a428ee796eeeb"
+    },
+    {
+      "path": "embedded/daahe_core.h",
+      "sha256": "5e3a7fdb93c78edac5e0aa6f2d5e54994a8cd821b6292e18a09312e0418156a6"
+    },
+    {
+      "path": "embedded/test_core.c",
+      "sha256": "f1a180834e544babece7f98101d7cefef545bae1ec7fa53d6cb1e4de194b5fd5"
+    }
+  ],
+  "scope": [
+    "src",
+    "simulation",
+    "firmware",
+    "security",
+    "tools",
+    "embedded"
+  ]
+}
