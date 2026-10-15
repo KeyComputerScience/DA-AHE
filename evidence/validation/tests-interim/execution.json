@@ -1,0 +1,23 @@
+{
+  "command": [
+    "../repro-venv/bin/python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "cwd": "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE",
+  "finished_utc": "2026-10-15T01:22:11.453205+00:00",
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "returncode": 0,
+  "schema_version": 1,
+  "source_digest": "a0b1e8e7a44387922c06a5de41217bd1d480cdaa65d193fa3adedc0d9cae112a",
+  "started_utc": "2026-10-15T01:22:08.606990+00:00",
+  "status": "passed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "a7f671355d4c5c0c2164570169c481b9cb6364f8efaaf7062a98084f8243fd5b",
+  "timeout_s": 3600,
+  "wall_time_s": 2.8352718749956694
+}

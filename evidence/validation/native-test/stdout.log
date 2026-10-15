@@ -1,0 +1,8 @@
+Internal ctest changing into directory: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/build/embedded
+Test project /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/build/embedded
+    Start 1: portable_core_known_answers
+1/1 Test #1: portable_core_known_answers ......   Passed    0.40 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.41 sec
