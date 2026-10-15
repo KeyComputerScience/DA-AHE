@@ -1,0 +1,66 @@
+name: Publish preserved replay diagnosis and strict CI
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - name: Apply exact reviewed bundle with concurrent-change protection
+        run: |
+          python3 - <<'PYCODE'
+          import base64, hashlib, io, json, os, subprocess
+          from pathlib import Path
+          from zipfile import ZipFile
+          bundle = Path('DA-AHE-replay-portability-update.base64')
+          decoded = base64.decodebytes(bundle.read_bytes())
+          assert hashlib.sha256(decoded).hexdigest() == 'd867651d8c0a80b72f90f9add96aff086b60286edb27ab3ff26ee5e38358801e'
+          with ZipFile(io.BytesIO(decoded)) as archive:
+              manifest = json.loads(archive.read('BUNDLE-MANIFEST.json'))
+              assert manifest['base_commit'] == '63bcbdf8500c8c2b9d44bb1742c743025b114d99'
+              assert len(manifest['files']) == 50 and manifest['source_manifest_files'] == 136
+              names = {row['path'] for row in manifest['files']}
+              assert len(names) == 50 and len(archive.namelist()) == 51
+              assert set(archive.namelist()) == names | {'BUNDLE-MANIFEST.json'}
+              for row in manifest['files']:
+                  path = Path(row['path'])
+                  assert not path.is_absolute() and '..' not in path.parts and not path.is_symlink()
+                  assert row['mode'] in (420, 493)
+                  data = archive.read(row['path'])
+                  assert len(data) == row['size'] and hashlib.sha256(data).hexdigest() == row['sha256']
+                  original = subprocess.run(['git', 'show', manifest['base_commit'] + ':' + row['path']], capture_output=True)
+                  if path.is_file() and path.read_bytes() == data:
+                      pass
+                  elif original.returncode == 0:
+                      assert path.is_file() and path.read_bytes() == original.stdout, 'Concurrent change: ' + row['path']
+                  else:
+                      assert not path.exists(), 'Concurrent new file: ' + row['path']
+              assert Path('.github/workflows/reproduce.yml').read_bytes() == archive.read('.github/workflows/reproduce.yml')
+              for row in manifest['files']:
+                  path = Path(row['path']); path.parent.mkdir(parents=True, exist_ok=True)
+                  path.write_bytes(archive.read(row['path'])); os.chmod(path, row['mode'])
+          for root, index in [(Path('.'), Path('manifest.json')),
+                              (Path('evidence/independent/replay-portability'), Path('evidence/independent/replay-portability/manifest.json'))]:
+              records = json.loads(index.read_text())['files']
+              assert len(records) == (136 if str(root) == '.' else 35)
+              for row in records:
+                  path = root / row['path']; data = path.read_bytes()
+                  assert len(data) == row['size'] and hashlib.sha256(data).hexdigest() == row['sha256'], str(path)
+          assert json.loads(Path('evidence/independent/claim-coverage.json').read_text())['paper_reproduced'] is False
+          subprocess.run(['git', 'config', 'user.name', 'github-actions[bot]'], check=True)
+          subprocess.run(['git', 'config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com'], check=True)
+          subprocess.run(['git', 'add', '-f', '--', *sorted(names)], check=True)
+          subprocess.run(['git', 'rm', '--', str(bundle)], check=True)
+          staged = set(subprocess.check_output(['git', 'diff', '--cached', '--name-only'], text=True).splitlines())
+          assert staged <= names | {str(bundle)}
+          assert not any(path.startswith('.github/workflows/') for path in staged), 'Workflow must be preapplied by web user'
+          subprocess.run(['git', 'diff', '--cached', '--check'], check=True)
+          subprocess.run(['git', 'commit', '-m', 'Preserve replay portability diagnosis and parallel strict verification [skip ci]'], check=True)
+          subprocess.run(['git', 'push', 'origin', 'HEAD:main'], check=True)
+          print(json.dumps({'applied_files': len(names), 'source_manifest_verified': 136, 'diagnosis_files_verified': 35, 'paper_reproduced': False}))
+          PYCODE
