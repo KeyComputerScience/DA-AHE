@@ -26,6 +26,10 @@ jobs:
       - run: python -m pip install -e '.[dev]'
       - name: Verify source manifest
         run: python tools/run_logged.py --output runs/source -- python -m daahe verify-manifest manifest.json --root .
+      - name: Verify preserved publication and replay diagnosis receipts
+        run: |
+          python tools/independent_manifest.py verify --root evidence/independent/publication-checks
+          python tools/independent_manifest.py verify --root evidence/independent/replay-portability
       - name: Enforce the original-paper and physical-measurement evidence scope
         run: python tools/check_ci_coverage.py --validate-claims-only --output runs/claim-scope.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -118,19 +122,22 @@ jobs:
           retention-days: 30
 
   history:
-    name: Published historical 20-seed raw evidence (140 cases)
-    runs-on: ubuntu-24.04
+    name: Historical 140-case frozen-source replay on macOS
+    runs-on: macos-26
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         with:
-          python-version: '3.12'
+          python-version: '3.12.10'
+          architecture: arm64
       - run: python -m pip install -e '.[dev]'
       # A checksum without downloadable bytes is insufficient. This step fails
       # on a missing part, altered checksum, incomplete archive or raw-data gap.
-      - name: Download and verify the pinned complete historical archive
-        run: python tools/run_logged.py --timeout 10000 --output runs/history-execution -- python tools/verify_published_evidence.py --extract-dir runs/history --recompute --replay --jobs 2 --report runs/history-verification.json
+      # Exact historical replay is platform-scoped. The Linux probe exposed a
+      # real 1-ULP belief difference; no tolerance or acceptance rule is relaxed.
+      - name: Download, recompute and exactly replay all 140 historical cases
+        run: python tools/run_logged.py --timeout 10000 --output runs/history-execution -- python tools/verify_published_evidence.py --extract-dir runs/history --recompute --replay --jobs 3 --report runs/history-verification.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
@@ -140,6 +147,30 @@ jobs:
           path: |
             runs/history-execution/
             runs/history-verification.json
+          if-no-files-found: error
+          retention-days: 30
+
+  history_linux:
+    name: Historical 140-case raw metric recomputation on Linux
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -e '.[dev]'
+      # Portable verification of the immutable historical bytes and raw metrics
+      # is distinct from the mandatory exact macOS re-execution above.
+      - name: Download and independently recompute all 140 saved raw results
+        run: python tools/run_logged.py --timeout 5000 --output runs/history-linux-execution -- python tools/verify_published_evidence.py --extract-dir runs/history --recompute --jobs 4 --report runs/history-linux-verification.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: independent-historical-linux-raw-verification
+          path: |
+            runs/history-linux-execution/
+            runs/history-linux-verification.json
           if-no-files-found: error
           retention-days: 30
 
@@ -154,9 +185,9 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install -e '.[dev]'
       - name: Execute configured 20 seeds and all seven methods
-        run: python tools/run_logged.py --timeout 10000 --output runs/campaign-execution -- python tools/run_simulation_campaign.py --config simulation/config.json --jobs 2 --output runs/simulation
+        run: python tools/run_logged.py --timeout 10000 --output runs/campaign-execution -- python tools/run_simulation_campaign.py --config simulation/config.json --jobs 4 --output runs/simulation
       - name: Recompute every raw result and replay all 140 cases
-        run: python tools/run_logged.py --timeout 12000 --output runs/campaign-verification -- python tools/verify_simulation_campaign.py runs/simulation --jobs 2 --replay
+        run: python tools/run_logged.py --timeout 12000 --output runs/campaign-verification -- python tools/verify_simulation_campaign.py runs/simulation --jobs 4 --replay
       - run: python tools/independent_manifest.py build --root runs
       - run: python tools/independent_manifest.py verify --root runs
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -236,7 +267,7 @@ jobs:
   coverage:
     name: All independent reproduction checks passed
     if: always()
-    needs: [source, functional, firmware, replay, history, campaign, security]
+    needs: [source, functional, firmware, replay, history, history_linux, campaign, security]
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
