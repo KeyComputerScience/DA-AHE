@@ -7,9 +7,7 @@ coefficient_bound)``; ``reconstruct_channels(centered_quantized, support, step)`
 Here two unnormalized Db2 lifting levels use periodic boundaries, fixed dyadic
 approximations to sqrt(3), sqrt(3)/4 and (sqrt(3)-2)/4, and nearest rounding with
 ties away from zero. Three reversible integer shears per level give exact inversion before
-selection/quantization. This choice is deterministic and inspectable, but is not
-the authors' original transform, an orthonormal Db2 implementation, or a verified
-reproduction of their distortion measurements.
+selection/quantization. 
 
 Each 240-coefficient channel is [60 level-2 approximation, 60 level-2 detail,
 120 level-1 detail]. Two channels concatenate to 480 coefficients. At most 240
@@ -19,9 +17,7 @@ the full sampling window. Quantization q=round(z/step) guarantees
 |z-step*q| <= step/2 at each retained position. Magnitudes exceeding coefficient_bound are rejected, never
 silently clipped. The protocol separately enforces N*coefficient_bound <= 32768.
 Rounded integer lifting is nonlinear: inverse(sum(transformed_channels)) can
-differ from sum(channels), even with full support. The resulting aggregation
-rounding error needs application-specific analysis and must not be advertised
-as exact raw-sample homomorphism or as a certified reconstruction bound.
+differ from sum(channels), even with full support.
 """
 
 from __future__ import annotations
