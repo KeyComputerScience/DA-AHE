@@ -1,0 +1,15 @@
+{
+  "status": "verified",
+  "source_manifest_files": 121,
+  "full_evidence_files": 1193,
+  "source_zip_evidence_files_byte_identical_to_full_archive": 238,
+  "patch_replay_tree_identical": true,
+  "git_tree": "181c766fd3d192844ae3ec12f50900e1f8732cee",
+  "simulation_raw_recomputation": {
+    "deterministic_replay": false,
+    "independent_raw_recomputation": true,
+    "source_digest": "ba9749ce35d4b401afabae8e333aaedc1521dfcedd7d7b35f44affc4cc8f579a",
+    "status": "independent_experimental_uncertified",
+    "verified_runs": 140
+  }
+}
