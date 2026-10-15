@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "publication_state": "public_release_asset_sizes_and_server_sha256_verified",
+  "release_tag": "independent-evidence-2026-10-15",
+  "release_url": "https://github.com/KeyComputerScience/DA-AHE/releases/tag/independent-evidence-2026-10-15",
+  "archive": {
+    "name": "DA-AHE-independent-evidence.tar",
+    "size": 3027425280,
+    "sha256": "079aa14358b83d5cf6e132b2c4b653ac2937feeae217c6c6965e1369cff511c0",
+    "total_file_bytes": 3024929486,
+    "regular_files": 1194,
+    "listed_evidence_files": 1193,
+    "evidence_prefix": "evidence/independent",
+    "manifest_sha256": "cfbf9718b4e2c7e015d78e310a2f2f25c7f4698d485dd563ce603df94acb9d4d"
+  },
+  "parts": [
+    {
+      "name": "DA-AHE-independent-evidence.tar.part01",
+      "size": 838860800,
+      "sha256": "eec3f9f3c0e9a7dd5b489b2041412657c6ccd52ed0a64e41e29ec1ac093fe1c0",
+      "url": "https://github.com/KeyComputerScience/DA-AHE/releases/download/independent-evidence-2026-10-15/DA-AHE-independent-evidence.tar.part01"
+    },
+    {
+      "name": "DA-AHE-independent-evidence.tar.part02",
+      "size": 838860800,
+      "sha256": "6b66144b946cc037f9acfef1ace5c2943689d4b320874c8a25ab7fcd663da2d2",
+      "url": "https://github.com/KeyComputerScience/DA-AHE/releases/download/independent-evidence-2026-10-15/DA-AHE-independent-evidence.tar.part02"
+    },
+    {
+      "name": "DA-AHE-independent-evidence.tar.part03",
+      "size": 838860800,
+      "sha256": "89fdd444cfed98742314e8f596f3bf700b44cf961d0cb3ce9c75932e9d5b35db",
+      "url": "https://github.com/KeyComputerScience/DA-AHE/releases/download/independent-evidence-2026-10-15/DA-AHE-independent-evidence.tar.part03"
+    },
+    {
+      "name": "DA-AHE-independent-evidence.tar.part04",
+      "size": 510842880,
+      "sha256": "49f4c4c9c9e352ca5c4185864aedcb01b8a20380b9ec56b78193e8b6bf885c99",
+      "url": "https://github.com/KeyComputerScience/DA-AHE/releases/download/independent-evidence-2026-10-15/DA-AHE-independent-evidence.tar.part04"
+    }
+  ],
+  "campaign": {
+    "directory": "evidence/independent/simulation",
+    "evaluation_seeds": [
+      1000,
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012,
+      1013,
+      1014,
+      1015,
+      1016,
+      1017,
+      1018,
+      1019
+    ],
+    "methods": [
+      "da-ahe",
+      "dpp",
+      "hys",
+      "without_markov",
+      "without_intdb2",
+      "without_route_repair",
+      "without_hve"
+    ],
+    "runs": 140,
+    "source_files": 28,
+    "source_digest": "ba9749ce35d4b401afabae8e333aaedc1521dfcedd7d7b35f44affc4cc8f579a",
+    "manifest_sha256": "eee549e414d972d2bfc27099faa4749c7eb2014c617a15eff02eaa51162fc61a",
+    "summary_sha256": "b73918c7c9bf9422c0b8c9121dbb1dfa27dac479ac72520a8813fbc35d844a7d"
+  },
+  "limitations": [
+    "Independent synthetic workload; original author simulator, data and calibration are unavailable.",
+    "No physical-board samples or measurements.",
+    "Selected k=6 security/performance parameters differ from manuscript k=3.",
+    "Historical archive STATUS.json is preserved byte-for-byte; current publication state is recorded here.",
+    "Deterministic gzip equality is verified in the recorded environment and must not be assumed across all Python/zlib platforms."
+  ],
+  "remote_verification": {
+    "checked_utc": "2026-10-15T07:49:44.577273+00:00",
+    "release_id": 413533359,
+    "release_api_url": "https://api.github.com/repos/KeyComputerScience/DA-AHE/releases/tags/independent-evidence-2026-10-15",
+    "release_draft": false,
+    "scope": "Public GitHub API availability, all part sizes and GitHub server SHA256; full downloaded-byte verification is a separate CI step",
+    "verified_parts": 4
+  }
+}

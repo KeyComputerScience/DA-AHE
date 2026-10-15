@@ -25,7 +25,8 @@ used as a simulator output or as an acceptance tolerance.
 - `security/` and `tools/estimate_security.sage`: pinned Lattice Estimator runner
   and per-attack execution logs. Failed or incomplete attacks are retained.
 - `evidence/independent/`: public evidence produced by actual new executions;
-  see `STATUS.json` for which stages completed and which remain pending.
+  see `STATUS.json` for the historical execution snapshot and
+  `publication.json` for the current complete archive location and hashes.
 - `tools/run_logged.py`: argv, timestamps, source hashes, stdout/stderr and exit
   status for successful **and failed** commands.
 - `tools/independent_manifest.py`: independent evidence byte-integrity checks.
@@ -100,10 +101,32 @@ manifest is preserved in `docs/archive/manifest-v0.2.0-original.json`; it is an
 archive and does not describe the current tree.
 
 Full generated network traces are excluded from Git and from the small source
-ZIP. Keep the companion `DA-AHE-independent-evidence.tar`, which contains the
-complete raw campaign and its byte manifest. The repository's
+ZIP. The complete immutable `DA-AHE-independent-evidence.tar` is distributed as
+four assets in the [independent evidence release](https://github.com/KeyComputerScience/DA-AHE/releases/tag/independent-evidence-2026-10-15).
+Its SHA-256 is `079aa14358b83d5cf6e132b2c4b653ac2937feeae217c6c6965e1369cff511c0`.
+See [PUBLIC_EVIDENCE.md](docs/PUBLIC_EVIDENCE.md) for download, safe extraction,
+all-140 raw metric recomputation and archived-source deterministic replay.
+The repository's
 `evidence/independent/campaign-report/` directory is only a metadata/per-seed
-extract. Until the full archive is uploaded to durable public storage with its
-SHA256, the repository alone is not a complete public evidence release.
+extract; the release supplies the full raw records, all 20 exogenous inputs and
+28-file frozen simulator source. Historical `STATUS.json` files remain unchanged;
+the new `publication.json` records the current publication state.
+
+## Mandatory CI coverage and claim scope
+
+Every push to main, pull request and manual run executes source integrity,
+real-provider protocol/native tests, ARM microbenchmark compilation, small-case
+replay, historical 140-case download/recomputation/frozen-source replay, a fresh
+20-seed/140-case campaign with replay, seven fresh pinned attack estimates and
+exact-CDT Sage decoding checks. The aggregate check fails if any required job is
+missing, skipped, cancelled or unsuccessful. Full runs can take substantially
+longer than functional tests; workflow configuration alone is not a successful
+execution receipt.
+
+The [claim coverage matrix](docs/REPRODUCTION_COVERAGE.md) distinguishes the
+independent implementation from unverified manuscript claims. Complete software
+CI and public synthetic records do not establish original-paper reproduction,
+physical-board timing/energy/stack measurements or full-system certification.
+Those states remain false in the machine-readable claim contract.
 
 Original code is under MIT. See `LICENSE` and `THIRD_PARTY.md` for dependencies.

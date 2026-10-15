@@ -1,0 +1,866 @@
+{
+  "archive_sha256": "079aa14358b83d5cf6e132b2c4b653ac2937feeae217c6c6965e1369cff511c0",
+  "archive_verified": true,
+  "campaign_runs": 140,
+  "frozen_source_files_verified": 28,
+  "frozen_source_replay": {
+    "deterministic_replay": true,
+    "runs": [
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1000
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1000
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1000
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1000
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1000
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1000
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1000
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1001
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1001
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1001
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1001
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1001
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1001
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1001
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1002
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1002
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1002
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1002
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1002
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1002
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1002
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1003
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1003
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1003
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1003
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1003
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1003
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1003
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1004
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1004
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1004
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1004
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1004
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1004
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1004
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1005
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1005
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1005
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1005
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1005
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1005
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1005
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1006
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1006
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1006
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1006
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1006
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1006
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1006
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1007
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1007
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1007
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1007
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1007
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1007
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1007
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1008
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1008
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1008
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1008
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1008
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1008
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1008
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1009
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1009
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1009
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1009
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1009
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1009
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1009
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1010
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1010
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1010
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1010
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1010
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1010
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1010
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1011
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1011
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1011
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1011
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1011
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1011
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1011
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1012
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1012
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1012
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1012
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1012
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1012
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1012
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1013
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1013
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1013
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1013
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1013
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1013
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1013
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1014
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1014
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1014
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1014
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1014
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1014
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1014
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1015
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1015
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1015
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1015
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1015
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1015
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1015
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1016
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1016
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1016
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1016
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1016
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1016
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1016
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1017
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1017
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1017
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1017
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1017
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1017
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1017
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1018
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1018
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1018
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1018
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1018
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1018
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1018
+      },
+      {
+        "method": "da-ahe",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1019
+      },
+      {
+        "method": "dpp",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1019
+      },
+      {
+        "method": "hys",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1019
+      },
+      {
+        "method": "without_hve",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1019
+      },
+      {
+        "method": "without_intdb2",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1019
+      },
+      {
+        "method": "without_markov",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1019
+      },
+      {
+        "method": "without_route_repair",
+        "passed": true,
+        "raw_files": 4,
+        "seed": 1019
+      }
+    ],
+    "source": "archived_frozen_snapshot",
+    "verified_runs": 140
+  },
+  "listed_evidence_files_verified": 1193,
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "physical_board_samples": 0,
+  "raw_recomputation": {
+    "deterministic_replay": false,
+    "independent_raw_recomputation": true,
+    "source_digest": "ba9749ce35d4b401afabae8e333aaedc1521dfcedd7d7b35f44affc4cc8f579a",
+    "status": "independent_experimental_uncertified",
+    "verified_runs": 140
+  },
+  "seeds": 20,
+  "source_digest": "ba9749ce35d4b401afabae8e333aaedc1521dfcedd7d7b35f44affc4cc8f579a"
+}

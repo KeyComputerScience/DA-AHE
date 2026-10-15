@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "case": "normal",
+      "rejected": false
+    },
+    {
+      "case": "traversal",
+      "rejected": true
+    },
+    {
+      "case": "absolute",
+      "rejected": true
+    },
+    {
+      "case": "symlink",
+      "rejected": true
+    },
+    {
+      "case": "hardlink",
+      "rejected": true
+    },
+    {
+      "case": "duplicate",
+      "rejected": true
+    },
+    {
+      "case": "changed-part",
+      "rejected": true
+    }
+  ]
+}

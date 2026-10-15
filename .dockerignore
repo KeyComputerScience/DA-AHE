@@ -10,6 +10,7 @@ build
 dist
 external
 runs
+work
 private
 **/private
 *.key

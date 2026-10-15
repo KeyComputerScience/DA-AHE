@@ -1,0 +1,28 @@
+{
+  "command": [
+    "../repro-venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-m",
+    "not pq",
+    "--ignore=tests/test_decoding_bound_interval.py"
+  ],
+  "cwd": "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/full-evidence-ci",
+  "finished_utc": "2026-10-15T07:48:41.091464+00:00",
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "process_group_id": 92198,
+  "process_id": 92198,
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "returncode": 0,
+  "schema_version": 1,
+  "source_digest": "98df35475c0890bdf0b5ded8552bdc91c583800f676d3ff45ca7bd18bfbb3541",
+  "started_utc": "2026-10-15T07:48:30.202884+00:00",
+  "status": "passed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "cd8e587862233cf0d056f9811ccde87fa166d5cd6a9997d13a1a21d29722a7ef",
+  "timeout_s": 3600,
+  "wall_time_s": 10.877209250000305
+}

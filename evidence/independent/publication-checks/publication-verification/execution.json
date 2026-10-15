@@ -1,0 +1,33 @@
+{
+  "command": [
+    "../repro-venv/bin/python",
+    "tools/verify_published_evidence.py",
+    "--assets-dir",
+    "../release-assets-independent-2026-10-15",
+    "--extract-dir",
+    "../published-evidence-full",
+    "--recompute",
+    "--replay",
+    "--jobs",
+    "8",
+    "--report",
+    "../full-evidence-publish-runs/publication-verification.json"
+  ],
+  "cwd": "/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/full-evidence-ci",
+  "finished_utc": "2026-10-15T07:13:42.495863+00:00",
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "process_group_id": 90644,
+  "process_id": 90644,
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "returncode": 0,
+  "schema_version": 1,
+  "source_digest": "cca4cc80a2b2c583bbc65018ad9061c590c587fe8657b0dfb5559e96c45f7fc1",
+  "started_utc": "2026-10-15T06:57:31.511003+00:00",
+  "status": "passed",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "1154aa686a2051b541847d760765d8f8bb28f2abc13ea69ca3765f1ffa919594",
+  "timeout_s": 10000.0,
+  "wall_time_s": 580.1567675419792
+}

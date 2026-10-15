@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "artifact_type": "daahe-reproduction-claim-coverage",
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "all_manuscript_metrics_verified": false,
+  "full_system_certified": false,
+  "original_author_artifacts_restored": false,
+  "physical_board_samples": 0,
+  "independent_campaign": {
+    "seeds": 20,
+    "methods": 7,
+    "runs": 140,
+    "nodes": 3000,
+    "gateways": 60,
+    "generation_duration_s": 90,
+    "drain_s": 35,
+    "model": "independent synthetic Python discrete-event simulation",
+    "original_paper_runs": false,
+    "full_raw_recomputation": "executed_passed",
+    "deterministic_replay_receipt_is_separate": true,
+    "all_recovery_records_right_censored": true,
+    "source_drift_requires_frozen_source_for_replay": true
+  },
+  "claim_states": [
+    {
+      "id": "host_protocol",
+      "independent_status": "executed_host_tests_and_real_provider_trials",
+      "original_paper_verified": false,
+      "evidence": ["tests/final-host-02/execution.json", "protocol/selected-k6-trials/summary.json"],
+      "scope": "Host additive encryption, whole-roster authorization, integrity and replay behavior; not complete embedded deployment"
+    },
+    {
+      "id": "original_security_128_1",
+      "independent_status": "legacy_tuple_does_not_meet_requested_floor",
+      "original_paper_verified": false,
+      "blockers": ["Original Sage environment and attack logs absent", "Selected k=6 tuple differs from manuscript k=3"]
+    },
+    {
+      "id": "selected_security_estimate",
+      "independent_status": "seven_attacks_executed_and_record_verified",
+      "original_paper_verified": false,
+      "evidence": ["security-parameter-search/selected-k6-full/security.json", "security-parameter-search/selected-k6-full/verification.json"],
+      "estimated_minimum_bits": 136.475,
+      "requested_minimum_bits": 128.1,
+      "scope": "Generic flattened-LWE/Gaussian-like estimator; ADPS16 quantum heuristic; not actual-CDT, module, side-channel or all-attack proof"
+    },
+    {
+      "id": "selected_decoding_bound",
+      "independent_status": "exact_finite_CDT_outward_interval_bound_executed",
+      "original_paper_verified": false,
+      "evidence": ["decoding/k6-cdt-03/decoding-bound.json"],
+      "adaptive_choices": 42,
+      "log2_failure_upper_approx": -130.5101731584115,
+      "scope": "One preauthorized fresh honest batch; joint random-key/history/noise probability; not each fixed key, arbitrary conditional history or lifetime"
+    },
+    {
+      "id": "independent_20_seed_140_runs",
+      "independent_status": "executed_and_full_raw_independently_recomputed",
+      "original_paper_verified": false,
+      "evidence": ["simulation", "simulation-execution/execution.json", "simulation-verification/stdout.log"],
+      "scope": "Synthetic independent workload and raw metrics, not the missing original 20-seed records"
+    },
+    {
+      "id": "original_network_figures_and_baselines",
+      "independent_status": "comparison_targets_only",
+      "original_paper_verified": false,
+      "blockers": ["Original OMNeT++/INET/RPL source, configuration and traces absent", "Executed workload and gateway count differ", "Original baseline implementations absent"]
+    },
+    {
+      "id": "original_recovery_time",
+      "independent_status": "independent_results_right_censored",
+      "original_paper_verified": false,
+      "blockers": ["No original recovery records", "All 140 independent runs have no observed qualifying recovery; censoring time is not recovery time"]
+    },
+    {
+      "id": "original_5000_node_loss",
+      "independent_status": "comparison_target_only",
+      "original_paper_verified": false,
+      "blockers": ["No executed original-equivalent 5000-node campaign"]
+    },
+    {
+      "id": "signal_RMSE_PRD",
+      "independent_status": "independent_transform_and_synthetic_regressions",
+      "original_paper_verified": false,
+      "blockers": ["Original lifting, normalization and supports absent", "Original signal corpus, units and reconstruction logs absent"]
+    },
+    {
+      "id": "control_calibration_and_stability",
+      "independent_status": "uncalibrated_synthetic_fixture_only",
+      "original_paper_verified": false,
+      "blockers": ["Training, heldout calibration and evaluation evidence absent", "Reviewed model, uncertainty, adaptation, invariant-domain and fallback certificates absent"]
+    },
+    {
+      "id": "full_protocol_airtime_energy",
+      "independent_status": "explicit_synthetic_accounting_and_assumptions",
+      "original_paper_verified": false,
+      "blockers": ["Measured physical and radio calibration absent", "Full ticket lifecycle, receive/listen and OS/interrupt costs not modeled"]
+    },
+    {
+      "id": "board_cycles_time_energy",
+      "independent_status": "core_harness_cross_compiled_board_pending",
+      "original_paper_verified": false,
+      "evidence": ["firmware/selected-k6/build-metadata.json", "firmware/selected-status.json"],
+      "blockers": ["Physical samples = 0", "Complete board encryption, transform, authentication, radio and operating system not implemented in harness", "Calibrated external power traces absent"]
+    },
+    {
+      "id": "board_memory_flash_stack",
+      "independent_status": "core_harness_build_sizes_only",
+      "original_paper_verified": false,
+      "blockers": ["Original complete firmware absent", "Complete-role memory layout, physical stack high-water and peak-memory evidence absent"]
+    },
+    {
+      "id": "complete_10_KiB_workspace",
+      "independent_status": "certificate_interface_and_core_buffer_layout_only",
+      "original_paper_verified": false,
+      "blockers": ["Selected-tuple complete-role memory certificate absent"]
+    }
+  ],
+  "verification_policy": {
+    "passing_ci_does_not_imply_paper_reproduced": true,
+    "hash_integrity_does_not_authenticate_physical_measurements": true,
+    "configuration_presence_does_not_imply_execution": true,
+    "workflow_presence_does_not_imply_execution": true,
+    "compilation_does_not_imply_physical_board_execution": true,
+    "synthetic_fixture_cannot_be_relabelled_external_certificate": true,
+    "manuscript_targets_cannot_be_used_as_generated_results": true
+  }
+}
