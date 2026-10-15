@@ -1,0 +1,12 @@
+{
+  "provenance": "independent_reproduction",
+  "status": "failed_execution",
+  "execution_returncode": 1,
+  "script_sha256": "a6fae2aee4c5cbaf8dd88b895ef40367ad315b57ab071343cb87e751e513c786",
+  "error": "TypeError: unable to convert '3.2' to a rational",
+  "cause": "Sage QQ does not accept decimal strings directly; no probability bound was produced",
+  "preserved_files": [
+    "sampler-cdts.json"
+  ],
+  "threshold_passed": false
+}

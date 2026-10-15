@@ -1,0 +1,46 @@
+{
+  "exact_cdt_probabilities_and_hashes_verified": true,
+  "finite_adaptive_union_count": 42,
+  "finite_adaptive_union_exact_upper_le_minus128": true,
+  "fixed_profile_checks": [
+    {
+      "N": 16,
+      "exact_upper_le_minus128": true,
+      "poly_count": 1,
+      "sigma_enc": 3.2
+    },
+    {
+      "N": 16,
+      "exact_upper_le_minus128": true,
+      "poly_count": 2,
+      "sigma_enc": 3.2
+    },
+    {
+      "N": 14,
+      "exact_upper_le_minus128": true,
+      "poly_count": 1,
+      "sigma_enc": 3.4
+    },
+    {
+      "N": 14,
+      "exact_upper_le_minus128": true,
+      "poly_count": 2,
+      "sigma_enc": 3.4
+    },
+    {
+      "N": 12,
+      "exact_upper_le_minus128": true,
+      "poly_count": 1,
+      "sigma_enc": 3.6
+    },
+    {
+      "N": 12,
+      "exact_upper_le_minus128": true,
+      "poly_count": 2,
+      "sigma_enc": 3.6
+    }
+  ],
+  "note": "Record-integrity/exact-rational checks; the mathematical interval proof remains in the Sage execution and documented assumptions.",
+  "provenance": "independent_reproduction",
+  "record_verification": "passed"
+}

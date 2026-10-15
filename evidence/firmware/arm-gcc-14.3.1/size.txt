@@ -1,0 +1,21 @@
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.elf  :
+section            size        addr
+.vectors            256           0
+.text              5032         256
+.ARM.exidx            8        5288
+.data                 0   536870912
+.bss              17536   536870912
+.ARM.attributes      47           0
+.debug_line        8795           0
+.debug_line_str     342           0
+.debug_info        7293           0
+.debug_abbrev      1789           0
+.debug_aranges      248           0
+.debug_str        28211           0
+.debug_rnglists     432           0
+.debug_loclists    4319           0
+.debug_macro       6805           0
+.debug_frame        688           0
+Total             81801
+
+

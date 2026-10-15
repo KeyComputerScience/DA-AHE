@@ -1,0 +1,50 @@
+{
+  "schema_version": 2,
+  "status": "selected_rank6_cross_compiled_and_host_validated_board_pending",
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "build_metadata": "selected-k6/build-metadata.json",
+  "build_metadata_sha256": "f4bd63d83b40c7dcf7af6e27355cd9d06066a0d22d67c66a4c7e4863a0e8a2ed",
+  "build_id": "106d2434c4506359e2eef5b418c4502ae2466ede4306fcd862c2aff1e37ebc28",
+  "parameters": {
+    "module_rank": 6,
+    "ring_degree": 256,
+    "plaintext_modulus": 65537,
+    "ciphertext_modulus": 4294967296,
+    "ciphertext_bytes": 7168,
+    "ciphertexts_per_stream": 1,
+    "stream_roster_size": 16,
+    "stream_block_bytes": 64
+  },
+  "elf_sha256": "96de9a4f98f10544c2b9868a3502a80397b668a6aaf240cf975b26dc093f1b73",
+  "map_sha256": "bc68e583dc25b183826357ec6591179b8d5930828f7d171b07c7b7b03f4a3fbd",
+  "compiled_memory_bytes": {
+    "flash_load_sections": 5624,
+    "static_ram_data_bss": 20608,
+    "benchmark_psp_included_in_bss": 8192,
+    "main_msp_reserved_separately": 4096,
+    "scope": "compiled independent harness only; not measured stack or paper firmware"
+  },
+  "host_validation": {
+    "pytest_passed": 37,
+    "ruff": "passed",
+    "native_core_known_answers": "passed_actual_rank6_execution",
+    "log_sha256": "3cc413712cbc647a771af3337c099e0a4a20436a2a3c7c38e7730cb6399a2fe5",
+    "junit_sha256": "19138dee21d46cbabe0451bf8d0d1cb726b7d6d046e5430e2cf234b883d8938c",
+    "cmake_configure_build_ctest_rank6": "passed_actual_execution",
+    "cmake_log_sha256": "5cf96884acf7fbfce42a43ccbc9ed146c0434345a74f45716416acf229ae6536"
+  },
+  "physical_board": {
+    "status": "pending",
+    "samples": 0,
+    "cycles_measured": false,
+    "stack_hwm_measured": false,
+    "energy_measured": false
+  },
+  "legacy_baseline": "arm-gcc-14.3.1/build-metadata.json",
+  "limitations": [
+    "Core microbenchmarks only; not full M-LWE encryption, ML-DSA/HMAC/KDF/IntDb2, radio or Contiki-NG.",
+    "No board execution or full-protocol 10-KiB workspace claim.",
+    "Security estimation is separate evidence, not measured by this firmware."
+  ]
+}

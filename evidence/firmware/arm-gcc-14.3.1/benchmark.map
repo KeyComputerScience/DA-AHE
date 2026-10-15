@@ -1,0 +1,380 @@
+Archive member included to satisfy reference by file (symbol)
+
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+                              /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o (__aeabi_ldivmod)
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+                              /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o) (__udivmoddi4)
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_dvmd_tls.o)
+                              /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o) (__aeabi_ldiv0)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .text          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .comment       0x00000000       0x47 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .text          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00000000      0xacc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00000000      0x190 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .comment       0x00000000       0x47 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .group         0x00000000        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .text          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .text.daahe_wipe
+                0x00000000       0x14 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .text.daahe_linear_tag
+                0x00000000       0xa0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000      0xacc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000      0x190 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000      0x34e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x22 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x22 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x75 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x24 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x5c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x3c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x34 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x57 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000      0x364 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x16 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x4a /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x34 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x10 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x58 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000      0x1e5 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x10 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_macro   0x00000000       0x3c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .comment       0x00000000       0x47 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+ .text          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+ .ARM.extab.text.__udivmoddi4
+                0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+ .data          0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_dvmd_tls.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x00000000         0x00100000         xr
+RAM              0x20000000         0x00040000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+LOAD /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+LOAD /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+LOAD /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+LOAD /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a
+                0x20040000                        __StackTop = (ORIGIN (RAM) + LENGTH (RAM))
+                0x2003f000                        __StackLimit = (__StackTop - 0x1000)
+
+.vectors        0x00000000      0x100
+ *(.vectors)
+ .vectors       0x00000000      0x100 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+                0x00000000                vector_table
+
+.text           0x00000100     0x13a8
+ *(.text*)
+ .text.Reset_Handler
+                0x00000100       0x44 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+                0x00000100                Reset_Handler
+ .text.bench_on_stack
+                0x00000144       0x32 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+                0x00000144                bench_on_stack
+ *fill*         0x00000176        0x2 
+ .text.memset   0x00000178       0x14 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+                0x00000178                memset
+ .text.memcpy   0x0000018c       0x14 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+                0x0000018c                memcpy
+ .text.puts_uart
+                0x000001a0       0x28 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .text.uint_uart
+                0x000001c8       0x58 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .text.fixture_matrix
+                0x00000220        0xc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .text.fixture_accept
+                0x0000022c        0x4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .text.timed_wrapper
+                0x00000230      0x2d8 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .text.startup.main
+                0x00000508      0x498 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+                0x00000508                main
+ .text.daahe_ring_mul
+                0x000009a0       0x74 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+                0x000009a0                daahe_ring_mul
+ .text.daahe_pack
+                0x00000a14       0xc0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+                0x00000a14                daahe_pack
+ .text.daahe_linear_tag_stream
+                0x00000ad4      0x124 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+                0x00000ad4                daahe_linear_tag_stream
+ .text.daahe_decode_word
+                0x00000bf8       0x5c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+                0x00000bf8                daahe_decode_word
+ .text.daahe_stream_init
+                0x00000c54       0x54 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+                0x00000c54                daahe_stream_init
+ .text.daahe_stream_push
+                0x00000ca8       0xc4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+                0x00000ca8                daahe_stream_push
+ .text.daahe_stream_finish
+                0x00000d6c       0x20 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+                0x00000d6c                daahe_stream_finish
+ .text          0x00000d8c       0xa0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+                0x00000d8c                __aeabi_ldivmod
+ .text.__udivmoddi4
+                0x00000e2c      0x2f8 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+                0x00000e2c                __udivmoddi4
+ .text          0x00001124        0x4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x00001124                __aeabi_ldiv0
+                0x00001124                __aeabi_idiv0
+ *(.rodata*)
+ .rodata.main.str1.4
+                0x00001128      0x368 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+                                0x2eb (size before relaxing)
+ .rodata.str1.4
+                0x00001490       0x80 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .rodata.operations
+                0x00001490       0x18 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+                0x00001510                        . = ALIGN (0x4)
+
+.glue_7         0x000014a8        0x0
+ .glue_7        0x000014a8        0x0 linker stubs
+
+.glue_7t        0x000014a8        0x0
+ .glue_7t       0x000014a8        0x0 linker stubs
+
+.vfp11_veneer   0x000014a8        0x0
+ .vfp11_veneer  0x000014a8        0x0 linker stubs
+
+.v4_bx          0x000014a8        0x0
+ .v4_bx         0x000014a8        0x0 linker stubs
+
+.iplt           0x000014a8        0x0
+ .iplt          0x000014a8        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+
+.ARM.exidx      0x000014a8        0x8
+ *(.ARM.exidx*)
+ .ARM.exidx.text.__udivmoddi4
+                0x000014a8        0x8 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+
+.rel.dyn        0x000014b0        0x0
+ .rel.iplt      0x000014b0        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+
+.data           0x20000000        0x0 load address 0x000014b0
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        __data_start__ = .
+ *(.data*)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        __data_end__ = .
+                0x000014b0                        __data_load__ = LOADADDR (.data)
+
+.igot.plt       0x20000000        0x0 load address 0x000014b0
+ .igot.plt      0x20000000        0x0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+
+.bss            0x20000000     0x4480 load address 0x000014b0
+                0x20000000                        . = ALIGN (0x8)
+                0x20000000                        __bss_start__ = .
+ *(.bss*)
+ .bss.selected_operation
+                0x20000000        0x4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.measured_ok
+                0x20000004        0x4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.elapsed_us
+                0x20000008        0x4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.elapsed_cycles
+                0x2000000c        0x4 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.stream    0x20000010       0x1c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.mac_placeholder
+                0x2000002c       0x10 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ *fill*         0x2000003c        0x4 
+ .bss.block_payload
+                0x20000040       0x40 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.accumulator
+                0x20000080     0x1000 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.signed_data
+                0x20001080      0x3c0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.offset    0x20001440       0x40 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.tag       0x20001480       0x40 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.data      0x200014c0      0x3c0 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.packed    0x20001880      0x400 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.ring_b    0x20001c80      0x400 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.ring_a    0x20002080      0x400 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .bss.bench_stack
+                0x20002480     0x2000 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ *(COMMON)
+                0x20004480                        . = ALIGN (0x8)
+                0x20004480                        __bss_end__ = .
+                0x00004480                        __static_ram_bytes__ = (SIZEOF (.data) + SIZEOF (.bss))
+                0x00000001                        ASSERT ((__bss_end__ <= __StackLimit), RAM collides with reserved main stack)
+
+/DISCARD/
+ *(.comment)
+ *(.note*)
+OUTPUT(/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.elf elf32-littlearm)
+LOAD linker stubs
+
+.ARM.attributes
+                0x00000000       0x2f
+ .ARM.attributes
+                0x00000000       0x21 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+ .ARM.attributes
+                0x00000021       0x2e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .ARM.attributes
+                0x0000004f       0x2e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .ARM.attributes
+                0x0000007d       0x2e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .ARM.attributes
+                0x000000ab       0x1e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+ .ARM.attributes
+                0x000000c9       0x2e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)
+ .ARM.attributes
+                0x000000f7       0x1e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_dvmd_tls.o)
+
+.debug_line     0x00000000     0x225b
+ .debug_line    0x00000000       0x7f /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+ .debug_line    0x0000007f      0x1ad /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .debug_line    0x0000022c     0x1425 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_line    0x00001651      0xc0a /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+
+.debug_line_str
+                0x00000000      0x156
+ .debug_line_str
+                0x00000000      0x156 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+                                 0x7b (size before relaxing)
+ .debug_line_str
+                0x00000156       0xcf /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+ .debug_line_str
+                0x00000156       0xd3 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_dvmd_tls.o)
+
+.debug_info     0x00000000     0x1c7d
+ .debug_info    0x00000000       0x23 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+ .debug_info    0x00000023      0x13b /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .debug_info    0x0000015e     0x10b1 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_info    0x0000120f      0xa6e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+
+.debug_abbrev   0x00000000      0x6fd
+ .debug_abbrev  0x00000000       0x12 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+ .debug_abbrev  0x00000012       0xcd /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .debug_abbrev  0x000000df      0x358 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_abbrev  0x00000437      0x2c6 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+
+.debug_aranges  0x00000000       0xf8
+ .debug_aranges
+                0x00000000       0x28 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+ .debug_aranges
+                0x00000028       0x28 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .debug_aranges
+                0x00000050       0x48 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_aranges
+                0x00000098       0x60 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+
+.debug_str      0x00000000     0x6e33
+ .debug_str     0x00000000     0x6e33 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+                                 0x89 (size before relaxing)
+ .debug_str     0x00006e33     0x3266 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .debug_str     0x00006e33     0x6f2c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_str     0x00006e33     0x6d80 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+
+.debug_rnglists
+                0x00000000      0x1b0
+ .debug_rnglists
+                0x00000000       0x19 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/startup.o
+ .debug_rnglists
+                0x00000019       0x19 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .debug_rnglists
+                0x00000032       0xf8 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_rnglists
+                0x0000012a       0x86 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+
+.debug_loclists
+                0x00000000     0x10df
+ .debug_loclists
+                0x00000000       0xe2 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .debug_loclists
+                0x000000e2      0x757 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_loclists
+                0x00000839      0x8a6 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+
+.debug_macro    0x00000000     0x1a95
+ .debug_macro   0x00000000       0x1a /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .debug_macro   0x0000001a      0xacc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .debug_macro   0x00000ae6      0x190 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .debug_macro   0x00000c76      0x13d /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00000db3      0x34e /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00001101       0x22 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00001123       0x22 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00001145       0x75 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x000011ba       0x24 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x000011de       0x5c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x0000123a       0x3c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00001276       0x34 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x000012aa       0x57 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00001301      0x364 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00001665       0x16 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x0000167b       0x4a /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x000016c5       0x34 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x000016f9       0x10 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00001709       0x58 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00001761      0x1e5 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00001946       0x10 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00001956       0x3c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_macro   0x00001992      0x103 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+
+.debug_frame    0x00000000      0x2b0
+ .debug_frame   0x00000000       0x30 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/runtime.o
+ .debug_frame   0x00000030       0xcc /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/benchmark.o
+ .debug_frame   0x000000fc      0x13c /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/arm-gcc-14.3.1/daahe_core.o
+ .debug_frame   0x00000238       0x44 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_aeabi_ldivmod.o)
+ .debug_frame   0x0000027c       0x34 /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/firmware-toolchain/arm-gnu-toolchain-14.3.rel1-darwin-arm64-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m/nofp/libgcc.a(_udivmoddi4.o)

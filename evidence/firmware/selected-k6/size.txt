@@ -1,0 +1,21 @@
+/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/benchmark.elf  :
+section            size        addr
+.vectors            256           0
+.text              5360         256
+.ARM.exidx            8        5616
+.data                 0   536870912
+.bss              20608   536870912
+.ARM.attributes      47           0
+.debug_line        8894           0
+.debug_line_str     342           0
+.debug_info        7573           0
+.debug_abbrev      1802           0
+.debug_aranges      256           0
+.debug_str        28330           0
+.debug_rnglists     438           0
+.debug_loclists    4321           0
+.debug_macro       6823           0
+.debug_frame        716           0
+Total             85774
+
+

@@ -1,0 +1,8 @@
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/../repro-venv/bin/python', '-m', 'pytest', '-q', 'tests/test_board_measurements.py', '--junitxml=/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/host-tests.junit.xml']
+.....................................                                    [100%]
+- generated xml file: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/evidence/independent/firmware/selected-k6/host-tests.junit.xml -
+37 passed in 3.28s
+
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/../repro-venv/bin/python', '-m', 'ruff', 'check', 'firmware/build.py', 'tools/collect_board_measurements.py', 'tools/verify_board_measurements.py', 'tests/test_board_measurements.py']
+All checks passed!
+

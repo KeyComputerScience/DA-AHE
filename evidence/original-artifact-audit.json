@@ -1,0 +1,59 @@
+{
+  "experiments_executed": false,
+  "note": "Presence and SHA256 checks do not validate author provenance or numerical claims.",
+  "paper_reproduced": false,
+  "problems": [
+    {
+      "reason": "missing_author_artifact",
+      "required": "Original 20 independent evaluation seeds and separate calibration seeds",
+      "role": "evaluation_seeds"
+    },
+    {
+      "reason": "missing_author_artifact",
+      "required": "Author OMNeT++ 6.0 / INET 4.4 modules, NED topology, INI configurations and instrumentation",
+      "role": "omnet_source"
+    },
+    {
+      "reason": "missing_author_artifact",
+      "required": "Paired topology/traffic/disturbance traces including routing-link failure identities",
+      "role": "traffic_disturbance"
+    },
+    {
+      "reason": "missing_author_artifact",
+      "required": "Frozen transition/emission/cost models and uncertainty radii with calibration provenance",
+      "role": "calibration"
+    },
+    {
+      "reason": "missing_author_artifact",
+      "required": "Profile support, action library and offline memory/airtime/no-wrap/noise/fallback certificates",
+      "role": "certificates"
+    },
+    {
+      "reason": "missing_author_artifact",
+      "required": "nRF52840 raw cycle/energy/role-specific stack measurements and exact measurement boundaries",
+      "role": "board_measurements"
+    },
+    {
+      "reason": "missing_author_artifact",
+      "required": "Author Contiki-NG implementation, build recipe, ELF and map files",
+      "role": "firmware"
+    },
+    {
+      "reason": "missing_author_artifact",
+      "required": "Pinned-estimator successful per-attack raw logs and Sage environment capture",
+      "role": "security_logs"
+    },
+    {
+      "reason": "missing_author_artifact",
+      "required": "Ground-truth sensor traces and original integer Db2 lifting/filter/rounding/boundary definition",
+      "role": "sensor_signals"
+    },
+    {
+      "reason": "missing_author_artifact",
+      "required": "Original packet-level traces and per-seed raw summaries for the manuscript figures",
+      "role": "packet_results"
+    }
+  ],
+  "status": "blocked_incomplete_author_evidence",
+  "tests_executed": false
+}

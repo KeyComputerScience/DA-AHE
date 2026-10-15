@@ -1,0 +1,29 @@
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/repro-venv/bin/cmake', '-S', 'embedded', '-B', 'build/embedded-k6', '-DDAAHE_MODULE_RANK=6']
+-- The C compiler identification is AppleClang 21.0.0.21000101
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.6s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/build/embedded-k6
+
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/repro-venv/bin/cmake', '--build', 'build/embedded-k6', '--parallel', '2']
+[ 25%] Building C object CMakeFiles/daahe_core.dir/daahe_core.c.o
+[ 50%] Linking C static library libdaahe_core.a
+[ 50%] Built target daahe_core
+[ 75%] Building C object CMakeFiles/daahe_core_test.dir/test_core.c.o
+[100%] Linking C executable daahe_core_test
+[100%] Built target daahe_core_test
+
+$ ['/Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/repro-venv/bin/ctest', '--test-dir', 'build/embedded-k6', '--output-on-failure']
+Internal ctest changing into directory: /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/build/embedded-k6
+Test project /Users/key/Documents/Codex/2026-10-15/https-github-com-keycomputerscience-da-ahe-3/work/DA-AHE/build/embedded-k6
+    Start 1: portable_core_known_answers
+1/1 Test #1: portable_core_known_answers ......   Passed    0.65 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.65 sec
+

@@ -1,0 +1,2 @@
+firmware/nrf52840/runtime.c:3:7:memset	0	static
+firmware/nrf52840/runtime.c:8:7:memcpy	0	static
