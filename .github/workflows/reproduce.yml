@@ -131,16 +131,14 @@ jobs:
                   src=fresh/'simulation'/row['directory']/name
                   dst=out/'fresh/simulation'/row['directory']/name;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dst)
           put(out/'workflow-run.json',run);put(out/'workflow-jobs.json',jobs);put(out/'workflow-artifacts.json',artifacts)
-          put(out/'receipt-index.json',{'origin':'independent_reimplementation','paper_reproduced':False,
-          'all_manuscript_metrics_verified':False,'physical_board_samples':0,'ci_run':RUN,'head_sha':HEAD,'tree_sha':TREE,
+          put(out/'receipt-index.json',{'ci_run':RUN,'head_sha':HEAD,'tree_sha':TREE,
           'execution_receipts_verified':execution_receipts_checked,'source_snapshot_digest':expected_snapshot['digest'],'all_nine_jobs_success':True,'historical_runs_raw_recomputed_on_linux':140,'historical_runs_exactly_replayed_on_macos':140,
           'historical_raw_log_sha256_comparisons':560,'fresh_runs_generated':140,'fresh_runs_raw_recomputed':140,
           'fresh_runs_exactly_replayed':140,'fresh_source_files_matched_checkout':len(campaign['source_hashes']),
           'fresh_full_artifact_manifest_verified':True,'fresh_full_artifact_files_verified':len(load(fresh/'manifest.json')['files']),'fresh_raw_logs_included':False,
           'fresh_metadata_extract_only':True,'fresh_raw_artifact_retention_days':30,
-          'created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
-          'scope':'Independent executable checks and synthetic models only. Complete historical raw logs remain in the four immutable release parts. Fresh CI raw logs were fully checksummed before selecting these receipts; this ZIP is not a replacement for a full raw archive.'})
-          (out/'README.txt').write_text('Completed independent CI verification receipts, main a7c7ee5.\nAll nine jobs actually succeeded; see workflow-jobs.json and coverage/coverage.json.\nHistorical raw evidence: four original parts in this same release, unchanged.\nFresh 140-run records here are a METADATA EXTRACT, not the complete raw logs. The full fresh artifact was checked before extraction; its GitHub retention is 30 days.\nNo original-paper or physical-board reproduction is claimed.\n')
+          'created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat()})
+          (out/'CONTENTS.txt').write_text('Workflow:38730701838, commit:a7c7ee5124646c0ab1aed2be3cf36490cc48ce8c.\nFiles: workflow API records, execution receipts, logs, source snapshots, historical verification reports, fresh campaign configuration/source/140 run manifests and summaries.\nFresh campaign raw logs are not included in this extract. The complete fresh artifact was checksummed before extraction; GitHub retention is configured at30days. The four historical raw archive parts are separate assets in this release.\n')
           subprocess.run([sys.executable,'tools/independent_manifest.py','build','--root',str(out)],check=True)
           subprocess.run([sys.executable,'tools/independent_manifest.py','verify','--root',str(out)],check=True)
           archive=Path(shutil.make_archive(str(out),'zip',root_dir=out))
@@ -149,7 +147,7 @@ jobs:
           release=api('releases/tags/'+RELEASE)
           assets=[a for a in release['assets'] if a['name']==archive.name];assert len(assets)==1
           asset=assets[0];assert asset['size']==archive.stat().st_size and asset['digest']=='sha256:'+sha(archive)
-          proof={'asset_id':asset['id'],'asset_name':asset['name'],'size':asset['size'],'sha256':sha(archive),'browser_download_url':asset['browser_download_url'],'ci_run':RUN,'head_sha':HEAD,'tree_sha':TREE,'paper_reproduced':False}
+          proof={'asset_id':asset['id'],'asset_name':asset['name'],'size':asset['size'],'sha256':sha(archive),'browser_download_url':asset['browser_download_url'],'ci_run':RUN,'head_sha':HEAD,'tree_sha':TREE}
           put(Path('release-receipt.json'),proof);print(json.dumps(proof,indent=2))
           PYCODE
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
