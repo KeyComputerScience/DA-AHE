@@ -150,16 +150,40 @@ def parameter_runner(monkeypatch):
 
 
 def parameter_args(**changes):
+    from daahe.mlwe import DEFAULT_PARAMETERS
     from types import SimpleNamespace
-    values = {"module_rank": 3, "ring_degree": 256, "n": None, "q": 2**32, "sigma_key": 3.2}
+    values = {"module_rank": DEFAULT_PARAMETERS.k, "ring_degree": DEFAULT_PARAMETERS.d,
+              "n": None, "q": DEFAULT_PARAMETERS.q, "sigma_key": DEFAULT_PARAMETERS.sigma_key}
     values.update(changes)
     return SimpleNamespace(**values)
 
 
-def test_parameter_runner_defaults_retain_original_tuple_and_wire_size(monkeypatch):
-    inputs = parameter_runner(monkeypatch).security_parameters(parameter_args())
+def test_explicit_legacy_parameter_tuple_retains_original_wire_size(monkeypatch):
+    inputs = parameter_runner(monkeypatch).security_parameters(parameter_args(module_rank=3))
     assert (inputs["module_rank"], inputs["ring_degree"], inputs["n"], inputs["m"], inputs["q"], inputs["sigma_key"]) == (3, 256, 768, 768, 2**32, 3.2)
     assert inputs["ciphertext_bytes"] == 4096
+
+
+@pytest.mark.parametrize("arguments,rank,dimension,wire_bytes", [
+    ([], 6, 1536, 7168), (["--module-rank", "3"], 3, 768, 4096),
+])
+def test_parameter_cli_defaults_to_active_tuple_and_legacy_requires_explicit_rank(
+        monkeypatch, tmp_path, arguments, rank, dimension, wire_bytes):
+    module = parameter_runner(monkeypatch)
+    captured = {}
+
+    def capture_worker(_repo, _name, _output, inputs):
+        # Check CLI input routing only; no fabricated attack cost or evidence.
+        captured.update(inputs)
+        return 0
+
+    monkeypatch.setattr(module, "run_worker", capture_worker)
+    assert module.main(["--estimator", str(tmp_path), "--attack-worker", "primal_usvp",
+                        "--worker-output", str(tmp_path / "unused.json"), *arguments]) == 0
+    assert captured["module_rank"] == rank
+    assert captured["n"] == captured["m"] == dimension
+    assert captured["ciphertext_bytes"] == wire_bytes
+    assert not (tmp_path / "unused.json").exists()
 
 
 def test_parameter_change_updates_dimension_samples_and_ciphertext_bytes(monkeypatch):
