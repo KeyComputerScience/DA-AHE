@@ -1,10 +1,11 @@
 # Hidden files, current CI and historical patch
 
 The current workflow is `.github/workflows/reproduce.yml`. Every push to main,
-pull request and manual trigger runs all eight substantive jobs: source bytes,
+pull request and manual trigger runs all nine substantive jobs: source bytes,
 real-provider functional/native tests, ARM build, small replay, published
 historical 140-case raw recomputation on Linux and strict frozen-source replay
 on macOS ARM64/Python 3.12.10, fresh full 140-case generation/replay,
+paired performance-matrix integration and statistical/figure exports,
 and fresh seven-attack security estimates plus exact-CDT decoding checks. The
 final coverage job fails on any missing, skipped, failed or cancelled job.
 The observed historical floating-point portability failure and unchanged exact

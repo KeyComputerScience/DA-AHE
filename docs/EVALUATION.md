@@ -5,6 +5,10 @@ cryptographic and aggregate-reconstruction evidence. Network values come from
 all 140 published per-seed records and their verified summaries. The platform,
 accounting boundaries and certification scope are stated below.
 
+[Performance reproduction](PERFORMANCE_REPRODUCTION.md) defines the complete
+size-by-seed matrix and the common record-to-table/figure exporter, including
+paired bootstrap intervals, denominator checks and censored recovery handling.
+
 ## Experimental question and fixed cryptographic parameters
 
 We evaluate how causal profile selection changes source admission, valid
