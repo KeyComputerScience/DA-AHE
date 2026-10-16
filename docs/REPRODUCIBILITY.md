@@ -81,7 +81,21 @@ actual-CDT, module-specific or implementation security. The separate finite-CDT
 decoding calculation and its one-fresh-batch probability scope are documented
 in [`../security/DECODING_BOUND.md`](../security/DECODING_BOUND.md).
 
-## 4. Published independent experiments
+## 4. Current evaluation
+
+The active tables are `experiments/CURRENT_RESULTS.md` and
+`experiments/current-results.json`. Recompute and verify them with:
+
+```bash
+python tools/build_current_evaluation.py --check experiments
+python tools/build_current_evaluation.py --output-dir runs/current-evaluation
+```
+
+See `docs/EVALUATION.md` for the experimental design, units and evidence
+boundaries. The legacy external-import contract below is a separate
+prospective workflow.
+
+### Published independent experiments
 
 The complete 20-seed, seven-method independent archive is public. Follow
 [`PUBLIC_EVIDENCE.md`](PUBLIC_EVIDENCE.md) to download and verify its four parts,
@@ -93,17 +107,17 @@ For a fresh independent campaign, use the commands in the repository README and
 `simulation/README.md`. A configuration or workflow file is not an execution
 receipt; inspect the recorded command exit and outputs.
 
-## 5. Original experiments and statistics
+## 5. Legacy external-import contract
 
 Acquire the original simulator, traces and board evidence listed by `daahe audit`.
 Implement all methods within the same original INET packet-level model and freeze
 common configurations before looking at evaluation results. Use 20 paired seeds,
 300-s runs, 30-s warm-up, disturbance at 100 s and the disclosed workload/PHY.
-See `experiments/METRICS_SCHEMA.md` and `tools/import_omnet.py --help` for import
+See `docs/archive/original-experiment-contract/METRICS_SCHEMA.md` and `tools/import_omnet.py --help` for import
 contracts.
 
 ```bash
-python -m daahe stats external/metrics.csv --matrix experiments/matrix.json --output runs/summary.json
+python -m daahe stats external/metrics.csv --matrix docs/archive/original-experiment-contract/matrix.json --output runs/summary.json
 python tools/plot_results.py runs/summary.json --nodes 3000 --metric residual_plr \
   --normalized --title 'Residual loss relative to DA-AHE' --unit ratio --output runs/loss.svg
 ```
@@ -123,4 +137,4 @@ The builder refuses to overwrite an existing file; use a new output such as
 release locations and hashes are recorded separately in
 `evidence/independent/publication.json`. Do not edit old receipts or hashes to
 make them describe a later source tree. Manuscript corrections are tracked in
-[`MANUSCRIPT_CORRECTIONS.md`](MANUSCRIPT_CORRECTIONS.md).
+[the protocol specification](manuscript/PARAMETER_PROTOCOL.tex).

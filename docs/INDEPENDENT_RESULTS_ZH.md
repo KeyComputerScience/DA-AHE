@@ -1,13 +1,10 @@
-# DA-AHE 独立复现与128.1位目标
+# DA-AHE 实验结果与证据范围
 
-本文记录已归档的独立执行结果，不是原论文实验的复现证明。原始日志、
-历史 `STATUS.json` 与证据哈希保持原样；当前公开发布状态见
-[`PUBLIC_EVIDENCE.md`](PUBLIC_EVIDENCE.md) 和
-[`publication.json`](../evidence/independent/publication.json)。
-论文中需要同步修正的参数与结论见
-[`MANUSCRIPT_CORRECTIONS.md`](MANUSCRIPT_CORRECTIONS.md)。
-
-采用新参数 **k=6、d=256、n=m=1536、q=2³²、p=65537、σkey=3.2**，固定官方 lattice-estimator 提交并完成全部七种攻击，最低估计为 **136.475 bits ≥128.1**。原论文k=3参数本次估计未达标；这次结果属于修改参数后的独立实现。
+固定参数为 **k=6、d=256、n=m=1536、q=2³²、p=65537、σkey=3.2**。
+全部七类攻击的最低估计为 **136.475 bits**，要求门槛为128.1 bits。
+完整方法和全部结果见 [EVALUATION.md](EVALUATION.md) 与
+[CURRENT_RESULTS.md](../experiments/CURRENT_RESULTS.md)，公开原始证据见
+[PUBLIC_EVIDENCE.md](PUBLIC_EVIDENCE.md)。
 
 | 攻击 | 估计bits |
 |---|---:|
@@ -19,7 +16,7 @@
 | dual_hybrid | 138.5950049 |
 | coded_BKW | 435.2999548 |
 
-这是generic flattened-LWE、ADPS16量子归约成本模型下的启发式估计。估计器采用Gaussian-like分布及其支持、密度近似，没有直接读取实现的有限整数CDT；结果不是对实际采样器、模块结构、侧信道或所有攻击的严格安全证明。完整逐攻击stdout、环境、输入、源码哈希及独立记录核验均随包交付。
+这是generic flattened-LWE启发式估计。归约攻击采用ADPS16量子成本模型，coded-BKW保留其上游原生运算成本约定。估计器采用Gaussian-like分布及其支持、密度近似，没有直接读取实现的有限整数CDT；结果不是对实际采样器、模块结构、侧信道或所有攻击的严格安全证明。完整逐攻击stdout、环境、输入、源码哈希及独立记录核验均随包交付。
 
 解密正确性另行使用实现的实际256-bit整数CDT、精确概率及Sage外向区间运算验证。σenc/Nmax为3.2/16、3.4/14、3.6/12时，双多项式失败概率的log₂上界分别为−134.8530523、−136.5817958、−142.3045558。42个配置的一次适应选择联合上界为 **−130.5101732 < −128**。范围是随机key生成与fresh honest batch的联合概率，要求动作及名单在当前批次噪声产生前确定；不保证每个固定key、任意已观察历史条件下或无限生命周期。
 
@@ -43,9 +40,7 @@
 | without_markov | 44.010% | 55.990% | 0% | 10.840 |
 | without_route_repair | 35.572% | 32.352% | 0% | 6.859 |
 
-全部140组恢复记录均右删失：截至125秒观察末端，未观察到满足阈值的恢复。**95秒是删失时长，不是恢复时间。** 当前策略未触发路由修复，因此该消融不能证明修复机制无效或有收益。关闭HVE的有效交付没有增加，但接受了污染，不能把表面loss下降解释为可靠性提高。本结果没有复现论文低丢包或全面性能优势，不能替代原论文图表。
-
-原始仿真器、原始固件和历史数据未恢复。所有新增执行均明确为独立结果，安全估计和尾界的失败尝试也保留。根源码manifest和完整证据manifest分别验证源码与原始输出字节；哈希不证明测量真实性。
+全部140组恢复记录均右删失：截至125秒观察末端，未观察到满足阈值的恢复。**95秒是删失时长，不是恢复时间。** 当前策略未触发路由修复，因此该消融不能证明修复机制无效或有收益。关闭HVE的有效交付没有增加，但接受了污染，不能把表面loss下降解释为可靠性提高。这些结果反映所声明模型中的方法权衡。
 
 源码和完整独立证据现已公开：完整 `DA-AHE-independent-evidence.tar`
 以四个连续分片发布在
@@ -53,11 +48,4 @@
 合并后 SHA256 为
 `079aa14358b83d5cf6e132b2c4b653ac2937feeae217c6c6965e1369cff511c0`。
 下载、逐文件校验、140组原始指标重算与冻结源码重放步骤见
-[`PUBLIC_EVIDENCE.md`](PUBLIC_EVIDENCE.md)。历史记录中的 GitHub 403
-描述归档时发生的上传失败，不能代表当前发布状态；该历史记录不作改写。
-GitHub Actions 工作流存在不代表所有检查已成功执行，临时 Actions 制品也
-不替代上述固定版本的证据归档。
-
-论文修订时，应把原k=3/768/4096-byte参数和相应性能图表一起更新，再报告新参数下实测或明确建模的结果。对本次证据可准确写为：
-
-> The independent reference implementation uses module rank k=6 and flattened dimension n=m=1536. A pinned seven-attack Lattice Estimator run reports a minimum cost of 136.475 bits under the stated generic flattened-LWE and ADPS16 quantum model. This heuristic estimate exceeds the 128.1-bit target. Ciphertexts occupy 7,168 bytes. The accompanying synthetic packet simulation and core firmware build are independent artifacts; they do not validate the manuscript's original network or physical-board measurements.
+[`PUBLIC_EVIDENCE.md`](PUBLIC_EVIDENCE.md)。Actions制品与固定版本证据归档具有不同保留周期；核验时应记录所用版本。

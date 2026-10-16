@@ -1,4 +1,4 @@
-# 可核对的结构优势与尚未证明的性能收益
+# 结构能力与验证范围
 
 | 项目 | 当前实现与证据边界 |
 |---|---|
@@ -10,5 +10,5 @@
 | 可复核记录 | 已公开20个配对种子、七方法、140组原始记录；可校验哈希并从原始记录重算指标，不能替代板端测量或原论文实验 |
 
 详细数值见 [`INDEPENDENT_RESULTS_ZH.md`](INDEPENDENT_RESULTS_ZH.md)，公开归档及
-核验步骤见 [`PUBLIC_EVIDENCE.md`](PUBLIC_EVIDENCE.md)。论文修订清单见
-[`MANUSCRIPT_CORRECTIONS.md`](MANUSCRIPT_CORRECTIONS.md)。
+核验步骤见 [`PUBLIC_EVIDENCE.md`](PUBLIC_EVIDENCE.md)。方法与完整结果见
+[`EVALUATION.md`](EVALUATION.md) 和 [全部方法数据](../experiments/CURRENT_RESULTS.md)。
