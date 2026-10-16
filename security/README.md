@@ -50,3 +50,16 @@ airtime and control-model certification are separate conditions. The executed
 finite-sampler calculation is described in [DECODING_BOUND.md](DECODING_BOUND.md),
 and finite-task budgeting in [DECODING_RISK_BUDGET.md](../docs/DECODING_RISK_BUDGET.md).
 Public evidence locations are indexed in `evidence/independent/publication.json`.
+
+## Continuous integration
+
+The [reproduction workflow](../.github/workflows/reproduce.yml) includes the
+`security` job on every pull request and main-branch push. It verifies the saved
+seven-attack record, computes fresh estimates against the pinned upstream
+commit, validates exact finite-sampler bounds and runs the Sage interval tests.
+The `source` job checks parameter and evidence bindings, while `coverage`
+requires every reproduction job to succeed.
+
+The [CI policy guard](../tools/check_ci_triggers.py) includes this directory,
+configuration directories and experiment directories in its active-source
+checks.
