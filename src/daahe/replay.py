@@ -36,7 +36,13 @@ def load_control_config(path: str | Path, *, allow_synthetic: bool = False) -> d
             or any(not isinstance(value, str) or value not in action_ids
                    for value in initial_actions.values())):
         raise ValueError("initial_action must explicitly map da-ahe, dpp and hys to library action IDs")
-    if initial_actions["dpp"] != data["fallback_id"]:
+    if "initialization_policy" in data:
+        if data["initialization_policy"] != "common_nominal_synthetic":
+            raise ValueError("unsupported initialization_policy")
+        if (not allow_synthetic or set(initial_actions.values()) != {"nominal"}
+                or data["hysteresis"]["mode_actions"]["N"] != "nominal"):
+            raise ValueError("common_nominal_synthetic requires allow_synthetic and nominal initialization for all three methods and HYS N mode")
+    elif initial_actions["dpp"] != data["fallback_id"]:
         raise ValueError("Algorithm 4 requires the fallback as DPP's initial action")
     if initial_actions["hys"] != data["hysteresis"]["mode_actions"]["N"]:
         raise ValueError("Algorithm 5 requires the N-mode action as HYS's initial action")
