@@ -34,7 +34,7 @@ def main():
                                             "deployment airtime", "uniform control uncertainty",
                                             "invariant domain and useful fallback bound"]})
     write_json(args.output, {"schema_version": 1, "origin": "independent_reimplementation",
-                            "status": "arithmetic_checked_other_gates_pending",
+                            "status": "checked_no_wrap_arithmetic",
                             "created_utc": utc_now(), "paper_reproduced": False,
                             "encryption_parameters": asdict(DEFAULT_PARAMETERS),
                             "ciphertext_bytes": DEFAULT_PARAMETERS.ciphertext_bytes,

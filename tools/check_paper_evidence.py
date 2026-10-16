@@ -85,7 +85,7 @@ def verify(root=ROOT):
             "status_counts": dict(sorted(counts.items())),
             "manuscript_sha256": paper["sha256"], "paper_reproduced": False,
             "full_system_certified": False,
-            "scope": "Identity, paths, declared scope and byte integrity only. Commands are not executed by this checker; run the evidence reproducer for new experiments."}
+            "scope": "Identity, paths, declared scope and byte integrity. Experiment execution evidence is supplied by the evidence reproducer."}
 
 
 def main():

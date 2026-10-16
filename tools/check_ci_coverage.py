@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MIT
-"""Fail aggregate CI if any declared independent reproduction job did not pass.
+"""Require successful outcomes for every declared reproduction and performance job.
 
-The result intentionally does not turn complete software CI into a claim about
-the absent original-author artifacts, real boards or a full security proof.
+Coverage applies to the independently specified software and evidence contracts.
 """
 from __future__ import annotations
 
@@ -16,7 +15,7 @@ from pathlib import Path
 
 
 REQUIRED_JOBS = ("source", "functional", "firmware", "replay", "history", "history_linux",
-                 "campaign", "security")
+                 "campaign", "performance", "security")
 ROOT = Path(__file__).resolve().parents[1]
 
 
