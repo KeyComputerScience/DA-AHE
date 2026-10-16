@@ -92,3 +92,12 @@ def test_correct_legacy_payload_is_not_the_new_parameter_set(checkout):
     (checkout / "configs/manuscript_alignment.json").write_text(json.dumps(changed))
     with pytest.raises(ValueError, match="canonical parameter drift"):
         checker.verify(checkout)
+
+
+@pytest.mark.parametrize("name", ["security/run-01/security.json", "reference-bounds.json"])
+def test_retired_duplicate_results_cannot_return_to_current_paths(checkout, name):
+    path = checkout / name
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("{}\n")
+    with pytest.raises(ValueError, match="retired legacy artifact returned"):
+        checker.verify(checkout)
