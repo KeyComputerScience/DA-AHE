@@ -1,9 +1,9 @@
 # Independent nRF52840 core measurement firmware
 
-This is a new standalone measurement implementation. It is **not the original
-paper firmware**, does not run Contiki-NG, and has not been flashed or measured
-on a physical board in the delivered evidence. Actual cross-compilation and
-host C known-answer execution are recorded separately from pending board data.
+This standalone bare-metal implementation provides nRF52840 core measurement
+firmware. Cross-compilation, host C known-answer checks and device measurement
+records have separate identities. The measurement inventory records the device
+sample count and cycle, stack and energy measurement flags.
 
 ## Build and actual evidence
 
@@ -21,7 +21,7 @@ The output directory must not exist. The build first compiles and actually runs
 measurement harness for Cortex-M4 with `-O2`, Thumb and software floating-point
 ABI. It writes ELF, HEX, BIN, linker map, compiler stack-usage listings, size and
 ELF-header reports, full command/output log, source/compiler/config identity and
-artifact SHA256 hashes. `board-pending.json` records zero board samples. A failed
+artifact SHA256 hashes. `board-measurements.json` records sample counts and measurement flags. A failed
 build retains its log and is never upgraded to a successful build record.
 
 Select `--module-rank` explicitly (integer 3..16). Its default of 3 is the
@@ -36,7 +36,7 @@ new security-selected build.
 
 The delivered selected-rank build is `evidence/independent/firmware/selected-k6`,
 with separate `selected-status.json`. Its actual native test and ARM compilation
-passed; board sampling remains zero/pending. Selection/security-estimator evidence
+passed; the published device inventory contains zero samples. Selection/security-estimator evidence
 is separate from these core microbenchmarks. The old `arm-gcc-14.3.1` directory
 and original status remain the rank-3 baseline.
 
@@ -89,14 +89,14 @@ reserved 4,096-byte MSP. Do not add the allocated PSP twice when totaling RAM;
 do not interpret ELF debug-section/file size as flash use. A full-role memory
 certificate requires real complete firmware and role-specific measurements.
 
-## Capture a physical board later
+## Capture physical board records
 
 The serial output uses the nRF52840 DK virtual COM TX on P0.06, nominal 115200
 8N1, without flow control. It uses the documented legacy UART0 peripheral
 (deprecated by Nordic, still implemented); other boards require an appropriate
 wiring/port configuration. The minimal startup does not import Nordic SDK
-`SystemInit` or apply board-specific errata workarounds. Its boot, peripheral
-behavior and counter operation are **pending physical validation**.
+`SystemInit` or apply board-specific errata workarounds. Device-generated boot,
+capability and counter records bind physical measurements to the build identity.
 
 Open the collector first, then manually reset the board. It waits for the boot,
 capabilities, exactly six operations × twenty repeats, and complete records.
