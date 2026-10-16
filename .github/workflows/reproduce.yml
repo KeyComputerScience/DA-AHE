@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 # Every listed job runs for every trigger. A passing aggregate requires all jobs,
-# including the historical raw-data audit and new full campaign/attack estimates.
+# including the saved-data audit and full campaign/attack estimates.
 # This workflow verifies the independent implementation under its declared models;
 # it cannot supply absent original-author records or physical board measurements.
 jobs:
@@ -26,21 +26,25 @@ jobs:
       - run: python -m pip install -e '.[dev]'
       - name: Verify source manifest
         run: python tools/run_logged.py --output runs/source -- python -m daahe verify-manifest manifest.json --root .
-      - name: Verify preserved publication and replay diagnosis receipts
+      - name: Verify publication and replay receipts
         run: |
           python tools/independent_manifest.py verify --root evidence/independent/publication-checks
           python tools/independent_manifest.py verify --root evidence/independent/replay-portability
-      - name: Enforce the original-paper and physical-measurement evidence scope
+      - name: Verify experiment and physical-measurement evidence scope
         run: python tools/check_ci_coverage.py --validate-claims-only --output runs/claim-scope.json
-      - name: Check current parameters and preserve historical manuscript evidence
+      - name: Verify parameter contract and evidence bindings
         run: python tools/check_manuscript_alignment.py
-      - name: Verify paper claim bindings and preserved new evidence
+      - name: Verify claim bindings and scientific evidence
         run: |
           python tools/check_paper_evidence.py
           python tools/check_aggregate_fidelity.py --verify evidence/independent/aggregate-fidelity/run-01
           python tools/independent_manifest.py verify --root evidence/independent/decoding-horizon/run-01
       - name: Execute fresh reviewer fidelity and finite-horizon evidence
         run: python tools/reproduce_paper_evidence.py --output runs/paper-evidence
+      - name: Regenerate the active k6 evaluation from all saved per-seed records
+        run: |
+          python tools/build_current_evaluation.py --check experiments
+          python tools/build_current_evaluation.py --output-dir runs/current-evaluation
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: always()
         with:
