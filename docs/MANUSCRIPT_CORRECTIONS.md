@@ -190,7 +190,7 @@ report and its recomputed minimum, payload arithmetic and preserved legacy
 record. It also requires the current claim contract to retain the absence of
 original-paper reproduction, board measurements and full-system certification.
 
-The historical `security/run-01/security.json` remains byte-for-byte unchanged,
+The historical `evidence/independent/security/run-01/security.json` remains byte-for-byte unchanged,
 with SHA256
 `e6547315520c55a82cf349ab1df4483cdd816b192f61de9ea6cf1ac4186dea78`.
 The current report is selected through `configs/security_profile.json`; never
@@ -205,3 +205,9 @@ board measurement, physical-signal fidelity evaluation or certificate proof.
 Behavioral source-emission, strict certificate and encryption tests remain
 separate checks. Historical evidence snapshots and frozen-source campaign
 records must not be rewritten when current documentation or tools change.
+
+The duplicate `security/run-01/` entry point has been removed from the current
+branch; its 19 historical files remain in `evidence/independent/security/run-01/`.
+The old `reference-bounds.json` snapshot is archived as
+`docs/archive/reference-bounds-legacy.json`. Neither is a current deployment
+certificate. The alignment check rejects restoration of these retired entry points.
