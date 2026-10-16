@@ -56,5 +56,12 @@
   "retired_active_paths": [
     "security/run-01",
     "reference-bounds.json"
-  ]
+  ],
+  "received_pdf": {
+    "filename": "TSMC_DA (1).pdf",
+    "sha256": "ad09feb7fa00a87bf0dd342a1b929a0d776cb087e8420169556d85f3139d3fc5",
+    "pages": 14,
+    "editable_source_available": false,
+    "text_same_as_previous": true
+  }
 }

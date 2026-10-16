@@ -1,0 +1,446 @@
+{
+  "schema_version": 1,
+  "manuscript": {
+    "filename": "TSMC_DA (1).pdf",
+    "sha256": "ad09feb7fa00a87bf0dd342a1b929a0d776cb087e8420169556d85f3139d3fc5",
+    "pages": 14,
+    "editable_source_available": false,
+    "text_same_as_previous": true
+  },
+  "claims": [
+    {
+      "id": "security_parameter_estimate",
+      "paper_reference": "PDF pp. 3-4 (Section IV-A), p. 6 (Section V-B), p. 12 (Appendix VIII-A, Eq. (24))",
+      "statement": "The PDF states k=3, n=m=768 and a 128.1-bit minimum. The current independent implementation instead selects k=6, n=m=1536; its complete archived seven-attack minimum is 136.475 bits.",
+      "implementation_paths": [
+        "src/daahe/mlwe.py",
+        "configs/security_profile.json",
+        "tools/estimate_security.sage",
+        "tools/estimate_security_parameters.py",
+        "tools/estimator_result_adapter.py",
+        "security/verify_run.py"
+      ],
+      "evidence_paths": [
+        "evidence/independent/security/run-01/security.json",
+        "evidence/independent/security-parameter-search/selected-k6-full/security.json",
+        "configs/manuscript_alignment.json"
+      ],
+      "verification_commands": [
+        "python tools/check_manuscript_alignment.py",
+        "python security/verify_run.py evidence/independent/security-parameter-search/selected-k6-full --upstream external/lattice-estimator --minimum-bits 128.1"
+      ],
+      "status": "reproduced_independent_scope",
+      "scope": "Independent changed-parameter result only. Generic flattened-LWE/Gaussian-like estimator, declared ADPS16 quantum reduction model and GSA; coded-BKW retains its native word-operation convention. The preserved incomplete k=3 run contains a successful 51.94-bit attack estimate and cannot establish 128.1 bits. No actual-CDT, module-specific, implementation, all-attack or worst-case proof follows.",
+      "required_for_original_claim": [
+        "Revise the PDF tuple and every dependent byte, airtime, resource and performance value together.",
+        "Supply original k=3 estimator inputs and complete attack logs if retaining that historical claim; do not overwrite the adverse independent record.",
+        "Justify security for the instantiated encryption distribution and declared threat model separately from heuristic attack-cost arithmetic."
+      ]
+    },
+    {
+      "id": "single_ciphertext_payload",
+      "paper_reference": "PDF p. 1 (abstract/contributions), p. 4 (Algorithm 1), p. 8 (Eq. (16)), p. 9 (Eqs. (17) and (19)), p. 11 (Eq. (23))",
+      "statement": "At the current k=6 tuple, packing at most 240 retained data coefficients plus 16 tags into one degree-256 polynomial reduces ciphertext payload from 14,336 to 7,168 bytes, compared with the two-polynomial raw path.",
+      "implementation_paths": [
+        "src/daahe/profiles.py",
+        "src/daahe/protocol.py",
+        "src/daahe/mlwe.py",
+        "tools/check_manuscript_alignment.py",
+        "tests/test_parameterized_encryption.py",
+        "tests/test_crypto_protocol.py"
+      ],
+      "evidence_paths": [
+        "configs/security_profile.json",
+        "configs/manuscript_alignment.json",
+        "evidence/independent/security-parameter-search/selected-k6-full/security.json"
+      ],
+      "verification_commands": [
+        "python tools/check_manuscript_alignment.py",
+        "python -m pytest -q tests/test_parameterized_encryption.py tests/test_crypto_protocol.py"
+      ],
+      "status": "reproduced_independent_scope",
+      "scope": "Structural encoded-payload arithmetic, not measured total wire savings. At 250 kbit/s the payload-only serialization bounds are 229.376 ms and 458.752 ms. Tickets, hashes/MACs, headers, fragmentation, retries and multihop transport are additional. Smaller L within one polynomial does not shorten an individual ciphertext.",
+      "required_for_original_claim": [
+        "Replace the PDF's 8,192-to-4,096-byte and 131.072-ms numbers consistently if adopting k=6.",
+        "Publish full-protocol bytes and measured service costs before claiming end-to-end savings.",
+        "Evaluate the aggregate physical-signal distortion caused by retaining only part of the coefficient vector."
+      ]
+    },
+    {
+      "id": "encoded_additive_aggregation",
+      "paper_reference": "PDF p. 3 (encoding/encryption pipeline), p. 4 (Eq. (7)), pp. 4-5 (Algorithms 1-3)",
+      "statement": "Host ciphertext addition and decryption implement addition of encoded quantized data/tag coefficients modulo p; data no-wrap checks permit a signed integer interpretation within the declared bound.",
+      "implementation_paths": [
+        "src/daahe/ring.py",
+        "src/daahe/mlwe.py",
+        "src/daahe/protocol.py",
+        "src/daahe/profiles.py",
+        "tests/test_crypto_protocol.py",
+        "tests/test_parameterized_encryption.py"
+      ],
+      "evidence_paths": [
+        "evidence/independent/claim-coverage.json",
+        "evidence/independent/publication.json",
+        "configs/manuscript_alignment.json"
+      ],
+      "verification_commands": [
+        "python -m pytest -q tests/test_crypto_protocol.py tests/test_parameterized_encryption.py",
+        "python tools/run_protocol_trials.py --module-rank 6 --trials 20 --output runs/reviewer-protocol-trials"
+      ],
+      "status": "reproduced_independent_scope",
+      "scope": "Preserved independent host functional executions are indexed by claim-coverage.json and the public archive. Exact encoded-coefficient aggregation does not imply exact aggregation of the physical samples through rounded integer lifting, selection and quantization. Randomized functional tests do not prove a 2^-128 decoding tail.",
+      "required_for_original_claim": [
+        "State correctness in the encoded domain and retain plaintext no-wrap and decoding assumptions.",
+        "Provide aggregate-domain PRD/RMSE against the physical sum for every reported profile and admissible batch size.",
+        "Bind fresh execution receipts to the exact source, key/profile tuple, provider and input traces."
+      ]
+    },
+    {
+      "id": "roster_integrity_and_postquantum_authorization",
+      "paper_reference": "PDF pp. 5-7 (Algorithms 2-3, Section V-A, Eqs. (9)-(14))",
+      "statement": "The host protocol binds signed tickets, profile/context/nonces and the exact authorized roster, and rejects tested compromised-gateway modifications and replay; the paper's integrity theorem remains conditional.",
+      "implementation_paths": [
+        "src/daahe/protocol.py",
+        "src/daahe/signatures.py",
+        "src/daahe/derivation.py",
+        "src/daahe/profiles.py",
+        "tools/run_protocol_trials.py",
+        "tests/test_signatures.py",
+        "tests/test_crypto_protocol.py"
+      ],
+      "evidence_paths": [
+        "evidence/independent/claim-coverage.json",
+        "evidence/independent/publication.json"
+      ],
+      "verification_commands": [
+        "python -m pytest -q -m pq",
+        "python tools/run_protocol_trials.py --module-rank 6 --trials 20 --output runs/reviewer-integrity-trials"
+      ],
+      "status": "reproduced_independent_scope",
+      "scope": "Independent real-provider functional trials, not a machine-checked QROM security reduction or attack-detection probability. Sources/sink and derivation secrets are trusted. Gateway-held HMACs do not secure a compromised gateway; the plaintext lightweight path is not confidential. Q_v/p^16 is one conditional tag-guessing contribution, not the complete security level.",
+      "required_for_original_claim": [
+        "Make the one-distinct-report-per-ticket/source-offset rule an explicit theorem assumption and Algorithm 1 step.",
+        "Retain primitive-security, decoding, uniform-rejection and persistent-state assumptions in the reduction.",
+        "Document exact ML-DSA provider/version, nonce/profile/context binding, replay persistence and tested adversary capabilities.",
+        "Do not claim source-compromise, collusion, side-channel or availability resistance."
+      ]
+    },
+    {
+      "id": "durable_source_emission_and_replay",
+      "paper_reference": "PDF p. 4 (Algorithm 1), p. 6 (one-envelope statement), p. 7 (Seen and Eq. (13)); additional source-emission condition required by the implementation",
+      "statement": "SourceEmissionStore durably binds one payload and cached envelope to each ticket/source/nonce; ReplayStore enforces at-most-once sink acceptance. These are separate necessary conditions.",
+      "implementation_paths": [
+        "src/daahe/protocol.py",
+        "tests/test_source_ledger.py",
+        "tests/test_crypto_protocol.py",
+        "docs/MANUSCRIPT_CORRECTIONS.md"
+      ],
+      "evidence_paths": [
+        "evidence/independent/claim-coverage.json",
+        "configs/manuscript_alignment.json"
+      ],
+      "verification_commands": [
+        "python -m pytest -q tests/test_source_ledger.py tests/test_crypto_protocol.py",
+        "python tools/check_manuscript_alignment.py"
+      ],
+      "status": "implemented_not_original_measurement",
+      "scope": "Inspectable SQLite host mechanisms and targeted regression tests. Two distinct reports under one hidden affine offset can permit 2*c1-c2 recombination. SQLite is not an embedded anti-rollback driver; Seen does not supply a durable result/outbox after a crash.",
+      "required_for_original_claim": [
+        "Add durable bind/commit-before-release and same-envelope retries to Algorithm 1.",
+        "State anti-rollback/deletion and fresh-authorization requirements.",
+        "Supply board nonvolatile-storage and crash/recovery evidence if claiming deployed protection.",
+        "Keep at-most-once acceptance distinct from exactly-once result delivery."
+      ]
+    },
+    {
+      "id": "finite_sampler_decoding",
+      "paper_reference": "PDF p. 3 (Eq. (3)), p. 4 (capacities 16/14/12), p. 7 (epsilon_batch in Eq. (13)), p. 10 (profile correctness statements)",
+      "statement": "The independent k=6 actual finite-CDT calculation bounds decoding failure for profiles (sigma_enc,Nmax)=(3.2,16),(3.4,14),(3.6,12), including scaling carry; its 42-choice single-batch union log2 upper endpoint is approximately -130.5101732.",
+      "implementation_paths": [
+        "src/daahe/mlwe.py",
+        "tools/certify_decoding_bound.py",
+        "tools/verify_decoding_record.py",
+        "security/DECODING_BOUND.md",
+        "tests/test_decoding_bound_reference.py",
+        "tests/test_decoding_bound_interval.py"
+      ],
+      "evidence_paths": [
+        "evidence/independent/decoding/k6-cdt-03/decoding-bound.json",
+        "evidence/independent/decoding/k6-cdt-03/sampler-cdts.json",
+        "evidence/independent/decoding/k6-cdt-03/record-verification.json",
+        "evidence/independent/decoding/k6-cdt-03/stdout.log"
+      ],
+      "verification_commands": [
+        "python tools/verify_decoding_record.py evidence/independent/decoding/k6-cdt-03",
+        "python tools/certify_decoding_bound.py --output runs/reviewer-decoding --module-rank 6 --security-report evidence/independent/security-parameter-search/selected-k6-full/security.json"
+      ],
+      "status": "reproduced_independent_scope",
+      "scope": "Executed outward-interval bound for the actual finite sampler, jointly over random key generation and one fresh honest batch. Profile/roster selection precedes fresh batch noises. It does not cover every fixed key, arbitrary observed-history conditioning, malicious ciphertexts, unlimited lifetime, memory or control dynamics. The second command requires Sage-enabled Python and creates a new run.",
+      "required_for_original_claim": [
+        "Replace unsupported original k=3 correctness certificates with a matching revised tuple and probability statement.",
+        "Publish exact PMF/CDT, independence assumptions, carry/decoder analysis and interval endpoints.",
+        "Keep per-batch correctness separate from confidentiality, forgery, operational packet loss and finite-horizon risk."
+      ]
+    },
+    {
+      "id": "finite_horizon_decoding_budget",
+      "paper_reference": "PDF p. 3 (Eq. (3)), p. 7 (Eq. (13)), pp. 7-8 (history-adaptive controller); the PDF gives no explicit finite-horizon risk budget",
+      "statement": "A declared multi-batch horizon requires an additional risk calculation; a single-batch 2^-128 target is not automatically a lifetime 2^-128 guarantee.",
+      "implementation_paths": [
+        "tools/certify_decoding_bound.py",
+        "tools/verify_decoding_record.py",
+        "security/DECODING_BOUND.md",
+        "tools/check_decoding_horizon.py",
+        "tests/test_decoding_horizon.py",
+        "docs/DECODING_RISK_BUDGET.md"
+      ],
+      "evidence_paths": [
+        "evidence/independent/decoding/k6-cdt-03/decoding-bound.json",
+        "evidence/independent/decoding-horizon/run-01/budget-5-128.json",
+        "evidence/independent/decoding-horizon/run-01/budget-6-128-rejected.json",
+        "evidence/independent/decoding-horizon/run-01/budget-300-120.json",
+        "evidence/independent/decoding-horizon/run-01/execution.json",
+        "evidence/independent/decoding-horizon/run-01/manifest.json"
+      ],
+      "verification_commands": [
+        "python tools/check_decoding_horizon.py --batches 5 --target-bits 128",
+        "python tools/check_decoding_horizon.py --batches 6 --target-bits 128 # expected exit 2: risk budget exceeded",
+        "python tools/check_decoding_horizon.py --batches 300 --target-bits 120"
+      ],
+      "status": "reproduced_independent_scope",
+      "scope": "Executed exact-rational finite union budgets from the pinned single-batch bound: target 2^-128 permits at most 5 attempts (6 rejected); target 2^-120 permits at most 1458 (300 passes). No independence between failures is assumed. Each attempt must satisfy the stated fresh-noise and preselection conditions. This does not provide every-fixed-key/arbitrary-history conditional or lifetime guarantees and does not silently weaken a target.",
+      "required_for_original_claim": [
+        "Specify task duration, maximum batch count, profile selection rule, roster rule and key-rotation schedule.",
+        "If claiming uniform fixed-key/history guarantees, provide a matching certificate/proof rather than reusing the joint random-key bound."
+      ]
+    },
+    {
+      "id": "aggregate_physical_fidelity",
+      "paper_reference": "PDF p. 3 (IntDb2/quantization pipeline), p. 5 (Algorithm 3), p. 13 (Eq. (25), Table III, PRD<=2.50% statement)",
+      "statement": "Table III's reported per-profile physical reconstruction quality does not establish fidelity of the current independent rounded-lifting aggregate against the true physical sum.",
+      "implementation_paths": [
+        "src/daahe/signal.py",
+        "src/daahe/profiles.py",
+        "src/daahe/protocol.py",
+        "tests/test_signal_quality.py",
+        "docs/PARAMETERS_AND_GAPS.md",
+        "tools/check_aggregate_fidelity.py",
+        "tests/test_aggregate_fidelity.py",
+        "docs/AGGREGATE_FIDELITY.md"
+      ],
+      "evidence_paths": [
+        "evidence/independent/claim-coverage.json",
+        "configs/manuscript_alignment.json",
+        "evidence/independent/aggregate-fidelity/run-01/index.json",
+        "evidence/independent/aggregate-fidelity/run-01/summary.json",
+        "evidence/independent/aggregate-fidelity/run-01/manifest.json"
+      ],
+      "verification_commands": [
+        "python tools/check_aggregate_fidelity.py --verify evidence/independent/aggregate-fidelity/run-01",
+        "python -m pytest -q tests/test_signal_quality.py",
+        "python tools/check_aggregate_fidelity.py --output runs/fidelity",
+        "python tools/check_aggregate_fidelity.py --verify runs/fidelity"
+      ],
+      "status": "requires_original_data",
+      "scope": "Actually executed and independently recomputed 72 declared synthetic cases (54 capacity-admissible, 18 inadmissible diagnostics), with exact integer arrays, rounding/selection/quantization attribution and explicit zero-reference PRD. Frozen source and raw inputs are public. This is aggregate-domain evidence for the current reference completion; it does not reproduce original Table III, its physical units or its threshold.",
+      "required_for_original_claim": [
+        "Publish an identified signal corpus, physical units/scaling, sensor channel meaning, normalization, lifting/rounding, supports and boundary conventions."
+      ]
+    },
+    {
+      "id": "strict_belief_control_and_stability",
+      "paper_reference": "PDF p. 3 (Eqs. (1)-(4)), pp. 7-8 (Eq. (15), Algorithm 6, conditional boundedness theorem), p. 9 (calibration)",
+      "statement": "ControlledHMM, robust action scoring, DPP/HYS and evidence gates are implemented; the shipped synthetic model does not establish the PDF's calibrated closed-loop stability hypotheses.",
+      "implementation_paths": [
+        "src/daahe/control.py",
+        "src/daahe/calibration.py",
+        "src/daahe/safety.py",
+        "src/daahe/replay.py",
+        "docs/CONTROL_IMPLEMENTATION_SPEC.md",
+        "configs/control_synthetic.json",
+        "simulation/controller_fixture.json",
+        "tests/test_control.py",
+        "tests/test_control_binding.py"
+      ],
+      "evidence_paths": [
+        "evidence/independent/claim-coverage.json",
+        "configs/manuscript_alignment.json"
+      ],
+      "verification_commands": [
+        "python -m pytest -q tests/test_control.py tests/test_control_binding.py tests/test_evidence.py",
+        "python -m daahe replay-control --config configs/control_synthetic.json --telemetry examples/telemetry_synthetic.csv --method da-ahe --allow-synthetic --output runs/reviewer-synthetic-control.json"
+      ],
+      "status": "requires_proof",
+      "scope": "Functional/analytic implementation with explicitly uncertified fixtures. Artifact hash and tuple binding check identity, not proof validity. Conditional mean-square ultimate boundedness does not prove forward invariance, zero QoS violation or safety under arbitrary DoS. The second command is an uncertified inspection run.",
+      "required_for_original_claim": [
+        "Publish separate training, heldout calibration and evaluation seeds/traces and the full observation/emission model.",
+        "Provide exact action library, P_V, Z_cert, gamma/beta, transition ambiguity/error radii and their uniform validity scope.",
+        "Provide a reviewed fallback supremum/nonemptiness certificate and an invariance argument or explicit exit handling.",
+        "Account for online kernel adaptation and bounded adversarial observations/disturbances in the theorem assumptions.",
+        "Supply a same-crypto DPP plus identical filter, no-belief robust filter and nominal-belief comparison before attributing performance to belief or robustness."
+      ]
+    },
+    {
+      "id": "full_protocol_workspace_and_memory",
+      "paper_reference": "PDF p. 3 (10-KiB gate in Eq. (3)), p. 4 (streaming memory discussion), p. 8 (setup), p. 13 (Table II)",
+      "statement": "The current independent core harness build is not evidence for the PDF's 10-KiB complete streaming workspace or 29,328-byte whole-firmware peak SRAM.",
+      "implementation_paths": [
+        "embedded/daahe_core.c",
+        "embedded/daahe_core.h",
+        "firmware/nrf52840/benchmark.c",
+        "firmware/nrf52840/linker.ld",
+        "firmware/build.py",
+        "tools/collect_board_measurements.py",
+        "tools/verify_board_measurements.py",
+        "src/daahe/safety.py"
+      ],
+      "evidence_paths": [
+        "evidence/independent/firmware/selected-k6/board-pending.json",
+        "evidence/independent/claim-coverage.json"
+      ],
+      "verification_commands": [
+        "python tools/collect_board_measurements.py --help",
+        "python tools/verify_board_measurements.py --help"
+      ],
+      "status": "requires_hardware",
+      "scope": "Physical samples=0. The indexed selected core build reports 5,624-byte load sections and 20,608-byte static RAM with reserved benchmark stack; this is not the complete Contiki-NG protocol, measured stack HWM or per-role 10-KiB certificate.",
+      "required_for_original_claim": [
+        "Supply complete k=6 role-specific source, linked ELF/map, compiler/OS identities and buffer lifetimes.",
+        "Measure stack high-water and peak memory across encryption, transform, signatures/derivation/authentication, roster handling and network/interrupt paths.",
+        "Keep action workspace, total static SRAM, reserved stack and measured runtime peak distinct; avoid double counting.",
+        "Publish raw board capture with verified firmware identity before claiming physical resource results."
+      ]
+    },
+    {
+      "id": "board_timing_energy_and_airtime",
+      "paper_reference": "PDF p. 8 (3.72M cycles, 58.125 ms, 1.395 mJ), p. 9 (Eqs. (17)-(21)), p. 10 (Table I), p. 13 (prototype description)",
+      "statement": "Historical nRF52840 timing/energy figures and the 77.199-ms weighted bound are unverified for the independent k=6 protocol.",
+      "implementation_paths": [
+        "firmware/nrf52840/benchmark.c",
+        "firmware/build.py",
+        "tools/collect_board_measurements.py",
+        "tools/verify_board_measurements.py",
+        "simulation/engine.py",
+        "experiments/paper_targets.json",
+        "configs/manuscript_alignment.json"
+      ],
+      "evidence_paths": [
+        "evidence/independent/firmware/selected-k6/board-pending.json",
+        "evidence/independent/claim-coverage.json",
+        "configs/manuscript_alignment.json"
+      ],
+      "verification_commands": [
+        "python tools/check_manuscript_alignment.py",
+        "python tools/verify_board_measurements.py --help"
+      ],
+      "status": "requires_hardware",
+      "scope": "Cross-compilation and host known answers are separate from physical timing/power. Simulator CPU service time and radio energy are declared modeling assumptions. Arithmetic payload airtime is not operational latency and cannot incorporate old k=3 CPU measurements to create a new k=6 total.",
+      "required_for_original_claim": [
+        "Measure the complete k=6 source/gateway/sink paths with fresh raw cycles, clocks and power calibration.",
+        "Include ticket/signature/KDF/HMAC, source ledger, receive/listen, relay, OS/interrupt and fragmentation costs at the claimed boundary.",
+        "Bind trace intervals, voltage/current instruments and energy integration to firmware identity.",
+        "Recompute every workload-weighted expression from matching revised measurements."
+      ]
+    },
+    {
+      "id": "original_network_and_ablation_figures",
+      "paper_reference": "PDF pp. 9-10 (setup and Figs. 2-4), p. 11 (Fig. 5, Eqs. (22)-(23), ablations), p. 12 (Fig. 6 and conclusion)",
+      "statement": "The PDF's OMNeT++/INET 450.0-ms latency, 0.074%/0.098% residual loss, 33.0-s recovery and comparative improvements are not reproduced by the independent synthetic campaign.",
+      "implementation_paths": [
+        "simulation/engine.py",
+        "simulation/policy.py",
+        "simulation/config.json",
+        "simulation/audit.py",
+        "tools/run_simulation_campaign.py",
+        "tools/verify_simulation_campaign.py",
+        "src/daahe/statistics.py",
+        "tools/import_omnet.py",
+        "experiments/paper_targets.json"
+      ],
+      "evidence_paths": [
+        "evidence/independent/claim-coverage.json",
+        "evidence/independent/campaign-report/summary.json",
+        "evidence/independent/publication.json"
+      ],
+      "verification_commands": [
+        "python tools/verify_published_evidence.py --extract-dir runs/reviewer-published-evidence --recompute --jobs 2 --report runs/reviewer-published-verification.json"
+      ],
+      "status": "requires_original_data",
+      "scope": "Independent campaign: 3,000 sensors, 60 gateways, 90-s generation plus 35-s drain, 20 seeds/7 methods/140 runs, synthetic Python model. PDF: up to 5,000 nodes, 16 gateways, 300 s/30-s warm-up, OMNeT++6.0/INET4.4/RPL. All independent recovery records are right-censored; repair was not triggered. Model differences and adverse results must remain visible.",
+      "required_for_original_claim": [
+        "Publish original simulator/routing/baseline code, exact configs, measured service calibration and all seed-specific traces/logs.",
+        "Run revised k=6 parameters with matched offered workload, integrity protection, fidelity constraints and action libraries across controllers.",
+        "Report effective verified delivery per exogenous opportunity, tail latency, censoring, loss/reject denominators and full-protocol energy/wire cost.",
+        "Use a disturbance that actually activates route repair before claiming its recovery contribution.",
+        "Retain paired-seed bootstrap inputs and report uncertainty without treating packets/nodes as independent replicates."
+      ]
+    },
+    {
+      "id": "public_independent_campaign_audit",
+      "paper_reference": "Supports auditability of PDF p. 9 (paired seeds/statistics) and p. 12 (reproducibility statements); does not establish the historical numeric figures",
+      "statement": "A public immutable archive indexes 20 paired independent seeds, seven methods and 140 runs, with raw-to-summary recomputation and frozen-source replay interfaces.",
+      "implementation_paths": [
+        "tools/verify_published_evidence.py",
+        "tools/verify_simulation_campaign.py",
+        "tools/independent_manifest.py",
+        "src/daahe/statistics.py",
+        "docs/PUBLIC_EVIDENCE.md",
+        "docs/REPLAY_PORTABILITY.md"
+      ],
+      "evidence_paths": [
+        "evidence/independent/publication.json",
+        "evidence/independent/campaign-report/summary.json",
+        "evidence/independent/claim-coverage.json",
+        "evidence/independent/replay-portability/manifest.json"
+      ],
+      "verification_commands": [
+        "python tools/verify_published_evidence.py --extract-dir runs/reviewer-archive-audit --recompute --jobs 2 --report runs/reviewer-archive-audit.json",
+        "python tools/verify_published_evidence.py --extract-dir runs/reviewer-frozen-replay --recompute --replay --jobs 2 --report runs/reviewer-frozen-replay.json"
+      ],
+      "status": "reproduced_independent_scope",
+      "scope": "Preserved publication index records server-size/SHA256 verification; full raw records are in the four-part release archive. New commands above are prospective, not new execution receipts. Exact historical replay uses frozen source and the documented macOS ARM64/Python3.12.10 environment; Linux raw recomputation is separate. Hashes establish bytes, not measurement truth.",
+      "required_for_original_claim": [
+        "Describe this archive as independent synthetic evidence rather than recovered original-author experiments.",
+        "Archive any new execution with its own source/config/input/provider/environment identity.",
+        "Preserve historical evidence bytes, adverse outcomes, right-censoring and platform replay differences.",
+        "Add generated result hashes only after the new checks actually execute."
+      ]
+    }
+  ],
+  "generated_evidence_records": [
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/index.json",
+      "sha256": "05e298c4f6bee8c99892b6c07538cb9937c1d385c0ffd079864c794778bde104"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/summary.json",
+      "sha256": "25f93ff45a5f4d1748ed8e0e127856fd7aa01c6b5361af52516dbad1f45bf72d"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/manifest.json",
+      "sha256": "d5fedbe1dffc0bea609d07e75218f636f3ee9812805b81fa58b499fa304c7485"
+    },
+    {
+      "path": "evidence/independent/decoding-horizon/run-01/budget-5-128.json",
+      "sha256": "2986634c2981930f525e883eb8de76364110942a031044772c0589cc13bd0801"
+    },
+    {
+      "path": "evidence/independent/decoding-horizon/run-01/budget-6-128-rejected.json",
+      "sha256": "e25e1c39633be1052a40ad209534b8412b29cad3c0585a453a1849e3e8b986f6"
+    },
+    {
+      "path": "evidence/independent/decoding-horizon/run-01/budget-300-120.json",
+      "sha256": "3abecd242d51f88d9fa7df24aba117d2604bb0bac772d266efce0e2985b2be67"
+    },
+    {
+      "path": "evidence/independent/decoding-horizon/run-01/execution.json",
+      "sha256": "072ad93ee8cb9743903055332ba9302e9891b5b357ca3dbea478fadf894177ba"
+    },
+    {
+      "path": "evidence/independent/decoding-horizon/run-01/manifest.json",
+      "sha256": "5f7846f9c973ab43a65c5c14c8148c410017213c56965b6f5bfe17683b735524"
+    }
+  ],
+  "paper_reproduced": false,
+  "full_system_certified": false
+}
