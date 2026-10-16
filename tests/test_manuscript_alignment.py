@@ -25,6 +25,7 @@ def checkout(tmp_path):
     profile = json.loads((ROOT / names[1]).read_text())
     names += [profile["security_report"]]
     names += [r["path"] for r in contract["preserved_legacy_records"]]
+    names += [r["path"] for r in contract.get("archived_original_experiment_contracts", [])]
     for name in names:
         destination = tmp_path / name
         destination.parent.mkdir(parents=True, exist_ok=True)
@@ -94,10 +95,19 @@ def test_correct_legacy_payload_is_not_the_new_parameter_set(checkout):
         checker.verify(checkout)
 
 
-@pytest.mark.parametrize("name", ["security/run-01/security.json", "reference-bounds.json"])
+@pytest.mark.parametrize("name", ["security/run-01/security.json", "reference-bounds.json",
+                                 "experiments/paper_targets.json", "experiments/matrix.json"])
 def test_retired_duplicate_results_cannot_return_to_current_paths(checkout, name):
     path = checkout / name
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("{}\n")
     with pytest.raises(ValueError, match="retired legacy artifact returned"):
+        checker.verify(checkout)
+
+
+def test_original_experiment_archive_cannot_be_rewritten_to_new_results(checkout):
+    contract = json.loads((checkout / "configs/manuscript_alignment.json").read_text())
+    name = contract["archived_original_experiment_contracts"][0]["path"]
+    (checkout / name).write_text('{"latency_ms": 1}\n')
+    with pytest.raises(ValueError, match="original experiment archive changed"):
         checker.verify(checkout)
