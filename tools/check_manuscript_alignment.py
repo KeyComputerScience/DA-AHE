@@ -36,6 +36,12 @@ def verify(root=ROOT):
     require(contract["schema_version"] == 1, "unsupported alignment contract")
     for retired in contract["retired_active_paths"]:
         require(not (root / retired).exists(), "retired legacy artifact returned: " + retired)
+    for record in contract.get("archived_original_experiment_contracts", []):
+        path = root / record["path"]
+        require(not path.is_symlink() and path.is_file() and
+                path.resolve().is_relative_to(root), "missing regular original experiment archive")
+        require(hashlib.sha256(path.read_bytes()).hexdigest() == record["sha256"],
+                "original experiment archive changed: " + record["path"])
     params = DEFAULT_PARAMETERS
     require(contract["current_parameters"] == asdict(params), "canonical parameter drift")
     expected = {"module_rank": params.k, "ring_degree": params.d, "n": params.n,

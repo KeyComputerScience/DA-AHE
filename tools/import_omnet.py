@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 """Import an EXTERNAL OMNeT++ instrumented event export; does not simulate a network.
 
-Canonical input contract is in experiments/METRICS_SCHEMA.md. Raw .sca/.vec files
+Canonical input contract is in docs/archive/original-experiment-contract/METRICS_SCHEMA.md. Raw .sca/.vec files
 must first be exported by the author module with complete source/sink events.
 """
 from __future__ import annotations
