@@ -441,11 +441,11 @@
     },
     {
       "path": "experiments/current-results.json",
-      "sha256": "05ea53670669301dcd0f040e47b5a4b3c197cd39dbc24f02fb38f64165bf39cf"
+      "sha256": "0f5023c2bb0c22a8168dc67cc58e1182389d4d3495963d56bd8772baced45065"
     },
     {
       "path": "experiments/CURRENT_RESULTS.md",
-      "sha256": "727ea4b140152a32da039f2081a200e74fe1735ea14b44c74e8f67a2b5f57eb1"
+      "sha256": "3362bfeada4611ee03417c2edb44d60af1207d8452f506b8b537d94ea0ed2aee"
     },
     {
       "path": "evidence/independent/current-evaluation/run-01/execution.json",
@@ -457,5 +457,17 @@
     }
   ],
   "paper_reproduced": false,
-  "full_system_certified": false
+  "full_system_certified": false,
+  "continuous_integration": {
+    "workflow": ".github/workflows/reproduce.yml",
+    "policy_guard": "tools/check_ci_triggers.py",
+    "triggers": [
+      "pull_request",
+      "push:main",
+      "workflow_dispatch"
+    ],
+    "required_jobs": [
+      "source"
+    ]
+  }
 }
