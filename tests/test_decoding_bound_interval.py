@@ -3,9 +3,7 @@
 import importlib.util
 from pathlib import Path
 
-import pytest
-
-sage = pytest.importorskip("sage.all")
+from sage import all as sage
 
 
 def tool():

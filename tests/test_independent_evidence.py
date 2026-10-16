@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 import sys
 import time
@@ -8,6 +9,11 @@ import subprocess
 import pytest
 
 from daahe.independent_evidence import bundle_manifest, run_logged, source_snapshot, verify_bundle
+
+
+def require_posix_process_groups():
+    if os.name != "posix" or not hasattr(os, "killpg") or not hasattr(os, "setsid"):
+        pytest.fail("POSIX process-group and interrupt semantics are required; run on Linux/POSIX CI")
 
 
 def test_real_execution_and_failure_are_logged_without_success_promotion(tmp_path):
@@ -68,8 +74,8 @@ def test_source_snapshot_covers_tests_assembly_dependencies_and_checkout_shim(tm
     assert source_snapshot(tmp_path)["digest"] != before["digest"]
 
 
-@pytest.mark.skipif(sys.platform == "win32", reason="POSIX process group semantics")
 def test_timeout_stops_descendants_before_they_can_mutate_evidence(tmp_path):
+    require_posix_process_groups()
     child = "import time,pathlib;time.sleep(.4);pathlib.Path('survived').write_text('bad')"
     parent = "import subprocess,sys,time;subprocess.Popen([sys.executable,'-c'," + repr(child) + "]);time.sleep(5)"
     result = run_logged([sys.executable, "-c", parent], tmp_path, tmp_path / "timeout", timeout=.15)
@@ -85,8 +91,8 @@ def test_public_manifest_rejects_accidental_private_material(tmp_path, name):
         bundle_manifest(tmp_path, tmp_path / "manifest.json")
 
 
-@pytest.mark.skipif(sys.platform == "win32", reason="POSIX interrupt semantics")
 def test_interrupted_wrapper_finalizes_receipt_and_stops_its_job(tmp_path):
+    require_posix_process_groups()
     cli = Path(__file__).resolve().parents[1] / "tools/run_logged.py"
     output = tmp_path / "interrupted"
     command = [sys.executable, str(cli), "--root", str(tmp_path), "--output", str(output),

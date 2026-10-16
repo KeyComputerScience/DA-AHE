@@ -6,7 +6,6 @@ import importlib.util
 import json
 import os
 from pathlib import Path
-import pty
 import shutil
 import struct
 import subprocess
@@ -14,6 +13,23 @@ import threading
 import time
 
 import pytest
+
+try:
+    import pty
+except ImportError:
+    pty = None
+
+
+def require_posix_pty():
+    if os.name != "posix" or pty is None:
+        pytest.fail("POSIX pseudo-terminal support is required for the serial collector test; run on Linux/POSIX CI")
+
+
+def native_compiler():
+    compiler = shutil.which("clang") or shutil.which("gcc")
+    if compiler is None:
+        pytest.fail("a native C compiler is required; install clang or gcc before running this suite")
+    return compiler
 
 
 def verifier():
@@ -219,6 +235,7 @@ def test_capture_rejects_non_arm_elf_even_with_matching_manifest(tmp_path):
 
 
 def test_serial_timeout_retains_literal_incomplete_host_fixture(tmp_path, monkeypatch):
+    require_posix_pty()
     build, _ = fixture_capture(tmp_path)
     monkeypatch.syspath_prepend(str(Path(__file__).resolve().parents[1] / "tools"))
     import collect_board_measurements as collector
@@ -290,9 +307,7 @@ def test_new_schema_rejects_legacy_schema_and_misderived_metadata():
 
 @pytest.mark.parametrize("rank", [3, 6, 7, 16])
 def test_native_core_really_accepts_one_and_two_derived_ciphertexts(tmp_path, rank):
-    compiler = shutil.which("clang") or shutil.which("gcc")
-    if compiler is None:
-        pytest.skip("a native C compiler is unavailable")
+    compiler = native_compiler()
     root = Path(__file__).resolve().parents[1]
     binary = tmp_path / f"core-rank-{rank}"
     subprocess.run(
@@ -321,9 +336,7 @@ def test_native_core_really_accepts_one_and_two_derived_ciphertexts(tmp_path, ra
 
 @pytest.mark.parametrize("rank", [2, 17])
 def test_native_core_rejects_invalid_module_rank_at_compile_time(tmp_path, rank):
-    compiler = shutil.which("clang") or shutil.which("gcc")
-    if compiler is None:
-        pytest.skip("a native C compiler is unavailable")
+    compiler = native_compiler()
     root = Path(__file__).resolve().parents[1]
     result = subprocess.run(
         [

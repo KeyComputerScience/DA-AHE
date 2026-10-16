@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Optional real-provider tests, execution receipts are recorded separately."""
+"""Real-provider tests require installed dependencies; receipts are separate."""
 import pytest
 from types import SimpleNamespace
 
@@ -52,10 +52,7 @@ def test_provider_installer_hook_is_replaced_with_explicit_refusal(monkeypatch):
 
 
 @pytest.mark.pq
-def test_real_ml_dsa_44_roundtrip_message_binding_and_key_restore(request):
-    # Explicit selection is required even on machines where a provider exists.
-    if request.config.option.markexpr.strip() != "pq":
-        pytest.skip("explicit reviewer command pytest -m pq required")
+def test_real_ml_dsa_44_roundtrip_message_binding_and_key_restore():
     with signatures.MLDSA44Signer.keygen() as signer:
         verifier = signatures.MLDSA44Verifier(signer.public_key)
         message = b"DA-AHE real-provider test, not experimental data"
