@@ -1,0 +1,43 @@
+{
+  "batches": 5,
+  "conditional_per_fixed_key_guarantee": false,
+  "conditions": [
+    "Each batch makes one choice from the declared 42 configurations, with at most two plaintext polynomials, before that batch's fresh encryption noises.",
+    "The next batch's honest encryption noises are independent of the past; shared key coefficients and dependent batch outcomes are allowed.",
+    "No source-subset selection after observing current-batch ciphertexts/noises.",
+    "The task horizon is a predeclared finite cap on attempts, not only successful deliveries; noise-regenerating retries and reencryptions consume attempts.",
+    "No arbitrary-history conditional, every-fixed-key, unlimited-lifetime, malicious-ciphertext, network, no-wrap or control guarantee is inferred."
+  ],
+  "configuration_count": 42,
+  "full_system_certified": false,
+  "horizon_union_upper_approx": "2.5792482488454954816132473071940E-39",
+  "horizon_union_upper_exact_rational": "406510221932199290522767356522909147758168638867923182194927135605966443689045/157608024785577916849116160400574455220318957081861786671793173616982887085988842445657065019539662563226511961227264",
+  "independence_between_batches_assumed": false,
+  "max_batches_for_target": 5,
+  "max_batches_passes_exact_comparison": true,
+  "next_batch_exceeds_target_exact_comparison": true,
+  "parameters": {
+    "module_rank": 6,
+    "n": 1536,
+    "p": 65537,
+    "poly_counts": [
+      1,
+      2
+    ],
+    "q": 4294967296,
+    "ring_degree": 256,
+    "sigma_key": 3.2
+  },
+  "passes_target": true,
+  "poly_count_maximum": 2,
+  "proof_reexecuted": false,
+  "report": "evidence/independent/decoding/k6-cdt-03/decoding-bound.json",
+  "report_sha256": "2be1b88b34bdee74c852fd12c9020c4fed1870a117f4a63ab00d057944991335",
+  "scope": "Finite-horizon joint random-key/history/fresh-noise decoding risk only.",
+  "single_batch_upper_approx": "5.1584964976909909632264946143880E-40",
+  "single_batch_upper_exact_rational": "81302044386439858104553471304581829551633727773584636438985427121193288737809/157608024785577916849116160400574455220318957081861786671793173616982887085988842445657065019539662563226511961227264",
+  "status": "passed_decoding_horizon_budget",
+  "target_risk_approx": "2.9387358770557187699218413430556E-39",
+  "target_risk_exact_rational": "1/340282366920938463463374607431768211456",
+  "uncapped_horizon_union_exact_rational": "406510221932199290522767356522909147758168638867923182194927135605966443689045/157608024785577916849116160400574455220318957081861786671793173616982887085988842445657065019539662563226511961227264"
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "origin": "independent_reimplementation",
+  "created_utc": "2026-10-16T04:34:53.223102+00:00",
+  "python_version": "3.12.14",
+  "steps": [
+    {
+      "command": [
+        "python",
+        "tools/check_decoding_horizon.py",
+        "--batches",
+        "5",
+        "--target-bits",
+        "128",
+        "--output",
+        "evidence/independent/decoding-horizon/run-01/budget-5-128.json"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "status": "passed",
+      "entrypoint_sha256": "acab54b0665731de4819a4c7a2045a5e912a68c4b9485a5bc0d53697a3564966",
+      "output_file": "budget-5-128.json",
+      "output_sha256": "2986634c2981930f525e883eb8de76364110942a031044772c0589cc13bd0801"
+    },
+    {
+      "command": [
+        "python",
+        "tools/check_decoding_horizon.py",
+        "--batches",
+        "6",
+        "--target-bits",
+        "128",
+        "--output",
+        "evidence/independent/decoding-horizon/run-01/budget-6-128-rejected.json"
+      ],
+      "returncode": 2,
+      "expected_returncode": 2,
+      "status": "passed",
+      "entrypoint_sha256": "acab54b0665731de4819a4c7a2045a5e912a68c4b9485a5bc0d53697a3564966",
+      "output_file": "budget-6-128-rejected.json",
+      "output_sha256": "e25e1c39633be1052a40ad209534b8412b29cad3c0585a453a1849e3e8b986f6"
+    },
+    {
+      "command": [
+        "python",
+        "tools/check_decoding_horizon.py",
+        "--batches",
+        "300",
+        "--target-bits",
+        "120",
+        "--output",
+        "evidence/independent/decoding-horizon/run-01/budget-300-120.json"
+      ],
+      "returncode": 0,
+      "expected_returncode": 0,
+      "status": "passed",
+      "entrypoint_sha256": "acab54b0665731de4819a4c7a2045a5e912a68c4b9485a5bc0d53697a3564966",
+      "output_file": "budget-300-120.json",
+      "output_sha256": "3abecd242d51f88d9fa7df24aba117d2604bb0bac772d266efce0e2985b2be67"
+    }
+  ],
+  "paper_reproduced": false,
+  "full_system_certified": false,
+  "scope": "Executed exact-rational budgets from pinned decoding evidence, with expected six-batch rejection; probability proof not reexecuted."
+}
