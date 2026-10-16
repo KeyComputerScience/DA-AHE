@@ -5,13 +5,14 @@
     "sha256": "ad09feb7fa00a87bf0dd342a1b929a0d776cb087e8420169556d85f3139d3fc5",
     "pages": 14,
     "editable_source_available": false,
-    "text_same_as_previous": true
+    "text_same_as_previous": true,
+    "partial_latex_fragment_supplied": true
   },
   "claims": [
     {
       "id": "security_parameter_estimate",
-      "paper_reference": "PDF pp. 3-4 (Section IV-A), p. 6 (Section V-B), p. 12 (Appendix VIII-A, Eq. (24))",
-      "statement": "The PDF states k=3, n=m=768 and a 128.1-bit minimum. The current independent implementation instead selects k=6, n=m=1536; its complete archived seven-attack minimum is 136.475 bits.",
+      "paper_reference": "Method: fixed Module-LWE parameters and concrete attack-cost estimation",
+      "statement": "The implementation uses k=6, d=256, n=m=1536, q=2^32, p=65537 and sigma_key=3.2. The complete recorded seven-attack estimate has minimum 136.475 bits against a required estimator threshold of 128.1 bits.",
       "implementation_paths": [
         "src/daahe/mlwe.py",
         "configs/security_profile.json",
@@ -30,17 +31,16 @@
         "python security/verify_run.py evidence/independent/security-parameter-search/selected-k6-full --upstream external/lattice-estimator --minimum-bits 128.1"
       ],
       "status": "reproduced_independent_scope",
-      "scope": "Independent changed-parameter result only. Generic flattened-LWE/Gaussian-like estimator, declared ADPS16 quantum reduction model and GSA; coded-BKW retains its native word-operation convention. The preserved incomplete k=3 run contains a successful 51.94-bit attack estimate and cannot establish 128.1 bits. No actual-CDT, module-specific, implementation, all-attack or worst-case proof follows.",
+      "scope": "Generic flattened-LWE analysis under the pinned estimator distributions and cost models. Reduction attacks use the recorded ADPS16 quantum model and GSA; coded-BKW retains its native operation-count convention. This is not an actual-finite-CDT, module-specific, side-channel, implementation, all-attack or worst-case security proof.",
       "required_for_original_claim": [
-        "Revise the PDF tuple and every dependent byte, airtime, resource and performance value together.",
-        "Supply original k=3 estimator inputs and complete attack logs if retaining that historical claim; do not overwrite the adverse independent record.",
-        "Justify security for the instantiated encryption distribution and declared threat model separately from heuristic attack-cost arithmetic."
+        "Security claims require an explicit instantiated encryption distribution, attack applicability and threat model in addition to estimator arithmetic.",
+        "Every reported attack cost is tied to its recorded inputs, source, environment and native cost convention."
       ]
     },
     {
       "id": "single_ciphertext_payload",
-      "paper_reference": "PDF p. 1 (abstract/contributions), p. 4 (Algorithm 1), p. 8 (Eq. (16)), p. 9 (Eqs. (17) and (19)), p. 11 (Eq. (23))",
-      "statement": "At the current k=6 tuple, packing at most 240 retained data coefficients plus 16 tags into one degree-256 polynomial reduces ciphertext payload from 14,336 to 7,168 bytes, compared with the two-polynomial raw path.",
+      "paper_reference": "Method: profile-bound packing and canonical ciphertext serialization",
+      "statement": "At k=6, up to 240 retained data coefficients and 16 tags fit into one degree-256 polynomial and a 7,168-byte ciphertext; the 480-coefficient raw representation uses two ciphertexts totaling 14,336 bytes.",
       "implementation_paths": [
         "src/daahe/profiles.py",
         "src/daahe/protocol.py",
@@ -59,17 +59,16 @@
         "python -m pytest -q tests/test_parameterized_encryption.py tests/test_crypto_protocol.py"
       ],
       "status": "reproduced_independent_scope",
-      "scope": "Structural encoded-payload arithmetic, not measured total wire savings. At 250 kbit/s the payload-only serialization bounds are 229.376 ms and 458.752 ms. Tickets, hashes/MACs, headers, fragmentation, retries and multihop transport are additional. Smaller L within one polynomial does not shorten an individual ciphertext.",
+      "scope": "Encoded-payload arithmetic only. At 250 kbit/s the ideal single-hop payload serialization times are 229.376 ms and 458.752 ms. Tickets, authentication, headers, fragmentation, contention, retries and computation are additional. Changing retained support within one polynomial does not shorten its ciphertext.",
       "required_for_original_claim": [
-        "Replace the PDF's 8,192-to-4,096-byte and 131.072-ms numbers consistently if adopting k=6.",
-        "Publish full-protocol bytes and measured service costs before claiming end-to-end savings.",
-        "Evaluate the aggregate physical-signal distortion caused by retaining only part of the coefficient vector."
+        "Complete communication and latency claims require the full protocol accounting boundary and matching measured service costs.",
+        "Signal utility requires aggregate-domain error evaluation on the stated input distribution."
       ]
     },
     {
       "id": "encoded_additive_aggregation",
-      "paper_reference": "PDF p. 3 (encoding/encryption pipeline), p. 4 (Eq. (7)), pp. 4-5 (Algorithms 1-3)",
-      "statement": "Host ciphertext addition and decryption implement addition of encoded quantized data/tag coefficients modulo p; data no-wrap checks permit a signed integer interpretation within the declared bound.",
+      "paper_reference": "Method: additive encryption, centered data decoding and aggregate reconstruction",
+      "statement": "Ciphertext addition and decryption recover sums of encoded quantized data and tag coefficients modulo p; the data no-wrap bound permits interpreting admitted data coordinates as signed integer sums.",
       "implementation_paths": [
         "src/daahe/ring.py",
         "src/daahe/mlwe.py",
@@ -88,17 +87,16 @@
         "python tools/run_protocol_trials.py --module-rank 6 --trials 20 --output runs/reviewer-protocol-trials"
       ],
       "status": "reproduced_independent_scope",
-      "scope": "Preserved independent host functional executions are indexed by claim-coverage.json and the public archive. Exact encoded-coefficient aggregation does not imply exact aggregation of the physical samples through rounded integer lifting, selection and quantization. Randomized functional tests do not prove a 2^-128 decoding tail.",
+      "scope": "Host functional encryption/aggregation tests support encoded-domain correctness under the stated no-wrap and decoding assumptions. Rounded integer lifting, coefficient selection and quantization make physical-signal reconstruction a separate approximation. Functional trials do not establish a 2^-128 tail probability.",
       "required_for_original_claim": [
-        "State correctness in the encoded domain and retain plaintext no-wrap and decoding assumptions.",
-        "Provide aggregate-domain PRD/RMSE against the physical sum for every reported profile and admissible batch size.",
-        "Bind fresh execution receipts to the exact source, key/profile tuple, provider and input traces."
+        "Aggregate-signal accuracy is characterized against the true sum, with profile, batch size, input scaling and rounding conventions identified.",
+        "Execution records identify the exact source, encryption parameters, provider and input traces."
       ]
     },
     {
       "id": "roster_integrity_and_postquantum_authorization",
-      "paper_reference": "PDF pp. 5-7 (Algorithms 2-3, Section V-A, Eqs. (9)-(14))",
-      "statement": "The host protocol binds signed tickets, profile/context/nonces and the exact authorized roster, and rejects tested compromised-gateway modifications and replay; the paper's integrity theorem remains conditional.",
+      "paper_reference": "Method: signed roster authorization and sink aggregate verification",
+      "statement": "Signed tickets bind the operating profile, context, nonces, encryption parameters and exact participant roster. Real-provider host trials exercise legal acceptance, gateway-tampering rejection and persistent replay rejection.",
       "implementation_paths": [
         "src/daahe/protocol.py",
         "src/daahe/signatures.py",
@@ -117,23 +115,22 @@
         "python tools/run_protocol_trials.py --module-rank 6 --trials 20 --output runs/reviewer-integrity-trials"
       ],
       "status": "reproduced_independent_scope",
-      "scope": "Independent real-provider functional trials, not a machine-checked QROM security reduction or attack-detection probability. Sources/sink and derivation secrets are trusted. Gateway-held HMACs do not secure a compromised gateway; the plaintext lightweight path is not confidential. Q_v/p^16 is one conditional tag-guessing contribution, not the complete security level.",
+      "scope": "Functional protocol evidence under trusted source/sink and secret-derivation assumptions. Gateway-held HMACs filter external pollution but do not secure a compromised gateway. The authenticated plaintext path is not confidential. Q_v/p^16 is one conditional tag-guessing contribution, not a complete-system security level or measured attack-detection probability.",
       "required_for_original_claim": [
-        "Make the one-distinct-report-per-ticket/source-offset rule an explicit theorem assumption and Algorithm 1 step.",
-        "Retain primitive-security, decoding, uniform-rejection and persistent-state assumptions in the reduction.",
-        "Document exact ML-DSA provider/version, nonce/profile/context binding, replay persistence and tested adversary capabilities.",
-        "Do not claim source-compromise, collusion, side-channel or availability resistance."
+        "The integrity model requires one distinct report per authorized ticket/source offset, protected derivation secrets, valid primitive assumptions and correctly scoped decoding bounds.",
+        "A security reduction requires its uniform-rejection, hash-binding and persistent-state assumptions.",
+        "Deployment documentation identifies the ML-DSA provider, context/key binding, nonce handling and supported adversary capabilities."
       ]
     },
     {
       "id": "durable_source_emission_and_replay",
-      "paper_reference": "PDF p. 4 (Algorithm 1), p. 6 (one-envelope statement), p. 7 (Seen and Eq. (13)); additional source-emission condition required by the implementation",
-      "statement": "SourceEmissionStore durably binds one payload and cached envelope to each ticket/source/nonce; ReplayStore enforces at-most-once sink acceptance. These are separate necessary conditions.",
+      "paper_reference": "Method: durable source-emission cache and at-most-once sink acceptance",
+      "statement": "SourceEmissionStore transactionally binds a raw-payload digest and retains the first committed envelope for each ticket/source/nonce. Retries return the cached signed ticket and blocks. ReplayStore reserves the ticket digest only after validation and before result release.",
       "implementation_paths": [
         "src/daahe/protocol.py",
         "tests/test_source_ledger.py",
         "tests/test_crypto_protocol.py",
-        "docs/MANUSCRIPT_CORRECTIONS.md"
+        "docs/manuscript/PARAMETER_PROTOCOL.tex"
       ],
       "evidence_paths": [
         "evidence/independent/claim-coverage.json",
@@ -144,18 +141,16 @@
         "python tools/check_manuscript_alignment.py"
       ],
       "status": "implemented_not_original_measurement",
-      "scope": "Inspectable SQLite host mechanisms and targeted regression tests. Two distinct reports under one hidden affine offset can permit 2*c1-c2 recombination. SQLite is not an embedded anti-rollback driver; Seen does not supply a durable result/outbox after a crash.",
+      "scope": "SQLite host persistence and targeted regression tests. Concurrent same-payload callers receive the committed envelope; different payloads are rejected. Storage rollback/deletion invalidates the emission/replay assumptions. The implementation is not an embedded anti-rollback driver; at-most-once acceptance does not itself supply durable exactly-once application delivery.",
       "required_for_original_claim": [
-        "Add durable bind/commit-before-release and same-envelope retries to Algorithm 1.",
-        "State anti-rollback/deletion and fresh-authorization requirements.",
-        "Supply board nonvolatile-storage and crash/recovery evidence if claiming deployed protection.",
-        "Keep at-most-once acceptance distinct from exactly-once result delivery."
+        "Embedded deployment requires protected nonvolatile storage, anti-rollback and crash-recovery evidence.",
+        "Application delivery requires a transactional result/outbox and an idempotent trusted consumer where loss after acceptance is unacceptable."
       ]
     },
     {
       "id": "finite_sampler_decoding",
-      "paper_reference": "PDF p. 3 (Eq. (3)), p. 4 (capacities 16/14/12), p. 7 (epsilon_batch in Eq. (13)), p. 10 (profile correctness statements)",
-      "statement": "The independent k=6 actual finite-CDT calculation bounds decoding failure for profiles (sigma_enc,Nmax)=(3.2,16),(3.4,14),(3.6,12), including scaling carry; its 42-choice single-batch union log2 upper endpoint is approximately -130.5101732.",
+      "paper_reference": "Correctness: exact finite-CDT single-batch decoding bound",
+      "statement": "The executed k=6 finite-CDT calculation covers (sigma_enc,Nmax)=(3.2,16),(3.4,14),(3.6,12), shared-key noise products and scaling carry. The 42-choice single-batch union log2 upper endpoint is approximately -130.5101732.",
       "implementation_paths": [
         "src/daahe/mlwe.py",
         "tools/certify_decoding_bound.py",
@@ -175,17 +170,16 @@
         "python tools/certify_decoding_bound.py --output runs/reviewer-decoding --module-rank 6 --security-report evidence/independent/security-parameter-search/selected-k6-full/security.json"
       ],
       "status": "reproduced_independent_scope",
-      "scope": "Executed outward-interval bound for the actual finite sampler, jointly over random key generation and one fresh honest batch. Profile/roster selection precedes fresh batch noises. It does not cover every fixed key, arbitrary observed-history conditioning, malicious ciphertexts, unlimited lifetime, memory or control dynamics. The second command requires Sage-enabled Python and creates a new run.",
+      "scope": "Outward-interval calculation for the implemented finite sampler, jointly over random key generation and fresh honest batch noises. Configuration and roster selection precede fresh batch noise. It does not establish every-fixed-key, arbitrary observed-history conditional, malicious-ciphertext, lifetime, memory or controller guarantees. Fresh calculations require Sage-enabled Python.",
       "required_for_original_claim": [
-        "Replace unsupported original k=3 correctness certificates with a matching revised tuple and probability statement.",
-        "Publish exact PMF/CDT, independence assumptions, carry/decoder analysis and interval endpoints.",
-        "Keep per-batch correctness separate from confidentiality, forgery, operational packet loss and finite-horizon risk."
+        "The probability statement identifies the exact CDT masses, independence assumptions, decoder/carry margin and interval endpoints.",
+        "Task-level claims use an explicit horizon and attempt count; confidentiality, forgery and network-loss claims remain separate."
       ]
     },
     {
       "id": "finite_horizon_decoding_budget",
-      "paper_reference": "PDF p. 3 (Eq. (3)), p. 7 (Eq. (13)), pp. 7-8 (history-adaptive controller); the PDF gives no explicit finite-horizon risk budget",
-      "statement": "A declared multi-batch horizon requires an additional risk calculation; a single-batch 2^-128 target is not automatically a lifetime 2^-128 guarantee.",
+      "paper_reference": "Correctness: exact-rational finite-task decoding risk budget",
+      "statement": "For a predeclared cap B on covered fresh-noise batch attempts, the checker computes min(1,B*U) from the pinned single-batch upper bound U and compares it exactly with the selected task risk.",
       "implementation_paths": [
         "tools/certify_decoding_bound.py",
         "tools/verify_decoding_record.py",
@@ -208,16 +202,17 @@
         "python tools/check_decoding_horizon.py --batches 300 --target-bits 120"
       ],
       "status": "reproduced_independent_scope",
-      "scope": "Executed exact-rational finite union budgets from the pinned single-batch bound: target 2^-128 permits at most 5 attempts (6 rejected); target 2^-120 permits at most 1458 (300 passes). No independence between failures is assumed. Each attempt must satisfy the stated fresh-noise and preselection conditions. This does not provide every-fixed-key/arbitrary-history conditional or lifetime guarantees and does not silently weaken a target.",
+      "scope": "Executed budgets permit at most 5 attempts at target 2^-128 (6 is not certified) and at most 1458 at 2^-120 (300 passes). Independence between batch failures is not assumed. Fresh-noise and preselection conditions apply to every counted attempt. A failed budget comparison is not an observed decoding failure, a uniform fixed-key/history result or a lifetime guarantee.",
       "required_for_original_claim": [
-        "Specify task duration, maximum batch count, profile selection rule, roster rule and key-rotation schedule.",
-        "If claiming uniform fixed-key/history guarantees, provide a matching certificate/proof rather than reusing the joint random-key bound."
+        "A deployment states its task duration, attempt cap, profile/roster selection and key lifecycle.",
+        "Fresh-noise retries and reencryptions count as attempts.",
+        "Uniform fixed-key/history claims require a certificate valid for that conditioning."
       ]
     },
     {
       "id": "aggregate_physical_fidelity",
-      "paper_reference": "PDF p. 3 (IntDb2/quantization pipeline), p. 5 (Algorithm 3), p. 13 (Eq. (25), Table III, PRD<=2.50% statement)",
-      "statement": "Table III's reported per-profile physical reconstruction quality does not establish fidelity of the current independent rounded-lifting aggregate against the true physical sum.",
+      "paper_reference": "Evaluation: aggregate-domain synthetic signal reconstruction",
+      "statement": "The executed fidelity study evaluates 72 declared synthetic cases against the true integer-count source sum: 54 capacity-admissible cases and 18 explicitly inadmissible diagnostics.",
       "implementation_paths": [
         "src/daahe/signal.py",
         "src/daahe/profiles.py",
@@ -242,15 +237,16 @@
         "python tools/check_aggregate_fidelity.py --verify runs/fidelity"
       ],
       "status": "requires_original_data",
-      "scope": "Actually executed and independently recomputed 72 declared synthetic cases (54 capacity-admissible, 18 inadmissible diagnostics), with exact integer arrays, rounding/selection/quantization attribution and explicit zero-reference PRD. Frozen source and raw inputs are public. This is aggregate-domain evidence for the current reference completion; it does not reproduce original Table III, its physical units or its threshold.",
+      "scope": "Exact integer arrays and recomputed metrics separate rounded-lifting aggregation, selection and quantization effects in a declared order. Zero-reference PRD is explicitly undefined. Frozen source and raw inputs are available. The study does not establish calibrated physical units, a real sensor population, a universal distortion threshold, encryption/decryption performance or a full-system certificate.",
       "required_for_original_claim": [
-        "Publish an identified signal corpus, physical units/scaling, sensor channel meaning, normalization, lifting/rounding, supports and boundary conventions."
+        "Physical-signal claims require an identified sensor corpus, units/scaling, normalization, transform/rounding, support and boundary conventions.",
+        "Utility-constrained control claims require actual signal values and distortion feedback in the closed-loop evaluation."
       ]
     },
     {
       "id": "strict_belief_control_and_stability",
-      "paper_reference": "PDF p. 3 (Eqs. (1)-(4)), pp. 7-8 (Eq. (15), Algorithm 6, conditional boundedness theorem), p. 9 (calibration)",
-      "statement": "ControlledHMM, robust action scoring, DPP/HYS and evidence gates are implemented; the shipped synthetic model does not establish the PDF's calibrated closed-loop stability hypotheses.",
+      "paper_reference": "Method: controlled HMM, robust drift admission and conditional stability",
+      "statement": "ControlledHMM, robust action scoring, DPP/HYS and evidence gates are implemented. The network campaign uses an explicitly uncalibrated synthetic fixture and records uncertified decisions.",
       "implementation_paths": [
         "src/daahe/control.py",
         "src/daahe/calibration.py",
@@ -260,7 +256,9 @@
         "configs/control_synthetic.json",
         "simulation/controller_fixture.json",
         "tests/test_control.py",
-        "tests/test_control_binding.py"
+        "tests/test_control_binding.py",
+        "docs/manuscript/CONTROL_BASELINES.tex",
+        "docs/manuscript/CONTROL_REFERENCES.bib"
       ],
       "evidence_paths": [
         "evidence/independent/claim-coverage.json",
@@ -271,19 +269,18 @@
         "python -m daahe replay-control --config configs/control_synthetic.json --telemetry examples/telemetry_synthetic.csv --method da-ahe --allow-synthetic --output runs/reviewer-synthetic-control.json"
       ],
       "status": "requires_proof",
-      "scope": "Functional/analytic implementation with explicitly uncertified fixtures. Artifact hash and tuple binding check identity, not proof validity. Conditional mean-square ultimate boundedness does not prove forward invariance, zero QoS violation or safety under arbitrary DoS. The second command is an uncertified inspection run.",
+      "scope": "Functional and analytic implementation evidence. Artifact identity checks do not establish proof validity. Conditional mean-square ultimate boundedness does not imply forward invariance, zero QoS violations or safety under arbitrary denial of service. Online floating-point drift comparisons need conservative numerical-error treatment for deployment certification.",
       "required_for_original_claim": [
-        "Publish separate training, heldout calibration and evaluation seeds/traces and the full observation/emission model.",
-        "Provide exact action library, P_V, Z_cert, gamma/beta, transition ambiguity/error radii and their uniform validity scope.",
-        "Provide a reviewed fallback supremum/nonemptiness certificate and an invariance argument or explicit exit handling.",
-        "Account for online kernel adaptation and bounded adversarial observations/disturbances in the theorem assumptions.",
-        "Supply a same-crypto DPP plus identical filter, no-belief robust filter and nominal-belief comparison before attributing performance to belief or robustness."
+        "A deployment certificate identifies separate training, heldout calibration and evaluation traces and the complete observation model.",
+        "Uniform state-error/transition bounds, the exact action library, P_V, Z_cert, gamma/beta, fallback nonemptiness and invariance or exit handling require reviewed evidence.",
+        "Online adaptation and bounded adversarial observations must be included in the validity scope.",
+        "Attribution to belief and robustness requires matched same-envelope controls including DPP with the same filter, a no-belief robust filter and nominal belief control."
       ]
     },
     {
       "id": "full_protocol_workspace_and_memory",
-      "paper_reference": "PDF p. 3 (10-KiB gate in Eq. (3)), p. 4 (streaming memory discussion), p. 8 (setup), p. 13 (Table II)",
-      "statement": "The current independent core harness build is not evidence for the PDF's 10-KiB complete streaming workspace or 29,328-byte whole-firmware peak SRAM.",
+      "paper_reference": "Implementation: compiled core harness and deployment memory requirements",
+      "statement": "The selected rank-6 core build reports 5,624-byte load sections and 20,608-byte static RAM with benchmark stack reservations. Physical-board samples remain zero.",
       "implementation_paths": [
         "embedded/daahe_core.c",
         "embedded/daahe_core.h",
@@ -303,25 +300,24 @@
         "python tools/verify_board_measurements.py --help"
       ],
       "status": "requires_hardware",
-      "scope": "Physical samples=0. The indexed selected core build reports 5,624-byte load sections and 20,608-byte static RAM with reserved benchmark stack; this is not the complete Contiki-NG protocol, measured stack HWM or per-role 10-KiB certificate.",
+      "scope": "Core compilation and host known-answer evidence only. They do not establish complete-protocol stack high-water, per-role peak SRAM, network/OS memory lifetimes or a full-role workspace certificate.",
       "required_for_original_claim": [
-        "Supply complete k=6 role-specific source, linked ELF/map, compiler/OS identities and buffer lifetimes.",
-        "Measure stack high-water and peak memory across encryption, transform, signatures/derivation/authentication, roster handling and network/interrupt paths.",
-        "Keep action workspace, total static SRAM, reserved stack and measured runtime peak distinct; avoid double counting.",
-        "Publish raw board capture with verified firmware identity before claiming physical resource results."
+        "Complete embedded resource claims require linked per-role firmware, ELF/map and compiler/OS identities.",
+        "Stack, buffers, cryptographic/transform/authentication workspaces and network/interrupt paths require physical stress capture and lifetime accounting.",
+        "Action workspace, static SRAM, reserved stack and measured runtime peak must have distinct accounting boundaries."
       ]
     },
     {
       "id": "board_timing_energy_and_airtime",
-      "paper_reference": "PDF p. 8 (3.72M cycles, 58.125 ms, 1.395 mJ), p. 9 (Eqs. (17)-(21)), p. 10 (Table I), p. 13 (prototype description)",
-      "statement": "Historical nRF52840 timing/energy figures and the 77.199-ms weighted bound are unverified for the independent k=6 protocol.",
+      "paper_reference": "Evaluation: modeled service costs and physical measurement requirements",
+      "statement": "The network study reports declared modeled CPU and radio-transmit energy and exact ciphertext-payload serialization arithmetic. It contains no physical-board timing or power samples.",
       "implementation_paths": [
         "firmware/nrf52840/benchmark.c",
         "firmware/build.py",
         "tools/collect_board_measurements.py",
         "tools/verify_board_measurements.py",
         "simulation/engine.py",
-        "experiments/paper_targets.json",
+        "docs/archive/original-experiment-contract/paper_targets.json",
         "configs/manuscript_alignment.json"
       ],
       "evidence_paths": [
@@ -334,18 +330,17 @@
         "python tools/verify_board_measurements.py --help"
       ],
       "status": "requires_hardware",
-      "scope": "Cross-compilation and host known answers are separate from physical timing/power. Simulator CPU service time and radio energy are declared modeling assumptions. Arithmetic payload airtime is not operational latency and cannot incorporate old k=3 CPU measurements to create a new k=6 total.",
+      "scope": "Cross-compilation and host known answers are distinct from physical timing/power. Simulation service times are explicit assumptions. CPU/TX accounting omits receive/listen, operating-system and other stated costs. Payload serialization is not complete operational latency or complete-protocol energy.",
       "required_for_original_claim": [
-        "Measure the complete k=6 source/gateway/sink paths with fresh raw cycles, clocks and power calibration.",
-        "Include ticket/signature/KDF/HMAC, source ledger, receive/listen, relay, OS/interrupt and fragmentation costs at the claimed boundary.",
-        "Bind trace intervals, voltage/current instruments and energy integration to firmware identity.",
-        "Recompute every workload-weighted expression from matching revised measurements."
+        "Physical cost claims require complete rank-6 source/gateway/sink measurements with firmware identity, raw cycles and calibrated power traces.",
+        "The accounting boundary identifies ticket/signature/KDF/HMAC, source ledger, framing, relaying, receive/listen and OS/interrupt work.",
+        "Workload-weighted totals use costs measured or modeled under the same stated parameters and boundary."
       ]
     },
     {
       "id": "original_network_and_ablation_figures",
-      "paper_reference": "PDF pp. 9-10 (setup and Figs. 2-4), p. 11 (Fig. 5, Eqs. (22)-(23), ablations), p. 12 (Fig. 6 and conclusion)",
-      "statement": "The PDF's OMNeT++/INET 450.0-ms latency, 0.074%/0.098% residual loss, 33.0-s recovery and comparative improvements are not reproduced by the independent synthetic campaign.",
+      "paper_reference": "Evaluation: twenty-seed seven-method packet-service campaign",
+      "statement": "The executed synthetic Python campaign compares all seven methods across 20 paired seeds at 3,000 sensors and 60 gateways, with 90 s of generation and 35 s of draining.",
       "implementation_paths": [
         "simulation/engine.py",
         "simulation/policy.py",
@@ -355,7 +350,7 @@
         "tools/verify_simulation_campaign.py",
         "src/daahe/statistics.py",
         "tools/import_omnet.py",
-        "experiments/paper_targets.json"
+        "docs/archive/original-experiment-contract/paper_targets.json"
       ],
       "evidence_paths": [
         "evidence/independent/claim-coverage.json",
@@ -366,44 +361,48 @@
         "python tools/verify_published_evidence.py --extract-dir runs/reviewer-published-evidence --recompute --jobs 2 --report runs/reviewer-published-verification.json"
       ],
       "status": "requires_original_data",
-      "scope": "Independent campaign: 3,000 sensors, 60 gateways, 90-s generation plus 35-s drain, 20 seeds/7 methods/140 runs, synthetic Python model. PDF: up to 5,000 nodes, 16 gateways, 300 s/30-s warm-up, OMNeT++6.0/INET4.4/RPL. All independent recovery records are right-censored; repair was not triggered. Model differences and adverse results must remain visible.",
+      "scope": "All 140 records, including failed deliveries, are retained. DA-AHE, HYS and the fixed nominal action have different admission/delivery/delay/cost tradeoffs; no overall dominance is established. Recovery is right-censored in every run and route repair was not triggered. Modeled invalid acceptance without HVE is not reliable delivery or an empirical forgery bound. The model is not an OMNeT++/INET, full radio, RPL or physical-board execution.",
       "required_for_original_claim": [
-        "Publish original simulator/routing/baseline code, exact configs, measured service calibration and all seed-specific traces/logs.",
-        "Run revised k=6 parameters with matched offered workload, integrity protection, fidelity constraints and action libraries across controllers.",
-        "Report effective verified delivery per exogenous opportunity, tail latency, censoring, loss/reject denominators and full-protocol energy/wire cost.",
-        "Use a disturbance that actually activates route repair before claiming its recovery contribution.",
-        "Retain paired-seed bootstrap inputs and report uncertainty without treating packets/nodes as independent replicates."
+        "Physical-network generalization requires measured service/channel calibration and an identified deployment workload.",
+        "Mechanism attribution requires matched offered opportunities, fidelity constraints and controls; repair efficacy requires an experiment that activates repair.",
+        "Reported delivery/loss/invalidity denominators, conditional delay, censoring and full cost boundaries remain explicit.",
+        "Inference beyond descriptive seed statistics requires a separately specified and executed statistical analysis."
       ]
     },
     {
       "id": "public_independent_campaign_audit",
-      "paper_reference": "Supports auditability of PDF p. 9 (paired seeds/statistics) and p. 12 (reproducibility statements); does not establish the historical numeric figures",
-      "statement": "A public immutable archive indexes 20 paired independent seeds, seven methods and 140 runs, with raw-to-summary recomputation and frozen-source replay interfaces.",
+      "paper_reference": "Reproducibility: public raw records, derived results and frozen-source checks",
+      "statement": "The public archive indexes 20 paired seeds, seven methods and 140 runs. The current result export is recomputed from all per-seed rows and binds security, fidelity, horizon and execution records by hash.",
       "implementation_paths": [
         "tools/verify_published_evidence.py",
         "tools/verify_simulation_campaign.py",
         "tools/independent_manifest.py",
         "src/daahe/statistics.py",
         "docs/PUBLIC_EVIDENCE.md",
-        "docs/REPLAY_PORTABILITY.md"
+        "docs/REPLAY_PORTABILITY.md",
+        "tools/build_current_evaluation.py"
       ],
       "evidence_paths": [
         "evidence/independent/publication.json",
         "evidence/independent/campaign-report/summary.json",
         "evidence/independent/claim-coverage.json",
-        "evidence/independent/replay-portability/manifest.json"
+        "evidence/independent/replay-portability/manifest.json",
+        "experiments/current-results.json",
+        "experiments/CURRENT_RESULTS.md",
+        "evidence/independent/current-evaluation/run-01/execution.json",
+        "evidence/independent/current-evaluation/run-01/manifest.json"
       ],
       "verification_commands": [
+        "python tools/build_current_evaluation.py --check experiments",
         "python tools/verify_published_evidence.py --extract-dir runs/reviewer-archive-audit --recompute --jobs 2 --report runs/reviewer-archive-audit.json",
         "python tools/verify_published_evidence.py --extract-dir runs/reviewer-frozen-replay --recompute --replay --jobs 2 --report runs/reviewer-frozen-replay.json"
       ],
       "status": "reproduced_independent_scope",
-      "scope": "Preserved publication index records server-size/SHA256 verification; full raw records are in the four-part release archive. New commands above are prospective, not new execution receipts. Exact historical replay uses frozen source and the documented macOS ARM64/Python3.12.10 environment; Linux raw recomputation is separate. Hashes establish bytes, not measurement truth.",
+      "scope": "Archive checks establish byte integrity and raw-to-summary consistency; rebuilding the export does not rerun the network. Frozen-source byte replay has a documented environment boundary, with macOS ARM64/Python3.12.10 replay and separate Linux raw recomputation. Hashes do not authenticate physical measurements or establish mathematical certification.",
       "required_for_original_claim": [
-        "Describe this archive as independent synthetic evidence rather than recovered original-author experiments.",
-        "Archive any new execution with its own source/config/input/provider/environment identity.",
-        "Preserve historical evidence bytes, adverse outcomes, right-censoring and platform replay differences.",
-        "Add generated result hashes only after the new checks actually execute."
+        "Each independent execution retains its exact source/config/input/provider/environment identity and receipt.",
+        "All methods, failed deliveries, censored outcomes and replay-environment differences remain available.",
+        "Generated records are hash-bound only after actual execution; configuration and workflow presence are not execution evidence."
       ]
     }
   ],
@@ -439,6 +438,22 @@
     {
       "path": "evidence/independent/decoding-horizon/run-01/manifest.json",
       "sha256": "5f7846f9c973ab43a65c5c14c8148c410017213c56965b6f5bfe17683b735524"
+    },
+    {
+      "path": "experiments/current-results.json",
+      "sha256": "05ea53670669301dcd0f040e47b5a4b3c197cd39dbc24f02fb38f64165bf39cf"
+    },
+    {
+      "path": "experiments/CURRENT_RESULTS.md",
+      "sha256": "727ea4b140152a32da039f2081a200e74fe1735ea14b44c74e8f67a2b5f57eb1"
+    },
+    {
+      "path": "evidence/independent/current-evaluation/run-01/execution.json",
+      "sha256": "d471fd89a2a9d59ed2064ac1b25f8ed578baf08caf091effc3c6d8a489cdd238"
+    },
+    {
+      "path": "evidence/independent/current-evaluation/run-01/manifest.json",
+      "sha256": "f4d32a95f7c0679e64626d5d86007c42a0c5e9d7436aec983e57d1bdff811afe"
     }
   ],
   "paper_reproduced": false,

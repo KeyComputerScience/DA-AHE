@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "repository_corrected_original_pdf_requires_revision",
+  "status": "current_parameter_and_evidence_contract",
   "original_pdf": {
     "filename": "TSMC_DA.pdf",
     "sha256": "6ac25668f9a87dcd420fc8898900128df60d68b8dd82a295c84ea2270bc421c9",
@@ -39,29 +39,40 @@
     "aggregate_physical_sum_exact": false,
     "durable_source_emission_required": true
   },
-  "historical_unverified_for_k6": {
-    "protected_cpu_ms": 58.125,
-    "protected_cpu_energy_mj": 1.395,
-    "whole_firmware_peak_sram_bytes": 29328,
-    "workspace_budget_bytes": 10240,
-    "end_to_end_latency_ms": 450.0,
-    "residual_loss_3000_percent": 0.074,
-    "residual_loss_5000_percent": 0.098,
-    "recovery_s": 33.0,
-    "weighted_lower_bound_ms": 77.199,
-    "signal_table_iii": "Original PRD/RMSE require the original signal corpus and aggregate-domain reevaluation."
-  },
-  "manuscript_revision": "docs/MANUSCRIPT_CORRECTIONS.md",
-  "scope": "Parameter, evidence identity and arithmetic alignment only. No historical execution result is replaced; no new board or network measurements are claimed.",
+  "scope": "Current parameter, input identity, resource arithmetic and evidence-scope checks.",
   "retired_active_paths": [
     "security/run-01",
-    "reference-bounds.json"
+    "reference-bounds.json",
+    "experiments/paper_targets.json",
+    "experiments/matrix.json",
+    "experiments/configurations.csv",
+    "experiments/METRICS_SCHEMA.md"
   ],
   "received_pdf": {
     "filename": "TSMC_DA (1).pdf",
     "sha256": "ad09feb7fa00a87bf0dd342a1b929a0d776cb087e8420169556d85f3139d3fc5",
     "pages": 14,
     "editable_source_available": false,
-    "text_same_as_previous": true
-  }
+    "text_same_as_previous": true,
+    "partial_latex_fragment_supplied": true
+  },
+  "archived_original_experiment_contracts": [
+    {
+      "path": "docs/archive/original-experiment-contract/paper_targets.json",
+      "sha256": "964b433b15d54e0796b7c316007a005d167836847e1fb11511a5bf2effd26fd9"
+    },
+    {
+      "path": "docs/archive/original-experiment-contract/matrix.json",
+      "sha256": "3741900da4cf8b8bb2e78cd263b08ffc6d2ff573975f7ed963433119b68a604f"
+    },
+    {
+      "path": "docs/archive/original-experiment-contract/configurations.csv",
+      "sha256": "fade4e62edbe686611e78dce7ee9ac9a21cd75dcba8d76761acc6690e2654e41"
+    },
+    {
+      "path": "docs/archive/original-experiment-contract/METRICS_SCHEMA.md",
+      "sha256": "b8bfbf923606e154c52b8320e30d3ea7abc8a78bce65b7863205c79ea415f27a"
+    }
+  ],
+  "protocol_source": "docs/manuscript/PARAMETER_PROTOCOL.tex"
 }
