@@ -84,13 +84,13 @@
     },
     {
       "path": "configs/manuscript_alignment.json",
-      "sha256": "2e9ee6b0a670c82a3fd596bebbd9b676ef905f0b0ee80ec4220c62a70823e5ea",
-      "size": 2724
+      "sha256": "649bc53ab77f4372a712b319e1bf4a55ff3c88f9811471fa2e1e70803c6b6dc2",
+      "size": 3014
     },
     {
       "path": "configs/paper_claims.json",
-      "sha256": "7f91adeb034143a0cb2a7fe1a255ab9843d658dcf8c0f906dc1b553ec1755530",
-      "size": 28742
+      "sha256": "96d39846b0a87952f0c3aca8e5627dd87f6e563aa5472f869b75c2f1ccfb399b",
+      "size": 29014
     },
     {
       "path": "configs/security_profile.json",
@@ -414,18 +414,18 @@
     },
     {
       "path": "experiments/CURRENT_RESULTS.md",
-      "sha256": "727ea4b140152a32da039f2081a200e74fe1735ea14b44c74e8f67a2b5f57eb1",
-      "size": 6830
+      "sha256": "3362bfeada4611ee03417c2edb44d60af1207d8452f506b8b537d94ea0ed2aee",
+      "size": 7814
     },
     {
       "path": "experiments/README.md",
-      "sha256": "b01a314cc79eccb6b2159c575a310e3fa22a7d7e70f1fa23b8e3eda7de339176",
-      "size": 1241
+      "sha256": "f17b8e7e7deae44533602ac1a5764518f3ffa51fffef0d2097815cc0c4a8887e",
+      "size": 2016
     },
     {
       "path": "experiments/current-results.json",
-      "sha256": "05ea53670669301dcd0f040e47b5a4b3c197cd39dbc24f02fb38f64165bf39cf",
-      "size": 358109
+      "sha256": "0f5023c2bb0c22a8168dc67cc58e1182389d4d3495963d56bd8772baced45065",
+      "size": 359183
     },
     {
       "path": "firmware/README.md",
@@ -489,8 +489,8 @@
     },
     {
       "path": "security/README.md",
-      "sha256": "136f3057e83fc97abbc7f74c13048639d21588d5b9fa5dbb7d59680ba9036116",
-      "size": 2780
+      "sha256": "2b633f0797234dc12967fc9ce21ebc495e170e3ad6ce2218de25a05447b03afe",
+      "size": 3399
     },
     {
       "path": "security/container-entrypoint.sh",
@@ -824,8 +824,8 @@
     },
     {
       "path": "tools/build_current_evaluation.py",
-      "sha256": "ce36c15fc82b2407f0286349caec0fce48d24aa639231ca069330291f0334736",
-      "size": 28902
+      "sha256": "48b535db9759594028405c88b8a7877bb2f1189f237caa3271a01b52eb51e5ab",
+      "size": 30409
     },
     {
       "path": "tools/capture_environment.py",

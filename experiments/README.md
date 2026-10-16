@@ -21,3 +21,16 @@ signal arithmetic, not original OMNeT++/INET or physical-board measurements.
 
 Historical external-import schemas are in
 [the archive](../docs/archive/original-experiment-contract/README.md).
+
+## Continuous integration
+
+[Independent reproduction](../.github/workflows/reproduce.yml) runs on pull
+requests, pushes to `main`, and manual dispatch. Its `source` job verifies
+source/evidence bindings and regenerates the active report; `performance`
+exports the published paired statistics and exercises the matrix pipeline.
+The `campaign` job executes and verifies a fresh 20-seed, seven-method study,
+while `history` and `history_linux` verify the historical archive on their
+declared platforms. The `security` job handles pinned attack estimates and
+finite-sampler decoding bounds. The final `coverage` job requires all
+reproduction jobs to succeed. Each campaign retains its own execution identity;
+the generated report records this workflow mapping in `ci_contract`.

@@ -43,6 +43,20 @@ SOURCE_FILES = ("tools/build_current_evaluation.py", "tools/check_aggregate_fide
                 "src/daahe/__init__.py", "src/daahe/mlwe.py", "src/daahe/ring.py",
                 "src/daahe/signal.py", "src/daahe/profiles.py")
 OUTPUT_NAMES = ("current-results.json", "CURRENT_RESULTS.md")
+CI_CONTRACT = {
+    "workflow": ".github/workflows/reproduce.yml",
+    "events": ["pull_request", "push:main", "workflow_dispatch"],
+    "jobs": {
+        "source": "Verify source and evidence bindings, then check and regenerate this report from the published records.",
+        "performance": "Export paired statistics from the published records and exercise the performance-matrix pipeline.",
+        "campaign": "Execute and verify a fresh 20-seed, seven-method campaign independently of the published report.",
+        "history": "Exactly replay the frozen-source 140-case historical campaign on its recorded macOS platform.",
+        "history_linux": "Independently recompute the archived raw metrics on Linux.",
+        "security": "Verify preserved records and execute the pinned attack estimates and finite-sampler decoding bounds.",
+        "coverage": "Require every reproduction job to finish successfully.",
+    },
+    "scope": "Workflow responsibilities and triggers; the published scientific records keep their original execution identities.",
+}
 
 
 def require(condition, message):
@@ -275,7 +289,7 @@ def build_evaluation(root=ROOT):
                 "cost_model": profile["cost_model"], "scope": profile["scope"],
                 "attacks": [{"algorithm": record["algorithm"], "estimated_bits": record["log2_rop"]}
                             for record in security["attacks"]]},
-            "network": network,
+            "network": network, "ci_contract": CI_CONTRACT,
             "aggregate_fidelity": {"cases": 72, "admissible_cases": admissible,
                 "inadmissible_diagnostic_cases": diagnostic, "summary": fidelity_summary,
                 "verification": fidelity_check, "scope": fidelity.SCOPE},
@@ -335,6 +349,12 @@ def markdown(data):
     for budget in data["decoding_horizon"]["budgets"]:
         lines.append(f"| {budget['batches']} | 2^-{budget['target_bits']} | {'passes' if budget['passes_target'] else 'rejected'} |")
     lines += ["", "The rejected 6-attempt/2^-128 budget is retained. The horizon is an attempt cap, not a number of successful deliveries or seconds. Shared keys and dependence across batches are allowed under the stated fresh-noise/preauthorization assumptions. This is joint random-key/history/noise arithmetic, not an every-fixed-key, arbitrary conditional-history, unlimited-lifetime, network or controller certificate. The Sage bound is consumed without rerunning its proof.", "",
+        "## Continuous integration", "",
+        "[Independent reproduction](../" + data["ci_contract"]["workflow"]
+        + ") is triggered by " + ", ".join("`" + event + "`" for event in data["ci_contract"]["events"]) + ".", ""]
+    for job, responsibility in sorted(data["ci_contract"]["jobs"].items()):
+        lines.append("- `" + job + "`: " + responsibility)
+    lines += ["", data["ci_contract"]["scope"], "",
         "## Provenance and reproduction", "",
         "current-results.json binds every consumed public input and every report-builder dependency by relative path, byte size and SHA256. The archived network summary/config/controller and completion manifest are crosschecked against all 140 CSV rows; the report builder does not itself replay the full companion raw network archive.", "",
         "Generate into a new directory: `python tools/build_current_evaluation.py --output-dir <new-dir>`. Check installed generated files: `python tools/build_current_evaluation.py --check`. Both outputs are deterministic; overwriting prior evidence is refused.", "",
