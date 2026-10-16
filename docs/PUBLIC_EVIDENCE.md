@@ -1,44 +1,40 @@
-# Public independent 20-seed evidence
+# Public twenty-seed campaign evidence
 
-The immutable bundle contains the **independent** campaign completed on
-2026-10-15: seeds 1000–1019, seven methods, **140 runs**. These are newly
-generated synthetic experiments from an independent implementation. They are
-not recovered original-author experiments, OMNeT++/INET results, or measured
-nRF52840 data. Publishing their raw files does not establish that all manuscript
-claims have been reproduced.
+The hash-pinned bundle contains the synthetic campaign completed on
+2026-10-15: seeds 1000–1019, seven methods and 140 runs. The experiment uses the
+specified Python packet/block service model, not a physical nRF52840 or full
+radio/RPL implementation. Its controller fixture is uncalibrated and its costs
+are modeled. [Evaluation](EVALUATION.md) and
+[complete results](../experiments/CURRENT_RESULTS.md) describe the measurements,
+denominators, all seven methods and scientific scope.
 
-The release location is
+Download the bundle from
 [independent-evidence-2026-10-15](https://github.com/KeyComputerScience/DA-AHE/releases/tag/independent-evidence-2026-10-15).
-The machine-readable download URLs, sizes, and pinned SHA-256 values are in
-[`publication.json`](../evidence/independent/publication.json). Its
-`publication_state` records whether remote asset availability has been verified.
+[publication.json](../evidence/independent/publication.json) records the asset
+URLs, sizes, SHA-256 values and verified availability state.
 
 ## Bundle identity and contents
 
-The four assets are consecutive pieces of `DA-AHE-independent-evidence.tar`.
-They are not individually extractable tar files. The first three pieces are
-838,860,800 bytes each; the fourth is 510,842,880 bytes. Their concatenation is
-3,027,425,280 bytes with SHA-256:
+The four assets are consecutive parts of `DA-AHE-independent-evidence.tar`.
+They cannot be extracted individually. The first three are 838,860,800 bytes
+each and the fourth is 510,842,880 bytes. Concatenated size is 3,027,425,280 bytes,
+with SHA-256:
 
 ```text
 079aa14358b83d5cf6e132b2c4b653ac2937feeae217c6c6965e1369cff511c0
 ```
 
-The archive has 1,194 regular files: 1,193 entries in the evidence manifest and
-the manifest itself. It includes all 140 run manifests and summaries, raw
-events/packets/reports/epochs gzip logs, the paired exogenous inputs for all
-20 seeds, the controller/configuration and bound cryptographic reports, the
-28-file frozen simulation source, and the previously recorded protocol,
-security, decoding and firmware build evidence.
+The archive has 1,194 regular files: 1,193 manifest entries and the manifest
+itself. It includes all 140 run manifests/summaries, raw events/packets/reports/
+epochs gzip logs, paired exogenous inputs for all twenty seeds, controller and
+configuration data, bound cryptographic reports, a 28-file frozen simulator
+source snapshot, protocol/security/decoding records and core firmware build
+evidence. The archived `STATUS.json` identifies execution state at bundle
+creation; `publication.json` identifies the public assets.
 
-No historical byte is replaced. In particular, the archived `STATUS.json`
-describes the state when the bundle was created; the current publication state
-is recorded separately in `publication.json`.
+## Download, verify and recompute every record
 
-## Download, checksum and recompute every saved run
-
-Use a Python 3.12 environment with the repository's pinned dependencies. From
-the repository root:
+From the repository root, use Python 3.12 with pinned dependencies:
 
 ```sh
 python -m pip install -e '.[dev]'
@@ -48,22 +44,26 @@ python tools/verify_published_evidence.py \
   --report runs/published-evidence-verification.json
 ```
 
-The destination must not already exist. Downloads are cached under
-`work/release-cache`; use `--cache-dir` to change it. For already downloaded
-parts, use `--assets-dir /path/to/parts` to prohibit network downloads. Allow
-approximately 7 GB of free disk space for the downloaded parts and extracted
-evidence. The helper streams consecutive pieces without writing another copy of
-the tar, rejects unsafe archive paths, links and duplicate members, checks every
-manifest entry, verifies the exact 20 × 7 design, then independently rederives
-all 140 saved metrics and the paired campaign summary from the raw records.
+The extraction destination must not exist. Downloads are cached under
+`work/release-cache`; `--cache-dir` selects another cache. To use already
+available parts without network downloads, pass `--assets-dir /path/to/parts`.
+Allow approximately 7 GB of free space for parts and extracted evidence.
 
-## Replay every historical case with the frozen source
+The helper streams the parts without making a second tar copy, rejects unsafe
+paths, links and duplicate members, checks every manifest entry, verifies the
+20-by-7 design and independently derives all saved metrics and the paired
+summary from raw records. Every method, failed/unadmitted opportunity, invalid
+acceptance and censored recovery remains in the evidence. All 140 recoveries
+are right-censored; repair was not triggered. These outcomes are not converted
+into successful recovery times or a claimed repair benefit.
 
-Use **macOS ARM64 with Python 3.12.10** for the hosted historical byte-replay
-check. The published single-case probe matched the original macOS records in
-this environment; the full 140-case CI remains the actual full-run test.
-Add `--replay` to rerun all 140 historical seed/method cases and compare the four
-raw gzip SHA-256 values for each run:
+## Replay the saved cases with their frozen source
+
+Use macOS ARM64 with Python 3.12.10 for the documented byte-replay environment.
+The recorded single-case probe matched its archived macOS output; a full
+140-case replay is a separate check with its own completion receipt. Add
+`--replay` to rerun every seed/method case and compare each run's four raw gzip
+SHA-256 values:
 
 ```sh
 python tools/verify_published_evidence.py \
@@ -72,32 +72,28 @@ python tools/verify_published_evidence.py \
   --report runs/published-evidence-replay.json
 ```
 
-This is substantially more expensive than checksum validation or raw metric
-recomputation. The helper starts isolated subprocesses from the **archived frozen
-source** and runs up to `--jobs` cases in parallel. Historical source digest:
+The helper launches isolated subprocesses from the archive's frozen source and
+runs up to `--jobs` cases concurrently. The recorded source digest is:
 
 ```text
 ba9749ce35d4b401afabae8e333aaedc1521dfcedd7d7b35f44affc4cc8f579a
 ```
 
-Current verifier improvements changed source files after the original
-independent campaign. Running the current verifier directly with `--replay`
-against that old campaign correctly refuses the drift; use the publication
-helper above to select the preserved source. Exact gzip replay is an explicit
-check in the tested environment, rather than a promise of byte equality under
-every Python/zlib/platform combination. A mismatch fails verification and must
-be investigated. The preserved Linux probe found a one-ULP belief-record
-difference; events, packets and reports matched. See
-[REPLAY_PORTABILITY.md](REPLAY_PORTABILITY.md) for both actual probe results and
-the separate mandatory Linux raw recomputation check. Neither the historical
-archive nor its strict replay comparison was modified.
+Replay is bound to this source identity. Invoking a different checkout's
+simulator directly against the bundle can fail the source check; the helper
+selects the correct snapshot. Exact gzip equality is checked in the recorded
+environment, not promised for every Python/zlib/platform combination. A
+mismatch fails verification. The Linux probe found a one-ULP belief-record
+difference while events, packets and reports matched. Both probe records and
+the separate Linux raw-recomputation check are documented in
+[REPLAY_PORTABILITY.md](REPLAY_PORTABILITY.md).
 
-## What the evidence can establish
+## Meaning of a successful check
 
-Successful checks establish public availability and integrity of the bundle,
-raw-to-summary consistency for the declared independent experiment, and (when
-requested) deterministic rerunning of its saved cases. They do not turn modeled
-radio/CPU energy into physical measurements, certify the synthetic controller,
-validate an unavailable original simulator, or justify transferring manuscript
-`k=3` performance numbers to the independently selected `k=6` parameters. The
-number of physical-board samples remains zero.
+Archive checks establish asset identity, listed-byte integrity, raw-to-summary
+consistency and, when requested and completed, replay of the saved cases.
+They do not turn modeled CPU/TX energy into physical measurements, calibrate the
+controller, establish a physical signal distribution or certify a deployment.
+Physical-board samples remain zero. Configuration, host tests, cryptographic
+cost estimates, decoding bounds and network outcomes retain their distinct
+assumptions and evidence boundaries.

@@ -1,41 +1,57 @@
 # Reproduction procedure and evidence boundaries
 
-## 1. Host reference
+The method uses fixed rank-6 parameters and an explicitly specified synthetic
+network study. Read [EVALUATION.md](EVALUATION.md),
+[CURRENT_RESULTS.md](../experiments/CURRENT_RESULTS.md) and the
+[parameter/protocol specification](manuscript/PARAMETER_PROTOCOL.tex) for the
+experimental design, complete method comparison and supported claims.
 
-Use Python 3.12 with the pinned dependencies for the current independent
-workflow. Historical byte-for-byte replay was probed on macOS ARM64 with
-CPython 3.12.10; Linux raw metric recomputation is a separate check. See
-[`REPLAY_PORTABILITY.md`](REPLAY_PORTABILITY.md) for the recorded platform
-difference. Create a virtual environment, install `.[dev]`, and run
-`python -m pytest -q`. Package support for other Python versions does not
-establish historical byte-replay equivalence.
+Use Python 3.12 and the pinned dependencies. Each command that creates outputs
+requires a fresh destination; retain its execution receipt and source/input
+identity. Software tests, raw metric recomputation, network replay, mathematical
+calculations and physical measurements are separate verification stages.
+
+## 1. Verify the complete result export
 
 ```bash
-git clone --depth 1 --branch 0.16.0 https://github.com/open-quantum-safe/liboqs external/liboqs
-cmake -S external/liboqs -B external/liboqs/build -DBUILD_SHARED_LIBS=ON \
-  -DOQS_BUILD_ONLY_LIB=ON -DCMAKE_INSTALL_PREFIX="$PWD/external/oqs-install"
-cmake --build external/liboqs/build --parallel 2
-cmake --install external/liboqs/build
-export OQS_INSTALL_PATH="$PWD/external/oqs-install"
-export LD_LIBRARY_PATH="$OQS_INSTALL_PATH/lib"
-python -m pip install -r requirements-pq.txt
-python -m pytest -q -m pq
-python -m daahe demo --participants 3 --output runs/demo
+python -m pip install -e '.[dev]'
+python tools/build_current_evaluation.py --check experiments
+python tools/build_current_evaluation.py --output-dir runs/current-evaluation
+python tools/check_paper_evidence.py
+```
+
+The export recomputes descriptive statistics from all 140 per-seed rows and
+binds the recorded security, fidelity and horizon evidence. It does not rerun
+the network. All seven methods, failed/unadmitted opportunities, invalid
+acceptances, modeled resource costs and right-censored outcomes are retained.
+
+## 2. Host reference and real-provider protocol trials
+
+```bash
+python tools/run_logged.py --output runs/tests -- python -m pytest -q
 python tools/capture_environment.py --output runs/environment.json
 ```
 
-On macOS configure the dynamic loader for the installation path as required by
-the provider. Native build recipes are platform dependent. Record the actual
-upstream Git commit and `OQS_version()` output in the environment evidence;
-requirements only pin the wrapper.
+The demo requires the explicitly installed ML-DSA provider. Follow
+[INDEPENDENT_REPRODUCTION.md](INDEPENDENT_REPRODUCTION.md) for the pinned native
+liboqs/liboqs-python build recipe and loader setup, then run:
 
-The source scenario uses CSPRNG keys and encryption randomness; independent fresh
-tickets produce different ciphertexts. Retries under the same ticket/source/nonce
-use persistent SourceEmissionStore and return exactly the cached bytes.
+```bash
+python -m pytest -q -m pq
+python -m daahe demo --participants 3 --module-rank 6 --output runs/demo
+python tools/run_logged.py --output runs/protocol-execution -- \
+  python tools/run_protocol_trials.py --module-rank 6 --trials 20 --output runs/protocol
+```
 
-## 2. Controller review
+Capture the actual provider Git commit, `OQS_version()` and environment. Native
+loader configuration is platform dependent. The source uses CSPRNG keys and
+fresh encryption randomness. Persistent SourceEmissionStore binds each raw
+payload to its ticket/source/nonce; retries return the committed cached envelope
+and its cached signature. Sampling a different payload requires fresh authorization.
+Functional success does not establish rare-event probabilities, constant-time
+behavior or physical-board performance.
 
-Use the synthetic telemetry and model only to inspect control decisions:
+## 3. Inspect controller decisions and calibration inputs
 
 ```bash
 python -m daahe replay-control --config configs/control_synthetic.json \
@@ -43,14 +59,14 @@ python -m daahe replay-control --config configs/control_synthetic.json \
   --allow-synthetic --output runs/replay-da-ahe.json
 ```
 
-Repeat with `--method dpp` and `hys`. Synthetic bounds always have
-`certified=false`. Without `--allow-synthetic` this config must be rejected or
-produce a fail-closed decision.
+Repeat with `--method dpp` or `hys`. The synthetic fixture remains uncertified.
+Without `--allow-synthetic`, missing external certificates must produce rejection
+or a fail-closed decision. The [controller specification](CONTROL_IMPLEMENTATION_SPEC.md)
+defines the robust admission test, nominal objective and deployment requirements.
 
-For real calibration, provide separate **training**, **heldout calibration** and
-**evaluation** seed manifests. CSV schema is documented in `calibration.py`.
-The calibration CLI uses an action library and nominal admissible transition
-masks from the input config:
+A calibration study requires separate training, heldout calibration and
+evaluation seed manifests. The CSV schema is defined in `src/daahe/calibration.py`.
+For an explicitly supplied input bundle:
 
 ```bash
 python -m daahe calibrate --config external/control_input.json \
@@ -58,14 +74,15 @@ python -m daahe calibrate --config external/control_input.json \
   --evaluation-seeds 1001 1002 1003 --output runs/calibration-bundle.json
 ```
 
-## 3. Security estimation
+The campaign's synthetic model is not a uniform uncertainty or domain-invariance
+certificate. Hash/tuple checks establish identity, not the truth of a bound.
 
-The current independent encryption default is k=6, d=256, n=m=1536, with
-7,168-byte ciphertexts. Its archived seven-attack minimum is 136.475 bits under
-the stated heuristic model. Install SageMath and record the actual version and
-environment; the archived run used SageMath 10.9. The `python` command below
-must be Sage-enabled Python. See [`../security/README.md`](../security/README.md)
-for environment and launcher details.
+## 4. Security estimate and actual-sampler correctness
+
+The encryption tuple is k=6, d=256, n=m=1536 with 7,168-byte ciphertexts. Its
+recorded seven-attack minimum is 136.475 bits under the stated heuristic models.
+The recorded calculation used SageMath 10.9. To run the estimator, use a
+Sage-enabled Python interpreter and record the full environment:
 
 ```bash
 git clone https://github.com/malb/lattice-estimator external/lattice-estimator
@@ -75,66 +92,72 @@ python tools/estimate_security_parameters.py --estimator external/lattice-estima
   --q 4294967296 --sigma-key 3.2 --minimum-bits 128.1 --attack-timeout 600
 ```
 
-The fixed-tuple `tools/estimate_security.sage` remains the legacy k=3/n=768
-diagnostic; it does not estimate the current default. Neither runner establishes
-actual-CDT, module-specific or implementation security. The separate finite-CDT
-decoding calculation and its one-fresh-batch probability scope are documented
-in [`../security/DECODING_BOUND.md`](../security/DECODING_BOUND.md).
-
-## 4. Current evaluation
-
-The active tables are `experiments/CURRENT_RESULTS.md` and
-`experiments/current-results.json`. Recompute and verify them with:
+See [security/README.md](../security/README.md) for cost-model and timeout scope.
+An estimator threshold is not a module-specific, actual-CDT, implementation or
+all-attack security proof. The separate finite-CDT record is checked with:
 
 ```bash
-python tools/build_current_evaluation.py --check experiments
-python tools/build_current_evaluation.py --output-dir runs/current-evaluation
+python tools/verify_decoding_record.py evidence/independent/decoding/k6-cdt-03
+python tools/check_decoding_horizon.py --batches 5 --target-bits 128
 ```
 
-See `docs/EVALUATION.md` for the experimental design, units and evidence
-boundaries. The legacy external-import contract below is a separate
-prospective workflow.
+Fresh interval calculations require Sage-enabled Python. The one-fresh-batch
+random-key/noise scope and finite-task conditions are in
+[DECODING_BOUND.md](../security/DECODING_BOUND.md) and
+[DECODING_RISK_BUDGET.md](DECODING_RISK_BUDGET.md). A missed risk budget is not an
+observed decoding failure or an unlimited-lifetime guarantee.
 
-### Published independent experiments
-
-The complete 20-seed, seven-method independent archive is public. Follow
-[`PUBLIC_EVIDENCE.md`](PUBLIC_EVIDENCE.md) to download and verify its four parts,
-recompute all 140 runs, or replay with the archived frozen source. Use new output
-directories and preserve the historical bundle unchanged. These synthetic
-Python experiments do not reproduce the original OMNeT++/INET figures.
-
-For a fresh independent campaign, use the commands in the repository README and
-`simulation/README.md`. A configuration or workflow file is not an execution
-receipt; inspect the recorded command exit and outputs.
-
-## 5. Legacy external-import contract
-
-Acquire the original simulator, traces and board evidence listed by `daahe audit`.
-Implement all methods within the same original INET packet-level model and freeze
-common configurations before looking at evaluation results. Use 20 paired seeds,
-300-s runs, 30-s warm-up, disturbance at 100 s and the disclosed workload/PHY.
-See `docs/archive/original-experiment-contract/METRICS_SCHEMA.md` and `tools/import_omnet.py --help` for import
-contracts.
+## 5. Aggregate fidelity
 
 ```bash
-python -m daahe stats external/metrics.csv --matrix docs/archive/original-experiment-contract/matrix.json --output runs/summary.json
-python tools/plot_results.py runs/summary.json --nodes 3000 --metric residual_plr \
-  --normalized --title 'Residual loss relative to DA-AHE' --unit ratio --output runs/loss.svg
+python tools/check_aggregate_fidelity.py --verify evidence/independent/aggregate-fidelity/run-01
+python tools/check_aggregate_fidelity.py --output runs/fidelity
+python tools/check_aggregate_fidelity.py --verify runs/fidelity
+python tools/reproduce_paper_evidence.py --output runs/reviewer-evidence
 ```
 
-## 6. Archive exactly the evidence that exists
+The [72-case study](AGGREGATE_FIDELITY.md) retains raw integer inputs,
+intermediate vectors, error decomposition, source snapshots and recomputation.
+Its 54 admissible cases and 18 diagnostics are separate. Physical signal units,
+a deployment corpus and utility-dependent network feedback are outside this
+experiment. Large errors and undefined zero-reference PRD remain visible.
 
-Preserve source commit, config/trace/calibration hashes, environment capture, test
-logs and simulation stdout. Add original evidence to
-`author_artifacts/evidence-index.json` using the roles in `evidence.py`; refer to
-relative paths and SHA256. Then run source/evidence manifest verification.
+## 6. Network generation, raw recomputation and replay
 
-Verify the supplied release manifest **before** creating a current-state manifest.
-The builder refuses to overwrite an existing file; use a new output such as
-`runs/current-source-manifest.json`.
+For a complete campaign:
 
-`evidence/independent/STATUS.json` is a historical execution snapshot. Current
-release locations and hashes are recorded separately in
-`evidence/independent/publication.json`. Do not edit old receipts or hashes to
-make them describe a later source tree. Manuscript corrections are tracked in
-[the protocol specification](manuscript/PARAMETER_PROTOCOL.tex).
+```bash
+python tools/run_logged.py --timeout 10000 --output runs/campaign-execution -- \
+  python tools/run_simulation_campaign.py --config simulation/config.json \
+  --output runs/simulation
+python tools/verify_simulation_campaign.py runs/simulation
+```
+
+The model and omitted costs are defined in [simulation/README.md](../simulation/README.md).
+CPU/TX costs are modeled; the supplied fixture is uncalibrated and uncertified.
+A configuration or workflow is not an execution receipt. Additional workloads
+or scales need their own inputs and runs.
+
+Follow [PUBLIC_EVIDENCE.md](PUBLIC_EVIDENCE.md) to download the four archive
+parts, verify the recorded source identity and recompute all 140 saved cases.
+Frozen-source network replay is a separate operation. The recorded byte-replay
+environment is macOS ARM64/Python 3.12.10, with separate Linux raw recomputation.
+The observed one-ULP epoch difference is retained in
+[REPLAY_PORTABILITY.md](REPLAY_PORTABILITY.md); package version support alone
+does not establish cross-environment byte equality.
+
+## 7. Board measurement and evidence integrity
+
+[firmware/README.md](../firmware/README.md) defines core build, physical capture
+and record verification. Physical-board samples are zero. Compilation and host
+known answers cannot establish full-protocol cycles, power, stack, memory or
+workspace claims.
+
+Keep each completed execution's source/config snapshots, raw inputs/results,
+provider/environment capture, command logs and manifest together. Build a
+manifest only after all processes finish. Existing records and hashes remain
+immutable; use separate output directories for independent executions.
+`STATUS.json` records execution state for its bundle, while
+[publication.json](../evidence/independent/publication.json) identifies the public
+assets. Hash verification establishes bytes, not measurement authenticity,
+mathematical validity or full-system certification.
