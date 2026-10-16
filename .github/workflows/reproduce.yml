@@ -34,6 +34,13 @@ jobs:
         run: python tools/check_ci_coverage.py --validate-claims-only --output runs/claim-scope.json
       - name: Check current parameters and preserve historical manuscript evidence
         run: python tools/check_manuscript_alignment.py
+      - name: Verify paper claim bindings and preserved new evidence
+        run: |
+          python tools/check_paper_evidence.py
+          python tools/check_aggregate_fidelity.py --verify evidence/independent/aggregate-fidelity/run-01
+          python tools/independent_manifest.py verify --root evidence/independent/decoding-horizon/run-01
+      - name: Execute fresh reviewer fidelity and finite-horizon evidence
+        run: python tools/reproduce_paper_evidence.py --output runs/paper-evidence
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         if: always()
         with:
