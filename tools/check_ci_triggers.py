@@ -19,7 +19,8 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 PRIMARY_BRANCH = "main"
 SOURCE_DIRECTORIES = (".github", "src", "daahe", "tests", "tools", "security",
-                      "simulation", "embedded", "firmware", "configs", "docs")
+                      "simulation", "embedded", "firmware", "configs", "config",
+                      "experiments", "experiment", "docs")
 EXCLUDED_PARTS = {".git", "__pycache__", ".pytest_cache", ".ruff_cache", ".venv",
                   "venv", "node_modules", "external", "build", "dist", "runs",
                   "evidence", "archive", "archives", "snapshots", "source-snapshot"}
