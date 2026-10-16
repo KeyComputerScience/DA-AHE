@@ -1,0 +1,261 @@
+% Requires amsmath, amssymb, algorithm and algpseudocode.
+
+\paragraph{Causal feedback baselines and admission scope.}
+We compare DA-AHE with drift-plus-penalty (DPP), following
+\cite{Neely2010Stochastic}, and a held-mode hysteresis controller (HYS)
+defined by the thresholds and counter below. Routing practice provides a
+general precedent for using hysteresis to suppress changes caused by small
+metric improvements \cite{RFC6719}. These baselines do not estimate
+latent Markov regimes or use action-conditioned transition probabilities.
+DPP nevertheless uses causal action-conditioned estimates of costs and signed
+constraint increments. HYS selects a configured action by its observed stress
+and mode; it does not minimize the DPP cost objective.
+
+Let $\mathcal{A}$ be the shared finite library of indivisible action rows and
+let $\mathcal{D}$ be the intersection of the configured model and runtime
+state regions. Define the runtime-admitted set
+\begin{equation}
+ \mathcal{F}_t=\{a\in\mathcal{A}:G(a,z_t,\mathcal{R}_t)=1\},
+ \label{eq:baseline_runtime_set}
+\end{equation}
+where $\mathcal{R}_t$ contains the current context, profile allowlist, participant
+count, resource budgets and evidence policy. The common gate $G$ checks the
+complete action/profile/context binding, memory and airtime budgets, plaintext
+no-wrap, grouping capacity, decryption-noise margin, decoding-risk field and
+estimated-security floor. Strict admission additionally requires the external
+evidence bindings specified by the safety filter. A state outside
+$\mathcal{D}$ causes fail-closed operation. If a selected HYS row fails this
+gate, its fallback must pass the same gate; a fallback identifier alone does
+not establish feasibility. An empty admissible set does not authorize an
+otherwise rejected action.
+
+DPP and HYS admission concerns these resource/security checks. It does not
+establish DA-AHE's conditional robust Lyapunov result for either baseline.
+DA-AHE additionally applies its belief-dependent robust drift and model-evidence
+checks, so a shared candidate library does not imply identical admitted sets.
+The executed synthetic fixture permits demonstrations without external
+certification and records the decisions as uncertified.
+
+\paragraph{Costs and switching metric.}
+For $f_t=[1,z_t^{\mathsf T}]^{\mathsf T}$, the DPP implementation obtains
+the nonnegative pooled metric estimates
+\begin{equation}
+ \begin{aligned}
+ (\widehat{E}_t(a),\widehat{L}_t(a),\widehat{D}_t(a),
+            \widehat{\eta}_t(a))_j
+  =\max\{0,\theta_{j,a}^{\mathsf T}f_t\},
+ \quad j=1,\ldots,4.
+ \end{aligned}
+ \label{eq:baseline_pooled_metrics}
+\end{equation}
+$\widehat{E}$ is energy per report, $\widehat{L}$ is delay,
+$\widehat{D}$ is the declared distortion metric, and $\widehat{\eta}$ is a
+model estimate of normalized noise utilization. These estimates are not hard
+constraint certificates. The common scalar cost is
+\begin{equation}
+ \begin{aligned}
+  \widehat{c}_t(a)={}&w_E\frac{\widehat{E}_t(a)}{E_{\mathrm{ref}}}
+             +w_L\frac{\widehat{L}_t(a)}{d_{\mathrm{th}}}\\
+             &+w_D\frac{\widehat{D}_t(a)}{D_{\max}}
+             +w_B\widehat{\eta}_t(a).
+ \end{aligned}
+ \label{eq:causal_cost}
+\end{equation}
+DA-AHE uses the same cost definition; when regime-specific metric models are
+provided, its estimates can be belief-weighted. The current fixture contains
+only pooled metric models.
+
+The profile coordinate is categorical. For actions
+$a=(\rho,\delta_Q,N,L_{\mathrm{blk}},r,\ell)$ and
+$a'=(\rho',\delta'_Q,N',L'_{\mathrm{blk}},r',\ell')$, define
+\begin{equation}
+ \begin{aligned}
+ d_{\mathrm{sw}}(a,a')={}&[\rho-\rho',\delta_Q-\delta'_Q,N-N',\\
+             &L_{\mathrm{blk}}-L'_{\mathrm{blk}},r-r',
+                   \mathbb{I}\{\ell\neq\ell'\}]^{\mathsf T},\\
+ S(a,a')={}&d_{\mathrm{sw}}(a,a')^{\mathsf T}
+                       W_a d_{\mathrm{sw}}(a,a').
+ \end{aligned}
+ \label{eq:baseline_switching_cost}
+\end{equation}
+$W_a$ is one common fixed diagonal matrix; no numerical ordering or subtraction
+of profile identifiers is used. The configured weights are
+$(w_E,w_L,w_D,w_B,w_{\Delta})=(0.22,0.28,0.15,0.25,0.10)$ and
+$W_a=\operatorname{diag}(1,1/256,1/256,1/4096,1,1)$.
+The switching term is multiplied by $w_{\Delta}$ separately from
+$V_{\mathrm{DPP}}\widehat{c}_t$.
+
+\paragraph{Signed virtual-queue feedback.}
+At the end of the preceding control interval, the observation $y_t$ supplies
+delay $d_t$, loss fraction $\phi_t$ and normalized noise-utilization input
+$\eta_t$. Its signed constraint increment is
+\begin{equation}
+ g_{t-1}=\left[
+    d_t/d_{\mathrm{th}}-1,
+    \phi_t/\phi_{\mathrm{fail}}-1,
+    \eta_t-1\right]^{\mathsf T}.
+ \label{eq:baseline_signed_increment}
+\end{equation}
+The corresponding nonnegative violation state is $z_t=[g_{t-1}]_+$.
+The network experiment uses an operational noise-utilization proxy; the hard
+cryptographic margin is a separate admission requirement. DPP updates
+$Q_t=[Q_{t-1}+g_{t-1}]_+$ after these completed outcomes become available.
+Negative increments allow virtual queues to decrease; the increment is not
+replaced by the nonnegative state $z_t$.
+
+For each currently admitted action, the declared causal predictor gives
+$\widehat{g}_t(a)=C_af_t$, without positive-part clipping. DPP selects
+\begin{equation}
+ \begin{aligned}
+ a_t\in\underset{a\in\mathcal{F}_t}{\operatorname{arg\,min}}
+ \bigl\{Q_t^{\mathsf T}\widehat{g}_t(a)
+       +V_{\mathrm{DPP}}\widehat{c}_t(a)
+       +w_{\Delta}S(a,a_{t-1})\bigr\}.
+ \end{aligned}
+ \label{eq:baseline_dpp_objective}
+\end{equation}
+Ties use the deterministic action-identifier order. Predictors must be available
+for every admitted action and use only current/past information; missing or
+invalid estimates abort selection. The configured value is $V_{\mathrm{DPP}}=1$.
+In the synthetic fixture the three actions share the same $C_a$ coefficients,
+so $Q_t^{\mathsf T}\widehat{g}_t(a)$ is common across candidate rows and does
+not change their ranking. Results under this fixture therefore do not evaluate
+an independently calibrated or comprehensively tuned action-specific DPP model.
+
+\begin{algorithm}[t]
+\caption{Runtime-Admitted Drift-Plus-Penalty Feedback}
+\label{alg:dpp}
+\small
+\begin{algorithmic}[1]
+\Require Action library $\mathcal{A}$, configured fallback $a_{\mathrm{fb}}$,
+ domain $\mathcal{D}$, runtime gate $G$, causal pooled predictors,
+ $V_{\mathrm{DPP}}\geq0$, $w_{\Delta}$ and $W_a$
+\Ensure An admitted action at each feedback step, or fail-closed $\bot$
+\State Initialize $Q_0\gets0$; apply $a_0\gets a_{\mathrm{fb}}$ for the initialization interval
+\For{$t=1,2,\ldots$}
+ \State Collect completed preceding-interval observations $y_t$;
+ compute $g_{t-1}$ and $z_t$
+ \If{telemetry is invalid or $z_t\notin\mathcal{D}$}
+  \State Raise an admission alarm and stop with $\bot$
+ \EndIf
+ \State $Q_t\gets[Q_{t-1}+g_{t-1}]_+$
+ \State $\mathcal{F}_t\gets\{a\in\mathcal{A}:G(a,z_t,\mathcal{R}_t)=1\}$
+ \If{$\mathcal{F}_t\neq\emptyset$}
+  \State Evaluate $\widehat{g}_t(a)$, $\widehat{c}_t(a)$ and
+  $S(a,a_{t-1})$ for every $a\in\mathcal{F}_t$
+  \State Select $a_t$ by \eqref{eq:baseline_dpp_objective}, with deterministic tie breaking
+ \Else
+  \State Raise an admission alarm
+  \If{$G(a_{\mathrm{fb}},z_t,\mathcal{R}_t)=1$}
+   \State $a_t\gets a_{\mathrm{fb}}$
+  \Else
+   \State Stop with $\bot$
+  \EndIf
+ \EndIf
+ \State Apply $a_t$; update its realized queue increment only when the next observations arrive
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Held-mode hysteresis feedback.}
+HYS maps its modes $m_t\in\{\mathrm{N},\mathrm{M},\mathrm{S}\}$ to three
+configured rows $a_{\mathrm{N}},a_{\mathrm{M}},a_{\mathrm{S}}\in\mathcal{A}$.
+The executed fixture uses
+\begin{equation}
+ \begin{aligned}
+ a_{\mathrm{N}}&=[1.00,8,16,64,0,\ell_{\mathrm{N}}]^{\mathsf T},\\
+ a_{\mathrm{M}}&=[0.75,12,14,32,1,\ell_{\mathrm{M}}]^{\mathsf T},\\
+ a_{\mathrm{S}}&=[0.50,16,12,64,0,\ell_{\mathrm{S}}]^{\mathsf T}
+                =a_{\mathrm{fb}}.
+ \end{aligned}
+ \label{eq:baseline_hys_actions}
+\end{equation}
+Each symbolic profile index denotes the profile bound to that complete row.
+These values describe the synthetic experiment configuration; they are not
+external resource or control certificates.
+
+For positive telemetry normalizers $b_h$, define the smoothed stress by
+\begin{equation}
+ \begin{aligned}
+  u_t&=\max_{h=1,\ldots,7}(y_{t,h}/b_h),\\
+  \xi_0&=u_0,\qquad
+  \xi_t=\alpha\xi_{t-1}+(1-\alpha)u_t\quad(t\geq1).
+ \end{aligned}
+ \label{eq:baseline_hys_stress}
+\end{equation}
+The fixture uses $\alpha=0.80$,
+$b=(1,0.002,0.5,0.01,1,1,1)$,
+$(\theta_L,\theta_H,\theta_S)=(0.35,0.60,0.85)$ and hold count $H=3$.
+When the hold counter permits a transition, the rule is
+\begin{equation}
+ m_t^{\mathrm{tar}}=
+ \begin{cases}
+  \mathrm{M},&m_{t-1}=\mathrm{N},\ \xi_t\geq\theta_H,\\
+  \mathrm{M},&m_{t-1}=\mathrm{S},\ \xi_t\leq\theta_H,\\
+  \mathrm{S},&m_{t-1}=\mathrm{M},\ \xi_t\geq\theta_S,\\
+  \mathrm{N},&m_{t-1}=\mathrm{M},\ \xi_t\leq\theta_L,\\
+  m_{t-1},&\text{otherwise}.
+ \end{cases}
+ \label{eq:baseline_hys_transition}
+\end{equation}
+A transition resets the counter to zero; otherwise it increments to at most
+$H$. The counter is checked before this increment, so eligibility resumes
+after $H$ subsequent nontransition updates. The initial counter is $H$.
+Only adjacent mode transitions are used, including when stress crosses more
+than one threshold in one observation.
+
+\begin{algorithm}[t]
+\caption{Runtime-Admitted Held-Mode Hysteresis}
+\label{alg:hys}
+\small
+\begin{algorithmic}[1]
+\Require Mode rows $a_{\mathrm{N}},a_{\mathrm{M}},a_{\mathrm{S}}$ in $\mathcal{A}$,
+ configured fallback $a_{\mathrm{fb}}$, thresholds
+ $0\leq\theta_L<\theta_H<\theta_S$, hold count $H\geq0$,
+ stress tracker, domain $\mathcal{D}$ and runtime gate $G$
+\Ensure An admitted action at each feedback step, or fail-closed $\bot$
+\State Initialize $m_0\gets\mathrm{N}$, $h_0\gets H$ and $\xi_0\gets u_0$;
+ apply $a_0\gets a_{\mathrm{N}}$ for the initialization interval
+\For{$t=1,2,\ldots$}
+ \State Collect causal $y_t$; construct $z_t$ and update $\xi_t$
+ \If{telemetry is invalid or $z_t\notin\mathcal{D}$}
+  \State Raise an admission alarm and stop with $\bot$
+ \EndIf
+ \State $m_t^{\mathrm{tar}}\gets m_{t-1}$
+ \If{$h_{t-1}\geq H$}
+  \State Set $m_t^{\mathrm{tar}}$ by \eqref{eq:baseline_hys_transition}
+ \EndIf
+ \State $\widetilde{a}_t\gets a_{m_t^{\mathrm{tar}}}$
+ \State $h_t\gets0$ if $m_t^{\mathrm{tar}}\neq m_{t-1}$,
+ otherwise $h_t\gets\min\{h_{t-1}+1,H\}$
+ \State $m_t\gets m_t^{\mathrm{tar}}$
+ \If{$G(\widetilde{a}_t,z_t,\mathcal{R}_t)=1$}
+  \State $a_t\gets\widetilde{a}_t$
+ \Else
+  \State Raise an admission alarm
+  \If{$G(a_{\mathrm{fb}},z_t,\mathcal{R}_t)=1$}
+   \State $a_t\gets a_{\mathrm{fb}}$
+  \Else
+   \State Stop with $\bot$
+  \EndIf
+ \EndIf
+ \State Apply $a_t$; retain the updated mode and hold counter
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+The mode and hold counter record the proposed transition before runtime
+admission. When a rejected mode row causes an admissible fallback to be applied,
+the implementation retains that proposed mode and counter rather than silently
+resetting them to the fallback mode.
+
+\paragraph{Experimental comparability.}
+The paired campaign shares fixed rank-6 encryption parameters, causal telemetry
+definitions and cutoffs, a 5-s control interval, the action library, configured
+fallback identifier, workload and seed-specific exogenous inputs. Initial
+actions are explicit: DA-AHE and HYS start with the nominal row, while DPP
+starts with the fallback. Shared scalar cost definitions do not imply that HYS
+solves that objective, that all predictors are identical in general, or that
+the controllers have the same admitted actions. All fixture-based results are
+descriptive comparisons under the declared synthetic models, without a claim
+of external safety certification or optimal baseline tuning.
