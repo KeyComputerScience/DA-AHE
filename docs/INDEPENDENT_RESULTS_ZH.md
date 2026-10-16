@@ -1,5 +1,12 @@
 # DA-AHE 独立复现与128.1位目标
 
+本文记录已归档的独立执行结果，不是原论文实验的复现证明。原始日志、
+历史 `STATUS.json` 与证据哈希保持原样；当前公开发布状态见
+[`PUBLIC_EVIDENCE.md`](PUBLIC_EVIDENCE.md) 和
+[`publication.json`](../evidence/independent/publication.json)。
+论文中需要同步修正的参数与结论见
+[`MANUSCRIPT_CORRECTIONS.md`](MANUSCRIPT_CORRECTIONS.md)。
+
 采用新参数 **k=6、d=256、n=m=1536、q=2³²、p=65537、σkey=3.2**，固定官方 lattice-estimator 提交并完成全部七种攻击，最低估计为 **136.475 bits ≥128.1**。原论文k=3参数本次估计未达标；这次结果属于修改参数后的独立实现。
 
 | 攻击 | 估计bits |
@@ -40,7 +47,16 @@
 
 原始仿真器、原始固件和历史数据未恢复。所有新增执行均明确为独立结果，安全估计和尾界的失败尝试也保留。根源码manifest和完整证据manifest分别验证源码与原始输出字节；哈希不证明测量真实性。
 
-GitHub连接创建分支返回403（Resource not accessible by integration），本地Git缺少推送凭据，因此本次交付尚未上传到仓库。源码包及Git补丁可直接用于更新；完整证据包中的原始轨迹应上传到长期、可公开访问的存储，并在论文补充材料中给出固定版本和SHA256。GitHub Actions工作流也可生成新运行的可下载日志，但工作流存在不代表已执行，临时Actions制品不宜作为长期存档。
+源码和完整独立证据现已公开：完整 `DA-AHE-independent-evidence.tar`
+以四个连续分片发布在
+[independent-evidence-2026-10-15](https://github.com/KeyComputerScience/DA-AHE/releases/tag/independent-evidence-2026-10-15)。
+合并后 SHA256 为
+`079aa14358b83d5cf6e132b2c4b653ac2937feeae217c6c6965e1369cff511c0`。
+下载、逐文件校验、140组原始指标重算与冻结源码重放步骤见
+[`PUBLIC_EVIDENCE.md`](PUBLIC_EVIDENCE.md)。历史记录中的 GitHub 403
+描述归档时发生的上传失败，不能代表当前发布状态；该历史记录不作改写。
+GitHub Actions 工作流存在不代表所有检查已成功执行，临时 Actions 制品也
+不替代上述固定版本的证据归档。
 
 论文修订时，应把原k=3/768/4096-byte参数和相应性能图表一起更新，再报告新参数下实测或明确建模的结果。对本次证据可准确写为：
 
