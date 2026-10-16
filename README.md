@@ -1,5 +1,25 @@
 # DA-AHE independent reproduction and evidence
 
+## Evaluation
+
+The fixed **k=6** study provides [all-method results](experiments/CURRENT_RESULTS.md),
+[machine-readable values and provenance](experiments/current-results.json), and
+[the evaluation specification](docs/EVALUATION.md). The tables are regenerated
+from all 140 saved per-seed rows and checked against the published summaries.
+Every method, admission denominator and censored observation is included.
+
+```bash
+python tools/build_current_evaluation.py --check experiments
+python tools/build_current_evaluation.py --output-dir runs/current-evaluation
+```
+
+## Methods
+
+The [parameter and aggregation protocol](docs/manuscript/PARAMETER_PROTOCOL.tex),
+[DPP and HYS baselines](docs/manuscript/CONTROL_BASELINES.tex), and
+[baseline references](docs/manuscript/CONTROL_REFERENCES.bib) provide the
+source fragments for the declared implementation and experiment scope.
+
 ## Verified capabilities
 
 - Profile-bound coefficient/tag packing uses one 7,168-byte ciphertext instead
@@ -12,62 +32,22 @@
 - The public 20-seed, seven-method archive supplies raw records, independent
   metric recomputation and frozen-source replay for the disclosed experiment.
 
-## Manuscript correction status
-
-Reviewers can now inspect a [13-claim evidence map](docs/REVIEWER_EVIDENCE.md),
-[72 aggregate-fidelity cases](docs/AGGREGATE_FIDELITY.md), an
-[exact finite-task decoding budget](docs/DECODING_RISK_BUDGET.md), and the
-[explicit controller specification](docs/CONTROL_IMPLEMENTATION_SPEC.md).
-Generate and verify fresh targeted evidence with one command:
-
-```bash
-python tools/reproduce_paper_evidence.py --output runs/paper-evidence
-```
-
-The suite retains raw outputs, expected rejection checks, source/input hashes
-and an integrity manifest. GitHub CI executes it and separately recomputes the
-preserved fidelity cases. The supplied `TSMC_DA (1).pdf` has the same extracted
-text as `TSMC_DA.pdf`; both identities are recorded without claiming the PDFs
-were edited. These new synthetic and analytic results retain their stated scope.
-
-The current implementation uses **k=6, n=m=1536, 7,168-byte ciphertexts** and
-the independently recorded **136.475-bit** heuristic estimate. The original
-14-page `TSMC_DA.pdf` uses k=3/768/4,096 bytes and has **not been edited** here.
-Its 128.1-bit estimate is not supported by the preserved rank-3 run; 128.1 is
-the required threshold, not a replacement for an observed attack result.
-Original board and network measurements remain unverified for the new tuple.
-
-Use [the manuscript correction text](docs/MANUSCRIPT_CORRECTIONS.md) for the
-parameter, airtime, integrity assumptions and result-scope revisions. The
-[machine-readable alignment contract](configs/manuscript_alignment.json)
-binds the current code to its evidence and preserves the old execution record.
-Check it with:
-
-```bash
-python tools/check_manuscript_alignment.py
-```
-
-A successful repository check still reports `manuscript_aligned=false`.
-`--require-manuscript-aligned` exits nonzero while the original PDF remains
-unrevised. Historical logs are retained byte-for-byte; they are not overwritten
-with target values or outputs from a different parameter set.
-
-This repository contains the DA-AHE host reference plus a **new independent
-reimplementation** of the network experiment and board-measurement workflow.
-The default encryption tuple is now **k=6, d=256, n=m=1536, q=2^32,
+This repository contains the DA-AHE host reference, an independent network
+experiment implementation, and a board-measurement workflow.
+The default encryption tuple is **k=6, d=256, n=m=1536, q=2^32,
 sigma_key=3.2**. The pinned seven-attack estimator run gives a minimum of
 **136.475 bits**, above the requested 128.1-bit heuristic threshold. Single
 ciphertexts are **7,168 bytes** (raw two-polynomial reports: 14,336 bytes).
-The old k=3 manuscript tuple is retained explicitly as a legacy baseline and
-does not meet that threshold. See `configs/security_profile.json` and
+The selected estimator inputs and outputs are recorded in
+`configs/security_profile.json` and
 `evidence/independent/security-parameter-search/selected-k6-full/verification.json`.
 The separate finite-CDT decoding proof gives a one-fresh-batch, 42-choice
 adaptive union failure bound below 2^-128; see `security/DECODING_BOUND.md`
 for its random-key probability scope and executed interval-arithmetic record.
 
-The original author's simulator, firmware and historical measurements are not
-available. New executions are identified separately; no manuscript number is
-used as a simulator output or as an acceptance tolerance.
+The disclosed experiments bind their simulator, configuration, seeds and raw
+records. Manuscript target values are not used as simulator outputs or
+acceptance tolerances.
 
 - `src/daahe/`: canonical encryption, signed tickets, exact-roster aggregation,
   authentication, controller, calibration and statistical code.
@@ -144,13 +124,13 @@ python tools/independent_manifest.py verify --root runs
 Generate the manifest only after all processes finish. It refuses overwrites.
 Keep the entire bundle, including its manifest, source/config snapshots, inputs,
 raw results and execution receipts. A hash verifies bytes, not the truth of a
-measurement or proof. `daahe audit` retains its original meaning: it checks for
-original-author artifacts and does not relabel new independent runs as originals.
+measurement or proof. `daahe audit` checks the presence and identity of author-supplied artifacts;
+execution receipts identify the study that produced each result.
 
-`experiments/paper_targets.json` contains comparison targets from the manuscript;
-it is not consumed by the independent simulator. The previous published source
-manifest is preserved in `docs/archive/manifest-v0.2.0-original.json`; it is an
-archive and does not describe the current tree.
+Historical external-import contracts are under
+`docs/archive/original-experiment-contract/`; they are separate from the
+executed independent study. Archived source manifests identify their own immutable snapshots.
+The root `manifest.json` identifies the current source files.
 
 Full generated network traces are excluded from Git and from the small source
 ZIP. The complete immutable `DA-AHE-independent-evidence.tar` is distributed as
@@ -161,8 +141,8 @@ all-140 raw metric recomputation and archived-source deterministic replay.
 The repository's
 `evidence/independent/campaign-report/` directory is only a metadata/per-seed
 extract; the release supplies the full raw records, all 20 exogenous inputs and
-28-file frozen simulator source. Historical `STATUS.json` files remain unchanged;
-the new `publication.json` records the current publication state.
+28-file frozen simulator source. Execution status is recorded by each receipt;
+`publication.json` identifies the public evidence assets.
 
 ## Mandatory CI coverage and claim scope
 

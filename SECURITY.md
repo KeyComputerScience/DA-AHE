@@ -1,13 +1,12 @@
 # Security scope and reporting
 
 This is an independent research reference, not a certified deployment. The
-current default is k=6, d=256, n=m=1536 with 7,168-byte ciphertexts; the
-manuscript's k=3 tuple and associated performance numbers are historical.
+current default is k=6, d=256, n=m=1536 with 7,168-byte ciphertexts.
 The selected seven-attack minimum of 136.475 bits is a generic flattened-LWE
 heuristic estimate, not a proof for the actual finite sampler, module structure,
 implementation or all attacks. See `configs/security_profile.json`,
 `security/README.md`, `security/DECODING_BOUND.md` and
-[`docs/MANUSCRIPT_CORRECTIONS.md`](docs/MANUSCRIPT_CORRECTIONS.md).
+[the protocol specification](docs/manuscript/PARAMETER_PROTOCOL.tex).
 
 ## 1. Security Architecture and Trust Model
 
@@ -116,7 +115,7 @@ current independent evidence:
 
 | Evaluation dimension | Current independent evidence |
 |---|---|
-| Post-quantum security estimation | k=6 seven-attack minimum 136.475 bits under the stated heuristic model; legacy k=3 does not meet the 128.1-bit target |
+| Post-quantum security estimation | k=6 seven-attack minimum 136.475 bits under the stated heuristic model; the required threshold is 128.1 bits |
 | Aggregate decryption reliability | Executed actual-CDT interval calculation: 42-choice one-fresh-batch union log2 upper bound -130.5101732; joint random-key/fresh-noise probability, not every fixed key, arbitrary observed history or lifetime |
 | Action-dependent streaming workspace | Manuscript target 10 KiB; complete k=6 role-specific workspace certificate and measured stack high-water remain unavailable |
 | Closed-loop stability | Conditional theorem requires valid uncertainty, fallback and invariant-domain assumptions; the supplied synthetic controller is uncertified |
