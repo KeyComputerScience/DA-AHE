@@ -34,6 +34,8 @@ def verify(root=ROOT):
     contract = read_json(root, "configs/manuscript_alignment.json")
     profile = read_json(root, "configs/security_profile.json")
     require(contract["schema_version"] == 1, "unsupported alignment contract")
+    for retired in contract["retired_active_paths"]:
+        require(not (root / retired).exists(), "retired legacy artifact returned: " + retired)
     params = DEFAULT_PARAMETERS
     require(contract["current_parameters"] == asdict(params), "canonical parameter drift")
     expected = {"module_rank": params.k, "ring_degree": params.d, "n": params.n,
