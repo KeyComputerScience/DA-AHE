@@ -14,6 +14,22 @@
 
 ## Manuscript correction status
 
+Reviewers can now inspect a [13-claim evidence map](docs/REVIEWER_EVIDENCE.md),
+[72 aggregate-fidelity cases](docs/AGGREGATE_FIDELITY.md), an
+[exact finite-task decoding budget](docs/DECODING_RISK_BUDGET.md), and the
+[explicit controller specification](docs/CONTROL_IMPLEMENTATION_SPEC.md).
+Generate and verify fresh targeted evidence with one command:
+
+```bash
+python tools/reproduce_paper_evidence.py --output runs/paper-evidence
+```
+
+The suite retains raw outputs, expected rejection checks, source/input hashes
+and an integrity manifest. GitHub CI executes it and separately recomputes the
+preserved fidelity cases. The supplied `TSMC_DA (1).pdf` has the same extracted
+text as `TSMC_DA.pdf`; both identities are recorded without claiming the PDFs
+were edited. These new synthetic and analytic results retain their stated scope.
+
 The current implementation uses **k=6, n=m=1536, 7,168-byte ciphertexts** and
 the independently recorded **136.475-bit** heuristic estimate. The original
 14-page `TSMC_DA.pdf` uses k=3/768/4,096 bytes and has **not been edited** here.
