@@ -1,0 +1,16 @@
+{
+  "algorithm": "SHA256",
+  "artifact_type": "independent-evidence-bundle",
+  "created_utc": "2026-10-16T08:03:01.573572+00:00",
+  "files": [
+    {
+      "path": "execution.json",
+      "sha256": "d471fd89a2a9d59ed2064ac1b25f8ed578baf08caf091effc3c6d8a489cdd238",
+      "size": 26150
+    }
+  ],
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "schema_version": 1,
+  "scope": "listed public evidence bytes; no claim of historical provenance or proof validity"
+}

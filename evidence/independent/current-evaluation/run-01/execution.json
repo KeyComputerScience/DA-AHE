@@ -1,0 +1,600 @@
+{
+  "created_utc": "2026-10-16T08:03:01.539831+00:00",
+  "executions": [
+    {
+      "command": [
+        "python",
+        "tools/build_current_evaluation.py",
+        "--output-dir",
+        "runs/current-evaluation-release-01"
+      ],
+      "entrypoint_sha256": "ce36c15fc82b2407f0286349caec0fce48d24aa639231ca069330291f0334736",
+      "returncode": 0,
+      "status": "passed",
+      "stderr": "",
+      "stdout": "{\"fidelity_cases\": 72, \"network_runs\": 140, \"original_paper_reproduced\": false, \"status\": \"generated_current_evaluation\"}\n"
+    },
+    {
+      "command": [
+        "python",
+        "tools/build_current_evaluation.py",
+        "--check",
+        "experiments"
+      ],
+      "entrypoint_sha256": "ce36c15fc82b2407f0286349caec0fce48d24aa639231ca069330291f0334736",
+      "returncode": 0,
+      "status": "passed",
+      "stderr": "",
+      "stdout": "{\"fidelity_cases\": 72, \"network_runs\": 140, \"original_paper_reproduced\": false, \"status\": \"verified_current_evaluation\"}\n"
+    },
+    {
+      "command": [
+        "python",
+        "tests/test_current_evaluation.py"
+      ],
+      "entrypoint_sha256": "0d0fafb2d81ab6bf425f2d248a177cf82f5e0338e71a1159fcf3f6011b5be2bd",
+      "returncode": 0,
+      "status": "passed",
+      "stderr": "..........\n----------------------------------------------------------------------\nRan 10 tests in 5.858s\n\nOK\n",
+      "stdout": ""
+    }
+  ],
+  "fidelity_cases_recomputed": 72,
+  "installed_outputs": [
+    {
+      "path": "experiments/current-results.json",
+      "sha256": "05ea53670669301dcd0f040e47b5a4b3c197cd39dbc24f02fb38f64165bf39cf"
+    },
+    {
+      "path": "experiments/CURRENT_RESULTS.md",
+      "sha256": "727ea4b140152a32da039f2081a200e74fe1735ea14b44c74e8f67a2b5f57eb1"
+    }
+  ],
+  "network_rows_crosschecked": 140,
+  "new_tests_passed": 10,
+  "origin": "independent_derived_evaluation",
+  "original_pdf_modified": false,
+  "paper_reproduced": false,
+  "schema_version": 1,
+  "scope": "Actual regeneration/check of saved independent evidence and new tests. This does not claim a new 140-case network execution, original OMNeT++ reproduction or board measurements.",
+  "source_provenance": {
+    "input_files": [
+      {
+        "path": "configs/security_profile.json",
+        "sha256": "fd8188ca6f5bd1347f3beedf47980fe4ba2db4300f6b968a2dcec31c075c4dc7",
+        "size": 1012
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n1-mixed_step_noise-seed1000.json",
+        "sha256": "455aaac9a44892f5c2f8b2c79dbb74754d9ef390a882ab2eb450d2272bedc287",
+        "size": 29343
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n1-mixed_step_noise-seed1001.json",
+        "sha256": "2385fe2d0cfe9f2728cfddd160c35fba787ae4902f613c3f28c301ac7bbf7d69",
+        "size": 29231
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n1-smooth_triangle-seed1000.json",
+        "sha256": "39ac59f1be913edcd8a4dcd4d5601754c3834f5d2fbfb37bc4e6bee5dac47c5d",
+        "size": 29609
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n1-smooth_triangle-seed1001.json",
+        "sha256": "28629158c718610848703536846c368a58fc43928fbf4ab56fd18e05394fe7b5",
+        "size": 28678
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n1-sparse_pulses-seed1000.json",
+        "sha256": "4420e9752b75c29daf2e063de6b3599ed6432a930d8a49d21ee3184270ee2e77",
+        "size": 23404
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n1-sparse_pulses-seed1001.json",
+        "sha256": "7fe88a489b55a4e26f8b76033069118a58801849b72df160ac31069806e8e863",
+        "size": 23355
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n12-mixed_step_noise-seed1000.json",
+        "sha256": "dfaaa498abbf81d03358d6038c760df44f59848f44832e1f33a0c4773230c1f9",
+        "size": 59640
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n12-mixed_step_noise-seed1001.json",
+        "sha256": "6b2307195a0f1622b9d779a6af3a496d9c5bae029444476a1cc4f069fc32b2da",
+        "size": 60402
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n12-smooth_triangle-seed1000.json",
+        "sha256": "dd78db6c391ccf1be79bb97ef98a43607f08063ce090c8a9741b47a8be020b60",
+        "size": 60402
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n12-smooth_triangle-seed1001.json",
+        "sha256": "201438a476c24a43d2d2c0898321a19715b3821a29fe0ba1988ece3e895694ae",
+        "size": 61727
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n12-sparse_pulses-seed1000.json",
+        "sha256": "c1e9de87afb12d1955665a3b29d96ac10fb2a8bbfc84d19e684667503087db63",
+        "size": 41951
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n12-sparse_pulses-seed1001.json",
+        "sha256": "07332ec3ccfecd325d34fc17c7f74c48e51326cf530f545bfed95f041dadaea7",
+        "size": 42052
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n14-mixed_step_noise-seed1000.json",
+        "sha256": "b70e5b6f5ffca192357ec056dc2a2564e623c2af3eb5573803bb05709b18e972",
+        "size": 64413
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n14-mixed_step_noise-seed1001.json",
+        "sha256": "2750b8e64ef940ae49205ab426c7e7eed6269943cfe9ac57223c4e5b55349dc3",
+        "size": 64979
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n14-smooth_triangle-seed1000.json",
+        "sha256": "1a87cbc770e6c50a838bd4ba15012708f0e937583ff067c0555260b28738fa47",
+        "size": 65262
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n14-smooth_triangle-seed1001.json",
+        "sha256": "a4403ff7cb8d5a8035030f1f3939e56c38a7435bac5d7e45f493533cf928a6d2",
+        "size": 66211
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n14-sparse_pulses-seed1000.json",
+        "sha256": "55caa57bfe951f76f6565941be9152a241a0c65ccc33f3e18742351e45d19d77",
+        "size": 45162
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n14-sparse_pulses-seed1001.json",
+        "sha256": "2adbb4993d56921a74b583a5c4605bcee7f1bc9725512d3cf497e51d281d4fdb",
+        "size": 45313
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n16-mixed_step_noise-seed1000.json",
+        "sha256": "3f0c76b7ebace9a216d59802c88bd5e11fe44f20dd55b877d3acf4875ed0c120",
+        "size": 69127
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n16-mixed_step_noise-seed1001.json",
+        "sha256": "1b5da4b1070f13cf431f13ba4de4f9fb7338463f1213415e1218ebbc8f0aa0b4",
+        "size": 70297
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n16-smooth_triangle-seed1000.json",
+        "sha256": "721c69b2230a5aafa2fb4ad2bad42ccced3fc3c37a1245f9dac0fd69fc18b49a",
+        "size": 70330
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n16-smooth_triangle-seed1001.json",
+        "sha256": "51051183420a4d1a47590cd262834026df1b2986e97eb362f901dbf2803e0f86",
+        "size": 71182
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n16-sparse_pulses-seed1000.json",
+        "sha256": "3ebe3abc7bfcac3820d46ee7cd680d05f533faab61903d3df45a47813c9b04b4",
+        "size": 48251
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n16-sparse_pulses-seed1001.json",
+        "sha256": "49b7a83fef1c572b98d7f957af7559f4670a5770add9a7b799595f5971032171",
+        "size": 48441
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n1-mixed_step_noise-seed1000.json",
+        "sha256": "db0d49cf3d3a1fc2f3c29f915ce88673094aa53c814968c8e5df90ad419b972a",
+        "size": 28945
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n1-mixed_step_noise-seed1001.json",
+        "sha256": "c0ddea3df58a5d4daaacb90ef6c2644a900b0f782d12ca1ce9e5b0d18e3d878d",
+        "size": 28775
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n1-smooth_triangle-seed1000.json",
+        "sha256": "22733f94f2322011cf31595dc4bde051a69706d22e2885402e4fb921b1601910",
+        "size": 29019
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n1-smooth_triangle-seed1001.json",
+        "sha256": "7edd857ce5f9587b4583bf251c347928f3abd58016ff24e40ff9204475fb47c3",
+        "size": 28669
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n1-sparse_pulses-seed1000.json",
+        "sha256": "e7949f25721c2289328a9fdc3a678a5c34554aea1c49bd3f1e6ef9015344dfcf",
+        "size": 23134
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n1-sparse_pulses-seed1001.json",
+        "sha256": "db570276e46cf620f74a5a8e1ccf628ef0e58e9933c6310b5e08d7a7ebccaaf4",
+        "size": 22975
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n12-mixed_step_noise-seed1000.json",
+        "sha256": "43cc26c657e1876de6166d73bca9c902f2803e63a2483906e92bcf13bafe399d",
+        "size": 57466
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n12-mixed_step_noise-seed1001.json",
+        "sha256": "35232e131e1c31f70234faeab46413a80227f2991ab463db4a4aa67174ebc106",
+        "size": 58121
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n12-smooth_triangle-seed1000.json",
+        "sha256": "478229b49f3afa236813840dcca35d0e2ee79d1497d3631b8b70deeed03b93da",
+        "size": 58141
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n12-smooth_triangle-seed1001.json",
+        "sha256": "5bd074b7be48d2d7b2598de28d149c08971b9ed89f9b5b68485e86b9d18bffea",
+        "size": 59061
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n12-sparse_pulses-seed1000.json",
+        "sha256": "56e9e68b773fb58bd2d69dad60c022e33495af04b1dc02c2a21249af0a16e90f",
+        "size": 40193
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n12-sparse_pulses-seed1001.json",
+        "sha256": "b5e4a697cf59f3c0aae289e44ba6b0d45cc83ee6c0d599d5c19c22c5d021492d",
+        "size": 40408
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n14-mixed_step_noise-seed1000.json",
+        "sha256": "1f47365e50e2aaa940b5621d12f6c8206df1e52e9dee6c8f48c6f1bdc314127d",
+        "size": 61769
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n14-mixed_step_noise-seed1001.json",
+        "sha256": "b23b2e0bd1e610ccf9e36e7efdf10cbadc142d3fd198ba9d4a74fbcdbdcab0df",
+        "size": 62264
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n14-smooth_triangle-seed1000.json",
+        "sha256": "fccc65235d95f4692a446b528fa0c6e5cf65890610b7ec5e0dd590bd513d745f",
+        "size": 62660
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n14-smooth_triangle-seed1001.json",
+        "sha256": "925ffba2202f69121c7609af257ba352521b7dff17a1850569e202890c1a1051",
+        "size": 63303
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n14-sparse_pulses-seed1000.json",
+        "sha256": "28e62c8ae43f75eec7affda4e905b8acc078dacf8481a05f7f5f3fbe75566cad",
+        "size": 43183
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n14-sparse_pulses-seed1001.json",
+        "sha256": "cc8e71adfe49e21e6cda213712b47f7771af4e5a80c53eb25dc9cd46117c95b0",
+        "size": 43355
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n16-mixed_step_noise-seed1000.json",
+        "sha256": "4028eb70a2f6492f16022c16dd324993886c732e73803d4f13243d30961665ca",
+        "size": 66169
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n16-mixed_step_noise-seed1001.json",
+        "sha256": "9dbcab56dee0253bf91d9618428d2f1ee0a14558d95dd53d2650b3c99bf196d3",
+        "size": 67201
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n16-smooth_triangle-seed1000.json",
+        "sha256": "cd0203aa72192cc95e8157a6de0b8722bdb8dda286fcba42f68c3e133dc7d815",
+        "size": 67317
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n16-smooth_triangle-seed1001.json",
+        "sha256": "c324ba5313ae2b5ed5c987c6a77573ae5894c3dfc710ad313923b62cb6baeb2e",
+        "size": 67952
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n16-sparse_pulses-seed1000.json",
+        "sha256": "1153c6d69809b2d48ea831b09f306ee1bb8e2759f74f36d6853c168e64973c8e",
+        "size": 45942
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n16-sparse_pulses-seed1001.json",
+        "sha256": "65650b3f4f7ecf8838f39d01b2c61f38dd31eef27137d8055e838791264879a2",
+        "size": 46197
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n1-mixed_step_noise-seed1000.json",
+        "sha256": "3dabdb6737f8f33b75076b38b07c5b3f545a98f718913344125f9fd5d45f5749",
+        "size": 28764
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n1-mixed_step_noise-seed1001.json",
+        "sha256": "d81b42fbc4160ffbad9deac75bcbd3dab532998b34e6c12a4e491ad6de39ed75",
+        "size": 28583
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n1-smooth_triangle-seed1000.json",
+        "sha256": "c1e55691a071a2941eabce7e5b9a9f90b4fb14e239bb41cdfead6c5d3dc43358",
+        "size": 28705
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n1-smooth_triangle-seed1001.json",
+        "sha256": "f11a0515421539181f0a8d45b09681318f173ac7a56f74ebdf2fee1f9f981083",
+        "size": 28312
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n1-sparse_pulses-seed1000.json",
+        "sha256": "28e76b3d4e6f8e7f00ec84ab665352cd3b142eca602e3a70b5d2da5dd4c2ebea",
+        "size": 22778
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n1-sparse_pulses-seed1001.json",
+        "sha256": "f0c70bc0ce8519d8083fabecd0577ee5dc1a33f96915dbcc0730b8fc53a7366a",
+        "size": 22675
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n12-mixed_step_noise-seed1000.json",
+        "sha256": "2acf8f9542d003aba7e2fadab5cf52050470e3034c3038fc4d1cbd2f617cd2e5",
+        "size": 55606
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n12-mixed_step_noise-seed1001.json",
+        "sha256": "a482416d7df9bb3a937fc22b9cbe93c5c8f2c0e9aeec71488d6e6958c9c28eba",
+        "size": 56295
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n12-smooth_triangle-seed1000.json",
+        "sha256": "37b62223879866fef94d137c47c53829f30eb421dd0abd7051c01aab3eab87a4",
+        "size": 56660
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n12-smooth_triangle-seed1001.json",
+        "sha256": "fd52fe21f9c3526d505d7c7be8445cfb81a1c561f476d4dd74ef50ce82f518ca",
+        "size": 57490
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n12-sparse_pulses-seed1000.json",
+        "sha256": "a9533d7b9aa2206280c10dac6a3ad559b11ebb98d0a8cc285892b9ff3dda150a",
+        "size": 38484
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n12-sparse_pulses-seed1001.json",
+        "sha256": "6684bc8513e183c6ca75510cc273f81c4f309bf99b0534f897e5324adb3d9fcf",
+        "size": 38717
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n14-mixed_step_noise-seed1000.json",
+        "sha256": "e8b33a7115114290d886d2727d889d1dccb0c23dc29cacf11725bee54de61069",
+        "size": 59643
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n14-mixed_step_noise-seed1001.json",
+        "sha256": "7968bdd4a04b333c999447832f306f28210a27a409046fffac0c6894f13d6f82",
+        "size": 60210
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n14-smooth_triangle-seed1000.json",
+        "sha256": "eb2073d6a2da89de88970d6fae2481f4827ef030d638472e601e94161ec5a9ea",
+        "size": 61172
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n14-smooth_triangle-seed1001.json",
+        "sha256": "96c1f358c2abf11deda08a7f6cafc28f558fb582429d30e819f6f2658474e24a",
+        "size": 61616
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n14-sparse_pulses-seed1000.json",
+        "sha256": "9bf2149ded12c57e52844e2d54054f03274044fbb00b184271c7345ddb1de0bb",
+        "size": 41252
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n14-sparse_pulses-seed1001.json",
+        "sha256": "d17fdc0d50ae1c1a799b3250bf66f3cb38e83fc1b96dc070b4d06c0d2ac8beea",
+        "size": 41375
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n16-mixed_step_noise-seed1000.json",
+        "sha256": "cf4e895bdda7d0fa9ccda64b2e2a290eed7cec2b5a57dcacbbc9d672b94677e9",
+        "size": 63780
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n16-mixed_step_noise-seed1001.json",
+        "sha256": "df52563ed0d8a084cc72409330e0bc719b052de3a623f98ae0433e0585f2127f",
+        "size": 64882
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n16-smooth_triangle-seed1000.json",
+        "sha256": "ee87ebefd19f14b557b1b2f151c7d321269b847d64925591e0c5184ab68662c2",
+        "size": 65527
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n16-smooth_triangle-seed1001.json",
+        "sha256": "0071a5a69a0b426805f14b527ac3c0c3757ec293735e1168810566ae6d55297d",
+        "size": 65867
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n16-sparse_pulses-seed1000.json",
+        "sha256": "197d2979b471e12f822de4908adea363d518b38b165968c1909c2ef8a9016d06",
+        "size": 43788
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n16-sparse_pulses-seed1001.json",
+        "sha256": "daa41e7c657153fb99f17bd4634614476e4d78e38edc18542eaab9c52300d08f",
+        "size": 43906
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/index.json",
+        "sha256": "05e298c4f6bee8c99892b6c07538cb9937c1d385c0ffd079864c794778bde104",
+        "size": 12260
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/manifest.json",
+        "sha256": "d5fedbe1dffc0bea609d07e75218f636f3ee9812805b81fa58b499fa304c7485",
+        "size": 11447
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/source/src/daahe/__init__.py",
+        "sha256": "7ba733777b21420081c64351fa8f69d59cc1420aa84051300c90add9c60a3e59",
+        "size": 149
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/source/src/daahe/mlwe.py",
+        "sha256": "1e7e867b315312139dfce4260aedf38aab19685077a3ce90c6f3bf174c459fc7",
+        "size": 13024
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/source/src/daahe/profiles.py",
+        "sha256": "dc6add53fb7223afaab61074549ea33b48a973ff28303fd209012c356b7a2cb8",
+        "size": 4477
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/source/src/daahe/ring.py",
+        "sha256": "507106338b99c8fbba36c5d60801225c367fcbc9896813afdee583a96a7b11db",
+        "size": 3009
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/source/src/daahe/signal.py",
+        "sha256": "21c1f738718bf21e71bdce0bc550e157c9a8637a1772fe2099182a05fadb7cb2",
+        "size": 7271
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/source/tools/check_aggregate_fidelity.py",
+        "sha256": "aac3854e8283d86bd06cb58b34925b65293e5105e4c9e8e7544748ecb4ee9e8f",
+        "size": 23041
+      },
+      {
+        "path": "evidence/independent/aggregate-fidelity/run-01/summary.json",
+        "sha256": "25f93ff45a5f4d1748ed8e0e127856fd7aa01c6b5361af52516dbad1f45bf72d",
+        "size": 18074
+      },
+      {
+        "path": "evidence/independent/campaign-report/config.json",
+        "sha256": "bf74a0c53b80c5bd829c23c0ecf0c3b941f5c0644ad9127001da2639790fa505",
+        "size": 7113
+      },
+      {
+        "path": "evidence/independent/campaign-report/controller.json",
+        "sha256": "21306a95bcc5856af31dfbd298cb1eda9185dbef54ceff7aa0e0118287cd0b0f",
+        "size": 16430
+      },
+      {
+        "path": "evidence/independent/campaign-report/manifest.json",
+        "sha256": "eee549e414d972d2bfc27099faa4749c7eb2014c617a15eff02eaa51162fc61a",
+        "size": 46172
+      },
+      {
+        "path": "evidence/independent/campaign-report/per-seed.csv",
+        "sha256": "dbe7a6fa0750078a227b0cb7d4de0cd8131b6be221c88065042031fe5250429a",
+        "size": 29724
+      },
+      {
+        "path": "evidence/independent/campaign-report/summary.json",
+        "sha256": "b73918c7c9bf9422c0b8c9121dbb1dfa27dac479ac72520a8813fbc35d844a7d",
+        "size": 151931
+      },
+      {
+        "path": "evidence/independent/decoding-horizon/run-01/budget-300-120.json",
+        "sha256": "3abecd242d51f88d9fa7df24aba117d2604bb0bac772d266efce0e2985b2be67",
+        "size": 2602
+      },
+      {
+        "path": "evidence/independent/decoding-horizon/run-01/budget-5-128.json",
+        "sha256": "2986634c2981930f525e883eb8de76364110942a031044772c0589cc13bd0801",
+        "size": 2599
+      },
+      {
+        "path": "evidence/independent/decoding-horizon/run-01/budget-6-128-rejected.json",
+        "sha256": "e25e1c39633be1052a40ad209534b8412b29cad3c0585a453a1849e3e8b986f6",
+        "size": 2598
+      },
+      {
+        "path": "evidence/independent/decoding-horizon/run-01/check_decoding_horizon.py",
+        "sha256": "acab54b0665731de4819a4c7a2045a5e912a68c4b9485a5bc0d53697a3564966",
+        "size": 14738
+      },
+      {
+        "path": "evidence/independent/decoding-horizon/run-01/execution.json",
+        "sha256": "072ad93ee8cb9743903055332ba9302e9891b5b357ca3dbea478fadf894177ba",
+        "size": 2135
+      },
+      {
+        "path": "evidence/independent/decoding-horizon/run-01/manifest.json",
+        "sha256": "5f7846f9c973ab43a65c5c14c8148c410017213c56965b6f5bfe17683b735524",
+        "size": 1112
+      },
+      {
+        "path": "evidence/independent/decoding/k6-cdt-03/decoding-bound.json",
+        "sha256": "2be1b88b34bdee74c852fd12c9020c4fed1870a117f4a63ab00d057944991335",
+        "size": 24088
+      },
+      {
+        "path": "evidence/independent/decoding/k6-cdt-03/sampler-cdts.json",
+        "sha256": "c61e8ff2ed2aa012dd9a9632d14b756a6a4f9bd587b339db5bdd26c8b0cf8433",
+        "size": 57741
+      },
+      {
+        "path": "evidence/independent/security-parameter-search/selected-k6-full/security.json",
+        "sha256": "3794650eb763f528bab90aab42ff4ed54e7616d5d85358239db261e27f668168",
+        "size": 17195
+      },
+      {
+        "path": "simulation/config.json",
+        "sha256": "bf74a0c53b80c5bd829c23c0ecf0c3b941f5c0644ad9127001da2639790fa505",
+        "size": 7113
+      }
+    ],
+    "input_fingerprint": "bc2df36f83ce8ddaf10263a5981010d8617bf8fb16305638530d61c2d3ddf65c",
+    "scope": "Relative public paths and SHA256 only. No workstation paths, usernames, hostnames, environment variables or original target files are consumed or exported.",
+    "source_files": [
+      {
+        "path": "tools/build_current_evaluation.py",
+        "sha256": "ce36c15fc82b2407f0286349caec0fce48d24aa639231ca069330291f0334736",
+        "size": 28902
+      },
+      {
+        "path": "tools/check_aggregate_fidelity.py",
+        "sha256": "aac3854e8283d86bd06cb58b34925b65293e5105e4c9e8e7544748ecb4ee9e8f",
+        "size": 23041
+      },
+      {
+        "path": "tools/check_decoding_horizon.py",
+        "sha256": "acab54b0665731de4819a4c7a2045a5e912a68c4b9485a5bc0d53697a3564966",
+        "size": 14738
+      },
+      {
+        "path": "tools/estimator_result_adapter.py",
+        "sha256": "9d8c81893ff9c2f3be964badb61b4190f825ef53d8f2b3e1d5e2d166a63ec36d",
+        "size": 7312
+      },
+      {
+        "path": "src/daahe/__init__.py",
+        "sha256": "7ba733777b21420081c64351fa8f69d59cc1420aa84051300c90add9c60a3e59",
+        "size": 149
+      },
+      {
+        "path": "src/daahe/mlwe.py",
+        "sha256": "1e7e867b315312139dfce4260aedf38aab19685077a3ce90c6f3bf174c459fc7",
+        "size": 13024
+      },
+      {
+        "path": "src/daahe/ring.py",
+        "sha256": "507106338b99c8fbba36c5d60801225c367fcbc9896813afdee583a96a7b11db",
+        "size": 3009
+      },
+      {
+        "path": "src/daahe/signal.py",
+        "sha256": "21c1f738718bf21e71bdce0bc550e157c9a8637a1772fe2099182a05fadb7cb2",
+        "size": 7271
+      },
+      {
+        "path": "src/daahe/profiles.py",
+        "sha256": "dc6add53fb7223afaab61074549ea33b48a973ff28303fd209012c356b7a2cb8",
+        "size": 4477
+      }
+    ],
+    "source_fingerprint": "e50229909d2b6bbcb2a331a0a3d435ac05e41fec6c72c56c52979d209b6e1890"
+  },
+  "status": "passed"
+}
