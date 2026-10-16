@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "status": "repository_corrected_original_pdf_requires_revision",
+  "original_pdf": {
+    "filename": "TSMC_DA.pdf",
+    "sha256": "6ac25668f9a87dcd420fc8898900128df60d68b8dd82a295c84ea2270bc421c9",
+    "pages": 14,
+    "editable_source_in_repository": false
+  },
+  "current_parameters": {
+    "q": 4294967296,
+    "p": 65537,
+    "d": 256,
+    "k": 6,
+    "lambda_tag": 16,
+    "sigma_key": 3.2
+  },
+  "selected_estimator_bits": 136.475,
+  "required_estimator_bits": 128.1,
+  "payload_arithmetic": {
+    "phy_rate_bps": 250000,
+    "single_ciphertext_bytes": 7168,
+    "raw_two_ciphertext_bytes": 14336,
+    "single_payload_airtime_ms": "229.376",
+    "raw_payload_airtime_ms": "458.752"
+  },
+  "preserved_legacy_records": [
+    {
+      "path": "security/run-01/security.json",
+      "sha256": "e6547315520c55a82cf349ab1df4483cdd816b192f61de9ea6cf1ac4186dea78",
+      "scope": "Historical independent k3 execution, not current k6 evidence; successful primal_usvp approximately 51.94 bits."
+    }
+  ],
+  "claim_status": {
+    "original_pdf_modified": false,
+    "historical_measurements_verified_for_k6": false,
+    "full_system_certified": false,
+    "control_certificate_available": false,
+    "aggregate_physical_sum_exact": false,
+    "durable_source_emission_required": true
+  },
+  "historical_unverified_for_k6": {
+    "protected_cpu_ms": 58.125,
+    "protected_cpu_energy_mj": 1.395,
+    "whole_firmware_peak_sram_bytes": 29328,
+    "workspace_budget_bytes": 10240,
+    "end_to_end_latency_ms": 450.0,
+    "residual_loss_3000_percent": 0.074,
+    "residual_loss_5000_percent": 0.098,
+    "recovery_s": 33.0,
+    "weighted_lower_bound_ms": 77.199,
+    "signal_table_iii": "Original PRD/RMSE require the original signal corpus and aggregate-domain reevaluation."
+  },
+  "manuscript_revision": "docs/MANUSCRIPT_CORRECTIONS.md",
+  "scope": "Parameter, evidence identity and arithmetic alignment only. No historical execution result is replaced; no new board or network measurements are claimed."
+}
