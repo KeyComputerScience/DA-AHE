@@ -1,6 +1,7 @@
 # SPDX-License-Identifier: MIT
 """CI trigger policy and pytest report handling, independent of experiment data."""
 import importlib.util
+import json
 import os
 from pathlib import Path
 import subprocess
@@ -110,6 +111,36 @@ def test_commit_trailer_and_head_commit_are_checked(tmp_path):
     result = trigger_tool().assess(tmp_path, {"head_commit": {"message": "change\n\n" + trailer}})
     assert result["event_commit_messages_checked"] == 1
     assert result["errors"][0]["location"] == "event.commit_messages[0]"
+
+
+@pytest.mark.parametrize("directory", [
+    ".github", "src", "daahe", "tests", "tools", "security", "simulation",
+    "embedded", "firmware", "configs", "config", "experiments", "experiment", "docs",
+])
+@pytest.mark.parametrize("directive_kind", ["bracket", "trailer"])
+def test_every_active_source_directory_rejects_commit_directives(tmp_path, directory, directive_kind):
+    write_workflow(tmp_path)
+    if directive_kind == "bracket":
+        directive = "[" + " ".join(("skip", "ci")) + "]"
+    else:
+        directive = "-".join(("skip", "checks")) + ": true"
+    relative = Path(directory) / "nested" / "guard-fixture.json"
+    source = tmp_path / relative
+    source.parent.mkdir(parents=True, exist_ok=True)
+    source.write_text(json.dumps({"guard_fixture": directive}), encoding="utf-8")
+    result = trigger_tool().assess(tmp_path)
+    assert {row["location"] for row in result["errors"]} == {relative.as_posix()}
+
+
+@pytest.mark.parametrize("directory", ["configs", "config", "experiments", "experiment", "security", "simulation"])
+def test_sampling_outcomes_and_certificate_flags_are_not_ci_directives(tmp_path, directory):
+    write_workflow(tmp_path)
+    source = tmp_path / directory / "scientific-state.json"
+    source.parent.mkdir(parents=True, exist_ok=True)
+    source.write_text(json.dumps({"sampling_skipped": 7, "certified": False,
+                                  "control_model_certified": False,
+                                  "full_system_certified": False}), encoding="utf-8")
+    assert trigger_tool().assess(tmp_path)["errors"] == []
 
 
 def test_archived_evidence_is_excluded_and_checker_does_not_flag_itself(tmp_path):
