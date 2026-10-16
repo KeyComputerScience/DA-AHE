@@ -2,11 +2,13 @@
 # SPDX-License-Identifier: MIT
 """Record exact no-wrap arithmetic; do not manufacture missing proof certificates."""
 import argparse
+from dataclasses import asdict
 from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from daahe.independent_evidence import source_snapshot, utc_now, write_json
+from daahe.mlwe import DEFAULT_PARAMETERS
 from daahe.profiles import example_profiles
 
 
@@ -34,6 +36,10 @@ def main():
     write_json(args.output, {"schema_version": 1, "origin": "independent_reimplementation",
                             "status": "arithmetic_checked_other_gates_pending",
                             "created_utc": utc_now(), "paper_reproduced": False,
+                            "encryption_parameters": asdict(DEFAULT_PARAMETERS),
+                            "ciphertext_bytes": DEFAULT_PARAMETERS.ciphertext_bytes,
+                            "parameter_scope": "active reference encryption tuple; data no-wrap arithmetic alone is independent of ciphertext parameters and does not certify security, decoding, timing, energy or workspace",
+                            "full_system_certified": False,
                             "profiles": records,
                             "source_snapshot": source_snapshot(Path(__file__).resolve().parents[1])})
     return 0 if all(r["no_wrap_arithmetic_passed"] for r in records) else 2

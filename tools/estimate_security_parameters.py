@@ -2,7 +2,8 @@
 # SPDX-License-Identifier: MIT
 """Independently estimate an explicitly selected flattened Module-LWE instance.
 
-Defaults retain the original k=3 tuple. Run with Sage-enabled Python. Each attack
+Defaults follow the active encryption tuple. The original k=3 tuple requires
+an explicit --module-rank 3. Run with Sage-enabled Python. Each attack
 has an isolated process, a deadline and persistent raw logs. Incomplete sets
 never produce lambda_est_bits or establish an optional review threshold.
 """
@@ -21,6 +22,9 @@ import traceback
 from datetime import datetime, timezone
 from functools import partial
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+from daahe.mlwe import DEFAULT_PARAMETERS
 
 from estimator_result_adapter import (
     REQUIRED_ATTACKS, sample_accounting, source_manifest, summarize_attacks,
@@ -121,7 +125,8 @@ def run_worker(repo, name, output, inputs):
         accounting = sample_accounting(name, cost, original_m=int(parameters.m),
             original_n=int(parameters.n), original_q=int(parameters.q),
             original_error_stddev=float(parameters.Xe.stddev))
-        stringify = lambda value: str(value) if value is not None else None
+        def stringify(value):
+            return str(value) if value is not None else None
         record.update(status="success", rop=str(rop), log2_rop=bits, sage_version=SAGE_VERSION,
                       beta=stringify(cost.get("beta", cost.get("β"))),
                       lattice_dimension=stringify(cost.get("d")),
@@ -177,7 +182,7 @@ def finalize_source_status(report, repo, expected_digest):
     return report["execution_returncode"]
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--estimator", type=Path, required=True)
     parser.add_argument("--output", type=Path, help="new evidence directory; never overwritten")
@@ -185,14 +190,15 @@ def main():
                         help="optional review threshold; never used to generate an estimate")
     parser.add_argument("--attack-timeout", type=float, default=300,
                         help="wall-clock seconds per isolated attack, default 300")
-    parser.add_argument("--module-rank", type=int, default=3)
-    parser.add_argument("--ring-degree", type=int, default=256)
+    parser.add_argument("--module-rank", type=int, default=DEFAULT_PARAMETERS.k,
+                        help="default: active encryption rank; 3 explicitly selects the legacy manuscript tuple")
+    parser.add_argument("--ring-degree", type=int, default=DEFAULT_PARAMETERS.d)
     parser.add_argument("--n", type=int, default=None, help="optional consistency assertion: n=k*d")
-    parser.add_argument("--q", type=lambda value: int(value, 0), default=2**32)
-    parser.add_argument("--sigma-key", type=float, default=3.2)
+    parser.add_argument("--q", type=lambda value: int(value, 0), default=DEFAULT_PARAMETERS.q)
+    parser.add_argument("--sigma-key", type=float, default=DEFAULT_PARAMETERS.sigma_key)
     parser.add_argument("--attack-worker", choices=REQUIRED_ATTACKS, help=argparse.SUPPRESS)
     parser.add_argument("--worker-output", type=Path, help=argparse.SUPPRESS)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     args.attacks = list(REQUIRED_ATTACKS)  # Public full-run interface cannot prune attacks.
     try:
         inputs = security_parameters(args)
