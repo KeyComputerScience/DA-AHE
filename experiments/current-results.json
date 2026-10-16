@@ -644,6 +644,24 @@
       "status": "verified_and_recomputed"
     }
   },
+  "ci_contract": {
+    "events": [
+      "pull_request",
+      "push:main",
+      "workflow_dispatch"
+    ],
+    "jobs": {
+      "campaign": "Execute and verify a fresh 20-seed, seven-method campaign independently of the published report.",
+      "coverage": "Require every reproduction job to finish successfully.",
+      "history": "Exactly replay the frozen-source 140-case historical campaign on its recorded macOS platform.",
+      "history_linux": "Independently recompute the archived raw metrics on Linux.",
+      "performance": "Export paired statistics from the published records and exercise the performance-matrix pipeline.",
+      "security": "Verify preserved records and execute the pinned attack estimates and finite-sampler decoding bounds.",
+      "source": "Verify source and evidence bindings, then check and regenerate this report from the published records."
+    },
+    "scope": "Workflow responsibilities and triggers; the published scientific records keep their original execution identities.",
+    "workflow": ".github/workflows/reproduce.yml"
+  },
   "decoding_horizon": {
     "budgets": [
       {
@@ -10375,8 +10393,8 @@
     "source_files": [
       {
         "path": "tools/build_current_evaluation.py",
-        "sha256": "ce36c15fc82b2407f0286349caec0fce48d24aa639231ca069330291f0334736",
-        "size": 28902
+        "sha256": "48b535db9759594028405c88b8a7877bb2f1189f237caa3271a01b52eb51e5ab",
+        "size": 30409
       },
       {
         "path": "tools/check_aggregate_fidelity.py",
@@ -10419,7 +10437,7 @@
         "size": 4477
       }
     ],
-    "source_fingerprint": "e50229909d2b6bbcb2a331a0a3d435ac05e41fec6c72c56c52979d209b6e1890"
+    "source_fingerprint": "6359761a6de44205c5da39502aedfce60358b3776d9bd73749cea4f86a673624"
   },
   "schema_version": 1,
   "security": {

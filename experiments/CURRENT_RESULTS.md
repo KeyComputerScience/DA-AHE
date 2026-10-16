@@ -61,6 +61,20 @@ At fixed rank 6, two ciphertext payloads (14,336 bytes) become one (7,168 bytes)
 
 The rejected 6-attempt/2^-128 budget is retained. The horizon is an attempt cap, not a number of successful deliveries or seconds. Shared keys and dependence across batches are allowed under the stated fresh-noise/preauthorization assumptions. This is joint random-key/history/noise arithmetic, not an every-fixed-key, arbitrary conditional-history, unlimited-lifetime, network or controller certificate. The Sage bound is consumed without rerunning its proof.
 
+## Continuous integration
+
+[Independent reproduction](../.github/workflows/reproduce.yml) is triggered by `pull_request`, `push:main`, `workflow_dispatch`.
+
+- `campaign`: Execute and verify a fresh 20-seed, seven-method campaign independently of the published report.
+- `coverage`: Require every reproduction job to finish successfully.
+- `history`: Exactly replay the frozen-source 140-case historical campaign on its recorded macOS platform.
+- `history_linux`: Independently recompute the archived raw metrics on Linux.
+- `performance`: Export paired statistics from the published records and exercise the performance-matrix pipeline.
+- `security`: Verify preserved records and execute the pinned attack estimates and finite-sampler decoding bounds.
+- `source`: Verify source and evidence bindings, then check and regenerate this report from the published records.
+
+Workflow responsibilities and triggers; the published scientific records keep their original execution identities.
+
 ## Provenance and reproduction
 
 current-results.json binds every consumed public input and every report-builder dependency by relative path, byte size and SHA256. The archived network summary/config/controller and completion manifest are crosschecked against all 140 CSV rows; the report builder does not itself replay the full companion raw network archive.
@@ -69,4 +83,4 @@ Generate into a new directory: `python tools/build_current_evaluation.py --outpu
 
 Input fingerprint: `bc2df36f83ce8ddaf10263a5981010d8617bf8fb16305638530d61c2d3ddf65c`.
 
-Source fingerprint: `e50229909d2b6bbcb2a331a0a3d435ac05e41fec6c72c56c52979d209b6e1890`.
+Source fingerprint: `6359761a6de44205c5da39502aedfce60358b3776d9bd73749cea4f86a673624`.
