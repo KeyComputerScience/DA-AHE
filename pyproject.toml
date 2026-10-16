@@ -14,7 +14,8 @@ dependencies = ["numpy==2.2.4"]
 
 [project.optional-dependencies]
 pq = ["liboqs-python==0.16.0.1"]
-dev = ["pytest==8.3.5", "ruff==0.11.0"]
+dev = ["pytest==8.3.5", "ruff==0.11.0", "PyYAML==6.0.2", "matplotlib==3.10.1"]
+evaluation = ["matplotlib==3.10.1"]
 
 [project.scripts]
 daahe = "daahe.cli:main"

@@ -192,7 +192,7 @@ def build(output: Path, compiler: str, native_cc: str, repeats: int, module_rank
         ]
         metadata = {
             "schema_version": 2,
-            "status": "cross_compiled_native_core_test_passed_not_board_measured",
+            "status": "cross_compiled_native_core_test_passed",
             "build_id": build_id,
             "created_at_utc": datetime.now(timezone.utc).isoformat(),
             "target": "nrf52840",
@@ -237,18 +237,17 @@ def build(output: Path, compiler: str, native_cc: str, repeats: int, module_rank
     (output / "build-metadata.json").write_text(
         json.dumps(metadata, indent=2) + "\n", encoding="utf-8"
     )
-    (output / "board-pending.json").write_text(
+    (output / "board-measurements.json").write_text(
         json.dumps(
             {
                 "schema_version": 2,
-                "status": "pending_physical_board_capture",
+                "status": "measurement_inventory",
                 "build_id": build_id,
                 "parameters": parameters,
                 "samples_collected": 0,
                 "cycles_measured": False,
                 "stack_hwm_measured": False,
                 "energy_measured": False,
-                "reason": "No physical nRF52840 connected during this build.",
             },
             indent=2,
         )

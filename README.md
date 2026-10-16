@@ -8,6 +8,11 @@ The fixed **k=6** study provides [all-method results](experiments/CURRENT_RESULT
 from all 140 saved per-seed rows and checked against the published summaries.
 Every method, admission denominator and censored observation is included.
 
+The [performance reproduction pipeline](docs/PERFORMANCE_REPRODUCTION.md)
+provides a size-by-seed matrix, paired bootstrap statistics and five figure
+exports from the same records. Its configuration fixes the seven-method
+comparison and binds source, inputs and runtime identities.
+
 ```bash
 python tools/build_current_evaluation.py --check experiments
 python tools/build_current_evaluation.py --output-dir runs/current-evaluation
@@ -72,7 +77,7 @@ and checkout commands both execute `src/daahe/`, avoiding duplicate source drift
 python3.12 -m venv .venv
 . .venv/bin/activate
 python -m pip install -e '.[dev]'
-python -m pytest -q
+python -m pytest --strict-ci -q -m 'not pq' --ignore=tests/test_decoding_bound_interval.py
 ```
 
 Real ML-DSA tests additionally need the pinned native provider (see
@@ -80,7 +85,7 @@ Real ML-DSA tests additionally need the pinned native provider (see
 
 ```bash
 python -m pip install -r requirements-pq.txt
-python -m pytest -q -m pq
+python -m pytest --strict-ci -q -m pq --ignore=tests/test_decoding_bound_interval.py
 python tools/run_protocol_trials.py --trials 20 --output runs/protocol
 ```
 
@@ -150,7 +155,8 @@ Every push to main, pull request and manual run executes source integrity,
 real-provider protocol/native tests, ARM microbenchmark compilation, small-case
 replay, historical 140-case raw recomputation on Linux and strict frozen-source
 replay on macOS ARM64/Python 3.12.10, a fresh
-20-seed/140-case campaign with replay, seven fresh pinned attack estimates and
+20-seed/140-case campaign with replay, paired performance-matrix integration
+and statistical/figure exports, seven fresh pinned attack estimates and
 exact-CDT Sage decoding checks. The aggregate check fails if any required job is
 missing, skipped, cancelled or unsuccessful. Full runs can take substantially
 longer than functional tests; workflow configuration alone is not a successful

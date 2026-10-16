@@ -9,7 +9,7 @@ import sys
 from daahe.mlwe import DEFAULT_PARAMETERS
 
 
-def test_no_wrap_output_binds_active_parameters_and_keeps_other_claims_pending(tmp_path):
+def test_no_wrap_output_binds_active_parameters_and_preserves_certificate_scope(tmp_path):
     root = Path(__file__).resolve().parents[1]
     output = tmp_path / "bounds.json"
     result = subprocess.run([sys.executable, str(root / "tools/check_reference_bounds.py"),
