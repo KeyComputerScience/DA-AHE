@@ -14,8 +14,8 @@
     },
     {
       "path": ".github/workflows/reproduce.yml",
-      "sha256": "e3a90739292e34cd04dfb736fe6553d764ccc4d351f4852f8cfe727d3a876207",
-      "size": 15766
+      "sha256": "c3a99832bb9434dc6b553dee3ba7b2eb28564e930a2cc1260ac5c07b17c7dab8",
+      "size": 15905
     },
     {
       "path": ".gitignore",
@@ -24,8 +24,8 @@
     },
     {
       "path": "CITATION.cff",
-      "sha256": "154630ffc0be2984839a4d0d583830c79452f5c3eda2377c76562a2dc810a819",
-      "size": 576
+      "sha256": "202c830d0d2686d1684d46deebe912fa5fdbd50035b6526ddee0164551de1410",
+      "size": 690
     },
     {
       "path": "DA-AHE-f0a3647.patch",
@@ -59,13 +59,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "6c5195dfd988ef9a5550d3f0760f8fbca1070b9fa4b6f3134e0cd6bc62dade36",
-      "size": 7293
+      "sha256": "db76943a8aef5f7251240ed91eb5b06bfcd169e73df1a68d95d72d33a0501a3b",
+      "size": 9158
     },
     {
       "path": "SECURITY.md",
-      "sha256": "c4759403281825e841c7a6f99204c987ea296597253ffcdab85c146522bfc684",
-      "size": 7752
+      "sha256": "f274d485ee4f65f2efc311f79483c3bbb9ae239fdd469ad3e7b965b517b21699",
+      "size": 9646
     },
     {
       "path": "SHA256SUMS-v0.2.0.txt",
@@ -88,6 +88,11 @@
       "size": 11713
     },
     {
+      "path": "configs/manuscript_alignment.json",
+      "sha256": "91a43b9e5cddf299384ba445e52b995b1b6b06a8f083d24cb7c09a08c0db477c",
+      "size": 2132
+    },
+    {
       "path": "configs/security_profile.json",
       "sha256": "fd8188ca6f5bd1347f3beedf47980fe4ba2db4300f6b968a2dcec31c075c4dc7",
       "size": 1012
@@ -99,8 +104,8 @@
     },
     {
       "path": "docs/ADVANTAGES.md",
-      "sha256": "6734792377f53cf325e89f7772f8f892c3b569e8e74ef3677f02efeb2fd50759",
-      "size": 578
+      "sha256": "3b28e497ba7fcfb121a9aae6894345973291cdb3ff2c5cddbd04f7feb0249eeb",
+      "size": 1386
     },
     {
       "path": "docs/CERTIFICATION.md",
@@ -114,8 +119,8 @@
     },
     {
       "path": "docs/CLAIM_TRACEABILITY.md",
-      "sha256": "c9053d2dbdec454335143cbd2c91f52692d6fc5c87ac57b8179de497a757863a",
-      "size": 3734
+      "sha256": "696a8d7b959f9fe9b257c76afad0e86c2b6634736e275fdc6cb5d464e4830fbb",
+      "size": 4679
     },
     {
       "path": "docs/DEPLOYMENT.md",
@@ -124,8 +129,8 @@
     },
     {
       "path": "docs/IMPLEMENTATION_STATUS.md",
-      "sha256": "1e98b05f3e86c4c99fbe358de53ee3a66f63e6a4bb2c001903689b1765d32aed",
-      "size": 1699
+      "sha256": "520ef3afea3fbc1c045f7c69437c07d4538ae95022c4f4ff31837f326f7f008f",
+      "size": 2909
     },
     {
       "path": "docs/INDEPENDENT_REPRODUCTION.md",
@@ -134,8 +139,13 @@
     },
     {
       "path": "docs/INDEPENDENT_RESULTS_ZH.md",
-      "sha256": "3868c4d0815546d37e841e2709b81423f08a1725e48dbf5b475773fb16b120c8",
-      "size": 5575
+      "sha256": "cd1c66d00e91ae286f770989483e21f3719c6e1195e8f003212038ec2fb695b5",
+      "size": 6224
+    },
+    {
+      "path": "docs/MANUSCRIPT_CORRECTIONS.md",
+      "sha256": "aaf5300a0823898126d7f43ab755468ce994a284add20f929c9a18151eecf8a2",
+      "size": 12072
     },
     {
       "path": "docs/PARAMETERS_AND_GAPS.md",
@@ -159,8 +169,8 @@
     },
     {
       "path": "docs/REPRODUCIBILITY.md",
-      "sha256": "a2a4e0398c7542d6291ce00db748a1c7cfeac326dad6863bb8b76f9f71eeb9e2",
-      "size": 4026
+      "sha256": "8eb562070ffe3bace83b1456016798bbcf7d5b96b4fdd7e4d05ac01ac1cfea0c",
+      "size": 6204
     },
     {
       "path": "docs/REPRODUCTION_COVERAGE.md",
@@ -171,6 +181,11 @@
       "path": "docs/archive/manifest-63bcbdf-source.json",
       "sha256": "9b33fbc84f41a4564e273bf58acf750a98ecb8e19467dfbff4f02fc4175a7beb",
       "size": 21415
+    },
+    {
+      "path": "docs/archive/manifest-a7c7ee5-before-manuscript-corrections.json",
+      "sha256": "ebcd51cb7a07b414f85fa9053270aaaf984b44787cd3b7ba01c4fe5126dc134d",
+      "size": 21938
     },
     {
       "path": "docs/archive/manifest-cf06c13-source.json",
@@ -186,6 +201,11 @@
       "path": "docs/archive/manifest-v0.3.0-before-evidence-attributes.json",
       "sha256": "ffdd28c27aad3bc9fb216f369f825bb97906045cd8a74a69b8f13678775e1833",
       "size": 19032
+    },
+    {
+      "path": "docs/archive/reference-bounds-legacy.json",
+      "sha256": "c4fac8f9bafefa59938822bbadccf3ff2f770333cd9f902391bf383673770321",
+      "size": 12755
     },
     {
       "path": "embedded/CMakeLists.txt",
@@ -314,8 +334,8 @@
     },
     {
       "path": "security/README.md",
-      "sha256": "bfac1be5f23ac354db6566b5ab3cce86640ab6c418ccaf652df5352059aaea67",
-      "size": 8126
+      "sha256": "6921e2eb448aaaa38d8e21837e0438c708b7744be87ce47e24261392fbf68b70",
+      "size": 9216
     },
     {
       "path": "security/container-entrypoint.sh",
@@ -538,6 +558,11 @@
       "size": 5275
     },
     {
+      "path": "tests/test_manuscript_alignment.py",
+      "sha256": "309d2dac616213f874e250c8656acf0595c0bef3725d1c9c3cdd31cfaf88a1ce",
+      "size": 4381
+    },
+    {
       "path": "tests/test_parameterized_encryption.py",
       "sha256": "07edbd3149c147be0692cf491c8af1951fa572f69fa576096aff5f36350124e9",
       "size": 2248
@@ -548,9 +573,14 @@
       "size": 14012
     },
     {
+      "path": "tests/test_reference_bounds.py",
+      "sha256": "4618837b87e6486b568d70dfe36e4ce60b9055d9dc2d4ffa561dfec3de4b8dc5",
+      "size": 1530
+    },
+    {
       "path": "tests/test_security_execution.py",
-      "sha256": "8f69056c47819512bf75b960c158050c47bb61e38a77b3c6463344fa3246ff31",
-      "size": 7581
+      "sha256": "9c08d7a9127612ab4064131d62412b3d99a1829dbe86a84c90ba1075b9b456ac",
+      "size": 8709
     },
     {
       "path": "tests/test_signal_quality.py",
@@ -603,9 +633,14 @@
       "size": 4385
     },
     {
+      "path": "tools/check_manuscript_alignment.py",
+      "sha256": "26ffe310994cc3515363b5b2e963649997470051ff260c6d3164a7753a65c678",
+      "size": 6960
+    },
+    {
       "path": "tools/check_reference_bounds.py",
-      "sha256": "6e800bfcc1d73333abe1bd4524bb85c8cea40d249a33faa82f76bd0de0d40f87",
-      "size": 2277
+      "sha256": "e0dfdb7be3b17ce366457b2a259e1c70962f0bfddc6178170d67e43578c823a1",
+      "size": 2800
     },
     {
       "path": "tools/collect_board_measurements.py",
@@ -619,8 +654,8 @@
     },
     {
       "path": "tools/estimate_security_parameters.py",
-      "sha256": "599394f8b95d0d0c235b08ffba5e2f88bb479728bb03e6703aae0e81a952158e",
-      "size": 15324
+      "sha256": "aa2a1f49a9314366463578a155b4fcb98d4bff3ad723cfef16bd9f6d2696679b",
+      "size": 15720
     },
     {
       "path": "tools/estimator_result_adapter.py",
@@ -684,5 +719,5 @@
     }
   ],
   "schema_version": 1,
-  "scope": "listed source bytes and selected public evidence indexes; excludes this manifest, private state and generated raw runs; byte integrity only"
+  "scope": "Listed current source/configuration/document bytes. Historical execution records and frozen-source snapshots remain unchanged; this is not an experiment or manuscript verification receipt."
 }

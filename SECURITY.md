@@ -1,10 +1,19 @@
 # Security scope and reporting
 
+This is an independent research reference, not a certified deployment. The
+current default is k=6, d=256, n=m=1536 with 7,168-byte ciphertexts; the
+manuscript's k=3 tuple and associated performance numbers are historical.
+The selected seven-attack minimum of 136.475 bits is a generic flattened-LWE
+heuristic estimate, not a proof for the actual finite sampler, module structure,
+implementation or all attacks. See `configs/security_profile.json`,
+`security/README.md`, `security/DECODING_BOUND.md` and
+[`docs/MANUSCRIPT_CORRECTIONS.md`](docs/MANUSCRIPT_CORRECTIONS.md).
+
 ## 1. Security Architecture and Trust Model
 
 DA-AHE establishes a structured security architecture for post-quantum secure aggregation in cyber-physical systems. The framework integrates authenticated source reporting, sink-authorized participant rosters, confidential batch authentication parameters, and persistent replay protection.
 
-The security model assumes trusted source devices and a trusted sink while supporting aggregation through potentially compromised intermediate gateways. Block-level and transport-level HMAC mechanisms provide efficient traffic authentication and early filtering. End-to-end aggregate integrity is established through sink-signed exact-roster authorization, confidential batch authentication matrices, source-specific offsets, and persistent replay-state management.
+The security model assumes trusted, uncompromised source devices and a trusted sink while supporting aggregation through potentially compromised intermediate gateways. Source compromise, source-gateway collusion, endpoint-secret leakage and availability are outside the claimed model. Block-level and transport-level HMAC mechanisms provide early filtering only while the holder of the corresponding key remains trusted; a gateway-held HMAC does not protect against that gateway. End-to-end aggregate integrity relies on sink-signed exact-roster authorization, confidential batch authentication matrices, source-specific offsets, and persistent replay-state management under the manuscript's assumptions. Confidentiality applies to the protected encrypted path; the authenticated plaintext lightweight path does not provide it.
 
 Domain-separated key derivation establishes independent cryptographic contexts for authentication and aggregation. Epoch-root secrets and batch authentication parameters remain within the trusted source–sink security domain, maintaining the confidentiality of the end-to-end verification mechanism.
 
@@ -18,9 +27,9 @@ Each unique combination of ticket, source identity, and nonce is associated with
 
 This mechanism preserves the uniqueness of source authentication offsets and maintains the integrity of affine authentication relationships across repeated network transmissions.
 
-Device-level persistent storage, access control, and anti-rollback protection support the continuity of source-emission records across execution cycles and device restarts. The reference implementation uses SQLite to demonstrate persistent emission management and provides a foundation for integration with embedded nonvolatile storage.
+Device-level persistent storage, access control, and anti-rollback protection are required to preserve source-emission records across execution cycles and device restarts. The reference implementation uses SQLite; it does not implement a board flash driver or anti-rollback storage. Deleting or rolling back the source ledger can permit two reports under one ticket/source offset and invalidate the integrity argument.
 
-Together with sink-side persistent `Seen` records, source-emission consistency strengthens protection against ciphertext recombination, replay, and unauthorized aggregate modification.
+Together with sink-side persistent `Seen` records, source-emission consistency addresses ciphertext recombination, replay, and unauthorized aggregate modification under those assumptions. `Seen` enforces at-most-once acceptance; durable result/outbox storage and an idempotent consumer are still needed for crash recovery after acceptance but before result delivery.
 
 ## 3. Post-Quantum Cryptographic Implementation
 
@@ -63,7 +72,8 @@ K_Bx_{\mathrm{agg}}
 \pmod p.
 \]
 
-Under the specified security assumptions, the linear-authentication construction yields the classical per-attempt forgery bound
+In the manuscript's idealized hidden-key authentication model, the classical
+single-attempt tag-guessing term is
 
 \[
 P_{\mathrm{forge}}\leq p^{-\lambda}.
@@ -75,7 +85,12 @@ For \(p=65537\) and \(\lambda=16\),
 p^{-16}<2^{-256}.
 \]
 
-This expression characterizes the theoretical authentication bound under the stated assumptions. The implementation provides the corresponding cryptographic processing and verification procedures, while the manuscript supplies the associated security arguments.
+This expression is a tag-guessing term, not the complete system failure
+probability. At most Q_v classical verification submissions contribute
+Q_v/p^lambda in addition to the primitive-security terms and assumptions in the
+manuscript's reduction. Functional rejection tests do not prove that reduction
+or cover compromised sources, leaked endpoint secrets, side channels or
+denial of service.
 
 The adversarial model considers classical submission interfaces and quantum-capable computation against the cryptographic primitives. The security analysis also distinguishes this interface from the stronger hypothetical model of coherent quantum verification queries.
 
@@ -96,22 +111,28 @@ Its implementation includes:
 
 The reference package documents these concrete implementation choices to support consistent reconstruction and reproducible functional evaluation.
 
-The broader DA-AHE research framework further defines four quantitative evaluation targets:
+The manuscript's four quantitative targets must be distinguished from the
+current independent evidence:
 
-| Evaluation dimension | Specification |
+| Evaluation dimension | Current independent evidence |
 |---|---|
-| Post-quantum security estimation | 128.1-bit estimated computational security |
-| Aggregate decryption reliability | \(\epsilon_{\mathrm{dec}}\leq 2^{-128}\) |
-| Action-dependent streaming workspace | 10 KiB |
-| Closed-loop stability | Conditional exponential mean-square ultimate boundedness |
+| Post-quantum security estimation | k=6 seven-attack minimum 136.475 bits under the stated heuristic model; legacy k=3 does not meet the 128.1-bit target |
+| Aggregate decryption reliability | Executed actual-CDT interval calculation: 42-choice one-fresh-batch union log2 upper bound -130.5101732; joint random-key/fresh-noise probability, not every fixed key, arbitrary observed history or lifetime |
+| Action-dependent streaming workspace | Manuscript target 10 KiB; complete k=6 role-specific workspace certificate and measured stack high-water remain unavailable |
+| Closed-loop stability | Conditional theorem requires valid uncertainty, fallback and invariant-domain assumptions; the supplied synthetic controller is uncertified |
 
-These specifications belong to the manuscript's cryptographic parameter analysis, resource certification, and stochastic stability framework. Their quantitative assessment relies on the corresponding estimator configurations, hardware measurements, and certified control-model assumptions, complementing the reference software's functional implementation.
+Physical-board samples remain zero. Core compilation, host tests, public
+synthetic traces and byte-integrity checks do not establish physical timing,
+energy, full-protocol memory, original-paper reproduction or full-system
+certification. Historical receipts remain unchanged; current public archive
+locations are in `evidence/independent/publication.json` and
+[`docs/PUBLIC_EVIDENCE.md`](docs/PUBLIC_EVIDENCE.md).
 
 ## 6. Security Issue Reporting and Responsible Disclosure
 
 DA-AHE supports responsible security research through reproducible issue documentation and clearly defined security assumptions.
 
-Implementation reports should include a minimal reproducible example, the affected component, relevant operating conditions, and the associated security assumptions. Security-sensitive reports are directed through a private communication channel designated by the repository owner.
+Implementation reports should include a minimal reproducible example, the affected component, relevant operating conditions, and the associated security assumptions. For security-sensitive reports, establish a private channel with the repository owner before sending sensitive details; this file does not designate a reporting address.
 
 Reports should use sanitized test data and synthetic credentials to protect operational secrets, confidential telemetry, and deployment environments.
 

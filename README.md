@@ -1,5 +1,41 @@
 # DA-AHE independent reproduction and evidence
 
+## Verified capabilities
+
+- Profile-bound coefficient/tag packing uses one 7,168-byte ciphertext instead
+  of two 7,168-byte ciphertexts for the raw two-channel representation, reducing
+  the sensitive ciphertext payload by 50% at the same selected parameters.
+- The selected rank-6 tuple has a recorded seven-attack minimum of 136.475 bits
+  under the pinned heuristic estimator models.
+- Signed exact-roster tickets, hidden aggregate tags, durable source emission
+  and sink replay checks provide an executable verifiable-aggregation workflow.
+- The public 20-seed, seven-method archive supplies raw records, independent
+  metric recomputation and frozen-source replay for the disclosed experiment.
+
+## Manuscript correction status
+
+The current implementation uses **k=6, n=m=1536, 7,168-byte ciphertexts** and
+the independently recorded **136.475-bit** heuristic estimate. The original
+14-page `TSMC_DA.pdf` uses k=3/768/4,096 bytes and has **not been edited** here.
+Its 128.1-bit estimate is not supported by the preserved rank-3 run; 128.1 is
+the required threshold, not a replacement for an observed attack result.
+Original board and network measurements remain unverified for the new tuple.
+
+Use [the manuscript correction text](docs/MANUSCRIPT_CORRECTIONS.md) for the
+parameter, airtime, integrity assumptions and result-scope revisions. The
+[machine-readable alignment contract](configs/manuscript_alignment.json)
+binds the current code to its evidence and preserves the old execution record.
+Check it with:
+
+```bash
+python tools/check_manuscript_alignment.py
+```
+
+A successful repository check still reports `manuscript_aligned=false`.
+`--require-manuscript-aligned` exits nonzero while the original PDF remains
+unrevised. Historical logs are retained byte-for-byte; they are not overwritten
+with target values or outputs from a different parameter set.
+
 This repository contains the DA-AHE host reference plus a **new independent
 reimplementation** of the network experiment and board-measurement workflow.
 The default encryption tuple is now **k=6, d=256, n=m=1536, q=2^32,
