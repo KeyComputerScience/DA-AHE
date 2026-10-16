@@ -1,0 +1,21 @@
+{
+  "algorithm": "SHA256",
+  "artifact_type": "independent-evidence-bundle",
+  "created_utc": "2026-10-16T04:36:33.717853+00:00",
+  "files": [
+    {
+      "path": "suite-receipt.json",
+      "sha256": "f1606e655f84138d2035f673af14971510ef5cafa547b23bb0645553df86eb5f",
+      "size": 49535
+    },
+    {
+      "path": "tests-receipt.json",
+      "sha256": "29295cf5bb9980d3f956be6b5dcbd956775f8c8c4b88eb9ae84f7d0535532f1c",
+      "size": 8484
+    }
+  ],
+  "origin": "independent_reimplementation",
+  "paper_reproduced": false,
+  "schema_version": 1,
+  "scope": "listed public evidence bytes; no claim of historical provenance or proof validity"
+}

@@ -1,0 +1,1002 @@
+{
+  "input_snapshot": [
+    {
+      "path": "evidence/independent/decoding/k6-cdt-03/decoding-bound.json",
+      "sha256": "2be1b88b34bdee74c852fd12c9020c4fed1870a117f4a63ab00d057944991335"
+    },
+    {
+      "path": "evidence/independent/decoding/k6-cdt-03/sampler-cdts.json",
+      "sha256": "c61e8ff2ed2aa012dd9a9632d14b756a6a4f9bd587b339db5bdd26c8b0cf8433"
+    },
+    {
+      "path": "evidence/independent/security-parameter-search/selected-k6-full/security.json",
+      "sha256": "3794650eb763f528bab90aab42ff4ed54e7616d5d85358239db261e27f668168"
+    }
+  ],
+  "published_fidelity_case_correspondence": [
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n1-mixed_step_noise-seed1000.json",
+      "sha256": "455aaac9a44892f5c2f8b2c79dbb74754d9ef390a882ab2eb450d2272bedc287"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n1-mixed_step_noise-seed1001.json",
+      "sha256": "2385fe2d0cfe9f2728cfddd160c35fba787ae4902f613c3f28c301ac7bbf7d69"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n1-smooth_triangle-seed1000.json",
+      "sha256": "39ac59f1be913edcd8a4dcd4d5601754c3834f5d2fbfb37bc4e6bee5dac47c5d"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n1-smooth_triangle-seed1001.json",
+      "sha256": "28629158c718610848703536846c368a58fc43928fbf4ab56fd18e05394fe7b5"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n1-sparse_pulses-seed1000.json",
+      "sha256": "4420e9752b75c29daf2e063de6b3599ed6432a930d8a49d21ee3184270ee2e77"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n1-sparse_pulses-seed1001.json",
+      "sha256": "7fe88a489b55a4e26f8b76033069118a58801849b72df160ac31069806e8e863"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n12-mixed_step_noise-seed1000.json",
+      "sha256": "dfaaa498abbf81d03358d6038c760df44f59848f44832e1f33a0c4773230c1f9"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n12-mixed_step_noise-seed1001.json",
+      "sha256": "6b2307195a0f1622b9d779a6af3a496d9c5bae029444476a1cc4f069fc32b2da"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n12-smooth_triangle-seed1000.json",
+      "sha256": "dd78db6c391ccf1be79bb97ef98a43607f08063ce090c8a9741b47a8be020b60"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n12-smooth_triangle-seed1001.json",
+      "sha256": "201438a476c24a43d2d2c0898321a19715b3821a29fe0ba1988ece3e895694ae"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n12-sparse_pulses-seed1000.json",
+      "sha256": "c1e9de87afb12d1955665a3b29d96ac10fb2a8bbfc84d19e684667503087db63"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n12-sparse_pulses-seed1001.json",
+      "sha256": "07332ec3ccfecd325d34fc17c7f74c48e51326cf530f545bfed95f041dadaea7"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n14-mixed_step_noise-seed1000.json",
+      "sha256": "b70e5b6f5ffca192357ec056dc2a2564e623c2af3eb5573803bb05709b18e972"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n14-mixed_step_noise-seed1001.json",
+      "sha256": "2750b8e64ef940ae49205ab426c7e7eed6269943cfe9ac57223c4e5b55349dc3"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n14-smooth_triangle-seed1000.json",
+      "sha256": "1a87cbc770e6c50a838bd4ba15012708f0e937583ff067c0555260b28738fa47"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n14-smooth_triangle-seed1001.json",
+      "sha256": "a4403ff7cb8d5a8035030f1f3939e56c38a7435bac5d7e45f493533cf928a6d2"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n14-sparse_pulses-seed1000.json",
+      "sha256": "55caa57bfe951f76f6565941be9152a241a0c65ccc33f3e18742351e45d19d77"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n14-sparse_pulses-seed1001.json",
+      "sha256": "2adbb4993d56921a74b583a5c4605bcee7f1bc9725512d3cf497e51d281d4fdb"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n16-mixed_step_noise-seed1000.json",
+      "sha256": "3f0c76b7ebace9a216d59802c88bd5e11fe44f20dd55b877d3acf4875ed0c120"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n16-mixed_step_noise-seed1001.json",
+      "sha256": "1b5da4b1070f13cf431f13ba4de4f9fb7338463f1213415e1218ebbc8f0aa0b4"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n16-smooth_triangle-seed1000.json",
+      "sha256": "721c69b2230a5aafa2fb4ad2bad42ccced3fc3c37a1245f9dac0fd69fc18b49a"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n16-smooth_triangle-seed1001.json",
+      "sha256": "51051183420a4d1a47590cd262834026df1b2986e97eb362f901dbf2803e0f86"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n16-sparse_pulses-seed1000.json",
+      "sha256": "3ebe3abc7bfcac3820d46ee7cd680d05f533faab61903d3df45a47813c9b04b4"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi0-n16-sparse_pulses-seed1001.json",
+      "sha256": "49b7a83fef1c572b98d7f957af7559f4670a5770add9a7b799595f5971032171"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n1-mixed_step_noise-seed1000.json",
+      "sha256": "db0d49cf3d3a1fc2f3c29f915ce88673094aa53c814968c8e5df90ad419b972a"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n1-mixed_step_noise-seed1001.json",
+      "sha256": "c0ddea3df58a5d4daaacb90ef6c2644a900b0f782d12ca1ce9e5b0d18e3d878d"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n1-smooth_triangle-seed1000.json",
+      "sha256": "22733f94f2322011cf31595dc4bde051a69706d22e2885402e4fb921b1601910"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n1-smooth_triangle-seed1001.json",
+      "sha256": "7edd857ce5f9587b4583bf251c347928f3abd58016ff24e40ff9204475fb47c3"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n1-sparse_pulses-seed1000.json",
+      "sha256": "e7949f25721c2289328a9fdc3a678a5c34554aea1c49bd3f1e6ef9015344dfcf"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n1-sparse_pulses-seed1001.json",
+      "sha256": "db570276e46cf620f74a5a8e1ccf628ef0e58e9933c6310b5e08d7a7ebccaaf4"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n12-mixed_step_noise-seed1000.json",
+      "sha256": "43cc26c657e1876de6166d73bca9c902f2803e63a2483906e92bcf13bafe399d"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n12-mixed_step_noise-seed1001.json",
+      "sha256": "35232e131e1c31f70234faeab46413a80227f2991ab463db4a4aa67174ebc106"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n12-smooth_triangle-seed1000.json",
+      "sha256": "478229b49f3afa236813840dcca35d0e2ee79d1497d3631b8b70deeed03b93da"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n12-smooth_triangle-seed1001.json",
+      "sha256": "5bd074b7be48d2d7b2598de28d149c08971b9ed89f9b5b68485e86b9d18bffea"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n12-sparse_pulses-seed1000.json",
+      "sha256": "56e9e68b773fb58bd2d69dad60c022e33495af04b1dc02c2a21249af0a16e90f"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n12-sparse_pulses-seed1001.json",
+      "sha256": "b5e4a697cf59f3c0aae289e44ba6b0d45cc83ee6c0d599d5c19c22c5d021492d"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n14-mixed_step_noise-seed1000.json",
+      "sha256": "1f47365e50e2aaa940b5621d12f6c8206df1e52e9dee6c8f48c6f1bdc314127d"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n14-mixed_step_noise-seed1001.json",
+      "sha256": "b23b2e0bd1e610ccf9e36e7efdf10cbadc142d3fd198ba9d4a74fbcdbdcab0df"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n14-smooth_triangle-seed1000.json",
+      "sha256": "fccc65235d95f4692a446b528fa0c6e5cf65890610b7ec5e0dd590bd513d745f"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n14-smooth_triangle-seed1001.json",
+      "sha256": "925ffba2202f69121c7609af257ba352521b7dff17a1850569e202890c1a1051"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n14-sparse_pulses-seed1000.json",
+      "sha256": "28e62c8ae43f75eec7affda4e905b8acc078dacf8481a05f7f5f3fbe75566cad"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n14-sparse_pulses-seed1001.json",
+      "sha256": "cc8e71adfe49e21e6cda213712b47f7771af4e5a80c53eb25dc9cd46117c95b0"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n16-mixed_step_noise-seed1000.json",
+      "sha256": "4028eb70a2f6492f16022c16dd324993886c732e73803d4f13243d30961665ca"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n16-mixed_step_noise-seed1001.json",
+      "sha256": "9dbcab56dee0253bf91d9618428d2f1ee0a14558d95dd53d2650b3c99bf196d3"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n16-smooth_triangle-seed1000.json",
+      "sha256": "cd0203aa72192cc95e8157a6de0b8722bdb8dda286fcba42f68c3e133dc7d815"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n16-smooth_triangle-seed1001.json",
+      "sha256": "c324ba5313ae2b5ed5c987c6a77573ae5894c3dfc710ad313923b62cb6baeb2e"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n16-sparse_pulses-seed1000.json",
+      "sha256": "1153c6d69809b2d48ea831b09f306ee1bb8e2759f74f36d6853c168e64973c8e"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi1-n16-sparse_pulses-seed1001.json",
+      "sha256": "65650b3f4f7ecf8838f39d01b2c61f38dd31eef27137d8055e838791264879a2"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n1-mixed_step_noise-seed1000.json",
+      "sha256": "3dabdb6737f8f33b75076b38b07c5b3f545a98f718913344125f9fd5d45f5749"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n1-mixed_step_noise-seed1001.json",
+      "sha256": "d81b42fbc4160ffbad9deac75bcbd3dab532998b34e6c12a4e491ad6de39ed75"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n1-smooth_triangle-seed1000.json",
+      "sha256": "c1e55691a071a2941eabce7e5b9a9f90b4fb14e239bb41cdfead6c5d3dc43358"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n1-smooth_triangle-seed1001.json",
+      "sha256": "f11a0515421539181f0a8d45b09681318f173ac7a56f74ebdf2fee1f9f981083"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n1-sparse_pulses-seed1000.json",
+      "sha256": "28e76b3d4e6f8e7f00ec84ab665352cd3b142eca602e3a70b5d2da5dd4c2ebea"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n1-sparse_pulses-seed1001.json",
+      "sha256": "f0c70bc0ce8519d8083fabecd0577ee5dc1a33f96915dbcc0730b8fc53a7366a"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n12-mixed_step_noise-seed1000.json",
+      "sha256": "2acf8f9542d003aba7e2fadab5cf52050470e3034c3038fc4d1cbd2f617cd2e5"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n12-mixed_step_noise-seed1001.json",
+      "sha256": "a482416d7df9bb3a937fc22b9cbe93c5c8f2c0e9aeec71488d6e6958c9c28eba"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n12-smooth_triangle-seed1000.json",
+      "sha256": "37b62223879866fef94d137c47c53829f30eb421dd0abd7051c01aab3eab87a4"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n12-smooth_triangle-seed1001.json",
+      "sha256": "fd52fe21f9c3526d505d7c7be8445cfb81a1c561f476d4dd74ef50ce82f518ca"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n12-sparse_pulses-seed1000.json",
+      "sha256": "a9533d7b9aa2206280c10dac6a3ad559b11ebb98d0a8cc285892b9ff3dda150a"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n12-sparse_pulses-seed1001.json",
+      "sha256": "6684bc8513e183c6ca75510cc273f81c4f309bf99b0534f897e5324adb3d9fcf"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n14-mixed_step_noise-seed1000.json",
+      "sha256": "e8b33a7115114290d886d2727d889d1dccb0c23dc29cacf11725bee54de61069"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n14-mixed_step_noise-seed1001.json",
+      "sha256": "7968bdd4a04b333c999447832f306f28210a27a409046fffac0c6894f13d6f82"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n14-smooth_triangle-seed1000.json",
+      "sha256": "eb2073d6a2da89de88970d6fae2481f4827ef030d638472e601e94161ec5a9ea"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n14-smooth_triangle-seed1001.json",
+      "sha256": "96c1f358c2abf11deda08a7f6cafc28f558fb582429d30e819f6f2658474e24a"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n14-sparse_pulses-seed1000.json",
+      "sha256": "9bf2149ded12c57e52844e2d54054f03274044fbb00b184271c7345ddb1de0bb"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n14-sparse_pulses-seed1001.json",
+      "sha256": "d17fdc0d50ae1c1a799b3250bf66f3cb38e83fc1b96dc070b4d06c0d2ac8beea"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n16-mixed_step_noise-seed1000.json",
+      "sha256": "cf4e895bdda7d0fa9ccda64b2e2a290eed7cec2b5a57dcacbbc9d672b94677e9"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n16-mixed_step_noise-seed1001.json",
+      "sha256": "df52563ed0d8a084cc72409330e0bc719b052de3a623f98ae0433e0585f2127f"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n16-smooth_triangle-seed1000.json",
+      "sha256": "ee87ebefd19f14b557b1b2f151c7d321269b847d64925591e0c5184ab68662c2"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n16-smooth_triangle-seed1001.json",
+      "sha256": "0071a5a69a0b426805f14b527ac3c0c3757ec293735e1168810566ae6d55297d"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n16-sparse_pulses-seed1000.json",
+      "sha256": "197d2979b471e12f822de4908adea363d518b38b165968c1909c2ef8a9016d06"
+    },
+    {
+      "path": "evidence/independent/aggregate-fidelity/run-01/cases/pi2-n16-sparse_pulses-seed1001.json",
+      "sha256": "daa41e7c657153fb99f17bd4634614476e4d78e38edc18542eaab9c52300d08f"
+    }
+  ],
+  "raw_outputs": {
+    "alignment": {
+      "stderr": "",
+      "stdout": "{\"ciphertext_bytes\": 7168, \"estimated_bits\": 136.475, \"full_system_certified\": false, \"manuscript_aligned\": false, \"original_pdf_sha256\": \"6ac25668f9a87dcd420fc8898900128df60d68b8dd82a295c84ea2270bc421c9\", \"scope\": \"Declared parameters, preserved records and arithmetic only; no experiments rerun.\", \"status\": \"passed_repository_alignment_manuscript_revision_required\"}\n"
+    },
+    "claim-index": {
+      "stderr": "",
+      "stdout": "{\"claims\": 13, \"full_system_certified\": false, \"hash_bound_records\": 8, \"indexed_files\": 81, \"manuscript_sha256\": \"ad09feb7fa00a87bf0dd342a1b929a0d776cb087e8420169556d85f3139d3fc5\", \"paper_reproduced\": false, \"scope\": \"Identity, paths, declared scope and byte integrity only. Commands are not executed by this checker; run the evidence reproducer for new experiments.\", \"status\": \"passed_paper_evidence_index\", \"status_counts\": {\"implemented_not_original_measurement\": 1, \"reproduced_independent_scope\": 7, \"requires_hardware\": 2, \"requires_original_data\": 2, \"requires_proof\": 1}}\n"
+    },
+    "fidelity-generate": {
+      "stderr": "",
+      "stdout": "{\"cases\": 72, \"scope\": \"Declared synthetic integer-count signals only; not original Table III reproduction, physical measurements, encryption/decryption evidence or a full-system certificate.\", \"status\": \"executed_synthetic_fidelity\"}\n"
+    },
+    "fidelity-recompute": {
+      "stderr": "",
+      "stdout": "{\"cases\": 72, \"floating_metric_tolerance\": 1e-12, \"integer_arrays\": \"exact\", \"paper_table_iii_reproduced\": false, \"scope\": \"Declared synthetic integer-count signals only; not original Table III reproduction, physical measurements, encryption/decryption evidence or a full-system certificate.\", \"status\": \"verified_and_recomputed\"}\n"
+    },
+    "horizon-300-120": {
+      "stderr": "",
+      "stdout": "{\"batches\": 300, \"conditional_per_fixed_key_guarantee\": false, \"conditions\": [\"Each batch makes one choice from the declared 42 configurations, with at most two plaintext polynomials, before that batch's fresh encryption noises.\", \"The next batch's honest encryption noises are independent of the past; shared key coefficients and dependent batch outcomes are allowed.\", \"No source-subset selection after observing current-batch ciphertexts/noises.\", \"The task horizon is a predeclared finite cap on attempts, not only successful deliveries; noise-regenerating retries and reencryptions consume attempts.\", \"No arbitrary-history conditional, every-fixed-key, unlimited-lifetime, malicious-ciphertext, network, no-wrap or control guarantee is inferred.\"], \"configuration_count\": 42, \"full_system_certified\": false, \"horizon_union_upper_approx\": \"1.5475489493072972889679483843164E-37\", \"horizon_union_upper_exact_rational\": \"6097653328982989357841510347843637216372529583018847732923907034089496655335675/39402006196394479212279040100143613805079739270465446667948293404245721771497210611414266254884915640806627990306816\", \"independence_between_batches_assumed\": false, \"max_batches_for_target\": 1458, \"max_batches_passes_exact_comparison\": true, \"next_batch_exceeds_target_exact_comparison\": true, \"parameters\": {\"module_rank\": 6, \"n\": 1536, \"p\": 65537, \"poly_counts\": [1, 2], \"q\": 4294967296, \"ring_degree\": 256, \"sigma_key\": 3.2}, \"passes_target\": true, \"poly_count_maximum\": 2, \"proof_reexecuted\": false, \"report\": \"evidence/independent/decoding/k6-cdt-03/decoding-bound.json\", \"report_sha256\": \"2be1b88b34bdee74c852fd12c9020c4fed1870a117f4a63ab00d057944991335\", \"scope\": \"Finite-horizon joint random-key/history/fresh-noise decoding risk only.\", \"single_batch_upper_approx\": \"5.1584964976909909632264946143880E-40\", \"single_batch_upper_exact_rational\": \"81302044386439858104553471304581829551633727773584636438985427121193288737809/157608024785577916849116160400574455220318957081861786671793173616982887085988842445657065019539662563226511961227264\", \"status\": \"passed_decoding_horizon_budget\", \"target_risk_approx\": \"7.5231638452626400509999138382224E-37\", \"target_risk_exact_rational\": \"1/1329227995784915872903807060280344576\", \"uncapped_horizon_union_exact_rational\": \"6097653328982989357841510347843637216372529583018847732923907034089496655335675/39402006196394479212279040100143613805079739270465446667948293404245721771497210611414266254884915640806627990306816\"}\n"
+    },
+    "horizon-5-128": {
+      "stderr": "",
+      "stdout": "{\"batches\": 5, \"conditional_per_fixed_key_guarantee\": false, \"conditions\": [\"Each batch makes one choice from the declared 42 configurations, with at most two plaintext polynomials, before that batch's fresh encryption noises.\", \"The next batch's honest encryption noises are independent of the past; shared key coefficients and dependent batch outcomes are allowed.\", \"No source-subset selection after observing current-batch ciphertexts/noises.\", \"The task horizon is a predeclared finite cap on attempts, not only successful deliveries; noise-regenerating retries and reencryptions consume attempts.\", \"No arbitrary-history conditional, every-fixed-key, unlimited-lifetime, malicious-ciphertext, network, no-wrap or control guarantee is inferred.\"], \"configuration_count\": 42, \"full_system_certified\": false, \"horizon_union_upper_approx\": \"2.5792482488454954816132473071940E-39\", \"horizon_union_upper_exact_rational\": \"406510221932199290522767356522909147758168638867923182194927135605966443689045/157608024785577916849116160400574455220318957081861786671793173616982887085988842445657065019539662563226511961227264\", \"independence_between_batches_assumed\": false, \"max_batches_for_target\": 5, \"max_batches_passes_exact_comparison\": true, \"next_batch_exceeds_target_exact_comparison\": true, \"parameters\": {\"module_rank\": 6, \"n\": 1536, \"p\": 65537, \"poly_counts\": [1, 2], \"q\": 4294967296, \"ring_degree\": 256, \"sigma_key\": 3.2}, \"passes_target\": true, \"poly_count_maximum\": 2, \"proof_reexecuted\": false, \"report\": \"evidence/independent/decoding/k6-cdt-03/decoding-bound.json\", \"report_sha256\": \"2be1b88b34bdee74c852fd12c9020c4fed1870a117f4a63ab00d057944991335\", \"scope\": \"Finite-horizon joint random-key/history/fresh-noise decoding risk only.\", \"single_batch_upper_approx\": \"5.1584964976909909632264946143880E-40\", \"single_batch_upper_exact_rational\": \"81302044386439858104553471304581829551633727773584636438985427121193288737809/157608024785577916849116160400574455220318957081861786671793173616982887085988842445657065019539662563226511961227264\", \"status\": \"passed_decoding_horizon_budget\", \"target_risk_approx\": \"2.9387358770557187699218413430556E-39\", \"target_risk_exact_rational\": \"1/340282366920938463463374607431768211456\", \"uncapped_horizon_union_exact_rational\": \"406510221932199290522767356522909147758168638867923182194927135605966443689045/157608024785577916849116160400574455220318957081861786671793173616982887085988842445657065019539662563226511961227264\"}\n"
+    },
+    "horizon-6-128-rejected": {
+      "stderr": "",
+      "stdout": "{\"batches\": 6, \"conditional_per_fixed_key_guarantee\": false, \"conditions\": [\"Each batch makes one choice from the declared 42 configurations, with at most two plaintext polynomials, before that batch's fresh encryption noises.\", \"The next batch's honest encryption noises are independent of the past; shared key coefficients and dependent batch outcomes are allowed.\", \"No source-subset selection after observing current-batch ciphertexts/noises.\", \"The task horizon is a predeclared finite cap on attempts, not only successful deliveries; noise-regenerating retries and reencryptions consume attempts.\", \"No arbitrary-history conditional, every-fixed-key, unlimited-lifetime, malicious-ciphertext, network, no-wrap or control guarantee is inferred.\"], \"configuration_count\": 42, \"full_system_certified\": false, \"horizon_union_upper_approx\": \"3.0950978986145945779358967686328E-39\", \"horizon_union_upper_exact_rational\": \"243906133159319574313660413913745488654901183320753909316956281363579866213427/78804012392788958424558080200287227610159478540930893335896586808491443542994421222828532509769831281613255980613632\", \"independence_between_batches_assumed\": false, \"max_batches_for_target\": 5, \"max_batches_passes_exact_comparison\": true, \"next_batch_exceeds_target_exact_comparison\": true, \"parameters\": {\"module_rank\": 6, \"n\": 1536, \"p\": 65537, \"poly_counts\": [1, 2], \"q\": 4294967296, \"ring_degree\": 256, \"sigma_key\": 3.2}, \"passes_target\": false, \"poly_count_maximum\": 2, \"proof_reexecuted\": false, \"report\": \"evidence/independent/decoding/k6-cdt-03/decoding-bound.json\", \"report_sha256\": \"2be1b88b34bdee74c852fd12c9020c4fed1870a117f4a63ab00d057944991335\", \"scope\": \"Finite-horizon joint random-key/history/fresh-noise decoding risk only.\", \"single_batch_upper_approx\": \"5.1584964976909909632264946143880E-40\", \"single_batch_upper_exact_rational\": \"81302044386439858104553471304581829551633727773584636438985427121193288737809/157608024785577916849116160400574455220318957081861786671793173616982887085988842445657065019539662563226511961227264\", \"status\": \"failed_decoding_horizon_budget\", \"target_risk_approx\": \"2.9387358770557187699218413430556E-39\", \"target_risk_exact_rational\": \"1/340282366920938463463374607431768211456\", \"uncapped_horizon_union_exact_rational\": \"243906133159319574313660413913745488654901183320753909316956281363579866213427/78804012392788958424558080200287227610159478540930893335896586808491443542994421222828532509769831281613255980613632\"}\n"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Actual seven-step new execution. Its 72 raw case bytes match the listed published fidelity records; new run index timestamps are not historical paper measurements.",
+  "source_snapshot": {
+    "algorithm": "SHA256",
+    "digest": "1fde92d285a7a4ceb90067cbfd8ad62d82720d2318d5541cb184454b529f234f",
+    "files": [
+      {
+        "path": ".github/workflows/reproduce.yml",
+        "sha256": "ec6de431cd0ab108a4534de7b7135ba3e4dff57c5b8a4754f20c7c6672d0e854"
+      },
+      {
+        "path": "Dockerfile",
+        "sha256": "1b074adc42e49a30a68db6fbe4be698888bda4a347395c3d56790151afd35bc3"
+      },
+      {
+        "path": "Makefile",
+        "sha256": "9fde24ae65abd48062b2cb30e456b00eacedc70b022204643d237509bc3c3379"
+      },
+      {
+        "path": "configs/control_synthetic.json",
+        "sha256": "dc40262c82988d569eaf76c2f9dd62206a101ce7b76cc92b2cd3aebafa0f19f6"
+      },
+      {
+        "path": "configs/manuscript_alignment.json",
+        "sha256": "6c2bc2b899eae1fb3114ae3089272bd7a3d381b23cbc85fc4af7bd7ab6888b5b"
+      },
+      {
+        "path": "configs/paper_claims.json",
+        "sha256": "ecb0b41f05d3fd3ca4c9ccd0e8fd2e6e852ec4111f9bd17d07f71379da89ddf2"
+      },
+      {
+        "path": "configs/security_profile.json",
+        "sha256": "fd8188ca6f5bd1347f3beedf47980fe4ba2db4300f6b968a2dcec31c075c4dc7"
+      },
+      {
+        "path": "daahe/__init__.py",
+        "sha256": "818ee7ccc158e63c6e614a4436f8647a0f8a1649c850d531dfcd39a994fd8b7a"
+      },
+      {
+        "path": "daahe/__main__.py",
+        "sha256": "094e30c7ecfc0a0b56833322b9709d64d2ddcff228adb02d094443b262974c25"
+      },
+      {
+        "path": "daahe/ablations.py",
+        "sha256": "6c2ab1540d45a0fa9685f282726bbd2b402a1d108376f34272fc018c05021a0d"
+      },
+      {
+        "path": "daahe/calibration.py",
+        "sha256": "64c7fdd11d6faf3747ca6124dc7d55ba234488c97e810a7aa2b2303817135c95"
+      },
+      {
+        "path": "daahe/cli.py",
+        "sha256": "7691e3eca1df1b236915e141cf8d12daf72c633734ef9f5c7eb6398c60f6d8e7"
+      },
+      {
+        "path": "daahe/control.py",
+        "sha256": "017ad342377a41a5a3146b38992087f08cae6d0f145297df570bc674ef785432"
+      },
+      {
+        "path": "daahe/derivation.py",
+        "sha256": "fde965b72748cced31acfefb136e779d6ed5f948c6e7d809b60dfe936df9969c"
+      },
+      {
+        "path": "daahe/evidence.py",
+        "sha256": "2357d71b8c7565740530444290e40329c17abad272d0af6fb869960c25f08762"
+      },
+      {
+        "path": "daahe/integration.py",
+        "sha256": "60112c543a2a181f2ea4f27f3d4c9f83474076dff395690db630d0a69d304459"
+      },
+      {
+        "path": "daahe/lightweight.py",
+        "sha256": "6a537f743593decb3725cb79d127f180c5d00d623d45ea71e092a59c359453e6"
+      },
+      {
+        "path": "daahe/mlwe.py",
+        "sha256": "51c54349439ff6f79cbaa156dbb3dcf7d51f9dfe89d6662621804eddb646371d"
+      },
+      {
+        "path": "daahe/profiles.py",
+        "sha256": "dc6add53fb7223afaab61074549ea33b48a973ff28303fd209012c356b7a2cb8"
+      },
+      {
+        "path": "daahe/protocol.py",
+        "sha256": "02f1384df473d05c1209ef355db542c2f05809906c0c6821f624a3c3777f9565"
+      },
+      {
+        "path": "daahe/replay.py",
+        "sha256": "28fe8a2340755cd71336e7edd727ef21c5437bed1c50740815446ced1cefa87d"
+      },
+      {
+        "path": "daahe/ring.py",
+        "sha256": "507106338b99c8fbba36c5d60801225c367fcbc9896813afdee583a96a7b11db"
+      },
+      {
+        "path": "daahe/safety.py",
+        "sha256": "90bb49123e520aa7c0ebf76f49de765fb7a17fb484742886fe5a0e5f3dab7b60"
+      },
+      {
+        "path": "daahe/signal.py",
+        "sha256": "1d227dbb503964f16b351c63098cebd7e29bba71554595008042d65965484819"
+      },
+      {
+        "path": "daahe/signatures.py",
+        "sha256": "10c940f2d0c723e611956a78e853e18ebaa00d638f334aa238e4b3acf6411699"
+      },
+      {
+        "path": "daahe/statistics.py",
+        "sha256": "d33d6b3b4acf7c57c728661e91428d50e512127b7d881db58501a1d02b725e26"
+      },
+      {
+        "path": "embedded/CMakeLists.txt",
+        "sha256": "99b7e0544e4e65c92f746537b074c516205e8bd024b8f1f4908b7aa45dadaa4a"
+      },
+      {
+        "path": "embedded/daahe_core.c",
+        "sha256": "a0a5062776f5a543f11cf2dbd9ac22c450cd523074c672a48c264dfadae06c84"
+      },
+      {
+        "path": "embedded/daahe_core.h",
+        "sha256": "53cca8a1b6bde23976fa4ef3f7e97a92be553dcd4b6ab8ce348490dbeae186bf"
+      },
+      {
+        "path": "embedded/test_core.c",
+        "sha256": "2d6bcca739e92aead932f0945783d9a920376cf8beb4cad31ecc4a1b68699d76"
+      },
+      {
+        "path": "experiments/matrix.json",
+        "sha256": "3741900da4cf8b8bb2e78cd263b08ffc6d2ff573975f7ed963433119b68a604f"
+      },
+      {
+        "path": "experiments/paper_targets.json",
+        "sha256": "964b433b15d54e0796b7c316007a005d167836847e1fb11511a5bf2effd26fd9"
+      },
+      {
+        "path": "firmware/build.py",
+        "sha256": "4129fc9ee5954faaabf828cd2aa9dc235a5bbad42f9ffa3a0045d04a06eb61c6"
+      },
+      {
+        "path": "firmware/nrf52840/benchmark.c",
+        "sha256": "a0b0ecc3b421a7f41daf953b20c0485c3551b5f07cbb8175616966b145fd556e"
+      },
+      {
+        "path": "firmware/nrf52840/linker.ld",
+        "sha256": "1f280aa376230e1016c5d0438b9f2555d81a163b1b903445140db87e707f68ea"
+      },
+      {
+        "path": "firmware/nrf52840/runtime.c",
+        "sha256": "6303b31dbf3aa392da8863c67843b8f431307571727c186ec7729abdae4fd3bf"
+      },
+      {
+        "path": "firmware/nrf52840/startup.S",
+        "sha256": "60e080914bface14eb8c8b52a67992be328df422dad99ac3780d19c47397662d"
+      },
+      {
+        "path": "pyproject.toml",
+        "sha256": "40e49020778839d9eab2c53dfad8baef83bb1ddcb59de35b9ccfe05f0f7b1f09"
+      },
+      {
+        "path": "requirements-dev.txt",
+        "sha256": "1cc4d6bb1942d1b5d51abb070de599374ff1db20008cca7fc4e57759a19e61cd"
+      },
+      {
+        "path": "requirements-pq.txt",
+        "sha256": "0eb35c795138b558f34ffaadc768148cf3a938d921ec84269ede49c1f231381b"
+      },
+      {
+        "path": "security/verify_run.py",
+        "sha256": "d865fd1c7826c9286d60894d5ae35ea335be682549a716cc335b0f6675625bc3"
+      },
+      {
+        "path": "simulation/__init__.py",
+        "sha256": "162cae4d203669b39d5b42138c6291bc910bd207c4767dc6a01b85b4ca8a9b96"
+      },
+      {
+        "path": "simulation/audit.py",
+        "sha256": "41e8b42369939403c0a31bb6fd500fd89d18cb9fa1e8312670cb243796b63428"
+      },
+      {
+        "path": "simulation/config.json",
+        "sha256": "bf74a0c53b80c5bd829c23c0ecf0c3b941f5c0644ad9127001da2639790fa505"
+      },
+      {
+        "path": "simulation/controller_fixture.json",
+        "sha256": "21306a95bcc5856af31dfbd298cb1eda9185dbef54ceff7aa0e0118287cd0b0f"
+      },
+      {
+        "path": "simulation/engine.py",
+        "sha256": "f5357c4eecde514979ad18d5680c76517e7df643c0045acf868cdc11fe3aefea"
+      },
+      {
+        "path": "simulation/exogenous.py",
+        "sha256": "943a4ca35468ee2efdfa05844f5575d78046a2c9083eb2834454e3ae29237c16"
+      },
+      {
+        "path": "simulation/io.py",
+        "sha256": "f7636d3cf8d6abb512c5b62a67cb90a1aefbdf37a5ba5438c796aa48e32fb1ef"
+      },
+      {
+        "path": "simulation/paper_like_config.json",
+        "sha256": "076227dcdf0cc76580f425f0f7f63d971527ad392f280e4a9e010bd131169754"
+      },
+      {
+        "path": "simulation/policy.py",
+        "sha256": "181635f0158ef36afb44fd04d92f1f36f4c334e3ade0b3da34e355fc98a59e92"
+      },
+      {
+        "path": "src/daahe/__init__.py",
+        "sha256": "7ba733777b21420081c64351fa8f69d59cc1420aa84051300c90add9c60a3e59"
+      },
+      {
+        "path": "src/daahe/__main__.py",
+        "sha256": "094e30c7ecfc0a0b56833322b9709d64d2ddcff228adb02d094443b262974c25"
+      },
+      {
+        "path": "src/daahe/ablations.py",
+        "sha256": "6c2ab1540d45a0fa9685f282726bbd2b402a1d108376f34272fc018c05021a0d"
+      },
+      {
+        "path": "src/daahe/calibration.py",
+        "sha256": "64c7fdd11d6faf3747ca6124dc7d55ba234488c97e810a7aa2b2303817135c95"
+      },
+      {
+        "path": "src/daahe/cli.py",
+        "sha256": "50c8d08d4ea3eacbb875456b0a0fc7f112700f6e1b4ccf6d619d80cff5eb0fca"
+      },
+      {
+        "path": "src/daahe/control.py",
+        "sha256": "017ad342377a41a5a3146b38992087f08cae6d0f145297df570bc674ef785432"
+      },
+      {
+        "path": "src/daahe/derivation.py",
+        "sha256": "fde965b72748cced31acfefb136e779d6ed5f948c6e7d809b60dfe936df9969c"
+      },
+      {
+        "path": "src/daahe/evidence.py",
+        "sha256": "452d6ddd914c0d7309f6d24af7a568cfa40af9d48521edd467e5b80ed6b02f1e"
+      },
+      {
+        "path": "src/daahe/independent_evidence.py",
+        "sha256": "f189f9285b0cdea8a584ff8b6501d9300065752c9ade69c846507f6b30254000"
+      },
+      {
+        "path": "src/daahe/integration.py",
+        "sha256": "60112c543a2a181f2ea4f27f3d4c9f83474076dff395690db630d0a69d304459"
+      },
+      {
+        "path": "src/daahe/lightweight.py",
+        "sha256": "6a537f743593decb3725cb79d127f180c5d00d623d45ea71e092a59c359453e6"
+      },
+      {
+        "path": "src/daahe/mlwe.py",
+        "sha256": "1e7e867b315312139dfce4260aedf38aab19685077a3ce90c6f3bf174c459fc7"
+      },
+      {
+        "path": "src/daahe/profiles.py",
+        "sha256": "dc6add53fb7223afaab61074549ea33b48a973ff28303fd209012c356b7a2cb8"
+      },
+      {
+        "path": "src/daahe/protocol.py",
+        "sha256": "a24644caf1d37a683f67e86ea595ad2ed34ef6bf29286db211db63bfd67cbc65"
+      },
+      {
+        "path": "src/daahe/replay.py",
+        "sha256": "28fe8a2340755cd71336e7edd727ef21c5437bed1c50740815446ced1cefa87d"
+      },
+      {
+        "path": "src/daahe/ring.py",
+        "sha256": "507106338b99c8fbba36c5d60801225c367fcbc9896813afdee583a96a7b11db"
+      },
+      {
+        "path": "src/daahe/safety.py",
+        "sha256": "90bb49123e520aa7c0ebf76f49de765fb7a17fb484742886fe5a0e5f3dab7b60"
+      },
+      {
+        "path": "src/daahe/signal.py",
+        "sha256": "21c1f738718bf21e71bdce0bc550e157c9a8637a1772fe2099182a05fadb7cb2"
+      },
+      {
+        "path": "src/daahe/signatures.py",
+        "sha256": "10c940f2d0c723e611956a78e853e18ebaa00d638f334aa238e4b3acf6411699"
+      },
+      {
+        "path": "src/daahe/statistics.py",
+        "sha256": "d33d6b3b4acf7c57c728661e91428d50e512127b7d881db58501a1d02b725e26"
+      },
+      {
+        "path": "tests/test_aggregate_fidelity.py",
+        "sha256": "7e1819f3b8f078c946078c47d9e4564eff4e2c6bb0aad6a149e3763128ee3f98"
+      },
+      {
+        "path": "tests/test_board_measurements.py",
+        "sha256": "b9442acb289079b47152f396d7b59ced3a9d964109c9c45091bbe991abe179c5"
+      },
+      {
+        "path": "tests/test_ci_coverage.py",
+        "sha256": "0f6a39557925a942b8c095c2e11132bca958e2b72e7b6200c750ee1ad9933de4"
+      },
+      {
+        "path": "tests/test_control.py",
+        "sha256": "96ba3572a7625761b00a52297e2f71aa0454fb2457a7e71c15f65e164099083d"
+      },
+      {
+        "path": "tests/test_control_binding.py",
+        "sha256": "daef4f0ddd80545db855ec82914751ea1dc7ed29706a40910cc7830a9a65acbe"
+      },
+      {
+        "path": "tests/test_crypto_protocol.py",
+        "sha256": "ef309d3f7f07dee0187e2331fd754433960a8552bafa09f38212510867a376d0"
+      },
+      {
+        "path": "tests/test_decoding_bound_interval.py",
+        "sha256": "6b83642f3df6fc5ec59742c320624a728f80daa42977dbde53a0a34df7e13ba6"
+      },
+      {
+        "path": "tests/test_decoding_bound_reference.py",
+        "sha256": "9eb0541a4356cab24af49c3c8c9f0c379c14a6d3b05520a477b3a05d3035b631"
+      },
+      {
+        "path": "tests/test_decoding_horizon.py",
+        "sha256": "09c5437a8fd6feb422e39f548ac0157df0b143bb542396121095fcf7630fce82"
+      },
+      {
+        "path": "tests/test_decoding_record.py",
+        "sha256": "c6cf37018cae42f4fce4e1a3a1934dcdcaadfa3f03e58f05aecc4ee5e03cf3b2"
+      },
+      {
+        "path": "tests/test_estimator_adapter.py",
+        "sha256": "b19970b1dc51d1ebf9eefa86ceb369ffbe9d11966d970d4b34cf9d2a54b3b778"
+      },
+      {
+        "path": "tests/test_evidence.py",
+        "sha256": "ffae00f1b71efd7ac309e3ac28466a25c83ebf4908083142261e3471a2288562"
+      },
+      {
+        "path": "tests/test_import_plot.py",
+        "sha256": "827ac9ea366905aaf2d1d8ce2e24327d656e3b07df06581886d9ff49770ef01c"
+      },
+      {
+        "path": "tests/test_independent_evidence.py",
+        "sha256": "f1d66117b767b6830c8c87035747673682c3df73d342d587137a3420bc3892ae"
+      },
+      {
+        "path": "tests/test_manuscript_alignment.py",
+        "sha256": "309d2dac616213f874e250c8656acf0595c0bef3725d1c9c3cdd31cfaf88a1ce"
+      },
+      {
+        "path": "tests/test_paper_evidence.py",
+        "sha256": "ba23bb40c04b7411cc94500fa173408c4f20accba977f4a748fad0127752aa5f"
+      },
+      {
+        "path": "tests/test_paper_reproducer.py",
+        "sha256": "d32d5f8d0c649ed442bf862f7b794fcc140382757dc71cc65598b20787afc8be"
+      },
+      {
+        "path": "tests/test_parameterized_encryption.py",
+        "sha256": "07edbd3149c147be0692cf491c8af1951fa572f69fa576096aff5f36350124e9"
+      },
+      {
+        "path": "tests/test_published_evidence.py",
+        "sha256": "8d384d0977fc8dd98fb052ac60c7e3c4022904a6da64a4e1654f03af2fd191e3"
+      },
+      {
+        "path": "tests/test_reference_bounds.py",
+        "sha256": "4618837b87e6486b568d70dfe36e4ce60b9055d9dc2d4ffa561dfec3de4b8dc5"
+      },
+      {
+        "path": "tests/test_security_execution.py",
+        "sha256": "9c08d7a9127612ab4064131d62412b3d99a1829dbe86a84c90ba1075b9b456ac"
+      },
+      {
+        "path": "tests/test_signal_quality.py",
+        "sha256": "e287e7975e0c429acbf868d35f139e49d3562dd163876db70371c0f6a93ef77e"
+      },
+      {
+        "path": "tests/test_signatures.py",
+        "sha256": "46b0bc4ef73e700633953c81fba6e7cc4d5d77322d5782bd5eef09a70aebcdce"
+      },
+      {
+        "path": "tests/test_simulation_campaign.py",
+        "sha256": "2991cbdfebbaa9215c7f2ad29d9052651cf5fc1a8e8a27775288df5f56af177a"
+      },
+      {
+        "path": "tests/test_simulation_network.py",
+        "sha256": "a8c0875fa83ee328bfe9d76a15afa43776afecda8b683364c12cf61cba1863b9"
+      },
+      {
+        "path": "tests/test_simulation_rosters.py",
+        "sha256": "3752a6fcb29af97ca78ad15ce7513102712a6a234b69fd618e586f1e9f3b19fb"
+      },
+      {
+        "path": "tests/test_source_ledger.py",
+        "sha256": "75dd5649d9461bf78b0e62d1994f7549d4534479eb5932e40ee28d55910cdeb8"
+      },
+      {
+        "path": "tests/test_statistics.py",
+        "sha256": "2aa1e4f097a532d529529a97c04a48652231f2163bfe586c0b16e86b22143153"
+      },
+      {
+        "path": "tools/capture_environment.py",
+        "sha256": "fa86b046041bed1d05088b6577c40f5beb031441f571c0273897ca371fe0097a"
+      },
+      {
+        "path": "tools/certify_decoding_bound.py",
+        "sha256": "646bd3bd5fbc838cc3f2a81706ceb437c72633d01fa26ed923f3c706d10a800a"
+      },
+      {
+        "path": "tools/check_aggregate_fidelity.py",
+        "sha256": "aac3854e8283d86bd06cb58b34925b65293e5105e4c9e8e7544748ecb4ee9e8f"
+      },
+      {
+        "path": "tools/check_ci_coverage.py",
+        "sha256": "41cf3b7dc104ebbef400050a8cedff319745598f97461b5e38e6e865e628bb12"
+      },
+      {
+        "path": "tools/check_decoding_horizon.py",
+        "sha256": "acab54b0665731de4819a4c7a2045a5e912a68c4b9485a5bc0d53697a3564966"
+      },
+      {
+        "path": "tools/check_manuscript_alignment.py",
+        "sha256": "26ffe310994cc3515363b5b2e963649997470051ff260c6d3164a7753a65c678"
+      },
+      {
+        "path": "tools/check_paper_evidence.py",
+        "sha256": "cea708b430363d8b5d33e9eff0ee871b191af869f13d1babbd5331b44a4d59a6"
+      },
+      {
+        "path": "tools/check_reference_bounds.py",
+        "sha256": "e0dfdb7be3b17ce366457b2a259e1c70962f0bfddc6178170d67e43578c823a1"
+      },
+      {
+        "path": "tools/collect_board_measurements.py",
+        "sha256": "0c0439c2bda104998d740d3a2410c270270dd6051d51ceb06dd8b74defb28ec9"
+      },
+      {
+        "path": "tools/estimate_security.sage",
+        "sha256": "f45a5067b31299a08d26527068561352cf50c10cd3df3b69dc3627e91a69c765"
+      },
+      {
+        "path": "tools/estimate_security_parameters.py",
+        "sha256": "aa2a1f49a9314366463578a155b4fcb98d4bff3ad723cfef16bd9f6d2696679b"
+      },
+      {
+        "path": "tools/estimator_result_adapter.py",
+        "sha256": "9d8c81893ff9c2f3be964badb61b4190f825ef53d8f2b3e1d5e2d166a63ec36d"
+      },
+      {
+        "path": "tools/import_omnet.py",
+        "sha256": "e2b1ecdf04f5b8041b1934d2458c90fcbaad96e109894699fa13c077ab759d87"
+      },
+      {
+        "path": "tools/independent_manifest.py",
+        "sha256": "5c5a49fd8c7ddc18bd95f3c117b85d38a517783f9b0cf2320d243f879f4325f0"
+      },
+      {
+        "path": "tools/plot_results.py",
+        "sha256": "2c3c088c96b7d99552aa93c48006d6eeb8f46df9f5f9b07fb2559949a490e797"
+      },
+      {
+        "path": "tools/reproduce_paper_evidence.py",
+        "sha256": "c42b4c03ba02e78f296c1c20abdde1d6c11a109e048bddc99a90f4403c126aff"
+      },
+      {
+        "path": "tools/run_logged.py",
+        "sha256": "5fd19cbd3801972fd4d1a262f95cbc8f7c806a81ddb0abdd26a54b45596cc996"
+      },
+      {
+        "path": "tools/run_protocol_trials.py",
+        "sha256": "5def3e025385dd8cb527bec14e0746b1e7e08180eaefb910eafaa2bf20efd0e9"
+      },
+      {
+        "path": "tools/run_simulation_campaign.py",
+        "sha256": "58ff57d9c6357220fdad3e414f8aaaebf59fa87dad93023d572ada151a395362"
+      },
+      {
+        "path": "tools/search_security_parameters.py",
+        "sha256": "427352b0ab94c0deb498ba7394be1f68832ab5a403dba2f2fa90193f4ee16f93"
+      },
+      {
+        "path": "tools/verify_board_measurements.py",
+        "sha256": "527560a87485131e7067e160df34d18782a615e4bff84f3423c59b3a4b938e06"
+      },
+      {
+        "path": "tools/verify_decoding_record.py",
+        "sha256": "693195bf406bcb86ce4006b6edbc56cebfb802cd6ea48d93485dbccb4fda1b23"
+      },
+      {
+        "path": "tools/verify_published_evidence.py",
+        "sha256": "c1ba87a042ceb4f3476a4da0fa095585c6fea1448f043832ae3ac2cb91b239f5"
+      },
+      {
+        "path": "tools/verify_simulation_campaign.py",
+        "sha256": "326cc2312ad330908def02696d8a1572e6304c0ebc14504ab1ef107b79fb2139"
+      }
+    ],
+    "root_files": [
+      "pyproject.toml",
+      "requirements-dev.txt",
+      "requirements-pq.txt",
+      "Makefile",
+      "Dockerfile"
+    ],
+    "scope": [
+      "src",
+      "daahe",
+      "simulation",
+      "firmware",
+      "security",
+      "tools",
+      "embedded",
+      "tests",
+      ".github",
+      "configs",
+      "experiments"
+    ]
+  },
+  "summary": {
+    "created_utc": "2026-10-16T04:35:58.757069+00:00",
+    "full_system_certified": false,
+    "origin": "independent_reimplementation",
+    "paper_reproduced": false,
+    "pinned_inputs_unchanged": true,
+    "python_version": "3.12.14",
+    "schema_version": 1,
+    "scope": "Fresh synthetic aggregate reconstruction and exact-rational horizon budgeting from the pinned decoding bound; no board, original corpus, or OMNeT++ measurements.",
+    "source_digest": "1fde92d285a7a4ceb90067cbfd8ad62d82720d2318d5541cb184454b529f234f",
+    "source_unchanged": true,
+    "status": "passed",
+    "steps": [
+      {
+        "command": [
+          "python",
+          "tools/check_manuscript_alignment.py"
+        ],
+        "entrypoint_sha256": "26ffe310994cc3515363b5b2e963649997470051ff260c6d3164a7753a65c678",
+        "expected_returncode": 0,
+        "expected_status": "passed_repository_alignment_manuscript_revision_required",
+        "returncode": 0,
+        "semantic_match": true,
+        "status": "passed",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "e78f5fb1ba564e085d178a8628cc3589a6f5c3d53a317ba38e15978c8ad6abd0",
+        "step": "alignment",
+        "timed_out": false,
+        "wall_time_s": 0.04015191700000287
+      },
+      {
+        "command": [
+          "python",
+          "tools/check_paper_evidence.py"
+        ],
+        "entrypoint_sha256": "cea708b430363d8b5d33e9eff0ee871b191af869f13d1babbd5331b44a4d59a6",
+        "expected_returncode": 0,
+        "expected_status": "passed_paper_evidence_index",
+        "returncode": 0,
+        "semantic_match": true,
+        "status": "passed",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "34a91daaee944b74acc8349ab03fed80919691761eb19b9e175c49875a67f877",
+        "step": "claim-index",
+        "timed_out": false,
+        "wall_time_s": 0.037292084000000614
+      },
+      {
+        "command": [
+          "python",
+          "tools/check_aggregate_fidelity.py",
+          "--output",
+          "runs/paper-evidence-final-01/fidelity"
+        ],
+        "entrypoint_sha256": "aac3854e8283d86bd06cb58b34925b65293e5105e4c9e8e7544748ecb4ee9e8f",
+        "expected_returncode": 0,
+        "expected_status": "executed_synthetic_fidelity",
+        "returncode": 0,
+        "semantic_match": true,
+        "status": "passed",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "93cdc0a1c0a59664a87a6902142c0ee70ef550f6f21e69919115f3ed6d468878",
+        "step": "fidelity-generate",
+        "timed_out": false,
+        "wall_time_s": 0.8601846670007944
+      },
+      {
+        "command": [
+          "python",
+          "tools/check_aggregate_fidelity.py",
+          "--verify",
+          "runs/paper-evidence-final-01/fidelity"
+        ],
+        "entrypoint_sha256": "aac3854e8283d86bd06cb58b34925b65293e5105e4c9e8e7544748ecb4ee9e8f",
+        "expected_returncode": 0,
+        "expected_status": "verified_and_recomputed",
+        "returncode": 0,
+        "semantic_match": true,
+        "status": "passed",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "56963bc9bcfab2dd40c647e31d8a65019e831ca33205c839db64d6f63433269d",
+        "step": "fidelity-recompute",
+        "timed_out": false,
+        "wall_time_s": 0.9200831660000404
+      },
+      {
+        "command": [
+          "python",
+          "tools/check_decoding_horizon.py",
+          "--batches",
+          "5",
+          "--target-bits",
+          "128"
+        ],
+        "entrypoint_sha256": "acab54b0665731de4819a4c7a2045a5e912a68c4b9485a5bc0d53697a3564966",
+        "expected_returncode": 0,
+        "expected_status": "passed_decoding_horizon_budget",
+        "returncode": 0,
+        "semantic_match": true,
+        "status": "passed",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "d0361f74681eb8625afe622f45881cec69380e553ac06c9fd29e35f777d621a3",
+        "step": "horizon-5-128",
+        "timed_out": false,
+        "wall_time_s": 0.029512500000237196
+      },
+      {
+        "command": [
+          "python",
+          "tools/check_decoding_horizon.py",
+          "--batches",
+          "6",
+          "--target-bits",
+          "128"
+        ],
+        "entrypoint_sha256": "acab54b0665731de4819a4c7a2045a5e912a68c4b9485a5bc0d53697a3564966",
+        "expected_returncode": 2,
+        "expected_status": "failed_decoding_horizon_budget",
+        "returncode": 2,
+        "semantic_match": true,
+        "status": "passed",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "4b168c3762ec1b493976b1beb1091dbbc01a404894f2186ec34496167fe5a09c",
+        "step": "horizon-6-128-rejected",
+        "timed_out": false,
+        "wall_time_s": 0.028937332999703358
+      },
+      {
+        "command": [
+          "python",
+          "tools/check_decoding_horizon.py",
+          "--batches",
+          "300",
+          "--target-bits",
+          "120"
+        ],
+        "entrypoint_sha256": "acab54b0665731de4819a4c7a2045a5e912a68c4b9485a5bc0d53697a3564966",
+        "expected_returncode": 0,
+        "expected_status": "passed_decoding_horizon_budget",
+        "returncode": 0,
+        "semantic_match": true,
+        "status": "passed",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "4b9c09a4cb2f4642ecd6e86f2c60311b1bc6c10882ab6a209b36e9cfa4aba615",
+        "step": "horizon-300-120",
+        "timed_out": false,
+        "wall_time_s": 0.028584249999767053
+      }
+    ]
+  }
+}
