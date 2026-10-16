@@ -1,3 +1,0 @@
-attack=primal_bdd; upstream=53da5982597709ba0fdf94ea37a84d822310fd84; sage=10.9
-LWEParameters(n=768, q=4294967296, Xs=D(σ=3.20), Xe=D(σ=3.20), m=768, tag='DA-AHE independent fixed-key estimate')
-rop: ≈2^52.6, red: ≈2^52.2, svp: ≈2^50.4, β: 197, η: 189, d: 1533, tag: bdd
