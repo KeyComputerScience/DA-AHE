@@ -679,8 +679,8 @@
     },
     {
       "path": "tests/test_ci_triggers.py",
-      "sha256": "b36b64b31233f1d704c43ff12449781aa59a91a56c1608a2c57064d39f2a4990",
-      "size": 7751
+      "sha256": "0b1da643f731363db20473091fd6ed77284b308e9135a512bc86ef8ba2a73edd",
+      "size": 9334
     },
     {
       "path": "tests/test_control.py",
@@ -849,8 +849,8 @@
     },
     {
       "path": "tools/check_ci_triggers.py",
-      "sha256": "996dcea7392dca9cdbed79fb0e269d32c42a612781056c725644a2c604a97af8",
-      "size": 9383
+      "sha256": "0af5d0c607808502285cf5d780b96707e19a17e268437abe0b23c40d340b759f",
+      "size": 9444
     },
     {
       "path": "tools/check_decoding_horizon.py",
