@@ -1,0 +1,18 @@
+{
+  "schema_version":1,
+  "reference_3000_nodes":{
+    "da-ahe":{"latency_ms":450.0,"residual_plr":0.00074,"recovery_s":33.0,"hve_coverage":1.0},
+    "dpp":{"latency_ms":508.5,"residual_plr":0.00089,"recovery_s":42.7},
+    "hys":{"latency_ms":565.2,"residual_plr":0.00103,"recovery_s":49.8},
+    "without_markov":{"residual_plr":0.00134,"recovery_s":69.3,"hve_coverage":1.0},
+    "without_intdb2":{"residual_plr":0.00091,"recovery_s":37.0,"hve_coverage":1.0},
+    "without_route_repair":{"residual_plr":0.00116,"recovery_s":51.1,"hve_coverage":1.0},
+    "without_hve":{"residual_plr":0.00081,"recovery_s":34.6,"hve_coverage":0.0}
+  },
+  "scale_5000_nodes":{"da-ahe":{"residual_plr":0.00098}},
+  "payload_bytes":{"protected_packed":4096,"protected_without_intdb2":8192},
+  "board_targets":{"clock_hz":64000000,"encryption_cycles":3600000,"transform_cycles":120000,"protected_cpu_ms":58.125,"protected_cpu_mj":1.395,"static_sram_bytes":27976,"max_stack_hwm_bytes":1352,"peak_runtime_sram_bytes":29328,"flash_bytes":91188},
+  "analytical_lower_bounds_ms":{"protected_phy_payload_only":131.072,"protected_cpu_plus_one_hop_payload":189.197,"workload_weighted":77.199},
+  "reconstruction_targets":[{"profile":"Pi0","L":240,"delta_q":8,"rmse":0.42,"prd_percent":0.85},{"profile":"Pi1","L":180,"delta_q":12,"rmse":0.78,"prd_percent":1.42},{"profile":"Pi2","L":120,"delta_q":16,"rmse":1.15,"prd_percent":2.18}],
+  "security_floor_bits":128.1
+}
