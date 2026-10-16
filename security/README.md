@@ -3,9 +3,20 @@
 This workflow generates **independent reproduction** evidence. It does not
 recover the authors' missing logs, certify the original 128.1-bit claim, or
 provide a module-specific/worst-case security proof. Nothing generates a
-plaintext-wrap, airtime, decoding-failure or embedded-memory certificate here.
+plaintext-wrap, airtime or embedded-memory certificate in this estimator
+workflow. The separate actual-finite-CDT correctness calculation is documented
+in [`DECODING_BOUND.md`](DECODING_BOUND.md).
 
-## Run in SageMath
+The current independent encryption default is **k=6, d=256, n=m=1536** and
+7,168-byte ciphertexts. Its archived seven-attack minimum is **136.475 bits**
+under the declared generic flattened-LWE and ADPS16 quantum heuristic model.
+The fixed-tuple runner below retains the historical **k=3/n=m=768** problem,
+which did not meet 128.1 bits in the independent run. For current k=6 inputs use
+the explicit parameterized command in the candidate-validation section.
+Current publication locations are in `evidence/independent/publication.json`;
+historical logs and status snapshots remain unchanged.
+
+## Run the legacy manuscript tuple in SageMath
 
 Clone the official source and select exactly the paper's commit:
 
@@ -14,7 +25,7 @@ git clone https://github.com/malb/lattice-estimator.git external/lattice-estimat
 git -C external/lattice-estimator checkout --detach 53da5982597709ba0fdf94ea37a84d822310fd84
 python tools/estimate_security.sage \
   --estimator external/lattice-estimator \
-  --output evidence/independent/security/run-01 \
+  --output runs/security-legacy-k3 \
   --attack-timeout 300
 ```
 
@@ -62,7 +73,7 @@ samples. Its effective problem, signed-combination count and amplified noise
 are recorded and checked against the pinned implementation. These derived
 samples are an estimator heuristic, not fresh independent observations.
 
-The fixed problem is n=768, m=768, q=2^32, independent centered Gaussian secret
+The legacy fixed problem is n=768, m=768, q=2^32, independent centered Gaussian secret
 and error with standard deviation 3.2. Module rank 3 and ring degree 256 are
 metadata; the estimator evaluates the **generic flattened** instance. Lattice
 reduction is explicitly `ADPS16(mode='quantum')`, with GSA for primal attacks.
@@ -119,13 +130,18 @@ attacks succeeded and the computed minimum was 136.475 bits, exceeding 128.1.
 `PARAMETER_SELECTION.md` in its parent directory describes the rank screening
 and tradeoffs. This is a changed parameter set, not the manuscript k=3 estimate. Its public full-run interface always attempts all seven attacks and
 cannot prune an unfavorable attack. An explicit `--n` is an optional consistency
-assertion and must equal k*d; the public-key sample count is also k*d. Defaults
-retain k=3, d=256, q=2^32 and sigma=3.2. Changing a candidate does not silently
-change the manuscript tuple or the encryption implementation.
+assertion and must equal k*d; the public-key sample count is also k*d. The
+parameterized estimator runner's argument defaults retain k=3, d=256, q=2^32
+and sigma=3.2; these are distinct from the encryption implementation's current
+k=6 default. Always pass `--module-rank 6` to estimate the selected candidate.
+Changing estimator arguments does not silently change the manuscript tuple or
+the encryption implementation.
 
-At q=2^32 and d=256, a ciphertext has `(k+1)*256*4` bytes, e.g. 8192 bytes at
-k=7 instead of 4096 at k=3. RAM, airtime, decryption failure and batch capacities
-must therefore be recertified. An estimator threshold pass is only a result
+At q=2^32 and d=256, a ciphertext has `(k+1)*256*4` bytes: 7,168 bytes at
+the current k=6 instead of 4,096 bytes at legacy k=3. RAM, airtime, decryption
+failure and batch capacities must therefore be recertified. The selected
+finite-CDT decoding bound is separate evidence; complete deployment resource
+and control certificates remain unestablished. An estimator threshold pass is only a result
 under the pinned generic attack models, never a full deployment certificate.
 
 The container also includes the configurable runner. Add `--parameterized` as
