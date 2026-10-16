@@ -1,0 +1,199 @@
+{
+  "base_commit": "f0a3647cea71515649f53dcdb9e0dc3fb22bf483",
+  "changes": [
+    {
+      "path": ".dockerignore",
+      "change": "added"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "change": "added"
+    },
+    {
+      "path": ".gitignore",
+      "change": "added"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "change": "modified"
+    },
+    {
+      "path": "CITATION.cff",
+      "change": "modified"
+    },
+    {
+      "path": "DELIVERY_STATUS.json",
+      "change": "modified"
+    },
+    {
+      "path": "Dockerfile",
+      "change": "modified"
+    },
+    {
+      "path": "MANIFEST.in",
+      "change": "added"
+    },
+    {
+      "path": "README.md",
+      "change": "modified"
+    },
+    {
+      "path": "SECURITY.md",
+      "change": "modified"
+    },
+    {
+      "path": "configs/control_synthetic.json",
+      "change": "modified"
+    },
+    {
+      "path": "docs/CERTIFICATION.md",
+      "change": "modified"
+    },
+    {
+      "path": "docs/CI_AND_PATCH.md",
+      "change": "added"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "change": "modified"
+    },
+    {
+      "path": "docs/IMPLEMENTATION_STATUS.md",
+      "change": "modified"
+    },
+    {
+      "path": "docs/PARAMETERS_AND_GAPS.md",
+      "change": "modified"
+    },
+    {
+      "path": "docs/REPOSITORY_REVIEW.md",
+      "change": "added"
+    },
+    {
+      "path": "docs/REPRODUCIBILITY.md",
+      "change": "modified"
+    },
+    {
+      "path": "embedded/CMakeLists.txt",
+      "change": "modified"
+    },
+    {
+      "path": "embedded/README.md",
+      "change": "modified"
+    },
+    {
+      "path": "embedded/daahe_core.c",
+      "change": "modified"
+    },
+    {
+      "path": "embedded/daahe_core.h",
+      "change": "modified"
+    },
+    {
+      "path": "embedded/test_core.c",
+      "change": "added"
+    },
+    {
+      "path": "experiments/METRICS_SCHEMA.md",
+      "change": "modified"
+    },
+    {
+      "path": "manifest.json",
+      "change": "modified"
+    },
+    {
+      "path": "pyproject.toml",
+      "change": "modified"
+    },
+    {
+      "path": "src/daahe/__init__.py",
+      "change": "modified"
+    },
+    {
+      "path": "src/daahe/calibration.py",
+      "change": "modified"
+    },
+    {
+      "path": "src/daahe/cli.py",
+      "change": "modified"
+    },
+    {
+      "path": "src/daahe/control.py",
+      "change": "modified"
+    },
+    {
+      "path": "src/daahe/evidence.py",
+      "change": "modified"
+    },
+    {
+      "path": "src/daahe/profiles.py",
+      "change": "modified"
+    },
+    {
+      "path": "src/daahe/protocol.py",
+      "change": "modified"
+    },
+    {
+      "path": "src/daahe/replay.py",
+      "change": "modified"
+    },
+    {
+      "path": "src/daahe/safety.py",
+      "change": "modified"
+    },
+    {
+      "path": "src/daahe/signal.py",
+      "change": "modified"
+    },
+    {
+      "path": "src/daahe/statistics.py",
+      "change": "modified"
+    },
+    {
+      "path": "tests/README.md",
+      "change": "modified"
+    },
+    {
+      "path": "tests/test_control_binding.py",
+      "change": "added"
+    },
+    {
+      "path": "tests/test_estimator_adapter.py",
+      "change": "added"
+    },
+    {
+      "path": "tests/test_evidence.py",
+      "change": "modified"
+    },
+    {
+      "path": "tests/test_import_plot.py",
+      "change": "added"
+    },
+    {
+      "path": "tests/test_signal_quality.py",
+      "change": "added"
+    },
+    {
+      "path": "tests/test_source_ledger.py",
+      "change": "added"
+    },
+    {
+      "path": "tools/estimate_security.sage",
+      "change": "modified"
+    },
+    {
+      "path": "tools/estimator_result_adapter.py",
+      "change": "added"
+    },
+    {
+      "path": "tools/import_omnet.py",
+      "change": "modified"
+    },
+    {
+      "path": "tools/plot_results.py",
+      "change": "modified"
+    }
+  ],
+  "patch_context_reconstructed_without_execution": true,
+  "project_execution": false
+}
