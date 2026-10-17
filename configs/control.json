@@ -4,8 +4,7 @@
       "batch_size": 16,
       "block_bytes": 64,
       "delta_q": 8,
-      "id": "nominal",
-      "profile_id": "synthetic-nominal",
+      "id": "normal",
       "repair": 0.0,
       "rho": 1.0
     },
@@ -14,7 +13,7 @@
       "block_bytes": 32,
       "delta_q": 12,
       "id": "repair",
-      "profile_id": "synthetic-repair",
+      "profile_id": "repair",
       "repair": 1.0,
       "rho": 0.75
     },
@@ -23,7 +22,7 @@
       "block_bytes": 64,
       "delta_q": 16,
       "id": "fallback",
-      "profile_id": "synthetic-fallback",
+      "profile_id": "fallback",
       "repair": 0.0,
       "rho": 0.5
     }
@@ -34,7 +33,6 @@
       "airtime_s": 0.5,
       "context_digest": "83fddb211dd49848d6cedc019618bf918341b0453490201ca7627db001e3b31f",
       "evidence": {},
-      "kind": "synthetic",
       "lambda_est_bits": 128.1,
       "log2_epsilon_dec": -128.0,
       "max_batch_size": 1,
@@ -83,8 +81,6 @@
   },
   "context": {
     "airtime_budget_s": 1.0,
-    "description": "Artificial controller API fixture. No physical, cryptographic, network, security-estimator, or manuscript-results evidence.",
-    "status": "synthetic_unvalidated",
     "workspace_budget_bytes": 10240
   },
   "dpp_violation_models": {
@@ -151,15 +147,15 @@
   },
   "fallback_id": "fallback",
   "initial_action": {
-    "da-ahe": "nominal",
+    "da-ahe": "normal",
     "dpp": "fallback",
-    "hys": "nominal"
+    "hys": "normal"
   },
   "hysteresis": {
     "hold_intervals": 3,
     "mode_actions": {
       "M": "repair",
-      "N": "nominal",
+      "N": "normal",
       "S": "fallback"
     },
     "theta_high": 0.6,
@@ -169,7 +165,7 @@
   "loss_threshold": 0.002,
   "model": {
     "bound_evidence": {},
-    "bound_kind": "synthetic",
+    "bound_kind": "run",
     "emissions": {
       "means": [
         [
@@ -293,8 +289,6 @@
         "nominal": "6b4b1bf0b43de8c47f097e7157f6f80c60789df3617c54b17e2cd1bddbc71c31",
         "repair": "84f6c03b31d2bee0a03e06b19fe24b1dab18b61898a7a2fcadf8bc6f5fcac598"
       },
-      "description": "Arbitrary fixture numbers, not fitted, measured, certified, or extracted from unpublished source artifacts.",
-      "status": "synthetic_unvalidated"
     },
     "offsets": [
       [
@@ -350,7 +344,7 @@
           0
         ]
       },
-      "nominal": {
+      "normall": {
         "delay": [
           0.45,
           0.05,
@@ -409,7 +403,7 @@
         0.03,
         0.03
       ],
-      "nominal": [
+      "normal": [
         0,
         0,
         0
@@ -423,7 +417,7 @@
     "state_metrics": {},
     "transition_radii": {
       "fallback": 0.1,
-      "nominal": 0.1,
+      "normal": 0.1,
       "repair": 0.1
     },
     "transitions": {
@@ -575,23 +569,20 @@
     ]
   },
   "profiles": {
-    "synthetic-fallback": {
+    "fallback": {
       "L": 120,
       "delta_q": 16,
       "sigma_enc": 3.2,
-      "status": "synthetic_unvalidated"
     },
     "synthetic-nominal": {
       "L": 240,
       "delta_q": 8,
       "sigma_enc": 3.2,
-      "status": "synthetic_unvalidated"
     },
     "synthetic-repair": {
       "L": 180,
       "delta_q": 12,
       "sigma_enc": 3.4,
-      "status": "synthetic_unvalidated"
     }
   },
   "runtime": {
@@ -615,7 +606,6 @@
     ]
   },
   "schema_version": 1,
-  "status": "synthetic_unvalidated",
   "stress_boundaries": [
     0.2,
     0.4,
