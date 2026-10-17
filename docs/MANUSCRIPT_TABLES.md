@@ -1,9 +1,9 @@
 # Tables and calculations
 
-| Quantity | Data | LaTeX |
+| Quantity | Data | Artifact |
 |---|---|---|
 | Conditional delay, CPU, radio TX, wire bytes and recovery counts | evidence/independent/campaign-report/per-seed.csv | [PERFORMANCE_COSTS.tex](manuscript/PERFORMANCE_COSTS.tex) |
-| Effective delivery, conditional delay and invalid acceptance | evidence/independent/campaign-report/per-seed.csv | [FIG6_ARCHIVED.tex](manuscript/FIG6_ARCHIVED.tex) |
+| Effective delivery, conditional delay and invalid acceptance | evidence/independent/campaign-report/per-seed.csv | [revised-ablationA.pdf](manuscript/figures/revised-ablationA.pdf) |
 | nRF52840 memory | [firmware_memory_nrf52840.json](../configs/firmware_memory_nrf52840.json) | [FIRMWARE_MEMORY.tex](manuscript/FIRMWARE_MEMORY.tex) |
 | Reconstruction fidelity | [reconstruction_fidelity.json](../configs/reconstruction_fidelity.json) | [RECONSTRUCTION_FIDELITY.tex](manuscript/RECONSTRUCTION_FIDELITY.tex) |
 

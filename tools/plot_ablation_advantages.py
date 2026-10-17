@@ -244,8 +244,6 @@ def main():
         json.dumps(summary, indent=2, allow_nan=False) + "\n")
     text = caption(summary)
     Path(str(args.output) + "-caption.txt").write_text(text + "\n")
-    Path(str(args.output) + "-caption.tex").write_text(
-        "\\caption{" + text.replace("%", r"\%") + "}\n")
 
 
 if __name__ == "__main__":

@@ -58,6 +58,5 @@ python tools/plot_ablation_advantages.py \
 ~~~
 
 The output prefix supplies vector PDF/SVG, a 300-dpi PNG, numerical JSON and
-LaTeX/text captions. The manuscript snippet is
-[FIG6_ABLATION.tex](manuscript/FIG6_ABLATION.tex), with the figure at
+a text caption. The figure is available at
 [revised-ablationA.pdf](manuscript/figures/revised-ablationA.pdf).
