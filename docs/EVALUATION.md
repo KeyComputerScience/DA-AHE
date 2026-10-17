@@ -9,6 +9,10 @@ accounting boundaries and certification scope are stated below.
 size-by-seed matrix and the common record-to-table/figure exporter, including
 paired bootstrap intervals, denominator checks and censored recovery handling.
 
+[Ablation evidence](ABLATION_EVALUATION.md) defines report/frame denominators,
+recovery censoring, HVE capability scope and the independent ablation export/CI
+contract for the archived rank-6 campaign.
+
 ## Experimental question and fixed cryptographic parameters
 
 We evaluate how causal profile selection changes source admission, valid
