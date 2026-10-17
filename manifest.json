@@ -13,6 +13,11 @@
       "size": 114
     },
     {
+      "path": ".github/workflows/ablation-evidence.yml",
+      "sha256": "0d1422839b0a77b901b33eda37ab2e07b6f9c626f42aecb7dbfb98b878ff2336",
+      "size": 2574
+    },
+    {
       "path": ".github/workflows/reproduce.yml",
       "sha256": "2647b862838dd244872bf35b424d7bf5bece8db7be644f4580b1d3c22292016b",
       "size": 18465
@@ -193,6 +198,11 @@
       "size": 17415
     },
     {
+      "path": "docs/ABLATION_EVALUATION.md",
+      "sha256": "cbb35890a0aaf79b1debd850a8d28ce9728fe5d64e8b2069605ffef9bc12d26a",
+      "size": 8615
+    },
+    {
       "path": "docs/ADVANTAGES.md",
       "sha256": "f04bd7530f45b699a23a3f87661b1623c76336f82c43bda92c0df9058f3846da",
       "size": 1398
@@ -234,8 +244,8 @@
     },
     {
       "path": "docs/EVALUATION.md",
-      "sha256": "ffe032635b69623c3ac798c18e2f6043babdb9831e2748b644622e86b2a0c053",
-      "size": 16428
+      "sha256": "2334e7eb550e2109b773793f3c90d39cf86d7f1c5936680a4f14dd6a9bd7e709",
+      "size": 16631
     },
     {
       "path": "docs/IMPLEMENTATION_STATUS.md",
@@ -513,9 +523,14 @@
       "size": 252
     },
     {
+      "path": "simulation/ablation_analysis.py",
+      "sha256": "c581e76231a2e02ee588c3ec0f1b586bda11247a95b02cf598cc5c90f3a4175c",
+      "size": 19868
+    },
+    {
       "path": "simulation/audit.py",
-      "sha256": "41e8b42369939403c0a31bb6fd500fd89d18cb9fa1e8312670cb243796b63428",
-      "size": 24644
+      "sha256": "fea919b3160b65f7a40fa78a3c14d9216236e0e828f7cef7247027c26b9f1067",
+      "size": 36082
     },
     {
       "path": "simulation/config.json",
@@ -529,8 +544,8 @@
     },
     {
       "path": "simulation/engine.py",
-      "sha256": "f5357c4eecde514979ad18d5680c76517e7df643c0045acf868cdc11fe3aefea",
-      "size": 35460
+      "sha256": "f0634a2357efc5f7d7d77490fba21974016ad3fde98a117c13a048b8e2f94a0f",
+      "size": 37739
     },
     {
       "path": "simulation/exogenous.py",
@@ -661,6 +676,16 @@
       "path": "tests/conftest.py",
       "sha256": "25ddf6220834740afa884454ce8d99925695f8e14c1c11b7c084a695b0c4c388",
       "size": 1573
+    },
+    {
+      "path": "tests/test_ablation_analysis.py",
+      "sha256": "e5795755a6d96e7817ad326db10009dff3a02189521ed93c7da0ae85256a4f39",
+      "size": 7249
+    },
+    {
+      "path": "tests/test_ablation_instrumentation.py",
+      "sha256": "8d3fb2d5f3d2440263183b29c2eaff2432b1859aa5960ff4ccc7b513a8183716",
+      "size": 2724
     },
     {
       "path": "tests/test_aggregate_fidelity.py",
@@ -891,6 +916,11 @@
       "path": "tools/estimator_result_adapter.py",
       "sha256": "9d8c81893ff9c2f3be964badb61b4190f825ef53d8f2b3e1d5e2d166a63ec36d",
       "size": 7312
+    },
+    {
+      "path": "tools/export_ablation_evaluation.py",
+      "sha256": "9d0a2ad1082c4d748cb6db79d29601a67cd3b230cbcbdb68830bc2937de394fc",
+      "size": 12187
     },
     {
       "path": "tools/export_performance_evaluation.py",
