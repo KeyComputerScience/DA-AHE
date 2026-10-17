@@ -228,7 +228,9 @@ class Simulator:
             self.emit(self.reports_log, {"id": rid, "node": node_id, "gateway": node["gateway"],
                 "generated_s": self.now, "outcome_s": self.now, "status": status,
                 "admitted": False, "protected": node["protected"],
-                "action_id": action.id if action else None, "batch_id": None, "delay_s": None})
+                "action_id": action.id if action else None, "batch_id": None, "delay_s": None,
+                "modeled_verification_enabled": self.method != "without_hve",
+                "modeled_validity_check_applied": False})
             return
         bid = self.authorization_by_report.get(rid)
         if bid is None:
@@ -286,6 +288,7 @@ class Simulator:
                                        corrupt, batch_id, ticket_roster)
         self.log("transfer_created", transfer=tid, kind=kind, reports=list(reports),
                  gateway=gateway, payload_bytes=payload, block_bytes=block_size, frames=len(frames),
+                 frame_ids=[frame.id for frame in frames],
                  expiry_s=expiry,
                  batch_id=batch_id, ticket_roster=list(ticket_roster),
                  ticket_bytes=0 if kind == "repair" else self.ticket_bytes(len(ticket_roster)),
@@ -419,6 +422,7 @@ class Simulator:
             if state["remaining"] == 0:
                 if state["failed"]:
                     self.repair_inflight[transfer.gateway] = False
+                    state["terminal_status"] = "failed"
                     self.log("repair_failed", gateway=transfer.gateway, round=round_id)
                 else:
                     self.schedule(max(self.now, state["ready_s"]), self.finish_repair, transfer.gateway, round_id)
@@ -512,7 +516,9 @@ class Simulator:
             self.window["tamper_detected"] += 1
         batch["state"] = status
         self.log("aggregate_received", transfer=tid, batch_id=batch["id"],
-                 reports=list(batch["roster"]), status=status)
+                 reports=list(batch["roster"]), status=status,
+                 modeled_verification_enabled=self.method != "without_hve",
+                 modeled_validity_check_applied=self.method != "without_hve")
         for rid in batch["roster"]:
             self.finish_report(rid, status)
 
@@ -549,7 +555,10 @@ class Simulator:
             "admitted": True, "protected": report["protected"], "action_id": report["action"].id,
             "batch_id": report["batch_id"], "batch_deadline_s": report["expiry_s"],
             "delay_s": self.now - report["generated_s"] if accepted else None,
-            "failure_reasons": dict(report["failure_reasons"])})
+            "failure_reasons": dict(report["failure_reasons"]),
+            "modeled_verification_enabled": self.method != "without_hve",
+            "modeled_validity_check_applied": self.method != "without_hve" and
+                status in {"delivered_valid", "integrity_rejected"}})
 
     def start_repair(self, gateway):
         if self.repair_inflight[gateway] or self.now >= self.alternate_ready[gateway]:
@@ -559,7 +568,8 @@ class Simulator:
         rid = f"repair/g{gateway}/r{self.repair_sequence[gateway]}"
         count = self.c["repair_control_messages"]
         self.repair_rounds[rid] = {"remaining": count, "failed": False,
-                                  "ready_s": self.now + self.c["repair_latency_s"]}
+                                  "ready_s": self.now + self.c["repair_latency_s"],
+                                  "terminal_status": None}
         self.log("repair_started", gateway=gateway, round=rid, messages=count,
                  earliest_ready_s=self.now + self.c["repair_latency_s"])
         for m in range(count):
@@ -570,6 +580,7 @@ class Simulator:
     def finish_repair(self, gateway, rid):
         self.alternate_ready[gateway] = self.now
         self.repair_inflight[gateway] = False
+        self.repair_rounds[rid]["terminal_status"] = "completed"
         self.log("repair_completed", gateway=gateway, round=rid)
 
     def control_epoch(self, initial=False):
@@ -584,13 +595,17 @@ class Simulator:
         telemetry = (queue, observed_loss, mean_delay, failure_fraction,
                      min(1.0, queue + failure_fraction), float(w["tamper_detected"] > 0), w["noise_proxy_max"])
         decision = self.policy.choose(telemetry, initial=initial)
+        repair_selected = self.policy.current is not None and self.policy.current.repair > 0
         row = {"time_s": self.now, "observation_start_s": self.previous_cutoff,
                "observation_cutoff_s": self.now, "completed_reports": w["completed"],
                "accepted_reports": w["accepted"], "admitted_reports": w["admitted"],
                "skipped_opportunities": w["skipped"], "transmission_attempts": w["attempts"],
                "failed_attempts": w["failed_attempts"], "queue_bytes_max": max(active_bytes, default=0),
                "queue_bytes_total": sum(active_bytes), "delay_sum_s": sum(w["delays"]),
-               "tamper_detections": w["tamper_detected"], **decision}
+               "tamper_detections": w["tamper_detected"],
+               "repair_selected": repair_selected,
+               "repair_enabled": repair_selected and self.method != "without_route_repair",
+               **decision}
         self.emit(self.epochs_log, row)
         self.epoch_rows.append(row)
         self.authorize_window()
@@ -632,12 +647,31 @@ class Simulator:
         counts = {"reports": dict(self.report_count), "packets": dict(self.packet_count),
                   "attempt_outcomes": dict(self.attempt_count), "wire_bytes": self.wire_bytes,
                   "modeled_cpu_energy_j": self.cpu_energy, "modeled_radio_tx_energy_j": self.tx_energy}
+        # These diagnostic counters do not enter controller telemetry or scheduling.
+        counts["unique_frames"] = {
+            "offered": len(self.frames), "delivered": self.packet_count["received"],
+            "lost": sum(count for status, count in self.packet_count.items()
+                        if status not in {"received", "administratively_censored"}),
+            "unresolved": self.packet_count["administratively_censored"],
+        }
+        counts["repair_activity"] = {
+            "selected_control_epochs": sum(row["repair_selected"] for row in self.epoch_rows),
+            "enabled_control_epochs": sum(row["repair_enabled"] for row in self.epoch_rows),
+            "actuations_started": len(self.repair_rounds),
+            "actuations_completed": sum(state["terminal_status"] == "completed"
+                                       for state in self.repair_rounds.values()),
+            "actuations_failed": sum(state["terminal_status"] == "failed"
+                                    for state in self.repair_rounds.values()),
+            "actuations_unresolved": sum(state["terminal_status"] is None
+                                        for state in self.repair_rounds.values()),
+        }
         manifest = {"schema_version": 1, "status": STATUS, "seed": self.seed, "method": self.method,
                     "config_digest": digest(self.c), "controller_sha256": file_hash(self.controller_path),
                     "exogenous_digest": self.exogenous_manifest["exogenous_digest"],
                     "raw_files": raw, "runtime_counts": counts,
                     "stop_time_s": horizon, "all_decisions_certified": False,
                     "protocol_model_version": 2,
+                    "ablation_instrumentation_version": 1,
                     "label": "independent fixed-preauthorized-roster closed-loop synthetic packet experiment, not original OMNeT++/INET"}
         write_json(self.output / "manifest.json", manifest)
         from .audit import recompute_run
