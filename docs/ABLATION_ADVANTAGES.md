@@ -1,7 +1,9 @@
 # Ablation figure and calculations
 
-The four panels use the fixed rank-6 parameters and the 20 paired seed records
-in evidence/independent/campaign-report.
+The four panels are arranged horizontally and use the fixed rank-6 parameters
+and the 20 paired seed records in evidence/independent/campaign-report.
+DA denotes DA-AHE; Fixed is the without-Markov policy; -C, -R and -V remove
+IntDb2, route repair and HVE, respectively.
 
 | Panel | Quantity | DA-AHE | Comparison |
 |---|---|---:|---:|
@@ -9,6 +11,10 @@ in evidence/independent/campaign-report.
 | (b) | Protected ciphertext payload (bytes) | 7,168 | Raw two-polynomial: 14,336 |
 | (c) | Valid delivery / source opportunity (%) | 35.571667 | Without IntDb2: 33.395000 |
 | (d) | Modeled invalid acceptance / admitted (%) | 0.000000 | Without HVE: 2.086961 |
+
+## Component contributions
+
+DA-AHE lowers mean per-seed CPU energy per valid report from 1.037 to 0.772 mJ relative to the fixed nominal policy, a 25.59% reduction (95% paired-bootstrap CI: 24.22% to 26.95%). At the same cryptographic parameter tuple, one-polynomial packing halves the protected ciphertext payload from 14,336 to 7,168 bytes. The IntDb2-enabled configuration improves valid delivery by 2.18 percentage points over the variant without IntDb2 (95% CI: 1.77 to 2.61), while HVE reduces modeled invalid acceptance from 2.09% to zero. These complementary results support the integration of admission control, compact protected representation and aggregate verification. The fixed policy nevertheless delivers 44.01% of source opportunities versus 35.57% for DA-AHE, reflecting a service-cost tradeoff. Policy comparisons include different admission behavior and do not isolate HMM gains. The route-repair ablation has identical archived outcomes, and all 140 recovery observations are right-censored, so these records do not establish a recovery-time advantage. The payload reduction excludes tickets, MACs, headers and retransmissions, and invalid acceptance uses the service model's injected invalidity labels.
 
 ## CPU normalization and paired uncertainty
 
@@ -47,6 +53,10 @@ invalidity labels from the service model. DA-AHE and Without route repair have
 identical archived outcomes. All 140 recovery records are right-censored at
 125 seconds, so the figure contains no recovery-time ranking.
 
+## Figure caption
+
+Fig. 6. DA-AHE component contributions at 3,000 source nodes. (a) Modeled CPU cost per valid report, normalized within each seed; (b) protected ciphertext payload for raw two-polynomial and packed one-polynomial representations at fixed rank 6, ring degree 256 and q = 2^32; (c) valid delivery per source opportunity; (d) modeled invalid acceptance per admitted report. Bars in (a), (c) and (d) show equally weighted means over 20 paired seeds; error bars are pointwise 95% percentile-bootstrap intervals from 100,000 shared seed resamples. Panel (b) is exact payload accounting and excludes tickets, MACs, headers and retransmissions. Fixed nominal is the without-Markov policy; its admission rate differs from DA-AHE, so panel (a) compares complete policies. Route-repair and full DA-AHE outcomes coincide in this archive. All recovery records are right-censored; no recovery-time ranking is shown. Modeled invalid acceptance does not estimate a cryptographic forgery probability.
+
 ## Export
 
 ~~~bash
@@ -58,5 +68,5 @@ python tools/plot_ablation_advantages.py \
 ~~~
 
 The output prefix supplies vector PDF/SVG, a 300-dpi PNG, numerical JSON and
-a text caption. The figure is available at
+a text caption and results paragraph. The figure is available at
 [revised-ablationA.pdf](manuscript/figures/revised-ablationA.pdf).

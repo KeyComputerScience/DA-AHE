@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+from decimal import Decimal, ROUND_HALF_UP
 import hashlib
 import json
 from pathlib import Path
@@ -16,8 +17,7 @@ from matplotlib.ticker import MultipleLocator
 
 METHODS = ("da-ahe", "without_markov", "without_intdb2",
            "without_route_repair", "without_hve")
-LABELS = ("DA-AHE", "Fixed\nnominal", "w/o\nIntDb2",
-          "w/o route\nrepair", "w/o HVE")
+LABELS = ("DA", "Fixed", "-C", "-R", "-V")
 RED = "#b51f39"
 GRAY = "#a6a6a6"
 
@@ -134,11 +134,18 @@ def bars(ax, summary, metric, limit, step, decimals):
             ax.plot(i, 0, "o", ms=3.5, markeredgewidth=.8,
                     markerfacecolor="white", markeredgecolor=colors[i],
                     clip_on=False, zorder=5)
-        ax.text(i, max(values[i], high) + limit * .025, f"{values[i]:.{decimals}f}",
-                ha="center", va="bottom", fontsize=8,
+        displayed = Decimal(f"{values[i]:.9f}").quantize(
+            Decimal(1).scaleb(-decimals), rounding=ROUND_HALF_UP)
+        number = str(displayed)
+        if values[i] == 0:
+            number = "0"
+        if metric == "cpu_mj_per_valid_report" and number.startswith("0."):
+            number = number[1:]
+        ax.text(i, max(values[i], high) + limit * .025, number,
+                ha="center", va="bottom", fontsize=8.8,
                 color=RED if i == 0 else "#222222",
                 fontweight="bold" if i == 0 else "normal")
-    ax.set_xticks(x, LABELS, fontsize=7.2)
+    ax.set_xticks(x, LABELS, fontsize=8.8)
     ax.set_ylim(0, limit)
     ax.yaxis.set_major_locator(MultipleLocator(step))
     ax.grid(axis="y", color="#dedede", linewidth=.55, zorder=0)
@@ -148,24 +155,24 @@ def bars(ax, summary, metric, limit, step, decimals):
 
 def plot(summary, output):
     plt.rcParams.update({
-        "font.family": "DejaVu Serif", "font.size": 8.5,
-        "axes.labelsize": 8.5, "axes.titlesize": 9.3,
-        "xtick.labelsize": 7.5, "ytick.labelsize": 7.5,
+        "font.family": "DejaVu Serif", "font.size": 9.2,
+        "axes.labelsize": 9.2, "axes.titlesize": 10.0,
+        "xtick.labelsize": 8.5, "ytick.labelsize": 8.5,
         "axes.spines.top": False, "axes.spines.right": False,
         "axes.linewidth": .65, "pdf.fonttype": 42, "ps.fonttype": 42,
         "mathtext.fontset": "dejavuserif",
     })
-    fig, axes = plt.subplots(2, 2, figsize=(7.16, 4.65))
-    fig.subplots_adjust(left=.083, right=.985, bottom=.105, top=.935,
-                        wspace=.28, hspace=.65)
+    fig, axes = plt.subplots(1, 4, figsize=(9.2, 3.0))
+    fig.subplots_adjust(left=.065, right=.988, bottom=.26, top=.83,
+                        wspace=.49)
     a, b, c, d = axes.flat
-    bars(a, summary, "cpu_mj_per_valid_report", 1.4, .3, 3)
-    a.set_title("(a) Adaptive policy: service efficiency", fontweight="bold", pad=9)
-    a.set_ylabel("Modeled CPU cost /\nvalid report (mJ)")
+    bars(a, summary, "cpu_mj_per_valid_report", 1.6, .4, 3)
+    a.set_title("(a) CPU cost", fontweight="bold", pad=10)
+    a.set_ylabel("Modeled CPU / valid report (mJ)")
     reduction = summary["advantages"]["cpu_reduction_vs_fixed_percent"]["mean"]
-    a.text(.5, .94, f"{reduction:.1f}% lower than fixed nominal",
+    a.text(.5, .95, f"{reduction:.1f}% lower CPU\nthan fixed nominal",
            transform=a.transAxes, ha="center", va="top", color=RED,
-           fontweight="bold", fontsize=8.3)
+           fontweight="bold", fontsize=8.8)
 
     packing = summary["packing"]
     payload = [packing["raw_ciphertext_bytes"] / 1024,
@@ -174,33 +181,36 @@ def plot(summary, output):
           edgecolor="#333333", linewidth=.55, zorder=3)
     for i, value in enumerate(payload):
         b.text(i, value + .35, f"{value:.0f} KiB",
-               ha="center", fontsize=8, fontweight="bold" if i else "normal",
+               ha="center", fontsize=9.0, fontweight="bold" if i else "normal",
                color=RED if i else "#222222")
-    b.set_xticks([0, 1], ["Raw\n2 polynomials", "DA-AHE packing\n1 polynomial"])
-    b.set_ylim(0, 19)
-    b.yaxis.set_major_locator(MultipleLocator(4))
-    b.set_ylabel("Protected ciphertext\npayload (KiB)")
+    b.set_xticks([0, 1], ["Raw\n2 polys", "DA-AHE\n1 poly"])
+    b.set_ylim(0, 22)
+    b.yaxis.set_major_locator(MultipleLocator(5))
+    b.set_ylabel("Protected payload (KiB)")
     b.grid(axis="y", color="#dedede", linewidth=.55, zorder=0)
     b.set_axisbelow(True)
-    b.set_title("(b) Profile-bound data-and-tag packing", fontweight="bold", pad=9)
-    b.text(.5, .94, "50% smaller protected payload",
+    b.set_title("(b) Payload packing", fontweight="bold", pad=10)
+    b.text(.5, .95, "50% smaller\nprotected payload",
            transform=b.transAxes, ha="center", va="top", color=RED,
-           fontweight="bold", fontsize=8.3)
+           fontweight="bold", fontsize=8.8)
 
-    bars(c, summary, "valid_delivery_percent", 59, 10, 3)
-    c.set_title("(c) Useful service retained", fontweight="bold", pad=9)
-    c.set_ylabel("Valid deliveries /\nsource opportunities (%)")
+    bars(c, summary, "valid_delivery_percent", 70, 20, 1)
+    c.set_title("(c) Valid delivery", fontweight="bold", pad=10)
+    c.set_ylabel("Valid / opportunities (%)")
     gain = summary["advantages"]["delivery_gain_vs_without_intdb2_pp"]["mean"]
-    c.text(.5, .94, f"+{gain:.2f} pp versus w/o IntDb2",
+    c.text(.5, .95, f"+{gain:.2f} pp delivery\nversus w/o IntDb2",
            transform=c.transAxes, ha="center", va="top", color=RED,
-           fontweight="bold", fontsize=8.3)
+           fontweight="bold", fontsize=8.8)
 
-    bars(d, summary, "invalid_acceptance_percent", 3.0, .5, 3)
-    d.set_title("(d) Sink-side aggregate verification", fontweight="bold", pad=9)
-    d.set_ylabel("Invalid accepted /\nadmitted reports (%)")
-    d.text(.5, .94, "0% modeled invalid acceptance for DA-AHE",
+    bars(d, summary, "invalid_acceptance_percent", 4, 1.0, 2)
+    d.set_title("(d) Invalid acceptance", fontweight="bold", fontsize=9.2, pad=10)
+    d.set_ylabel("Invalid accepted / admitted (%)")
+    d.text(.5, .95, "0% modeled\ninvalid acceptance",
            transform=d.transAxes, ha="center", va="top", color=RED,
-           fontweight="bold", fontsize=8.0)
+           fontweight="bold", fontsize=8.8)
+    fig.text(.52, .045,
+             "DA: DA-AHE    Fixed: without Markov    -C: without IntDb2    -R: without route repair    -V: without HVE",
+             ha="center", va="bottom", fontsize=8.6)
     fig.savefig(str(output) + ".pdf", metadata={"Title": "DA-AHE ablation and packing",
                                               "CreationDate": None, "ModDate": None})
     fig.savefig(str(output) + ".svg", metadata={"Date": None})
@@ -210,10 +220,10 @@ def plot(summary, output):
 
 def caption(summary):
     return (
-        "DA-AHE component contributions at 3,000 source nodes. "
+        "Fig. 6. DA-AHE component contributions at 3,000 source nodes. "
         "(a) Modeled CPU cost per valid report, normalized within each seed; "
         "(b) protected ciphertext payload for raw two-polynomial and packed "
-        "one-polynomial representations at fixed rank 6; "
+        "one-polynomial representations at fixed rank 6, ring degree 256 and q = 2^32; "
         "(c) valid delivery per source opportunity; "
         "(d) modeled invalid acceptance per admitted report. "
         f"Bars in (a), (c) and (d) show equally weighted means over {len(summary['seeds'])} "
@@ -228,12 +238,43 @@ def caption(summary):
     )
 
 
+def explanation(summary):
+    stats = summary["statistics"]
+    cpu = summary["advantages"]["cpu_reduction_vs_fixed_percent"]
+    gain = summary["advantages"]["delivery_gain_vs_without_intdb2_pp"]
+    da_cpu = stats["da-ahe"]["cpu_mj_per_valid_report"]["mean"]
+    fixed_cpu = stats["without_markov"]["cpu_mj_per_valid_report"]["mean"]
+    da_delivery = stats["da-ahe"]["valid_delivery_percent"]["mean"]
+    fixed_delivery = stats["without_markov"]["valid_delivery_percent"]["mean"]
+    invalid = stats["without_hve"]["invalid_acceptance_percent"]["mean"]
+    return (
+        f"DA-AHE lowers mean per-seed CPU energy per valid report from {fixed_cpu:.3f} "
+        f"to {da_cpu:.3f} mJ relative to the fixed nominal policy, a {cpu['mean']:.2f}% "
+        f"reduction (95% paired-bootstrap CI: {cpu['ci95'][0]:.2f}% to {cpu['ci95'][1]:.2f}%). "
+        "At the same cryptographic parameter tuple, one-polynomial packing halves the "
+        "protected ciphertext payload from 14,336 to 7,168 bytes. "
+        f"The IntDb2-enabled configuration improves valid delivery by {gain['mean']:.2f} "
+        f"percentage points over the variant without IntDb2 (95% CI: "
+        f"{gain['ci95'][0]:.2f} to {gain['ci95'][1]:.2f}), while HVE reduces modeled invalid "
+        f"acceptance from {invalid:.2f}% to zero. These complementary results support the "
+        "integration of admission control, compact protected representation and aggregate "
+        "verification. The fixed policy nevertheless delivers "
+        f"{fixed_delivery:.2f}% of source opportunities versus {da_delivery:.2f}% for DA-AHE, "
+        "reflecting a service-cost tradeoff. Policy comparisons include different admission "
+        "behavior and do not isolate HMM gains. The route-repair ablation has identical "
+        f"archived outcomes, and all {summary['recovery']['total']} recovery observations "
+        "are right-censored, so these records do not establish a recovery-time advantage. "
+        "The payload reduction excludes tickets, MACs, headers and retransmissions, and "
+        "invalid acceptance uses the service model's injected invalidity labels."
+    )
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--csv", type=Path, required=True)
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True,
-                        help="Output prefix for PDF, SVG, PNG, JSON and caption")
+                        help="Output prefix for PDF, SVG, PNG, JSON, caption and explanation")
     parser.add_argument("--resamples", type=int, default=100000)
     parser.add_argument("--seed", type=int, default=20261017)
     args = parser.parse_args()
@@ -244,6 +285,8 @@ def main():
         json.dumps(summary, indent=2, allow_nan=False) + "\n")
     text = caption(summary)
     Path(str(args.output) + "-caption.txt").write_text(text + "\n")
+    Path(str(args.output) + "-explanation.txt").write_text(
+        "Figure caption\n\n" + text + "\n\nResults paragraph\n\n" + explanation(summary) + "\n")
 
 
 if __name__ == "__main__":
