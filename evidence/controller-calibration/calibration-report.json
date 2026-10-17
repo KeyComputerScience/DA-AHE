@@ -1,0 +1,3573 @@
+{
+  "base_seed_split": {
+    "evaluation": [
+      22000,
+      22001
+    ],
+    "holdout": [
+      21000,
+      21001
+    ],
+    "training": [
+      20000,
+      20001,
+      20002
+    ]
+  },
+  "calibration_complete": true,
+  "causal_hmm_case_predictions": [
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.5195812602609554,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          4,
+          0,
+          13,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.8260762652231367,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": 0.15836493193394408,
+          "mae": 1.0118316700083712,
+          "max_absolute": 2.753588482806541,
+          "n": 18,
+          "rmse": 1.2399733187440871
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.2950158452646696e-05,
+          "mae": 2.3917204590107278e-05,
+          "max_absolute": 7.84483236567287e-05,
+          "n": 18,
+          "rmse": 3.0479492870049607e-05
+        },
+        "noise_proxy": {
+          "bias": 0.013522579863450172,
+          "mae": 0.028953770357648494,
+          "max_absolute": 0.10960411308415641,
+          "n": 18,
+          "rmse": 0.042435267163877445
+        },
+        "signal_probe_relative_l2": {
+          "bias": -3.8458809155858456e-05,
+          "mae": 0.0001699909693574517,
+          "max_absolute": 0.0003627389079166486,
+          "n": 18,
+          "rmse": 0.00020223347183339634
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 73.05619367658448,
+        "mae": 73.05619367658448,
+        "max_absolute": 215.3822062065247,
+        "n": 18,
+        "rmse": 94.28785209870244
+      },
+      "prediction_sha256": "893e1b21d87e99fb9c9766c31a82a3d8427a64ab7e0d9da6fdf05142fb3171c3",
+      "scenario": "normal",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 1.0188682219495546,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          3,
+          1,
+          13,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 2.1736369747341495,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -1.0817900665009972,
+          "mae": 8.130256197319136,
+          "max_absolute": 25.750897310007815,
+          "n": 18,
+          "rmse": 11.466324416703937
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": 4.1632151699843575e-05,
+          "mae": 4.325757264311845e-05,
+          "max_absolute": 0.0002793755737125685,
+          "n": 18,
+          "rmse": 7.451623096488482e-05
+        },
+        "noise_proxy": {
+          "bias": 0.026546975535660225,
+          "mae": 0.03231472969121384,
+          "max_absolute": 0.13169686894440133,
+          "n": 18,
+          "rmse": 0.04640460546623676
+        },
+        "signal_probe_relative_l2": {
+          "bias": 8.484524516547736e-05,
+          "mae": 0.00025735844077371496,
+          "max_absolute": 0.000575305975099881,
+          "n": 18,
+          "rmse": 0.00031667447435567987
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 156.60442339953545,
+        "mae": 156.60442339953545,
+        "max_absolute": 254.87408021833093,
+        "n": 18,
+        "rmse": 164.74812840230862
+      },
+      "prediction_sha256": "e6e6395cb6c7b5b6dfec20c6212ea10307947d4a7245f647361d4051de79cb53",
+      "scenario": "congestion",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.5799857691510838,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          3,
+          0,
+          10,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.9874679362815196,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.0038130724942991487,
+          "mae": 0.7995854474369286,
+          "max_absolute": 1.409548432943489,
+          "n": 18,
+          "rmse": 0.8954167458288051
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -9.132491830440293e-06,
+          "mae": 2.1162379466403814e-05,
+          "max_absolute": 5.575056540642001e-05,
+          "n": 18,
+          "rmse": 2.752821400836942e-05
+        },
+        "noise_proxy": {
+          "bias": 0.002102188404997813,
+          "mae": 0.01890963062639879,
+          "max_absolute": 0.044637584151286935,
+          "n": 18,
+          "rmse": 0.02277516769598845
+        },
+        "signal_probe_relative_l2": {
+          "bias": -0.00010313984310881184,
+          "mae": 0.0002569175962734629,
+          "max_absolute": 0.0008594159482635433,
+          "n": 18,
+          "rmse": 0.0003225784735033641
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 87.19356144818423,
+        "mae": 87.19356144818423,
+        "max_absolute": 156.55591078959205,
+        "n": 18,
+        "rmse": 97.97607310492269
+      },
+      "prediction_sha256": "33b4505757a89a7a3cf8f1eaf0442e89480431617b653e3a57c42e31a3bae963",
+      "scenario": "local_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.6446501986167467,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          2,
+          0,
+          9,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.2050636755984243,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": 0.05902059023525411,
+          "mae": 1.7377126394231817,
+          "max_absolute": 6.93356074994343,
+          "n": 18,
+          "rmse": 2.5470473138416225
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.0223987750070816e-05,
+          "mae": 3.617667352324831e-05,
+          "max_absolute": 0.00010011414485689685,
+          "n": 18,
+          "rmse": 4.6211203321120575e-05
+        },
+        "noise_proxy": {
+          "bias": 0.00041098348939566073,
+          "mae": 0.03177814340266508,
+          "max_absolute": 0.10960411308415641,
+          "n": 18,
+          "rmse": 0.042958916174086884
+        },
+        "signal_probe_relative_l2": {
+          "bias": -5.8775255883976984e-05,
+          "mae": 0.000166567132808027,
+          "max_absolute": 0.0005342472595940687,
+          "n": 18,
+          "rmse": 0.00021817412254238603
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 109.6367606938564,
+        "mae": 109.6367606938564,
+        "max_absolute": 409.6320903465459,
+        "n": 18,
+        "rmse": 142.75309110057947
+      },
+      "prediction_sha256": "4feab4d2959e975a340677700b062f05763d9d3c86a2c274a778e8b3c35e5afb",
+      "scenario": "global_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.7290379573650849,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          3,
+          0,
+          7,
+          3,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.5131069989327726,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.46066368421195986,
+          "mae": 2.4766327251316302,
+          "max_absolute": 6.998742896716527,
+          "n": 18,
+          "rmse": 3.1038437273670803
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -2.3164369667657037e-05,
+          "mae": 3.9518684970830466e-05,
+          "max_absolute": 0.0002214400502894771,
+          "n": 18,
+          "rmse": 6.279407016102618e-05
+        },
+        "noise_proxy": {
+          "bias": 0.011257010944139606,
+          "mae": 0.03562812670261246,
+          "max_absolute": 0.12083500599419333,
+          "n": 18,
+          "rmse": 0.049611684488720074
+        },
+        "signal_probe_relative_l2": {
+          "bias": -5.543009005522096e-05,
+          "mae": 0.0002847617209740992,
+          "max_absolute": 0.000765392431462297,
+          "n": 18,
+          "rmse": 0.0003599700908489211
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 100.34619070758687,
+        "mae": 100.34619070758687,
+        "max_absolute": 329.93252108844644,
+        "n": 18,
+        "rmse": 124.17917860799066
+      },
+      "prediction_sha256": "334250afa750fa9fb3b335ee7c6b069e8b35d5ce54e5191f1c7aa846a9b7042e",
+      "scenario": "severe_loss",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.4849016890150881,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          5,
+          0,
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.7699703558885445,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.7350386506810906,
+          "mae": 1.0200371828020087,
+          "max_absolute": 3.0023732332278303,
+          "n": 18,
+          "rmse": 1.3601049078734848
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.868155477349041e-05,
+          "mae": 2.606366891140024e-05,
+          "max_absolute": 7.13711495449098e-05,
+          "n": 18,
+          "rmse": 3.3342402308562115e-05
+        },
+        "noise_proxy": {
+          "bias": -0.006038715450074897,
+          "mae": 0.026719879826784147,
+          "max_absolute": 0.07411353971402762,
+          "n": 18,
+          "rmse": 0.03336787988072055
+        },
+        "signal_probe_relative_l2": {
+          "bias": -3.6738958501424985e-05,
+          "mae": 0.00031499081936920483,
+          "max_absolute": 0.0010903410105245997,
+          "n": 18,
+          "rmse": 0.0004159982680478251
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 62.37465063690013,
+        "mae": 62.37465063690013,
+        "max_absolute": 145.04839939791438,
+        "n": 18,
+        "rmse": 72.84747232788149
+      },
+      "prediction_sha256": "3b2bb9d0bde9a493176e8964a971cdcb2e83661d43d75dea6f18a6fe9e917801",
+      "scenario": "normal",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.8896322548099993,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          5,
+          1,
+          11,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.9219860715566424,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -4.874000632221939,
+          "mae": 8.567636132451122,
+          "max_absolute": 25.760971037597724,
+          "n": 18,
+          "rmse": 11.785553875547425
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": 3.8081351439540206e-05,
+          "mae": 4.310215494571432e-05,
+          "max_absolute": 0.00027470824877406957,
+          "n": 18,
+          "rmse": 7.44810254331689e-05
+        },
+        "noise_proxy": {
+          "bias": 0.022151525256996377,
+          "mae": 0.03728175696523897,
+          "max_absolute": 0.13169968384944983,
+          "n": 18,
+          "rmse": 0.046179055033795824
+        },
+        "signal_probe_relative_l2": {
+          "bias": -2.106169462660961e-05,
+          "mae": 0.00025613816775524486,
+          "max_absolute": 0.0007377652797344479,
+          "n": 18,
+          "rmse": 0.0003118586483117511
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 140.5621062017443,
+        "mae": 140.5621062017443,
+        "max_absolute": 245.93008188156747,
+        "n": 18,
+        "rmse": 149.31791958457987
+      },
+      "prediction_sha256": "3ae62570c202b0367df075821fd76ba237e6214fdf83ec689b844797aafc35df",
+      "scenario": "congestion",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.41034869565674603,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          6,
+          0,
+          8,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.6777168277648412,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.2182085847650188,
+          "mae": 0.601368562772563,
+          "max_absolute": 1.6513384015576706,
+          "n": 18,
+          "rmse": 0.7885437250904381
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.854007941015186e-05,
+          "mae": 2.262050782913881e-05,
+          "max_absolute": 4.583021502167534e-05,
+          "n": 18,
+          "rmse": 2.677411156460359e-05
+        },
+        "noise_proxy": {
+          "bias": -5.072612720175778e-06,
+          "mae": 0.01593395756468133,
+          "max_absolute": 0.06903199562478202,
+          "n": 18,
+          "rmse": 0.022505329242248545
+        },
+        "signal_probe_relative_l2": {
+          "bias": 1.822664892944443e-05,
+          "mae": 0.00024240453842407637,
+          "max_absolute": 0.000721449168558316,
+          "n": 18,
+          "rmse": 0.00030333925105751036
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 70.75460494259194,
+        "mae": 70.75460494259194,
+        "max_absolute": 195.91720055839525,
+        "n": 18,
+        "rmse": 84.80116505032463
+      },
+      "prediction_sha256": "7be4a2b6767526b677d67aeb9c57e347e9343c03050e37fb51a11bf6117d14ab",
+      "scenario": "local_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.5699426217422792,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          4,
+          0,
+          7,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.1139106826835117,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.6283937695310985,
+          "mae": 1.8590553225360753,
+          "max_absolute": 5.0835692816713856,
+          "n": 18,
+          "rmse": 2.3800698880882267
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.5187597916337302e-05,
+          "mae": 3.242529591463373e-05,
+          "max_absolute": 9.969449236117326e-05,
+          "n": 18,
+          "rmse": 4.566501924139012e-05
+        },
+        "noise_proxy": {
+          "bias": -0.0038574405758010234,
+          "mae": 0.029906957500968025,
+          "max_absolute": 0.062151856588255616,
+          "n": 18,
+          "rmse": 0.03420318497042535
+        },
+        "signal_probe_relative_l2": {
+          "bias": 2.5203102270366555e-06,
+          "mae": 0.00023419654929313888,
+          "max_absolute": 0.0010581234719838277,
+          "n": 18,
+          "rmse": 0.0003382452885955814
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 107.86057075159437,
+        "mae": 107.86057075159437,
+        "max_absolute": 307.3962020195556,
+        "n": 18,
+        "rmse": 126.20611248753667
+      },
+      "prediction_sha256": "f4d2d4713183339b9d3dcbdbdc08730ed7ba1d50151a9079b714c3280e6537e8",
+      "scenario": "global_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.746118903024607,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          4,
+          0,
+          5,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          2,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.5483920782188934,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.7669749999085163,
+          "mae": 2.6225353696402203,
+          "max_absolute": 5.647324670577901,
+          "n": 18,
+          "rmse": 3.1601358233460584
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -2.6222737809207888e-05,
+          "mae": 4.503726686921067e-05,
+          "max_absolute": 0.0001562864836538559,
+          "n": 18,
+          "rmse": 6.01192115287635e-05
+        },
+        "noise_proxy": {
+          "bias": 0.014152324917881046,
+          "mae": 0.04103198417657265,
+          "max_absolute": 0.1309179147756705,
+          "n": 18,
+          "rmse": 0.05210632845528344
+        },
+        "signal_probe_relative_l2": {
+          "bias": 1.7674204534483355e-05,
+          "mae": 0.0002886895641455761,
+          "max_absolute": 0.0009332128336292894,
+          "n": 18,
+          "rmse": 0.00036259402541151826
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 107.58397360625631,
+        "mae": 107.58397360625631,
+        "max_absolute": 374.7328761197009,
+        "n": 18,
+        "rmse": 133.93861427024152
+      },
+      "prediction_sha256": "b4a8bdabec97d714ba1f32085ad8f8dcf935fdfe8ae3183ccc372c98d1acdaf3",
+      "scenario": "severe_loss",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.5019387045553294,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          5,
+          0,
+          10,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.802316092368955,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": 0.08948287565607305,
+          "mae": 0.8693882639393804,
+          "max_absolute": 2.7280869896617315,
+          "n": 18,
+          "rmse": 1.1771453999199089
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.1762289804969092e-05,
+          "mae": 3.0864123989884354e-05,
+          "max_absolute": 9.971673025110163e-05,
+          "n": 18,
+          "rmse": 3.89126629428143e-05
+        },
+        "noise_proxy": {
+          "bias": 0.01432352095155557,
+          "mae": 0.023411007870963157,
+          "max_absolute": 0.06373246364876733,
+          "n": 18,
+          "rmse": 0.02903962783503594
+        },
+        "signal_probe_relative_l2": {
+          "bias": -3.10764574653519e-05,
+          "mae": 0.00027181514499081613,
+          "max_absolute": 0.0008257543636426756,
+          "n": 18,
+          "rmse": 0.0003426814209539623
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 96.19539440418733,
+        "mae": 96.19539440418733,
+        "max_absolute": 253.41257651579733,
+        "n": 18,
+        "rmse": 118.54609324907089
+      },
+      "prediction_sha256": "dc7d278485db247b1fc301e8f710d4120fe157d8bc0e6fcd8424ad7c96fc6ee2",
+      "scenario": "normal",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20002
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 1.0928511759142752,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          14,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 2.3271605888489195,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.9420771833624124,
+          "mae": 6.706132252902217,
+          "max_absolute": 25.849971346933454,
+          "n": 18,
+          "rmse": 9.973829326480894
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": 5.194855001792096e-05,
+          "mae": 5.2477928408694445e-05,
+          "max_absolute": 0.0002718080071301885,
+          "n": 18,
+          "rmse": 9.14600554780533e-05
+        },
+        "noise_proxy": {
+          "bias": 0.009626462408485767,
+          "mae": 0.03641892103540527,
+          "max_absolute": 0.120036869342243,
+          "n": 18,
+          "rmse": 0.04617926042763182
+        },
+        "signal_probe_relative_l2": {
+          "bias": -8.738168524559762e-05,
+          "mae": 0.000223501231001615,
+          "max_absolute": 0.0006392845797983313,
+          "n": 18,
+          "rmse": 0.00026900888960852936
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 157.60127096648492,
+        "mae": 157.60127096648492,
+        "max_absolute": 325.6807348381985,
+        "n": 18,
+        "rmse": 171.81039351861742
+      },
+      "prediction_sha256": "3f3ab5318b7b0af3c888277513112626d86e1ed35644c54324a1b637a8758f8d",
+      "scenario": "congestion",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20002
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.49555052244031583,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          3,
+          0,
+          10,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.8076743272889854,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": 0.20673858917571555,
+          "mae": 0.6305366699174848,
+          "max_absolute": 1.5442273624348317,
+          "n": 18,
+          "rmse": 0.7778271446575411
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.2411421152159207e-05,
+          "mae": 2.0232010398517563e-05,
+          "max_absolute": 5.0839375699398626e-05,
+          "n": 18,
+          "rmse": 2.4308951812523585e-05
+        },
+        "noise_proxy": {
+          "bias": 0.010990312102573221,
+          "mae": 0.023467426801047603,
+          "max_absolute": 0.10471009603430043,
+          "n": 18,
+          "rmse": 0.03676820952474107
+        },
+        "signal_probe_relative_l2": {
+          "bias": -9.025296644533942e-05,
+          "mae": 0.0002466202340661116,
+          "max_absolute": 0.0006034540432192197,
+          "n": 18,
+          "rmse": 0.0003153006639904147
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 81.0180074807013,
+        "mae": 81.0180074807013,
+        "max_absolute": 196.919611218191,
+        "n": 18,
+        "rmse": 96.25817192012369
+      },
+      "prediction_sha256": "72d79ba4bf914f3c4fa43d1308847197d76e543f9e6080fdfc44f7afbada20bf",
+      "scenario": "local_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20002
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.5650334900788411,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          3,
+          0,
+          7,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.9921804472036998,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": 0.14255203712508088,
+          "mae": 1.6416612964219675,
+          "max_absolute": 3.4420533721525692,
+          "n": 18,
+          "rmse": 2.0091827357872307
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -4.919610963896291e-06,
+          "mae": 3.753314694039001e-05,
+          "max_absolute": 9.971673025110163e-05,
+          "n": 18,
+          "rmse": 4.5855218495338745e-05
+        },
+        "noise_proxy": {
+          "bias": 0.012388774135139493,
+          "mae": 0.03283289498928524,
+          "max_absolute": 0.10913815281695871,
+          "n": 18,
+          "rmse": 0.04310757956888063
+        },
+        "signal_probe_relative_l2": {
+          "bias": 1.5549868917822625e-05,
+          "mae": 0.00021749813013069026,
+          "max_absolute": 0.0007431595375513621,
+          "n": 18,
+          "rmse": 0.00028716520780759153
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 136.82719711182952,
+        "mae": 136.82719711182952,
+        "max_absolute": 333.7278301829336,
+        "n": 18,
+        "rmse": 158.3640444550623
+      },
+      "prediction_sha256": "3a351e7e7f134f02b0c8b40adc6143d208322355150504b1455d50c6a3cdfe70",
+      "scenario": "global_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20002
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.7502533157381649,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          2,
+          0,
+          8,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.544761267243766,
+      "partition": "training",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.8275645852784747,
+          "mae": 2.1991702964430377,
+          "max_absolute": 5.915546664131286,
+          "n": 18,
+          "rmse": 2.659773080977876
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -2.3819433992383545e-05,
+          "mae": 4.449199873235152e-05,
+          "max_absolute": 0.0001821531494297353,
+          "n": 18,
+          "rmse": 6.025437918422316e-05
+        },
+        "noise_proxy": {
+          "bias": 0.013773296789089848,
+          "mae": 0.04537781786135565,
+          "max_absolute": 0.10826768790607537,
+          "n": 18,
+          "rmse": 0.05292814413437102
+        },
+        "signal_probe_relative_l2": {
+          "bias": -4.6853102711882206e-05,
+          "mae": 0.00022585012665671386,
+          "max_absolute": 0.0009280512006480126,
+          "n": 18,
+          "rmse": 0.00034526722134854606
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 99.74617232154634,
+        "mae": 99.74617232154634,
+        "max_absolute": 331.08909808169625,
+        "n": 18,
+        "rmse": 124.7910599055761
+      },
+      "prediction_sha256": "c2f1ad34904fe68370132b70e0479d9b53cf1e7b6c1ef4cb7f5e2b7e41579aa2",
+      "scenario": "severe_loss",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 20002
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.5621141137754248,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          3,
+          0,
+          14,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.8780664277709576,
+      "partition": "holdout",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.4905754776867848,
+          "mae": 0.9877092939038624,
+          "max_absolute": 3.779291252036205,
+          "n": 18,
+          "rmse": 1.325185371802748
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.7240482107458695e-05,
+          "mae": 2.716802418878686e-05,
+          "max_absolute": 7.009952668802052e-05,
+          "n": 18,
+          "rmse": 3.33686495228137e-05
+        },
+        "noise_proxy": {
+          "bias": -0.017355896001423062,
+          "mae": 0.03863367259831666,
+          "max_absolute": 0.17562415958948663,
+          "n": 18,
+          "rmse": 0.055923830854007796
+        },
+        "signal_probe_relative_l2": {
+          "bias": 3.555316825516989e-05,
+          "mae": 0.0002560674554844465,
+          "max_absolute": 0.0008384784254342882,
+          "n": 18,
+          "rmse": 0.000331673715545091
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 69.1970233547247,
+        "mae": 69.1970233547247,
+        "max_absolute": 229.17215380211573,
+        "n": 18,
+        "rmse": 90.88226618278819
+      },
+      "prediction_sha256": "9de3b932474bbe95aa31310cff0299e004ec1af9df94e9bdc842225fe4ee0786",
+      "scenario": "normal",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 21000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.9443261342165131,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          2,
+          11,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 2.01282445393272,
+      "partition": "holdout",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -5.646619895427129,
+          "mae": 9.057768084520262,
+          "max_absolute": 22.638482372160894,
+          "n": 18,
+          "rmse": 11.453738956225068
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": 2.9131458577751906e-05,
+          "mae": 5.1125353542073176e-05,
+          "max_absolute": 0.0002820387397577729,
+          "n": 18,
+          "rmse": 8.419961403437998e-05
+        },
+        "noise_proxy": {
+          "bias": 0.01143552715183427,
+          "mae": 0.038508159033458035,
+          "max_absolute": 0.07926511550541238,
+          "n": 18,
+          "rmse": 0.04374755814874431
+        },
+        "signal_probe_relative_l2": {
+          "bias": -0.00013203379732592017,
+          "mae": 0.00027625716574998423,
+          "max_absolute": 0.000816909206269457,
+          "n": 18,
+          "rmse": 0.0003457830450132145
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 147.08414882992025,
+        "mae": 147.08414882992025,
+        "max_absolute": 256.87028260472977,
+        "n": 18,
+        "rmse": 156.65023634603287
+      },
+      "prediction_sha256": "ca225a41342b82ed37074378ae11bb48bcc31926ca820fd19ea6d1c496075c1c",
+      "scenario": "congestion",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 21000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.6247536276893662,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          4,
+          0,
+          9,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.112930803231229,
+      "partition": "holdout",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.14829289145867008,
+          "mae": 0.8827084215415202,
+          "max_absolute": 2.6478372748390226,
+          "n": 18,
+          "rmse": 1.094054542298329
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": 8.748758803932681e-07,
+          "mae": 3.40792173483839e-05,
+          "max_absolute": 0.0001633646445210999,
+          "n": 18,
+          "rmse": 4.828287342866283e-05
+        },
+        "noise_proxy": {
+          "bias": -0.005712009196069127,
+          "mae": 0.03158362301347201,
+          "max_absolute": 0.08306346401193873,
+          "n": 18,
+          "rmse": 0.03965427927886907
+        },
+        "signal_probe_relative_l2": {
+          "bias": -1.9111367919487113e-05,
+          "mae": 0.00020749120744714236,
+          "max_absolute": 0.0006988975490826344,
+          "n": 18,
+          "rmse": 0.0002844237607561742
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 70.28179580722923,
+        "mae": 70.28179580722923,
+        "max_absolute": 183.92999027363663,
+        "n": 18,
+        "rmse": 85.52479199666163
+      },
+      "prediction_sha256": "ff82bdb38958901accf6f48827a14e76f72f22642a278f9bfcb40e3418954347",
+      "scenario": "local_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 21000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.6787132606021768,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          1,
+          0,
+          10,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.2507185093592676,
+      "partition": "holdout",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": 0.3810125484620731,
+          "mae": 1.812145406826654,
+          "max_absolute": 7.1234021854792955,
+          "n": 18,
+          "rmse": 2.48276569851716
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.103655388377477e-05,
+          "mae": 3.348886005372237e-05,
+          "max_absolute": 7.205836132923854e-05,
+          "n": 18,
+          "rmse": 4.0409403377527004e-05
+        },
+        "noise_proxy": {
+          "bias": -0.004126790701143959,
+          "mae": 0.03887898787142665,
+          "max_absolute": 0.17562415958948663,
+          "n": 18,
+          "rmse": 0.05740725502253893
+        },
+        "signal_probe_relative_l2": {
+          "bias": -7.808120685093078e-05,
+          "mae": 0.0001861434751106494,
+          "max_absolute": 0.0006469845234359966,
+          "n": 18,
+          "rmse": 0.00024300490869228316
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 107.84408579474639,
+        "mae": 107.84408579474639,
+        "max_absolute": 326.94933628415765,
+        "n": 18,
+        "rmse": 133.43193991274634
+      },
+      "prediction_sha256": "84044e6c8db3d4aae6475064769976504bbd59e9371290f7c5d2b46ad8d5eaac",
+      "scenario": "global_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 21000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.7806743370552305,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          2,
+          0,
+          9,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          2,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.5834130153792227,
+      "partition": "holdout",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.11492965594213055,
+          "mae": 2.057299895544146,
+          "max_absolute": 5.607518803243747,
+          "n": 18,
+          "rmse": 2.545777083732865
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.5575612826396782e-05,
+          "mae": 3.156144948984085e-05,
+          "max_absolute": 7.704266870733488e-05,
+          "n": 18,
+          "rmse": 3.8839123672865716e-05
+        },
+        "noise_proxy": {
+          "bias": 0.012123600330320457,
+          "mae": 0.041757225343169856,
+          "max_absolute": 0.10787732536367868,
+          "n": 18,
+          "rmse": 0.05098486255232536
+        },
+        "signal_probe_relative_l2": {
+          "bias": -0.0001524515094214567,
+          "mae": 0.00027006274126918964,
+          "max_absolute": 0.0009775742201954332,
+          "n": 18,
+          "rmse": 0.00036000876838131207
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 108.40396815876811,
+        "mae": 108.40396815876811,
+        "max_absolute": 353.88443600699304,
+        "n": 18,
+        "rmse": 132.44369572551906
+      },
+      "prediction_sha256": "3f3dcac6e312981b55a8a986fce38eec2436a55a7c2f800c1cc9c755eb3751c9",
+      "scenario": "severe_loss",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 21000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.4136751178504714,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          7,
+          0,
+          10,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.6739639669147199,
+      "partition": "holdout",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.21942598491463675,
+          "mae": 1.0167837019021577,
+          "max_absolute": 2.7304758619084026,
+          "n": 18,
+          "rmse": 1.2397358123634812
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -9.216924347966617e-06,
+          "mae": 2.603512101100226e-05,
+          "max_absolute": 5.824411396352074e-05,
+          "n": 18,
+          "rmse": 3.098090160252731e-05
+        },
+        "noise_proxy": {
+          "bias": -0.004730345855764238,
+          "mae": 0.029875955532538658,
+          "max_absolute": 0.09013883042391858,
+          "n": 18,
+          "rmse": 0.03922290894574146
+        },
+        "signal_probe_relative_l2": {
+          "bias": -1.1813930832811689e-05,
+          "mae": 0.0002619378957099,
+          "max_absolute": 0.0007082721348445585,
+          "n": 18,
+          "rmse": 0.00031636799993044456
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 81.05055834001945,
+        "mae": 81.05055834001945,
+        "max_absolute": 182.65906822526708,
+        "n": 18,
+        "rmse": 96.7693438508568
+      },
+      "prediction_sha256": "c8f3a03d90eddb00f06065af841ed3acbdb3f803c9a0c28c03e618ec2d54386c",
+      "scenario": "normal",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 21001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 1.0801856578774873,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          3,
+          1,
+          12,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 2.3040504692947885,
+      "partition": "holdout",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -1.436421654516673,
+          "mae": 5.795278404646364,
+          "max_absolute": 18.792665971076424,
+          "n": 18,
+          "rmse": 8.139129427020157
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": 4.2286318963040545e-05,
+          "mae": 5.0137167932309813e-05,
+          "max_absolute": 0.0002818782975334835,
+          "n": 18,
+          "rmse": 7.957324587710843e-05
+        },
+        "noise_proxy": {
+          "bias": 0.02829850490470083,
+          "mae": 0.03431222567904577,
+          "max_absolute": 0.14424907872964443,
+          "n": 18,
+          "rmse": 0.04831284873468309
+        },
+        "signal_probe_relative_l2": {
+          "bias": -2.058032657698985e-05,
+          "mae": 0.0002781264841011754,
+          "max_absolute": 0.0005911492076590302,
+          "n": 18,
+          "rmse": 0.00032178048494853676
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 151.32814918977576,
+        "mae": 151.32814918977576,
+        "max_absolute": 312.74847175797186,
+        "n": 18,
+        "rmse": 163.95251824711215
+      },
+      "prediction_sha256": "592d5ec8d76dc96f05ea056a4222ee2d3003542d578b511266aec6ff1aeb03c1",
+      "scenario": "congestion",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 21001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.5442226792830075,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          4,
+          0,
+          9,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.933645021334625,
+      "partition": "holdout",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": 0.014251269968653767,
+          "mae": 0.7130296259643671,
+          "max_absolute": 3.048657614995376,
+          "n": 18,
+          "rmse": 0.9891289650868548
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -3.2213158486652655e-06,
+          "mae": 2.452368594025237e-05,
+          "max_absolute": 7.392230891433332e-05,
+          "n": 18,
+          "rmse": 3.074812944957858e-05
+        },
+        "noise_proxy": {
+          "bias": -0.011206110223409968,
+          "mae": 0.023764685087687545,
+          "max_absolute": 0.08113015906027585,
+          "n": 18,
+          "rmse": 0.030240804293472
+        },
+        "signal_probe_relative_l2": {
+          "bias": 0.00014898783860311512,
+          "mae": 0.00024227195219437121,
+          "max_absolute": 0.0009662137639834638,
+          "n": 18,
+          "rmse": 0.00034469654822503603
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 71.5162138075723,
+        "mae": 71.5162138075723,
+        "max_absolute": 241.560404891632,
+        "n": 18,
+        "rmse": 91.71833502897402
+      },
+      "prediction_sha256": "9197ab52af4369ce8531a69a0566829cf10c87787dbef8b2dcdcea5f934f0f7e",
+      "scenario": "local_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 21001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.6720531330628483,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          3,
+          0,
+          8,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.223515600085093,
+      "partition": "holdout",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": 0.8973504223349935,
+          "mae": 1.6925716241880744,
+          "max_absolute": 5.3043330120788985,
+          "n": 18,
+          "rmse": 2.10967585461758
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -2.061625373165377e-06,
+          "mae": 3.163809868956508e-05,
+          "max_absolute": 8.31699375969858e-05,
+          "n": 18,
+          "rmse": 3.939550789759828e-05
+        },
+        "noise_proxy": {
+          "bias": 0.0063651370658843005,
+          "mae": 0.023828810024728683,
+          "max_absolute": 0.09246835914890869,
+          "n": 18,
+          "rmse": 0.033651813155195685
+        },
+        "signal_probe_relative_l2": {
+          "bias": 4.1332554977305014e-05,
+          "mae": 0.0003087185843535017,
+          "max_absolute": 0.0010828016699063023,
+          "n": 18,
+          "rmse": 0.00038788198008684563
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 124.00727440151849,
+        "mae": 124.00727440151849,
+        "max_absolute": 371.87060302151934,
+        "n": 18,
+        "rmse": 146.41090482633922
+      },
+      "prediction_sha256": "c32596b3616a551df441779426acc02888871ecddf5bdfcc3e5a428b2b986e1c",
+      "scenario": "global_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 21001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.7055249597634214,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          2,
+          0,
+          4,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          1,
+          1
+        ]
+      ],
+      "next_annotation_log_loss": 1.4134816983347234,
+      "partition": "holdout",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.34995351605721553,
+          "mae": 2.4897894727599796,
+          "max_absolute": 6.787504004313907,
+          "n": 18,
+          "rmse": 3.1838203084149215
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.5205586925210286e-05,
+          "mae": 4.448466183412479e-05,
+          "max_absolute": 0.00024182765276169784,
+          "n": 18,
+          "rmse": 7.011638346596665e-05
+        },
+        "noise_proxy": {
+          "bias": 0.015563651816832887,
+          "mae": 0.03913479203573638,
+          "max_absolute": 0.09595992870320055,
+          "n": 18,
+          "rmse": 0.04912851420038892
+        },
+        "signal_probe_relative_l2": {
+          "bias": -5.720381422431976e-05,
+          "mae": 0.00024571079715319806,
+          "max_absolute": 0.0008459795698838707,
+          "n": 18,
+          "rmse": 0.00031299688235022463
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 103.30088350284743,
+        "mae": 103.30088350284743,
+        "max_absolute": 400.1407665287287,
+        "n": 18,
+        "rmse": 142.67133576657048
+      },
+      "prediction_sha256": "782a60348e5cc819690531713f858607302d2bbc0126d50099d1412c19028bd3",
+      "scenario": "severe_loss",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 21001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.5622619534765908,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          3,
+          0,
+          14,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.8794967969141249,
+      "partition": "evaluation",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.08831855182643641,
+          "mae": 0.8806786525822559,
+          "max_absolute": 1.3948051679460103,
+          "n": 18,
+          "rmse": 0.982035338491566
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.7956698903717854e-05,
+          "mae": 2.3617817020000148e-05,
+          "max_absolute": 5.574090613313443e-05,
+          "n": 18,
+          "rmse": 2.877076101691925e-05
+        },
+        "noise_proxy": {
+          "bias": 0.009168695162356277,
+          "mae": 0.037203154408404236,
+          "max_absolute": 0.12874827106756637,
+          "n": 18,
+          "rmse": 0.04856174060798855
+        },
+        "signal_probe_relative_l2": {
+          "bias": -5.8296173933716794e-05,
+          "mae": 0.00028238977358580503,
+          "max_absolute": 0.000777864864869878,
+          "n": 18,
+          "rmse": 0.00036514740261309273
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 81.47311383704229,
+        "mae": 81.47311383704229,
+        "max_absolute": 163.34848458477822,
+        "n": 18,
+        "rmse": 96.80985681901639
+      },
+      "prediction_sha256": "82a568f4d89e16be9294442f8577c9cb649c2ce4bcd9257a694b3d8463ada7a9",
+      "scenario": "normal",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 22000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 1.1302443881801176,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          15,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 2.3777965645432717,
+      "partition": "evaluation",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -1.4634556888291557,
+          "mae": 6.2438251818428885,
+          "max_absolute": 23.841082967490888,
+          "n": 18,
+          "rmse": 8.704950442127702
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": 2.8212675358578957e-05,
+          "mae": 4.308436224795144e-05,
+          "max_absolute": 0.00018921269357153578,
+          "n": 18,
+          "rmse": 6.537167307486553e-05
+        },
+        "noise_proxy": {
+          "bias": 0.00797669876166175,
+          "mae": 0.03675540649190739,
+          "max_absolute": 0.11804213897051394,
+          "n": 18,
+          "rmse": 0.047199688472800955
+        },
+        "signal_probe_relative_l2": {
+          "bias": -2.8600696143768882e-05,
+          "mae": 0.000178936879371253,
+          "max_absolute": 0.00037737309836943203,
+          "n": 18,
+          "rmse": 0.00021317130587018826
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 156.2194673617139,
+        "mae": 156.2194673617139,
+        "max_absolute": 325.68380388073524,
+        "n": 18,
+        "rmse": 170.70308566935924
+      },
+      "prediction_sha256": "63fe7c4a45324769c2ca597475a5391cd8d59b443a8da85548a3fe4c7272e988",
+      "scenario": "congestion",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 22000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.574589916747782,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          1,
+          0,
+          12,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.9089517929558569,
+      "partition": "evaluation",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.3524884688540162,
+          "mae": 0.8424135469803387,
+          "max_absolute": 1.508133630935264,
+          "n": 18,
+          "rmse": 0.9585908749209769
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.9919995213066478e-05,
+          "mae": 2.2901195449158268e-05,
+          "max_absolute": 5.364686671463433e-05,
+          "n": 18,
+          "rmse": 2.8741209032454067e-05
+        },
+        "noise_proxy": {
+          "bias": -0.01373293776461156,
+          "mae": 0.035552499687937535,
+          "max_absolute": 0.06813013737042498,
+          "n": 18,
+          "rmse": 0.04243189801003719
+        },
+        "signal_probe_relative_l2": {
+          "bias": -0.00011677422034234114,
+          "mae": 0.00025348618622828375,
+          "max_absolute": 0.0014297382381956124,
+          "n": 18,
+          "rmse": 0.00040107257245250536
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 75.33113318870278,
+        "mae": 75.33113318870278,
+        "max_absolute": 238.53652928879228,
+        "n": 18,
+        "rmse": 94.68228859474134
+      },
+      "prediction_sha256": "409e3d0b27f57ba6e3a4a6bba75ad1054ce55fbc1d13d07703fb441da5c0e722",
+      "scenario": "local_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 22000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.6190644249626218,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          4,
+          0,
+          6,
+          4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.1824461649024487,
+      "partition": "evaluation",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.09874621359886837,
+          "mae": 2.256014836384771,
+          "max_absolute": 7.554341129205987,
+          "n": 18,
+          "rmse": 3.0537334815789814
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -2.2590112398073344e-05,
+          "mae": 3.9459603066230366e-05,
+          "max_absolute": 0.00024329257337714634,
+          "n": 18,
+          "rmse": 6.623004655304153e-05
+        },
+        "noise_proxy": {
+          "bias": 0.004901367741569046,
+          "mae": 0.04828583567258319,
+          "max_absolute": 0.13127584768186024,
+          "n": 18,
+          "rmse": 0.06170503512098315
+        },
+        "signal_probe_relative_l2": {
+          "bias": -1.9756589143427587e-05,
+          "mae": 0.00023238201814756488,
+          "max_absolute": 0.0005487822796104592,
+          "n": 18,
+          "rmse": 0.00029517118683963724
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 98.82959755933967,
+        "mae": 98.82959755933967,
+        "max_absolute": 356.2552323858475,
+        "n": 18,
+        "rmse": 130.7217108986517
+      },
+      "prediction_sha256": "5b8894a858f7c7f5c530767a6f428685f92101fe1c27867177ad6393e40ec04d",
+      "scenario": "global_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 22000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.7298089944689822,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          3,
+          0,
+          5,
+          6,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.5178073024150385,
+      "partition": "evaluation",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.8417010669185803,
+          "mae": 2.744145963633015,
+          "max_absolute": 8.219122800665364,
+          "n": 18,
+          "rmse": 3.7107667813097684
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -2.377745313445372e-05,
+          "mae": 3.979996411598737e-05,
+          "max_absolute": 0.00020526111320735623,
+          "n": 18,
+          "rmse": 6.308859837642601e-05
+        },
+        "noise_proxy": {
+          "bias": 0.010767692866228142,
+          "mae": 0.046372377537667396,
+          "max_absolute": 0.13756705054948332,
+          "n": 18,
+          "rmse": 0.06148173623440857
+        },
+        "signal_probe_relative_l2": {
+          "bias": -0.00017520924336168406,
+          "mae": 0.00032214778331907676,
+          "max_absolute": 0.0010424968231816092,
+          "n": 18,
+          "rmse": 0.0004706883341967727
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 106.62492115508654,
+        "mae": 106.62492115508654,
+        "max_absolute": 414.6043892578434,
+        "n": 18,
+        "rmse": 141.49356749015868
+      },
+      "prediction_sha256": "8d040b4e8d67ef5abb29058ad06a016835792e8fb2b552d13a04fe8461f65462",
+      "scenario": "severe_loss",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 22000
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.5170609006041728,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          4,
+          0,
+          14,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.8141022905086591,
+      "partition": "evaluation",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.0964765624614308,
+          "mae": 0.6970491185112809,
+          "max_absolute": 2.1508354895311763,
+          "n": 18,
+          "rmse": 0.9239906820725582
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.7597383440295934e-05,
+          "mae": 2.2898099934735285e-05,
+          "max_absolute": 7.312774970360994e-05,
+          "n": 18,
+          "rmse": 2.882250836672727e-05
+        },
+        "noise_proxy": {
+          "bias": 0.004610793886290913,
+          "mae": 0.02482473659646471,
+          "max_absolute": 0.09124469562641749,
+          "n": 18,
+          "rmse": 0.03615327190771113
+        },
+        "signal_probe_relative_l2": {
+          "bias": -6.879016064688976e-05,
+          "mae": 0.00022116187617381812,
+          "max_absolute": 0.0006774830003953591,
+          "n": 18,
+          "rmse": 0.0002918098785451948
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 68.35843009565055,
+        "mae": 68.35843009565055,
+        "max_absolute": 163.63794856242825,
+        "n": 18,
+        "rmse": 87.64413855957655
+      },
+      "prediction_sha256": "d855b818669e488cd2f3b1249466f7e866304f8647e3c854fae455f6adcfd26f",
+      "scenario": "normal",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 22001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 1.1207418514001637,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          13,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 2.3546062819635036,
+      "partition": "evaluation",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -2.100685507074196,
+          "mae": 7.021080172534126,
+          "max_absolute": 24.48659285619432,
+          "n": 18,
+          "rmse": 10.01194474426012
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": 5.625562327017673e-05,
+          "mae": 5.884424595078372e-05,
+          "max_absolute": 0.00028458332948523313,
+          "n": 18,
+          "rmse": 0.00010133934074058073
+        },
+        "noise_proxy": {
+          "bias": 0.026776585366206314,
+          "mae": 0.039066186064758396,
+          "max_absolute": 0.11169570013187195,
+          "n": 18,
+          "rmse": 0.04806925946898498
+        },
+        "signal_probe_relative_l2": {
+          "bias": -8.290963622834749e-05,
+          "mae": 0.00020984938723923104,
+          "max_absolute": 0.0005524179185243169,
+          "n": 18,
+          "rmse": 0.00027089070116748624
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 148.144767523028,
+        "mae": 148.144767523028,
+        "max_absolute": 273.61365818440504,
+        "n": 18,
+        "rmse": 158.28414221902855
+      },
+      "prediction_sha256": "0523a01014c48af44191fe22422e16e7e485415214d67ae48e4f3ea46ed59e4d",
+      "scenario": "congestion",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 22001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.47015339110718085,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          6,
+          0,
+          7,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 0.8389671133043421,
+      "partition": "evaluation",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.08937715249917483,
+          "mae": 0.7449815616883009,
+          "max_absolute": 2.1513974384550174,
+          "n": 18,
+          "rmse": 0.9340376210177734
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.2044373175967443e-05,
+          "mae": 2.0411110871494363e-05,
+          "max_absolute": 6.39787991035242e-05,
+          "n": 18,
+          "rmse": 2.7435290034547676e-05
+        },
+        "noise_proxy": {
+          "bias": -0.004555031375293047,
+          "mae": 0.023431311572710327,
+          "max_absolute": 0.09303604883163222,
+          "n": 18,
+          "rmse": 0.03318060071367269
+        },
+        "signal_probe_relative_l2": {
+          "bias": -3.201523355970528e-05,
+          "mae": 0.00024827003978728055,
+          "max_absolute": 0.0006991366228204956,
+          "n": 18,
+          "rmse": 0.0003240765761375969
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 82.08549441307083,
+        "mae": 82.08549441307083,
+        "max_absolute": 172.91581932302287,
+        "n": 18,
+        "rmse": 94.21766097435594
+      },
+      "prediction_sha256": "843a1b5da9831b9849de73eea34bf3357f04f5b5e7e536ddc686c1a0a57382e3",
+      "scenario": "local_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 22001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.5394136750861525,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          5,
+          0,
+          7,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.0640159910198688,
+      "partition": "evaluation",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.20750790373060854,
+          "mae": 1.26610796371466,
+          "max_absolute": 4.896659010769581,
+          "n": 18,
+          "rmse": 1.883242997838865
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -2.0096700169541322e-05,
+          "mae": 3.8121699213170744e-05,
+          "max_absolute": 0.0001481446995045339,
+          "n": 18,
+          "rmse": 5.3921493269504616e-05
+        },
+        "noise_proxy": {
+          "bias": -0.00010319145194981454,
+          "mae": 0.02820168206257699,
+          "max_absolute": 0.09894276656136711,
+          "n": 18,
+          "rmse": 0.044436184994479926
+        },
+        "signal_probe_relative_l2": {
+          "bias": -5.61287954982461e-05,
+          "mae": 0.00023640043342971923,
+          "max_absolute": 0.0007374276489482785,
+          "n": 18,
+          "rmse": 0.00030176642908993803
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 102.78425546146632,
+        "mae": 102.78425546146632,
+        "max_absolute": 351.93378025199416,
+        "n": 18,
+        "rmse": 127.52550073602684
+      },
+      "prediction_sha256": "8ed3ba4b60cb657f1d9ff9d5e6b682b5c0f44b2a01ca0c6fe5764131cb939e73",
+      "scenario": "global_impairment",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 22001
+    },
+    {
+      "filtered_epochs": 26,
+      "next_annotation_brier": 0.7171547819042146,
+      "next_annotation_confusion_true_by_prediction": [
+        [
+          3,
+          0,
+          9,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          2,
+          0
+        ]
+      ],
+      "next_annotation_log_loss": 1.4838769088783736,
+      "partition": "evaluation",
+      "predicted_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.30790936003347874,
+          "mae": 2.2644080609230866,
+          "max_absolute": 6.847102611079733,
+          "n": 18,
+          "rmse": 2.8382100603445006
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.2082951905327371e-05,
+          "mae": 3.106655567168931e-05,
+          "max_absolute": 7.978284968943375e-05,
+          "n": 18,
+          "rmse": 3.896835691588183e-05
+        },
+        "noise_proxy": {
+          "bias": 0.00823625730732658,
+          "mae": 0.044025653007457165,
+          "max_absolute": 0.10824588565325935,
+          "n": 18,
+          "rmse": 0.05432539633316332
+        },
+        "signal_probe_relative_l2": {
+          "bias": -0.00013046069594489852,
+          "mae": 0.00029234224031293916,
+          "max_absolute": 0.000675823167070014,
+          "n": 18,
+          "rmse": 0.00035743905064822935
+        }
+      },
+      "predicted_state_residual_l2": {
+        "bias": 103.76842154156856,
+        "mae": 103.76842154156856,
+        "max_absolute": 334.86172579988846,
+        "n": 18,
+        "rmse": 127.06955426720788
+      },
+      "prediction_sha256": "6459e2d6f78cd369d82a9c8b6facbb7349514146d7db01c2322ac8cdded47cf4",
+      "scenario": "severe_loss",
+      "scope": "fixed fitted HMM causal evaluation; offline operational annotations score already frozen predictions only",
+      "scored_rows": 18,
+      "seed": 22001
+    }
+  ],
+  "certified": false,
+  "controller_sha256": "6989691a8f1fbbce00c04b903dca0929cd434af3b5232796f5eccd1280541dec",
+  "coverage": {
+    "evaluation": {
+      "by_action_current_regime": {
+        "fallback": [
+          40,
+          12,
+          2,
+          3,
+          3
+        ],
+        "nominal": [
+          40,
+          12,
+          3,
+          2,
+          3
+        ],
+        "repair": [
+          40,
+          12,
+          3,
+          3,
+          2
+        ]
+      },
+      "by_action_next_regime": {
+        "fallback": [
+          40,
+          12,
+          3,
+          2,
+          3
+        ],
+        "nominal": [
+          40,
+          12,
+          3,
+          3,
+          2
+        ],
+        "repair": [
+          40,
+          12,
+          2,
+          3,
+          3
+        ]
+      },
+      "missing_current_cells": [],
+      "missing_next_cells": [],
+      "rows": 180
+    },
+    "holdout": {
+      "by_action_current_regime": {
+        "fallback": [
+          40,
+          12,
+          3,
+          2,
+          3
+        ],
+        "nominal": [
+          40,
+          12,
+          3,
+          3,
+          2
+        ],
+        "repair": [
+          40,
+          12,
+          2,
+          3,
+          3
+        ]
+      },
+      "by_action_next_regime": {
+        "fallback": [
+          40,
+          12,
+          3,
+          3,
+          2
+        ],
+        "nominal": [
+          40,
+          12,
+          2,
+          3,
+          3
+        ],
+        "repair": [
+          40,
+          12,
+          3,
+          2,
+          3
+        ]
+      },
+      "missing_current_cells": [],
+      "missing_next_cells": [],
+      "rows": 180
+    },
+    "training": {
+      "by_action_current_regime": {
+        "fallback": [
+          60,
+          18,
+          4,
+          4,
+          4
+        ],
+        "nominal": [
+          60,
+          18,
+          4,
+          4,
+          4
+        ],
+        "repair": [
+          60,
+          18,
+          4,
+          4,
+          4
+        ]
+      },
+      "by_action_next_regime": {
+        "fallback": [
+          60,
+          18,
+          4,
+          4,
+          4
+        ],
+        "nominal": [
+          60,
+          18,
+          4,
+          4,
+          4
+        ],
+        "repair": [
+          60,
+          18,
+          4,
+          4,
+          4
+        ]
+      },
+      "missing_current_cells": [],
+      "missing_next_cells": [],
+      "rows": 270
+    }
+  },
+  "fit_status": "completed_empirical_fit_not_certification",
+  "model_digest": "175a3c9c988ea715ccca1751416e85ab6557bfbc0abf375b283ef0c284dc41c1",
+  "model_metadata": {
+    "action_digests": {
+      "fallback": "20f0fee06edc5ff4116658e6cf7c98128c2338f764ad9838bd309f5cf18f8a4e",
+      "nominal": "6b4b1bf0b43de8c47f097e7157f6f80c60789df3617c54b17e2cd1bddbc71c31",
+      "repair": "84f6c03b31d2bee0a03e06b19fe24b1dab18b61898a7a2fcadf8bc6f5fcac598"
+    },
+    "dirichlet_strength": 5.0,
+    "holdout_digest": "7c36b453b26d972b6da27c726e7c85cf5d269e52287eee7add3207251eda310b",
+    "holdout_rows": 180,
+    "labels_available_online": false,
+    "noise_timing": "obs_noise_utilization is F_t; metric noise is next_noise_utilization after a_t",
+    "radius_method": "heldout empirical maximum; not a population or uniform bound",
+    "ridge_intercept_regularized": true,
+    "ridge_regularization": 0.001,
+    "runtime_adaptation_default": false,
+    "runtime_adaptation_requires_revalidated_radii": true,
+    "seed_manifest": {
+      "evaluation": [
+        "22000/congestion",
+        "22000/global_impairment",
+        "22000/local_impairment",
+        "22000/normal",
+        "22000/severe_loss",
+        "22001/congestion",
+        "22001/global_impairment",
+        "22001/local_impairment",
+        "22001/normal",
+        "22001/severe_loss"
+      ],
+      "holdout": [
+        "21000/congestion",
+        "21000/global_impairment",
+        "21000/local_impairment",
+        "21000/normal",
+        "21000/severe_loss",
+        "21001/congestion",
+        "21001/global_impairment",
+        "21001/local_impairment",
+        "21001/normal",
+        "21001/severe_loss"
+      ],
+      "training": [
+        "20000/congestion",
+        "20000/global_impairment",
+        "20000/local_impairment",
+        "20000/normal",
+        "20000/severe_loss",
+        "20001/congestion",
+        "20001/global_impairment",
+        "20001/local_impairment",
+        "20001/normal",
+        "20001/severe_loss",
+        "20002/congestion",
+        "20002/global_impairment",
+        "20002/local_impairment",
+        "20002/normal",
+        "20002/severe_loss"
+      ]
+    },
+    "sparse_threshold": 3,
+    "state_cost_conditioning": "next_regime, weighted by causal predicted next-regime probabilities",
+    "state_fit": "joint regime/action ridge followed by ReLU",
+    "state_radius_holdout_counts": {
+      "fallback": [
+        40,
+        12,
+        3,
+        3,
+        2
+      ],
+      "nominal": [
+        40,
+        12,
+        2,
+        3,
+        3
+      ],
+      "repair": [
+        40,
+        12,
+        3,
+        2,
+        3
+      ]
+    },
+    "trace_schema_version": 2,
+    "training_digest": "100c9c8ddabd637d8f6dd95a5aae072bd3bf65446518505afabdfd96ac30ae8f",
+    "training_rows": 270,
+    "transition_radius_method": "max heldout source-row L1 deviation; absent row -> 2",
+    "transition_row_training_counts": {
+      "fallback": [
+        60,
+        18,
+        4,
+        4,
+        4
+      ],
+      "nominal": [
+        60,
+        18,
+        4,
+        4,
+        4
+      ],
+      "repair": [
+        60,
+        18,
+        4,
+        4,
+        4
+      ]
+    },
+    "variance_floor": 1e-08
+  },
+  "observation_coverage": {
+    "evaluation": {
+      "empty_delay_windows": 36,
+      "empty_outcome_windows": 3,
+      "no_opportunity_windows": 0
+    },
+    "holdout": {
+      "empty_delay_windows": 34,
+      "empty_outcome_windows": 3,
+      "no_opportunity_windows": 0
+    },
+    "training": {
+      "empty_delay_windows": 51,
+      "empty_outcome_windows": 5,
+      "no_opportunity_windows": 0
+    }
+  },
+  "physical_measurements": false,
+  "prediction_errors": {
+    "evaluation": {
+      "dpp_signed_target_errors": {
+        "delay_excess": {
+          "bias": 0.30394593877024,
+          "mae": 5.518186248786337,
+          "max_absolute": 43.715346118284515,
+          "n": 180,
+          "rmse": 9.070781541520786
+        },
+        "loss_excess": {
+          "bias": -2.3100144130672957,
+          "mae": 71.46230957562739,
+          "max_absolute": 496.7085150301096,
+          "n": 180,
+          "rmse": 110.65198383657317
+        },
+        "noise_excess": {
+          "bias": -0.005545948535995044,
+          "mae": 0.028867360856233794,
+          "max_absolute": 0.11556499370133111,
+          "n": 180,
+          "rmse": 0.03724597861378475
+        }
+      },
+      "next_regime_conditioned_cost_errors": {
+        "conditional_delay_s": {
+          "bias": 0.20852750262539957,
+          "mae": 2.3993230011730486,
+          "max_absolute": 19.004085884934604,
+          "n": 180,
+          "rmse": 4.326339673182682
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -2.0472316533837695e-06,
+          "mae": 1.7813682426249618e-05,
+          "max_absolute": 0.0003551002870796659,
+          "n": 180,
+          "rmse": 3.435982186148563e-05
+        },
+        "noise_proxy": {
+          "bias": -0.005541723776158959,
+          "mae": 0.022558735397937797,
+          "max_absolute": 0.12,
+          "n": 180,
+          "rmse": 0.031935446751952895
+        },
+        "signal_probe_relative_l2": {
+          "bias": -3.1156479845869674e-05,
+          "mae": 0.00021588126891946747,
+          "max_absolute": 0.001170035588606017,
+          "n": 180,
+          "rmse": 0.0002864094382899422
+        }
+      },
+      "pooled_cost_errors": {
+        "conditional_delay_s": {
+          "bias": 0.15196724025011651,
+          "mae": 2.7590931980777516,
+          "max_absolute": 21.857676177466168,
+          "n": 180,
+          "rmse": 4.535390601123357
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -1.3344318575164867e-06,
+          "mae": 3.288392815780701e-05,
+          "max_absolute": 0.00010944282974886983,
+          "n": 180,
+          "rmse": 4.0349294180925553e-05
+        },
+        "noise_proxy": {
+          "bias": -0.0055574068060020325,
+          "mae": 0.02886692151992689,
+          "max_absolute": 0.11554127944207666,
+          "n": 180,
+          "rmse": 0.03724559912428751
+        },
+        "signal_probe_relative_l2": {
+          "bias": -3.056468073955386e-05,
+          "mae": 0.00020479966049759046,
+          "max_absolute": 0.00106258105422293,
+          "n": 180,
+          "rmse": 0.0002707049223894543
+        }
+      },
+      "scope": "diagnostic next-regime conditioning uses offline outcome labels; not an online oracle or uniform certificate",
+      "state_radius_exceedance_count": 7,
+      "state_residual_l2": {
+        "bias": 101.63357282702522,
+        "mae": 101.63357282702522,
+        "max_absolute": 330.6660554880091,
+        "n": 180,
+        "rmse": 125.063171355258
+      }
+    },
+    "holdout": {
+      "dpp_signed_target_errors": {
+        "delay_excess": {
+          "bias": -0.09782905855213894,
+          "mae": 5.75429908861948,
+          "max_absolute": 40.01913020010427,
+          "n": 180,
+          "rmse": 9.674822182701265
+        },
+        "loss_excess": {
+          "bias": -0.6538350403586767,
+          "mae": 69.05051763528859,
+          "max_absolute": 522.9003726494531,
+          "n": 180,
+          "rmse": 106.75571843801856
+        },
+        "noise_excess": {
+          "bias": -0.0062951739120994995,
+          "mae": 0.031228762821024394,
+          "max_absolute": 0.17525789781854517,
+          "n": 180,
+          "rmse": 0.041039056880494355
+        }
+      },
+      "next_regime_conditioned_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.11920930572750359,
+          "mae": 2.55721733163287,
+          "max_absolute": 21.123877893593743,
+          "n": 180,
+          "rmse": 4.6536795412191
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": 3.559541509135088e-06,
+          "mae": 1.916196966649593e-05,
+          "max_absolute": 0.00011159375079256576,
+          "n": 180,
+          "rmse": 2.662886663143419e-05
+        },
+        "noise_proxy": {
+          "bias": -0.006230221062563937,
+          "mae": 0.027543806902992282,
+          "max_absolute": 0.22111363635247486,
+          "n": 180,
+          "rmse": 0.042114054354613205
+        },
+        "signal_probe_relative_l2": {
+          "bias": 2.3154460204359774e-05,
+          "mae": 0.00022845204484618268,
+          "max_absolute": 0.0013443806518144059,
+          "n": 180,
+          "rmse": 0.0002973629329134597
+        }
+      },
+      "pooled_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -0.048920067326111,
+          "mae": 2.8771485180751,
+          "max_absolute": 20.009568218376046,
+          "n": 180,
+          "rmse": 4.83741030277724
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": 3.4701366031514825e-06,
+          "mae": 3.3310091382574045e-05,
+          "max_absolute": 0.00013900885382063183,
+          "n": 180,
+          "rmse": 4.173143331310699e-05
+        },
+        "noise_proxy": {
+          "bias": -0.00630625001218269,
+          "mae": 0.0312297790820228,
+          "max_absolute": 0.1752721520249875,
+          "n": 180,
+          "rmse": 0.04104070674006805
+        },
+        "signal_probe_relative_l2": {
+          "bias": 2.1903469380866416e-05,
+          "mae": 0.0002153628121878088,
+          "max_absolute": 0.0008237467409028549,
+          "n": 180,
+          "rmse": 0.00027087844980026936
+        }
+      },
+      "scope": "diagnostic next-regime conditioning uses offline outcome labels; not an online oracle or uniform certificate",
+      "state_radius_exceedance_count": 0,
+      "state_residual_l2": {
+        "bias": 100.27241846729349,
+        "mae": 100.27241846729349,
+        "max_absolute": 316.685756109301,
+        "n": 180,
+        "rmse": 123.35697476219609
+      }
+    },
+    "training": {
+      "dpp_signed_target_errors": {
+        "delay_excess": {
+          "bias": -8.880603784224345e-05,
+          "mae": 5.883786061700382,
+          "max_absolute": 46.45704433903276,
+          "n": 270,
+          "rmse": 10.373278589484663
+        },
+        "loss_excess": {
+          "bias": -0.0004992739178534834,
+          "mae": 68.85517654339027,
+          "max_absolute": 490.39696434627075,
+          "n": 270,
+          "rmse": 103.42289669456571
+        },
+        "noise_excess": {
+          "bias": 9.877562360857992e-06,
+          "mae": 0.024582039262217043,
+          "max_absolute": 0.1209166478434377,
+          "n": 270,
+          "rmse": 0.03311833378750772
+        }
+      },
+      "next_regime_conditioned_cost_errors": {
+        "conditional_delay_s": {
+          "bias": 0.0025773536409564204,
+          "mae": 2.4119883323765885,
+          "max_absolute": 21.84693013507168,
+          "n": 270,
+          "rmse": 4.7897193579279005
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -2.0235057450253956e-08,
+          "mae": 1.4726068740785433e-05,
+          "max_absolute": 6.520873334383377e-05,
+          "n": 270,
+          "rmse": 1.945974885058005e-05
+        },
+        "noise_proxy": {
+          "bias": 9.090214916966657e-06,
+          "mae": 0.017084306987612225,
+          "max_absolute": 0.09336380583549814,
+          "n": 270,
+          "rmse": 0.023025659459980224
+        },
+        "signal_probe_relative_l2": {
+          "bias": -1.6462095163531562e-07,
+          "mae": 0.00018827366289793842,
+          "max_absolute": 0.0009018518907969609,
+          "n": 270,
+          "rmse": 0.00025040925145301037
+        }
+      },
+      "pooled_cost_errors": {
+        "conditional_delay_s": {
+          "bias": -4.99583760440294e-05,
+          "mae": 2.9418926917308803,
+          "max_absolute": 23.22852528784029,
+          "n": 270,
+          "rmse": 5.1866392948975495
+        },
+        "modeled_cpu_j_per_opportunity": {
+          "bias": -3.993818813346058e-09,
+          "mae": 3.298600870678075e-05,
+          "max_absolute": 0.00010310789834061423,
+          "n": 270,
+          "rmse": 4.036651860073446e-05
+        },
+        "noise_proxy": {
+          "bias": -1.233151884986425e-06,
+          "mae": 0.02458071202063611,
+          "max_absolute": 0.1208871437725528,
+          "n": 270,
+          "rmse": 0.033118329136457965
+        },
+        "signal_probe_relative_l2": {
+          "bias": -3.180956708293111e-08,
+          "mae": 0.00020962537646066121,
+          "max_absolute": 0.0009178866498329875,
+          "n": 270,
+          "rmse": 0.0002637544823618072
+        }
+      },
+      "scope": "diagnostic next-regime conditioning uses offline outcome labels; not an online oracle or uniform certificate",
+      "state_radius_exceedance_count": 11,
+      "state_residual_l2": {
+        "bias": 100.1669484848899,
+        "mae": 100.1669484848899,
+        "max_absolute": 337.9007837557231,
+        "n": 270,
+        "rmse": 122.97668274478121
+      }
+    }
+  },
+  "schema_version": 1,
+  "scope": "Executed independent two-hop service-model identification; configured operational-stage labels, modeled CPU/communication, and separately executed synthetic integer signal probes. No physical-board data, uniform true-process coverage, or deployment certification.",
+  "uniform_state_bounds_proven": false
+}

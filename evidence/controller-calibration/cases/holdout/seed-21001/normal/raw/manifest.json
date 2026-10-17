@@ -1,0 +1,58 @@
+{
+  "ablation_instrumentation_version": 1,
+  "all_decisions_certified": false,
+  "config_digest": "97868c60c696f73d0957ef0647552644aa2b7e6e36988d5a060658a069261fed",
+  "controller_sha256": "9f29674092d709c4b25cd1787d3925db6b20458081bcc1bb656223e389324591",
+  "exogenous_digest": "97201ba3ce5707b5ae7e72ca12102da93b5c7c27ee3a5de91e71ef8a6af63853",
+  "label": "independent fixed-preauthorized-roster closed-loop synthetic packet experiment, not original OMNeT++/INET",
+  "method": "da-ahe",
+  "protocol_model_version": 2,
+  "raw_files": {
+    "epochs.jsonl.gz": "0b6fb17939de7c324c11c46503d48b7f76476fe9e50d3630bc1b199e3bdb7946",
+    "events.jsonl.gz": "81915ebd1ea25a6b20bc42396683e980ef921453592363373cc7da7d37966380",
+    "packets.jsonl.gz": "8613cd2a24286dd84bbae7f4170fe89a5dea58f75e9669f7af2c9ab3a405ac15",
+    "reports.jsonl.gz": "2964baafa96b75578ae2192e45934f3b7815fde79e316ad6bffbaadeaeb522a2"
+  },
+  "runtime_counts": {
+    "attempt_outcomes": {
+      "block_auth_reject": 57,
+      "channel_error": 1822,
+      "collision": 2622,
+      "ok": 462642
+    },
+    "modeled_cpu_energy_j": 1.1287787999999852,
+    "modeled_radio_tx_energy_j": 81.88840799984743,
+    "packets": {
+      "deadline": 661,
+      "queue_overflow": 12065,
+      "received": 462642
+    },
+    "repair_activity": {
+      "actuations_completed": 0,
+      "actuations_failed": 0,
+      "actuations_started": 0,
+      "actuations_unresolved": 0,
+      "enabled_control_epochs": 9,
+      "selected_control_epochs": 9
+    },
+    "reports": {
+      "admitted": 2222,
+      "deadline_expired": 638,
+      "delivered_valid": 1535,
+      "integrity_rejected": 49,
+      "opportunities": 3000,
+      "sampling_skipped": 778
+    },
+    "unique_frames": {
+      "delivered": 462642,
+      "lost": 12726,
+      "offered": 475368,
+      "unresolved": 0
+    },
+    "wire_bytes": 51180255
+  },
+  "schema_version": 1,
+  "seed": 21001,
+  "status": "independent_experimental_uncertified",
+  "stop_time_s": 125.0
+}

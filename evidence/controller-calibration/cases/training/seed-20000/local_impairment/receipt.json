@@ -1,0 +1,159 @@
+{
+  "completed": true,
+  "coverage": {
+    "by_action_current_regime": {
+      "fallback": [
+        5,
+        0,
+        1,
+        0,
+        0
+      ],
+      "nominal": [
+        5,
+        0,
+        1,
+        0,
+        0
+      ],
+      "repair": [
+        4,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    "by_action_next_regime": {
+      "fallback": [
+        5,
+        0,
+        1,
+        0,
+        0
+      ],
+      "nominal": [
+        4,
+        0,
+        2,
+        0,
+        0
+      ],
+      "repair": [
+        5,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    "missing_current_cells": [
+      [
+        "fallback",
+        1
+      ],
+      [
+        "fallback",
+        3
+      ],
+      [
+        "fallback",
+        4
+      ],
+      [
+        "nominal",
+        1
+      ],
+      [
+        "nominal",
+        3
+      ],
+      [
+        "nominal",
+        4
+      ],
+      [
+        "repair",
+        1
+      ],
+      [
+        "repair",
+        3
+      ],
+      [
+        "repair",
+        4
+      ]
+    ],
+    "missing_next_cells": [
+      [
+        "fallback",
+        1
+      ],
+      [
+        "fallback",
+        3
+      ],
+      [
+        "fallback",
+        4
+      ],
+      [
+        "nominal",
+        1
+      ],
+      [
+        "nominal",
+        3
+      ],
+      [
+        "nominal",
+        4
+      ],
+      [
+        "repair",
+        1
+      ],
+      [
+        "repair",
+        3
+      ],
+      [
+        "repair",
+        4
+      ]
+    ],
+    "rows": 18
+  },
+  "elapsed_s": 18.572562708999612,
+  "exploration_order": [
+    "nominal",
+    "repair",
+    "fallback"
+  ],
+  "exploration_phase": 1,
+  "files": {
+    "config.json": "058653f666a2a5e09fd4d9b9eb92e7eeb1d18c7ec098ac247ce642c31a316039",
+    "inputs/disturbances.json": "9fa337b5c8508f7e5f0560c246e0899b1a691f66f4b3b50ea1564ef8120ef0ae",
+    "inputs/manifest.json": "e45ede892ac3dc4065a09fa186e33aab6b107d57d0b875a3802a4a9a16a72abb",
+    "inputs/topology.json": "f5d14cb3dcfdd7c93e15d01355be81925d2b6b0159f65c2b71ca94ab35630b83",
+    "inputs/traffic.jsonl.gz": "2b5082f37d14e9f6af3b7d45a1bbea76d44664bc0e0f5dfb964cd22bec1cf68f",
+    "raw/epochs.jsonl.gz": "2698ff96afcc7729648a95e68155d782ef90361fe0665250110dc17794600ab5",
+    "raw/events.jsonl.gz": "89237570c7d8f60063e477fe97f2551791e2d023032d1d682d67b954309f3a4c",
+    "raw/manifest.json": "814ce4f3f08092f865e93ba18330f2a8c22e91c87424997f93e84ab94c2003fb",
+    "raw/packets.jsonl.gz": "955f2c73645413d5c3c28c39976cde3853758befbb3f38ab5aad7c597f8fd90e",
+    "raw/reports.jsonl.gz": "27ae04e70d8a5262bd652304f36e6b51d2058144d226593bad0007449d86ddbe",
+    "raw/summary.json": "03d025a71854cceec46a4d173296cb51229bc9ebb717ace5bbbea3c9bc3a1cb4",
+    "signal-cases.jsonl.gz": "4de94f49cfaeae5a19264bd422d87622349262358b6866561408a99da2819e0a",
+    "transition-diagnostics.json": "72f3b11055925224dd518d5628bc00297a0fa48d6150d8dce999adde496e028c",
+    "transitions.csv": "f56202f1b47de79f0274bc28d679fd8e942193262f97364b6fd69a3762652e7a"
+  },
+  "finished_utc": "2026-10-17T13:22:53.995199+00:00",
+  "operational_labels_available_online": false,
+  "partition": "training",
+  "rows": 18,
+  "scenario": "local_impairment",
+  "scope": "Executed independent two-hop service-model identification; configured operational-stage labels, modeled CPU/communication, and separately executed synthetic integer signal probes. No physical-board data, uniform true-process coverage, or deployment certification.",
+  "seed": 20000,
+  "started_utc": "2026-10-17T13:22:35.422652+00:00"
+}

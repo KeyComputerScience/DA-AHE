@@ -36,7 +36,7 @@ def fixed_three_member_experiment(tmp_path, *, hold=0.0):
 def test_all_sources_reuse_same_full_roster_ticket_authorized_before_arrivals(tmp_path):
     c, exo = fixed_three_member_experiment(tmp_path)
     out = tmp_path / "run"
-    result = engine.run_one(c, 9, "without_markov", exo, out, ROOT / "simulation/controller_fixture.json")
+    result = engine.run_one(c, 9, "without_markov", exo, out, ROOT / "simulation/controller_reference.json")
     events = list(read_jsonl(out / "events.jsonl.gz"))
     authorized = [r for r in events if r["event"] == "batch_authorized"]
     assert len(authorized) == 1 and authorized[0]["time_s"] == 0.0
@@ -63,7 +63,7 @@ def test_missing_member_rejects_entire_original_batch_without_partial_aggregatio
         return original(seed, stream, *key)
     monkeypatch.setattr(engine, "uniform", one_source_always_corrupted)
     out = tmp_path / "run"
-    result = engine.run_one(c, 9, "without_markov", exo, out, ROOT / "simulation/controller_fixture.json")
+    result = engine.run_one(c, 9, "without_markov", exo, out, ROOT / "simulation/controller_reference.json")
     events = list(read_jsonl(out / "events.jsonl.gz"))
     arrivals = {r["report"] for r in events if r["event"] == "authorized_member_received"}
     assert arrivals == {"n0:s0", "n2:s0"}
@@ -81,7 +81,7 @@ def test_missing_member_rejects_entire_original_batch_without_partial_aggregatio
 def test_expiration_during_post_ready_hold_cannot_remove_expired_members(tmp_path):
     c, exo = fixed_three_member_experiment(tmp_path, hold=35.0)
     out = tmp_path / "run"
-    result = engine.run_one(c, 9, "without_markov", exo, out, ROOT / "simulation/controller_fixture.json")
+    result = engine.run_one(c, 9, "without_markov", exo, out, ROOT / "simulation/controller_reference.json")
     events = list(read_jsonl(out / "events.jsonl.gz"))
     assert len([r for r in events if r["event"] == "authorized_member_received"]) == 3
     assert not any(r["event"] == "transfer_created" and r["kind"] == "aggregate" for r in events)
@@ -92,7 +92,7 @@ def test_expiration_during_post_ready_hold_cannot_remove_expired_members(tmp_pat
 def test_independent_audit_rejects_aggregate_roster_shrinking_even_without_hash_check(tmp_path):
     c, exo = fixed_three_member_experiment(tmp_path)
     out = tmp_path / "run"
-    engine.run_one(c, 9, "without_markov", exo, out, ROOT / "simulation/controller_fixture.json")
+    engine.run_one(c, 9, "without_markov", exo, out, ROOT / "simulation/controller_reference.json")
     events = list(read_jsonl(out / "events.jsonl.gz"))
     aggregate = next(r for r in events if r["event"] == "transfer_created" and r["kind"] == "aggregate")
     aggregate["reports"].pop()

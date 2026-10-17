@@ -4,7 +4,8 @@
       "batch_size": 16,
       "block_bytes": 64,
       "delta_q": 8,
-      "id": "normal",
+      "id": "nominal",
+      "profile_id": "synthetic-nominal",
       "repair": 0.0,
       "rho": 1.0
     },
@@ -13,32 +14,160 @@
       "block_bytes": 32,
       "delta_q": 12,
       "id": "repair",
-      "profile_id": "repair",
+      "profile_id": "synthetic-repair",
       "repair": 1.0,
       "rho": 0.75
     },
     {
-      "batch_size": 1,
+      "batch_size": 12,
       "block_bytes": 64,
       "delta_q": 16,
       "id": "fallback",
-      "profile_id": "fallback",
+      "profile_id": "synthetic-fallback",
       "repair": 0.0,
       "rho": 0.5
     }
   ],
+  "bound_evidence_artifacts": {
+    "decoding_report": {
+      "path": "evidence/independent/decoding/k6-cdt-03/decoding-bound.json",
+      "sha256": "2be1b88b34bdee74c852fd12c9020c4fed1870a117f4a63ab00d057944991335"
+    },
+    "security_profile": {
+      "path": "configs/security_profile.json",
+      "sha256": "fd8188ca6f5bd1347f3beedf47980fe4ba2db4300f6b968a2dcec31c075c4dc7"
+    },
+    "security_report": {
+      "path": "evidence/independent/security-parameter-search/selected-k6-full/security.json",
+      "sha256": "3794650eb763f528bab90aab42ff4ed54e7616d5d85358239db261e27f668168"
+    }
+  },
+  "calibration_metadata": {
+    "base_seed_split": {
+      "evaluation": [
+        22000,
+        22001
+      ],
+      "holdout": [
+        21000,
+        21001
+      ],
+      "training": [
+        20000,
+        20001,
+        20002
+      ]
+    },
+    "delay_threshold": 0.5,
+    "dpp_fit_partition": "training_only",
+    "dpp_target_order": [
+      "latency_s / delay_threshold - 1",
+      "next_loss / loss_threshold - 1",
+      "next_noise_utilization - 1"
+    ],
+    "feature_order": [
+      "intercept",
+      "z_delay",
+      "z_loss",
+      "z_noise"
+    ],
+    "loss_threshold": 0.002,
+    "plan_sha256": "d0ff79846e9190874ef0d947770e60fa60dfceb571a465fdcc44454da0cbd123",
+    "ridge_regularization": 0.001,
+    "scope": "Executed independent two-hop service-model identification; configured operational-stage labels, modeled CPU/communication, and separately executed synthetic integer signal probes. No physical-board data, uniform true-process coverage, or deployment certification.",
+    "seed_manifest": {
+      "evaluation": [
+        "22000/congestion",
+        "22000/global_impairment",
+        "22000/local_impairment",
+        "22000/normal",
+        "22000/severe_loss",
+        "22001/congestion",
+        "22001/global_impairment",
+        "22001/local_impairment",
+        "22001/normal",
+        "22001/severe_loss"
+      ],
+      "holdout": [
+        "21000/congestion",
+        "21000/global_impairment",
+        "21000/local_impairment",
+        "21000/normal",
+        "21000/severe_loss",
+        "21001/congestion",
+        "21001/global_impairment",
+        "21001/local_impairment",
+        "21001/normal",
+        "21001/severe_loss"
+      ],
+      "training": [
+        "20000/congestion",
+        "20000/global_impairment",
+        "20000/local_impairment",
+        "20000/normal",
+        "20000/severe_loss",
+        "20001/congestion",
+        "20001/global_impairment",
+        "20001/local_impairment",
+        "20001/normal",
+        "20001/severe_loss",
+        "20002/congestion",
+        "20002/global_impairment",
+        "20002/local_impairment",
+        "20002/normal",
+        "20002/severe_loss"
+      ]
+    },
+    "status": "empirical_uncertified",
+    "trace_sha256": {
+      "evaluation": "025ac3543a61011177a6dd25f02917bfd261881de56aa3d2978eca9b1b6d83d1",
+      "holdout": "3e0810728417f3e9126a1c4e72c35403be13862fc2d9210366766defe3005cef",
+      "training": "4629fcb0bf379eceb79d9d90dee10800ca71982b007edaedaba3434647d4c44d"
+    }
+  },
+  "certificate_assumptions": {
+    "kernel_row_l1_bounds": {
+      "fallback": [
+        0.06461538461538455,
+        0.26086956521739135,
+        0.3333333333333333,
+        1.0,
+        0.611111111111111
+      ],
+      "nominal": [
+        0.06923076923076917,
+        0.26086956521739135,
+        0.3333333333333333,
+        0.44444444444444436,
+        1.0
+      ],
+      "repair": [
+        0.06615384615384609,
+        0.26086956521739135,
+        1.0,
+        0.44444444444444436,
+        0.611111111111111
+      ]
+    },
+    "posterior_l1_bound": 2.0,
+    "scope": "declared_model_only",
+    "source": "Posterior uses exact simplex diameter; kernel rows use heldout empirical frequencies in declared-model scope, not true-kernel uniform bounds",
+    "state_error_scope": "declared fitted prediction balls only; radii from finite holdout observations",
+    "true_process_state_error_coverage_proven": false
+  },
   "certificates": {
     "fallback": {
-      "action_digest": "8e950347a8caa1110523f97da240e4eb298ed710e8efa9119e327a437e59d650",
+      "action_digest": "20f0fee06edc5ff4116658e6cf7c98128c2338f764ad9838bd309f5cf18f8a4e",
       "airtime_s": 0.5,
-      "context_digest": "83fddb211dd49848d6cedc019618bf918341b0453490201ca7627db001e3b31f",
+      "context_digest": "f3794089d880f9e9b7f00b708024843702eba2e0adf583c29a9ca3f9658909d6",
       "evidence": {},
+      "kind": "synthetic",
       "lambda_est_bits": 128.1,
       "log2_epsilon_dec": -128.0,
-      "max_batch_size": 1,
+      "max_batch_size": 12,
       "noise_bound": 50,
       "plaintext_modulus": 65537,
-      "profile_digest": "106a8a88b048cbbbfd192811293cc8ca95f5424ae84d043ab2d2c699c23f1916",
+      "profile_digest": "6c4aeddfb1982000230655c6419403c093d88613d57e32f3370f93cd8e0aa7db",
       "single_node_plain_bound": 1000,
       "tau_dec": 1000.0,
       "workspace_bytes": 9000,
@@ -47,7 +176,7 @@
     "nominal": {
       "action_digest": "6b4b1bf0b43de8c47f097e7157f6f80c60789df3617c54b17e2cd1bddbc71c31",
       "airtime_s": 0.5,
-      "context_digest": "83fddb211dd49848d6cedc019618bf918341b0453490201ca7627db001e3b31f",
+      "context_digest": "f3794089d880f9e9b7f00b708024843702eba2e0adf583c29a9ca3f9658909d6",
       "evidence": {},
       "kind": "synthetic",
       "lambda_est_bits": 128.1,
@@ -64,7 +193,7 @@
     "repair": {
       "action_digest": "84f6c03b31d2bee0a03e06b19fe24b1dab18b61898a7a2fcadf8bc6f5fcac598",
       "airtime_s": 0.5,
-      "context_digest": "83fddb211dd49848d6cedc019618bf918341b0453490201ca7627db001e3b31f",
+      "context_digest": "f3794089d880f9e9b7f00b708024843702eba2e0adf583c29a9ca3f9658909d6",
       "evidence": {},
       "kind": "synthetic",
       "lambda_est_bits": 128.1,
@@ -81,463 +210,988 @@
   },
   "context": {
     "airtime_budget_s": 1.0,
+    "description": "Historical network reference domain [100,500,1], accommodating normalized loss up to 1/0.002-1. Invariance and drift are checked separately for each fitted model.",
+    "status": "synthetic_unvalidated",
     "workspace_budget_bytes": 10240
   },
+  "cryptographic_parameters": {
+    "m": 1536,
+    "module_rank": 6,
+    "n": 1536,
+    "p": 65537,
+    "parameter_set_id": "daahe-k6-d256-q32-sigma3.2-v1",
+    "q": 4294967296,
+    "ring_degree": 256,
+    "sigma_key": 3.2
+  },
+  "decoding_probability_summary": {
+    "control_model_certified": false,
+    "finite_adaptive_union_log2_upper": "-130.5101731584115037993802806260378646520020748038833209361732311863642482168",
+    "finite_adaptive_union_scope": "one choice from the finite declared profile/size library before fresh batch noise; joint random-key/history probability, not conditional on observed history or any fixed key",
+    "full_fixed_key_conditional_certificate": false,
+    "probability_scope": "joint probability over independently sampled random keygen coefficients and fresh honest encryption noises for one batch; not a worst-case bound conditioned on every fixed realized secret key",
+    "status": "passed_decoding_tail_bound"
+  },
+  "description": "Controller model fitted on independent training trajectories and heldout empirical residuals",
   "dpp_violation_models": {
     "fallback": [
       [
-        -0.2,
-        0.2,
-        0.1,
-        0
+        9.907380206659811,
+        0.0646198556057242,
+        0.0071994946937301504,
+        0.0
       ],
       [
-        -0.2,
-        0.1,
-        0.2,
-        0
+        8.60303565372925,
+        -0.6247431245141275,
+        0.7807616773096935,
+        0.0
       ],
       [
-        -0.5,
-        0,
-        0,
-        0.2
+        -0.8907609539564798,
+        0.0006261681959353045,
+        -7.325255179028917e-05,
+        0.0
       ]
     ],
     "nominal": [
       [
-        -0.2,
-        0.2,
-        0.1,
-        0
+        8.987662577285583,
+        0.2951919289570855,
+        -0.010873980101367727,
+        0.0
       ],
       [
-        -0.2,
-        0.1,
-        0.2,
-        0
+        72.86563097374756,
+        2.610926908666938,
+        0.8077721453729222,
+        0.0
       ],
       [
-        -0.5,
-        0,
-        0,
-        0.2
+        -0.8932103609852349,
+        7.14835835806003e-06,
+        -8.138258402645014e-05,
+        0.0
       ]
     ],
     "repair": [
       [
-        -0.2,
-        0.2,
-        0.1,
-        0
+        5.082587433237965,
+        0.39471178842820476,
+        0.009632982791205098,
+        0.0
       ],
       [
-        -0.2,
-        0.1,
-        0.2,
-        0
+        53.33529117207996,
+        -0.7634709254871304,
+        0.8272121162081113,
+        0.0
       ],
       [
-        -0.5,
-        0,
-        0,
-        0.2
+        -0.8829705224741687,
+        0.0004366052242884065,
+        -7.249929560808963e-05,
+        0.0
       ]
     ]
   },
   "fallback_id": "fallback",
-  "initial_action": {
-    "da-ahe": "normal",
-    "dpp": "fallback",
-    "hys": "normal"
-  },
   "hysteresis": {
     "hold_intervals": 3,
     "mode_actions": {
       "M": "repair",
-      "N": "normal",
+      "N": "nominal",
       "S": "fallback"
     },
     "theta_high": 0.6,
     "theta_low": 0.35,
     "theta_severe": 0.85
   },
+  "initial_action": {
+    "da-ahe": "nominal",
+    "dpp": "fallback",
+    "hys": "nominal"
+  },
   "loss_threshold": 0.002,
   "model": {
     "bound_evidence": {},
-    "bound_kind": "run",
+    "bound_kind": "empirical",
     "emissions": {
       "means": [
         [
-          0.1,
-          0.0005,
-          0.2,
-          0.0001,
-          0.05,
-          0.05
+          0.9157896253797743,
+          0.2739907036214829,
+          5.739547670686618,
+          0.03186217759806996,
+          0.917984022941567,
+          0.10255555555555557
         ],
         [
-          0.5,
-          0.0015,
-          0.5,
-          0.001,
-          0.15,
-          0.2
+          0.944173742223669,
+          0.6235748772789326,
+          6.392041870755581,
+          0.07360384537017153,
+          0.9444444444444444,
+          0.07888888888888888
         ],
         [
-          0.35,
-          0.001,
-          0.4,
-          0.001,
-          0.1,
-          0.15
+          0.9994888305664062,
+          0.2878082461117591,
+          6.512922483021405,
+          0.15010703208825163,
+          1.0,
+          0.13
         ],
         [
-          0.6,
-          0.002,
-          0.6,
-          0.002,
-          0.2,
-          0.3
+          0.999420166015625,
+          0.7510381593714928,
+          2.7440214028733316,
+          0.3778942354976167,
+          1.0,
+          0.07333333333333333
         ],
         [
-          0.8,
-          0.003,
-          0.8,
-          0.01,
-          0.4,
-          0.5
+          0.9894282023111979,
+          0.7389846743295019,
+          2.0511681695657127,
+          0.6750008796732113,
+          0.9902741329646494,
+          0.03
         ]
       ],
       "tamper_probabilities": [
-        0.01,
-        0.02,
-        0.03,
-        0.04,
-        0.1
+        0.9033149171270718,
+        0.6818181818181818,
+        0.9615384615384616,
+        0.9615384615384616,
+        0.9615384615384616
       ],
       "variances": [
         [
-          0.02,
-          1e-06,
-          0.02,
-          1e-06,
-          0.02,
-          0.02
+          0.0616338689366275,
+          0.07707594626529822,
+          6.6938617707115355,
+          0.01565304637176241,
+          0.061711937639846406,
+          0.0015912469135802472
         ],
         [
-          0.02,
-          1e-06,
-          0.02,
-          1e-06,
-          0.02,
-          0.02
+          0.052439106001348754,
+          0.229027151789423,
+          109.00347099747307,
+          0.0016394870046738193,
+          0.05246913580246914,
+          0.0010580246913580247
         ],
         [
-          0.02,
-          1e-06,
-          0.02,
-          1e-06,
-          0.02,
-          0.02
+          8.787416542569797e-08,
+          0.044232232205605654,
+          0.8793841639771869,
+          0.007252146516415041,
+          1e-08,
+          0.0013666666666666669
         ],
         [
-          0.02,
-          1e-06,
-          0.02,
-          1e-06,
-          0.02,
-          0.02
+          1.3483998676141102e-06,
+          0.17303904095827963,
+          11.127693535368836,
+          0.04653574662265315,
+          1e-08,
+          0.0014222222222222223
         ],
         [
-          0.02,
-          1e-06,
-          0.02,
-          1e-06,
-          0.02,
-          0.02
+          0.0011638796357955371,
+          0.1785377765299981,
+          8.956931298687513,
+          0.14901457840909413,
+          0.0010405173854825223,
+          0.0019666666666666665
         ]
       ]
     },
     "error_radii": {
       "fallback": [
-        0.005,
-        0.005,
-        0.005,
-        0.005,
-        0.005
+        293.3498625696083,
+        301.0634316644129,
+        90.95577671861275,
+        227.21284104411933,
+        235.20685569043678
       ],
       "nominal": [
-        0.005,
-        0.005,
-        0.005,
-        0.005,
-        0.005
+        213.6016824367556,
+        281.5774705535333,
+        87.50354433181292,
+        316.685756109301,
+        275.43923863857464
       ],
       "repair": [
-        0.005,
-        0.005,
-        0.005,
-        0.005,
-        0.005
+        237.0152445779516,
+        257.03431339976083,
+        93.23572585706377,
+        183.72133627963927,
+        262.40618654880956
       ]
     },
     "kappa_z": 0.3,
     "metadata": {
       "action_digests": {
-        "fallback": "8e950347a8caa1110523f97da240e4eb298ed710e8efa9119e327a437e59d650",
+        "fallback": "20f0fee06edc5ff4116658e6cf7c98128c2338f764ad9838bd309f5cf18f8a4e",
         "nominal": "6b4b1bf0b43de8c47f097e7157f6f80c60789df3617c54b17e2cd1bddbc71c31",
         "repair": "84f6c03b31d2bee0a03e06b19fe24b1dab18b61898a7a2fcadf8bc6f5fcac598"
       },
+      "dirichlet_strength": 5.0,
+      "holdout_digest": "7c36b453b26d972b6da27c726e7c85cf5d269e52287eee7add3207251eda310b",
+      "holdout_rows": 180,
+      "labels_available_online": false,
+      "noise_timing": "obs_noise_utilization is F_t; metric noise is next_noise_utilization after a_t",
+      "radius_method": "heldout empirical maximum; not a population or uniform bound",
+      "ridge_intercept_regularized": true,
+      "ridge_regularization": 0.001,
+      "runtime_adaptation_default": false,
+      "runtime_adaptation_requires_revalidated_radii": true,
+      "seed_manifest": {
+        "evaluation": [
+          "22000/congestion",
+          "22000/global_impairment",
+          "22000/local_impairment",
+          "22000/normal",
+          "22000/severe_loss",
+          "22001/congestion",
+          "22001/global_impairment",
+          "22001/local_impairment",
+          "22001/normal",
+          "22001/severe_loss"
+        ],
+        "holdout": [
+          "21000/congestion",
+          "21000/global_impairment",
+          "21000/local_impairment",
+          "21000/normal",
+          "21000/severe_loss",
+          "21001/congestion",
+          "21001/global_impairment",
+          "21001/local_impairment",
+          "21001/normal",
+          "21001/severe_loss"
+        ],
+        "training": [
+          "20000/congestion",
+          "20000/global_impairment",
+          "20000/local_impairment",
+          "20000/normal",
+          "20000/severe_loss",
+          "20001/congestion",
+          "20001/global_impairment",
+          "20001/local_impairment",
+          "20001/normal",
+          "20001/severe_loss",
+          "20002/congestion",
+          "20002/global_impairment",
+          "20002/local_impairment",
+          "20002/normal",
+          "20002/severe_loss"
+        ]
+      },
+      "sparse_threshold": 3,
+      "state_cost_conditioning": "next_regime, weighted by causal predicted next-regime probabilities",
+      "state_fit": "joint regime/action ridge followed by ReLU",
+      "state_radius_holdout_counts": {
+        "fallback": [
+          40,
+          12,
+          3,
+          3,
+          2
+        ],
+        "nominal": [
+          40,
+          12,
+          2,
+          3,
+          3
+        ],
+        "repair": [
+          40,
+          12,
+          3,
+          2,
+          3
+        ]
+      },
+      "trace_schema_version": 2,
+      "training_digest": "100c9c8ddabd637d8f6dd95a5aae072bd3bf65446518505afabdfd96ac30ae8f",
+      "training_rows": 270,
+      "transition_radius_method": "max heldout source-row L1 deviation; absent row -> 2",
+      "transition_row_training_counts": {
+        "fallback": [
+          60,
+          18,
+          4,
+          4,
+          4
+        ],
+        "nominal": [
+          60,
+          18,
+          4,
+          4,
+          4
+        ],
+        "repair": [
+          60,
+          18,
+          4,
+          4,
+          4
+        ]
+      },
+      "variance_floor": 1e-08
     },
     "offsets": [
       [
-        0.005,
-        0.005,
-        0.005
+        4.460095418492252,
+        -30.101685329468495,
+        0.0
       ],
       [
-        0.01,
-        0.01,
-        0.01
+        6.537985688387684,
+        112.95427233032999,
+        0.0
       ],
       [
-        0.015,
-        0.015,
-        0.015
+        4.410913684433639,
+        -18.72179724422739,
+        0.0
       ],
       [
-        0.02,
-        0.02,
-        0.02
+        -1.2348427956205779,
+        167.35434276023244,
+        0.0
       ],
       [
-        0.025,
-        0.025,
-        0.025
+        -2.202444724172144,
+        163.1862619808228,
+        0.0
       ]
     ],
     "pooled_metrics": {
       "fallback": {
         "delay": [
-          0.35,
-          0.05,
-          0.05,
-          0.05
+          5.453673171503984,
+          0.03231043011707586,
+          0.003599778005165972,
+          0.0
         ],
         "distortion": [
-          0.12,
-          0,
-          0,
-          0
+          0.0033944587868473056,
+          -3.5120593611681136e-07,
+          -3.504646601108815e-08,
+          0.0
         ],
         "energy": [
-          0.0008,
-          0.0001,
-          0.0001,
-          0.0001
+          0.00027036610784078173,
+          6.696741055229131e-07,
+          -1.0364516785567047e-07,
+          0.0
         ],
         "noise_utilization": [
-          0.05,
-          0,
-          0,
-          0
+          0.1092051823916774,
+          0.000627172824362642,
+          -7.319123518849399e-05,
+          0.0
         ]
       },
-      "normall": {
+      "nominal": {
         "delay": [
-          0.45,
-          0.05,
-          0.05,
-          0.05
+          4.99381734514313,
+          0.14759637982621215,
+          -0.0054369671185795195,
+          0.0
         ],
         "distortion": [
-          0.02,
-          0,
-          0,
-          0
+          0.0021061814101773334,
+          1.512656592274205e-06,
+          8.192542238823137e-08,
+          0.0
         ],
         "energy": [
-          0.0014,
-          0.0001,
-          0.0001,
-          0.0001
+          0.00044761933297819814,
+          4.2917518265061493e-07,
+          -1.3090223137504333e-07,
+          0.0
         ],
         "noise_utilization": [
-          0.5,
-          0,
-          0,
-          0
+          0.10676175201544427,
+          7.979053696768575e-06,
+          -8.133671981776602e-05,
+          0.0
         ]
       },
       "repair": {
         "delay": [
-          0.4,
-          0.05,
-          0.05,
-          0.05
+          3.0412710151252162,
+          0.19735678709369092,
+          0.0048165306404319205,
+          0.0
         ],
         "distortion": [
-          0.05,
-          0,
-          0,
-          0
+          0.003087942915313802,
+          -1.3677183173272765e-08,
+          -2.1848038121302332e-07,
+          0.0
         ],
         "energy": [
-          0.0011,
-          0.0001,
-          0.0001,
-          0.0001
+          0.00036034563878882455,
+          9.917930631262248e-07,
+          -6.442151138003321e-08,
+          0.0
         ],
         "noise_utilization": [
-          0.4,
-          0,
-          0,
-          0
+          0.11698407453830241,
+          0.0004383909834654151,
+          -7.242080594935919e-05,
+          0.0
         ]
       }
     },
     "relief": {
       "fallback": [
-        0.03,
-        0.03,
-        0.03
+        -4.927326974834711,
+        -86.20206362026957,
+        -0.0
       ],
-      "normal": [
-        0,
-        0,
-        0
+      "nominal": [
+        -3.107507175039406,
+        -165.93409966176353,
+        -0.0
       ],
       "repair": [
-        0.04,
-        0.04,
-        0.04
+        -3.936873121565081,
+        -142.53523122149758,
+        -0.0
       ]
     },
-    "state_metrics": {},
+    "state_metrics": {
+      "fallback": [
+        {
+          "delay": [
+            2.8019008397705543,
+            0.3631542030392512,
+            0.0017599257809439578,
+            0.0
+          ],
+          "distortion": [
+            0.0033182911515219453,
+            4.498346408923426e-06,
+            1.5325787499700246e-07,
+            0.0
+          ],
+          "energy": [
+            0.0002429051935169169,
+            5.338814288508867e-06,
+            -7.242766272730552e-08,
+            0.0
+          ],
+          "noise_utilization": [
+            0.08816948876881817,
+            0.0028989016803024474,
+            -4.2041599550317345e-05,
+            0.0
+          ]
+        },
+        {
+          "delay": [
+            5.821384474667856,
+            -0.08041395603081505,
+            0.010847994591437267,
+            0.0
+          ],
+          "distortion": [
+            0.00337415230869167,
+            -8.700785478522002e-07,
+            -8.221391523691724e-08,
+            0.0
+          ],
+          "energy": [
+            0.00020066743050166014,
+            -1.1188229338595138e-07,
+            -3.076789933405891e-08,
+            0.0
+          ],
+          "noise_utilization": [
+            0.0967804685432679,
+            6.272376959625173e-06,
+            -4.4682891725486044e-05,
+            0.0
+          ]
+        },
+        {
+          "delay": [
+            10.302880497876032,
+            -0.22833270075936496,
+            -0.012206375625714874,
+            0.0
+          ],
+          "distortion": [
+            0.005578804538171136,
+            -0.00016698360214731893,
+            -2.761604622085142e-06,
+            0.0
+          ],
+          "energy": [
+            0.00027050521818277977,
+            7.736464524103816e-07,
+            -1.2772734954749127e-07,
+            0.0
+          ],
+          "noise_utilization": [
+            0.10984123654227612,
+            0.0008917556015588971,
+            5.4286265868234e-06,
+            0.0
+          ]
+        },
+        {
+          "delay": [
+            4.481165040247326,
+            -0.04878452715198539,
+            -0.008344590962706564,
+            0.0
+          ],
+          "distortion": [
+            0.003538737855470493,
+            -1.3391498854461155e-05,
+            -4.3303015309966844e-07,
+            0.0
+          ],
+          "energy": [
+            0.00023458556253461583,
+            -1.3945249020975128e-06,
+            -9.721492142168578e-08,
+            0.0
+          ],
+          "noise_utilization": [
+            0.16012811298309174,
+            -0.0018266065170018178,
+            -0.0001975363214140163,
+            0.0
+          ]
+        },
+        {
+          "delay": [
+            6.642779435453036,
+            -0.07883654407570528,
+            -0.01331218321064965,
+            0.0
+          ],
+          "distortion": [
+            0.0036323581647793543,
+            -1.7882307124585688e-05,
+            -2.70507507417945e-07,
+            0.0
+          ],
+          "energy": [
+            0.0003833139137971532,
+            -1.1524758421946527e-05,
+            -3.9493898656629377e-07,
+            0.0
+          ],
+          "noise_utilization": [
+            0.14809942991917158,
+            -0.005657249665135201,
+            -0.00029679244413183237,
+            0.0
+          ]
+        }
+      ],
+      "nominal": [
+        {
+          "delay": [
+            2.709085592347622,
+            0.29882096328463803,
+            0.0029606933539495176,
+            0.0
+          ],
+          "distortion": [
+            0.002166472483525578,
+            4.6931394581082904e-08,
+            -1.0195795678901965e-07,
+            0.0
+          ],
+          "energy": [
+            0.0004268278315958998,
+            3.4386964456262516e-06,
+            -8.102400148316323e-08,
+            0.0
+          ],
+          "noise_utilization": [
+            0.0975594336680353,
+            0.001265832071083349,
+            -7.10404085010803e-05,
+            0.0
+          ]
+        },
+        {
+          "delay": [
+            7.09230681638935,
+            0.12363366044874004,
+            -0.010485729134758506,
+            0.0
+          ],
+          "distortion": [
+            0.00203682069184699,
+            8.641354491232772e-07,
+            3.7600749093138074e-07,
+            0.0
+          ],
+          "energy": [
+            0.0003773614919644983,
+            4.629194333857511e-08,
+            -1.2854977120033912e-08,
+            0.0
+          ],
+          "noise_utilization": [
+            0.09196087993361564,
+            -0.0003788477942774224,
+            -1.9973227447598926e-05,
+            0.0
+          ]
+        },
+        {
+          "delay": [
+            7.826995272332775,
+            -0.03687254022923758,
+            -0.005450076473667403,
+            0.0
+          ],
+          "distortion": [
+            0.001727981396062319,
+            2.4216418924386066e-05,
+            -9.807510667792713e-07,
+            0.0
+          ],
+          "energy": [
+            0.0004404428371983358,
+            -1.9732285426357537e-08,
+            -1.271553397919737e-07,
+            0.0
+          ],
+          "noise_utilization": [
+            0.22660246014890237,
+            -0.007692068823982441,
+            -0.0002045397281422094,
+            0.0
+          ]
+        },
+        {
+          "delay": [
+            11.361613611693747,
+            -0.36566526091764323,
+            -0.022771933856244545,
+            0.0
+          ],
+          "distortion": [
+            0.002340886626176558,
+            -2.0619569873165384e-05,
+            -5.756150432696285e-07,
+            0.0
+          ],
+          "energy": [
+            0.0008935278011643118,
+            -3.367600052749812e-05,
+            -1.0488777160729478e-06,
+            0.0
+          ],
+          "noise_utilization": [
+            0.2615785153278702,
+            -0.012807324001360938,
+            -0.00042407809910804863,
+            0.0
+          ]
+        },
+        {
+          "delay": [
+            2.1612490268861393,
+            0.030814487473803415,
+            -0.00490086038369048,
+            0.0
+          ],
+          "distortion": [
+            0.0017848704565877624,
+            1.3069041113722313e-05,
+            2.6975283889199834e-07,
+            0.0
+          ],
+          "energy": [
+            0.00039487317609346925,
+            9.012441541464145e-07,
+            -8.120611613889649e-08,
+            0.0
+          ],
+          "noise_utilization": [
+            0.0349180981106411,
+            0.000497852530390554,
+            -7.91804746123196e-05,
+            0.0
+          ]
+        }
+      ],
+      "repair": [
+        {
+          "delay": [
+            2.671334740306418,
+            0.29253116697110126,
+            0.001234714549700688,
+            0.0
+          ],
+          "distortion": [
+            0.003171495175616496,
+            -9.613095177225128e-06,
+            -1.962692777464022e-07,
+            0.0
+          ],
+          "energy": [
+            0.00034839697646517044,
+            3.5722184447048803e-06,
+            -5.057211344580428e-08,
+            0.0
+          ],
+          "noise_utilization": [
+            0.10317624684664835,
+            0.003080958075540717,
+            -9.462809912733517e-05,
+            0.0
+          ]
+        },
+        {
+          "delay": [
+            2.336218307802148,
+            0.18242824773337435,
+            0.011948079738336996,
+            0.0
+          ],
+          "distortion": [
+            0.0029035645914444485,
+            5.359207685399255e-06,
+            1.9182863591969298e-07,
+            0.0
+          ],
+          "energy": [
+            0.000308201602072105,
+            8.457975371693566e-09,
+            -1.2589405333867277e-08,
+            0.0
+          ],
+          "noise_utilization": [
+            0.09141020199483886,
+            -0.0006353261217032569,
+            -6.999649893403343e-06,
+            0.0
+          ]
+        },
+        {
+          "delay": [
+            10.21780050115772,
+            -0.3506606584589518,
+            0.0013668116567823602,
+            0.0
+          ],
+          "distortion": [
+            0.002850227775919194,
+            4.059037646315759e-05,
+            -1.6301212816524151e-06,
+            0.0
+          ],
+          "energy": [
+            0.0005262153430642595,
+            -1.156765405022912e-05,
+            -5.763353115081379e-08,
+            0.0
+          ],
+          "noise_utilization": [
+            0.8167069485494244,
+            -0.04800297689675552,
+            -0.000314770974430134,
+            0.0
+          ]
+        },
+        {
+          "delay": [
+            6.166888633710809,
+            0.029919186922088392,
+            -0.012873770000226182,
+            0.0
+          ],
+          "distortion": [
+            0.0034516792182526885,
+            6.6551123815616e-07,
+            -1.2779485191414996e-06,
+            0.0
+          ],
+          "energy": [
+            0.0003561455362284833,
+            -1.0715762075389982e-06,
+            -9.623352678039409e-08,
+            0.0
+          ],
+          "noise_utilization": [
+            0.04256481662894805,
+            0.003217158352654438,
+            -3.677303291325951e-05,
+            0.0
+          ]
+        },
+        {
+          "delay": [
+            -15.913058524866523,
+            1.792661462044535,
+            0.031889896779384204,
+            0.0
+          ],
+          "distortion": [
+            0.0025713145074568932,
+            2.7934097331254917e-05,
+            1.0646371136684795e-06,
+            0.0
+          ],
+          "energy": [
+            5.949559719131903e-05,
+            2.4522409754302188e-05,
+            4.899017617230308e-07,
+            0.0
+          ],
+          "noise_utilization": [
+            -0.2308947173566515,
+            0.026011094029983556,
+            0.00046271486351304484,
+            0.0
+          ]
+        }
+      ]
+    },
     "transition_radii": {
-      "fallback": 0.1,
-      "normal": 0.1,
-      "repair": 0.1
+      "fallback": 1.0,
+      "nominal": 1.0,
+      "repair": 1.0
     },
     "transitions": {
       "fallback": [
         [
-          0.7,
-          0.2,
-          0.05,
-          0.03,
-          0.02
+          0.9307692307692308,
+          0.015384615384615385,
+          0.019230769230769232,
+          0.01769230769230769,
+          0.016923076923076926
         ],
         [
-          0.25,
-          0.4,
-          0.2,
-          0.1,
-          0.05
+          0.05434782608695652,
+          0.8695652173913043,
+          0.043478260869565216,
+          0.021739130434782608,
+          0.010869565217391304
         ],
         [
-          0.45,
-          0.15,
-          0.3,
-          0.05,
-          0.05
+          0.3611111111111111,
+          0.08333333333333333,
+          0.5,
+          0.027777777777777776,
+          0.027777777777777776
         ],
         [
-          0.3,
-          0.15,
-          0.2,
-          0.3,
-          0.05
+          0.2777777777777778,
+          0.08333333333333333,
+          0.1111111111111111,
+          0.5,
+          0.027777777777777776
         ],
         [
-          0.15,
-          0.2,
-          0.2,
-          0.15,
-          0.3
+          0.19444444444444445,
+          0.1111111111111111,
+          0.1111111111111111,
+          0.08333333333333333,
+          0.5
         ]
       ],
       "nominal": [
         [
-          0.7,
-          0.2,
-          0.05,
-          0.03,
-          0.02
+          0.9307692307692308,
+          0.015384615384615385,
+          0.019230769230769232,
+          0.01769230769230769,
+          0.016923076923076926
         ],
         [
-          0.25,
-          0.4,
-          0.2,
-          0.1,
-          0.05
+          0.05434782608695652,
+          0.8695652173913043,
+          0.043478260869565216,
+          0.021739130434782608,
+          0.010869565217391304
         ],
         [
-          0.45,
-          0.15,
-          0.3,
-          0.05,
-          0.05
+          0.3611111111111111,
+          0.08333333333333333,
+          0.5,
+          0.027777777777777776,
+          0.027777777777777776
         ],
         [
-          0.3,
-          0.15,
-          0.2,
-          0.3,
-          0.05
+          0.2777777777777778,
+          0.08333333333333333,
+          0.1111111111111111,
+          0.5,
+          0.027777777777777776
         ],
         [
-          0.15,
-          0.2,
-          0.2,
-          0.15,
-          0.3
+          0.19444444444444445,
+          0.1111111111111111,
+          0.1111111111111111,
+          0.08333333333333333,
+          0.5
         ]
       ],
       "repair": [
         [
-          0.7,
-          0.2,
-          0.05,
-          0.03,
-          0.02
+          0.9307692307692308,
+          0.015384615384615385,
+          0.019230769230769232,
+          0.01769230769230769,
+          0.016923076923076926
         ],
         [
-          0.25,
-          0.4,
-          0.2,
-          0.1,
-          0.05
+          0.05434782608695652,
+          0.8695652173913043,
+          0.043478260869565216,
+          0.021739130434782608,
+          0.010869565217391304
         ],
         [
-          0.45,
-          0.15,
-          0.3,
-          0.05,
-          0.05
+          0.3611111111111111,
+          0.08333333333333333,
+          0.5,
+          0.027777777777777776,
+          0.027777777777777776
         ],
         [
-          0.3,
-          0.15,
-          0.2,
-          0.3,
-          0.05
+          0.2777777777777778,
+          0.08333333333333333,
+          0.1111111111111111,
+          0.5,
+          0.027777777777777776
         ],
         [
-          0.15,
-          0.2,
-          0.2,
-          0.15,
-          0.3
+          0.19444444444444445,
+          0.1111111111111111,
+          0.1111111111111111,
+          0.08333333333333333,
+          0.5
         ]
       ]
     },
     "transitions_by_bin": {},
     "zcert_max": [
-      1,
-      1,
-      1
+      100.0,
+      500.0,
+      1.0
     ]
   },
   "online_adaptation": false,
@@ -568,25 +1222,38 @@
       0.1
     ]
   },
+  "profile_batch_caps": {
+    "fallback": 12,
+    "nominal": 16,
+    "repair": 14
+  },
+  "profile_encryption_sigmas": {
+    "fallback": 3.6,
+    "nominal": 3.2,
+    "repair": 3.4
+  },
   "profiles": {
-    "fallback": {
+    "synthetic-fallback": {
       "L": 120,
       "delta_q": 16,
-      "sigma_enc": 3.2,
+      "sigma_enc": 3.6,
+      "status": "synthetic_unvalidated"
     },
     "synthetic-nominal": {
       "L": 240,
       "delta_q": 8,
       "sigma_enc": 3.2,
+      "status": "synthetic_unvalidated"
     },
     "synthetic-repair": {
       "L": 180,
       "delta_q": 12,
       "sigma_enc": 3.4,
+      "status": "synthetic_unvalidated"
     }
   },
   "runtime": {
-    "context_digest": "83fddb211dd49848d6cedc019618bf918341b0453490201ca7627db001e3b31f",
+    "context_digest": "f3794089d880f9e9b7f00b708024843702eba2e0adf583c29a9ca3f9658909d6",
     "evidence_root": null,
     "max_airtime_s": 1.0,
     "max_workspace_bytes": 10240,
@@ -594,18 +1261,25 @@
     "minimum_security_bits": 128.1,
     "participant_count": 1,
     "profile_digests": {
-      "synthetic-fallback": "106a8a88b048cbbbfd192811293cc8ca95f5424ae84d043ab2d2c699c23f1916",
+      "synthetic-fallback": "6c4aeddfb1982000230655c6419403c093d88613d57e32f3370f93cd8e0aa7db",
       "synthetic-nominal": "960089f9c32d371d08d46290b206a54e6a37a957afaedd2c240049ae1ae6ac73",
       "synthetic-repair": "8de69d20274d23730531da7d4f2f237aaa3cd1a02ffcf93de8193f2943c53057"
     },
-    "strict": true,
+    "strict": false,
     "zcert_max": [
-      1,
-      1,
-      1
+      100.0,
+      500.0,
+      1.0
     ]
   },
   "schema_version": 1,
+  "security_estimator_summary": {
+    "computed_estimator_bits": 136.475,
+    "full_system_certified": false,
+    "required_estimator_bits": 128.1,
+    "scope": "heuristic generic flattened-LWE estimates; not a module-specific, side-channel, implementation or worst-case proof"
+  },
+  "status": "empirical_calibrated_service_model",
   "stress_boundaries": [
     0.2,
     0.4,
@@ -623,5 +1297,5 @@
     1
   ],
   "v_dpp": 1.0,
-  "warning": "All certificate numbers and controller fits below are artificial API fixtures. They DO NOT validate security/correctness/resource bounds or reproduce manuscript results. Strict mode must refuse this file."
+  "warning": "Empirical residual maxima are not uniform true-process bounds; original resource admission evidence is not promoted by this fit."
 }

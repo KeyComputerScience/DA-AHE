@@ -18,7 +18,7 @@
 | Ticket | Versioned canonical JSON binds epoch, batch, context, full profile digest, canonical roster, nonce, block size and encryption tuple |
 | Key identity | Provisioning binds context/epoch to the intended public key and policy |
 | Integrity | ML-DSA-44 authorization, HMAC-SHA3-256 transport checks and 16 hidden field tags |
-| Model scope | Synthetic control fixtures do not establish uniform bounds or invariant-domain certificates |
+| Model scope | Declared reference coefficients do not establish uniform bounds or invariant-domain certificates; [calibration and model-relative checks](CONTROLLER_CALIBRATION.md) retain their own assumptions and reports |
 
 The transform identifier is
 `reference-intdb2-two-level-periodic-unnormalized-q30-v2` and is part of the full
@@ -43,4 +43,4 @@ Sink Seen provides at-most-once acceptance. A durable result/outbox and an
 idempotent consumer are separate requirements for recovering delivery after a
 crash between Seen commit and application receipt. The Python ledger is not a
 board flash driver, and host block iteration does not prove a 10-KiB firmware
-workspace. See [the protocol source](manuscript/PARAMETER_PROTOCOL.tex).
+workspace. See [the protocol source](../src/daahe/protocol.py).

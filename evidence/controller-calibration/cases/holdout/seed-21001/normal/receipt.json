@@ -1,0 +1,183 @@
+{
+  "completed": true,
+  "coverage": {
+    "by_action_current_regime": {
+      "fallback": [
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nominal": [
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "repair": [
+        6,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "by_action_next_regime": {
+      "fallback": [
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "nominal": [
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      "repair": [
+        6,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "missing_current_cells": [
+      [
+        "fallback",
+        1
+      ],
+      [
+        "fallback",
+        2
+      ],
+      [
+        "fallback",
+        3
+      ],
+      [
+        "fallback",
+        4
+      ],
+      [
+        "nominal",
+        1
+      ],
+      [
+        "nominal",
+        2
+      ],
+      [
+        "nominal",
+        3
+      ],
+      [
+        "nominal",
+        4
+      ],
+      [
+        "repair",
+        1
+      ],
+      [
+        "repair",
+        2
+      ],
+      [
+        "repair",
+        3
+      ],
+      [
+        "repair",
+        4
+      ]
+    ],
+    "missing_next_cells": [
+      [
+        "fallback",
+        1
+      ],
+      [
+        "fallback",
+        2
+      ],
+      [
+        "fallback",
+        3
+      ],
+      [
+        "fallback",
+        4
+      ],
+      [
+        "nominal",
+        1
+      ],
+      [
+        "nominal",
+        2
+      ],
+      [
+        "nominal",
+        3
+      ],
+      [
+        "nominal",
+        4
+      ],
+      [
+        "repair",
+        1
+      ],
+      [
+        "repair",
+        2
+      ],
+      [
+        "repair",
+        3
+      ],
+      [
+        "repair",
+        4
+      ]
+    ],
+    "rows": 18
+  },
+  "elapsed_s": 25.422412624990102,
+  "exploration_order": [
+    "nominal",
+    "repair",
+    "fallback"
+  ],
+  "exploration_phase": 1,
+  "files": {
+    "config.json": "c1209ab87f5d57ba551d4f0f46323f8116b2d21386fd360473596bd11ce31ed2",
+    "inputs/disturbances.json": "3968ebb497f7ce77054ef8ad38dd98a9060adb3aea05cd304b7a5cc8edfb3553",
+    "inputs/manifest.json": "a91183d8821d515e347720d53b6164edb30519618338989a9fa2154ba4802441",
+    "inputs/topology.json": "69796fd0c667bbb3fe4124548793a0bb850c921c74ba932c2aa7c91da82b26df",
+    "inputs/traffic.jsonl.gz": "7064a58a7535cd5d6cdccc704c61d4d0be6d2fe5f88af9a1ebde686190985448",
+    "raw/epochs.jsonl.gz": "0b6fb17939de7c324c11c46503d48b7f76476fe9e50d3630bc1b199e3bdb7946",
+    "raw/events.jsonl.gz": "81915ebd1ea25a6b20bc42396683e980ef921453592363373cc7da7d37966380",
+    "raw/manifest.json": "9b0031d45700e0bdb8a287421e30b6108b93509328bc8daf8d799b13dd79dd09",
+    "raw/packets.jsonl.gz": "8613cd2a24286dd84bbae7f4170fe89a5dea58f75e9669f7af2c9ab3a405ac15",
+    "raw/reports.jsonl.gz": "2964baafa96b75578ae2192e45934f3b7815fde79e316ad6bffbaadeaeb522a2",
+    "raw/summary.json": "06a8d4e808f288881b8079f3a17d14ad82c62354a60fa8ec4119fc1c53bddb64",
+    "signal-cases.jsonl.gz": "2c63b8a9619b9147d7bfc964b65a5389511a9c14951f6b336595d728f22f4757",
+    "transition-diagnostics.json": "ac3b2cc31d79d67e7d054b87e9dc78216b93618c067cce9682e946984e753a17",
+    "transitions.csv": "0317e7a0fa975241f32b6e4685f3115819dfbff9c1fcebaf94034dc3ef2ecbd6"
+  },
+  "finished_utc": "2026-10-17T13:25:55.907731+00:00",
+  "operational_labels_available_online": false,
+  "partition": "holdout",
+  "rows": 18,
+  "scenario": "normal",
+  "scope": "Executed independent two-hop service-model identification; configured operational-stage labels, modeled CPU/communication, and separately executed synthetic integer signal probes. No physical-board data, uniform true-process coverage, or deployment certification.",
+  "seed": 21001,
+  "started_utc": "2026-10-17T13:25:30.485322+00:00"
+}

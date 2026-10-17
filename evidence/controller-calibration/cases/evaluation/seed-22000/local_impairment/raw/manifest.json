@@ -1,0 +1,63 @@
+{
+  "ablation_instrumentation_version": 1,
+  "all_decisions_certified": false,
+  "config_digest": "1e1b6453e53388838b560984fcc833c1f53b5ba74ed0dcb285775e4b1f256149",
+  "controller_sha256": "9f29674092d709c4b25cd1787d3925db6b20458081bcc1bb656223e389324591",
+  "exogenous_digest": "f51fbbfbb08bbf2d2d244c13794428d904da5baaa1f114089b7dad64a6d9ea7e",
+  "label": "independent fixed-preauthorized-roster closed-loop synthetic packet experiment, not original OMNeT++/INET",
+  "method": "da-ahe",
+  "protocol_model_version": 2,
+  "raw_files": {
+    "epochs.jsonl.gz": "7d460724f651a2c3b209339a4ea4e15a096c122b97a57f3cc4a77b08cbf86f6c",
+    "events.jsonl.gz": "551e4da5e9e382a5255ea2719355da8c6dc794168a014f7de8c2cc1dd4771e85",
+    "packets.jsonl.gz": "aeffbf55e98c824082f0eff66bf3d293b4d8067bbbd303aa8a1eee8c2e052276",
+    "reports.jsonl.gz": "d736b782ceb13f59e68bc08ac0b8dc7dc25b4795b7de92cf71d9712b90fed2b4"
+  },
+  "runtime_counts": {
+    "attempt_outcomes": {
+      "block_auth_reject": 61,
+      "channel_error": 14130,
+      "collision": 2538,
+      "link_down": 8050,
+      "ok": 475347
+    },
+    "modeled_cpu_energy_j": 1.1437724999999903,
+    "modeled_radio_tx_energy_j": 87.23335679972392,
+    "packets": {
+      "deadline": 1221,
+      "queue_overflow": 12941,
+      "received": 475345,
+      "retry_exhausted:block_auth_reject": 1,
+      "retry_exhausted:channel_error": 291,
+      "retry_exhausted:collision": 4,
+      "retry_exhausted:link_down": 1948
+    },
+    "repair_activity": {
+      "actuations_completed": 12,
+      "actuations_failed": 0,
+      "actuations_started": 12,
+      "actuations_unresolved": 0,
+      "enabled_control_epochs": 9,
+      "selected_control_epochs": 9
+    },
+    "reports": {
+      "admitted": 2299,
+      "deadline_expired": 845,
+      "delivered_valid": 1401,
+      "integrity_rejected": 53,
+      "opportunities": 3000,
+      "sampling_skipped": 701
+    },
+    "unique_frames": {
+      "delivered": 475345,
+      "lost": 16406,
+      "offered": 491751,
+      "unresolved": 0
+    },
+    "wire_bytes": 54520848
+  },
+  "schema_version": 1,
+  "seed": 22000,
+  "status": "independent_experimental_uncertified",
+  "stop_time_s": 125.0
+}

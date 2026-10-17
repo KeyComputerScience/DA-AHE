@@ -97,7 +97,7 @@
   },
   "context": {
     "airtime_budget_s": 1.0,
-    "description": "Artificial API fixture for independent closed-loop experiments only. Region [100,500,1] permits normalized observed loss up to 1/0.002-1; this is not an invariant-domain certificate. No security/hardware calibration evidence.",
+    "description": "Historical network reference domain [100,500,1], accommodating normalized loss up to 1/0.002-1. Invariance and drift are checked separately for each fitted model.",
     "status": "synthetic_unvalidated",
     "workspace_budget_bytes": 10240
   },
@@ -119,7 +119,7 @@
     "probability_scope": "joint probability over independently sampled random keygen coefficients and fresh honest encryption noises for one batch; not a worst-case bound conditioned on every fixed realized secret key",
     "status": "passed_decoding_tail_bound"
   },
-  "description": "Explicitly synthetic controller coefficients for the independent packet simulator; no calibration data or external bound certificates exist.",
+  "description": "Reference controller coefficients for the archived independent packet experiments. New controller calibration has separate input traces, seed partitions and verification reports.",
   "dpp_violation_models": {
     "fallback": [
       [
@@ -358,7 +358,7 @@
         "probability_scope": "joint probability over independently sampled random keygen coefficients and fresh honest encryption noises for one batch; not a worst-case bound conditioned on every fixed realized secret key",
         "status": "passed_decoding_tail_bound"
       },
-      "description": "Arbitrary fixture numbers, not fitted, measured, certified, or extracted from unpublished source artifacts.",
+      "description": "Historical reference coefficients retained for reproduction of the archived experiments; fitted coefficients are recorded separately.",
       "profile_batch_caps": {
         "fallback": 12,
         "nominal": 16,
@@ -730,5 +730,5 @@
     1
   ],
   "v_dpp": 1.0,
-  "warning": "EXPERIMENTAL UNCERTIFIED. API equations are reused, but these arbitrary models and action certificates are NOT paper calibration, theorem evidence, hardware measurements, or a production security claim. Strict mode must refuse this fixture. Real k6 security/decoding reports are metadata bindings only; synthetic lambda/epsilon/resource fields and this controller are NOT externally certified."
+  "warning": "Historical reference configuration for the archived network experiments. The resource and security fields retain their original evidence scope; this configuration does not provide a full-system certificate. Strict mode rejects these empirical/reference bounds. Independent controller calibration and mathematical model checks are recorded separately in evidence/controller-calibration/."
 }

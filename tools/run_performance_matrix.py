@@ -90,11 +90,11 @@ def build_plan(root, output, *, spec_path="simulation/performance_matrix.json",
     if spec.get("schema_version") != 1 or spec.get("kind") != "independent_synthetic_performance_matrix":
         raise ValueError("unsupported performance matrix specification")
     base_path = _relative(root, spec["base_config"])
-    controller_path = _relative(root, spec["controller_fixture"])
+    controller_path = _relative(root, spec["controller_config"])
     input_hashes.update({path: file_hash(root / path) for path in (base_path, controller_path)})
     base = validate_config(_read(root, base_path))
     validate_bound_artifacts(base, root)
-    if _relative(root, base["controller_fixture"]) != controller_path:
+    if _relative(root, base["controller_config"]) != controller_path:
         raise ValueError("base configuration and specification use different controllers")
     if (base["cryptographic_parameters"]["module_rank"] != 6 or
             base["cryptographic_parameters"]["ring_degree"] != 256 or
@@ -128,7 +128,7 @@ def build_plan(root, output, *, spec_path="simulation/performance_matrix.json",
     if set(controller["initial_action"]) != {"da-ahe", "dpp", "hys"}:
         raise ValueError("unexpected controller initialization schema")
     if controller["runtime"]["strict"] or controller["status"] != "synthetic_unvalidated":
-        raise ValueError("this matrix requires the explicit synthetic controller fixture")
+        raise ValueError("this matrix requires the historical synthetic reference controller")
     controller["initial_action"] = {name: initial for name in original_controller["initial_action"]}
     controller["initialization_policy"] = spec["initialization_policy"]
     models = controller["dpp_violation_models"]
@@ -154,7 +154,7 @@ def build_plan(root, output, *, spec_path="simulation/performance_matrix.json",
         config = deepcopy(base)
         config.update(nodes=nodes, evaluation_seeds=evaluation_seeds, methods=methods,
                       duration_s=float(selected_duration), metric_start_s=spec["warmup_s"] * scale,
-                      control_interval_s=spec["control_interval_s"], controller_fixture=controller_output)
+                      control_interval_s=spec["control_interval_s"], controller_config=controller_output)
         config["gateways"] = min(base["gateways"], nodes)
         for field in ("local_contention_domains", "backhaul_contention_domains"):
             config[field] = min(base[field], config["gateways"])
@@ -195,7 +195,7 @@ def build_plan(root, output, *, spec_path="simulation/performance_matrix.json",
             "common_initial_action": initial,
             "initial_action_by_method": {method: initial for method in methods},
             "original_initial_action": original_controller["initial_action"],
-            "controller_change": "Initial actions are set to nominal and initialization_policy is explicitly common_nominal_synthetic; all other fixture fields are preserved.",
+            "controller_change": "Initial actions are set to nominal and initialization_policy is explicitly common_nominal_synthetic; all other reference fields are preserved.",
             "candidate_library_shared": True, "existing_admission_gate_G_preserved": True,
             "da_additional_robust_drift_gate_preserved": True,
             "admission_gate_scope": "Adaptive feedback uses the existing G checks. Initialization and the fixed nominal without_markov policy retain the original Policy.choose behavior.",
@@ -203,7 +203,7 @@ def build_plan(root, output, *, spec_path="simulation/performance_matrix.json",
             "identical_admitted_sets_claimed": False,
             "dpp_increment_coefficients_identical": identical_c,
             "action_specific_dpp_calibration_claimed": False,
-            "controller_coefficients": "existing synthetic uncalibrated fixture",
+            "controller_coefficients": "historical reference coefficients",
             "full_system_certified": False,
         },
         "timing": {"duration_s": float(selected_duration), "warmup_s": spec["warmup_s"] * scale,

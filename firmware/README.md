@@ -36,9 +36,12 @@ new security-selected build.
 
 The delivered selected-rank build is `evidence/independent/firmware/selected-k6`,
 with separate `selected-status.json`. Its actual native test and ARM compilation
-passed; the published device inventory contains zero samples. Selection/security-estimator evidence
-is separate from these core microbenchmarks. The old `arm-gcc-14.3.1` directory
-and original status remain the rank-3 baseline.
+passed. The supplied records identify the core build, ELF/linker map, compiler
+stack-usage listings and host known-answer results. Device acquisition uses the
+collector and verifier described below; those build records do not establish
+physical-board timing, energy or full-protocol runtime-memory measurements.
+Selection/security-estimator evidence is separate from these core microbenchmarks.
+The old `arm-gcc-14.3.1` directory and original status remain the rank-3 baseline.
 
 The linker starts at flash address zero and reserves all 256 KiB RAM for a bare
 nRF52840. There is **no SoftDevice/bootloader compatibility**. Flash only a

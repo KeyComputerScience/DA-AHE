@@ -1,0 +1,1090 @@
+{
+  "arithmetic": "finite binary inputs interpreted exactly as rationals; 256-bit dyadic upper sqrt",
+  "artifact_type": "daahe-declared-controller-certificate",
+  "checks": {
+    "domain_invariance": {
+      "covers": "every declared action and regime, including the initialization action",
+      "details": [
+        {
+          "action_id": "fallback",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 0,
+          "successor_upper": {
+            "decimal_approx": "332.737284962935281340535",
+            "exact": "1498515512571345875/4503599627370496"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": true,
+          "regime": 0,
+          "successor_upper": {
+            "decimal_approx": "499.450240860409388821139",
+            "exact": "2249323918629044199/4503599627370496"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 0,
+          "successor_upper": {
+            "decimal_approx": "293.649862569608319506909",
+            "exact": "5289925646583541555/18014398509481984"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 1,
+          "successor_upper": {
+            "decimal_approx": "342.528744327635310318314",
+            "exact": "1542612325317622279/4503599627370496"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": false,
+          "regime": 1,
+          "successor_upper": {
+            "decimal_approx": "650.219767615012466555058",
+            "exact": "2928329503139900647/4503599627370496"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 1,
+          "successor_upper": {
+            "decimal_approx": "301.363431664412917132534",
+            "exact": "5428880954187775795/18014398509481984"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 2,
+          "successor_upper": {
+            "decimal_approx": "130.294017377881102381920",
+            "exact": "586792088111630263/4503599627370496"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": true,
+          "regime": 2,
+          "successor_upper": {
+            "decimal_approx": "308.436043094654928742315",
+            "exact": "1389072448748718183/4503599627370496"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 2,
+          "successor_upper": {
+            "decimal_approx": "91.2557767186127534730922",
+            "exact": "1643917928101398323/18014398509481984"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 3,
+          "successor_upper": {
+            "decimal_approx": "260.905325223333461215347",
+            "exact": "1175013125454782647/4503599627370496"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": false,
+          "regime": 3,
+          "successor_upper": {
+            "decimal_approx": "630.769247424621335218475",
+            "exact": "2840732147658292839/4503599627370496"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 3,
+          "successor_upper": {
+            "decimal_approx": "227.512841044119329569906",
+            "exact": "4098506984593194803/18014398509481984"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 4,
+          "successor_upper": {
+            "decimal_approx": "267.931737941099348043750",
+            "exact": "1206657275152264409/4503599627370496"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": false,
+          "regime": 4,
+          "successor_upper": {
+            "decimal_approx": "634.595181291529138567498",
+            "exact": "2857962621995642983/4503599627370496"
+          }
+        },
+        {
+          "action_id": "fallback",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 4,
+          "successor_upper": {
+            "decimal_approx": "235.506855690436782413411",
+            "exact": "4242514350122593075/18014398509481984"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 0,
+          "successor_upper": {
+            "decimal_approx": "251.169285030287252835635",
+            "exact": "1131165898469315571/4503599627370496"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": true,
+          "regime": 0,
+          "successor_upper": {
+            "decimal_approx": "499.434096769050620556740",
+            "exact": "2249251212105216615/4503599627370496"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 0,
+          "successor_upper": {
+            "decimal_approx": "213.901682436755595506650",
+            "exact": "3853310149264378675/18014398509481984"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 1,
+          "successor_upper": {
+            "decimal_approx": "321.222963416960405558243",
+            "exact": "1446659618347469351/4503599627370496"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": false,
+          "regime": 1,
+          "successor_upper": {
+            "decimal_approx": "710.465842545626822035487",
+            "exact": "3199653703747950439/4503599627370496"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 1,
+          "successor_upper": {
+            "decimal_approx": "281.877470553533316877104",
+            "exact": "5077853085396122419/18014398509481984"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 2,
+          "successor_upper": {
+            "decimal_approx": "125.021965191285962637480",
+            "exact": "563048875848602583/4503599627370496"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": true,
+          "regime": 2,
+          "successor_upper": {
+            "decimal_approx": "384.715846749349049238376",
+            "exact": "1732606144063893223/4503599627370496"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 2,
+          "successor_upper": {
+            "decimal_approx": "87.8035443318129182332932",
+            "exact": "1581728038138245939/18014398509481984"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 3,
+          "successor_upper": {
+            "decimal_approx": "348.558420488719823415735",
+            "exact": "1569767572629847255/4503599627370496"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": false,
+          "regime": 3,
+          "successor_upper": {
+            "decimal_approx": "799.974198531296957659364",
+            "exact": "3602763502411560167/4503599627370496"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 3,
+          "successor_upper": {
+            "decimal_approx": "316.985756109300996274936",
+            "exact": "5710307732382411571/18014398509481984"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 4,
+          "successor_upper": {
+            "decimal_approx": "306.344301089441897412158",
+            "exact": "1379652080233485561/4503599627370496"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": false,
+          "regime": 4,
+          "successor_upper": {
+            "decimal_approx": "754.559600281160948176407",
+            "exact": "3398234334655066855/4503599627370496"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 4,
+          "successor_upper": {
+            "decimal_approx": "275.739238638574636286460",
+            "exact": "4967276529536436019/18014398509481984"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 0,
+          "successor_upper": {
+            "decimal_approx": "275.412213118008923684599",
+            "exact": "1240346340371548619/4503599627370496"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": true,
+          "regime": 0,
+          "successor_upper": {
+            "decimal_approx": "499.448790469980673512040",
+            "exact": "2249317386651249895/4503599627370496"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 0,
+          "successor_upper": {
+            "decimal_approx": "237.315244577951591498088",
+            "exact": "4275091388202403635/18014398509481984"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 1,
+          "successor_upper": {
+            "decimal_approx": "297.509172209713596890523",
+            "exact": "1339862197102970879/4503599627370496"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": false,
+          "regime": 1,
+          "successor_upper": {
+            "decimal_approx": "662.523816951588395474104",
+            "exact": "2983742015147252199/4503599627370496"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 1,
+          "successor_upper": {
+            "decimal_approx": "257.334313399760833351859",
+            "exact": "4635722871747221299/18014398509481984"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 2,
+          "successor_upper": {
+            "decimal_approx": "131.583512663062488945442",
+            "exact": "592599458597469167/4503599627370496"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": true,
+          "regime": 2,
+          "successor_upper": {
+            "decimal_approx": "367.049159834333957652674",
+            "exact": "1653042459456560039/4503599627370496"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 2,
+          "successor_upper": {
+            "decimal_approx": "93.5357258570637696837302",
+            "exact": "1684989840462805043/18014398509481984"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 3,
+          "successor_upper": {
+            "decimal_approx": "216.423366605583776367538",
+            "exact": "974684193199175343/4503599627370496"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": false,
+          "regime": 3,
+          "successor_upper": {
+            "decimal_approx": "643.610910261369292717504",
+            "exact": "2898565855624688487/4503599627370496"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 3,
+          "successor_upper": {
+            "decimal_approx": "184.021336279639274369213",
+            "exact": "3315033685988816691/18014398509481984"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 0,
+          "domain_upper": {
+            "decimal_approx": "100",
+            "exact": "100"
+          },
+          "passes": false,
+          "regime": 4,
+          "successor_upper": {
+            "decimal_approx": "294.140614946202493706906",
+            "exact": "1324691563866246097/4503599627370496"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 1,
+          "domain_upper": {
+            "decimal_approx": "500",
+            "exact": "500"
+          },
+          "passes": false,
+          "regime": 4,
+          "successor_upper": {
+            "decimal_approx": "718.127679751129926577491",
+            "exact": "3234159550931627623/4503599627370496"
+          }
+        },
+        {
+          "action_id": "repair",
+          "coordinate": 2,
+          "domain_upper": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "regime": 4,
+          "successor_upper": {
+            "decimal_approx": "262.706186548809557723683",
+            "exact": "4732493935396570931/18014398509481984"
+          }
+        }
+      ],
+      "method": "monotone ReLU box extrema plus coordinate projection of Euclidean ball",
+      "status": "failed"
+    },
+    "fallback_drift": {
+      "details": [
+        {
+          "beta": {
+            "decimal_approx": "0.0200000000000000004163336",
+            "exact": "5764607523034235/288230376151711744"
+          },
+          "candidate_upper_bounds_checked": 34,
+          "coordinate_suprema": [
+            {
+              "decimal_approx": "881.236991907365187832807",
+              "exact": "4527876468336939654130929635860882990505713166375/5138091693741455888722479547075525828279271424"
+            },
+            {
+              "decimal_approx": "31472.5244437098431529249",
+              "exact": "157918668384082499793092872442532194960401971455/5017667669669390516330546432690943191678976"
+            },
+            {
+              "decimal_approx": "0",
+              "exact": "0"
+            }
+          ],
+          "direct_bound": {
+            "decimal_approx": "212756.481696042915373353",
+            "exact": "56960796560212889399886902746007131949301477933015973422568628536544760157464824225579125165574071162497232507595366097459932681/267727667360050682942485478311683672247515713159146078968819392165496104219352436042384277679433272566851414101020446294016"
+          },
+          "method": "young_coordinate_extrema",
+          "norm_squared": {
+            "decimal_approx": "44028.8249744016589101860",
+            "exact": "14288170599972843502336875685040472521/324518553658426726783156020576256"
+          },
+          "norm_upper": {
+            "decimal_approx": "209.830467221520666636830",
+            "exact": "24296708185222071911512721163533907077380764823691707583860781361906806702770145/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+          },
+          "passes": false,
+          "regime": 0,
+          "sqrt_precision_bits": 256,
+          "upper_bound": {
+            "decimal_approx": "139921.438772627318557976",
+            "exact": "25295071856758853610903927001060694270615989537989419802202722815/180780529979136417148843334653692115963599116048689967136768"
+          },
+          "young_multiplier": {
+            "decimal_approx": "4",
+            "exact": "4"
+          }
+        },
+        {
+          "beta": {
+            "decimal_approx": "0.0200000000000000004163336",
+            "exact": "5764607523034235/288230376151711744"
+          },
+          "candidate_upper_bounds_checked": 34,
+          "coordinate_suprema": [
+            {
+              "decimal_approx": "328.633486163619473402695",
+              "exact": "1801118917912096856243887542423554105738539154457/5480631139990886002420846133336764850389385216"
+            },
+            {
+              "decimal_approx": "99158.1153731701801720540",
+              "exact": "2314151021829317952626378799484275854341437217/23337989161252977958164713163168682082304"
+            },
+            {
+              "decimal_approx": "0",
+              "exact": "0"
+            }
+          ],
+          "direct_bound": {
+            "decimal_approx": "346569.363673424177129098",
+            "exact": "92786207314742940921727106036083900108676211419808278210572054327555561693133066913209926253401206733605001052164206036539799625/267727667360050682942485478311683672247515713159146078968819392165496104219352436042384277679433272566851414101020446294016"
+          },
+          "method": "young_coordinate_extrema",
+          "norm_squared": {
+            "decimal_approx": "123629.609088706726710533",
+            "exact": "40120101930823794439226890460596823625/324518553658426726783156020576256"
+          },
+          "norm_upper": {
+            "decimal_approx": "351.610024158451328289529",
+            "exact": "40713659294090299513542875658479595301825316641343265237087647885311797559135589/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+          },
+          "passes": false,
+          "regime": 1,
+          "sqrt_precision_bits": 256,
+          "upper_bound": {
+            "decimal_approx": "280765.128630439052272273",
+            "exact": "5075686875347117689680786322574157866008467379023567787435828975/18078052997913640794978594025981025577112122138828208078848"
+          },
+          "young_multiplier": {
+            "decimal_approx": "1",
+            "exact": "1"
+          }
+        },
+        {
+          "beta": {
+            "decimal_approx": "0.0200000000000000004163336",
+            "exact": "5764607523034235/288230376151711744"
+          },
+          "candidate_upper_bounds_checked": 34,
+          "coordinate_suprema": [
+            {
+              "decimal_approx": "218.006846526031466780257",
+              "exact": "3584445335405345890752828605500679178235051395091/16441893419972658007262538400010294551168155648"
+            },
+            {
+              "decimal_approx": "11383.9658754540221015641",
+              "exact": "60929021360944259502588461834427487198085559873/5352178847647349611739107552086684424208384"
+            },
+            {
+              "decimal_approx": "0",
+              "exact": "0"
+            }
+          ],
+          "direct_bound": {
+            "decimal_approx": "53633.5894766937934538974",
+            "exact": "3589798950685447678633084461522619806429472037897222239605924405914521953322442374601672306610778970130896674816903463403326461/66931916840012670735621369577920918061878928289786519742204848041374026054838109010596069419858318141712853525255111573504"
+          },
+          "method": "young_coordinate_extrema",
+          "norm_squared": {
+            "decimal_approx": "48845.2534411607742474303",
+            "exact": "15851190999804785441292907676523987017/324518553658426726783156020576256"
+          },
+          "norm_upper": {
+            "decimal_approx": "221.009622960541639505609",
+            "exact": "6397791496038160970708271109644176279867173089337429197840264617368901672280463/28948022309329048855892746252171976963317496166410141009864396001978282409984"
+          },
+          "passes": false,
+          "regime": 2,
+          "sqrt_precision_bits": 256,
+          "upper_bound": {
+            "decimal_approx": "28147.8793589523291477594",
+            "exact": "508858854830019643604256914902647016198774784259450404718171391/18078052997913640794978594025981025577112122138828208078848"
+          },
+          "young_multiplier": {
+            "decimal_approx": "1",
+            "exact": "1"
+          }
+        },
+        {
+          "beta": {
+            "decimal_approx": "0.0200000000000000004163336",
+            "exact": "5764607523034235/288230376151711744"
+          },
+          "candidate_upper_bounds_checked": 34,
+          "coordinate_suprema": [
+            {
+              "decimal_approx": "34.0860985343666683819601",
+              "exact": "560439999204742986878097043380904218531694352275/16441893419972658007262538400010294551168155648"
+            },
+            {
+              "decimal_approx": "160727.128041485699799486",
+              "exact": "860240334946746944853400300976544220083402655137/5352178847647349611739107552086684424208384"
+            },
+            {
+              "decimal_approx": "0",
+              "exact": "0"
+            }
+          ],
+          "direct_bound": {
+            "decimal_approx": "307099.577550307508896601",
+            "exact": "82219053544800817117805764718962357405149740972807514855451666000888410035709775833904343531956338016257221830353182487069887145/267727667360050682942485478311683672247515713159146078968819392165496104219352436042384277679433272566851414101020446294016"
+          },
+          "method": "young_coordinate_extrema",
+          "norm_squared": {
+            "decimal_approx": "163993.046620911474443917",
+            "exact": "53218786299457136129440543710009696329/324518553658426726783156020576256"
+          },
+          "norm_upper": {
+            "decimal_approx": "404.960549462427851496810",
+            "exact": "46891228080946044831659588654303821867182956858959868411429359155982369445605413/115792089237316195423570985008687907853269984665640564039457584007913129639936"
+          },
+          "passes": false,
+          "regime": 3,
+          "sqrt_precision_bits": 256,
+          "upper_bound": {
+            "decimal_approx": "264012.564410700541340226",
+            "exact": "4772833131531733109477724967357560846440064871817378501387474863/18078052997913640794978594025981025577112122138828208078848"
+          },
+          "young_multiplier": {
+            "decimal_approx": "1",
+            "exact": "1"
+          }
+        },
+        {
+          "beta": {
+            "decimal_approx": "0.0200000000000000004163336",
+            "exact": "5764607523034235/288230376151711744"
+          },
+          "candidate_upper_bounds_checked": 34,
+          "coordinate_suprema": [
+            {
+              "decimal_approx": "18.5624581999397375389760",
+              "exact": "71812225726142748339135047937728141225276741987/3868680804699448942885303152943598717921918976"
+            },
+            {
+              "decimal_approx": "155486.342365291147031890",
+              "exact": "2496572138116695742504058034014701075044808886011/16056536542942048835217322656260053272625152"
+            },
+            {
+              "decimal_approx": "0",
+              "exact": "0"
+            }
+          ],
+          "direct_bound": {
+            "decimal_approx": "312942.980848483150013982",
+            "exact": "20945873569816352054652004964790885733449365513271475715797093294142924480870634512518619549516377909371266762290248496088468705/66931916840012670735621369577920918061878928289786519742204848041374026054838109010596069419858318141712853525255111573504"
+          },
+          "method": "young_coordinate_extrema",
+          "norm_squared": {
+            "decimal_approx": "160582.042544763893768051",
+            "exact": "52111852190142725185156022136487342665/324518553658426726783156020576256"
+          },
+          "norm_upper": {
+            "decimal_approx": "400.726892714681545826080",
+            "exact": "23200502060505419371954386945890211399477998105827690775915770488967746900288721/57896044618658097711785492504343953926634992332820282019728792003956564819968"
+          },
+          "passes": false,
+          "regime": 4,
+          "sqrt_precision_bits": 256,
+          "upper_bound": {
+            "decimal_approx": "266149.434751054994404390",
+            "exact": "1202865896698582667913291358887426640126132764476211626996014535/4519513249478410198744648506495256394278030534707052019712"
+          },
+          "young_multiplier": {
+            "decimal_approx": "1",
+            "exact": "1"
+          }
+        }
+      ],
+      "fallback_action_id": "fallback",
+      "method": "uniform all-regime rational upper bounds on Eq. (28)",
+      "status": "failed"
+    },
+    "online_adaptation": {
+      "reason": "Frozen declared kernels; no online transition adaptation",
+      "status": "passed"
+    },
+    "transition_set_containment": {
+      "assumption": "Declared true posterior and kernel belong to these sets at every permitted history",
+      "coverage_of_actual_process_proven": false,
+      "details": [
+        {
+          "action_id": "fallback",
+          "kernel_row_l1_bounds": [
+            {
+              "decimal_approx": "0.0646153846153845468069932",
+              "exact": "2328014576609977/36028797018963968"
+            },
+            {
+              "decimal_approx": "0.260869565217391352618392",
+              "exact": "1174852076705347/4503599627370496"
+            },
+            {
+              "decimal_approx": "0.333333333333333314829616",
+              "exact": "6004799503160661/18014398509481984"
+            },
+            {
+              "decimal_approx": "1",
+              "exact": "1"
+            },
+            {
+              "decimal_approx": "0.611111111111111049432054",
+              "exact": "5504399544563939/9007199254740992"
+            }
+          ],
+          "online_ambiguity_radius": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "posterior_l1_bound": {
+            "decimal_approx": "2",
+            "exact": "2"
+          },
+          "required_prediction_radius": {
+            "decimal_approx": "2",
+            "exact": "2"
+          }
+        },
+        {
+          "action_id": "nominal",
+          "kernel_row_l1_bounds": [
+            {
+              "decimal_approx": "0.0692307692307691652233714",
+              "exact": "4988602664164237/72057594037927936"
+            },
+            {
+              "decimal_approx": "0.260869565217391352618392",
+              "exact": "1174852076705347/4503599627370496"
+            },
+            {
+              "decimal_approx": "0.333333333333333314829616",
+              "exact": "6004799503160661/18014398509481984"
+            },
+            {
+              "decimal_approx": "0.444444444444444364261670",
+              "exact": "8006399337547547/18014398509481984"
+            },
+            {
+              "decimal_approx": "1",
+              "exact": "1"
+            }
+          ],
+          "online_ambiguity_radius": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "posterior_l1_bound": {
+            "decimal_approx": "2",
+            "exact": "2"
+          },
+          "required_prediction_radius": {
+            "decimal_approx": "2",
+            "exact": "2"
+          }
+        },
+        {
+          "action_id": "repair",
+          "kernel_row_l1_bounds": [
+            {
+              "decimal_approx": "0.0661538461538460909050485",
+              "exact": "2383443495100691/36028797018963968"
+            },
+            {
+              "decimal_approx": "0.260869565217391352618392",
+              "exact": "1174852076705347/4503599627370496"
+            },
+            {
+              "decimal_approx": "1",
+              "exact": "1"
+            },
+            {
+              "decimal_approx": "0.444444444444444364261670",
+              "exact": "8006399337547547/18014398509481984"
+            },
+            {
+              "decimal_approx": "0.611111111111111049432054",
+              "exact": "5504399544563939/9007199254740992"
+            }
+          ],
+          "online_ambiguity_radius": {
+            "decimal_approx": "1",
+            "exact": "1"
+          },
+          "passes": false,
+          "posterior_l1_bound": {
+            "decimal_approx": "2",
+            "exact": "2"
+          },
+          "required_prediction_radius": {
+            "decimal_approx": "2",
+            "exact": "2"
+          }
+        }
+      ],
+      "method": "Markov-kernel L1 contraction and triangle inequality, capped at simplex diameter",
+      "status": "failed"
+    }
+  },
+  "controller_config_digest": "4b9ad1e31d06a28cddafacd097328c8cd4d8cd27418d1add40f9d383c7bf5ac2",
+  "deployment_certified": false,
+  "empirical_uniform_coverage_proven": false,
+  "full_system_certified": false,
+  "limitations": [
+    "The stated successor and probability sets are assumptions, not inferred population bounds.",
+    "Calibration holdout maxima do not prove uniform real-process or per-history coverage.",
+    "Domain and drift certificates cover the declared model only; resources and cryptography remain separate.",
+    "Ordinary floating-point runtime gates and external deployment evidence are not certified by this report."
+  ],
+  "model_bound_kind": "empirical",
+  "online_gate_roundoff_certified": false,
+  "resource_security_certificates_verified": false,
+  "schema_version": 1,
+  "scope": "declared_model_only",
+  "status": "failed",
+  "subject": {
+    "action_digests": {
+      "fallback": "20f0fee06edc5ff4116658e6cf7c98128c2338f764ad9838bd309f5cf18f8a4e",
+      "nominal": "6b4b1bf0b43de8c47f097e7157f6f80c60789df3617c54b17e2cd1bddbc71c31",
+      "repair": "84f6c03b31d2bee0a03e06b19fe24b1dab18b61898a7a2fcadf8bc6f5fcac598"
+    },
+    "assumptions": {
+      "kernel_row_l1_bounds": {
+        "fallback": [
+          0.06461538461538455,
+          0.26086956521739135,
+          0.3333333333333333,
+          1.0,
+          0.611111111111111
+        ],
+        "nominal": [
+          0.06923076923076917,
+          0.26086956521739135,
+          0.3333333333333333,
+          0.44444444444444436,
+          1.0
+        ],
+        "repair": [
+          0.06615384615384609,
+          0.26086956521739135,
+          1.0,
+          0.44444444444444436,
+          0.611111111111111
+        ]
+      },
+      "posterior_l1_bound": 2.0,
+      "scope": "declared_model_only",
+      "source": "Posterior uses exact simplex diameter; kernel rows use heldout empirical frequencies in declared-model scope, not true-kernel uniform bounds",
+      "state_error_scope": "declared fitted prediction balls only; radii from finite holdout observations",
+      "true_process_state_error_coverage_proven": false
+    },
+    "controller_parameters": {
+      "beta": 0.02,
+      "delay_threshold": 0.5,
+      "distortion_maximum": 1.0,
+      "energy_reference": 0.0014,
+      "gamma": 0.1,
+      "p_diagonal": [
+        1,
+        1,
+        1
+      ],
+      "switching_diagonal": [
+        1,
+        0.00390625,
+        0.00390625,
+        0.000244140625,
+        1,
+        1
+      ],
+      "weights": [
+        0.22,
+        0.28,
+        0.15,
+        0.25,
+        0.1
+      ]
+    },
+    "domain": [
+      100.0,
+      500.0,
+      1.0
+    ],
+    "fallback_action_id": "fallback",
+    "model_digest": "175a3c9c988ea715ccca1751416e85ab6557bfbc0abf375b283ef0c284dc41c1",
+    "online_adaptation": false
+  },
+  "subject_digest": "e705f07fb4b2d8b12e193bb14939761605f7110af302e828eca0791d1e1bb9ba"
+}

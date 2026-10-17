@@ -1,0 +1,9 @@
+{
+  "deterministic_replay": true,
+  "full_system_certified": false,
+  "independent_raw_recomputation": true,
+  "scope": "30-node functional feedback/replay check; not a 3000-node performance comparison",
+  "source_digest": "78e22634b1efaafc353b56594fd0787b7a98d2af9c32ce580ba3fa134418e445",
+  "status": "independent_experimental_uncertified",
+  "verified_runs": 14
+}

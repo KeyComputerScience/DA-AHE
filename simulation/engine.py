@@ -92,9 +92,9 @@ class Simulator:
         if {key: action.batch_size for key, action in self.policy.actions.items()} != c["profile_batch_caps"]:
             raise ValueError("controller action capacities differ from the bound simulation profile caps")
         if self.policy.data.get("cryptographic_parameters") != c["cryptographic_parameters"]:
-            raise ValueError("controller fixture and simulation cryptographic tuples disagree")
+            raise ValueError("reference controller and simulation cryptographic tuples disagree")
         if self.policy.data.get("bound_evidence_artifacts") != c["bound_evidence_artifacts"]:
-            raise ValueError("controller fixture and simulation evidence bindings disagree")
+            raise ValueError("reference controller and simulation evidence bindings disagree")
         self.controller_path = Path(controller_path)
         self.output = Path(output_dir)
         self.output.mkdir(parents=True, exist_ok=True)

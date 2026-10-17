@@ -1,0 +1,539 @@
+{
+  "annotation_rule": "congestion annotation 1 throughout its reduced-domain case; other nonnormal annotations during [disturbance.start,disturbance.end); baseline input annotation 0 outside; not measured latent truth or recovery",
+  "base_seed_split": {
+    "evaluation": [
+      22000,
+      22001
+    ],
+    "holdout": [
+      21000,
+      21001
+    ],
+    "training": [
+      20000,
+      20001,
+      20002
+    ]
+  },
+  "cases": [
+    {
+      "partition": "evaluation",
+      "receipt_sha256": "dfebbf1d68896fd4845ed90eb2ab38001043466bde7fe1b6d4fd4c648926d377",
+      "scenario": "congestion",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "receipt_sha256": "be83c19a06cf4082f53ca8a8e184e35e75694ea9dbcaa7c1deea15d5895cb4ec",
+      "scenario": "global_impairment",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "receipt_sha256": "f792b8a738087b3a43684d0fa0caaf038159d14838e871046dcaaab6ed1eea9e",
+      "scenario": "local_impairment",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "receipt_sha256": "bf19f9a0fad1173e6389bace8cf4292a9da7e7a90b0ba42d3423ea423fc117f7",
+      "scenario": "normal",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "receipt_sha256": "e16339d5fe942e0295554bab3efca4bef90c7ab7a15cce7e7d87406d73d366e0",
+      "scenario": "severe_loss",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "receipt_sha256": "6404b9a5c83c6ceac4db50b11a9f8f86ce492464f975103f38cda802f4ec4b23",
+      "scenario": "congestion",
+      "seed": 22001
+    },
+    {
+      "partition": "evaluation",
+      "receipt_sha256": "37d113f84a0b69b43b1ae05a65e0bd46a0a4f4859cbf281ac214d58cc9c3d329",
+      "scenario": "global_impairment",
+      "seed": 22001
+    },
+    {
+      "partition": "evaluation",
+      "receipt_sha256": "222f3f1762260c65ea58019935ccdcb73388372eb5229f04c1e4ab3216982001",
+      "scenario": "local_impairment",
+      "seed": 22001
+    },
+    {
+      "partition": "evaluation",
+      "receipt_sha256": "f808db25aece6d5ec75df1216336584b0171d463f5b87e226f620ead1301e2bd",
+      "scenario": "normal",
+      "seed": 22001
+    },
+    {
+      "partition": "evaluation",
+      "receipt_sha256": "736c159cc9be195c5680e4f947d2338dcafc8144156c8ca5b9807a1714fa92e4",
+      "scenario": "severe_loss",
+      "seed": 22001
+    },
+    {
+      "partition": "holdout",
+      "receipt_sha256": "f0dc33f0f87b45eef48c3a7dd4cdf89e89a0c7e4dc9210eae749efd9e1d3f7a0",
+      "scenario": "congestion",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "receipt_sha256": "98d6d727a8b3d9f812c110460e52faa995ab1be4bef849015bb75b6571c4acaf",
+      "scenario": "global_impairment",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "receipt_sha256": "c77ac53f12e83c23b071f36e2a3ffa3d04109f1bbe376a43af37fc885e0f086b",
+      "scenario": "local_impairment",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "receipt_sha256": "abd1d2d1f1737a6a9d16ee156f4f1b64bf5e15cb21bc2416d5ed8d1ba6a31409",
+      "scenario": "normal",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "receipt_sha256": "0056d42d413807cd0665b37e723147b811a67834dd473274fe69570ec45402f5",
+      "scenario": "severe_loss",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "receipt_sha256": "636983dca8950ca7ec5999bd6b9ee7f708ef8c2c063a8dda78902881a2110e8b",
+      "scenario": "congestion",
+      "seed": 21001
+    },
+    {
+      "partition": "holdout",
+      "receipt_sha256": "b3676be253fb769b076200eefc4d2ecb9940b38138b2f4cb362db423354cdbf9",
+      "scenario": "global_impairment",
+      "seed": 21001
+    },
+    {
+      "partition": "holdout",
+      "receipt_sha256": "7498e4020a56871b508959b8e4b04641f7e2b28cf2cc00f8be2eb83c0440bd3b",
+      "scenario": "local_impairment",
+      "seed": 21001
+    },
+    {
+      "partition": "holdout",
+      "receipt_sha256": "0fd614055fc0414f400478266748a200bf8d745e975b0270ddb960bd95d6440a",
+      "scenario": "normal",
+      "seed": 21001
+    },
+    {
+      "partition": "holdout",
+      "receipt_sha256": "f942959189384d903e39345e24594363d11efdd64fb475e36df532fb9dbeda88",
+      "scenario": "severe_loss",
+      "seed": 21001
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "cd7184cc24237c4ac110daaabc85f00e8abb9f5b1ced4117ad15fe3816cbabc7",
+      "scenario": "congestion",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "c28f16412e8df6f1cca67801d07a4572eeb1fa0365eab4cc3cb412a4435f9a0c",
+      "scenario": "global_impairment",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "30d40f6def7f94a94b0e3e0363117a873311e626e473292dae7b82cf22f14147",
+      "scenario": "local_impairment",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "e28af916ce4b617764087c9d1688d1453599e2448d169194b3ea2f4670220dd8",
+      "scenario": "normal",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "c186c1e9420179fb94e0569c4ec8d46c977f6bf20c5811122b9a28cfab4403c7",
+      "scenario": "severe_loss",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "3540a416d4a279e97f9fa309900b4bd21ce0284f57ceb06312269dd5ef825b55",
+      "scenario": "congestion",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "859a78572632e65b4f8fe77c8d2114034df8470b8ec21af79edf312299a22760",
+      "scenario": "global_impairment",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "1aa452609525c6be8d055ae572c7b432513cad911b19277cd6e3b5f2d5b9e4a8",
+      "scenario": "local_impairment",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "0504e4c1537013b4ccdfa430aced3f5ea32888960563a29375d8e36a8e9ffba2",
+      "scenario": "normal",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "5c1e2de82a946006877818e16b9e253d20777743a9b584fca16a2028b6a58aef",
+      "scenario": "severe_loss",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "ce9c4e86f07af290a33d0eff8e5cfcd7958a11c0630d4f892102f489b54c427d",
+      "scenario": "congestion",
+      "seed": 20002
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "acb16927850d3e4fbb87516624743da57ceb61cdf2ffb311a348a257e9133d36",
+      "scenario": "global_impairment",
+      "seed": 20002
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "ef2827c5a1076efc5e44bf198f91d2fb58ee5c1236c694b8e53e7555a5cacb72",
+      "scenario": "local_impairment",
+      "seed": 20002
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "935157ced589ae94310638f715cf710eed4d0e88552ce2556ead9192f48285fd",
+      "scenario": "normal",
+      "seed": 20002
+    },
+    {
+      "partition": "training",
+      "receipt_sha256": "27ac392647183aeea969948f8e5a3a78c227a6f17d1ed6c6dd8921da0cdf9778",
+      "scenario": "severe_loss",
+      "seed": 20002
+    }
+  ],
+  "completed": true,
+  "controller_input_sha256": "9f29674092d709c4b25cd1787d3925db6b20458081bcc1bb656223e389324591",
+  "cost_definition": "CPU execution overlap per offered opportunity; next-window conditional accepted delay/loss/noise telemetry; separate maximum-capacity synthetic signal probe relative L2",
+  "dirichlet_strength": 5.0,
+  "empty_outcome_rule": "Retain simulator zero-observation defaults and flag empty windows; do not reinterpret zeros as measured reliable delivery",
+  "exploration": "whole actions cycle nominal/repair/fallback at every observation boundary; phase=(seed+scenario_index)%3; no labels or future outcomes read",
+  "finished_utc": "2026-10-17T13:28:26.498249+00:00",
+  "fit_options": {
+    "delay_threshold": 0.5,
+    "dirichlet_strength": 5.0,
+    "kappa_z": 0.3,
+    "loss_threshold": 0.002,
+    "regularization": 0.001,
+    "sparse_threshold": 3,
+    "variance_floor": 1e-08,
+    "zcert_max": [
+      100.0,
+      500.0,
+      1.0
+    ]
+  },
+  "fit_status": "completed_empirical_fit_not_certification",
+  "input_config_sha256": "30e49d3de5fda7e713ffe062ff9c4fbcf93603d6384e46f23ec6a0d17b44dcb2",
+  "input_paths": {
+    "controller": "input-controller.json",
+    "effective_config": "input-config.json",
+    "original_config": "original-config.json"
+  },
+  "label_lag_scope": "Labels annotate input exposure at the cutoff while y_t summarizes its preceding window; exposure labels are not observed hidden states",
+  "machine": "arm64",
+  "nodes": 3000,
+  "operational_annotation_names": [
+    "normal modeled operation",
+    "congestion stress exposure",
+    "local primary-route impairment exposure",
+    "global primary-route impairment exposure",
+    "severe link-error exposure"
+  ],
+  "original_config_sha256": "30e49d3de5fda7e713ffe062ff9c4fbcf93603d6384e46f23ec6a0d17b44dcb2",
+  "outputs_sha256": {
+    "calibration-report.json": "589816fc4aa21a644a9314e3652c5111d2a690c77d43d7c17a4ff6bc98ae3eb7",
+    "controller.json": "6989691a8f1fbbce00c04b903dca0929cd434af3b5232796f5eccd1280541dec",
+    "evaluation.csv": "025ac3543a61011177a6dd25f02917bfd261881de56aa3d2978eca9b1b6d83d1",
+    "holdout.csv": "3e0810728417f3e9126a1c4e72c35403be13862fc2d9210366766defe3005cef",
+    "input-config.json": "30e49d3de5fda7e713ffe062ff9c4fbcf93603d6384e46f23ec6a0d17b44dcb2",
+    "input-controller.json": "9f29674092d709c4b25cd1787d3925db6b20458081bcc1bb656223e389324591",
+    "original-config.json": "30e49d3de5fda7e713ffe062ff9c4fbcf93603d6384e46f23ec6a0d17b44dcb2",
+    "plan.json": "d0ff79846e9190874ef0d947770e60fa60dfceb571a465fdcc44454da0cbd123",
+    "training.csv": "4629fcb0bf379eceb79d9d90dee10800ca71982b007edaedaba3434647d4c44d"
+  },
+  "plan_sha256": "d0ff79846e9190874ef0d947770e60fa60dfceb571a465fdcc44454da0cbd123",
+  "platform": "Darwin",
+  "python_version": "3.12.14",
+  "reproduction_argv": [
+    "python",
+    "source/tools/run_controller_calibration.py",
+    "--config",
+    "input-config.json",
+    "--controller",
+    "input-controller.json",
+    "--output",
+    "replay/controller-calibration",
+    "--nodes",
+    "3000",
+    "--jobs",
+    "2",
+    "--training-seeds",
+    "20000,20001,20002",
+    "--holdout-seeds",
+    "21000,21001",
+    "--evaluation-seeds",
+    "22000,22001"
+  ],
+  "ridge_regularization": 0.001,
+  "safety_parameters_unchanged": {
+    "beta": 0.02,
+    "gamma": 0.1,
+    "kappa_z": 0.3,
+    "zcert_max": [
+      100.0,
+      500.0,
+      1.0
+    ]
+  },
+  "scenarios": [
+    "normal",
+    "congestion",
+    "local_impairment",
+    "global_impairment",
+    "severe_loss"
+  ],
+  "schema_version": 1,
+  "scope": "Executed independent two-hop service-model identification; configured operational-stage labels, modeled CPU/communication, and separately executed synthetic integer signal probes. No physical-board data, uniform true-process coverage, or deployment certification.",
+  "source_digest": "11e9c3436eacfdabed3c12ae22df512f07b266af4736d31e3f0c4881053de70b",
+  "source_hashes": {
+    "simulation/__init__.py": "162cae4d203669b39d5b42138c6291bc910bd207c4767dc6a01b85b4ca8a9b96",
+    "simulation/ablation_analysis.py": "0be825c61643144ef093309069b33dae5eb935b2ee75eb782889afbccbae029b",
+    "simulation/audit.py": "332cc96c8e808f01e2c68d22ce18fb952347d2b7f1cf29799853cec4d4ce915d",
+    "simulation/engine.py": "2570df1e0a4474cf4cdd17d71bc08213027d6bd585da4f6617b6d46aaa3c2729",
+    "simulation/exogenous.py": "943a4ca35468ee2efdfa05844f5575d78046a2c9083eb2834454e3ae29237c16",
+    "simulation/io.py": "f7636d3cf8d6abb512c5b62a67cb90a1aefbdf37a5ba5438c796aa48e32fb1ef",
+    "simulation/policy.py": "640e3db65fc977caca1ba0d99bfff3dca03d968aa9db5203e1a298745a9116e7",
+    "src/daahe/__init__.py": "7ba733777b21420081c64351fa8f69d59cc1420aa84051300c90add9c60a3e59",
+    "src/daahe/__main__.py": "094e30c7ecfc0a0b56833322b9709d64d2ddcff228adb02d094443b262974c25",
+    "src/daahe/ablations.py": "6c2ab1540d45a0fa9685f282726bbd2b402a1d108376f34272fc018c05021a0d",
+    "src/daahe/calibration.py": "64c7fdd11d6faf3747ca6124dc7d55ba234488c97e810a7aa2b2303817135c95",
+    "src/daahe/calibration_trace.py": "9bb629e3b73d6b94c86df48cd8913314065db319996cd7a132794999ad3e393a",
+    "src/daahe/cli.py": "50c8d08d4ea3eacbb875456b0a0fc7f112700f6e1b4ccf6d619d80cff5eb0fca",
+    "src/daahe/control.py": "017ad342377a41a5a3146b38992087f08cae6d0f145297df570bc674ef785432",
+    "src/daahe/controller_certificate.py": "fe52ecca72356380383c0d709df072829e9031416d84d77bbd4db3ab27a1cd43",
+    "src/daahe/derivation.py": "fde965b72748cced31acfefb136e779d6ed5f948c6e7d809b60dfe936df9969c",
+    "src/daahe/evidence.py": "452d6ddd914c0d7309f6d24af7a568cfa40af9d48521edd467e5b80ed6b02f1e",
+    "src/daahe/independent_evidence.py": "f189f9285b0cdea8a584ff8b6501d9300065752c9ade69c846507f6b30254000",
+    "src/daahe/integration.py": "60112c543a2a181f2ea4f27f3d4c9f83474076dff395690db630d0a69d304459",
+    "src/daahe/lightweight.py": "6a537f743593decb3725cb79d127f180c5d00d623d45ea71e092a59c359453e6",
+    "src/daahe/mlwe.py": "1e7e867b315312139dfce4260aedf38aab19685077a3ce90c6f3bf174c459fc7",
+    "src/daahe/profiles.py": "dc6add53fb7223afaab61074549ea33b48a973ff28303fd209012c356b7a2cb8",
+    "src/daahe/protocol.py": "a24644caf1d37a683f67e86ea595ad2ed34ef6bf29286db211db63bfd67cbc65",
+    "src/daahe/replay.py": "e8659aed519e5f7986420a0a26963051a772ff2e3b1ba29f1b688b26ad7a6ecf",
+    "src/daahe/ring.py": "507106338b99c8fbba36c5d60801225c367fcbc9896813afdee583a96a7b11db",
+    "src/daahe/safety.py": "90bb49123e520aa7c0ebf76f49de765fb7a17fb484742886fe5a0e5f3dab7b60",
+    "src/daahe/signal.py": "21c1f738718bf21e71bdce0bc550e157c9a8637a1772fe2099182a05fadb7cb2",
+    "src/daahe/signatures.py": "10c940f2d0c723e611956a78e853e18ebaa00d638f334aa238e4b3acf6411699",
+    "src/daahe/statistics.py": "d33d6b3b4acf7c57c728661e91428d50e512127b7d881db58501a1d02b725e26",
+    "tools/run_controller_calibration.py": "81be052b9d127c844281be58cae681ca02f7a67967db1fff315e34f7d273ab70",
+    "tools/run_simulation_campaign.py": "3d322e74ea88e0ac905866ae1c9768b354d06ae799fee3d3dca76000104f4b1a",
+    "tools/verify_simulation_campaign.py": "326cc2312ad330908def02696d8a1572e6304c0ebc14504ab1ef107b79fb2139"
+  },
+  "source_unchanged_after_run": true,
+  "sparse_transition_threshold": 3,
+  "started_utc": "2026-10-17T13:22:22.293811+00:00",
+  "tasks": [
+    {
+      "partition": "training",
+      "scenario": "normal",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "scenario": "congestion",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "scenario": "local_impairment",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "scenario": "global_impairment",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "scenario": "severe_loss",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "scenario": "normal",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "scenario": "congestion",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "scenario": "local_impairment",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "scenario": "global_impairment",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "scenario": "severe_loss",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "scenario": "normal",
+      "seed": 20002
+    },
+    {
+      "partition": "training",
+      "scenario": "congestion",
+      "seed": 20002
+    },
+    {
+      "partition": "training",
+      "scenario": "local_impairment",
+      "seed": 20002
+    },
+    {
+      "partition": "training",
+      "scenario": "global_impairment",
+      "seed": 20002
+    },
+    {
+      "partition": "training",
+      "scenario": "severe_loss",
+      "seed": 20002
+    },
+    {
+      "partition": "holdout",
+      "scenario": "normal",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "scenario": "congestion",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "scenario": "local_impairment",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "scenario": "global_impairment",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "scenario": "severe_loss",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "scenario": "normal",
+      "seed": 21001
+    },
+    {
+      "partition": "holdout",
+      "scenario": "congestion",
+      "seed": 21001
+    },
+    {
+      "partition": "holdout",
+      "scenario": "local_impairment",
+      "seed": 21001
+    },
+    {
+      "partition": "holdout",
+      "scenario": "global_impairment",
+      "seed": 21001
+    },
+    {
+      "partition": "holdout",
+      "scenario": "severe_loss",
+      "seed": 21001
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "normal",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "congestion",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "local_impairment",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "global_impairment",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "severe_loss",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "normal",
+      "seed": 22001
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "congestion",
+      "seed": 22001
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "local_impairment",
+      "seed": 22001
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "global_impairment",
+      "seed": 22001
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "severe_loss",
+      "seed": 22001
+    }
+  ],
+  "window_response_scope": "CPU execution and completed-window telemetry can include queued reports from earlier actions; this is system window response, not isolated instantaneous action cost"
+}

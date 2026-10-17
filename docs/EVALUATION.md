@@ -81,8 +81,8 @@ implementation; DPP and HYS use the corresponding causal virtual-queue and
 hysteresis rules. The four ablations fix the nominal action, use two protected
 ciphertexts without the compression delay, disable route-repair actuation, or
 disable sink aggregate validity checking, respectively. All methods use the
-same synthetic controller fixture. Its costs, emissions, transitions and
-admission certificates are uncalibrated assumptions; all 140 records explicitly
+same reference controller coefficients. Its costs, emissions, transitions and
+admission bounds are declared assumptions; all 140 records explicitly
 mark their decisions uncertified. This experiment tests an auditable closed
 loop under declared assumptions, not a proven invariant operating domain.
 
@@ -148,8 +148,8 @@ observed conditional delay and total transmitted cost. These quantities depend
 on which transfers complete and which whole batches fail. They do not establish
 that the larger payload provides lower latency or greater energy efficiency at
 matched valid delivery. Comparison of completed-service counts and admission is
-necessary alongside these conditional quantities. The unchanged controller
-fixture is also not recalibrated for the ablated service model.
+necessary alongside these conditional quantities. The unchanged reference
+controller is also not recalibrated for the ablated service model.
 
 Route repair was not triggered in this campaign. DA-AHE and the route-repair
 ablation have identical reported metrics; the experiment cannot validate a
@@ -241,11 +241,13 @@ has a documented execution-environment boundary.
 
 This evaluation supports an auditable comparison of profile-selection policies
 under fixed security parameters and declared synthetic service assumptions.
-It provides no physical-board timing, energy, stack or complete-protocol memory
-table. Physical-board samples remain zero. The unavailable original simulator,
-physical calibration and signal corpus are not reconstructed by these results;
-network simulation, build evidence and synthetic reconstruction therefore have
-distinct experimental boundaries.
+Firmware evidence consists of the separate ARM core build, ELF/map, compiler
+stack-usage and host known-answer records, with device capture handled by the
+collector/verifier workflow. It does not turn this network evaluation into
+physical-board timing, energy, stack or complete-protocol memory measurements.
+The original simulator, physical calibration and signal corpus are not
+reconstructed by these results; network simulation, build evidence and synthetic
+reconstruction therefore have distinct experimental boundaries.
 
 Reproducibility sources:
 

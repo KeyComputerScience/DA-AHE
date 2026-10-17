@@ -12,7 +12,7 @@ from simulation.exogenous import generate_exogenous, load_config, validate_bound
 from simulation.io import read_jsonl
 
 ROOT = Path(__file__).resolve().parents[1]
-CONTROLLER = ROOT / "simulation/controller_fixture.json"
+CONTROLLER = ROOT / "simulation/controller_reference.json"
 
 
 def small_config():

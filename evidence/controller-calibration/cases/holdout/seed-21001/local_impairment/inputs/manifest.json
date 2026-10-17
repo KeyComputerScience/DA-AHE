@@ -1,0 +1,11 @@
+{
+  "exogenous_digest": "d89c05ebb78363b8d795cfa124d540af1c0cbf4f7d22d805c460e53f962abf99",
+  "files": {
+    "disturbances.json": "a9c845ac4b82ecc3b03c67237e52b01bc469894cf1327a622ec804f2e035b825",
+    "topology.json": "69796fd0c667bbb3fe4124548793a0bb850c921c74ba932c2aa7c91da82b26df",
+    "traffic.jsonl.gz": "7064a58a7535cd5d6cdccc704c61d4d0be6d2fe5f88af9a1ebde686190985448"
+  },
+  "seed": 21001,
+  "source_opportunities": 3000,
+  "status": "independent_experimental_uncertified"
+}

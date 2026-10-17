@@ -110,7 +110,7 @@ OMNeT++/INET records and receive/listen accounting are separate evidence
 categories. The matrix preserves the existing synthetic controller coefficients
 and uses an explicitly declared common nominal initialization. Its candidate
 library is shared; DA-AHE retains its additional robust drift gate. Identical
-DPP queue-increment coefficients remain disclosed in the plan, so this fixture
+DPP queue-increment coefficients remain disclosed in the plan, so this reference comparison
 does not establish action-specific queue calibration. A final partial roster is
 fixed at authorization under the service-model grouping-cap convention; the
 protocol's exact-cardinality adapter is a separate contract.

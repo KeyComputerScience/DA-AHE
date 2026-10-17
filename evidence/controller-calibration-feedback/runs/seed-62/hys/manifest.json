@@ -1,0 +1,59 @@
+{
+  "ablation_instrumentation_version": 1,
+  "all_decisions_certified": false,
+  "config_digest": "07ef213b45d0a4ffca9d52d11e5fe50f5ed7d4c1988c12a89b27831c069c8242",
+  "controller_sha256": "6989691a8f1fbbce00c04b903dca0929cd434af3b5232796f5eccd1280541dec",
+  "exogenous_digest": "3035e83ad481a8c4cfc4ab713f2c467f9d8a8f6ba73006f03f04500e6d8439c6",
+  "label": "independent fixed-preauthorized-roster closed-loop synthetic packet experiment, not original OMNeT++/INET",
+  "method": "hys",
+  "protocol_model_version": 2,
+  "raw_files": {
+    "epochs.jsonl.gz": "7e757e3ff07e28c37148618c5013b8171e03ebef4a1937b60a07711e93f9913f",
+    "events.jsonl.gz": "062c05f2ae6e7ee9a8309660f7c3113d2466a431ad766f5f198f9d74f521e7d7",
+    "packets.jsonl.gz": "c7b46d5b56f4929d82eaa8c629259e28eb0d49d32f77b6ed3233f98917ba27ce",
+    "reports.jsonl.gz": "d4bad0c2ec6a4eb6792fd94c1da7fcb6e42efa7a9dea954261fb8a86307dfed7"
+  },
+  "runtime_counts": {
+    "attempt_outcomes": {
+      "block_auth_reject": 1,
+      "channel_error": 12,
+      "link_down": 332,
+      "ok": 4022
+    },
+    "modeled_cpu_energy_j": 0.010367399999999992,
+    "modeled_radio_tx_energy_j": 0.7466751999999792,
+    "packets": {
+      "queue_overflow": 10,
+      "received": 4022,
+      "retry_exhausted:link_down": 83
+    },
+    "repair_activity": {
+      "actuations_completed": 0,
+      "actuations_failed": 0,
+      "actuations_started": 0,
+      "actuations_unresolved": 0,
+      "enabled_control_epochs": 4,
+      "selected_control_epochs": 4
+    },
+    "reports": {
+      "admitted": 16,
+      "deadline_expired": 2,
+      "delivered_valid": 13,
+      "integrity_rejected": 1,
+      "opportunities": 30,
+      "sampling_skipped": 14
+    },
+    "unique_frames": {
+      "delivered": 4022,
+      "lost": 93,
+      "offered": 4115,
+      "unresolved": 0
+    },
+    "wire_bytes": 466672
+  },
+  "schema_version": 1,
+  "seed": 62,
+  "source_digest": "78e22634b1efaafc353b56594fd0787b7a98d2af9c32ce580ba3fa134418e445",
+  "status": "independent_experimental_uncertified",
+  "stop_time_s": 125.0
+}

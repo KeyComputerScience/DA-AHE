@@ -1,0 +1,1298 @@
+{
+  "inference_note": "Means/SD describe this synthetic seed population; no paper performance or statistical significance claim.",
+  "methods": {
+    "da-ahe": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 1.0,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 0.001047,
+          "sd_over_seeds": 0.0014806815998046304,
+          "seeds_with_defined_metric": 2
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 0.07880480000000033,
+          "sd_over_seeds": 0.11144681694009974,
+          "seeds_with_defined_metric": 2
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 0.05,
+          "sd_over_seeds": 0.07071067811865475,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 2.630450666666668,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 3.9488788000000006,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 1.0,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.05,
+          "sd_over_seeds": 0.07071067811865475,
+          "seeds_with_defined_metric": 2
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 1641.7666666666667,
+          "sd_over_seeds": 2321.808686252068,
+          "seeds_with_defined_metric": 2
+        }
+      },
+      "recovery_no_excursion_seeds": 2,
+      "recovery_right_censored_seeds": 0
+    },
+    "dpp": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.7947368421052632,
+          "sd_over_seeds": 0.007443229275647892,
+          "seeds_with_defined_metric": 2
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 2
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 0.010881899999999993,
+          "sd_over_seeds": 0.0019401595862196463,
+          "seeds_with_defined_metric": 2
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 0.78806079999997,
+          "sd_over_seeds": 0.20989644555653295,
+          "seeds_with_defined_metric": 2
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.20526315789473681,
+          "sd_over_seeds": 0.007443229275647892,
+          "seeds_with_defined_metric": 2
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 0.5666666666666667,
+          "sd_over_seeds": 0.09428090415820632,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 2.32182010000019,
+          "sd_over_seeds": 0.08965609582607156,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 4.157872800000831,
+          "sd_over_seeds": 0.009505777880942607,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.7947368421052632,
+          "sd_over_seeds": 0.007443229275647892,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.45,
+          "sd_over_seeds": 0.07071067811865474,
+          "seeds_with_defined_metric": 2
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 16417.933333333334,
+          "sd_over_seeds": 4372.842615761768,
+          "seeds_with_defined_metric": 2
+        }
+      },
+      "recovery_no_excursion_seeds": 0,
+      "recovery_right_censored_seeds": 2
+    },
+    "hys": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.83125,
+          "sd_over_seeds": 0.026516504294495518,
+          "seeds_with_defined_metric": 2
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 2
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 0.011704649999999992,
+          "sd_over_seeds": 0.0018911570862834212,
+          "seeds_with_defined_metric": 2
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 0.9495287999999996,
+          "sd_over_seeds": 0.2868783122962357,
+          "seeds_with_defined_metric": 2
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.16875,
+          "sd_over_seeds": 0.026516504294495518,
+          "seeds_with_defined_metric": 2
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 0.6,
+          "sd_over_seeds": 0.09428090415820632,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 2.42260628054316,
+          "sd_over_seeds": 0.012047538157247618,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 4.165568000000603,
+          "sd_over_seeds": 0.01652027715013867,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.83125,
+          "sd_over_seeds": 0.026516504294495518,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.5,
+          "sd_over_seeds": 0.09428090415820632,
+          "seeds_with_defined_metric": 2
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 19781.85,
+          "sd_over_seeds": 5976.6315061709765,
+          "seeds_with_defined_metric": 2
+        }
+      },
+      "recovery_no_excursion_seeds": 0,
+      "recovery_right_censored_seeds": 2
+    },
+    "without_hve": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 1.0,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 0.0010447499999999999,
+          "sd_over_seeds": 0.0014774996192892908,
+          "seeds_with_defined_metric": 2
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 0.07880480000000033,
+          "sd_over_seeds": 0.11144681694009974,
+          "seeds_with_defined_metric": 2
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 0.05,
+          "sd_over_seeds": 0.07071067811865475,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 2.630400666666668,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 3.9488288000000007,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 1.0,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.05,
+          "sd_over_seeds": 0.07071067811865475,
+          "seeds_with_defined_metric": 2
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 1641.7666666666667,
+          "sd_over_seeds": 2321.808686252068,
+          "seeds_with_defined_metric": 2
+        }
+      },
+      "recovery_no_excursion_seeds": 2,
+      "recovery_right_censored_seeds": 0
+    },
+    "without_intdb2": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6666666666666666,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 0.0009433500000000001,
+          "sd_over_seeds": 0.0013340983640646594,
+          "seeds_with_defined_metric": 2
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 0.05695040000000085,
+          "sd_over_seeds": 0.08054002806257392,
+          "seeds_with_defined_metric": 2
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.33333333333333337,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 0.05,
+          "sd_over_seeds": 0.07071067811865475,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 1.8554600000000017,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 1.8639560000000033,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.6666666666666666,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.03333333333333333,
+          "sd_over_seeds": 0.04714045207910317,
+          "seeds_with_defined_metric": 2
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 1186.4666666666667,
+          "sd_over_seeds": 1677.9172513035983,
+          "seeds_with_defined_metric": 2
+        }
+      },
+      "recovery_no_excursion_seeds": 1,
+      "recovery_right_censored_seeds": 1
+    },
+    "without_markov": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.8,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 2
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 2
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 0.019382399999999994,
+          "sd_over_seeds": 0.0005010558651487852,
+          "seeds_with_defined_metric": 2
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 1.8457104000001299,
+          "sd_over_seeds": 0.036077153661519805,
+          "seeds_with_defined_metric": 2
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.19999999999999996,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 2
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 1.0,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 2.7376384177308366,
+          "sd_over_seeds": 0.1283034468151116,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 4.833986981237182,
+          "sd_over_seeds": 0.9253914665321457,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 0.8,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.8,
+          "sd_over_seeds": 0.0,
+          "seeds_with_defined_metric": 2
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 38452.3,
+          "sd_over_seeds": 751.6073679492216,
+          "seeds_with_defined_metric": 2
+        }
+      },
+      "recovery_no_excursion_seeds": 0,
+      "recovery_right_censored_seeds": 2
+    },
+    "without_route_repair": {
+      "metrics": {
+        "accepted_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 1.0,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "invalid_acceptance_fraction_per_admitted": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "modeled_cpu_energy_j_all_run": {
+          "mean_over_seeds": 0.001047,
+          "sd_over_seeds": 0.0014806815998046304,
+          "seeds_with_defined_metric": 2
+        },
+        "modeled_radio_tx_energy_j_all_run": {
+          "mean_over_seeds": 0.07880480000000033,
+          "sd_over_seeds": 0.11144681694009974,
+          "seeds_with_defined_metric": 2
+        },
+        "observed_residual_loss_fraction": {
+          "mean_over_seeds": 0.0,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "source_admission_fraction": {
+          "mean_over_seeds": 0.05,
+          "sd_over_seeds": 0.07071067811865475,
+          "seeds_with_defined_metric": 2
+        },
+        "valid_delay_mean_s": {
+          "mean_over_seeds": 2.630450666666668,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "valid_delay_p95_s": {
+          "mean_over_seeds": 3.9488788000000006,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "valid_delivery_fraction_per_admitted": {
+          "mean_over_seeds": 1.0,
+          "sd_over_seeds": null,
+          "seeds_with_defined_metric": 1
+        },
+        "valid_delivery_fraction_per_opportunity": {
+          "mean_over_seeds": 0.05,
+          "sd_over_seeds": 0.07071067811865475,
+          "seeds_with_defined_metric": 2
+        },
+        "wire_bytes_per_source_opportunity_all_run": {
+          "mean_over_seeds": 1641.7666666666667,
+          "sd_over_seeds": 2321.808686252068,
+          "seeds_with_defined_metric": 2
+        }
+      },
+      "recovery_no_excursion_seeds": 2,
+      "recovery_right_censored_seeds": 0
+    }
+  },
+  "paired_differences": {
+    "dpp": {
+      "accepted_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.19999999999999996,
+        "per_seed": [
+          {
+            "difference": -0.19999999999999996,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "invalid_acceptance_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "modeled_cpu_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.009834899999999994,
+        "per_seed": [
+          {
+            "difference": 0.012253799999999992,
+            "seed": 61
+          },
+          {
+            "difference": 0.0074159999999999955,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.003420841186024277
+      },
+      "modeled_radio_tx_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.7092559999999697,
+        "per_seed": [
+          {
+            "difference": 0.9364799999999475,
+            "seed": 61
+          },
+          {
+            "difference": 0.4820319999999919,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.3213432624966327
+      },
+      "observed_residual_loss_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.19999999999999996,
+        "per_seed": [
+          {
+            "difference": 0.19999999999999996,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "source_admission_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.5166666666666666,
+        "per_seed": [
+          {
+            "difference": 0.6333333333333333,
+            "seed": 61
+          },
+          {
+            "difference": 0.4,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.16499158227686106
+      },
+      "valid_delay_mean_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.3720269999998038,
+        "per_seed": [
+          {
+            "difference": -0.3720269999998038,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delay_p95_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.21571560000089862,
+        "per_seed": [
+          {
+            "difference": 0.21571560000089862,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.19999999999999996,
+        "per_seed": [
+          {
+            "difference": -0.19999999999999996,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delivery_fraction_per_opportunity": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.4,
+        "per_seed": [
+          {
+            "difference": 0.5,
+            "seed": 61
+          },
+          {
+            "difference": 0.30000000000000004,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.14142135623730948
+      },
+      "wire_bytes_per_source_opportunity_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 14776.166666666668,
+        "per_seed": [
+          {
+            "difference": 19510.0,
+            "seed": 61
+          },
+          {
+            "difference": 10042.333333333334,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 6694.651302013836
+      }
+    },
+    "hys": {
+      "accepted_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.1875,
+        "per_seed": [
+          {
+            "difference": -0.1875,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "invalid_acceptance_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "modeled_cpu_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.01065764999999999,
+        "per_seed": [
+          {
+            "difference": 0.013041899999999992,
+            "seed": 61
+          },
+          {
+            "difference": 0.008273399999999992,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.003371838686088052
+      },
+      "modeled_radio_tx_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.8707239999999993,
+        "per_seed": [
+          {
+            "difference": 1.15238240000002,
+            "seed": 61
+          },
+          {
+            "difference": 0.5890655999999785,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.3983251292363355
+      },
+      "observed_residual_loss_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.1875,
+        "per_seed": [
+          {
+            "difference": 0.1875,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "source_admission_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.55,
+        "per_seed": [
+          {
+            "difference": 0.6666666666666666,
+            "seed": 61
+          },
+          {
+            "difference": 0.43333333333333335,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.16499158227686106
+      },
+      "valid_delay_mean_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.21636328205110145,
+        "per_seed": [
+          {
+            "difference": -0.21636328205110145,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delay_p95_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.22837080000054621,
+        "per_seed": [
+          {
+            "difference": 0.22837080000054621,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.1875,
+        "per_seed": [
+          {
+            "difference": -0.1875,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delivery_fraction_per_opportunity": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.45,
+        "per_seed": [
+          {
+            "difference": 0.5666666666666667,
+            "seed": 61
+          },
+          {
+            "difference": 0.33333333333333337,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.16499158227686106
+      },
+      "wire_bytes_per_source_opportunity_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 18140.083333333336,
+        "per_seed": [
+          {
+            "difference": 24007.966666666667,
+            "seed": 61
+          },
+          {
+            "difference": 12272.2,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 8298.440192423044
+      }
+    },
+    "without_hve": {
+      "accepted_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "invalid_acceptance_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "modeled_cpu_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -2.250000000000082e-06,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": -4.500000000000164e-06,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 3.1819805153395797e-06
+      },
+      "modeled_radio_tx_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "observed_residual_loss_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "source_admission_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "valid_delay_mean_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -4.999999999988347e-05,
+        "per_seed": [
+          {
+            "difference": -4.999999999988347e-05,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delay_p95_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -4.999999999988347e-05,
+        "per_seed": [
+          {
+            "difference": -4.999999999988347e-05,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delivery_fraction_per_opportunity": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "wire_bytes_per_source_opportunity_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.0
+      }
+    },
+    "without_intdb2": {
+      "accepted_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.33333333333333337,
+        "per_seed": [
+          {
+            "difference": -0.33333333333333337,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "invalid_acceptance_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "modeled_cpu_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.00010364999999999984,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": -0.00020729999999999967,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.00014658323573997107
+      },
+      "modeled_radio_tx_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.021854399999999476,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": -0.04370879999999895,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.030906788877525827
+      },
+      "observed_residual_loss_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.33333333333333337,
+        "per_seed": [
+          {
+            "difference": 0.33333333333333337,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "source_admission_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "valid_delay_mean_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.7749906666666662,
+        "per_seed": [
+          {
+            "difference": -0.7749906666666662,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delay_p95_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -2.0849227999999975,
+        "per_seed": [
+          {
+            "difference": -2.0849227999999975,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.33333333333333337,
+        "per_seed": [
+          {
+            "difference": -0.33333333333333337,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delivery_fraction_per_opportunity": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.01666666666666667,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": -0.03333333333333334,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.023570226039551587
+      },
+      "wire_bytes_per_source_opportunity_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -455.29999999999995,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": -910.5999999999999,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 643.8914349484701
+      }
+    },
+    "without_markov": {
+      "accepted_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.19999999999999996,
+        "per_seed": [
+          {
+            "difference": -0.19999999999999996,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "invalid_acceptance_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "modeled_cpu_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.018335399999999995,
+        "per_seed": [
+          {
+            "difference": 0.019028099999999996,
+            "seed": 61
+          },
+          {
+            "difference": 0.017642699999999994,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.0009796257346558442
+      },
+      "modeled_radio_tx_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 1.7669056000001295,
+        "per_seed": [
+          {
+            "difference": 1.8202000000001601,
+            "seed": 61
+          },
+          {
+            "difference": 1.713611200000099,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.07536966327857995
+      },
+      "observed_residual_loss_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.19999999999999996,
+        "per_seed": [
+          {
+            "difference": 0.19999999999999996,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "source_admission_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.95,
+        "per_seed": [
+          {
+            "difference": 1.0,
+            "seed": 61
+          },
+          {
+            "difference": 0.9,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.07071067811865474
+      },
+      "valid_delay_mean_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.016463513771595828,
+        "per_seed": [
+          {
+            "difference": 0.016463513771595828,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delay_p95_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.2307576000001368,
+        "per_seed": [
+          {
+            "difference": 0.2307576000001368,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": -0.19999999999999996,
+        "per_seed": [
+          {
+            "difference": -0.19999999999999996,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delivery_fraction_per_opportunity": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.75,
+        "per_seed": [
+          {
+            "difference": 0.8,
+            "seed": 61
+          },
+          {
+            "difference": 0.7000000000000001,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.07071067811865474
+      },
+      "wire_bytes_per_source_opportunity_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 36810.53333333334,
+        "per_seed": [
+          {
+            "difference": 37920.833333333336,
+            "seed": 61
+          },
+          {
+            "difference": 35700.23333333334,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 1570.2013183028464
+      }
+    },
+    "without_route_repair": {
+      "accepted_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "invalid_acceptance_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "modeled_cpu_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "modeled_radio_tx_energy_j_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "observed_residual_loss_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "source_admission_fraction": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "valid_delay_mean_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delay_p95_s": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delivery_fraction_per_admitted": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": null
+      },
+      "valid_delivery_fraction_per_opportunity": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.0
+      },
+      "wire_bytes_per_source_opportunity_all_run": {
+        "direction": "method minus da-ahe",
+        "mean_difference": 0.0,
+        "per_seed": [
+          {
+            "difference": 0.0,
+            "seed": 61
+          },
+          {
+            "difference": 0.0,
+            "seed": 62
+          }
+        ],
+        "sd_difference": 0.0
+      }
+    }
+  },
+  "paired_evaluation_seeds": [
+    61,
+    62
+  ],
+  "recovery_note": "Right-censored recovery times are not treated as observed durations or averaged. See per-seed records.",
+  "status": "independent_experimental_uncertified"
+}

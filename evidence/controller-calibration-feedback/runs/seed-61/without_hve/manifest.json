@@ -1,0 +1,46 @@
+{
+  "ablation_instrumentation_version": 1,
+  "all_decisions_certified": false,
+  "config_digest": "07ef213b45d0a4ffca9d52d11e5fe50f5ed7d4c1988c12a89b27831c069c8242",
+  "controller_sha256": "6989691a8f1fbbce00c04b903dca0929cd434af3b5232796f5eccd1280541dec",
+  "exogenous_digest": "3a708c444c20910c6eb9aa9f8673e23012e0ad0ec09d838407c6bb67606abd1b",
+  "label": "independent fixed-preauthorized-roster closed-loop synthetic packet experiment, not original OMNeT++/INET",
+  "method": "without_hve",
+  "protocol_model_version": 2,
+  "raw_files": {
+    "epochs.jsonl.gz": "9a0a9f8e1bd9265d87e60a0c699383ddcfaf4b57ca9913926d87d530acd4a35c",
+    "events.jsonl.gz": "471bca732c742e1b5e345b262c55c05c700029e1bd52440c7c5a9aefc5d3d518",
+    "packets.jsonl.gz": "471bca732c742e1b5e345b262c55c05c700029e1bd52440c7c5a9aefc5d3d518",
+    "reports.jsonl.gz": "9e607fa842524a835a06c6a9e5466fa5d2160e2ba11248e68ea27b64bf917a6b"
+  },
+  "runtime_counts": {
+    "attempt_outcomes": {},
+    "modeled_cpu_energy_j": 0.0,
+    "modeled_radio_tx_energy_j": 0.0,
+    "packets": {},
+    "repair_activity": {
+      "actuations_completed": 0,
+      "actuations_failed": 0,
+      "actuations_started": 0,
+      "actuations_unresolved": 0,
+      "enabled_control_epochs": 0,
+      "selected_control_epochs": 0
+    },
+    "reports": {
+      "controller_stopped": 30,
+      "opportunities": 30
+    },
+    "unique_frames": {
+      "delivered": 0,
+      "lost": 0,
+      "offered": 0,
+      "unresolved": 0
+    },
+    "wire_bytes": 0
+  },
+  "schema_version": 1,
+  "seed": 61,
+  "source_digest": "78e22634b1efaafc353b56594fd0787b7a98d2af9c32ce580ba3fa134418e445",
+  "status": "independent_experimental_uncertified",
+  "stop_time_s": 125.0
+}

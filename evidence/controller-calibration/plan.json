@@ -1,0 +1,313 @@
+{
+  "annotation_rule": "congestion annotation 1 throughout its reduced-domain case; other nonnormal annotations during [disturbance.start,disturbance.end); baseline input annotation 0 outside; not measured latent truth or recovery",
+  "base_seed_split": {
+    "evaluation": [
+      22000,
+      22001
+    ],
+    "holdout": [
+      21000,
+      21001
+    ],
+    "training": [
+      20000,
+      20001,
+      20002
+    ]
+  },
+  "cases": [],
+  "completed": false,
+  "controller_input_sha256": "9f29674092d709c4b25cd1787d3925db6b20458081bcc1bb656223e389324591",
+  "cost_definition": "CPU execution overlap per offered opportunity; next-window conditional accepted delay/loss/noise telemetry; separate maximum-capacity synthetic signal probe relative L2",
+  "dirichlet_strength": 5.0,
+  "empty_outcome_rule": "Retain simulator zero-observation defaults and flag empty windows; do not reinterpret zeros as measured reliable delivery",
+  "exploration": "whole actions cycle nominal/repair/fallback at every observation boundary; phase=(seed+scenario_index)%3; no labels or future outcomes read",
+  "fit_options": {
+    "delay_threshold": 0.5,
+    "dirichlet_strength": 5.0,
+    "kappa_z": 0.3,
+    "loss_threshold": 0.002,
+    "regularization": 0.001,
+    "sparse_threshold": 3,
+    "variance_floor": 1e-08,
+    "zcert_max": [
+      100.0,
+      500.0,
+      1.0
+    ]
+  },
+  "input_config_sha256": "30e49d3de5fda7e713ffe062ff9c4fbcf93603d6384e46f23ec6a0d17b44dcb2",
+  "input_paths": {
+    "controller": "input-controller.json",
+    "effective_config": "input-config.json",
+    "original_config": "original-config.json"
+  },
+  "label_lag_scope": "Labels annotate input exposure at the cutoff while y_t summarizes its preceding window; exposure labels are not observed hidden states",
+  "machine": "arm64",
+  "nodes": 3000,
+  "operational_annotation_names": [
+    "normal modeled operation",
+    "congestion stress exposure",
+    "local primary-route impairment exposure",
+    "global primary-route impairment exposure",
+    "severe link-error exposure"
+  ],
+  "original_config_sha256": "30e49d3de5fda7e713ffe062ff9c4fbcf93603d6384e46f23ec6a0d17b44dcb2",
+  "platform": "Darwin",
+  "python_version": "3.12.14",
+  "reproduction_argv": [
+    "python",
+    "source/tools/run_controller_calibration.py",
+    "--config",
+    "input-config.json",
+    "--controller",
+    "input-controller.json",
+    "--output",
+    "replay/controller-calibration",
+    "--nodes",
+    "3000",
+    "--jobs",
+    "2",
+    "--training-seeds",
+    "20000,20001,20002",
+    "--holdout-seeds",
+    "21000,21001",
+    "--evaluation-seeds",
+    "22000,22001"
+  ],
+  "ridge_regularization": 0.001,
+  "safety_parameters_unchanged": {
+    "beta": 0.02,
+    "gamma": 0.1,
+    "kappa_z": 0.3,
+    "zcert_max": [
+      100.0,
+      500.0,
+      1.0
+    ]
+  },
+  "scenarios": [
+    "normal",
+    "congestion",
+    "local_impairment",
+    "global_impairment",
+    "severe_loss"
+  ],
+  "schema_version": 1,
+  "scope": "Executed independent two-hop service-model identification; configured operational-stage labels, modeled CPU/communication, and separately executed synthetic integer signal probes. No physical-board data, uniform true-process coverage, or deployment certification.",
+  "source_digest": "11e9c3436eacfdabed3c12ae22df512f07b266af4736d31e3f0c4881053de70b",
+  "source_hashes": {
+    "simulation/__init__.py": "162cae4d203669b39d5b42138c6291bc910bd207c4767dc6a01b85b4ca8a9b96",
+    "simulation/ablation_analysis.py": "0be825c61643144ef093309069b33dae5eb935b2ee75eb782889afbccbae029b",
+    "simulation/audit.py": "332cc96c8e808f01e2c68d22ce18fb952347d2b7f1cf29799853cec4d4ce915d",
+    "simulation/engine.py": "2570df1e0a4474cf4cdd17d71bc08213027d6bd585da4f6617b6d46aaa3c2729",
+    "simulation/exogenous.py": "943a4ca35468ee2efdfa05844f5575d78046a2c9083eb2834454e3ae29237c16",
+    "simulation/io.py": "f7636d3cf8d6abb512c5b62a67cb90a1aefbdf37a5ba5438c796aa48e32fb1ef",
+    "simulation/policy.py": "640e3db65fc977caca1ba0d99bfff3dca03d968aa9db5203e1a298745a9116e7",
+    "src/daahe/__init__.py": "7ba733777b21420081c64351fa8f69d59cc1420aa84051300c90add9c60a3e59",
+    "src/daahe/__main__.py": "094e30c7ecfc0a0b56833322b9709d64d2ddcff228adb02d094443b262974c25",
+    "src/daahe/ablations.py": "6c2ab1540d45a0fa9685f282726bbd2b402a1d108376f34272fc018c05021a0d",
+    "src/daahe/calibration.py": "64c7fdd11d6faf3747ca6124dc7d55ba234488c97e810a7aa2b2303817135c95",
+    "src/daahe/calibration_trace.py": "9bb629e3b73d6b94c86df48cd8913314065db319996cd7a132794999ad3e393a",
+    "src/daahe/cli.py": "50c8d08d4ea3eacbb875456b0a0fc7f112700f6e1b4ccf6d619d80cff5eb0fca",
+    "src/daahe/control.py": "017ad342377a41a5a3146b38992087f08cae6d0f145297df570bc674ef785432",
+    "src/daahe/controller_certificate.py": "fe52ecca72356380383c0d709df072829e9031416d84d77bbd4db3ab27a1cd43",
+    "src/daahe/derivation.py": "fde965b72748cced31acfefb136e779d6ed5f948c6e7d809b60dfe936df9969c",
+    "src/daahe/evidence.py": "452d6ddd914c0d7309f6d24af7a568cfa40af9d48521edd467e5b80ed6b02f1e",
+    "src/daahe/independent_evidence.py": "f189f9285b0cdea8a584ff8b6501d9300065752c9ade69c846507f6b30254000",
+    "src/daahe/integration.py": "60112c543a2a181f2ea4f27f3d4c9f83474076dff395690db630d0a69d304459",
+    "src/daahe/lightweight.py": "6a537f743593decb3725cb79d127f180c5d00d623d45ea71e092a59c359453e6",
+    "src/daahe/mlwe.py": "1e7e867b315312139dfce4260aedf38aab19685077a3ce90c6f3bf174c459fc7",
+    "src/daahe/profiles.py": "dc6add53fb7223afaab61074549ea33b48a973ff28303fd209012c356b7a2cb8",
+    "src/daahe/protocol.py": "a24644caf1d37a683f67e86ea595ad2ed34ef6bf29286db211db63bfd67cbc65",
+    "src/daahe/replay.py": "e8659aed519e5f7986420a0a26963051a772ff2e3b1ba29f1b688b26ad7a6ecf",
+    "src/daahe/ring.py": "507106338b99c8fbba36c5d60801225c367fcbc9896813afdee583a96a7b11db",
+    "src/daahe/safety.py": "90bb49123e520aa7c0ebf76f49de765fb7a17fb484742886fe5a0e5f3dab7b60",
+    "src/daahe/signal.py": "21c1f738718bf21e71bdce0bc550e157c9a8637a1772fe2099182a05fadb7cb2",
+    "src/daahe/signatures.py": "10c940f2d0c723e611956a78e853e18ebaa00d638f334aa238e4b3acf6411699",
+    "src/daahe/statistics.py": "d33d6b3b4acf7c57c728661e91428d50e512127b7d881db58501a1d02b725e26",
+    "tools/run_controller_calibration.py": "81be052b9d127c844281be58cae681ca02f7a67967db1fff315e34f7d273ab70",
+    "tools/run_simulation_campaign.py": "3d322e74ea88e0ac905866ae1c9768b354d06ae799fee3d3dca76000104f4b1a",
+    "tools/verify_simulation_campaign.py": "326cc2312ad330908def02696d8a1572e6304c0ebc14504ab1ef107b79fb2139"
+  },
+  "sparse_transition_threshold": 3,
+  "started_utc": "2026-10-17T13:22:22.293811+00:00",
+  "tasks": [
+    {
+      "partition": "training",
+      "scenario": "normal",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "scenario": "congestion",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "scenario": "local_impairment",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "scenario": "global_impairment",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "scenario": "severe_loss",
+      "seed": 20000
+    },
+    {
+      "partition": "training",
+      "scenario": "normal",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "scenario": "congestion",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "scenario": "local_impairment",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "scenario": "global_impairment",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "scenario": "severe_loss",
+      "seed": 20001
+    },
+    {
+      "partition": "training",
+      "scenario": "normal",
+      "seed": 20002
+    },
+    {
+      "partition": "training",
+      "scenario": "congestion",
+      "seed": 20002
+    },
+    {
+      "partition": "training",
+      "scenario": "local_impairment",
+      "seed": 20002
+    },
+    {
+      "partition": "training",
+      "scenario": "global_impairment",
+      "seed": 20002
+    },
+    {
+      "partition": "training",
+      "scenario": "severe_loss",
+      "seed": 20002
+    },
+    {
+      "partition": "holdout",
+      "scenario": "normal",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "scenario": "congestion",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "scenario": "local_impairment",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "scenario": "global_impairment",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "scenario": "severe_loss",
+      "seed": 21000
+    },
+    {
+      "partition": "holdout",
+      "scenario": "normal",
+      "seed": 21001
+    },
+    {
+      "partition": "holdout",
+      "scenario": "congestion",
+      "seed": 21001
+    },
+    {
+      "partition": "holdout",
+      "scenario": "local_impairment",
+      "seed": 21001
+    },
+    {
+      "partition": "holdout",
+      "scenario": "global_impairment",
+      "seed": 21001
+    },
+    {
+      "partition": "holdout",
+      "scenario": "severe_loss",
+      "seed": 21001
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "normal",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "congestion",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "local_impairment",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "global_impairment",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "severe_loss",
+      "seed": 22000
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "normal",
+      "seed": 22001
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "congestion",
+      "seed": 22001
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "local_impairment",
+      "seed": 22001
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "global_impairment",
+      "seed": 22001
+    },
+    {
+      "partition": "evaluation",
+      "scenario": "severe_loss",
+      "seed": 22001
+    }
+  ],
+  "window_response_scope": "CPU execution and completed-window telemetry can include queued reports from earlier actions; this is system window response, not isolated instantaneous action cost"
+}

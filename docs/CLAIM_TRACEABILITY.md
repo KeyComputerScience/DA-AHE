@@ -1,8 +1,8 @@
 # Method, implementation and evidence traceability
 
 DA-AHE uses fixed Module-LWE parameters k=6, d=256, n=m=1536, q=2^32,
-p=65537 and sigma_key=3.2. The method specification is
-[PARAMETER_PROTOCOL.tex](manuscript/PARAMETER_PROTOCOL.tex); experimental
+p=65537 and sigma_key=3.2. The authorization and aggregation operations are in
+the [protocol implementation](../src/daahe/protocol.py); experimental
 boundaries and complete results are in [Evaluation](EVALUATION.md) and
 [CURRENT_RESULTS.md](../experiments/CURRENT_RESULTS.md).
 
@@ -22,10 +22,10 @@ paths, verification commands, evidence hashes and scope requirements.
 | Finite-CDT decoding correctness | `mlwe.py`, `tools/certify_decoding_bound.py` | [Actual-CDT record](../evidence/independent/decoding/k6-cdt-03/decoding-bound.json), exact probabilities and outward intervals; 42-choice single-batch log2 upper bound approximately -130.5101732. |
 | Finite-task risk | `tools/check_decoding_horizon.py` | [Executed budgets](../evidence/independent/decoding-horizon/run-01/manifest.json) compare exact rational bounds with a declared task target; all conditions and rejected budget examples are retained. |
 | Aggregate reconstruction | `signal.py`, `profiles.py`, `tools/check_aggregate_fidelity.py` | [72-case evidence](../evidence/independent/aggregate-fidelity/run-01/index.json): raw integer signals, intermediate vectors, ordered error decomposition and complete recomputation. Physical-signal generalization requires a calibrated corpus. |
-| Controlled HMM and action scoring | `control.py`, `calibration.py`, `replay.py` | [Controller specification](CONTROL_IMPLEMENTATION_SPEC.md), binding tests and synthetic closed-loop records. Calibration, uniform uncertainty and invariance require deployment evidence. |
+| Controlled HMM and action scoring | `control.py`, `calibration.py`, `replay.py` | [Controller specification](CONTROL_IMPLEMENTATION_SPEC.md), binding tests, archived closed-loop records and [calibration workflow](CONTROLLER_CALIBRATION.md). Empirical fits and declared-model checks retain their own assumptions; uniform deployment coverage requires separate evidence. |
 | Resource/certificate admission | `safety.py`, `control.RobustController` | Hard gates precede the nominal performance objective. Hash/tuple checks establish artifact identity, not the validity of external proof claims. |
 | Seven-method packet-service study | `simulation/`, `statistics.py`, `tools/verify_simulation_campaign.py` | [Current results](../experiments/current-results.json): every method, 20 paired seeds, all denominators/censoring and modeled costs. |
-| Embedded core build | `embedded/`, `firmware/`, board collector/verifier | [Board status](../evidence/independent/firmware/selected-k6/board-pending.json): no physical samples. Core build evidence is not full-protocol timing, power, stack or workspace certification. |
+| Embedded core build | `embedded/`, `firmware/`, board collector/verifier | [Measurement inventory](../evidence/independent/firmware/selected-k6/board-pending.json), ARM ELF/map, compiler stack-usage and host known-answer records. These core-build artifacts do not certify full-protocol board timing, power, stack or workspace. |
 | Public artifact audit | `tools/verify_published_evidence.py`, `tools/independent_manifest.py` | [Archive index](../evidence/independent/publication.json), raw recomputation and environment-scoped frozen-source replay. Hashes verify bytes, not measurement truth. |
 
 ## Interpretation of the reported comparisons

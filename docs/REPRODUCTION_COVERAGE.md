@@ -3,8 +3,8 @@
 The primary evaluation is a fixed-parameter rank-6 packet-service study with
 20 paired seeds and seven methods. [EVALUATION.md](EVALUATION.md) defines the
 study, [CURRENT_RESULTS.md](../experiments/CURRENT_RESULTS.md) reports the full
-comparison, and [PARAMETER_PROTOCOL.tex](manuscript/PARAMETER_PROTOCOL.tex)
-specifies the parameter and protocol operations.
+comparison, and the [protocol implementation](../src/daahe/protocol.py)
+defines the authorization and aggregation operations.
 
 Implementation availability, an executed experiment, a mathematical certificate
 and a physical measurement have different meanings. The following table states
@@ -20,8 +20,8 @@ which evidence exists and the scope in which it can be used.
 | Finite-task risk | Exact-rational union budgets and accepted/rejected examples | A declared attempt cap and lifecycle are required. A bound that misses its target is not an observed failure; unlimited lifetime is not certified. |
 | Network-service comparison | 140 complete per-seed records, seven methods, shared exogenous inputs, raw-to-summary recomputation | Synthetic Python two-hop service model with declared processing and channel assumptions. Cryptographic/signal operations are represented by costs within this model. |
 | Aggregate fidelity | 72 synthetic integer-count cases, frozen source, exact vectors and recomputed metrics | 54 capacity-admissible cases and 18 diagnostics. No calibrated physical corpus, universal error bound or distortion feedback in the network study. |
-| Belief/robust controller | HMM, robust drift admission, nominal objective, certificate interfaces and functional tests | Every campaign decision is uncertified. Uniform bounds, fallback feasibility, invariance and numerical margins require reviewed evidence. |
-| Core firmware | Cross-compilation and host known answers | Physical samples=0. No full-protocol timing/energy/stack/peak-memory measurement or complete per-role workspace certificate. |
+| Belief/robust controller | HMM, robust drift admission, 35-case / 630-transition empirical calibration, heldout/evaluation diagnostics and exact mathematical checks | Archived campaign decisions retain their recorded uncertified status. The [recorded certificate](CONTROLLER_CALIBRATION.md) fails domain, fallback and transition conditions at the original thresholds; deployment coverage and numerical margins require corresponding evidence. |
+| Core firmware | ARM ELF/map and compiler stack-usage reports, host known answers, device collector and capture verifier | The supplied core-build records do not establish full-protocol board timing, energy, stack or peak-memory measurements, or a complete per-role workspace certificate. |
 | Audit/replay | Public raw bundle, manifests, record recomputation and frozen-source replay interfaces | Byte integrity is not measurement authentication. Exact replay is scoped to the recorded environment. |
 
 ## Results retained in the service study

@@ -179,7 +179,7 @@ python -m pytest --strict-ci -q \
   tests/test_simulation_network.py tests/test_simulation_rosters.py
 ```
 
-The evidence concerns an independent synthetic service model with uncalibrated
-controller fixtures and modeled CPU/TX costs. Network report records, frame
+The evidence concerns the archived independent service model with declared
+reference controller coefficients and modeled CPU/TX costs. Network report records, frame
 instrumentation, capability metadata, aggregate reconstruction and cryptographic
 security analysis retain their separate scopes.

@@ -47,9 +47,9 @@ def main():
     if output.exists() and any(output.iterdir()):
         parser.error("output must be empty; existing evidence is never overwritten")
     output.mkdir(parents=True, exist_ok=True)
-    controller = (ROOT / config["controller_fixture"]).resolve()
+    controller = (ROOT / config["controller_config"]).resolve()
     if not controller.is_file():
-        parser.error("controller fixture does not exist")
+        parser.error("reference controller does not exist")
     write_json(output / "config.json", config)
     shutil.copyfile(controller, output / "controller.json")
     bound_artifacts = {}

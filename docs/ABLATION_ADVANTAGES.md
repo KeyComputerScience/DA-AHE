@@ -68,5 +68,6 @@ python tools/plot_ablation_advantages.py \
 ~~~
 
 The output prefix supplies vector PDF/SVG, a 300-dpi PNG, numerical JSON and
-a text caption and results paragraph. The figure is available at
-[revised-ablationA.pdf](manuscript/figures/revised-ablationA.pdf).
+a text caption and results paragraph in the requested run directory. The saved
+[numerical results](../experiments/ablation-advantages.json) retain the calculation
+inputs, statistics and comparison scope.

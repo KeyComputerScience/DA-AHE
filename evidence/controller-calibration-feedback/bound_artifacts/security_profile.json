@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "origin": "independent_parameter_selection",
+  "parameter_set_id": "daahe-k6-d256-q32-sigma3.2-v1",
+  "module_rank": 6,
+  "ring_degree": 256,
+  "n": 1536,
+  "m": 1536,
+  "q": 4294967296,
+  "p": 65537,
+  "sigma_key": 3.2,
+  "ciphertext_bytes": 7168,
+  "required_estimator_bits": 128.1,
+  "computed_estimator_bits": 136.475,
+  "estimator_commit": "53da5982597709ba0fdf94ea37a84d822310fd84",
+  "cost_model": "ADPS16(mode='quantum')",
+  "attack_set": [
+    "primal_usvp",
+    "primal_bdd",
+    "primal_hybrid",
+    "primal_mitm_hybrid",
+    "dual",
+    "dual_hybrid",
+    "coded_bkw"
+  ],
+  "security_report": "evidence/independent/security-parameter-search/selected-k6-full/security.json",
+  "security_report_sha256": "3794650eb763f528bab90aab42ff4ed54e7616d5d85358239db261e27f668168",
+  "scope": "heuristic generic flattened-LWE estimates; not a module-specific, side-channel, implementation or worst-case proof",
+  "original_paper_parameters": false,
+  "full_system_certified": false
+}

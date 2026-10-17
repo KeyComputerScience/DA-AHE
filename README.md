@@ -24,12 +24,27 @@ python tools/build_current_evaluation.py --output-dir runs/current-evaluation
 export, nRF52840 memory quantities, reconstruction-fidelity values, units and
 calculation formulas.
 
+## Controller calibration
+
+The separate 3,000-node identification study executes 35 cases and records
+630 causal transitions: 270 training, 180 holdout and 180 evaluation rows.
+Every action/operating-condition cell is covered. The fitted HMM, prediction
+models and action-specific DPP coefficients are available in
+[the active controller](configs/control.json), with
+[input data and calculations](evidence/controller-calibration/) and
+[the calibration specification](docs/CONTROLLER_CALIBRATION.md).
+
+The recorded mathematical certificate fails domain-ball containment, fallback
+drift and transition-set containment under the original thresholds. All numerical
+checks and independent prediction diagnostics are preserved; this fit does not
+certify the archived network comparison or a deployment.
+
 ## Methods
 
-The [parameter and aggregation protocol](docs/manuscript/PARAMETER_PROTOCOL.tex),
-[DPP and HYS baselines](docs/manuscript/CONTROL_BASELINES.tex), and
-[baseline references](docs/manuscript/CONTROL_REFERENCES.bib) provide the
-source fragments for the declared implementation and experiment scope.
+The [aggregation protocol](src/daahe/protocol.py),
+[controller and baseline specification](docs/CONTROL_IMPLEMENTATION_SPEC.md), and
+[evaluation specification](docs/EVALUATION.md) describe the declared
+implementation, parameters and comparison scope.
 
 ## Verified capabilities
 
@@ -124,6 +139,20 @@ See `security/README.md` and `docs/INDEPENDENT_REPRODUCTION.md` for the SageMath
 runner. The reported minimum is computed from actual attack outputs. The
 manuscript's 128.1-bit value is not substituted when the estimator is unavailable
 or when an attack fails. Heuristic attack estimates are not formal guarantees.
+
+## Calibrate and check the controller model
+
+The [controller calibration workflow](docs/CONTROLLER_CALIBRATION.md) generates
+separate training, holdout and evaluation records from the declared packet-service
+model. It exports fitted controller parameters, prediction diagnostics, raw run
+records and source/input hashes. A separate verifier checks domain invariance,
+fallback drift and transition-set containment under explicit model assumptions.
+
+Every report retains its actual pass or failure outcome. These checks concern
+the declared mathematical model; empirical residual maxima do not establish
+uniform physical-process coverage, numerical gate accuracy or full-system
+deployment certification. The frozen 140-run comparison keeps its original
+controller and results.
 
 ## Verify and archive evidence
 

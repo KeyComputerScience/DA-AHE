@@ -1,0 +1,58 @@
+{
+  "ablation_instrumentation_version": 1,
+  "all_decisions_certified": false,
+  "config_digest": "dd5788f30edaad53af5fd8e9959545fa362e732c20cbb85edb4bde7298920e36",
+  "controller_sha256": "9f29674092d709c4b25cd1787d3925db6b20458081bcc1bb656223e389324591",
+  "exogenous_digest": "2f8a5c0887b96087a5aec807c016eec555d2d9d31765eeea1699486b84d4dddf",
+  "label": "independent fixed-preauthorized-roster closed-loop synthetic packet experiment, not original OMNeT++/INET",
+  "method": "da-ahe",
+  "protocol_model_version": 2,
+  "raw_files": {
+    "epochs.jsonl.gz": "715e88be7cd61211b00deecb003b18b6c2478cfa01d51d28bd77f593e27699a9",
+    "events.jsonl.gz": "2132d125386ff07541ee7c5f30146b76f87b184186d7bd230dce1a524d54ca58",
+    "packets.jsonl.gz": "0b570e7b15e1de06746887f862ffee458781e9b9a071b69e92eb6965f2a92619",
+    "reports.jsonl.gz": "eccadaf84a7b7fffb140461a665dc26e5cccf6b8be36606ed3860f7bfcf08061"
+  },
+  "runtime_counts": {
+    "attempt_outcomes": {
+      "block_auth_reject": 27,
+      "channel_error": 1104,
+      "collision": 26576,
+      "ok": 277993
+    },
+    "modeled_cpu_energy_j": 0.8705228999999943,
+    "modeled_radio_tx_energy_j": 53.43486080002652,
+    "packets": {
+      "deadline": 92503,
+      "queue_overflow": 21021,
+      "received": 277885
+    },
+    "repair_activity": {
+      "actuations_completed": 0,
+      "actuations_failed": 0,
+      "actuations_started": 0,
+      "actuations_unresolved": 0,
+      "enabled_control_epochs": 9,
+      "selected_control_epochs": 9
+    },
+    "reports": {
+      "admitted": 2260,
+      "deadline_expired": 2209,
+      "delivered_valid": 49,
+      "integrity_rejected": 2,
+      "opportunities": 3000,
+      "sampling_skipped": 740
+    },
+    "unique_frames": {
+      "delivered": 277885,
+      "lost": 113524,
+      "offered": 391409,
+      "unresolved": 0
+    },
+    "wire_bytes": 33396788
+  },
+  "schema_version": 1,
+  "seed": 20000,
+  "status": "independent_experimental_uncertified",
+  "stop_time_s": 125.0
+}

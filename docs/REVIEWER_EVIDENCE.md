@@ -7,7 +7,7 @@ sigma_key=3.2. A packed protected report has a 7,168-byte ciphertext; the raw
 
 The main entry points are [Evaluation](EVALUATION.md),
 [Complete results](../experiments/CURRENT_RESULTS.md) and the
-[Parameter and protocol specification](manuscript/PARAMETER_PROTOCOL.tex).
+[protocol implementation](../src/daahe/protocol.py).
 The machine-readable evidence index is
 [configs/paper_claims.json](../configs/paper_claims.json).
 
@@ -17,8 +17,10 @@ The study contains 20 paired seeds, 1000–1019, for seven methods: 140 runs at
 3,000 sensors and 60 gateways, with 90 seconds of generation and 35 seconds of
 draining. It is a synthetic Python two-hop packet/block service model.
 Cryptographic and signal operations inside this model have declared service
-costs rather than being executed per packet. The controller fixture is
-uncalibrated and every decision is marked uncertified.
+costs rather than being executed per packet. The archived comparison uses its
+declared controller parameters and records uncertified decisions. The separate
+[calibration workflow](CONTROLLER_CALIBRATION.md) retains new data splits,
+model identities and verification reports.
 
 | Method | Valid / opportunity (%) | Loss / admitted (%) | Invalid accepted / admitted (%) | Mean valid delay (s) | Modeled CPU (J/run) | Modeled TX (J/run) |
 |---|---:|---:|---:|---:|---:|---:|
@@ -56,8 +58,8 @@ forgery probability.
 | Actual-sampler decoding | [finite-CDT report](../evidence/independent/decoding/k6-cdt-03/decoding-bound.json), [record verification](../evidence/independent/decoding/k6-cdt-03/record-verification.json) | Outward-interval single-batch bound including shared-key noise and scaling carry; joint random-key/fresh-noise scope. |
 | Finite-task budget | [budget records](../evidence/independent/decoding-horizon/run-01/manifest.json), [risk definitions](DECODING_RISK_BUDGET.md) | Exact union budgeting permits at most 5 attempts at 2^-128 and 1458 at 2^-120. A failed comparison means the requested bound is not certified, not an observed failure. |
 | Aggregate reconstruction | [72-case index](../evidence/independent/aggregate-fidelity/run-01/index.json), [summary](../evidence/independent/aggregate-fidelity/run-01/summary.json), [method](AGGREGATE_FIDELITY.md) | Synthetic integer-count signals: 54 admissible cases and 18 diagnostics, with exact error attribution and explicit undefined PRD at zero reference energy. |
-| Belief-state control | [control.py](../src/daahe/control.py), [calibration.py](../src/daahe/calibration.py), [safety.py](../src/daahe/safety.py), [specification](CONTROL_IMPLEMENTATION_SPEC.md) | Inspectable HMM, robust drift gates, nominal objective and fail-closed certificate interfaces; the supplied fixture is not a deployment certificate. |
-| Compiled core | [firmware](../firmware/README.md), [board status](../evidence/independent/firmware/selected-k6/board-pending.json) | Cross-compiled core and host known answers. Physical samples=0; full-protocol timing, energy, stack and memory remain unmeasured. |
+| Belief-state control | [control.py](../src/daahe/control.py), [calibration.py](../src/daahe/calibration.py), [safety.py](../src/daahe/safety.py), [specification](CONTROL_IMPLEMENTATION_SPEC.md), [calibration and certificate checks](CONTROLLER_CALIBRATION.md) | Inspectable HMM, robust drift gates, nominal objective and fail-closed interfaces. Empirical calibration and declared-model verification have distinct scopes; neither is a physical-deployment certificate. |
+| Compiled core | [firmware](../firmware/README.md), [measurement inventory](../evidence/independent/firmware/selected-k6/board-pending.json), collector and verifier | ARM ELF/map, compiler stack-usage and host known-answer evidence. Whole-protocol board timing, energy, stack and memory require complete firmware and corresponding capture records. |
 | Audit and recomputation | [current result export](../experiments/current-results.json), [public raw archive](PUBLIC_EVIDENCE.md), [seven-step receipt](../evidence/independent/reviewer-suite/run-01/suite-receipt.json), [43-test receipt](../evidence/independent/reviewer-suite/run-01/tests-receipt.json) | Raw-to-summary recomputation, source/input snapshots and bounded executable checks. The 43 tests cover four evidence-tool modules; they are not the entire host/PQ/Sage suite. |
 
 ## Scientific scope

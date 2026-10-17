@@ -168,7 +168,7 @@ def test_hmm_uses_supplied_previous_bin_and_preserves_transition_mask(tmp_path):
 
 
 def test_replay_dpp_has_fallback_switching_cost_but_no_first_row_outcome_update(tmp_path):
-    source = Path(__file__).resolve().parents[1] / "configs" / "control_synthetic.json"
+    source = Path(__file__).resolve().parents[1] / "simulation" / "controller_reference.json"
     data = json.loads(source.read_text())
     data["v_dpp"] = 0.
     config = tmp_path / "control.json"

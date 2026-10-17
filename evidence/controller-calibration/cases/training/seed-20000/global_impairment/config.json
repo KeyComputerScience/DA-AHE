@@ -1,0 +1,150 @@
+{
+  "ack_wait_s": 0.001,
+  "ack_wire_bytes": 11,
+  "aggregate_roster_fixed_bytes": 24,
+  "aggregate_roster_per_member_bytes": 4,
+  "area_side_m": 1000.0,
+  "backhaul_contention_domains": 10,
+  "backoff_slot_s": 0.00032,
+  "backoff_slots": 8,
+  "batch_ready_hold_s": 1.0,
+  "bit_rate_bps": 250000.0,
+  "block_auth_bytes": 16,
+  "block_option_bytes": 4,
+  "bound_evidence_artifacts": {
+    "decoding_report": {
+      "path": "evidence/independent/decoding/k6-cdt-03/decoding-bound.json",
+      "sha256": "2be1b88b34bdee74c852fd12c9020c4fed1870a117f4a63ab00d057944991335"
+    },
+    "security_profile": {
+      "path": "configs/security_profile.json",
+      "sha256": "fd8188ca6f5bd1347f3beedf47980fe4ba2db4300f6b968a2dcec31c075c4dc7"
+    },
+    "security_report": {
+      "path": "evidence/independent/security-parameter-search/selected-k6-full/security.json",
+      "sha256": "3794650eb763f528bab90aab42ff4ed54e7616d5d85358239db261e27f668168"
+    }
+  },
+  "calibration_scenario": "global_impairment",
+  "calibration_scope": "Executed independent two-hop service-model identification; configured operational-stage labels, modeled CPU/communication, and separately executed synthetic integer signal probes. No physical-board data, uniform true-process coverage, or deployment certification.",
+  "calibration_seeds": [],
+  "coap_bytes": 8,
+  "compressed_ipv6_bytes": 7,
+  "contention_collision_per_extra_sender": 0.002,
+  "control_interval_s": 5.0,
+  "control_message_bytes": 32,
+  "controller_config": "simulation/controller_reference.json",
+  "cpu_model": "Assumed source encryption/compression/ticket-verification/tag/block-MAC times, successful gateway-envelope MAC verification and aggregation, sink ticket/HVE verification. Not full-protocol CPU: signing, provisioning, incomplete-envelope verification, OS/interrupts, and management are unmodeled. No MCU performance claim. Source encryption 0.004s is a declared k=3 to k=6 matrix-operation proxy (k^2:9 to 36), not measured cost; the no-IntDb2 path uses two ciphertexts and twice this proxy. Other timings remain independent assumptions.",
+  "cpu_power_w": 0.03,
+  "cryptographic_parameters": {
+    "m": 1536,
+    "module_rank": 6,
+    "n": 1536,
+    "p": 65537,
+    "parameter_set_id": "daahe-k6-d256-q32-sigma3.2-v1",
+    "q": 4294967296,
+    "ring_degree": 256,
+    "sigma_key": 3.2
+  },
+  "decoding_probability_summary": {
+    "control_model_certified": false,
+    "finite_adaptive_union_log2_upper": "-130.5101731584115037993802806260378646520020748038833209361732311863642482168",
+    "finite_adaptive_union_scope": "one choice from the finite declared profile/size library before fresh batch noise; joint random-key/history probability, not conditional on observed history or any fixed key",
+    "full_fixed_key_conditional_certificate": false,
+    "probability_scope": "joint probability over independently sampled random keygen coefficients and fresh honest encryption noises for one batch; not a worst-case bound conditioned on every fixed realized secret key",
+    "status": "passed_decoding_tail_bound"
+  },
+  "description": "Independent synthetic two-hop 802.15.4-style discrete-event experiment. Not OMNeT++/INET, not original unpublished source, not hardware calibration, not manuscript-result reproduction. Values are explicit modeling assumptions, not fitted to paper outcomes.",
+  "disturbance": {
+    "affected_gateway_fraction": 1.0,
+    "baseline_ber": 5e-06,
+    "baseline_external_tamper_probability": 0.0001,
+    "disturbed_ber": 0.0005,
+    "disturbed_external_tamper_probability": 0.001,
+    "end_s": 50.0,
+    "gateway_forgery_probability": 0.03,
+    "start_s": 30.0,
+    "trajectory_bin_s": 5.0
+  },
+  "drain_s": 35.0,
+  "duration_s": 90.0,
+  "encryption_timing_proxy": {
+    "assumed_seconds_per_ciphertext": 0.004,
+    "base_assumed_seconds_per_ciphertext": 0.001,
+    "base_matrix_polynomial_products": 9,
+    "base_module_rank": 3,
+    "scaling_factor": 4.0,
+    "scope": "Quadratic matrix-operation-count proxy only; assumes fixed ring degree and linear time per matrix product. This is not a measured encryption time, full operation count, MCU benchmark, or hardware cost binding.",
+    "target_matrix_polynomial_products": 36,
+    "target_module_rank": 6
+  },
+  "evaluation_seeds": [
+    20000
+  ],
+  "fragment_header_bytes": 4,
+  "gateway_aggregate_s_per_report": 5e-05,
+  "gateway_block_mac_verify_s_per_block": 1e-05,
+  "gateways": 60,
+  "lightweight_payload_bytes": 48,
+  "local_contention_domains": 60,
+  "lowpan_bytes": 5,
+  "mac_bytes": 25,
+  "max_psdu_bytes": 127,
+  "max_retries": 3,
+  "methods": [
+    "da-ahe"
+  ],
+  "metric_start_s": 0.0,
+  "nodes": 3000,
+  "noise_proxy_per_batch_member": 0.02,
+  "phy_bytes": 6,
+  "profile_batch_caps": {
+    "fallback": 12,
+    "nominal": 16,
+    "repair": 14
+  },
+  "profile_encryption_sigmas": {
+    "fallback": 3.6,
+    "nominal": 3.2,
+    "repair": 3.4
+  },
+  "protected_ciphertext_bytes": 7168,
+  "protected_fraction": 0.3,
+  "protocol_model_version": 2,
+  "queue_bytes_per_transmitter": 32768,
+  "recovery": {
+    "consecutive_windows": 2,
+    "delay_max_s": 3.0,
+    "minimum_completed_reports": 3,
+    "observed_loss_max": 0.1,
+    "queue_max": 0.2
+  },
+  "repair_control_messages": 3,
+  "repair_failures_to_trigger": 1,
+  "repair_latency_s": 1.5,
+  "report_deadline_s": 30.0,
+  "roster_policy": "At each control-window start, the sink preauthorizes immutable gateway/path rosters from the public sampling plan and the current action/rho; final partial groups are frozen upfront with size <= selected maximum N. All sources and the aggregate use the same whole-roster ticket. Any missing/expired member rejects its entire authorized batch; rosters are never shrunk after reception. The same fixed-roster service rule is modeled for lightweight traffic without asserting its cryptographic security.",
+  "sample_period_s": 90.0,
+  "schema_version": 1,
+  "security_estimator_summary": {
+    "computed_estimator_bits": 136.475,
+    "full_system_certified": false,
+    "required_estimator_bits": 128.1,
+    "scope": "heuristic generic flattened-LWE estimates; not a module-specific, side-channel, implementation or worst-case proof"
+  },
+  "sink_ticket_verify_s": 0.01,
+  "sink_verify_s_per_report": 5e-05,
+  "source_block_mac_s_per_block": 1e-05,
+  "source_compress_s": 0.0004,
+  "source_encrypt_s": 0.004,
+  "source_lightweight_s": 0.0001,
+  "source_tag_s": 0.0002,
+  "source_ticket_verify_s": 0.01,
+  "status": "independent_experimental_uncertified",
+  "ticket_fixed_bytes": 128,
+  "ticket_member_id_nonce_bytes": 20,
+  "ticket_signature_bytes": 2420,
+  "ticket_wire_model": "Every source envelope and its aggregate carry the SAME whole-roster ticket: signature 2420B + assumed binary fixed fields 128B + identifier/nonce 20B per authorized member. The ticket is preauthorized at the control-window start; it is not dynamically signed after observing arrivals. Advance sink-to-source distribution, signing CPU, caches, and their retransmissions are not modeled. Inline source/aggregate envelope transmission includes the complete configured ticket bytes.",
+  "tx_j_per_wire_bit": 2e-07,
+  "udp_bytes": 8
+}

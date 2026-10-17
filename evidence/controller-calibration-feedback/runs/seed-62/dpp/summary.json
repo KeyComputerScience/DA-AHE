@@ -1,0 +1,183 @@
+{
+  "ablation_counts": {
+    "attempt_semantics": "Completed source/aggregate frame attempts; channel failure means channel_error, collision or link_down, separately from block-auth rejection. This is not bit-level BER.",
+    "data_attempts": {
+      "all_failures": 343,
+      "authentication_rejections": 0,
+      "channel_failures": 343,
+      "completed": 3755,
+      "outcomes": {
+        "channel_error": 11,
+        "link_down": 332,
+        "ok": 3412
+      }
+    },
+    "frame_cohorts": {
+      "all": {
+        "delivered": 3412,
+        "lost": 93,
+        "offered": 3505,
+        "unresolved": 0
+      },
+      "by_hop": {
+        "backhaul": {
+          "delivered": 1523,
+          "lost": 83,
+          "offered": 1606,
+          "unresolved": 0
+        },
+        "repair": {
+          "delivered": 0,
+          "lost": 0,
+          "offered": 0,
+          "unresolved": 0
+        },
+        "uplink": {
+          "delivered": 1889,
+          "lost": 10,
+          "offered": 1899,
+          "unresolved": 0
+        }
+      },
+      "data": {
+        "delivered": 3412,
+        "lost": 93,
+        "offered": 3505,
+        "unresolved": 0
+      },
+      "repair": {
+        "delivered": 0,
+        "lost": 0,
+        "offered": 0,
+        "unresolved": 0
+      }
+    },
+    "frame_semantics": "Unique hop-local fragment identities; retries reuse an identity. Queue/deadline/retry-exhausted outcomes are final losses; administrative censoring is unresolved. ACK bytes are wire overhead, not additional frame identities.",
+    "network_frames": {
+      "counting_policy": "terminal_after_retries",
+      "delivered": 3412,
+      "lost": 93,
+      "offered": 3505,
+      "scope": "source_and_aggregate_transfers_all_run",
+      "unit": "network_frame",
+      "unresolved": 0
+    },
+    "repair": {
+      "actuations_completed": 0,
+      "actuations_failed": 0,
+      "actuations_started": 0,
+      "actuations_unresolved": 0,
+      "enabled_control_epochs": 3,
+      "selected_control_epochs": 3
+    },
+    "repair_semantics": "Selected/enabled control epochs include initial and draining epochs; actuation counts actual alternate-route repair rounds, not RPL operations.",
+    "schema_version": 1,
+    "verification": {
+      "accepted_reports": 12,
+      "enabled": true,
+      "integrity_rejected_reports": 1,
+      "invalid_accepted_reports": 0,
+      "scope": "measurement-window accepted reports, including lightweight reports",
+      "semantics": "modeled sink validity-decision availability; not cryptographic detection",
+      "verification_enabled_accepted_reports": 12
+    }
+  },
+  "ablation_metrics": {
+    "final_fragment_loss_fraction": 0.02653352353780314,
+    "fragment_unresolved_fraction": 0.0,
+    "per_attempt_channel_loss_fraction": 0.09134487350199734,
+    "per_attempt_failure_fraction": 0.09134487350199734,
+    "verification_enabled_report_coverage_fraction": 1.0
+  },
+  "all_decisions_certified": false,
+  "config_digest": "07ef213b45d0a4ffca9d52d11e5fe50f5ed7d4c1988c12a89b27831c069c8242",
+  "decision_counts": {
+    "fallback": 23,
+    "repair": 3
+  },
+  "exogenous_digest": "3035e83ad481a8c4cfc4ab713f2c467f9d8a8f6ba73006f03f04500e6d8439c6",
+  "limitations": [
+    "Independent synthetic model, not OMNeT++/INET or manuscript-result reproduction.",
+    "Controller evidence is scoped to the supplied configuration; network replay alone does not establish security/stability certification.",
+    "RF contention is a serialized-domain/collision approximation, not a CSMA/RPL implementation.",
+    "Runtime executes byte counts and validity labels, not lattice cryptography or sensor reconstruction.",
+    "Modeled energy and noise proxies are assumptions, not measured values.",
+    "Sampling suppression is reported separately; admitted-only loss does not measure data completeness."
+  ],
+  "measurement_window": {
+    "source_generated_end_s": 90.0,
+    "source_generated_start_s": 0.0
+  },
+  "method": "dpp",
+  "metric_report_counts": {
+    "admitted": 15,
+    "deadline_expired": 2,
+    "delivered_valid": 12,
+    "integrity_rejected": 1,
+    "opportunities": 30,
+    "sampling_skipped": 15
+  },
+  "metrics": {
+    "accepted_delivery_fraction_per_admitted": 0.8,
+    "invalid_acceptance_fraction_per_admitted": 0.0,
+    "modeled_cpu_energy_j_all_run": 0.009509999999999996,
+    "modeled_radio_tx_energy_j_all_run": 0.6396415999999926,
+    "observed_residual_loss_fraction": 0.19999999999999996,
+    "source_admission_fraction": 0.5,
+    "valid_delay_mean_s": 2.258423666666864,
+    "valid_delay_p95_s": 4.164594400000899,
+    "valid_delivery_fraction_per_admitted": 0.8,
+    "valid_delivery_fraction_per_opportunity": 0.4,
+    "wire_bytes_per_source_opportunity_all_run": 13325.866666666667
+  },
+  "protocol_model_version": 2,
+  "raw_counts": {
+    "attempt_outcomes": {
+      "channel_error": 11,
+      "link_down": 332,
+      "ok": 3412
+    },
+    "authorized_batches": 15,
+    "packets": {
+      "queue_overflow": 10,
+      "received": 3412,
+      "retry_exhausted:link_down": 83
+    },
+    "repair_completed": 0,
+    "repair_started": 0,
+    "reports": {
+      "admitted": 15,
+      "deadline_expired": 2,
+      "delivered_valid": 12,
+      "integrity_rejected": 1,
+      "opportunities": 30,
+      "sampling_skipped": 15
+    },
+    "whole_batch_outcomes": {
+      "deadline_expired": 2,
+      "delivered_valid": 12,
+      "integrity_rejected": 1
+    },
+    "wire_bytes": 399776
+  },
+  "recovery": {
+    "analysis_eligible": true,
+    "censor_duration_s": 95.0,
+    "disturbance_onset_s": 30.0,
+    "duration_origin": "disturbance_onset",
+    "elapsed_from_onset_s": 95.0,
+    "event_observed": false,
+    "first_observed_excursion_s": 40.0,
+    "followup_from_onset_s": 95.0,
+    "no_excursion_policy": "separate category; excluded from recovery-event risk set",
+    "observation_end_s": 125.0,
+    "observed_duration_s": null,
+    "recovery_completion_s": null,
+    "right_censored": true,
+    "status": "right_censored",
+    "time_to_event_or_censor_s": 95.0
+  },
+  "schema_version": 1,
+  "seed": 62,
+  "status": "independent_experimental_uncertified"
+}

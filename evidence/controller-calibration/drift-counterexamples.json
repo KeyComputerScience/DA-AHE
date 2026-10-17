@@ -1,0 +1,122 @@
+{
+  "calculation": "V(ReLU(offset_j-relief_fallback)) - (1-gamma)*V(0); error=0 lies in each declared residual ball",
+  "every_regime_violates_beta": true,
+  "scope": "declared fitted model; not a physical trajectory",
+  "witnesses": [
+    {
+      "beta_exact": "5764607523034235/288230376151711744",
+      "drift_decimal": 3235.376143561721,
+      "drift_exact": "1025331627587527447868249598368729/316912650057057350374175801344",
+      "inequality_violated": true,
+      "prediction_error": [
+        0,
+        0,
+        0
+      ],
+      "regime": 0,
+      "state": [
+        0,
+        0,
+        0
+      ],
+      "successor_exact": [
+        "5284648999069595/562949953421312",
+        "986928292053889/17592186044416",
+        "0"
+      ],
+      "successor_inside_domain": true
+    },
+    {
+      "beta_exact": "5764607523034235/288230376151711744",
+      "drift_decimal": 39794.69954373352,
+      "drift_exact": "50445774762515844003592759957273225/1267650600228229401496703205376",
+      "inequality_violated": true,
+      "prediction_error": [
+        0,
+        0,
+        0
+      ],
+      "regime": 1,
+      "state": [
+        0,
+        0,
+        0
+      ],
+      "successor_exact": [
+        "12908794459443651/1125899906842624",
+        "1751797656983581/8796093022208",
+        "0"
+      ],
+      "successor_inside_domain": true
+    },
+    {
+      "beta_exact": "5764607523034235/288230376151711744",
+      "drift_decimal": 4640.789088792021,
+      "drift_exact": "5882899073939823853569206198295457/1267650600228229401496703205376",
+      "inequality_violated": true,
+      "prediction_error": [
+        0,
+        0,
+        0
+      ],
+      "regime": 2,
+      "state": [
+        0,
+        0,
+        0
+      ],
+      "successor_exact": [
+        "10513924288344239/1125899906842624",
+        "2374250800828167/35184372088832",
+        "0"
+      ],
+      "successor_inside_domain": true
+    },
+    {
+      "beta_exact": "5764607523034235/288230376151711744",
+      "drift_decimal": 64304.48565600803,
+      "drift_exact": "81515619839206144165484082464575009/1267650600228229401496703205376",
+      "inequality_violated": true,
+      "prediction_error": [
+        0,
+        0,
+        0
+      ],
+      "regime": 3,
+      "state": [
+        0,
+        0,
+        0
+      ],
+      "successor_exact": [
+        "4157367593395055/1125899906842624",
+        "8921222947598679/35184372088832",
+        "0"
+      ],
+      "successor_inside_domain": true
+    },
+    {
+      "beta_exact": "5764607523034235/288230376151711744",
+      "drift_decimal": 62201.961929396435,
+      "drift_exact": "315401417500691463902694061761700385/5070602400912917605986812821504",
+      "inequality_violated": true,
+      "prediction_error": [
+        0,
+        0,
+        0
+      ],
+      "regime": 4,
+      "state": [
+        0,
+        0,
+        0
+      ],
+      "successor_exact": [
+        "6135889344356207/2251799813685248",
+        "8774571642559621/35184372088832",
+        "0"
+      ],
+      "successor_inside_domain": true
+    }
+  ]
+}

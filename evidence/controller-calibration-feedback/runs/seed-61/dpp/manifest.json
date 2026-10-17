@@ -1,0 +1,57 @@
+{
+  "ablation_instrumentation_version": 1,
+  "all_decisions_certified": false,
+  "config_digest": "07ef213b45d0a4ffca9d52d11e5fe50f5ed7d4c1988c12a89b27831c069c8242",
+  "controller_sha256": "6989691a8f1fbbce00c04b903dca0929cd434af3b5232796f5eccd1280541dec",
+  "exogenous_digest": "3a708c444c20910c6eb9aa9f8673e23012e0ad0ec09d838407c6bb67606abd1b",
+  "label": "independent fixed-preauthorized-roster closed-loop synthetic packet experiment, not original OMNeT++/INET",
+  "method": "dpp",
+  "protocol_model_version": 2,
+  "raw_files": {
+    "epochs.jsonl.gz": "2d861b73ef9c714fb3b14c173b21379ee953922633b3a2d92f1333221145857d",
+    "events.jsonl.gz": "ef3fb2d191a9ab5044ae8d8da85775d7152bd78310dc17b04ad87bbf01485a71",
+    "packets.jsonl.gz": "d7eeb6254947b5dc7ddc8d51b090648eda2fcdeef1178c8601bfdcad12360426",
+    "reports.jsonl.gz": "ed8e16f2dab91b1a10dcd2c998967eab3933ef9e363d3f85f5e2e69657865413"
+  },
+  "runtime_counts": {
+    "attempt_outcomes": {
+      "channel_error": 30,
+      "link_down": 332,
+      "ok": 4780
+    },
+    "modeled_cpu_energy_j": 0.012253799999999992,
+    "modeled_radio_tx_energy_j": 0.9364799999999475,
+    "packets": {
+      "queue_overflow": 30,
+      "received": 4780,
+      "retry_exhausted:link_down": 83
+    },
+    "repair_activity": {
+      "actuations_completed": 1,
+      "actuations_failed": 0,
+      "actuations_started": 1,
+      "actuations_unresolved": 0,
+      "enabled_control_epochs": 11,
+      "selected_control_epochs": 11
+    },
+    "reports": {
+      "admitted": 19,
+      "deadline_expired": 4,
+      "delivered_valid": 15,
+      "opportunities": 30,
+      "sampling_skipped": 11
+    },
+    "unique_frames": {
+      "delivered": 4780,
+      "lost": 113,
+      "offered": 4893,
+      "unresolved": 0
+    },
+    "wire_bytes": 585300
+  },
+  "schema_version": 1,
+  "seed": 61,
+  "source_digest": "78e22634b1efaafc353b56594fd0787b7a98d2af9c32ce580ba3fa134418e445",
+  "status": "independent_experimental_uncertified",
+  "stop_time_s": 125.0
+}

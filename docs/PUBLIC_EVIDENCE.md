@@ -3,7 +3,7 @@
 The hash-pinned bundle contains the synthetic campaign completed on
 2026-10-15: seeds 1000–1019, seven methods and 140 runs. The experiment uses the
 specified Python packet/block service model, not a physical nRF52840 or full
-radio/RPL implementation. Its controller fixture is uncalibrated and its costs
+radio/RPL implementation. Its archived controller uses declared reference coefficients and its costs
 are modeled. [Evaluation](EVALUATION.md) and
 [complete results](../experiments/CURRENT_RESULTS.md) describe the measurements,
 denominators, all seven methods and scientific scope.
@@ -94,6 +94,9 @@ Archive checks establish asset identity, listed-byte integrity, raw-to-summary
 consistency and, when requested and completed, replay of the saved cases.
 They do not turn modeled CPU/TX energy into physical measurements, calibrate the
 controller, establish a physical signal distribution or certify a deployment.
-Physical-board samples remain zero. Configuration, host tests, cryptographic
-cost estimates, decoding bounds and network outcomes retain their distinct
-assumptions and evidence boundaries.
+The firmware evidence supplies ARM build and host known-answer records; device
+capture and verification are separate operations. Configuration, host tests,
+cryptographic cost estimates, decoding bounds and network outcomes retain their
+distinct assumptions and evidence boundaries. New controller calibration runs
+are documented in [CONTROLLER_CALIBRATION.md](CONTROLLER_CALIBRATION.md) and do
+not alter the frozen public campaign.

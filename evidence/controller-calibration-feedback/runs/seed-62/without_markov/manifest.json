@@ -1,0 +1,57 @@
+{
+  "ablation_instrumentation_version": 1,
+  "all_decisions_certified": false,
+  "config_digest": "07ef213b45d0a4ffca9d52d11e5fe50f5ed7d4c1988c12a89b27831c069c8242",
+  "controller_sha256": "6989691a8f1fbbce00c04b903dca0929cd434af3b5232796f5eccd1280541dec",
+  "exogenous_digest": "3035e83ad481a8c4cfc4ab713f2c467f9d8a8f6ba73006f03f04500e6d8439c6",
+  "label": "independent fixed-preauthorized-roster closed-loop synthetic packet experiment, not original OMNeT++/INET",
+  "method": "without_markov",
+  "protocol_model_version": 2,
+  "raw_files": {
+    "epochs.jsonl.gz": "87ce856fdc2629e69b5a9945a398b39a94f5e0cbf9fe565f8a3629416ecd3297",
+    "events.jsonl.gz": "4eb16467ea6cb751ab4df096cb8b95d7a049a8faf440b3edc301f07e46c30420",
+    "packets.jsonl.gz": "d44e28d59ba4a90ccc8a448efa4ec6382ba004581605668eaf87d245a718c32f",
+    "reports.jsonl.gz": "50d296e2da0722f78c69e3fb95727be54dd4dd555a60906103b1a2fd76026824"
+  },
+  "runtime_counts": {
+    "attempt_outcomes": {
+      "block_auth_reject": 1,
+      "channel_error": 64,
+      "link_down": 2672,
+      "ok": 8726
+    },
+    "modeled_cpu_energy_j": 0.019736699999999992,
+    "modeled_radio_tx_energy_j": 1.8712208000000996,
+    "packets": {
+      "received": 8726,
+      "retry_exhausted:link_down": 593
+    },
+    "repair_activity": {
+      "actuations_completed": 0,
+      "actuations_failed": 0,
+      "actuations_started": 0,
+      "actuations_unresolved": 0,
+      "enabled_control_epochs": 0,
+      "selected_control_epochs": 0
+    },
+    "reports": {
+      "admitted": 30,
+      "deadline_expired": 3,
+      "delivered_valid": 24,
+      "integrity_rejected": 3,
+      "opportunities": 30
+    },
+    "unique_frames": {
+      "delivered": 8726,
+      "lost": 593,
+      "offered": 9319,
+      "unresolved": 0
+    },
+    "wire_bytes": 1169513
+  },
+  "schema_version": 1,
+  "seed": 62,
+  "source_digest": "78e22634b1efaafc353b56594fd0787b7a98d2af9c32ce580ba3fa134418e445",
+  "status": "independent_experimental_uncertified",
+  "stop_time_s": 125.0
+}

@@ -1,11 +1,11 @@
 # Tables and calculations
 
-| Quantity | Data | Artifact |
+| Quantity | Data | Calculation |
 |---|---|---|
-| Conditional delay, CPU, radio TX, wire bytes and recovery counts | evidence/independent/campaign-report/per-seed.csv | [PERFORMANCE_COSTS.tex](manuscript/PERFORMANCE_COSTS.tex) |
-| Effective delivery, conditional delay and invalid acceptance | evidence/independent/campaign-report/per-seed.csv | [revised-ablationA.pdf](manuscript/figures/revised-ablationA.pdf) |
-| nRF52840 memory | [firmware_memory_nrf52840.json](../configs/firmware_memory_nrf52840.json) | [FIRMWARE_MEMORY.tex](manuscript/FIRMWARE_MEMORY.tex) |
-| Reconstruction fidelity | [reconstruction_fidelity.json](../configs/reconstruction_fidelity.json) | [RECONSTRUCTION_FIDELITY.tex](manuscript/RECONSTRUCTION_FIDELITY.tex) |
+| Conditional delay, CPU, radio TX, wire bytes and recovery counts | [per-seed.csv](../evidence/independent/campaign-report/per-seed.csv) | [paired-statistics code](../tools/manuscript_table.py) |
+| Effective delivery, conditional delay and invalid acceptance | [per-seed.csv](../evidence/independent/campaign-report/per-seed.csv) | [ablation calculations](ABLATION_ADVANTAGES.md), [numerical results](../experiments/ablation-advantages.json) |
+| nRF52840 memory | [firmware_memory_nrf52840.json](../configs/firmware_memory_nrf52840.json) | [byte/KiB arithmetic](#memory) |
+| Reconstruction fidelity | [reconstruction_fidelity.json](../configs/reconstruction_fidelity.json) | [metric formulas](#reconstruction) |
 
 ## Memory
 

@@ -31,7 +31,7 @@
   "contention_collision_per_extra_sender": 0.002,
   "control_interval_s": 5.0,
   "control_message_bytes": 32,
-  "controller_fixture": "simulation/controller_fixture.json",
+  "controller_config": "configs/control.json",
   "cpu_model": "Assumed source encryption/compression/ticket-verification/tag/block-MAC times, successful gateway-envelope MAC verification and aggregation, sink ticket/HVE verification. Not full-protocol CPU: signing, provisioning, incomplete-envelope verification, OS/interrupts, and management are unmodeled. No MCU performance claim. Source encryption 0.004s is a declared k=3 to k=6 matrix-operation proxy (k^2:9 to 36), not measured cost; the no-IntDb2 path uses two ciphertexts and twice this proxy. Other timings remain independent assumptions.",
   "cpu_power_w": 0.03,
   "cryptographic_parameters": {

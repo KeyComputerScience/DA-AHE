@@ -39,13 +39,13 @@ noise/batch library is sigma 3.2/N<=16, sigma 3.4/N<=14, sigma 3.6/N<=12. The
 reported decoding tail and finite-library union bounds are not worst-case
 certificates conditioned on every fixed key, arbitrary realized history,
 malicious ciphertext, or unlimited lifetime batches. Nothing in these metadata
-bindings makes the control fixture or network model externally certified.
+bindings makes the reference controller or network model externally certified.
 
 Every campaign snapshots the security profile, security report, and decoding
 report under `bound_artifacts/` and verifies their hashes and tuple/capacity
-agreement. The controller fixture carries the same metadata while keeping its
-admission certificates explicitly synthetic. Its synthetic lambda/epsilon
-fields are API fixtures, not substitutes for these separate evidence files.
+agreement. The reference controller carries the same metadata while keeping its
+admission bounds explicitly synthetic. Its lambda/epsilon fields are reference
+inputs, not substitutes for these separate evidence files.
 
 The source encryption time is **0.004 seconds per ciphertext**, solely a declared
 operation-count proxy: an assumed 0.001-second k=3 matrix stage multiplied by
@@ -66,9 +66,12 @@ python tools/run_simulation_campaign.py --config simulation/config.json \
 python tools/verify_simulation_campaign.py evidence/independent/simulation
 ```
 
-The default configuration requires all seven methods and evaluation seeds
-1000–1019. There are no calibration seeds because the supplied controller model
-is arbitrary and uncalibrated. Configuration validation rejects seed overlap.
+The reference configuration requires all seven methods and evaluation seeds
+1000–1019. That historical comparison has no calibration partition: it uses
+declared reference coefficients. The separate
+[calibration workflow](../docs/CONTROLLER_CALIBRATION.md) generates new training,
+holdout and evaluation partitions with their own execution records.
+Configuration validation rejects seed overlap.
 Each seed is a paired experimental unit; packets and nodes are not treated as
 independent replicates. Workers only read the frozen exogenous inputs and write
 their own run directory. The summary sorts seeds and methods; parallel scheduling
@@ -184,29 +187,39 @@ IEEE 802.15.4/CSMA/INET implementation.
 ## Controllers and ablations
 
 The simulator directly imports `daahe.control` and reuses its HMM, robust
-selection, DPP virtual queues, and hysteresis implementations. It loads the same
-`controller_fixture.json` for all methods with `strict=False`. This fixture's
-costs, emissions, transitions, uncertainty values, and synthetic certificates
-are **arbitrary, uncalibrated API fixtures**. They are not the authors' fitted
-models and are not analytical or empirical uniform certificates. The experiment
-does not claim to reproduce the paper's exact algorithms together with their
-original calibration. This campaign's acceptance criterion is that the closed
-loop and evidence pipeline actually execute and remain auditable, not that DA-AHE
-has any predetermined numerical advantage.
+selection, DPP virtual queues, and hysteresis implementations. The active
+reference file is `simulation/controller_reference.json`, selected by the
+configuration's `controller_config` field. All methods use the same reference
+coefficients with `strict=False`. These costs, emissions, transitions,
+uncertainty values and admission bounds are declared model inputs; they are
+not fitted parameters or uniform physical-process certificates.
 
-The synthetic state region is explicitly `[100, 500, 1]`: with a 0.002 loss
-threshold, normalized loss can reach 499, so the original small fixture region
-would stop reporting almost immediately. This enlarged debug region is not an
-invariant-domain proof. Decisions and artifacts always remain uncertified;
-strict-mode production admission is not changed. Five regimes exist in the
-controller fixture, but the network's outage/interference generator is not a
-fitted five-state controlled Markov process.
+The independent [calibration runner](../docs/CONTROLLER_CALIBRATION.md) produces
+a new `controller.json`, fit diagnostics and partitioned raw records. Its
+certificate verifier checks domain, fallback and transition conditions under
+explicit model assumptions and preserves failed checks. A fitted configuration
+and a model-relative verification report have separate identities from this
+reference comparison. Neither is silently substituted into the frozen archive.
+The evidence pipeline reports actual outcomes rather than targeting a
+predetermined numerical advantage for DA-AHE.
+
+Frozen campaign snapshots preserve their original controller filenames,
+coefficients and hashes. The active reference-file name does not rewrite those
+historical inputs.
+
+The reference state region is explicitly `[100, 500, 1]`: with a 0.002 loss
+threshold, normalized loss can reach 499. Declaring this cube does not prove
+domain invariance. Reference-comparison decisions retain their uncertified
+status; strict-mode production admission is not changed. The reference
+controller has five regimes, while the network's outage/interference generator
+and the fitted controller model require their own stated relationship and
+coverage assumptions.
 
 | Method | Executed difference |
 |---|---|
-| `da-ahe` | Existing robust controller equations and HMM, synthetic fixture |
-| `dpp` | Existing causal virtual-queue controller, same action library/fixture |
-| `hys` | Existing held-mode hysteresis controller, same library/fixture |
+| `da-ahe` | Robust controller equations and HMM with the reference coefficients |
+| `dpp` | Causal virtual-queue controller with the same action library and reference model |
+| `hys` | Held-mode hysteresis controller with the same library and reference model |
 | `without_markov` | Fixed configured nominal action, no HMM or adaptive selection |
 | `without_intdb2` | Robust policy; two configured protected ciphertext payloads; compression delay removed |
 | `without_route_repair` | Robust policy; route-repair actuation disabled |
@@ -217,14 +230,14 @@ requires the same fixed-roster all-members rule. Applying that conservative
 service rule to lightweight traffic does not establish homomorphic integrity or
 post-quantum confidentiality for plaintext aggregates. The selected action
 specifies a maximum grouping size; smaller final groups are determined at
-authorization, never after loss. Synthetic action certificates do not certify
+authorization, never after loss. Reference action bounds do not certify
 those actual group sizes or the protocol instantiation.
 
 The two-ciphertext ablation has twice the configured encryption time. Ticket
 verification and all nonremoved common processing/network budgets apply to all
-methods. Ablations leave the synthetic policy model unchanged, so its predictions
+methods. Ablations leave the reference policy model unchanged, so its predictions
 need not accurately describe the modified plant. Nothing in these experiments
-certifies those predictions. In particular, the pooled cost fixture may favor
+certifies those predictions. In particular, the pooled cost model may favor
 fallback, and a selected action may not enable route repair; identical outcomes
 for some ablations are admissible findings rather than a reason to tune toward
 the manuscript's claimed ordering.

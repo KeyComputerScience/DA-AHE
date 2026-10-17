@@ -3,7 +3,7 @@
 The method uses fixed rank-6 parameters and an explicitly specified synthetic
 network study. Read [EVALUATION.md](EVALUATION.md),
 [CURRENT_RESULTS.md](../experiments/CURRENT_RESULTS.md) and the
-[parameter/protocol specification](manuscript/PARAMETER_PROTOCOL.tex) for the
+[protocol implementation](../src/daahe/protocol.py) for the
 experimental design, complete method comparison and supported claims.
 
 Use Python 3.12 and the pinned dependencies. Each command that creates outputs
@@ -54,12 +54,12 @@ behavior or physical-board performance.
 ## 3. Inspect controller decisions and calibration inputs
 
 ```bash
-python -m daahe replay-control --config configs/control_synthetic.json \
+python -m daahe replay-control --config configs/control.json \
   --telemetry examples/telemetry_synthetic.csv --method da-ahe \
   --allow-synthetic --output runs/replay-da-ahe.json
 ```
 
-Repeat with `--method dpp` or `hys`. The synthetic fixture remains uncertified.
+Repeat with `--method dpp` or `hys`. The reference configuration remains uncertified.
 Without `--allow-synthetic`, missing external certificates must produce rejection
 or a fail-closed decision. The [controller specification](CONTROL_IMPLEMENTATION_SPEC.md)
 defines the robust admission test, nominal objective and deployment requirements.
@@ -134,7 +134,10 @@ python tools/verify_simulation_campaign.py runs/simulation
 ```
 
 The model and omitted costs are defined in [simulation/README.md](../simulation/README.md).
-CPU/TX costs are modeled; the supplied fixture is uncalibrated and uncertified.
+CPU/TX costs are modeled; the archived reference parameters are declared inputs
+and the recorded controller decisions are uncertified. Independent calibration
+and model-relative verification are described in
+[CONTROLLER_CALIBRATION.md](CONTROLLER_CALIBRATION.md).
 A configuration or workflow is not an execution receipt. Additional workloads
 or scales need their own inputs and runs.
 
@@ -149,9 +152,9 @@ does not establish cross-environment byte equality.
 ## 7. Board measurement and evidence integrity
 
 [firmware/README.md](../firmware/README.md) defines core build, physical capture
-and record verification. Physical-board samples are zero. Compilation and host
-known answers cannot establish full-protocol cycles, power, stack, memory or
-workspace claims.
+and record verification. Supplied firmware records cover ARM builds and host
+known-answer behavior. Those records do not establish full-protocol cycles,
+power, stack, memory or workspace claims.
 
 Keep each completed execution's source/config snapshots, raw inputs/results,
 provider/environment capture, command logs and manifest together. Build a

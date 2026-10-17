@@ -130,7 +130,7 @@
         "src/daahe/protocol.py",
         "tests/test_source_ledger.py",
         "tests/test_crypto_protocol.py",
-        "docs/manuscript/PARAMETER_PROTOCOL.tex"
+        "src/daahe/protocol.py"
       ],
       "evidence_paths": [
         "evidence/independent/claim-coverage.json",
@@ -246,27 +246,38 @@
     {
       "id": "strict_belief_control_and_stability",
       "paper_reference": "Method: controlled HMM, robust drift admission and conditional stability",
-      "statement": "ControlledHMM, robust action scoring, DPP/HYS and evidence gates are implemented. The network campaign uses an explicitly uncalibrated synthetic fixture and records uncertified decisions.",
+      "statement": "ControlledHMM, robust action scoring, DPP/HYS and evidence gates are implemented. A separate 35-case, 3,000-node identification study records 630 training/holdout/evaluation transitions and fits action-specific models. Declared domain/fallback/transition certificate conditions fail at the original thresholds; archived decisions retain their original status.",
       "implementation_paths": [
         "src/daahe/control.py",
         "src/daahe/calibration.py",
         "src/daahe/safety.py",
         "src/daahe/replay.py",
         "docs/CONTROL_IMPLEMENTATION_SPEC.md",
-        "configs/control_synthetic.json",
-        "simulation/controller_fixture.json",
+        "configs/control.json",
+        "simulation/controller_reference.json",
         "tests/test_control.py",
         "tests/test_control_binding.py",
-        "docs/manuscript/CONTROL_BASELINES.tex",
-        "docs/manuscript/CONTROL_REFERENCES.bib"
+        "docs/CONTROLLER_CALIBRATION.md",
+        "src/daahe/calibration_trace.py",
+        "src/daahe/controller_certificate.py",
+        "tools/run_controller_calibration.py",
+        "tools/verify_controller_calibration.py",
+        "tools/verify_controller_certificate.py"
       ],
       "evidence_paths": [
         "evidence/independent/claim-coverage.json",
-        "configs/manuscript_alignment.json"
+        "configs/manuscript_alignment.json",
+        "evidence/controller-calibration/plan.json",
+        "evidence/controller-calibration/manifest.json",
+        "evidence/controller-calibration/controller.json",
+        "evidence/controller-calibration/calibration-report.json",
+        "evidence/controller-calibration/controller-certificate.json"
       ],
       "verification_commands": [
         "python -m pytest -q tests/test_control.py tests/test_control_binding.py tests/test_evidence.py",
-        "python -m daahe replay-control --config configs/control_synthetic.json --telemetry examples/telemetry_synthetic.csv --method da-ahe --allow-synthetic --output runs/reviewer-synthetic-control.json"
+        "python -m daahe replay-control --config configs/control.json --telemetry examples/telemetry.csv --method da-ahe --allow-synthetic --output runs/reviewer-synthetic-control.json",
+        "python tools/verify_controller_calibration.py evidence/controller-calibration",
+        "python tools/verify_controller_certificate.py --controller evidence/controller-calibration/controller.json --verify-report evidence/controller-calibration/controller-certificate.json"
       ],
       "status": "requires_proof",
       "scope": "Functional and analytic implementation evidence. Artifact identity checks do not establish proof validity. Conditional mean-square ultimate boundedness does not imply forward invariance, zero QoS violations or safety under arbitrary denial of service. Online floating-point drift comparisons need conservative numerical-error treatment for deployment certification.",
@@ -280,7 +291,7 @@
     {
       "id": "full_protocol_workspace_and_memory",
       "paper_reference": "Implementation: compiled core harness and deployment memory requirements",
-      "statement": "The selected rank-6 core build reports 5,624-byte load sections and 20,608-byte static RAM with benchmark stack reservations. Physical-board samples remain zero.",
+      "statement": "The selected rank-6 core build reports 5,624-byte load sections and 20,608-byte static RAM with benchmark stack reservations. The board-evidence scope is defined by the collector and measurement-verification reports.",
       "implementation_paths": [
         "embedded/daahe_core.c",
         "embedded/daahe_core.h",

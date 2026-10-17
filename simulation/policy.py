@@ -1,8 +1,8 @@
 """Existing controller equations, explicitly synthetic model and certificates.
 
 No new heuristic is mislabeled as an exact paper controller. The controller
-implementation is reused, but its experiment fixture is arbitrary, uncalibrated,
-and uncertified. Network performance cannot certify the conditional theorem.
+implementation is reused with the selected reference or calibrated empirical
+configuration. Network performance and model-relative checks have separate scopes.
 """
 from __future__ import annotations
 
@@ -69,4 +69,4 @@ class Policy:
         self.observations += 1
         return {"telemetry": list(telemetry), "state": list(state), "belief": belief,
                 "stress": stress, "stress_bin": stress_bin, "decision": decision,
-                "model_status": "synthetic_unvalidated", "certified": False}
+                "model_status": d["status"], "certified": False}

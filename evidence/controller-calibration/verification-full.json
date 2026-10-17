@@ -1,0 +1,18 @@
+{
+  "cases": 35,
+  "causal_hmm_recomputed": true,
+  "certificate_recomputed": true,
+  "certificate_status": "failed",
+  "fit_recomputed": true,
+  "full_system_certified": false,
+  "raw_cases_reextracted": 35,
+  "raw_network_audit": "verified",
+  "rows": {
+    "evaluation": 180,
+    "holdout": 180,
+    "training": 270
+  },
+  "scope": "executed declared service model and empirical fit",
+  "signal_reconstruction_recomputed": true,
+  "status": "verified_calibration_bundle"
+}

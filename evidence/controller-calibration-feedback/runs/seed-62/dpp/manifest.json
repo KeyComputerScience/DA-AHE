@@ -1,0 +1,58 @@
+{
+  "ablation_instrumentation_version": 1,
+  "all_decisions_certified": false,
+  "config_digest": "07ef213b45d0a4ffca9d52d11e5fe50f5ed7d4c1988c12a89b27831c069c8242",
+  "controller_sha256": "6989691a8f1fbbce00c04b903dca0929cd434af3b5232796f5eccd1280541dec",
+  "exogenous_digest": "3035e83ad481a8c4cfc4ab713f2c467f9d8a8f6ba73006f03f04500e6d8439c6",
+  "label": "independent fixed-preauthorized-roster closed-loop synthetic packet experiment, not original OMNeT++/INET",
+  "method": "dpp",
+  "protocol_model_version": 2,
+  "raw_files": {
+    "epochs.jsonl.gz": "dc6e1fc596dd96735c316bc9ef0573a18aed7f2d2f29db0d07cee2b92b0a65f3",
+    "events.jsonl.gz": "69d074a42ea471d2ba23f4f6abc9e3210363ca5b9f1f12878c5c6efb107bb33f",
+    "packets.jsonl.gz": "4c556a93d4ce4ed8afd0d0b83fe299fdd6f149603d6c4876b08589cbdada2a88",
+    "reports.jsonl.gz": "950a9f5b6ff995c329192dd38ec9924fe9288de37e9d310008370dec9faed3ba"
+  },
+  "runtime_counts": {
+    "attempt_outcomes": {
+      "channel_error": 11,
+      "link_down": 332,
+      "ok": 3412
+    },
+    "modeled_cpu_energy_j": 0.009509999999999996,
+    "modeled_radio_tx_energy_j": 0.6396415999999926,
+    "packets": {
+      "queue_overflow": 10,
+      "received": 3412,
+      "retry_exhausted:link_down": 83
+    },
+    "repair_activity": {
+      "actuations_completed": 0,
+      "actuations_failed": 0,
+      "actuations_started": 0,
+      "actuations_unresolved": 0,
+      "enabled_control_epochs": 3,
+      "selected_control_epochs": 3
+    },
+    "reports": {
+      "admitted": 15,
+      "deadline_expired": 2,
+      "delivered_valid": 12,
+      "integrity_rejected": 1,
+      "opportunities": 30,
+      "sampling_skipped": 15
+    },
+    "unique_frames": {
+      "delivered": 3412,
+      "lost": 93,
+      "offered": 3505,
+      "unresolved": 0
+    },
+    "wire_bytes": 399776
+  },
+  "schema_version": 1,
+  "seed": 62,
+  "source_digest": "78e22634b1efaafc353b56594fd0787b7a98d2af9c32ce580ba3fa134418e445",
+  "status": "independent_experimental_uncertified",
+  "stop_time_s": 125.0
+}

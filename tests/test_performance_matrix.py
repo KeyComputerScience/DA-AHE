@@ -22,9 +22,9 @@ class PerformanceMatrixTests(unittest.TestCase):
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
-        self.root = Path(self.temporary.name)
+        self.root = Path(self.temporary.name).resolve()
         for relative in ("simulation/performance_matrix.json", "simulation/paper_like_config.json",
-                         "simulation/controller_fixture.json", "tools/run_performance_matrix.py",
+                         "simulation/controller_reference.json", "tools/run_performance_matrix.py",
                          "pyproject.toml", "requirements-dev.txt"):
             self._copy(relative)
         base = self._read("simulation/paper_like_config.json")
@@ -74,7 +74,7 @@ class PerformanceMatrixTests(unittest.TestCase):
         self.assertEqual(plan["timing"]["control_interval_s"], 5)
 
     def test_common_initialization_changes_no_controller_coefficients(self):
-        original = self._read("simulation/controller_fixture.json")
+        original = self._read("simulation/controller_reference.json")
         plan = self._plan()
         effective = deepcopy(plan["controller"]["content"])
         self.assertEqual(set(effective["initial_action"].values()), {"nominal"})
@@ -145,17 +145,17 @@ class PerformanceMatrixTests(unittest.TestCase):
             load_control_config(path)
 
     def test_default_loader_initialization_contract_remains_in_force(self):
-        path = self.root / "simulation/controller_fixture.json"
+        path = self.root / "simulation/controller_reference.json"
         loaded = load_control_config(path, allow_synthetic=True)
         self.assertEqual(loaded["initial_action"]["dpp"], loaded["fallback_id"])
-        changed = self._read("simulation/controller_fixture.json")
+        changed = self._read("simulation/controller_reference.json")
         changed["initial_action"]["dpp"] = "nominal"
-        self._write("simulation/controller_fixture.json", changed)
+        self._write("simulation/controller_reference.json", changed)
         with self.assertRaisesRegex(ValueError, "requires the fallback"):
             load_control_config(path, allow_synthetic=True)
 
     def test_loader_rejects_ambiguous_or_partial_common_initialization(self):
-        original = self._read("simulation/controller_fixture.json")
+        original = self._read("simulation/controller_reference.json")
         cases = []
         for value in (None, "", "common_nominal", True):
             data = deepcopy(original)
@@ -169,10 +169,10 @@ class PerformanceMatrixTests(unittest.TestCase):
         wrong_mode["initial_action"] = {method: "nominal" for method in original["initial_action"]}
         wrong_mode["hysteresis"]["mode_actions"]["N"] = "repair"
         cases.append(wrong_mode)
-        path = self.root / "simulation/controller_fixture.json"
+        path = self.root / "simulation/controller_reference.json"
         for data in cases:
             with self.subTest(data=data["initialization_policy"]):
-                self._write("simulation/controller_fixture.json", data)
+                self._write("simulation/controller_reference.json", data)
                 with self.assertRaises(ValueError):
                     load_control_config(path, allow_synthetic=True)
 

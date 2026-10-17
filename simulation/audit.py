@@ -457,7 +457,7 @@ def recompute_run(run_dir, config, verify_hashes=True, *, include_ablation=None)
                                              "fail_closed" for row in epochs)),
             "all_decisions_certified": False,
             "limitations": ["Independent synthetic model, not OMNeT++/INET or manuscript-result reproduction.",
-                            "Controller model/certificates are artificial and uncalibrated; no security/stability certificate.",
+                            "Controller evidence is scoped to the supplied configuration; network replay alone does not establish security/stability certification.",
                             "RF contention is a serialized-domain/collision approximation, not a CSMA/RPL implementation.",
                             "Runtime executes byte counts and validity labels, not lattice cryptography or sensor reconstruction.",
                             "Modeled energy and noise proxies are assumptions, not measured values.",

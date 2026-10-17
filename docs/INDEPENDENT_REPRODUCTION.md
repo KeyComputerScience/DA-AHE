@@ -4,7 +4,7 @@ DA-AHE provides a rank-6 host reference, a synthetic packet-service study,
 aggregate-reconstruction experiments, decoding-risk calculations and a board
 measurement workflow. [Evaluation](EVALUATION.md),
 [complete results](../experiments/CURRENT_RESULTS.md) and the
-[parameter/protocol specification](manuscript/PARAMETER_PROTOCOL.tex) define the
+[protocol implementation](../src/daahe/protocol.py) define the
 method and its evidence boundaries. Execution receipts identify the exact
 source, inputs, environment, outputs and limitations of each run.
 
@@ -71,7 +71,7 @@ The Python discrete-event model's topology, channel, traffic, processing, wire
 and energy assumptions are specified in the configuration and
 [simulation/README.md](../simulation/README.md). Cryptographic and signal
 operations inside this model are represented by configured costs. The controller
-uses an uncalibrated synthetic fixture; every decision remains uncertified.
+uses the declared reference coefficients; its recorded decisions are uncertified.
 The study is not a physical radio, RPL or nRF52840 measurement and does not
 establish a uniform uncertainty certificate or physical-plant theorem.
 
@@ -116,8 +116,9 @@ Follow [firmware/README.md](../firmware/README.md). The ELF/map and native
 known-answer execution belong to a bare-metal core microbenchmark. Register
 setup, cycle/stack boundaries, fixture callbacks, supported kernels and complete
 protocol coverage are documented. Compilation is not physical device execution.
-The number of physical-board samples is zero; complete timing, power, stack and
-memory measurements are not established.
+The supplied records establish ARM compilation, ELF/map and host known-answer
+behavior. Complete protocol timing, power, stack and memory claims require
+the corresponding firmware and device capture records.
 
 The collector records literal serial bytes and binds them to a firmware build.
 The verifier checks raw/build hashes, sequence and known answers. These checks

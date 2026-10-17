@@ -1,0 +1,57 @@
+{
+  "ablation_instrumentation_version": 1,
+  "all_decisions_certified": false,
+  "config_digest": "b799746b1288caf5e93407e0cc78aeb8e487aabca1eb34fb62aef4101f95261b",
+  "controller_sha256": "9f29674092d709c4b25cd1787d3925db6b20458081bcc1bb656223e389324591",
+  "exogenous_digest": "2352d1d6f732e94051175efc73feced55356e215e2c7dedd39269c6896e40e9f",
+  "label": "independent fixed-preauthorized-roster closed-loop synthetic packet experiment, not original OMNeT++/INET",
+  "method": "da-ahe",
+  "protocol_model_version": 2,
+  "raw_files": {
+    "epochs.jsonl.gz": "6f1df20ce44953dbb3c552bf764bbb31c5e724b530de48cb8a16c1eba8f672ac",
+    "events.jsonl.gz": "cd61e5f9e9cf36b5fcae2e387d8f1088f5d2c439b89bf5d851df2a4e1fbb8df4",
+    "packets.jsonl.gz": "14c5ef53c93a4f077f33b9e7dc79bf879b4a208b4eaf2b9ef8091865db6cca57",
+    "reports.jsonl.gz": "7cd612659206325d4381a365ef059a2fcee21f05fd66f2257911482e5ed8f8f9"
+  },
+  "runtime_counts": {
+    "attempt_outcomes": {
+      "block_auth_reject": 45,
+      "channel_error": 1825,
+      "collision": 1549,
+      "ok": 483507
+    },
+    "modeled_cpu_energy_j": 1.1509979999999869,
+    "modeled_radio_tx_energy_j": 84.9778815997938,
+    "packets": {
+      "queue_overflow": 15364,
+      "received": 483507
+    },
+    "repair_activity": {
+      "actuations_completed": 0,
+      "actuations_failed": 0,
+      "actuations_started": 0,
+      "actuations_unresolved": 0,
+      "enabled_control_epochs": 9,
+      "selected_control_epochs": 9
+    },
+    "reports": {
+      "admitted": 2272,
+      "deadline_expired": 667,
+      "delivered_valid": 1525,
+      "integrity_rejected": 80,
+      "opportunities": 3000,
+      "sampling_skipped": 728
+    },
+    "unique_frames": {
+      "delivered": 483507,
+      "lost": 15364,
+      "offered": 498871,
+      "unresolved": 0
+    },
+    "wire_bytes": 53111176
+  },
+  "schema_version": 1,
+  "seed": 20001,
+  "status": "independent_experimental_uncertified",
+  "stop_time_s": 125.0
+}
