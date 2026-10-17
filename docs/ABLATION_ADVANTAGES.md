@@ -1,4 +1,4 @@
-# Ablation figure and calculations
+# DA-AHE component contributions and paired calculations
 
 The four panels are arranged horizontally and use the fixed rank-6 parameters
 and the 20 paired seed records in evidence/independent/campaign-report.
@@ -11,6 +11,24 @@ IntDb2, route repair and HVE, respectively.
 | (b) | Protected ciphertext payload (bytes) | 7,168 | Raw two-polynomial: 14,336 |
 | (c) | Valid delivery / source opportunity (%) | 35.571667 | Without IntDb2: 33.395000 |
 | (d) | Modeled invalid acceptance / admitted (%) | 0.000000 | Without HVE: 2.086961 |
+
+## How the components contribute
+
+The evidence supports three complementary functions: compact protected
+representation, lower modeled CPU cost per valid delivered report, and aggregate
+validity checking. Their integration is the design contribution; each ablation
+quantifies its own component effect and denominator.
+
+| Component | Implemented mechanism | Supported contribution |
+|---|---|---|
+| Admission policy | Causal controlled-HMM belief, immutable actions and resource/robust gates | Complete-policy CPU cost per valid report decreases by 25.59% versus fixed nominal |
+| IntDb2 and profile-bound packing | Select/quantize the declared support and pack its coefficients with aggregate tags | Exact protected payload halves; the recorded IntDb2 ablation gains 2.18 pp valid delivery |
+| HVE and authorization lifecycle | Hidden aggregate tags, signed roster/context/profile binding, durable emission and replay state | Recorded modeled invalid acceptance is zero with verification enabled |
+
+The CPU comparison does not isolate belief estimation from other admission
+choices. The packing reduction is structural arithmetic, and HVE's modeled
+acceptance result is separate from a cryptographic security probability.
+Complete comparisons remain in [the all-method table](../experiments/CURRENT_RESULTS.md).
 
 ## Component contributions
 

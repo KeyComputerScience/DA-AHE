@@ -64,8 +64,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "ce24fca667d13101c2ab45671f6ac135f1d65e42332affd5dcc10f77522bf63b",
-      "size": 10956
+      "sha256": "580a8401253466a7c42304427e7bd3939a5dab8482af92a09af4fb6039e84fc8",
+      "size": 13126
     },
     {
       "path": "SECURITY.md",
@@ -229,8 +229,8 @@
     },
     {
       "path": "docs/ABLATION_ADVANTAGES.md",
-      "sha256": "6561ed5816ada37e8b05d0932c3dee986045cd99d64e521e7e0083bdd900ae4c",
-      "size": 5147
+      "sha256": "b7821527824ec9faffdef3734193bdda3b4baee6cd71c03c0188d40feb42e848",
+      "size": 6482
     },
     {
       "path": "docs/ABLATION_EVALUATION.md",

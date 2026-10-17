@@ -1,4 +1,44 @@
-# DA-AHE independent reproduction and evidence
+# DA-AHE: compact, verifiable aggregation with belief-aware admission
+
+DA-AHE integrates compact protected representation, aggregate verification and
+causal belief-based admission in one executable research workflow. Its main
+contribution is the coupling of the data representation, integrity checks and
+resource-aware action selection.
+
+## Evidence-supported advantages
+
+| Contribution | Recorded result | Comparison and evidence |
+|---|---|---|
+| Compact protected representation | **50% smaller ciphertext payload** | 14,336 to 7,168 bytes at the same rank-6 tuple; [packing arithmetic](docs/ABLATION_ADVANTAGES.md#payload) |
+| CPU efficiency of the complete policy | **25.59% lower modeled CPU cost per valid report** | 1.037129 to 0.771703 mJ relative to fixed nominal; paired 95% CI 24.22–26.95%; [calculation](docs/ABLATION_ADVANTAGES.md#cpu-normalization-and-paired-uncertainty) |
+| IntDb2 contribution to valid delivery | **+2.18 percentage points** | 33.3950% without IntDb2 to 35.5717% with DA-AHE; paired 95% CI +1.77 to +2.61 pp; [paired ablation](docs/ABLATION_ADVANTAGES.md) |
+| Aggregate verification contribution | **0 modeled invalid acceptance** | 2.0870% of admitted reports without HVE, versus 0 with DA-AHE; [validity accounting](docs/ABLATION_ADVANTAGES.md#aggregate-validity-and-recovery) |
+
+The network comparisons use the archived 3,000-node, 20-paired-seed service
+study. CPU and validity outcomes are modeled. The fixed policy admits 100% of
+opportunities and delivers 44.01%; DA-AHE admits 52.60% and delivers 35.57%, so
+the CPU result describes a service-cost tradeoff between complete policies.
+Payload arithmetic excludes tickets, MACs, headers and retries. Modeled invalid
+acceptance uses injected validity labels rather than a cryptographic forgery
+probability. [Complete seven-method results](experiments/CURRENT_RESULTS.md)
+retain every comparison and denominator.
+
+## Design contributions
+
+- **Representation and admission are coupled.** Each action binds a sampling
+  rate, support/quantization profile, batch size, fragmentation choice and repair
+  setting; the configured profile determines the protected representation.
+- **Belief updates are causal.** The controlled HMM uses the previously applied
+  action and current observations, then predicts next-regime probabilities for
+  action scoring. Robust drift and resource gates precede the cost objective.
+- **Verification spans the batch lifecycle.** Signed exact-roster tickets bind
+  contributors and profiles; hidden aggregate tags, durable source emission and
+  sink replay state support authorized aggregation and at-most-once acceptance.
+
+These are implemented mechanisms. Their code and evidence are mapped in
+[method traceability](docs/CLAIM_TRACEABILITY.md); the
+[controller specification](docs/CONTROL_IMPLEMENTATION_SPEC.md) defines the
+conditional guarantees and their assumptions.
 
 ## Evaluation
 
@@ -46,17 +86,7 @@ The [aggregation protocol](src/daahe/protocol.py),
 [evaluation specification](docs/EVALUATION.md) describe the declared
 implementation, parameters and comparison scope.
 
-## Verified capabilities
-
-- Profile-bound coefficient/tag packing uses one 7,168-byte ciphertext instead
-  of two 7,168-byte ciphertexts for the raw two-channel representation, reducing
-  the sensitive ciphertext payload by 50% at the same selected parameters.
-- The selected rank-6 tuple has a recorded seven-attack minimum of 136.475 bits
-  under the pinned heuristic estimator models.
-- Signed exact-roster tickets, hidden aggregate tags, durable source emission
-  and sink replay checks provide an executable verifiable-aggregation workflow.
-- The public 20-seed, seven-method archive supplies raw records, independent
-  metric recomputation and frozen-source replay for the disclosed experiment.
+## Security parameterization
 
 This repository contains the DA-AHE host reference, an independent network
 experiment implementation, and a board-measurement workflow.
