@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 import sys
 import tempfile
+import textwrap
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -19,6 +20,7 @@ from simulation.ablation_analysis import (  # noqa: E402
     analyze_ablation, manuscript_caption, require,
 )
 from simulation.io import file_hash  # noqa: E402
+from manuscript_table import build_performance_table  # noqa: E402
 
 
 def supplemental(path, campaign, methods, *, kind):
@@ -76,7 +78,7 @@ def plot(result, output):
     plt.rcParams.update({"font.family": "DejaVu Serif", "font.size": 9,
                          "pdf.fonttype": 42, "axes.spines.top": False,
                          "axes.spines.right": False})
-    fig, axes = plt.subplots(1, len(metrics), figsize=(5.0 * len(metrics), 4.2),
+    fig, axes = plt.subplots(1, len(metrics), figsize=(3.7 * len(metrics), 3.8),
                              squeeze=False)
     colors = ["#b51836"] + ["#666666"] * (len(methods) - 1)
     hatches = ["", "//", "..", "xx", "\\\\"]
@@ -109,15 +111,23 @@ def plot(result, output):
         upper = max(defined, default=0.)
         ax.set_ylim(0, max(1., upper * 1.23))
         ax.set_xticks(range(len(methods)), labels)
-        ax.set_ylabel(f"{spec.label} ({spec.unit})")
-        ax.set_title(f"({chr(97+index)}) {spec.label}", fontsize=10)
+        concise = {
+            "valid_delivery_fraction_per_opportunity": ("Valid / source opportunities", "Effective delivery"),
+            "valid_delay_mean_s": ("Conditional valid-report delay", "Conditional delay"),
+            "invalid_acceptance_fraction_per_admitted": ("Invalid accepted / admitted reports", "Invalid acceptance"),
+        }
+        ylabel, title = concise.get(metric, (spec.label, spec.label))
+        ax.set_ylabel(textwrap.fill(f"{ylabel} ({spec.unit})", width=31))
+        ax.set_title(f"({chr(97+index)}) " + textwrap.fill(title, width=31), fontsize=10)
         ax.grid(axis="y", alpha=.25, zorder=0)
         if metric == "recovery_event_fraction":
             ax.text(.5, .94, "Censored / no-excursion counts retained in JSON",
                     ha="center", va="top", transform=ax.transAxes, fontsize=7)
     fig.suptitle(f"Archived {result['node_count']:,}-node ablation records", fontsize=12)
-    fig.text(.5, .015, "Paired seed means; pointwise 95% percentile-bootstrap CIs. "
-             "HVE coverage denotes configured capability.", ha="center", fontsize=8)
+    footer = "Paired seed means; pointwise 95% percentile-bootstrap CIs."
+    if "hve_enabled_coverage" in metrics:
+        footer += " HVE coverage denotes configured capability."
+    fig.text(.5, .015, footer, ha="center", fontsize=8)
     fig.tight_layout(rect=(0, .07, 1, .94))
     fig.savefig(output, format="pdf", metadata={"Title": "DA-AHE ablation evidence",
                                                "CreationDate": None, "ModDate": None})
@@ -144,10 +154,24 @@ def export(args):
         "supplemental_sha256": {role: file_hash(path) for role, path in (
             ("terminal_frame_counts", args.fragment_metrics),
             ("hve_capabilities", args.hve_capabilities)) if path is not None}}
+    performance_table = None
+    if args.performance_table:
+        performance_table = build_performance_table(
+            campaign, resamples=args.bootstrap_resamples, bootstrap_seed=args.bootstrap_seed)
+        require(performance_table["summary"]["bootstrap"]["index_sha256"]
+                == result["bootstrap"]["index_sha256"],
+                "table and figure bootstrap index banks differ")
+        result["performance_table"] = {
+            "latex_file": "performance-costs.tex", "summary_file": "performance-costs.json",
+            "method_count": len(campaign["methods"]),
+            "bootstrap_index_sha256": result["bootstrap"]["index_sha256"]}
     destination.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix=".ablation-", dir=destination.parent) as directory:
         out = Path(directory)
         write_json(out / "ablation-summary.json", result)
+        if performance_table is not None:
+            (out / "performance-costs.tex").write_text(performance_table["latex"], encoding="utf-8")
+            write_json(out / "performance-costs.json", performance_table["summary"])
         with (out / "ablation-statistics.csv").open("w", newline="", encoding="utf-8") as stream:
             fields = ("method", "metric", "unit", "denominator", "mean", "ci95_lower",
                       "ci95_upper", "n_total", "n_defined", "status",
@@ -195,7 +219,8 @@ def export(args):
             "selected_metrics": list(args.metrics),
             "source_sha256": {str(p.relative_to(ROOT)): file_hash(p) for p in (
                 Path(__file__), ROOT / "simulation/ablation_analysis.py",
-                ROOT / "tools/export_performance_evaluation.py")},
+                ROOT / "tools/export_performance_evaluation.py",
+                ROOT / "tools/manuscript_table.py")},
             "output_sha256": {p.name: file_hash(p) for p in sorted(out.iterdir())}})
         # Rename the complete directory; existing inputs and figures are never replaced.
         require(not destination.exists(), "output directory appeared during export")
@@ -216,6 +241,8 @@ def parser():
     p.add_argument("--fragment-metrics", type=Path)
     p.add_argument("--hve-capabilities", type=Path)
     p.add_argument("--figures", action="store_true")
+    p.add_argument("--performance-table", action="store_true",
+                   help="Also export the full campaign's compact LaTeX cost table using the same seed bank.")
     return p
 
 

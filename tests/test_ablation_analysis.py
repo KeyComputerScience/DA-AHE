@@ -146,7 +146,11 @@ def test_archived_export_preserves_inputs_and_rejects_existing_directory(tmp_pat
     source = ROOT / "evidence/independent/campaign-report"
     before = {p.name: module.file_hash(p) for p in source.iterdir() if p.is_file()}
     args = module.parser().parse_args([str(source), "--output", str(tmp_path/"export"),
-                                      "--bootstrap-resamples", "100", "--figures"])
+                                      "--bootstrap-resamples", "100", "--figures",
+                                      "--performance-table", "--metrics",
+                                      "valid_delivery_fraction_per_opportunity",
+                                      "valid_delay_mean_s",
+                                      "invalid_acceptance_fraction_per_admitted"])
     result = module.export(args)
     assert result["provenance"]["complete_input_row_count"] == 140
     assert result["provenance"]["selected_row_count"] == 100
@@ -154,6 +158,20 @@ def test_archived_export_preserves_inputs_and_rejects_existing_directory(tmp_pat
     out = tmp_path/"export"
     manifest = json.loads((out/"export-manifest.json").read_text())
     assert (out/"ablation-bars.pdf").read_bytes().startswith(b"%PDF")
+    table = json.loads((out/"performance-costs.json").read_text())
+    tex = (out/"performance-costs.tex").read_text()
+    assert table["methods"] == ["da-ahe", "dpp", "hys", "without_markov",
+                               "without_intdb2", "without_route_repair", "without_hve"]
+    assert table["bootstrap"]["index_sha256"] == result["bootstrap"]["index_sha256"]
+    assert table["recovery_counts"]["right_censored"] == 140
+    assert "All 140 recovery records are right-censored" in tex
+    assert "DPP" in tex and "HYS" in tex
+    assert table["statistics"]["da-ahe"]["valid_delay_mean_s"]["percentile_ci_95"] == (
+        result["statistics"]["da-ahe"]["valid_delay_mean_s"]["ci95"])
+    caption = (out/"ablation-caption.txt").read_text()
+    assert "Delay is conditional on valid delivery" in caption
+    assert "not a cryptographic forgery probability" in caption
+    assert "HVE coverage" not in caption
     assert all(module.file_hash(out/name) == digest
                for name, digest in manifest["output_sha256"].items())
     assert before == {p.name: module.file_hash(p) for p in source.iterdir() if p.is_file()}

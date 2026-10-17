@@ -317,11 +317,32 @@ def analyze_ablation(rows, config, *, methods=DEFAULT_METHODS, metrics=DEFAULT_M
 
 def manuscript_caption(result):
     labels = "; ".join(METRIC_SPECS[m].label for m in result["selected_metrics"])
-    return (f"Ablation comparison at {result['node_count']} source nodes: {labels}. "
+    caption = (f"Ablation comparison at {result['node_count']} source nodes: {labels}. "
             f"Bars show equally weighted means over {len(result['seeds'])} paired seeds; "
             f"error bars show pointwise 95% percentile-bootstrap confidence intervals from "
-            f"{result['bootstrap']['resamples']:,} shared seed resamples. "
-            "Application-report loss uses admitted reports, whereas terminal-frame loss, when supplied, "
-            "uses unique offered frames after retries. Recovery-event fractions count events over all seed runs; "
-            "RMST uses excursion-eligible runs and the stated follow-up horizon, with no-excursion cases separate. "
-            "HVE coverage identifies an enabled verification capability, not an attack-detection rate.")
+            f"{result['bootstrap']['resamples']:,} shared seed resamples. ")
+    metrics = set(result["selected_metrics"])
+    if "valid_delivery_fraction_per_opportunity" in metrics:
+        caption += "Valid delivery uses all source opportunities, including suppressed reports. "
+    if "valid_delay_mean_s" in metrics:
+        caption += "Delay is conditional on valid delivery. "
+    if "invalid_acceptance_fraction_per_admitted" in metrics:
+        caption += ("Invalid acceptance uses admitted reports and modeled invalidity labels; "
+                    "it is not a cryptographic forgery probability. ")
+    if "report_loss_fraction" in metrics:
+        caption += ("Application-report loss is (admitted - valid - invalid accepted) / admitted; "
+                    "it is not packet loss. ")
+    if "fragment_loss_fraction" in metrics:
+        caption += "Terminal-frame loss uses unique offered frames after retries. "
+    if any(metric.startswith("recovery_") for metric in metrics):
+        caption += ("Recovery-event fractions count events over all seed runs; RMST uses "
+                    "excursion-eligible runs and the stated follow-up horizon, with "
+                    "no-excursion cases separate. ")
+    if "hve_enabled_coverage" in metrics:
+        caption += ("HVE coverage identifies an enabled verification capability, "
+                    "not an attack-detection rate. ")
+    if all(record["n_right_censored"] == len(result["seeds"])
+           for record in result["recovery"].values()):
+        caption += ("All displayed methods have right-censored recovery records; "
+                    "no mean recovery time or recovery-time ranking is inferred. ")
+    return caption.strip()

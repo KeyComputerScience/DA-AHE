@@ -1,0 +1,25 @@
+\begin{table}[tbh]
+\centering
+\caption{Firmware and Runtime Memory Usage on nRF52840.}
+\label{tab:firmware_memory}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Memory quantity} & \textbf{Bytes} & \textbf{KiB} \\
+\midrule
+Code and constants (\texttt{text}) & 90,104 & 87.99 \\
+Initialized data (\texttt{data}) & 1,084 & 1.06 \\
+\textbf{Flash (\texttt{text+data})} & \textbf{91,188} & \textbf{89.05} \\
+Zero-initialized data (\texttt{bss}) & 26,892 & 26.26 \\
+\textbf{Static SRAM (\texttt{data+bss})} & \textbf{27,976} & \textbf{27.32} \\
+Maximum runtime stack (HWM) & 1,352 & 1.32 \\
+\textbf{Peak runtime SRAM} & \textbf{29,328} & \textbf{28.64} \\
+Available SRAM headroom & 232,816 & 227.36 \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\parbox{\columnwidth}{\footnotesize
+$1\,\mathrm{KiB}=1024\,\mathrm{B}$.
+Peak SRAM equals static SRAM plus stack HWM; headroom equals $262{,}144\,\mathrm{B}$ minus peak SRAM.}
+\end{table}

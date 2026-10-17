@@ -18,6 +18,12 @@ python tools/build_current_evaluation.py --check experiments
 python tools/build_current_evaluation.py --output-dir runs/current-evaluation
 ```
 
+## Tables and calculations
+
+[Tables and calculations](docs/MANUSCRIPT_TABLES.md) contain the Fig. 6/cost-table
+export, nRF52840 memory quantities, reconstruction-fidelity values, units and
+calculation formulas.
+
 ## Methods
 
 The [parameter and aggregation protocol](docs/manuscript/PARAMETER_PROTOCOL.tex),

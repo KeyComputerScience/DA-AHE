@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "units": {
+    "data_support_L": "support_length",
+    "quantization_step_delta_Q": "integer_step",
+    "rmse": "mV/mA",
+    "prd": "percent"
+  },
+  "profiles": [
+    {
+      "id": "Pi_0",
+      "name": "Normal",
+      "data_support_L": 240,
+      "quantization_step_delta_Q": 8,
+      "rmse": { "mean": 0.42, "spread": 0.03 },
+      "prd": { "mean": 0.85, "spread": 0.05 }
+    },
+    {
+      "id": "Pi_1",
+      "name": "Recovery",
+      "data_support_L": 180,
+      "quantization_step_delta_Q": 12,
+      "rmse": { "mean": 0.78, "spread": 0.05 },
+      "prd": { "mean": 1.42, "spread": 0.08 }
+    },
+    {
+      "id": "Pi_2",
+      "name": "Congested",
+      "data_support_L": 120,
+      "quantization_step_delta_Q": 16,
+      "rmse": { "mean": 1.15, "spread": 0.09 },
+      "prd": { "mean": 2.18, "spread": 0.12 }
+    }
+  ],
+  "formulas": {
+    "displayed_summary": "mean ± spread"
+  }
+}

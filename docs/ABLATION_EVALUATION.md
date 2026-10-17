@@ -43,6 +43,35 @@ does not imply that absent raw logs or source snapshots were inspected.
 Inputs under `evidence/` are immutable; generated artifacts have their own
 directory and manifest.
 
+### Coordinated manuscript Fig. 6 and cost table
+
+Use effective valid delivery, conditional valid-report delay and modeled invalid
+acceptance for the manuscript's three-panel ablation figure. Export its companion
+cost table from the complete seven-method campaign using the same bootstrap bank:
+
+```bash
+python tools/export_ablation_evaluation.py \
+  evidence/independent/campaign-report \
+  --output runs/manuscript-fig6 --figures --performance-table \
+  --metrics valid_delivery_fraction_per_opportunity \
+            valid_delay_mean_s invalid_acceptance_fraction_per_admitted \
+  --expected-seeds 20 \
+  --bootstrap-resamples 100000 --bootstrap-seed 20261017
+```
+
+`performance-costs.tex` retains DPP and HYS alongside the five ablation methods;
+`performance-costs.json` supplies all table statistics, recovery counts, input
+provenance and bootstrap settings. The exporter requires the figure and table to
+share the same bootstrap index digest and includes both files in its manifest.
+It does not replace the archived inputs.
+
+The recovery column is **20/20 right-censored** for every method. Effective
+delivery is normalized by all source opportunities, conditional delay by valid
+deliveries, and invalid acceptance by admitted reports.
+
+The LaTeX snippets, parameters and formulas are listed in
+[MANUSCRIPT_TABLES.md](MANUSCRIPT_TABLES.md).
+
 ## Report and frame denominators
 
 For each seed, let O be offered source opportunities, A admitted reports, V valid

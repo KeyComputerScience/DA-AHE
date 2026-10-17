@@ -1,0 +1,25 @@
+% Manuscript table using the archived 3,000-source-node summary.
+% Recompute the paired intervals with --performance-table as documented.
+\begin{table*}[tbh]
+\centering
+\small
+\caption{Archived 3,000-source-node conditional delay and modeled costs under the independent synthetic service model. Entries are equally weighted seed means with pointwise 95\% percentile-bootstrap confidence intervals from 100,000 shared resamples of 20 paired seeds. The recovery column gives right-censored runs / all runs.}
+\label{tab:performance_costs}
+\begin{tabular}{lrrrrr}
+\hline
+Method & \shortstack{Conditional valid\\delay (s)} & \shortstack{Modeled CPU\\(J/run)} & \shortstack{Modeled radio TX\\(J/run)} & \shortstack{Wire bytes /\\source opportunity} & \shortstack{Recovery right-\\censored (runs)}\\
+\hline
+DA-AHE & \shortstack{$6.859$\\$[6.687, 7.025]$} & \shortstack{$0.822$\\$[0.816, 0.828]$} & \shortstack{$65.051$\\$[64.438, 65.653]$} & \shortstack{$13552$\\$[13425, 13678]$} & $20/20$\\
+DPP & \shortstack{$6.606$\\$[6.445, 6.755]$} & \shortstack{$0.786$\\$[0.779, 0.793]$} & \shortstack{$62.278$\\$[61.599, 62.928]$} & \shortstack{$12975$\\$[12833, 13110]$} & $20/20$\\
+HYS & \shortstack{$6.287$\\$[6.177, 6.391]$} & \shortstack{$0.899$\\$[0.892, 0.905]$} & \shortstack{$68.650$\\$[67.991, 69.313]$} & \shortstack{$14302$\\$[14165, 14440]$} & $20/20$\\
+Without Markov & \shortstack{$10.840$\\$[10.583, 11.113]$} & \shortstack{$1.367$\\$[1.363, 1.370]$} & \shortstack{$105.061$\\$[104.304, 105.776]$} & \shortstack{$21888$\\$[21730, 22037]$} & $20/20$\\
+Without IntDb2 & \shortstack{$3.625$\\$[3.502, 3.762]$} & \shortstack{$0.834$\\$[0.826, 0.841]$} & \shortstack{$53.389$\\$[52.835, 53.910]$} & \shortstack{$11123$\\$[11007, 11231]$} & $20/20$\\
+Without route repair & \shortstack{$6.859$\\$[6.687, 7.025]$} & \shortstack{$0.822$\\$[0.816, 0.828]$} & \shortstack{$65.051$\\$[64.438, 65.653]$} & \shortstack{$13552$\\$[13425, 13678]$} & $20/20$\\
+Without HVE & \shortstack{$6.859$\\$[6.687, 7.025]$} & \shortstack{$0.821$\\$[0.815, 0.827]$} & \shortstack{$65.051$\\$[64.438, 65.653]$} & \shortstack{$13552$\\$[13425, 13678]$} & $20/20$\\
+\hline
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\textwidth}\footnotesize
+Delay is conditional on valid delivery. CPU and radio-TX costs cover the complete modeled run. Wire bytes use all source reporting opportunities, including suppressed reports. All 140 recovery outcomes are right-censored at 125 s, corresponding to 95 s after disturbance onset; no mean recovery time or recovery-time ranking is inferred. DA-AHE and Without route repair have identical archived outcomes; this comparison does not establish a route-repair benefit.
+\end{minipage}
+\end{table*}

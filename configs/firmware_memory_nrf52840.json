@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "platform": "nRF52840",
+  "units": {
+    "bytes": "B",
+    "kibibytes": "KiB",
+    "bytes_per_kibibyte": 1024,
+    "kibibytes_display_decimals": 2
+  },
+  "available_sram_bytes": 262144,
+  "quantities": {
+    "text": { "bytes": 90104, "kibibytes": 87.99 },
+    "data": { "bytes": 1084, "kibibytes": 1.06 },
+    "flash": { "bytes": 91188, "kibibytes": 89.05 },
+    "bss": { "bytes": 26892, "kibibytes": 26.26 },
+    "static_sram": { "bytes": 27976, "kibibytes": 27.32 },
+    "maximum_runtime_stack_hwm": { "bytes": 1352, "kibibytes": 1.32 },
+    "peak_runtime_sram": { "bytes": 29328, "kibibytes": 28.64 },
+    "available_sram_headroom": { "bytes": 232816, "kibibytes": 227.36 }
+  },
+  "formulas": {
+    "flash": "text + data",
+    "static_sram": "data + bss",
+    "peak_runtime_sram": "static_sram + maximum_runtime_stack_hwm",
+    "available_sram_headroom": "available_sram_bytes - peak_runtime_sram",
+    "kibibytes": "bytes / 1024, rounded to two decimal places for display"
+  }
+}
