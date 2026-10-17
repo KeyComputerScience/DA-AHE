@@ -1,0 +1,155 @@
+{
+  "bundle_recomputation": {
+    "cases": 35,
+    "causal_hmm_recomputed": true,
+    "certificate_recomputed": true,
+    "certificate_status": "failed",
+    "fit_recomputed": true,
+    "full_system_certified": false,
+    "raw_cases_reextracted": 0,
+    "raw_network_audit": "committed_hashes_only",
+    "rows": {
+      "evaluation": 180,
+      "holdout": 180,
+      "training": 270
+    },
+    "scope": "executed declared service model and empirical fit",
+    "signal_reconstruction_recomputed": true,
+    "status": "verified_calibration_bundle"
+  },
+  "certificate_report_matches_recomputation": true,
+  "certificate_report_sha256": "55802d8121039b94b800c00b02bb2139c031b052418742a539e5c47e6654dc2d",
+  "certificate_status": "failed",
+  "claim_scope_sha256": "f91ec198090326cadc97a792c34563aa949c5c7cb46eafe39d5c6c2fd2640b1f",
+  "commands": [
+    "python tools/verify_controller_certificate.py --controller evidence/controller-calibration/controller.json --verify-report evidence/controller-calibration/controller-certificate.json",
+    "python tools/verify_controller_calibration.py evidence/controller-calibration"
+  ],
+  "controller_sha256": "6989691a8f1fbbce00c04b903dca0929cd434af3b5232796f5eccd1280541dec",
+  "fallback_zero_state_witnesses": {
+    "calculation": "V(ReLU(offset_j-relief_fallback)) - (1-gamma)*V(0); error=0 lies in each declared residual ball",
+    "every_regime_violates_beta": true,
+    "scope": "declared fitted model; not a physical trajectory",
+    "witnesses": [
+      {
+        "beta_exact": "5764607523034235/288230376151711744",
+        "drift_decimal": 3235.376143561721,
+        "drift_exact": "1025331627587527447868249598368729/316912650057057350374175801344",
+        "inequality_violated": true,
+        "prediction_error": [
+          0,
+          0,
+          0
+        ],
+        "regime": 0,
+        "state": [
+          0,
+          0,
+          0
+        ],
+        "successor_exact": [
+          "5284648999069595/562949953421312",
+          "986928292053889/17592186044416",
+          "0"
+        ],
+        "successor_inside_domain": true
+      },
+      {
+        "beta_exact": "5764607523034235/288230376151711744",
+        "drift_decimal": 39794.69954373352,
+        "drift_exact": "50445774762515844003592759957273225/1267650600228229401496703205376",
+        "inequality_violated": true,
+        "prediction_error": [
+          0,
+          0,
+          0
+        ],
+        "regime": 1,
+        "state": [
+          0,
+          0,
+          0
+        ],
+        "successor_exact": [
+          "12908794459443651/1125899906842624",
+          "1751797656983581/8796093022208",
+          "0"
+        ],
+        "successor_inside_domain": true
+      },
+      {
+        "beta_exact": "5764607523034235/288230376151711744",
+        "drift_decimal": 4640.789088792021,
+        "drift_exact": "5882899073939823853569206198295457/1267650600228229401496703205376",
+        "inequality_violated": true,
+        "prediction_error": [
+          0,
+          0,
+          0
+        ],
+        "regime": 2,
+        "state": [
+          0,
+          0,
+          0
+        ],
+        "successor_exact": [
+          "10513924288344239/1125899906842624",
+          "2374250800828167/35184372088832",
+          "0"
+        ],
+        "successor_inside_domain": true
+      },
+      {
+        "beta_exact": "5764607523034235/288230376151711744",
+        "drift_decimal": 64304.48565600803,
+        "drift_exact": "81515619839206144165484082464575009/1267650600228229401496703205376",
+        "inequality_violated": true,
+        "prediction_error": [
+          0,
+          0,
+          0
+        ],
+        "regime": 3,
+        "state": [
+          0,
+          0,
+          0
+        ],
+        "successor_exact": [
+          "4157367593395055/1125899906842624",
+          "8921222947598679/35184372088832",
+          "0"
+        ],
+        "successor_inside_domain": true
+      },
+      {
+        "beta_exact": "5764607523034235/288230376151711744",
+        "drift_decimal": 62201.961929396435,
+        "drift_exact": "315401417500691463902694061761700385/5070602400912917605986812821504",
+        "inequality_violated": true,
+        "prediction_error": [
+          0,
+          0,
+          0
+        ],
+        "regime": 4,
+        "state": [
+          0,
+          0,
+          0
+        ],
+        "successor_exact": [
+          "6135889344356207/2251799813685248",
+          "8774571642559621/35184372088832",
+          "0"
+        ],
+        "successor_inside_domain": true
+      }
+    ]
+  },
+  "full_system_certified": false,
+  "schema_version": 1,
+  "scope": "declared fitted model at original parameters",
+  "verified_at": "2026-10-17T22:03:41.211660+08:00"
+}

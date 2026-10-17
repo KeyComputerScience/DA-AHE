@@ -64,6 +64,22 @@ def test_current_claim_contract_does_not_overstate_ci_or_board_scope():
     assert len(tool.validate_claim_scope(tool.ROOT / "evidence/independent/claim-coverage.json")) == 64
 
 
+@pytest.mark.parametrize("change", ["verified_flag", "unsupported_record", "missing_scope"])
+def test_board_evidence_scope_cannot_be_promoted_without_reviewed_records(change, tmp_path):
+    tool = coverage_tool()
+    claims = json.loads((tool.ROOT / "evidence/independent/claim-coverage.json").read_text())
+    if change == "verified_flag":
+        claims["physical_board_measurements_verified"] = True
+    elif change == "unsupported_record":
+        claims["board_evidence"]["measurement_records"] = ["unverified-capture.json"]
+    else:
+        del claims["board_evidence"]
+    path = tmp_path / "claims.json"
+    path.write_text(json.dumps(claims))
+    with pytest.raises(ValueError, match="board measurement claim"):
+        tool.validate_claim_scope(path)
+
+
 @pytest.mark.parametrize("field", ["paper_reproduced", "all_manuscript_metrics_verified",
                                   "full_system_certified", "original_author_artifacts_restored"])
 def test_green_checks_cannot_silently_relabel_missing_original_evidence(field, tmp_path):

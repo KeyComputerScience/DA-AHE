@@ -22,12 +22,17 @@ ROOT = Path(__file__).resolve().parents[1]
 def validate_claim_scope(path):
     path = Path(path)
     claims = json.loads(path.read_text())
+    if claims.get("schema_version") != 2:
+        raise ValueError("unsupported current claim-scope schema")
     for field in ("paper_reproduced", "all_manuscript_metrics_verified", "full_system_certified",
                   "original_author_artifacts_restored"):
         if claims.get(field) is not False:
             raise ValueError("unsupported original-paper/full-system claim: " + field)
-    if type(claims.get("physical_board_samples")) is not int or claims["physical_board_samples"] != 0:
-        raise ValueError("current artifact has no physical-board samples; add reviewed measurements before changing its claim contract")
+    board = claims.get("board_evidence")
+    if (claims.get("physical_board_measurements_verified") is not False or
+            not isinstance(board, dict) or board.get("kind") != "core_build_and_host_validation" or
+            board.get("measurement_records") != []):
+        raise ValueError("unsupported board measurement claim; scope must match reviewed evidence records")
     if not claims.get("claim_states") or any(row.get("original_paper_verified") is not False
                                              for row in claims["claim_states"]):
         raise ValueError("original-paper claim coverage is missing or overstated")

@@ -69,8 +69,8 @@
     },
     {
       "path": "SECURITY.md",
-      "sha256": "297e00b13ee7f4929746d1561e8513cf1dc82975d2cc4849a2d93be9066dde27",
-      "size": 9561
+      "sha256": "4b985734dbc965ae295087b7f9669b5b965740cb3fd7af5d8af52b81ff32d460",
+      "size": 9715
     },
     {
       "path": "SHA256SUMS-v0.2.0.txt",
@@ -794,8 +794,8 @@
     },
     {
       "path": "tests/test_ci_coverage.py",
-      "sha256": "0f6a39557925a942b8c095c2e11132bca958e2b72e7b6200c750ee1ad9933de4",
-      "size": 3338
+      "sha256": "574ae0649b3e5ee5f132f5aadf0cea9974558b28ff3f718e6755900dfad7bf35",
+      "size": 4102
     },
     {
       "path": "tests/test_ci_triggers.py",
@@ -979,8 +979,8 @@
     },
     {
       "path": "tools/check_ci_coverage.py",
-      "sha256": "d75a03442555e5ec6eb54d91dcfa1b5b6d0df68a0a0728199c583ca977ffdc26",
-      "size": 4330
+      "sha256": "6cde5deb20544d902c8d38c80597f1e0c5b6c44f96a23ab8f0ae4501a911a16d",
+      "size": 4576
     },
     {
       "path": "tools/check_ci_triggers.py",
@@ -994,8 +994,8 @@
     },
     {
       "path": "tools/check_manuscript_alignment.py",
-      "sha256": "a5f21fc0abc2ed240816d9917855f7244ebe15c0f86e95bc8236f2b2cc25e5c0",
-      "size": 7393
+      "sha256": "c3df53055c8434186c0fb5e6141ea1b9077fd6af0feeb8cdac89c12891681178",
+      "size": 7670
     },
     {
       "path": "tools/check_paper_evidence.py",
@@ -1124,8 +1124,8 @@
     },
     {
       "path": "tools/verify_published_evidence.py",
-      "sha256": "c1ba87a042ceb4f3476a4da0fa095585c6fea1448f043832ae3ac2cb91b239f5",
-      "size": 14762
+      "sha256": "63e0beb0c83d65a09c94e5c51b7cf78655b786121eee444fa6541e2ccc1f4a83",
+      "size": 14889
     },
     {
       "path": "tools/verify_simulation_campaign.py",

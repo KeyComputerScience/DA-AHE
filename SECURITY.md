@@ -118,12 +118,14 @@ current independent evidence:
 | Post-quantum security estimation | k=6 seven-attack minimum 136.475 bits under the stated heuristic model; the required threshold is 128.1 bits |
 | Aggregate decryption reliability | Executed actual-CDT interval calculation: 42-choice one-fresh-batch union log2 upper bound -130.5101732; joint random-key/fresh-noise probability, not every fixed key, arbitrary observed history or lifetime |
 | Action-dependent streaming workspace | Manuscript target 10 KiB; complete k=6 role-specific workspace certificate and measured stack high-water remain unavailable |
-| Closed-loop stability | Conditional theorem requires valid uncertainty, fallback and invariant-domain assumptions; the supplied synthetic controller is uncertified |
+| Closed-loop stability | The separate 35-case calibration supplies fitted models and exact checks; original domain, fallback and transition conditions fail, as recorded in the certificate report |
 
-Physical-board samples remain zero. Core compilation, host tests, public
-synthetic traces and byte-integrity checks do not establish physical timing,
-energy, full-protocol memory, original-paper reproduction or full-system
-certification. Historical receipts remain unchanged; current public archive
+Available firmware evidence comprises core compilation, host known answers,
+device collection interfaces and capture-verification rules. Its scope is
+distinct from measured per-role timing, energy and complete-protocol memory.
+The [controller verification](docs/CONTROLLER_CALIBRATION.md) records its inputs,
+exact arithmetic and condition outcomes. Historical receipts retain their byte
+identities; current public archive
 locations are in `evidence/independent/publication.json` and
 [`docs/PUBLIC_EVIDENCE.md`](docs/PUBLIC_EVIDENCE.md).
 

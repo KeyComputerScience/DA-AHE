@@ -97,7 +97,11 @@ def verify(root=ROOT):
     claims = read_json(root, "evidence/independent/claim-coverage.json")
     for field in ("paper_reproduced", "all_manuscript_metrics_verified", "full_system_certified"):
         require(claims.get(field) is False, "unsupported original-paper claim: " + field)
-    require(claims.get("physical_board_samples") == 0, "board claim requires new reviewed evidence")
+    require(claims.get("schema_version") == 2 and
+            claims.get("physical_board_measurements_verified") is False and
+            claims.get("board_evidence", {}).get("kind") == "core_build_and_host_validation" and
+            claims.get("board_evidence", {}).get("measurement_records") == [],
+            "board claim requires corresponding reviewed evidence records")
     statuses = contract["claim_status"]
     for field in ("original_pdf_modified", "historical_measurements_verified_for_k6",
                   "full_system_certified", "control_certificate_available",
